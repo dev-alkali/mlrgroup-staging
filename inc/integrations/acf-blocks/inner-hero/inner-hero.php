@@ -28,7 +28,7 @@ $description = get_sub_field('description'); ?>
       class="<?php echo esc_attr($className); ?> flex w-full min-h-screen"
       style="
     background-image: url('<?php echo esc_url(get_sub_field('bg_image')); ?>');
-    background-position: 50% 38%;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
   ">
