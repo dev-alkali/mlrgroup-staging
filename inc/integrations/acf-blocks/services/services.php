@@ -18,27 +18,67 @@ if (!empty($block['className'])) {
 <?php if (have_rows('services')) :  while (have_rows('services')) : the_row(); ?>
 
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex  w-full justify-center px-4 min-[600px]:px-10 py-[60px] min-[600px]:py-[120px] bg-white">
-      <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
+      
+      <?php if (have_rows('header_content')) : ?>
+  <?php while (have_rows('header_content')) : the_row(); ?>
 
-          <div class="flex flex-col  items-center gap-8 min-[600px]:gap-[60px] w-full max-w-[1920px]">
-            <div class="flex flex-col min-[1023px]:flex-row min-[1023px]:items-center  gap-5 self-stretch w-full">
-              <?php if (have_rows('title_group')) :  while (have_rows('title_group')) : the_row(); ?>
-                  <h2 class="max-w-[426px] w-full text-[44px] flex flex-col min-[600px]:text-[54px] min-[767px]:text-[68px] tracking-[-2%] leading-[56px] min-[600px]:leading-[64px] min-[767px]:leading-[78px] font-heading">
-                    <span class="font-bold text-neutral-800"><?= wp_kses_post(get_sub_field('title_row_1')) ?></span>
-                    <span class="font-light text-neutral-500"><?= wp_kses_post(get_sub_field('title_row_2')) ?></span>
-                  </h2>
-              <?php endwhile;
-              endif; ?>
-              <div class="flex flex-col items-start gap-8 flex-1">
-                <p class="max-w-[526px] text-xl leading-7 text-neutral-600 font-body">
-                  <?= wp_kses_post(get_sub_field('subtitle')) ?>
-                </p>
+    <div class="flex flex-col items-center gap-8 min-[600px]:gap-[60px] w-full max-w-[1920px]">
 
-                <a href="<?= esc_url(get_sub_field('btn_path')) ?>" class="btn-primary max-[767px]:hidden"><?= wp_kses_post(get_sub_field('btn_label')) ?></a>
-              </div>
-            </div>
-        <?php endwhile;
-      endif; ?>
+      <div class="flex flex-col min-[1023px]:flex-row min-[1023px]:items-center gap-5 self-stretch w-full">
+
+        <?php if (have_rows('title_group')) : ?>
+          <?php while (have_rows('title_group')) : the_row(); ?>
+
+            <?php 
+            $title1 = get_sub_field('title_row_1');
+            $title2 = get_sub_field('title_row_2');
+            ?>
+
+            <?php if ($title1 || $title2) : ?>
+              <h2 class="max-w-[426px] w-full text-[44px] flex flex-col min-[600px]:text-[54px] min-[767px]:text-[68px] tracking-[-2%] leading-[56px] min-[600px]:leading-[64px] min-[767px]:leading-[78px] font-heading">
+
+                <?php if ($title1) : ?>
+                  <span class="font-bold text-neutral-800"><?= wp_kses_post($title1) ?></span>
+                <?php endif; ?>
+
+                <?php if ($title2) : ?>
+                  <span class="font-light text-neutral-500"><?= wp_kses_post($title2) ?></span>
+                <?php endif; ?>
+
+              </h2>
+            <?php endif; ?>
+
+          <?php endwhile; ?>
+        <?php endif; ?>
+
+        <div class="flex flex-col items-start gap-8 flex-1">
+
+          <?php if (get_sub_field('subtitle')) : ?>
+            <p class="max-w-[526px] text-xl leading-7 text-neutral-600 font-body">
+              <?= wp_kses_post(get_sub_field('subtitle')) ?>
+            </p>
+          <?php endif; ?>
+
+          <?php 
+          $btn_path = get_sub_field('btn_path');
+          $btn_label = get_sub_field('btn_label');
+          ?>
+
+          <?php if ($btn_path && $btn_label) : ?>
+            <a href="<?= esc_url($btn_path) ?>" class="btn-primary max-[767px]:hidden">
+              <?= wp_kses_post($btn_label) ?>
+            </a>
+          <?php endif; ?>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  <?php endwhile; ?>
+<?php endif; ?>
+
         <?php if (have_rows('main_content')) :  while (have_rows('main_content')) : the_row(); ?>
             <div class="flex items-center justify-center max-[1440px]:flex-wrap  gap-4 min-[600px]:gap-2 self-stretch w-full">
               <?php if (have_rows('services')) :  while (have_rows('services')) : the_row(); ?>
