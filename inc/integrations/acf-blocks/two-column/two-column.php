@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Inner Hero Block Template.
+ * Two Column Block Template.
  */
 
 $id = 'inner-hero-' . $block['id'];
@@ -14,13 +14,14 @@ if (!empty($block['className'])) {
   $className .= ' ' . $block['className'];
 }
 
+?>
+<?php if (have_rows('two_column')) :  while (have_rows('two_column')) : the_row();
+
 $title_row_1 = get_sub_field('title_row_1');
 $title_row_2 = get_sub_field('title_row_2');
 $description = get_sub_field('description');
 
-
 ?>
-<?php if (have_rows('inner_hero')) :  while (have_rows('inner_hero')) : the_row(); ?>
 
     <section id="<?php echo esc_attr($id); ?>"
       class="<?php echo esc_attr($className); ?> flex w-full h-[700px] min-[600px]:h-[855px] "

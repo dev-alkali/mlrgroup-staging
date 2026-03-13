@@ -25,7 +25,7 @@ if (have_rows('inner_hero')) :  while (have_rows('inner_hero')) : the_row();
       <div class="gap-10 w-full max-w-[1920px] mx-auto min-h-screen pt-[118px] pb-[118px] flex items-end">
         <div class="max-w-[800px]">
           <?php if($title_row_1 || $title_row_2): ?>
-          <h2 class="text-[clamp(44px,6vw,80px)] leading-[clamp(50px,7vw,92px)] tracking-[-0.02em] text-white font-heading">            
+          <h2 class="text-[clamp(35px,6vw,70px)] leading-[clamp(46px,7vw,88px)] tracking-[-0.02em] text-white font-heading">            
             <?php if($title_row_1): ?>
                 <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
             <?php endif; ?>
