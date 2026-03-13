@@ -1,9 +1,9 @@
-name: Compile Tailwind
+name: Build & Deploy WordPress Theme
 
 on:
   push:
     branches:
-      - main   # Change if needed
+      - main
 
 permissions:
   contents: read
@@ -11,35 +11,28 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: production
 
     steps:
-      # 1️⃣ Checkout code
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Setup Node with caching
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: npm
 
-      # 3️⃣ Install dependencies
       - name: Install Dependencies
         run: npm ci --no-audit --no-fund
 
-      # 4️⃣ Build project (Vite handles Tailwind)
-      - name: Build Assets
+      - name: Build Tailwind
         run: npm run build
 
-      # 5️⃣ Start SSH Agent securely
-      - name: Start SSH agent and add key
+      - name: Start SSH agent
         uses: webfactory/ssh-agent@v0.8.0
         with:
           ssh-private-key: ${{ secrets.SFTP_PRIVATE_KEY }}
 
-      # 6️⃣ Add server fingerprint (prevents MITM)
       - name: Add server to known_hosts
         run: |
           mkdir -p ~/.ssh
@@ -48,14 +41,12 @@ jobs:
           SFTP_HOST: ${{ secrets.SFTP_HOST }}
           SFTP_PORT: ${{ secrets.SFTP_PORT }}
 
-      # 7️⃣ Deploy theme via rsync
       - name: Deploy Theme
         run: |
           rsync -az --delete \
             --exclude=node_modules \
             --exclude=.git \
             --exclude=.github \
-            --exclude=*.log \
             ./ \
             $SFTP_USER@$SFTP_HOST:/home/755960.cloudwaysapps.com/zyhttbsgaz/public_html/wp-content/themes/Mlrgroup/ \
             -e "ssh -p ${SFTP_PORT:-22}"
@@ -63,6 +54,3 @@ jobs:
           SFTP_USER: ${{ secrets.SFTP_USER }}
           SFTP_HOST: ${{ secrets.SFTP_HOST }}
           SFTP_PORT: ${{ secrets.SFTP_PORT }}
-
-      - name: Deployment Complete
-        run: echo "Theme deployed successfully 🚀"
