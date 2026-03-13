@@ -3,7 +3,7 @@ name: Build & Deploy WordPress Theme
 on:
   push:
     branches:
-      - main
+      - main   # change if needed
 
 permissions:
   contents: read
@@ -11,36 +11,44 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: production
 
     steps:
+      # 1️⃣ Checkout repository
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      # 2️⃣ Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: npm
 
+      # 3️⃣ Install dependencies
       - name: Install Dependencies
         run: npm ci --no-audit --no-fund
 
+      # 4️⃣ Build Tailwind (uses your corrected script path)
       - name: Build Tailwind
         run: npm run build
 
-      - name: Start SSH agent
-        uses: webfactory/ssh-agent@v0.8.0
-        with:
-          ssh-private-key: ${{ secrets.SFTP_PRIVATE_KEY }}
-
-      - name: Add server to known_hosts
+      # 5️⃣ Setup SSH Key (NO ssh-agent)
+      - name: Setup SSH Key
         run: |
           mkdir -p ~/.ssh
+          echo "${{ secrets.SFTP_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+      # 6️⃣ Add server fingerprint (prevents MITM)
+      - name: Add server to known_hosts
+        run: |
           ssh-keyscan -p ${SFTP_PORT:-22} $SFTP_HOST >> ~/.ssh/known_hosts
         env:
           SFTP_HOST: ${{ secrets.SFTP_HOST }}
           SFTP_PORT: ${{ secrets.SFTP_PORT }}
 
+      # 7️⃣ Deploy via rsync
       - name: Deploy Theme
         run: |
           rsync -az --delete \
@@ -49,8 +57,11 @@ jobs:
             --exclude=.github \
             ./ \
             $SFTP_USER@$SFTP_HOST:/home/755960.cloudwaysapps.com/zyhttbsgaz/public_html/wp-content/themes/Mlrgroup/ \
-            -e "ssh -p ${SFTP_PORT:-22}"
+            -e "ssh -i ~/.ssh/id_rsa -p ${SFTP_PORT:-22}"
         env:
           SFTP_USER: ${{ secrets.SFTP_USER }}
           SFTP_HOST: ${{ secrets.SFTP_HOST }}
           SFTP_PORT: ${{ secrets.SFTP_PORT }}
+
+      - name: Deployment Complete
+        run: echo "Theme deployed successfully 🚀"
