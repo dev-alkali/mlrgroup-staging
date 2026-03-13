@@ -29,7 +29,7 @@ $description = get_sub_field('description');
         </div>
         <div class="w-[50%]">
           <?php if($title_row_1 || $title_row_2): ?>
-          <h2 class="text-[clamp(35px,6vw,70px)] leading-[clamp(46px,7vw,88px)] tracking-[-0.02em] text-white font-heading">            
+          <h2 class="text-[clamp(35px,6vw,70px)] leading-[clamp(46px,7vw,88px)] tracking-[-0.02em] text-[#262626] font-heading">            
             <?php if($title_row_1): ?>
                 <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
             <?php endif; ?>
@@ -39,7 +39,7 @@ $description = get_sub_field('description');
           </h2>
           <?php endif; ?>
           <?php if($description): ?>
-            <div class="w-full text-[clamp(16px,3vw,20px)] leading-[28px] text-gray-50 font-body"><?= wp_kses_post($description) ?></div>
+            <div class="w-full text-[clamp(16px,3vw,20px)] leading-[28px] text-[#525252] font-body"><?= wp_kses_post($description) ?></div>
           <?php endif; ?>
 
           <?php 
