@@ -1,9 +1,9 @@
-name: Secure Deploy Theme via SFTP
+name: Compile Tailwind
 
 on:
   push:
     branches:
-      - main
+      - main   # Change if needed
 
 permissions:
   contents: read
@@ -14,43 +14,55 @@ jobs:
     environment: production
 
     steps:
-      - name: Checkout repository
+      # 1️⃣ Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # 2️⃣ Setup Node with caching
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'npm'
+          cache: npm
 
+      # 3️⃣ Install dependencies
       - name: Install Dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Compile Tailwind CSS
-        run: npx tailwindcss -i ./assets/src/input.css -o ./assets/dist/output.css --minify
+      # 4️⃣ Build project (Vite handles Tailwind)
+      - name: Build Assets
+        run: npm run build
 
-      # 🔐 Secure SSH Setup using ssh-agent
+      # 5️⃣ Start SSH Agent securely
       - name: Start SSH agent and add key
         uses: webfactory/ssh-agent@v0.8.0
         with:
           ssh-private-key: ${{ secrets.SFTP_PRIVATE_KEY }}
 
-      # 🔐 Add host fingerprint (Prevents MITM)
+      # 6️⃣ Add server fingerprint (prevents MITM)
       - name: Add server to known_hosts
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan -p ${{ secrets.SFTP_PORT }} ${{ secrets.SFTP_HOST }} >> ~/.ssh/known_hosts
+          ssh-keyscan -p ${SFTP_PORT:-22} $SFTP_HOST >> ~/.ssh/known_hosts
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_PORT: ${{ secrets.SFTP_PORT }}
 
-      # 🔐 Deploy only theme folder (NOT entire repo)
-      - name: Deploy Theme via rsync
+      # 7️⃣ Deploy theme via rsync
+      - name: Deploy Theme
         run: |
           rsync -az --delete \
-          --exclude=node_modules \
-          --exclude=.git \
-          --exclude=.github \
-          --exclude=*.log \
-          -e "ssh -p ${SFTP_PORT:-22}" \
-          ./ \
-          ${{ secrets.SFTP_USER }}@${{ secrets.SFTP_HOST }}:/home/755960.cloudwaysapps.com/zyhttbsgaz/public_html/wp-content/themes/Mlrgroup/
+            --exclude=node_modules \
+            --exclude=.git \
+            --exclude=.github \
+            --exclude=*.log \
+            ./ \
+            $SFTP_USER@$SFTP_HOST:/home/755960.cloudwaysapps.com/zyhttbsgaz/public_html/wp-content/themes/Mlrgroup/ \
+            -e "ssh -p ${SFTP_PORT:-22}"
         env:
+          SFTP_USER: ${{ secrets.SFTP_USER }}
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
           SFTP_PORT: ${{ secrets.SFTP_PORT }}
+
+      - name: Deployment Complete
+        run: echo "Theme deployed successfully 🚀"
