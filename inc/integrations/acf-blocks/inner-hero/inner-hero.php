@@ -35,7 +35,7 @@ if (have_rows('inner_hero')) :  while (have_rows('inner_hero')) : the_row();
           </h2>
           <?php endif; ?>
           <?php if($description): ?>
-            <p class="w-full text-[20px] min-[600px]:text-xl leading-[28px] min-[600px]:leading-7 text-gray-50 font-body"><?= wp_kses_post($description) ?></p>
+            <p class="w-full text-[clamp(16px,3vw,20px)] leading-[28px] text-gray-50 font-body"><?= wp_kses_post($description) ?></p>
           <?php endif; ?>
 
           <?php 
