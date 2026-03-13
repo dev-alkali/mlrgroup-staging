@@ -23,7 +23,7 @@ $description = get_sub_field('description');
 
 ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> w-full px-4 min-[600px]:px-10 pt-[118px] pb-[120px]">
-      <div class="gap-10 w-full max-w-[1920px] mx-auto flex ">
+      <div class="gap-10 w-full max-w-[1920px] mx-auto flex items-center flex-wrap">
         <div class="w-[50%]">
           <figure><?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, ['class' => 'w-full h-auto']); ?></figure>
         </div>
