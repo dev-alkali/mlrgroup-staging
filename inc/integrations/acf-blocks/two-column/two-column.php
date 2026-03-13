@@ -25,7 +25,7 @@ $description = get_sub_field('description');
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> w-full px-4 min-[600px]:px-10 pt-[118px] pb-[118px]" style="background-image: url('<?php echo esc_url(get_sub_field('bg_image')); ?>');background-position: center;background-size: cover;background-repeat: no-repeat;background-color: rgba(0, 0, 0, 0.5);background-blend-mode: overlay;">
       <div class="gap-10 w-full max-w-[1920px] mx-auto flex ">
         <div class="w-[50px]">
-          <figure><img src="<?php echo esc_url(get_sub_field('image')); ?>" alt="<?php echo esc_attr(get_sub_field('image_alt')); ?>"></figure>
+          <figure><?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, ['alt' => esc_attr(get_sub_field('image_alt'))]); ?></figure>
         </div>
         <div class="w-[50px]">
           <?php if($title_row_1 || $title_row_2): ?>
@@ -39,7 +39,7 @@ $description = get_sub_field('description');
           </h2>
           <?php endif; ?>
           <?php if($description): ?>
-            <p class="w-full text-[clamp(16px,3vw,20px)] leading-[28px] text-gray-50 font-body"><?= wp_kses_post($description) ?></p>
+            <div class="w-full text-[clamp(16px,3vw,20px)] leading-[28px] text-gray-50 font-body"><?= wp_kses_post($description) ?></div>
           <?php endif; ?>
 
           <?php 
