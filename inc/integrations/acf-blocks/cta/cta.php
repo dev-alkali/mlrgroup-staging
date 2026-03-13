@@ -14,7 +14,12 @@ if (!empty($block['className'])) {
   $className .= ' ' . $block['className'];
 }
 ?>
-<?php if (have_rows('cta')) :  while (have_rows('cta')) : the_row(); ?>
+<?php if (have_rows('cta')) :  while (have_rows('cta')) : the_row(); 
+
+$title_row_1 = get_sub_field('title_row_1');
+$title_row_2 = get_sub_field('title_row_2');
+$description = get_sub_field('description'); 
+?>
 
     <section id="<?php echo esc_attr($id); ?>"
       class="<?php echo esc_attr($className); ?> flex w-full h-[700px] min-[600px]:h-[855px] "
@@ -28,16 +33,25 @@ if (!empty($block['className'])) {
 
         <div class="flex flex-col items-start gap-10 min-[600px]:gap-[60px] w-full max-w-[1920px]">
           <div class="flex flex-col items-start gap-5 w-full">
+            <?php if($title_row_1 || $title_row_2): ?>
             <h2 class="max-w-[622px] w-full text-[44px] tracking-[-2%] min-[600px]:text-[65px] min-[767px]:text-[80px] leading-[50px] min-[600px]:leading-[65px] min-[767px]:leading-[92px] text-white font-heading">
-              <span class="font-bold"> <?= wp_kses_post(get_sub_field('title_row_1')) ?> </span>
-              <span class="font-light"> <?= wp_kses_post(get_sub_field('title_row_2')) ?></span>
-            </h2>
-            <p class="max-w-[622px] w-full text-[18px]  min-[600px]:text-xl leading-[26px] min-[600px]:leading-7 text-gray-50 font-body">
-              <?= wp_kses_post(get_sub_field('description')) ?>
-            </p>
-          </div>
+              <?php if($title_row_1): ?>
+                  <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
+              <?php endif; ?>
 
-          <a href=" <?= wp_kses_post(get_sub_field('btn_path')) ?>" class="btn-primary"> <?= wp_kses_post(get_sub_field('btn_label')) ?></a>
+              <?php if($title_row_2): ?>
+                  <span class="font-light"><?= wp_kses_post($title_row_2) ?></span>
+              <?php endif; ?>
+            </h2>
+            <?php endif; ?>
+            <?php if($description): ?>
+              <p class="max-w-[622px] w-full text-[18px]  min-[600px]:text-xl leading-[26px] min-[600px]:leading-7 text-gray-50 font-body"><?= wp_kses_post($description) ?></p>
+            <?php endif; ?>
+          </div>
+          
+          <?php if(get_sub_field('btn_label')): ?>
+            <a href=" <?= wp_kses_post(get_sub_field('btn_path')) ?>" class="btn-primary"> <?= wp_kses_post(get_sub_field('btn_label')) ?></a>
+          <?php endif; ?>
         </div>
       </div>
 
