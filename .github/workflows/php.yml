@@ -1,54 +1,56 @@
-steps:
-  - name: Checkout repository
-    uses: actions/checkout@v3
+name: Secure Deploy Theme via SFTP
 
-  - name: Setup Node.js
-    uses: actions/setup-node@v3
-    with:
-      node-version: 18
+on:
+  push:
+    branches:
+      - main
 
-  - name: Cache npm dependencies
-    uses: actions/cache@v3
-    with:
-      path: ~/.npm
-      key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-      restore-keys: |
-        ${{ runner.os }}-node-
+permissions:
+  contents: read
 
-  - name: Install Dependencies
-    run: npm ci
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
 
-  - name: Install Tailwind CSS
-    run: npm install -D tailwindcss
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-  - name: Compile Tailwind CSS
-    run: npx tailwindcss -i ./assets/src/input.css -o ./assets/dist/output.css --minify
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
 
-  - name: Install rsync
-    run: sudo apt-get update && sudo apt-get install -y rsync
+      - name: Install Dependencies
+        run: npm ci --no-audit --no-fund
 
-  - name: Upload Theme via SFTP
-    env:
-      SFTP_USER: ${{ secrets.SFTP_USER }}
-      SFTP_HOST: ${{ secrets.SFTP_HOST }}
-      SFTP_PORT: ${{ secrets.SFTP_PORT || 22 }}
-      SFTP_PRIVATE_KEY: ${{ secrets.SFTP_PRIVATE_KEY }}
-    run: |
-      set -e
-      echo "Uploading compiled Tailwind CSS..."
+      - name: Compile Tailwind CSS
+        run: npx tailwindcss -i ./assets/src/input.css -o ./assets/dist/output.css --minify
 
-      mkdir -p ~/.ssh
-      echo "$SFTP_PRIVATE_KEY" > ~/.ssh/id_rsa
-      chmod 600 ~/.ssh/id_rsa
+      # 🔐 Secure SSH Setup using ssh-agent
+      - name: Start SSH agent and add key
+        uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.SFTP_PRIVATE_KEY }}
 
-      ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -p $SFTP_PORT $SFTP_USER@$SFTP_HOST "echo 'SSH connection successful'"
+      # 🔐 Add host fingerprint (Prevents MITM)
+      - name: Add server to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p ${{ secrets.SFTP_PORT }} ${{ secrets.SFTP_HOST }} >> ~/.ssh/known_hosts
 
-      rsync -avz --delete \
-      --exclude=node_modules \
-      --exclude=.git \
-      --exclude=.github \
-      -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -p $SFTP_PORT" \
-      ./ \
-      $SFTP_USER@$SFTP_HOST:/home/755960.cloudwaysapps.com/zyhttbsgaz/public_html/wp-content/themes/Mlrgroup/
-
-      echo "Upload completed successfully!"
+      # 🔐 Deploy only theme folder (NOT entire repo)
+      - name: Deploy Theme via rsync
+        run: |
+          rsync -az --delete \
+          --exclude=node_modules \
+          --exclude=.git \
+          --exclude=.github \
+          --exclude=*.log \
+          -e "ssh -p ${SFTP_PORT:-22}" \
+          ./ \
+          ${{ secrets.SFTP_USER }}@${{ secrets.SFTP_HOST }}:/home/755960.cloudwaysapps.com/zyhttbsgaz/public_html/wp-content/themes/Mlrgroup/
+        env:
+          SFTP_PORT: ${{ secrets.SFTP_PORT }}
