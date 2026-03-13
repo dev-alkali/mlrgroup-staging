@@ -21,8 +21,8 @@ if (have_rows('inner_hero')) :  while (have_rows('inner_hero')) : the_row();
   $description = get_sub_field('description');
 ?>
 
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> w-full" style="background-image: url('<?php echo esc_url(get_sub_field('bg_image')); ?>');background-position: center;background-size: cover;background-repeat: no-repeat;background-color: rgba(0, 0, 0, 0.5);background-blend-mode: overlay;">
-      <div class="gap-10 w-full max-w-[1920px] mx-auto min-h-screen pt-[118px] pb-[118px] px-4 min-[600px]:px-10 flex items-end">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> w-full px-4 min-[600px]:px-10" style="background-image: url('<?php echo esc_url(get_sub_field('bg_image')); ?>');background-position: center;background-size: cover;background-repeat: no-repeat;background-color: rgba(0, 0, 0, 0.5);background-blend-mode: overlay;">
+      <div class="gap-10 w-full max-w-[1920px] mx-auto min-h-screen pt-[118px] pb-[118px] flex items-end">
         <div class="max-w-[800px]">
           <?php if($title_row_1 || $title_row_2): ?>
           <h2 class="text-[44px] tracking-[-2%] min-[600px]:text-[65px] min-[767px]:text-[80px] leading-[50px] min-[600px]:leading-[65px] min-[767px]:leading-[92px] text-white font-heading">
