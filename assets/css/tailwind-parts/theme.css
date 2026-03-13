@@ -1,0 +1,54 @@
+/* =========================================================
+   THEME CONFIGURATION
+   Design tokens, colors, and typography variables.
+   ========================================================= */
+
+@theme {
+  /* Brand Colors */
+  --color-accent: #fd4338;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Neutral Scale */
+  --color-gray-50: #f9fafb;
+  --color-gray-300: #d1d5dc;
+  --color-neutral-50: oklch(98.5% 0 0);
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+
+  /* Typography Settings */
+  --font-heading: "poppins";
+  --font-body: "Forma DJR Micro";
+
+  /* Legacy / Compatibility Variables */
+  --color-colorsgray-200: var(--colorsgray-200);
+  --color-primary-redhigh: var(--primary-redhigh);
+  --color-red500-main: var(--red500-main);
+}
+
+/* =========================================================
+   CUSTOM FONTS (@font-face)
+   External font files registration.
+   ========================================================= */
+
+@font-face {
+  font-family: "Forma DJR Micro";
+  src: url("../../fonts/forma-djr/FormaDJRMicro-Regular-Testing.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Forma DJR Micro";
+  src: url("../../fonts/forma-djr/FormaDJRDeck-Bold-Testing.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

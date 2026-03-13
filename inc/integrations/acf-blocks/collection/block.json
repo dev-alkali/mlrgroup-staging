@@ -1,0 +1,14 @@
+{
+    "name": "acf/collection",
+    "title": "Collection",
+    "description": "Collection Section",
+    "style": ["file:./collection.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["collection", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "collection.php"
+    },
+    "script": "collectionJS"
+}

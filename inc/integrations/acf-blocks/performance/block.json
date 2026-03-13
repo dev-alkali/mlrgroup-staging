@@ -1,0 +1,13 @@
+{
+    "name": "acf/performance",
+    "title": "Performance",
+    "description": "Performance Section",
+    "style": ["file:./performance.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["performance", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "performance.php"
+    }
+}

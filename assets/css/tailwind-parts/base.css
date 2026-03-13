@@ -1,0 +1,81 @@
+/* =========================================================
+   BASE STYLES
+   Global resets, typography defaults, and element overrides.
+   ========================================================= */
+
+@layer base {
+  /* Generic Resets */
+  * {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+  }
+
+  html {
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
+  }
+
+  /* Body Defaults */
+  body {
+    height: 100%;
+    margin: 0;
+    background: var(--white);
+    color: var(--neutral-800);
+    font-family: var(--font-body);
+  }
+
+  /* Helper to prevent scroll when menu is active */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  /* Accessibility & Focus */
+  button:focus-visible {
+    outline: 2px solid #4a90e2 !important;
+    outline: -webkit-focus-ring-color auto 5px !important;
+  }
+
+  /* Form Elements */
+  input,
+  select {
+    outline: none;
+    font-family: var(--font-body);
+  }
+
+  input::placeholder {
+    color: var(--neutral-400);
+  }
+
+  input:focus,
+  select:focus {
+    outline: none;
+  }
+
+  /* =========================================================
+     CUSTOM SCROLLBAR
+     Webkit-based scrollbar styling.
+     ========================================================= */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--neutral-50);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--neutral-400);
+    border-radius: 999px;
+    border: 2px solid var(--neutral-50);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--neutral-500);
+  }
+}

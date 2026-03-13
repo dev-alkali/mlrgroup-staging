@@ -1,0 +1,14 @@
+{
+    "name": "acf/cta",
+    "title": "CTA",
+    "description": "CTA Section",
+    "style": ["file:./cta.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["cta", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "cta.php"
+    },
+    "script": "ctaJS"
+}

@@ -1,0 +1,14 @@
+{
+    "name": "acf/our-work-grid",
+    "title": "Our Work Grid",
+    "description": "Our Work Grid Section",
+    "style": ["file:./our-work-grid.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["work", "grid", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "our-work-grid.php"
+    },
+    "script": "our-work-gridJS"
+}

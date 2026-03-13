@@ -1,0 +1,14 @@
+/* =========================================================
+   KEYFRAMES & ANIMATIONS
+   Defined animations for marquee, transitions, and loading.
+   ========================================================= */
+
+/* --- MARQUEE & SCROLLING --- */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

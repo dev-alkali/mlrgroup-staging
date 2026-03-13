@@ -1,0 +1,14 @@
+{
+    "name": "acf/inner-hero",
+    "title": "Inner Hero",
+    "description": "Inner Hero Section",
+    "style": ["file:./inner-hero.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["inner-hero", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "inner-hero.php"
+    },
+    "script": "inner-heroJS"
+}

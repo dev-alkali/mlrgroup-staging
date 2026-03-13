@@ -1,0 +1,14 @@
+{
+    "name": "acf/services",
+    "title": "Services",
+    "description": "Services Section",
+    "style": ["file:./services.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["services", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "services.php"
+    },
+    "script": "servicesJS"
+}
