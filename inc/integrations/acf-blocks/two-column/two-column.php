@@ -28,29 +28,31 @@ $description = get_sub_field('description');
           <figure><?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, ['class' => 'w-full h-auto']); ?></figure>
         </div>
         <div class="w-[50%]">
-          <?php if($title_row_1 || $title_row_2): ?>
-          <h2 class="text-[clamp(35px,6vw,70px)] leading-[clamp(46px,7vw,88px)] tracking-[-0.02em] text-[#262626] font-heading">            
-            <?php if($title_row_1): ?>
-                <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
+          <div class="w-[600px] pl-[60px]">
+            <?php if($title_row_1 || $title_row_2): ?>
+            <h2 class="text-[clamp(35px,6vw,70px)] leading-[clamp(46px,7vw,88px)] tracking-[-0.02em] text-[#262626] font-heading">            
+              <?php if($title_row_1): ?>
+                  <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
+              <?php endif; ?>
+              <?php if($title_row_2): ?>
+                  <span class="font-light"><?= wp_kses_post($title_row_2) ?></span>
+              <?php endif; ?>
+            </h2>
             <?php endif; ?>
-            <?php if($title_row_2): ?>
-                <span class="font-light"><?= wp_kses_post($title_row_2) ?></span>
+            <?php if($description): ?>
+              <div class="w-full text-[clamp(16px,3vw,20px)] leading-[28px] text-[#525252] font-body"><?= wp_kses_post($description) ?></div>
             <?php endif; ?>
-          </h2>
-          <?php endif; ?>
-          <?php if($description): ?>
-            <div class="w-full text-[clamp(16px,3vw,20px)] leading-[28px] text-[#525252] font-body"><?= wp_kses_post($description) ?></div>
-          <?php endif; ?>
 
-          <?php 
-            $link = get_sub_field('button');
-            if( $link ): 
-                $link_url = $link['url'];
-                $link_title = $link['title'];
-                $link_target = $link['target'] ? $link['target'] : '_self';
-                ?>
-                <a class="btn-primary" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-            <?php endif; ?>
+            <?php 
+              $link = get_sub_field('button');
+              if( $link ): 
+                  $link_url = $link['url'];
+                  $link_title = $link['title'];
+                  $link_target = $link['target'] ? $link['target'] : '_self';
+                  ?>
+                  <a class="btn-primary" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+              <?php endif; ?>
+          </div>
         </div>
 
       </div>
