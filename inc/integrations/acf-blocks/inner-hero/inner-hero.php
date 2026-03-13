@@ -25,7 +25,7 @@ $title_row_2 = get_sub_field('title_row_2');
 $description = get_sub_field('description'); ?>
 
     <section id="<?php echo esc_attr($id); ?>"
-      class="<?php echo esc_attr($className); ?> flex w-full h-[700px] min-[600px]:h-[855px] "
+      class="<?php echo esc_attr($className); ?> flex w-full min-h-100vh"
       style="
     background-image: url('<?php echo esc_url(get_sub_field('bg_image')); ?>');
     background-position: 50% 38%;
