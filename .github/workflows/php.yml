@@ -1,0 +1,54 @@
+steps:
+  - name: Checkout repository
+    uses: actions/checkout@v3
+
+  - name: Setup Node.js
+    uses: actions/setup-node@v3
+    with:
+      node-version: 18
+
+  - name: Cache npm dependencies
+    uses: actions/cache@v3
+    with:
+      path: ~/.npm
+      key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+      restore-keys: |
+        ${{ runner.os }}-node-
+
+  - name: Install Dependencies
+    run: npm ci
+
+  - name: Install Tailwind CSS
+    run: npm install -D tailwindcss
+
+  - name: Compile Tailwind CSS
+    run: npx tailwindcss -i ./assets/src/input.css -o ./assets/dist/output.css --minify
+
+  - name: Install rsync
+    run: sudo apt-get update && sudo apt-get install -y rsync
+
+  - name: Upload Theme via SFTP
+    env:
+      SFTP_USER: ${{ secrets.SFTP_USER }}
+      SFTP_HOST: ${{ secrets.SFTP_HOST }}
+      SFTP_PORT: ${{ secrets.SFTP_PORT || 22 }}
+      SFTP_PRIVATE_KEY: ${{ secrets.SFTP_PRIVATE_KEY }}
+    run: |
+      set -e
+      echo "Uploading compiled Tailwind CSS..."
+
+      mkdir -p ~/.ssh
+      echo "$SFTP_PRIVATE_KEY" > ~/.ssh/id_rsa
+      chmod 600 ~/.ssh/id_rsa
+
+      ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -p $SFTP_PORT $SFTP_USER@$SFTP_HOST "echo 'SSH connection successful'"
+
+      rsync -avz --delete \
+      --exclude=node_modules \
+      --exclude=.git \
+      --exclude=.github \
+      -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -p $SFTP_PORT" \
+      ./ \
+      $SFTP_USER@$SFTP_HOST:/home/755960.cloudwaysapps.com/zyhttbsgaz/public_html/wp-content/themes/Mlrgroup/
+
+      echo "Upload completed successfully!"
