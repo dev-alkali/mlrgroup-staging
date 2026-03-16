@@ -7,3 +7,5 @@
 
 .bg-black .serve-heading h2 span{color:var(--color-white) !important;}
 .bg-black .serve-content p{color:#E5E5E5;max-width:665px !important;}
+
+.containeer{max-width: 1960px;padding:0px 20px;}
