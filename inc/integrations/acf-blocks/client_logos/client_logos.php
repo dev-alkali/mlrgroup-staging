@@ -1,21 +1,21 @@
 <?php
 
 /**
- * Two Column Block Template.
+ * Client Logos Block Template.
  */
 
-$id = 'inner-hero-' . $block['id'];
+$id = 'client_logos-' . $block['id'];
 if (!empty($block['anchor'])) {
   $id = $block['anchor'];
 }
 
-$className = 'inner-hero';
+$className = 'client_logos';
 if (!empty($block['className'])) {
   $className .= ' ' . $block['className'];
 }
 
 ?>
-<?php if (have_rows('two_column')) :  while (have_rows('two_column')) : the_row();
+<?php if (have_rows('client_logos')) :  while (have_rows('client_logos')) : the_row();
 
 $title_row_1 = get_sub_field('title_row_1');
 $title_row_2 = get_sub_field('title_row_2');
