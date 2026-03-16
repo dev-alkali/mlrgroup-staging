@@ -1,0 +1,14 @@
+{
+    "name": "acf/award-winning-logo",
+    "title": "Award Winning Logo",
+    "description": "Award Winning Logo Section",
+    "style": ["file:./award-winning-logo.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["award-winning-logo", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "award-winning-logo.php"
+    },
+    "script": "award-winning-logoJS"
+}
