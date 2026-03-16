@@ -81,9 +81,7 @@ if ($card_overlay === 'Grayscale') {
                     <div class="bg-image absolute inset-0"
                       style="background-image: url('<?php echo esc_url(get_sub_field('image')); ?>'); background-position: center center; background-size: cover; background-repeat: no-repeat;">
                     </div>
-                    <div class="bg-overlay absolute inset-0"
-                      style="background-color: <?php echo esc_attr(get_sub_field('overlay_color')); ?>;">
-                    </div>                          
+                    <div class="bg-overlay absolute inset-0" style="background-color: <?php echo esc_attr(get_sub_field('overlay_color')); ?>;opacity: 0;"></div>                          
                     <a href="<?php echo esc_url(get_sub_field('link_path')); ?>" class="gradient-box absolute flex flex-col flex-1 justify-between px-5 min-[600px]:px-6 py-7 w-full h-full">                      
                       <h3><?php echo $i; ?></h3>                                                
                       <div class="flex flex-col gap-3 min-[600px]:gap-4 content z-10">
