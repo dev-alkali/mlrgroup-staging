@@ -20,7 +20,7 @@ if (!empty($block['className'])) {
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex flex-col w-full items-center p-0 min-[890px]:pt-5 min-[890px]:pb-0  min-[890px]:px-5 bg-white">
       <?php if (have_rows('brands')) :  while (have_rows('brands')) : the_row(); ?>
           <section class=" flex items-center gap-2 pl-4 pr-4 min-[890px]:pl-[58px] min-[890px]:pr-0 py-10  w-full max-w-[1920px] bg-white">
-            <div class="">
+            <div class="relative w-full ">
               <div class="flex items-start min-[600px]:justify-start justify-center gap-2 min-[600px]:gap-3 shrink-0">
                 <div class="relative mt-[1.5px] min-[600px]:mt-[3px]"><img class="w-4 min-[600px]:w-5 " src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-blue-brands.svg" alt="arrow"></div>
                 <p class="text-[16px] font-medium min-[600px]:text-2xl min-[600px]:tracking-[-2%] leading-6 min-[600px]:leading-8 text-black font-heading"><?= wp_kses_post(get_sub_field('title')) ?></p>
