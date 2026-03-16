@@ -1,0 +1,14 @@
+{
+    "name": "acf/map",
+    "title": "Map",
+    "description": "Map Section",
+    "style": ["file:./map.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["map", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "map.php"
+    },
+    "script": "mapJS"
+}
