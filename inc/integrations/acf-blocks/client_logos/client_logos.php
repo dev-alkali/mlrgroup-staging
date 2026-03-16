@@ -15,3 +15,11 @@ if (!empty($block['className'])) {
 }
 
 ?>
+
+
+<?php if (have_rows('client_logos')) :  while (have_rows('client_logos')) : the_row(); 
+?>
+
+
+<?php endwhile;
+endif; ?>
