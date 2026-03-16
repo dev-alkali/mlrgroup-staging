@@ -1,4 +1,3 @@
-```php
 <?php
 
 /**
@@ -17,3 +16,10 @@ if (!empty($block['className'])) {
   $className .= ' ' . $block['className'];
 }
 ?>
+
+
+<?php if (have_rows('trusted_brand')) :  while (have_rows('trusted_brand')) : the_row(); ?>
+
+
+<?php endwhile;
+endif; ?>
