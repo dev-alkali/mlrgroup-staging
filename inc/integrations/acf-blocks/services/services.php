@@ -21,9 +21,9 @@ $section_background = get_sub_field('section_background');
 
 $bg_class = '';
 if ($section_background === 'Black') {
-    $bg_class = 'black-bg bg-black';
+    $bg_class = 'bg-black';
 } elseif ($section_background === 'White') {
-    $bg_class = 'white-bg bg-white';
+    $bg_class = 'bg-white';
 }
 ?>
 
