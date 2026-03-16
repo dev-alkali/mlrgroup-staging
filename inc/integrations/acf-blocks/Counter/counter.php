@@ -1,15 +1,15 @@
 <?php
 
 /**
- * Performance Block Template.
+ * Counter Block Template.
  */
 
-$id = 'performance-' . $block['id'];
+$id = 'counter-' . $block['id'];
 if (!empty($block['anchor'])) {
     $id = $block['anchor'];
 }
 
-$className = 'performance';
+$className = 'counter';
 if (!empty($block['className'])) {
     $className .= ' ' . $block['className'];
 }

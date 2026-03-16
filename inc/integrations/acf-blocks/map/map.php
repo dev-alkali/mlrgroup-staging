@@ -4,18 +4,18 @@
  * Map Block Template.
  */
 
-$id = 'services-' . $block['id'];
+$id = 'map-' . $block['id'];
 if (!empty($block['anchor'])) {
   $id = $block['anchor'];
 }
 
-$className = 'services';
+$className = 'map';
 if (!empty($block['className'])) {
   $className .= ' ' . $block['className'];
 }
 ?>
 
-<?php if (have_rows('services')) :  while (have_rows('services')) : the_row(); ?>
+<?php if (have_rows('map')) :  while (have_rows('map')) : the_row(); ?>
 <?php 
 $section_background = get_sub_field('section_background');
 
