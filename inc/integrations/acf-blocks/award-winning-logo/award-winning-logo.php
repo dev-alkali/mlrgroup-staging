@@ -16,6 +16,8 @@ if (!empty($block['className'])) {
   $className .= ' ' . $block['className'];
 }
 ?>
+
+Testing
 <?php if (have_rows('award-winning-logo')) : while (have_rows('award-winning-logo')) : the_row(); ?>
 
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex flex-col w-full items-center p-0 min-[890px]:pt-5 min-[890px]:pb-0 min-[890px]:px-5 bg-white h-screen">
