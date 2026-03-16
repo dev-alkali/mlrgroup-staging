@@ -68,13 +68,6 @@ if ($card_overlay === 'Grayscale') {
                   <?= wp_kses_post(get_sub_field('subtitle')) ?>
                 </p>
                 <?php endif; ?>
-                <?php 
-                  $btn_path = get_sub_field('btn_path');
-                  $btn_label = get_sub_field('btn_label');
-                ?>
-                <?php if ($btn_label) : ?>
-                  <a href="<?= esc_url($btn_path) ?>" class="btn-primary max-[767px]:hidden"><?= wp_kses_post($btn_label) ?></a>
-                <?php endif; ?>
               </div>
 
             </div>
@@ -114,12 +107,17 @@ if ($card_overlay === 'Grayscale') {
         endif; ?>
         <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
             <div class="min-[767px]:hidden max-w-[358px] min-[600px]:max-w-[334px] w-full flex justify-center">
-
-              <a href="<?= esc_url(get_sub_field('btn_path')) ?>" class="btn-primary "><?= wp_kses_post(get_sub_field('btn_label')) ?></a>
+              <?php 
+                $link = get_sub_field('button');
+                if( $link ): 
+                    $link_url = $link['url'];
+                    $link_title = $link['title'];
+                    $link_target = $link['target'] ? $link['target'] : '_self';
+                    ?>
+                    <a class="btn-primary" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                <?php endif; ?>
             </div>
-
-        <?php endwhile;
-        endif; ?>
+        <?php endwhile; endif; ?>
           </div>
     </section>
 <?php endwhile;
