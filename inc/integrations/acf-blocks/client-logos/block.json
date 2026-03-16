@@ -1,0 +1,14 @@
+{
+    "name": "acf/client-logos",
+    "title": "Client Logos",
+    "description": "Client Logos Section",
+    "style": ["file:./client-logos.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["client-logos", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "client-logos.php"
+    },
+    "script": "client-logosJS"
+}
