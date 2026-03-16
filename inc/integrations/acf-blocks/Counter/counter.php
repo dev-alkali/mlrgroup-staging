@@ -14,7 +14,7 @@ if (!empty($block['className'])) {
     $className .= ' ' . $block['className'];
 }
 ?>
-<?php if (have_rows('performance')) :  while (have_rows('performance')) : the_row(); ?>
+<?php if (have_rows('counter')) :  while (have_rows('counter')) : the_row(); ?>
 
         <section id="<?php echo esc_attr($id); ?>" class="performance <?php echo esc_attr($className); ?> flex flex-col w-full items-center  gap-[60px] pt-10 pb-[76px] min-[600px]:pb-[180px] px-4 min-[600px]:px-10 bg-black overflow-hidden">
 
