@@ -19,11 +19,11 @@ if (!empty($block['className'])) {
 <section>
   <div class="container">
     <div class="map__content">
-      <h2 class="map__title"><?php echo get_sub_field('map_title'); ?></h2>
-      <div class="map__address"><?php echo get_sub_field('map_address'); ?></div>
+      <h2 class="map__title"><?php echo get_sub_field('title_row_1'); ?></h2>
+      <div class="map__address"><?php echo get_sub_field('title_row_2'); ?></div>
     </div>
     <div class="map__iframe">
-      <?php echo get_sub_field('map_iframe'); ?>
+      <?php echo get_sub_field('map_code'); ?>
     </div>
   </div>
 </section>
