@@ -1,0 +1,14 @@
+{
+    "name": "acf/trusted-brand",
+    "title": "Trusted Brand",
+    "description": "Trusted Brand Section",
+    "style": ["file:./trusted-brand.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["trusted", "brand", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "trusted-brand.php"
+    },
+    "script": "trustedBrandJS"
+}
