@@ -5,3 +5,8 @@
 .gradient_card .bg-image{filter:unset !important;}
 .gradient_card .source-card .gradient-box:before{content:'';background: linear-gradient(359.41deg, rgba(94, 11, 6, 0.8) 0.51%, rgba(0, 0, 0, 0) 119.58%);}
 
+
+
+.gradient_card .serve-heading{}
+.black-bg .serve-heading h2{color:var(--color-white);}
+.black-bg .serve-content p{color:#E5E5E5;}
