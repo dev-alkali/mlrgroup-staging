@@ -19,7 +19,7 @@ if (!empty($block['className'])) {
 
 <?php if (have_rows('client_logos')) :  while (have_rows('client_logos')) : the_row(); 
 ?>
-
+  <?php echo get_sub_field('title_row_1')?>
 
 <?php endwhile;
 endif; ?>

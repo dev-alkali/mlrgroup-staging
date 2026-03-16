@@ -2,13 +2,11 @@
     "name": "acf/client_logos",
     "title": "Client Logos",
     "description": "Client Logos Section",
-    //"style": ["file:./client_logos.css"],
     "category": "formatting",
     "icon": "admin-comments",
     "keywords": ["client_logos", "section"],
     "acf": {
       "mode": "edit",
       "renderTemplate": "client_logos.php"
-    },
-    //"script": "client_logosJS"
+    }
 }
