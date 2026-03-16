@@ -40,7 +40,7 @@ if ($card_overlay === 'Grayscale') {
 ?>
 
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> flex w-full justify-center px-4 min-[600px]:px-10 py-[60px] min-[600px]:py-[120px]">      
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> <?php echo esc_attr($overlay_class); ?> flex w-full justify-center px-4 min-[600px]:px-10 py-[60px] min-[600px]:py-[120px]">      
       <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
 
           <div class="flex flex-col  items-center gap-8 min-[600px]:gap-[60px] w-full max-w-[1920px]">
@@ -86,7 +86,7 @@ if ($card_overlay === 'Grayscale') {
             <div class="flex items-center justify-center max-[1440px]:flex-wrap  gap-4 min-[600px]:gap-2 self-stretch w-full">
               <?php if (have_rows('services')) :  while (have_rows('services')) : the_row(); ?>
                   <?php if (have_rows('service')) :  while (have_rows('service')) : the_row(); ?>
-                      <article class="source-card max-[600px]:h-[380px] max-[1440px]:h-[420px]    w-full min-[1440px]:aspect-[334/420] max-[1440px]:max-w-[49%] relative overflow-hidden <?php echo esc_attr($overlay_class); ?>">
+                      <article class="source-card max-[600px]:h-[380px] max-[1440px]:h-[420px]    w-full min-[1440px]:aspect-[334/420] max-[1440px]:max-w-[49%] relative overflow-hidden">
 
                         <div
                           class="bg-image absolute inset-0"
