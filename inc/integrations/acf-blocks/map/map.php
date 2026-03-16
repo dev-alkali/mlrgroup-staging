@@ -22,7 +22,7 @@ $map_code = get_sub_field('map_code');
 
 ?>
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> <?php echo esc_attr($overlay_class); ?> px-4 min-[600px]:px-10 py-[60px] min-[600px]:py-[120px]">      
-  <div class="container">
+  <div class="wrapper">
       <?php if ($title1 || $title2) : ?>
         <div class="serve-heading">
           <h2 class="text-[44px] flex flex-col min-[600px]:text-[54px] min-[767px]:text-[68px] tracking-[-2%] leading-[56px] min-[600px]:leading-[64px] min-[767px]:leading-[78px] font-heading">
