@@ -44,7 +44,7 @@ if ($card_overlay === 'Grayscale') {
       <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
 
           <div class="flex flex-col  items-center gap-8 min-[600px]:gap-[60px] w-full max-w-[1920px]">
-            <div class="flex flex-col min-[1023px]:flex-row min-[1023px]:items-center  gap-5 self-stretch w-full">
+            <div class="flex flex-col min-[1023px]:flex-row min-[1023px]:items-center  gap-[50px] self-stretch w-full">
               <?php if (have_rows('title_group')) :  while (have_rows('title_group')) : the_row(); 
                     $title1 = get_sub_field('title_row_1');
                     $title2 = get_sub_field('title_row_2');
@@ -63,7 +63,6 @@ if ($card_overlay === 'Grayscale') {
               endif; ?>
 
               <div class="flex flex-col items-start gap-8 flex-1 serve-content">
-
                 <?php if (get_sub_field('subtitle')) : ?>
                 <p class="max-w-[526px] text-xl leading-7 text-neutral-600 font-body">
                   <?= wp_kses_post(get_sub_field('subtitle')) ?>
