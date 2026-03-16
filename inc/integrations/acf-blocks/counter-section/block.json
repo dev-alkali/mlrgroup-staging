@@ -1,0 +1,14 @@
+{
+    "name": "acf/counter-section",
+    "title": "Counter Section",
+    "description": "Counter Section",
+    "style": ["file:./counter-section.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["counter", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "counter-section.php"
+    },
+    "script": "counter-sectionJS"
+}
