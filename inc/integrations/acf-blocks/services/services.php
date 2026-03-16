@@ -28,7 +28,7 @@ if (!empty($block['className'])) {
                     $title2 = get_sub_field('title_row_2');
               ?>
                  <?php if ($title1 || $title2) : ?>
-                  <div class="heading">
+                  <div class="serve-heading flex-1">
                     <h2 class="max-w-[426px] w-full text-[44px] flex flex-col min-[600px]:text-[54px] min-[767px]:text-[68px] tracking-[-2%] leading-[56px] min-[600px]:leading-[64px] min-[767px]:leading-[78px] font-heading">
                       <span class="font-bold text-neutral-800"><?= wp_kses_post($title1) ?></span>
                       <span class="font-light text-neutral-500"><?= wp_kses_post($title2) ?></span>
@@ -40,7 +40,7 @@ if (!empty($block['className'])) {
               <?php endwhile;
               endif; ?>
 
-              <div class="flex flex-col items-start gap-8 flex-1">
+              <div class="flex flex-col items-start gap-8 flex-1 serve-content">
 
                 <?php if (get_sub_field('subtitle')) : ?>
                 <p class="max-w-[526px] text-xl leading-7 text-neutral-600 font-body">
