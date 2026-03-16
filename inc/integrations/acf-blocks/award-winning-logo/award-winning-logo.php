@@ -19,7 +19,7 @@ if (!empty($block['className'])) {
 
 <?php if (have_rows('award_winning_logo')) : while (have_rows('award_winning_logo')) : the_row(); ?>
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex flex-col w-full items-center p-0 min-[890px]:pt-5">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex flex-col w-full items-center p-0 min-[890px]:pt-5 pl-[20px] pr-[20px]">
   <div class="flex items-center gap-2 py-10 w-full max-w-[1920px]">
     <div class="flex flex-col min-[890px]:flex-row items-center gap-4 min-[600px]:gap-[40px] min-[890px]:gap-[105px] relative w-full">
       <div class="flex items-start min-[600px]:justify-start justify-center gap-2 min-[600px]:gap-3 shrink-0">
