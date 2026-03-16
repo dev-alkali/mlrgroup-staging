@@ -16,9 +16,18 @@ if (!empty($block['className'])) {
 ?>
 
 <?php if (have_rows('services')) :  while (have_rows('services')) : the_row(); ?>
+<?php 
+$section_background = get_sub_field('section_background');
 
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex  w-full justify-center px-4 min-[600px]:px-10 py-[60px] min-[600px]:py-[120px] bg-white">
-      
+$bg_class = '';
+if ($section_background === 'Black') {
+    $bg_class = 'black-bg bg-black';
+} elseif ($section_background === 'White') {
+    $bg_class = 'white-bg bg-white';
+}
+?>
+
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> flex w-full justify-center px-4 min-[600px]:px-10 py-[60px] min-[600px]:py-[120px]">      
       <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
 
           <div class="flex flex-col  items-center gap-8 min-[600px]:gap-[60px] w-full max-w-[1920px]">
