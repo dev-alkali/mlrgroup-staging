@@ -8,5 +8,5 @@
 
 
 .gradient_card .serve-heading{}
-.black-bg .serve-heading h2{color:var(--color-white);}
+.black-bg .serve-heading h2{color:var(--color-white) !important;}
 .black-bg .serve-content p{color:#E5E5E5;}
