@@ -1,12 +1,9 @@
-.gradient_card{}
-.gradient_card .serve-heading{}
-.gradient_card .serve-heading h2{width: 100%;max-width: 100%;}
-.gradient_card .serve-content{}
-.gradient_card .bg-image{filter:unset !important;}
-.gradient_card .source-card .gradient-box:before{content:'';background: linear-gradient(359.41deg, rgba(94, 11, 6, 0.8) 0.51%, rgba(0, 0, 0, 0) 119.58%);}
+.overlay-pink-gradient{}
+.overlay-pink-gradient .serve-heading{}
+.overlay-pink-gradient .serve-heading h2{width: 100%;max-width: 100%;}
+.overlay-pink-gradient .serve-content{}
+.overlay-pink-gradient .bg-image{filter:unset !important;}
+.overlay-pink-gradient .source-card .gradient-box:before{content:'';background: linear-gradient(359.41deg, rgba(94, 11, 6, 0.8) 0.51%, rgba(0, 0, 0, 0) 119.58%);}
 
-
-
-.gradient_card .serve-heading{}
 .black-bg .serve-heading h2{color:var(--color-white) !important;}
 .black-bg .serve-content p{color:#E5E5E5;}
