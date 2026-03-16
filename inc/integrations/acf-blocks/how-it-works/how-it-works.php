@@ -15,7 +15,7 @@ if (!empty($block['className'])) {
 }
 ?>
 
-<?php if (have_rows('services')) :  while (have_rows('services')) : the_row(); ?>
+<?php if (have_rows('how_it_works')) :  while (have_rows('how_it_works')) : the_row(); ?>
 <?php 
 $section_background = get_sub_field('section_background');
 
@@ -83,21 +83,13 @@ if ($card_overlay === 'Grayscale') {
 
         <?php if (have_rows('main_content')) :  while (have_rows('main_content')) : the_row(); ?>
             <div class="flex items-center justify-center max-[1440px]:flex-wrap  gap-4 min-[600px]:gap-2 self-stretch w-full">
-              <?php if (have_rows('services')) :  while (have_rows('services')) : the_row(); ?>
-                  <?php if (have_rows('service')) :  while (have_rows('service')) : the_row(); ?>
+              <?php if (have_rows('works')) :  while (have_rows('works')) : the_row(); ?>
+                  <?php if (have_rows('work')) :  while (have_rows('work')) : the_row(); ?>
                       <article class="source-card max-[600px]:h-[380px] max-[1440px]:h-[420px]    w-full min-[1440px]:aspect-[334/420] max-[1440px]:max-w-[49%] relative overflow-hidden">
 
-                        <div
-                          class="bg-image absolute inset-0"
-                          style="
-    background-image: url('<?php echo esc_url(get_sub_field('image')); ?>');
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    filter: grayscale(100%);
-  ">
-                        </div>
-           
+                        <div class="bg-image absolute inset-0" style="background-image: url('<?php echo esc_url(get_sub_field('image')); ?>');background-position: center center;background-size: cover;background-repeat: no-repeat;filter: grayscale(100%);"></div>
+                        <div class="bg-overlay absolute inset-0" style="background-color: url('<?php echo esc_url(get_sub_field('overlay_color')); ?>');"></div>
+                          
                         <a href="<?= esc_url(get_sub_field('link_path')) ?>" class="gradient-box absolute flex flex-col flex-1 justify-between px-5 min-[600px]:px-6 py-7 w-full h-full">
 
                           <img class="arrow absolute w-10 z-10" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="" />
