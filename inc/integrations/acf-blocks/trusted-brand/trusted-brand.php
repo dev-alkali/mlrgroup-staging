@@ -23,7 +23,7 @@ if (!empty($block['className'])) {
             <div class="relative w-full ">
               <div class="flex items-start min-[600px]:justify-start justify-center gap-2 min-[600px]:gap-3 shrink-0 mb-[50px]">
                 <div class="relative mt-[1.5px] min-[600px]:mt-[3px]"><img class="w-4 min-[600px]:w-5 " src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-blue-brands.svg" alt="arrow"></div>
-                <p class="text-[16px] font-medium min-[600px]:text-2xl min-[600px]:tracking-[-2%] leading-6 min-[600px]:leading-8 text-black font-heading"><?= wp_kses_post(get_sub_field('title')) ?></p>
+                <p class="text-[16px] font-medium min-[768px]:text-[32px] min-[600px]:tracking-[-2%] leading-6 min-[600px]:leading-8 text-black font-heading"><?= wp_kses_post(get_sub_field('title')) ?></p>
               </div>
               <!-- MARQUEE -->
               <div class="flex-1  overflow-hidden relative h-[91.15px] md:h-auto">
