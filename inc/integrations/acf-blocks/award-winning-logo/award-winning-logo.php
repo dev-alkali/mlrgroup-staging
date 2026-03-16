@@ -32,15 +32,12 @@ if (!empty($block['className'])) {
       </div>
 
       <!-- MARQUEE -->
-      <div class="flex-1 overflow-hidden relative h-[91.15px] md:h-auto">
-        <div class="absolute -top-4 left-[-7%] w-[133px] max-[890px]:hidden h-[139px] bg-white z-20 blur-[16px]"></div>
-        <div class="absolute -top-4 right-[-12%] w-[133px] h-[139px] max-[890px]:hidden bg-white z-20 blur-[16px]"></div>
-
+      <div class="flex-1 overflow-hidden relative h-[131px] md:h-auto">
         <div class="marquee-wrapper overflow-hidden w-full">
           <div class="marquee-track relative">
             <div class="marquee-group">
               <?php if (have_rows('images_brands')) : while (have_rows('images_brands')) : the_row(); ?>
-                <img class="h-[91.15px] gray-icon w-auto max-w-none block"
+                <img class="h-[131px] w-auto max-w-none block"
                      src="<?= esc_url(get_sub_field('image')) ?>"
                      alt="Brand logos" />
               <?php endwhile; endif; ?>
@@ -48,7 +45,7 @@ if (!empty($block['className'])) {
 
             <div class="marquee-group" aria-hidden="true">
               <?php if (have_rows('images_brands')) : while (have_rows('images_brands')) : the_row(); ?>
-                <img class="h-[91.15px] gray-icon w-auto max-w-none block"
+                <img class="h-[131px]  w-auto max-w-none block"
                      src="<?= esc_url(get_sub_field('image')) ?>"
                      alt="Brand logos" />
               <?php endwhile; endif; ?>
