@@ -77,7 +77,7 @@ if ($card_overlay === 'Grayscale') {
         <?php if (have_rows('main_content')) :  while (have_rows('main_content')) : the_row(); ?>
             <div class="flex items-center justify-center max-[1440px]:flex-wrap  gap-4 min-[600px]:gap-2 self-stretch w-full">
               <?php if (have_rows('works')) :  while (have_rows('works')) : the_row(); ?>
-                  <?php if (have_rows('work')) :  $i=1; while (have_rows('work')) : the_row(); ?>
+                  <?php if (have_rows('work')) :  $i==1; while (have_rows('work')) : the_row(); ?>
                       <article class="source-card max-[600px]:h-[380px] max-[1440px]:h-[420px]    w-full min-[1440px]:aspect-[334/420] max-[1440px]:max-w-[49%] relative overflow-hidden">
 
                         <div class="bg-image absolute inset-0" style="background-image: url('<?php echo esc_url(get_sub_field('image')); ?>');background-position: center center;background-size: cover;background-repeat: no-repeat;"></div>
