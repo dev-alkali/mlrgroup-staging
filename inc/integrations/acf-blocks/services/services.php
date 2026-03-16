@@ -50,7 +50,7 @@ if ($card_overlay === 'Grayscale') {
                     $title2 = get_sub_field('title_row_2');
               ?>
                  <?php if ($title1 || $title2) : ?>
-                  <div class="serve-heading flex-1">
+                  <div class="serve-heading">
                     <h2 class="max-w-[426px] w-full text-[44px] flex flex-col min-[600px]:text-[54px] min-[767px]:text-[68px] tracking-[-2%] leading-[56px] min-[600px]:leading-[64px] min-[767px]:leading-[78px] font-heading">
                       <span class="font-bold text-neutral-800"><?= wp_kses_post($title1) ?></span>
                       <span class="font-light text-neutral-500"><?= wp_kses_post($title2) ?></span>
