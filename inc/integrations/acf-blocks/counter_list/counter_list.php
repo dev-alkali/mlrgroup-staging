@@ -1,22 +1,22 @@
 <?php
 
 /**
- * Performance Block Template.
+ * Counter List Block Template.
  */
 
-$id = 'performance-' . $block['id'];
+$id = 'counter_list-' . $block['id'];
 if (!empty($block['anchor'])) {
     $id = $block['anchor'];
 }
 
-$className = 'performance';
+$className = 'counter_list';
 if (!empty($block['className'])) {
     $className .= ' ' . $block['className'];
 }
 ?>
-<?php if (have_rows('performance')) :  while (have_rows('performance')) : the_row(); ?>
+<?php if (have_rows('counter_list')) :  while (have_rows('counter_list')) : the_row(); ?>
 
-        <section id="<?php echo esc_attr($id); ?>" class="performance <?php echo esc_attr($className); ?> flex flex-col w-full items-center  gap-[60px] pt-10 pb-[76px] min-[600px]:pb-[180px] px-4 min-[600px]:px-10 bg-black overflow-hidden">
+        <section id="<?php echo esc_attr($id); ?>" class="counter_list <?php echo esc_attr($className); ?> flex flex-col w-full items-center  gap-[60px] pt-10 pb-[76px] min-[600px]:pb-[180px] px-4 min-[600px]:px-10 bg-black overflow-hidden">
 
             <div class="flex flex-col items-center gap-5 w-full max-w-[1920px] mb-[-76px] min-[600px]:mb-[-180px]">
                 <div class="flex max-w-[1920px] justify-between flex-col min-[800px]:flex-row w-full min-[800px]:items-center gap-8 min-[600px]:gap-[50px] min-[890px]:gap-[100px] bg-black">
