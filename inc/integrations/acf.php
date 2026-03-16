@@ -18,6 +18,8 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/acf-blocks/counter-section');
   register_block_type(__DIR__ . '/acf-blocks/map');
   register_block_type(__DIR__ . '/acf-blocks/award-winning-logo');
+  register_block_type(__DIR__ . '/acf-blocks/how-it-works');
+  
   
   
 }
