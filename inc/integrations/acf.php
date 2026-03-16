@@ -15,6 +15,8 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/acf-blocks/trusted-brand');
   register_block_type(__DIR__ . '/acf-blocks/map');
   register_block_type(__DIR__ . '/acf-blocks/counter');
+  register_block_type(__DIR__ . '/acf-blocks/client_logos');
+  
   
   
 }
