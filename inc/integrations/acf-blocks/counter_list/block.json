@@ -1,0 +1,13 @@
+{
+    "name": "acf/counter_list",
+    "title": "Counter List",
+    "description": "Counter List Section",
+    "style": ["file:./counter_list.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["counter_list", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "counter_list.php"
+    }
+}
