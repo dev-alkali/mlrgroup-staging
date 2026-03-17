@@ -43,14 +43,14 @@ if ($card_overlay === 'Grayscale') {
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> <?php echo esc_attr($overlay_class); ?> flex w-full justify-center px-4 min-[600px]:px-10 py-[60px] min-[600px]:py-[120px]">      
       <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
 
-          <div class="flex flex-col  items-center gap-8 min-[600px]:gap-[60px] w-full max-w-[1920px]">
+          <div class="flex flex-col items-center gap-8 min-[600px]:gap-[60px] w-full max-w-[1920px]">
             <div class="flex flex-col min-[1023px]:flex-row min-[1023px]:items-center  gap-[50px] self-stretch w-full">
               <?php if (have_rows('title_group')) :  while (have_rows('title_group')) : the_row(); 
                     $title1 = get_sub_field('title_row_1');
                     $title2 = get_sub_field('title_row_2');
               ?>
                  <?php if ($title1 || $title2) : ?>
-                  <div class="serve-heading">
+                  <div class="serve-heading w-[33.33%]">
                     <h2 class="max-w-[426px] w-full text-[44px] flex flex-col min-[600px]:text-[54px] min-[767px]:text-[68px] tracking-[-2%] leading-[56px] min-[600px]:leading-[64px] min-[767px]:leading-[78px] font-heading">
                       <span class="font-bold text-neutral-800"><?= wp_kses_post($title1) ?></span>
                       <span class="font-light text-neutral-500"><?= wp_kses_post($title2) ?></span>
@@ -62,7 +62,7 @@ if ($card_overlay === 'Grayscale') {
               <?php endwhile;
               endif; ?>
 
-              <div class="flex flex-col items-start gap-8 flex-1 serve-content">
+              <div class="flex flex-col items-start gap-8 serve-content w-[66.66%]">
                 <?php if (get_sub_field('subtitle')) : ?>
                 <p class="max-w-[526px] text-xl leading-7 text-neutral-600 font-body">
                   <?= wp_kses_post(get_sub_field('subtitle')) ?>
