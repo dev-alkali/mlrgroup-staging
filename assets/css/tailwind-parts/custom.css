@@ -12,4 +12,5 @@
 
 .how-it-works-sec .source-card .bg-overlay{height:0px;transition: all 0.3s ease-in-out;opacity:0;}
 .how-it-works-sec .source-card:hover .bg-overlay{height:100%;opacity:1;}
-
+.how-it-works-sec .source-card:hover .content {transform: unset !important;}
+.source-card:hover .gradient-box:after{opacity:0 !important;}
