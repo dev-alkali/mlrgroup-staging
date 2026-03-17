@@ -44,13 +44,13 @@ if ($card_overlay === 'Grayscale') {
       <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
 
           <div class="flex flex-col items-center gap-8 min-[600px]:gap-[60px] w-full max-w-[1920px]">
-            <div class="flex flex-col md:flex-row gap-6 md:gap-12">
+            <div class="flex flex-col md:flex-row">
               <?php if (have_rows('title_group')) :  while (have_rows('title_group')) : the_row(); 
                     $title1 = get_sub_field('title_row_1');
                     $title2 = get_sub_field('title_row_2');
               ?>
                  <?php if ($title1 || $title2) : ?>
-                  <div class="how-heading md:flex-[1] w-full">
+                  <div class="how-heading md:flex-[1] w-full md:pr-[40px]">
                     <h2 class="max-w-[426px] w-full text-[44px] flex flex-col min-[600px]:text-[54px] min-[767px]:text-[68px] tracking-[-2%] leading-[56px] min-[600px]:leading-[64px] min-[767px]:leading-[78px] font-heading">
                       <span class="font-bold text-neutral-800"><?= wp_kses_post($title1) ?></span>
                       <span class="font-light text-neutral-500"><?= wp_kses_post($title2) ?></span>
