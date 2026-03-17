@@ -44,13 +44,13 @@ if ($card_overlay === 'Grayscale') {
       <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
 
           <div class="flex flex-col items-center gap-8 min-[600px]:gap-[60px] w-full max-w-[1920px]">
-            <div class="flex flex-col min-[1023px]:flex-row min-[1023px]:items-center  gap-[50px] self-stretch w-full">
+            <div class="flex flex-col md:flex-row gap-6 md:gap-12">
               <?php if (have_rows('title_group')) :  while (have_rows('title_group')) : the_row(); 
                     $title1 = get_sub_field('title_row_1');
                     $title2 = get_sub_field('title_row_2');
               ?>
                  <?php if ($title1 || $title2) : ?>
-                  <div class="serve-heading w-[33.33%]">
+                  <div class="how-heading md:flex-[1] w-full">
                     <h2 class="max-w-[426px] w-full text-[44px] flex flex-col min-[600px]:text-[54px] min-[767px]:text-[68px] tracking-[-2%] leading-[56px] min-[600px]:leading-[64px] min-[767px]:leading-[78px] font-heading">
                       <span class="font-bold text-neutral-800"><?= wp_kses_post($title1) ?></span>
                       <span class="font-light text-neutral-500"><?= wp_kses_post($title2) ?></span>
@@ -62,9 +62,9 @@ if ($card_overlay === 'Grayscale') {
               <?php endwhile;
               endif; ?>
 
-              <div class="flex flex-col items-start gap-8 serve-content w-[66.66%]">
+              <div class="how-content md:flex-[2] w-full">
                 <?php if (get_sub_field('subtitle')) : ?>
-                <p class="max-w-[526px] text-xl leading-7 text-neutral-600 font-body">
+                <p class="text-xl leading-7 text-neutral-600 font-body">
                   <?= wp_kses_post(get_sub_field('subtitle')) ?>
                 </p>
                 <?php endif; ?>
