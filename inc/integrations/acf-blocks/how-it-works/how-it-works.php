@@ -83,7 +83,7 @@ if ($card_overlay === 'Grayscale') {
                     </div>
                     <div class="bg-overlay absolute inset-0" style="background-color: <?php echo esc_attr(get_sub_field('overlay_color')); ?>;"></div>                          
                     <a href="<?php echo esc_url(get_sub_field('link_path')); ?>" class="gradient-box absolute flex flex-col flex-1 justify-between px-5 min-[600px]:px-6 py-7 w-full h-full">                      
-                      <h3 class="text-3xl md:text-[48px] leading-tight md:leading-[60px] tracking-tight md:tracking-[-0.02em] text-white"><?php echo $i; ?></h3>                                                
+                      <h3 class="text-3xl md:text-[48px] leading-tight md:leading-[60px] tracking-tight md:tracking-[-0.02em] text-white font-bold"><?php echo $i; ?></h3>                                                
                       <div class="flex flex-col gap-3 min-[600px]:gap-4 content z-10">
                         <h3 class="text-white card-title"><?php echo wp_kses_post(get_sub_field('title')); ?></h3>                        
                         <p class="text-white text-[16px] min-[600px]:text-lg leading-[26px] min-[600px]:leading-7 font-body">
