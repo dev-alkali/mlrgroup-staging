@@ -96,19 +96,16 @@ if ($card_overlay === 'Grayscale') {
             </div>
         <?php endwhile;
         endif; ?>
-        <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
-            <div class="min-[767px]:hidden max-w-[358px] min-[600px]:max-w-[334px] w-full flex justify-center">
-              <?php 
-                $link = get_sub_field('button');
-                if( $link ): 
-                    $link_url = $link['url'];
-                    $link_title = $link['title'];
-                    $link_target = $link['target'] ? $link['target'] : '_self';
-                    ?>
-                    <a class="btn-primary" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-                <?php endif; ?>
-            </div>
-        <?php endwhile; endif; ?>
+        <?php 
+          $link = get_sub_field('button');
+          if( $link ): 
+              $link_url = $link['url'];
+              $link_title = $link['title'];
+              $link_target = $link['target'] ? $link['target'] : '_self';
+              ?>
+              <a class="btn-primary" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+          <?php endif; ?>
+        
           </div>
     </section>
 <?php endwhile;
