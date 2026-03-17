@@ -40,7 +40,7 @@ if ($card_overlay === 'Grayscale') {
 ?>
 
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> <?php echo esc_attr($overlay_class); ?> flex w-full justify-center px-4 min-[600px]:px-10 py-[60px] min-[600px]:py-[120px]">      
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> <?php echo esc_attr($overlay_class); ?> flex w-full justify-center px-4 min-[600px]:px-10 py-[60px] min-[600px]:py-[120px] how-it-works-sec">      
       <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
 
           <div class="flex flex-col items-center gap-8 min-[600px]:gap-[60px] w-full max-w-[1920px]">
@@ -81,9 +81,9 @@ if ($card_overlay === 'Grayscale') {
                     <div class="bg-image absolute inset-0"
                       style="background-image: url('<?php echo esc_url(get_sub_field('image')); ?>'); background-position: center center; background-size: cover; background-repeat: no-repeat;">
                     </div>
-                    <div class="bg-overlay absolute inset-0" style="background-color: <?php echo esc_attr(get_sub_field('overlay_color')); ?>;opacity: 0;"></div>                          
+                    <div class="bg-overlay absolute inset-0" style="background-color: <?php echo esc_attr(get_sub_field('overlay_color')); ?>;"></div>                          
                     <a href="<?php echo esc_url(get_sub_field('link_path')); ?>" class="gradient-box absolute flex flex-col flex-1 justify-between px-5 min-[600px]:px-6 py-7 w-full h-full">                      
-                      <h3><?php echo $i; ?></h3>                                                
+                      <h3 class="text-3xl md:text-[48px] leading-tight md:leading-[60px] tracking-tight md:tracking-[-0.02em]"><?php echo $i; ?></h3>                                                
                       <div class="flex flex-col gap-3 min-[600px]:gap-4 content z-10">
                         <h3 class="text-white card-title"><?php echo wp_kses_post(get_sub_field('title')); ?></h3>                        
                         <p class="text-white text-[16px] min-[600px]:text-lg leading-[26px] min-[600px]:leading-7 font-body">
