@@ -20,12 +20,7 @@ if (!empty($block['className'])) {
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> c-hero flex flex-col w-full items-center p-0 min-[890px]:pt-5 min-[890px]:pb-0  min-[890px]:px-5 bg-white h-screen">
       <?php if (have_rows('main')) :  while (have_rows('main')) : the_row(); ?>
           <div
-            class="wrapper flex-1  w-full" style="
-    background-image: url('<?php echo esc_url(get_sub_field('bg_image')); ?>');
-    background-position: 50% 20%;
-    background-size: cover;
-    background-repeat: no-repeat;
-  ">
+            class="max-w-[1920px] flex-1 w-full" style=" background-image: url('<?php echo esc_url(get_sub_field('bg_image')); ?>'); background-position: 50% 20%; background-size: cover; background-repeat: no-repeat;  ">
             <div class="w-full h-full flex flex-col items-start gap-[162px] px-4 min-[600px]:px-10 min-[767px]:px-20 py-0 relative  [background:linear-gradient(0deg,rgba(0,0,0,0.35)_0%,rgba(0,0,0,0.35)_100%)]">
               <div class="flex flex-col items-start justify-end pt-8 pb-20 min-[600px]:pb-16 px-0 relative flex-1 w-full ">
 
@@ -118,6 +113,8 @@ if (!empty($block['className'])) {
               </div>
           <?php endwhile;
       endif; ?>
+
+
             </div>
           </section>
     </section>
