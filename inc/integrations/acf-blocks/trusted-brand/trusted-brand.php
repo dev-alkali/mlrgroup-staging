@@ -28,8 +28,9 @@ if (!empty($block['className'])) {
             </div>
         <!-- MARQUEE -->
             <div class="flex-1 overflow-hidden relative h-[91.15px] md:h-auto">
-              <div class="absolute -top-4 left-[-3%] w-[133px] max-[1024px]:hidden h-[139px] bg-white z-20 blur-[16px]"></div>
-              <div class="absolute -top-4 right-[-3%] w-[133px] h-[139px] max-[1024px]:hidden bg-white z-20  blur-[16px]"></div>
+              <div class="absolute -top-4 left-[-3%] w-[133px] h-[139px] bg-white blur-[16px] z-20 max-lg:hidden"></div>
+              <div class="absolute -top-4 right-[-3%] w-[133px] h-[139px] bg-white blur-[16px] z-20 max-lg:hidden"></div>
+              
               <div class="marquee-wrapper overflow-hidden w-full">
                 <div class="marquee-track relative">
                   <div class="marquee-group">
@@ -55,3 +56,4 @@ if (!empty($block['className'])) {
 
 <?php endwhile;
 endif; ?>
+
