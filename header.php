@@ -143,8 +143,8 @@
           <img src="<?= $logo_url ?>" alt="MLR Group">
         </a>
       </div>
-      <div class="mobile-menu site-header anim ">
-        <div class="mobile-menu-header px-4 min-[600px]px-15  min-[1250px]:px-25 pt-6 min-[600px]:pt-13 wrapper">
+      <div class="mobile-menu">
+        <div class="mobile-menu-header site-header anim px-4 min-[600px]px-15  min-[1250px]:px-25 pt-6 min-[600px]:pt-13 max-w-[1920px]">
 
           <div class="relative w-[106px] min-[600px]:w-[120px]">
 
