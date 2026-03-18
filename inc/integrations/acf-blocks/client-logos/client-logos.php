@@ -41,43 +41,59 @@ if (!empty($block['className'])) {
               <?php endif; ?>
             </div>
 
-        <?php if (get_sub_field('filter_display')) : ?>
-        <div class="">
-           <?php if (have_rows('logo_lists')) : ?>
-                  <?php while (have_rows('logo_lists')) : the_row();
-                      $industry = get_sub_field('industries_filter');                      
-                    ?>
+          <?php
+              // Collect all logo data upfront — have_rows() can only loop once
+              $logos = [];
+              if (have_rows('logo_lists')) {
+                  while (have_rows('logo_lists')) : the_row();
+                      $logos[] = [
+                          'logo'     => get_sub_field('logo_img'),
+                          'bg_color' => get_sub_field('background_color'),
+                          'industry' => get_sub_field('industries_filter'),
+                      ];
+                  endwhile;
+              }
 
-                      <ul class="">
-                        <li><?php echo esc_html($industry); ?></li>
-                      </ul>
-
-                    <?php endwhile; ?>
-                  <?php endif; ?>
-        </div>
-        <?php endif; ?>
-
-        <div class="logo-cards grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full">
-            <?php if (have_rows('logo_lists')) : ?>
-              <?php while (have_rows('logo_lists')) : the_row();                      
-                $logo = get_sub_field('logo_img');
-                $bg_color = get_sub_field('background_color');
-                $industry = get_sub_field('industries_filter');
+              $show_filter   = get_sub_field('filter_display');
+              $industries    = $show_filter
+                  ? array_unique(array_filter(array_column($logos, 'industry')))
+                  : [];
               ?>
-                <div class="p-6 flex items-center text-center justify-center aspect-1" style="background-color:<?php echo esc_attr($bg_color); ?>;" data-att="<?php echo esc_html($industry); ?>">
-                  <?php if ($logo) : ?>
-                    <img 
-                      src="<?php echo esc_url($logo['url']); ?>" 
-                      alt="<?php echo esc_attr($logo['alt']); ?>" 
-                      class="max-w-[155px] h-auto"
-                    />
-                  <?php endif; ?>
-                  
-                </div>
 
-              <?php endwhile; ?>
-            <?php endif; ?>
-          </div>
+              <?php if ($show_filter && ! empty($industries)) : ?>
+                  <div class="logo-filter mb-6">
+                      <select id="industry-filter" class="border rounded px-4 py-2">
+                          <option value="all">All Industries</option>
+                          <?php foreach ($industries as $industry) : ?>
+                              <option value="<?php echo esc_attr($industry); ?>">
+                                  <?php echo esc_html($industry); ?>
+                              </option>
+                          <?php endforeach; ?>
+                      </select>
+                  </div>
+              <?php endif; ?>
+
+              <div class="logo-cards grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full">
+                  <?php foreach ($logos as $item) :
+                      $logo     = $item['logo'];
+                      $bg_color = $item['bg_color'];
+                      $industry = $item['industry'];
+                  ?>
+                      <div
+                          class="logo-card p-6 flex items-center text-center justify-center aspect-1"
+                          style="background-color: <?php echo esc_attr($bg_color); ?>;"
+                          data-industry="<?php echo esc_attr($industry); ?>"
+                      >
+                          <?php if ($logo) : ?>
+                              <img
+                                  src="<?php echo esc_url($logo['url']); ?>"
+                                  alt="<?php echo esc_attr($logo['alt']); ?>"
+                                  class="max-w-[155px] h-auto"
+                              />
+                          <?php endif; ?>
+                      </div>
+                  <?php endforeach; ?>
+              </div>
 
 
 
@@ -95,63 +111,6 @@ if (!empty($block['className'])) {
                       <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="https://wordpress-755960-6249701.cloudwaysapps.com/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg">
                   </a>
               <?php endif; ?>
-
-
-
-
-              <?php
-// Collect all logo data upfront — have_rows() can only loop once
-$logos = [];
-if (have_rows('logo_lists')) {
-    while (have_rows('logo_lists')) : the_row();
-        $logos[] = [
-            'logo'     => get_sub_field('logo_img'),
-            'bg_color' => get_sub_field('background_color'),
-            'industry' => get_sub_field('industries_filter'),
-        ];
-    endwhile;
-}
-
-$show_filter   = get_sub_field('filter_display');
-$industries    = $show_filter
-    ? array_unique(array_filter(array_column($logos, 'industry')))
-    : [];
-?>
-
-<?php if ($show_filter && ! empty($industries)) : ?>
-    <div class="logo-filter mb-6">
-        <select id="industry-filter" class="border rounded px-4 py-2">
-            <option value="all">All Industries</option>
-            <?php foreach ($industries as $industry) : ?>
-                <option value="<?php echo esc_attr($industry); ?>">
-                    <?php echo esc_html($industry); ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-    </div>
-<?php endif; ?>
-
-<div class="logo-cards grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full">
-    <?php foreach ($logos as $item) :
-        $logo     = $item['logo'];
-        $bg_color = $item['bg_color'];
-        $industry = $item['industry'];
-    ?>
-        <div
-            class="logo-card p-6 flex items-center text-center justify-center aspect-1"
-            style="background-color: <?php echo esc_attr($bg_color); ?>;"
-            data-industry="<?php echo esc_attr($industry); ?>"
-        >
-            <?php if ($logo) : ?>
-                <img
-                    src="<?php echo esc_url($logo['url']); ?>"
-                    alt="<?php echo esc_attr($logo['alt']); ?>"
-                    class="max-w-[155px] h-auto"
-                />
-            <?php endif; ?>
-        </div>
-    <?php endforeach; ?>
-</div>
 
 <?php if ($show_filter) : ?>
 <script>
