@@ -18,7 +18,7 @@
 
   <header class=" absolute z-50 flex w-full justify-center items-center min-[600px]:px-5 min-[600px]:pt-5">
     <div class="site-header anim hidden min-[1180px]:flex self-stretch flex-[0_0_auto] px-10  min-[1250px]:px-20  min-[600px]:pt-8">
-      <div class="max-w-[1920px] min-[1180px]:flex self-stretch flex-[0_0_auto]">
+      <div class="wrapper min-[1180px]:flex justify-between w-full">
          <div class="relative w-[140px] h-8">
           <?php
             $logo_id = get_theme_mod('custom_logo');
@@ -128,7 +128,7 @@
           </div>
       </div>
     </div>
-    <div class="header-dropdown flex w-full justify-between items-center min-[1180px]:hidden self-stretch flex-[0_0_auto] px-4 min-[600px]:px-10 min-[890px]:px-20  pt-4 min-[600px]:pt-8 pb-4  min-[600px]:pb-0 max-w-[1920px]">
+    <div class="header-dropdown flex w-full justify-between items-center min-[1180px]:hidden self-stretch flex-[0_0_auto] px-4 min-[600px]:px-10 min-[890px]:px-20  pt-4 min-[600px]:pt-8 pb-4  min-[600px]:pb-0 wrapper">
       <div class="relative w-[106px] min-[600px]:w-[120px]  ">
         <?php
         $logo_id = get_theme_mod('custom_logo');
@@ -139,7 +139,7 @@
         </a>
       </div>
       <div class="mobile-menu site-header anim ">
-        <div class="mobile-menu-header px-4 min-[600px]px-15  min-[1250px]:px-25 pt-6 min-[600px]:pt-13 max-w-[1920px]">
+        <div class="mobile-menu-header px-4 min-[600px]px-15  min-[1250px]:px-25 pt-6 min-[600px]:pt-13 wrapper">
 
           <div class="relative w-[106px] min-[600px]:w-[120px]">
 
