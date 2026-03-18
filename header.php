@@ -17,7 +17,7 @@
   <?php wp_body_open(); ?>
 
   <header class=" absolute z-50 flex w-full justify-center items-center min-[600px]:px-5 min-[600px]:pt-5">
-    <div class="site-header hidden min-[1180px]:flex self-stretch flex-[0_0_auto] px-10  min-[1250px]:px-20  min-[600px]:pt-8">
+    <div class="site-header anim hidden min-[1180px]:flex self-stretch flex-[0_0_auto] px-10  min-[1250px]:px-20  min-[600px]:pt-8">
       <div class="max-w-[1920px] min-[1180px]:flex self-stretch flex-[0_0_auto]">
        <div class="relative w-[140px] h-8">
         <?php
@@ -30,7 +30,7 @@
            
             if ($logo_svg): ?>
               <a class="site-header__logo-image" href="<?php echo esc_url(home_url('/')); ?>">
-                <?php echo $logo_svg; ?>"
+                <?php echo $logo_svg; ?>
               </a>
             <?php else: ?>
               <a class="site-header__logo-image" href="<?php echo esc_url(home_url('/')); ?>">
@@ -140,7 +140,7 @@
           <img src="<?= $logo_url ?>" alt="MLR Group">
         </a>
       </div>
-      <div class="mobile-menu">
+      <div class="mobile-menu site-header anim ">
         <div class="mobile-menu-header px-4 min-[600px]px-15  min-[1250px]:px-25 pt-6 min-[600px]:pt-13 max-w-[1920px]">
 
           <div class="relative w-[106px] min-[600px]:w-[120px]">
