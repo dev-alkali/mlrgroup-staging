@@ -104,10 +104,9 @@ if (!empty($block['className'])) {
                   $link_title = $link['title'];
                   $link_target = $link['target'] ? $link['target'] : '_self';
                   ?>
-                  <a class="btn-primary mt-[40px]" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-
-                  <a class="service-card-link inline-flex  gap-2 relative flex-[0_0_auto] mt-[40px]" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
-                      <span class="font-bold text-accent text-lg leading-7 uppercase relative w-fit  font-heading tracking-[0] whitespace-nowrap"><?php echo esc_html( $link_title ); ?></span>
+                  <div class="text-center mt-[40px]">
+                  <a class="inline-flex  gap-2 relative " href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
+                      <span class="font-bold text-accent text-lg leading-7 uppercase relative w-fit font-heading tracking-[0]"><?php echo esc_html( $link_title ); ?></span>
                       <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="https://wordpress-755960-6249701.cloudwaysapps.com/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg">
                   </a>
               <?php endif; ?>
