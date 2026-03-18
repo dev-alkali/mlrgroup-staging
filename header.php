@@ -24,12 +24,25 @@
           $logo_id = get_theme_mod('custom_logo');
           $logo_url = wp_get_attachment_image_url($logo_id, 'full');
         ?>
-        <a class="site-header__logo-link" href="<?php echo esc_url(home_url('/')); ?>">
-          <img class="site-header__logo-image" src="<?= $logo_url ?>" alt="MLR Group">
-        </a>
+        
+
+         <?php
+            $logo_svg = get_field('logo_svg', 'option');
+            if ($logo_svg): ?>
+              <a class="site-header__logo-image" href="<?php echo esc_url(home_url('/')); ?>">
+                <?php echo esc_url($logo_svg); ?>"
+              </a>
+            <?php else: ?>
+              <a class="site-header__logo-image" href="<?php echo esc_url(home_url('/')); ?>">
+                <img src="<?= $logo_url ?>" alt="MLR Group">
+              </a>
+            <?php endif; ?>
+          </div>
+
+
       </div>
 
-      <div class="inline-flex items-center gap-5 min-[1350px]:gap-10 flex-[0_0_auto]">
+      <div class="site-header__nav inline-flex items-center gap-5 min-[1350px]:gap-10 flex-[0_0_auto]">
         <nav>
           <?php
           $locations = get_nav_menu_locations();
@@ -134,10 +147,9 @@
           <div class="relative w-[106px] min-[600px]:w-[120px]">
 
             <?php
-            $black_logo = get_field('black_logo', 'option');
-            if ($black_logo): ?>
-              <a href="<?php echo esc_url(home_url('/')); ?>">
-                <img src="<?php echo esc_url($black_logo); ?>" alt="">
+            if ($logo_svg): ?>
+              <a class="site-header__logo-image site-header__logo-image--mobile" href="<?php echo esc_url(home_url('/')); ?>">
+                <?php echo esc_url($logo_svg); ?>"
               </a>
             <?php endif; ?>
           </div>

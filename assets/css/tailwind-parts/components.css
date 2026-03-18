@@ -54,6 +54,10 @@
     @apply flex items-center justify-between w-full bg-transparent;
   }
 
+  .site-header__logo-image { display: block; }
+  .site-header__logo-image img,.site-header__logo-image svg { width: 100%; height: auto; }
+  .site-header__nav { }
+
   .nav-link {
     font-family: "poppins", Helvetica;
     color: var(--color-white);
