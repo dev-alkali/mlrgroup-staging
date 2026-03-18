@@ -111,14 +111,7 @@
     transform: scaleX(1);
   }
 
-  .site-nav__dropdown {
-    overflow: hidden;
-    max-height: 0px;
-  }
-
-
-
-
+  
   /* --- MOBILE MENU & HAMBURGER --- */
   .hamb-group {
     width: 28px;
@@ -222,6 +215,11 @@
     color: #fd4338;
     text-decoration: underline;
     text-decoration-color: #fd4338;
+  }
+
+  .mobile-nav-item.open .mobile-item-name {
+    color: #FD4338;
+    text-decoration: underline;
   }
 
   .mobile-nav-arrow {
