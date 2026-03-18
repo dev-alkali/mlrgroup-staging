@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /**------------------------ Sticky Header -------------------------**/
     const header = document.querySelector('.site-header');
-    const hero   = document.querySelector('.c-hero');  
+    const hero   = document.querySelector('.c-hero');
 
     if (!header || !hero) return;
 
