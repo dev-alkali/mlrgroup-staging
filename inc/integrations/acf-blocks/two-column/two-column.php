@@ -34,7 +34,7 @@ $flexClass = ($layout === 'Right Image') ? 'md:flex-row-reverse' : 'md:flex-row'
         </div>
 
         <div class="w-full flex-1">
-          <div class="max-w-[600px]">
+          <div class="">
             <?php if($title_row_1 || $title_row_2): ?>
             <h2 class="text-[clamp(32px,6vw,68px)] leading-[clamp(40px,7vw,76px)] tracking-[-4%] text-[#262626] font-heading mb-[20px]">
               <?php if($title_row_1): ?>
