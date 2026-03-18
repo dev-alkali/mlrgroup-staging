@@ -77,7 +77,7 @@ if (!empty($block['className'])) {
                 $industry = get_sub_field('industries_filter');
               ?>
 
-                <div class="p-6 flex items-center text-center justify-center" style="background-color:<?php echo esc_attr($bg_color); ?>;">
+                <div class="p-6 flex items-center text-center justify-center aspect-1" style="background-color:<?php echo esc_attr($bg_color); ?>;">
                   <?php if ($logo) : ?>
                     <img 
                       src="<?php echo esc_url($logo['url']); ?>" 
