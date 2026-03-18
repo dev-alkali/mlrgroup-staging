@@ -14,3 +14,7 @@
 .how-it-works-sec .source-card:hover .bg-overlay{height:100%;opacity:1;}
 .how-it-works-sec .source-card:hover .content {transform: unset !important;}
 .source-card:hover .gradient-box:after{opacity:0 !important;}
+
+.logo-card:after {content: '';background: #F5F5F5;position: absolute;left: 0;top: 0;width: 100%;position: absolute;z-index: 0;height: 100%;transition:all 0.3s ease;}
+.logo-card img{z-index: 1;filter: grayscale(1);}
+.logo-card:hover:after{content:'';opacity:0;}
