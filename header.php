@@ -18,13 +18,12 @@
 
   <header class=" absolute z-50 flex w-full justify-center items-center min-[600px]:px-5 min-[600px]:pt-5">
     <div class="site-header hidden min-[1180px]:flex self-stretch flex-[0_0_auto] px-10  min-[1250px]:px-20  min-[600px]:pt-8">
-      <div class="max-w-[1920px] min-[1180px]:flex self-stretch flex-[0_0_auto]"
-      <div class="relative w-[140px] h-8">
+      <div class="max-w-[1920px] min-[1180px]:flex self-stretch flex-[0_0_auto]">
+       <div class="relative w-[140px] h-8">
         <?php
           $logo_id = get_theme_mod('custom_logo');
           $logo_url = wp_get_attachment_image_url($logo_id, 'full');
         ?>
-        
 
          <?php
             $logo_svg = get_field('logo_svg', 'option');
@@ -38,8 +37,7 @@
               </a>
             <?php endif; ?>
           </div>
-
-
+          
       </div>
 
       <div class="site-header__nav inline-flex items-center gap-5 min-[1350px]:gap-10 flex-[0_0_auto]">
