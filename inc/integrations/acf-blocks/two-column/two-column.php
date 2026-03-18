@@ -22,12 +22,16 @@ $title_row_2 = get_sub_field('title_row_2');
 $description = get_sub_field('description');
 //$left_image_or_right_image = get_sub_field('left_image_or_right_image');
 $layout = get_sub_field('left_image_or_right_image'); // left / right
-$flexClass = ($layout === 'Right Image') ? 'md:flex-row-reverse' : 'md:flex-row';
+// Desktop layout
+$desktopFlex = ($layout === 'Right Image') ? 'md:flex-row-reverse' : 'md:flex-row';
+
+// Mobile: always content first, image bottom
+$mobileFlex = 'flex-col-reverse';
 
 ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-4 md:py-[120px]">
       <!-- <div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col md:flex-row items-center flex-wrap"> -->
-      <div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col <?php echo $flexClass; ?> items-center">
+      <div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col <?php echo $mobileFlex . ' ' . $desktopFlex; ?> items-center">
 
         <div class="w-full flex-1">
           <figure><?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, ['class' => 'w-full h-auto']); ?></figure>
