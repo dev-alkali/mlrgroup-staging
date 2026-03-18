@@ -79,10 +79,11 @@
                   $item_url_normalized = trailingslashit($item->url);
                   $active_class = ($item_url_normalized === $current_url_normalized) ? 'active' : '';
                   $has_children = !empty($item->children);
+                  $index = 1;
                   ?>
 
                   <!-- wrapper novo por item -->
-                  <div class="site-nav__item <?= $has_children ? 'has-children' : '' ?>">
+                  <div class="site-nav__item <?= $has_children ? 'has-children' : '' ?> anim" data-delay="<?php echo $index; $index  = $index + 0.1; ?>" data-anim="up">
                     <a class="inline-flex items-center justify-center gap-2"
                       href="<?= esc_url($item->url) ?>"
                       <?= $has_children ? 'aria-haspopup="true" aria-expanded="false"' : '' ?>>
@@ -165,11 +166,10 @@
               <?php
               $item_url_normalized = trailingslashit($item->url);
               $active_class = ($item_url_normalized === $current_url_normalized) ? 'is-active' : '';
-
               ?>
               <?php $has_children = !empty($item->children); ?>
 
-              <div class="mobile-nav-item <?= $has_children ? 'has-children' : '' ?>">
+              <div class="mobile-nav-item  <?= $has_children ? 'has-children' : '' ?> >
 
                 <span  class="mobile-nav-trigger <?= $active_class  ?>">
                   <a href="<?= esc_url($item->url) ?>" class="mobile-item-name"><?= esc_html($item->title) ?></a>
