@@ -6,6 +6,7 @@
 @theme {
   /* Brand Colors */
   --color-accent: #fd4338;
+  --color-accent-hover: #D5210C;
   --color-white: #ffffff;
   --color-black: #000000;
 
@@ -52,4 +53,3 @@
   font-style: normal;
   font-display: swap;
 }
-

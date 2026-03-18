@@ -71,15 +71,28 @@ function register_script()
     true
   );
 
+
   /**
    * ==============================
    * events
    * ==============================
    */
-  wp_enqueue_script('add-inquiryJS', get_template_directory_uri() . '/assets/js/ajax/add-inquiry.js', array('jquery-core'), '1.0', true);
-  wp_localize_script('add-inquiryJS', 'addInquiryAjax', array(
-    'ajaxurl' => admin_url('admin-ajax.php'),
-    'nonce'   => wp_create_nonce('add_inquiry_nonce')
+  wp_enqueue_script('inquir-listyJS', get_template_directory_uri() . '/assets/js/inquiry-list.js', array('jquery-core'), '1.0', true);
+  // wp_localize_script('inquiry-listJS', 'addInquiryAjax', array(
+  //   'ajaxurl' => admin_url('admin-ajax.php'),
+  //   'nonce'   => wp_create_nonce('add_inquiry_nonce')
+  // ));
+  wp_enqueue_script('get-cpt-dataJS', get_template_directory_uri() . '/assets/js/get-cpt-data.js', array('jquery-core'), '1.0', true);
+  wp_localize_script('get-cpt-dataJS', 'GetCptData', array(
+    'rest_url' => esc_url_raw(rest_url()),
+    'nonce'    => wp_create_nonce('wp_rest'),
   ));
+
+  wp_enqueue_script('load-moreJS', get_template_directory_uri() . '/assets/js/load-more-portfolio.js', array('jquery-core'), '1.0', true);
+  wp_localize_script( 'load-moreJS', 'PortfolioConfig', array(
+    'ajax_url'  => admin_url( 'admin-ajax.php' ),
+    'nonce'     => wp_create_nonce( 'portfolio_load_nonce' ),
+    'init_page' => 2, // First "load more" request fetches page 2
+) );
 }
 add_action('wp_enqueue_scripts', 'register_script');

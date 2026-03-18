@@ -13,6 +13,9 @@
   }
 
   /* --- BUTTONS --- */
+  .btn-primary:hover {
+    background-color: var(--color-accent-hover);
+  }
   .btn-primary {
     background: var(--color-accent);
     color: var(--color-white);
@@ -29,6 +32,7 @@
     font-weight: 600;
     line-height: 18px;
     display: inline-flex;
+    transition: background-color 0.3s ease;
   }
 
   /* Mobile Button Override */
@@ -270,17 +274,14 @@
     }
   }
 
-  
   .newsletter-gf-container .newsletter-form_wrapper {
     @apply w-full m-0 p-0 block;
   }
 
- 
   .newsletter-gf-container form.newsletter-form {
     @apply flex flex-col min-[600px]:flex-row items-start gap-3 w-full m-0 p-0;
   }
 
-  
   .newsletter-gf-container .gform_body {
     @apply flex flex-col w-full min-[600px]:max-w-[525px] items-start max-[600px]:w-full gap-2 m-0 p-0 flex-1;
   }
@@ -312,7 +313,6 @@
   .newsletter-gf-container input[type="email"]:focus {
     @apply outline-none ring-0 shadow-none bg-transparent;
   }
-
 
   .newsletter-gf-container .gform_footer {
     @apply p-0 m-0 flex mt-0 w-auto items-end border-0 bg-transparent;
@@ -399,7 +399,7 @@
     letter-spacing: -2%;
   }
 
-  @media (max-width: 599px) {
+  @media (max-width: 766px) {
     .card-title {
       font-size: 24px;
       line-height: 32px;
@@ -479,7 +479,6 @@
     transform: translateY(calc(-324px + 100%));
   }
 
-
   @media (min-width: 600px) {
     .source-card:hover .content {
       transform: translateY(calc(-364px + 100%));
@@ -487,17 +486,14 @@
   }
   @media (min-width: 1441px) {
     .source-card {
-
       container-type: inline-size;
     }
-  
+
     .source-card:hover .arrow {
-    
       transform: translateY(97cqw) rotate(45deg);
     }
-  
-    .source-card:hover .content {
 
+    .source-card:hover .content {
       transform: translateY(calc(-109cqw + 100%));
     }
   }
@@ -506,19 +502,19 @@
     overflow: hidden;
     width: 100%;
   }
-  
+
   .marquee-track {
     display: flex;
     width: max-content;
     animation: marquee-scroll 36s linear infinite;
     will-change: transform;
   }
-  
+
   .marquee-group {
     display: flex;
     gap: 117px;
 
-    padding-right: 117px; 
+    padding-right: 117px;
   }
 
   /* Work Card Hover Effects */
@@ -652,7 +648,6 @@
     color: #fff;
   }
 
-
   @media (max-width: 599px) {
     .solutions-tab button {
       font-size: 14px;
@@ -729,201 +724,190 @@
     transform: rotate(45deg);
   }
 
+  .collection-item .collection-gradient-box {
+    position: relative;
+    overflow: hidden;
+  }
 
+  .collection-item .collection-gradient-box::before,
+  .collection-item .collection-gradient-box::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    transition: opacity 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
 
-.collection-item .collection-gradient-box {
-  position: relative;
-  overflow: hidden;
-}
+  .collection-item .collection-gradient-box::before {
+    opacity: 1;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.9) 0.42%,
+      rgba(0, 0, 0, 0) 179.14%
+    );
+  }
 
-.collection-item .collection-gradient-box::before,
-.collection-item .collection-gradient-box::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  transition: opacity 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
-}
+  .collection-item .collection-gradient-box::after {
+    opacity: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.9) 0.42%,
+      rgba(0, 0, 0, 0.4) 179.14%
+    );
+  }
 
-.collection-item .collection-gradient-box::before {
-  opacity: 1;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.9) 0.42%,
-    rgba(0, 0, 0, 0) 179.14%
-  );
-}
+  .collection-item:hover .collection-gradient-box::after {
+    opacity: 1;
+  }
 
-.collection-item .collection-gradient-box::after {
-  opacity: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.9) 0.42%,
-    rgba(0, 0, 0, 0.4) 179.14%
-  );
-}
+  .collection-item:hover .collection-gradient-box::before {
+    opacity: 0;
+  }
 
-.collection-item:hover .collection-gradient-box::after {
-  opacity: 1;
-}
+  /*******/
+  .collection-item .color-bg-hover {
+    position: relative;
+    overflow: hidden;
+  }
 
+  .collection-item .color-bg-hover::before,
+  .collection-item .color-bg-hover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    transition: opacity 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
 
-.collection-item:hover .collection-gradient-box::before {
-  opacity: 0;
-}
+  .collection-item .color-bg-hover::before {
+    opacity: 1;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0) 0.42%,
+      rgba(0, 0, 0, 0) 179.14%
+    );
+  }
 
+  .collection-item .color-bg-hover::after {
+    opacity: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.2) 0.42%,
+      rgba(0, 0, 0, 0.2) 179.14%
+    );
+  }
 
-/*******/
-.collection-item .color-bg-hover {
-  position: relative;
-  overflow: hidden;
-}
+  .collection-item:hover .color-bg-hover::after {
+    opacity: 1;
+  }
 
-.collection-item .color-bg-hover::before,
-.collection-item .color-bg-hover::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  transition: opacity 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
-}
+  .collection-item:hover .color-bg-hover::before {
+    opacity: 0;
+  }
 
-.collection-item .color-bg-hover::before {
-  opacity: 1;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0) 0.42%,
-    rgba(0, 0, 0, 0) 179.14%
-  );
-}
-
-.collection-item .color-bg-hover::after {
-  opacity: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.2) 0.42%,
-    rgba(0, 0, 0, 0.2) 179.14%
-  );
-}
-
-.collection-item:hover .color-bg-hover::after {
-  opacity: 1;
-}
-
-
-.collection-item:hover .color-bg-hover::before {
-  opacity: 0;
-}
-
-/*****/
-/* =========================================================
+  /*****/
+  /* =========================================================
    ESTILIZAÇÃO GRAVITY FORMS - ID 2
 ========================================================= */
 
-/* Reset de margens base e espaçamento entre campos */
-#gform_wrapper_2.inquiry-form_wrapper .gform_body .gform_fields .gfield {
-  margin-bottom: 24px !important;
-  padding: 0 !important;
-  border: none !important;
-}
+  #gform_wrapper_2.inquiry-form_wrapper .gform_body .gform_fields .gfield {
+    margin-bottom: 16px !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+  #gform_wrapper_2.inquiry-form_wrapper .gform_body .gform_fields {
+    grid-row-gap: 0 !important;
+  }
 
-/* Estilo das Labels (Títulos dos campos) */
-#gform_wrapper_2.inquiry-form_wrapper .gfield_label {
-  font-family: inherit;
-  font-size: 12px !important;
-  font-weight: 700 !important;
-  text-transform: uppercase;
-  color: #222 !important;
-  margin-bottom: 8px !important;
-  display: block !important;
-  letter-spacing: 0.5px;
-}
+  #gform_wrapper_2.inquiry-form_wrapper .gfield_label {
+    font-family: "poppins";
+    font-size: 16px !important;
+    line-height: 18px;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    color: #222 !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+    letter-spacing: 0.5px;
+  }
 
-/* Ocultar sub-labels padrão do Gravity Forms (ex: "First", "Last") */
-#gform_wrapper_2.inquiry-form_wrapper .gform-field-label--type-sub {
-  display: none !important;
-}
+  #gform_wrapper_2.inquiry-form_wrapper .gform-field-label--type-sub {
+    display: none !important;
+  }
 
-/* Estilo dos Inputs (Texto, Email, Telefone) */
-#gform_wrapper_2.inquiry-form_wrapper input[type="text"],
-#gform_wrapper_2.inquiry-form_wrapper input[type="email"],
-#gform_wrapper_2.inquiry-form_wrapper input[type="tel"] {
-  width: 100% !important;
-  padding: 14px 16px 12px 16px !important;
-  border: 1px solid #dcdcdc !important;
-  border-radius: 25px !important; /* Bordas estilo pílula */
-  font-size: 16px !important;
-  color: #333 !important;
-  background-color: #fff !important;
-  box-sizing: border-box !important;
-  outline: none !important;
-  box-shadow: none !important;
-  font-family: inherit;
-  transition: border-color 0.3s ease;
-  font-family: "poppins";
-}
+  #gform_wrapper_2.inquiry-form_wrapper input[type="text"],
+  #gform_wrapper_2.inquiry-form_wrapper input[type="email"],
+  #gform_wrapper_2.inquiry-form_wrapper input[type="tel"] {
+    width: 100% !important;
+    padding: 14px 16px 12px 16px !important;
+    border: 1px solid #dcdcdc !important;
+    border-radius: 25px !important;
+    font-size: 16px !important;
+    color: #333 !important;
+    background-color: #fff !important;
+    box-sizing: border-box !important;
+    outline: none !important;
+    box-shadow: none !important;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+    font-family: "poppins";
+  }
 
+  #gform_wrapper_2.inquiry-form_wrapper .gfield textarea {
+    width: 100% !important;
+    padding: 16px 20px !important;
+    border: 1px solid #dcdcdc !important;
+    border-radius: 16px !important;
+    font-size: 15px !important;
+    color: #333 !important;
+    background-color: #fff !important;
+    box-sizing: border-box !important;
+    outline: none !important;
+    box-shadow: none !important;
+    resize: vertical;
+    font-family: inherit;
+    height: 140px !important;
+    transition: border-color 0.3s ease;
+  }
 
-#gform_wrapper_2.inquiry-form_wrapper .gfield textarea {
-  width: 100% !important;
-  padding: 16px 20px !important;
-  border: 1px solid #dcdcdc !important;
-  border-radius: 16px !important; 
-  font-size: 15px !important;
-  color: #333 !important;
-  background-color: #fff !important;
-  box-sizing: border-box !important;
-  outline: none !important;
-  box-shadow: none !important;
-  resize: vertical;
-  font-family: inherit;
-  height: 140px !important;
-  transition: border-color 0.3s ease;
-}
+  #gform_wrapper_2.inquiry-form_wrapper input::placeholder,
+  #gform_wrapper_2.inquiry-form_wrapper textarea::placeholder {
+    color: #888 !important;
+    font-weight: 400 !important;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "poppins";
+  }
 
+  #gform_wrapper_2.inquiry-form_wrapper input:focus,
+  #gform_wrapper_2.inquiry-form_wrapper textarea:focus {
+    border-color: #000 !important;
+  }
 
-#gform_wrapper_2.inquiry-form_wrapper input::placeholder,
-#gform_wrapper_2.inquiry-form_wrapper textarea::placeholder {
-  color: #888 !important;
-  font-weight: 400 !important;
-  font-size: 16px;
-  line-height: 24px;
-  font-family: "poppins";
-}
+  #gform_wrapper_2.inquiry-form_wrapper .gform_footer {
+    padding: 0 !important;
+    margin-top: 15px !important;
+  }
 
+  #gform_wrapper_2.inquiry-form_wrapper .gform_button {
+    width: 100% !important;
+    background-color: #000 !important;
+    color: #fff !important;
+    padding: 18px 20px !important;
+    border: none !important;
+    border-radius: 40px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease !important;
+    font-family: inherit;
+  }
 
-#gform_wrapper_2.inquiry-form_wrapper input:focus,
-#gform_wrapper_2.inquiry-form_wrapper textarea:focus {
-  border-color: #000 !important;
-}
-
-
-#gform_wrapper_2.inquiry-form_wrapper .gform_footer {
-  padding: 0 !important;
-  margin-top: 15px !important;
-}
-
-
-#gform_wrapper_2.inquiry-form_wrapper .gform_button {
-  width: 100% !important;
-  background-color: #000 !important;
-  color: #fff !important;
-  padding: 18px 20px !important;
-  border: none !important;
-  border-radius: 40px !important; 
-  font-size: 14px !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 1px;
-  cursor: pointer !important;
-  transition: background-color 0.3s ease !important;
-  font-family: inherit;
-}
-
-
-#gform_wrapper_2.inquiry-form_wrapper .gform_button:hover {
-  background-color: #333 !important;
-}
+  #gform_wrapper_2.inquiry-form_wrapper .gform_button:hover {
+    background-color: #333 !important;
+  }
 
   /* SVG Filter helper */
   .gray-icon {
@@ -932,5 +916,29 @@
   /* .count-field{
     display: block;
   } */
-
+  .inquiry-categories {
+    @apply flex gap-3;
+  }
+  .inquiry-category {
+    @apply border border-neutral-600 font-heading text-[16px] text-neutral-600 leading-[24px] px-4 pt-[7px] pb-[5px] rounded-full;
+  }
+  .inquiry-item-pop-up {
+    @apply flex items-center gap-2;
+  }
+  .inquiry-item-pop-up-content {
+    @apply flex gap-3 items-center flex-1;
+  }
+  .inquiry-item-pop-up-img {
+    @apply w-[66px] h-[66px] object-cover object-center;
+  }
+  .inquiry-item-pop-up-title {
+    @apply font-heading font-medium flex-1;
+  }
+  .inquiry-item-pop-up-remove {
+    @apply font-heading underline text-[14px] leading-[16px] uppercase;
+    cursor: pointer;
+  }
+  .inquiry-item-pop-up-line {
+    @apply h-px bg-neutral-300 w-full;
+  }
 }
