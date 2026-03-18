@@ -71,12 +71,14 @@
 
                   <!-- wrapper novo (não muda suas classes existentes) -->
                   <div class="inline-flex items-center gap-6">
-                    <?php foreach ($tree as $item): ?>
+                    <?php
+                      $index = 1;
+                      foreach ($tree as $item): ?>
                       <?php
                       $item_url_normalized = trailingslashit($item->url);
                       $active_class = ($item_url_normalized === $current_url_normalized) ? 'active' : '';
                       $has_children = !empty($item->children);
-                      $index = 1;
+                      
                       ?>
 
                       <!-- wrapper novo por item -->
@@ -93,8 +95,11 @@
 
                           <?php if ($has_children): ?>
                             <!-- NÃO MUDA: mesma imagem, agora condicional -->
-                            <img class="w-5 h-5 site-nav__caret"
-                              src="https://c.animaapp.com/mmah2hinwUF90F/img/frame.svg" alt="" />
+                            <div class="w-5 h-5 site-nav__caret">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" style="var(--arrow-color,var(--color-white));">
+                            <path d="M10.0002 14.0005C9.41691 14.0005 8.83358 13.7755 8.39191 13.3338L2.95859 7.90052C2.71693 7.65885 2.71693 7.25885 2.95859 7.01719C3.20026 6.77552 3.60026 6.77552 3.84193 7.01719L9.27524 12.4505C9.67524 12.8505 10.3252 12.8505 10.7252 12.4505L16.1586 7.01719C16.4002 6.77552 16.8002 6.77552 17.0419 7.01719C17.2836 7.25885 17.2836 7.65885 17.0419 7.90052L11.6086 13.3338C11.1669 13.7755 10.5836 14.0005 10.0002 14.0005Z" fill="white"></path>
+                            </svg>
+                            </div>
                           <?php endif; ?>
                         </a>
 
@@ -156,7 +161,7 @@
           </button>
 
         </div>
-        <div class="mobile-menu-inner">
+        <div class="mobile-menu-inner px-4 min-[600px]px-15">
 
           <nav class="mobile-nav">
             <?php foreach ($tree as $item): ?>

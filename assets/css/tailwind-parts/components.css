@@ -50,7 +50,35 @@
   }
 
 /* --- HEADER & NAVIGATION --- */
- 
+  .site-header {
+    @apply flex items-center justify-between w-full bg-transparent; --logo-color: #fff;
+  }
+
+  @keyframes stickyHeaderAnim {		
+    0% { transform: translatey(-100%); }
+    100% {  transform: translatey(0); }	
+  }
+
+  .site-header.is-sticky { position: fixed; top: 0; box-shadow: 0px 10px 15px -3px #0000001A; box-shadow: 0px 4px 6px -4px #0000001A; background: #fff; 
+  padding-top: 20px; left: 0; max-width: 100%; width: 100%; padding-bottom: 20px; --logo-color: #11171E;
+  animation: stickyHeaderAnim 1s ease; }
+
+  .site-header.is-sticky .nav-link { color: #525252; --arrow-color: #525252; }
+
+  .site-header.is-visible .site-header__logo-image .hide-letter { animation: fadeLetters 0.5s ease; opacity: 0; transition-delay: .45s; }
+  .site-header.is-visible .site-header__logo-image .dot-pl { transform: translateX(-84px); transition-delay: 2s; transition: 1.5s ease; }
+  .site-header.is-visible .site-header__logo-image .letter-g { animation-delay: 0.4s; }
+  .site-header.is-visible .site-header__logo-image .letter-r { animation-delay: 0.3s; }
+  .site-header.is-visible .site-header__logo-image .letter-o { animation-delay: 0.2s; }
+  .site-header.is-visible .site-header__logo-image .letter-u { animation-delay: 0.15s; }
+
+  @keyframes fadeLetters {
+    0% { opacity: 1; transform: translatey(-40%); }
+    100% { opacity: 0; transform: translatey(-150%); }  }
+
+  .site-header__logo-image { display: block; }
+  .site-header__logo-image img,.site-header__logo-image svg { width: 100%; height: auto; }
+  .site-header__nav { }
 
   .nav-link {
     font-family: "poppins", Helvetica;
@@ -162,6 +190,9 @@
   .mobile-nav-item {
     border-bottom: 1px solid #e5e5e5;
     padding: 28px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .mobile-nav-trigger {
@@ -192,10 +223,6 @@
     border-bottom: 2px solid #000;
     transform: rotate(45deg);
     transition: transform 0.3s ease;
-  }
-
-  .mobile-nav-item:hover .mobile-nav-arrow {
-    transform: rotate(-135deg);
   }
 
   .mobile-submenu {
