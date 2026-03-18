@@ -111,14 +111,7 @@
     transform: scaleX(1);
   }
 
-  .site-nav__dropdown {
-    overflow: hidden;
-    max-height: 0px;
-  }
-
-
-
-
+  
   /* --- MOBILE MENU & HAMBURGER --- */
   .hamb-group {
     width: 28px;

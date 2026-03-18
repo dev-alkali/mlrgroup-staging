@@ -34,7 +34,7 @@
                 </a>
               <?php else: ?>
                 <a class="site-header__logo-image" href="<?php echo esc_url(home_url('/')); ?>">
-                  <img src="<?= $logo_url ?>" alt="MLR Group">
+                  <img src="<?php $logo_url ?>" alt="MLR Group">
                 </a>
               <?php endif; ?>
           </div>
@@ -82,15 +82,15 @@
                       ?>
 
                       <!-- wrapper novo por item -->
-                      <div class="site-nav__item <?= $has_children ? 'has-children' : '' ?> anim" data-delay="<?php echo $index; $index  = $index + 0.1; ?>" data-anim="up">
+                      <div class="site-nav__item relative <?php $has_children ? 'has-children' : '' ?> anim" data-delay="<?php echo $index; $index  = $index + 0.1; ?>" data-anim="up">
                         <a class="inline-flex items-center justify-center gap-2"
-                          href="<?= esc_url($item->url) ?>"
-                          <?= $has_children ? 'aria-haspopup="true" aria-expanded="false"' : '' ?>>
-                          <span class="flex gap-2 <?= esc_attr($active_class) ?>">
+                          href="<?php esc_url($item->url) ?>"
+                          <?php $has_children ? 'aria-haspopup="true" aria-expanded="false"' : '' ?>>
+                          <span class="flex gap-2 <?php esc_attr($active_class) ?>">
                             <?php if ($active_class == "active"): ?>
                               <img class="w-4 h-4 mt-[2px]" src="https://c.animaapp.com/mmah2hinwUF90F/img/arrow.svg" alt="" />
                             <?php endif; ?>
-                            <span class="nav-link "><?= esc_html($item->title) ?></span>
+                            <span class="nav-link "><?php esc_html($item->title) ?></span>
                           </span>
 
                           <?php if ($has_children): ?>
@@ -105,15 +105,22 @@
 
                         <?php if ($has_children): ?>
                           <!-- dropdown (classes novas) -->
-                          <div class="site-nav__dropdown">
+                          <div class="site-nav__dropdown min-[1180px]:absolute 
+                            min-[1180px]:left-0 
+                            min-[1180px]:top-full 
+                            min-[1180px]:bg-white 
+                            min-[1180px]:px-[20px] 
+                            min-[1180px]:py-[28px] 
+                            min-[1180px]:shadow-[0px_10px_15px_-3px_#0000001A,0px_4px_6px_-4px_#0000001A]">
                             <?php foreach ($item->children as $child): ?>
                               <?php
                               $child_url_normalized = trailingslashit($child->url);
                               $child_active_class = ($child_url_normalized === $current_url_normalized) ? 'active' : '';
                               ?>
-                              <a class="site-nav__dropdown-link <?= esc_attr($child_active_class) ?>"
-                                href="<?= esc_url($child->url) ?>">
-                                <?= esc_html($child->title) ?>
+                              <a class="site-nav__dropdown-link block  min-[1180px]:py-[12px]  min-[1180px]:min-w-[340px]  min-[1180px]:text-[16px]  min-[1180px]:leading-[22px]  
+                              min-[1180px]:font-semibold  <?php esc_attr($child_active_class) ?>"
+                                href="<?php esc_url($child->url) ?>">
+                                <?php esc_html($child->title) ?>
                               </a>
                             <?php endforeach; ?>
                           </div>
@@ -129,7 +136,7 @@
               }
               ?>
             </nav>
-            <a class="btn-primary" href="<?= esc_url(get_field('lets_talk_link', 'option')) ?>">LETS TALK</a>
+            <a class="btn-primary" href="<?php esc_url(get_field('lets_talk_link', 'option')) ?>">LETS TALK</a>
           </div>
       </div>
     </div>
@@ -141,7 +148,7 @@
         $logo_url = wp_get_attachment_image_url($logo_id, 'full');
         ?>
         <a href="<?php echo esc_url(home_url('/')); ?>">
-          <img src="<?= $logo_url ?>" alt="MLR Group">
+          <img src="<?php $logo_url ?>" alt="MLR Group">
         </a>
       </div>
       <div class="mobile-menu">
@@ -158,7 +165,7 @@
           </div>
 
           <button class="mobile-menu-close">
-            <img src="<?= get_template_directory_uri() ?>/assets/imgs/Remove.svg" alt="close">
+            <img src="<?php get_template_directory_uri() ?>/assets/imgs/Remove.svg" alt="close">
           </button>
 
         </div>
@@ -172,10 +179,10 @@
               ?>
               <?php $has_children = !empty($item->children); ?>
 
-              <div class="mobile-nav-item <?= $has_children ? 'has-children' : '' ?>" >
+              <div class="mobile-nav-item <?php $has_children ? 'has-children' : '' ?>" >
 
-                <span  class="mobile-nav-trigger <?= $active_class ?>">
-                  <a href="<?= esc_url($item->url) ?>" class="mobile-item-name"><?= esc_html($item->title) ?></a>
+                <span  class="mobile-nav-trigger <?php $active_class ?>">
+                  <a href="<?php esc_url($item->url) ?>" class="mobile-item-name"><?php esc_html($item->title) ?></a>
 
                   <?php if ($has_children): ?>
                     <span class="mobile-nav-arrow"></span>
@@ -185,8 +192,8 @@
                 <?php if ($has_children): ?>
                   <div class="mobile-submenu">
                     <?php foreach ($item->children as $child): ?>
-                      <a href="<?= esc_url($child->url) ?>">
-                        <?= esc_html($child->title) ?>
+                      <a href="<?php esc_url($child->url) ?>">
+                        <?php esc_html($child->title) ?>
                       </a>
                     <?php endforeach; ?>
                   </div>
@@ -198,14 +205,14 @@
           </nav>
 
           <div class="mobile-menu-footer">
-            <a class="btn-primary" href="<?= esc_url(get_field('lets_talk_link', 'option')) ?>">LET'S TALK</a>
+            <a class="btn-primary" href="<?php esc_url(get_field('lets_talk_link', 'option')) ?>">LET'S TALK</a>
           </div>
 
         </div>
 
       </div>
       <div class="hamb-group">
-        <img src="<?= get_template_directory_uri() ?>/assets/imgs/Menu.svg" alt="">
+        <img src="<?php get_template_directory_uri() ?>/assets/imgs/Menu.svg" alt="">
       </div>
     </div>
   </header>
