@@ -1,5 +1,4 @@
 <?php
-
 /**
  * header.php
  */
@@ -14,186 +13,105 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <?php wp_body_open(); ?>
+<?php wp_body_open(); ?>
 
-  <header class=" absolute z-50 w-full">
-    <div class="site-header anim hidden min-[1180px]:flex self-stretch flex-[0_0_auto] px-10 min-[1250px]:px-20 md:pt-8">
-      <div class="wrapper min-[1180px]:flex justify-between w-full items-center">
-         <div class="relative w-[140px] h-8">
-          <?php
-            $logo_id = get_theme_mod('custom_logo');
-            $logo_url = wp_get_attachment_image_url($logo_id, 'full');
-            $logo_svg = get_field('logo_svg', 'option');
-          ?>
+<header class="absolute z-50 w-full">
 
-          <?php
-            
-              if ($logo_svg): ?>
-                <a class="site-header__logo-image" href="<?php echo esc_url(home_url('/')); ?>">
-                  <?php echo $logo_svg; ?>
-                </a>
-              <?php else: ?>
-                <a class="site-header__logo-image" href="<?php echo esc_url(home_url('/')); ?>">
-                  <img src="<?php $logo_url ?>" alt="MLR Group">
-                </a>
-              <?php endif; ?>
-          </div>
-          <div class="site-header__nav inline-flex items-center gap-5 min-[1350px]:gap-10 flex-[0_0_auto] anim" data-delay="1.2" data-anim="up">
-            <nav>
-              <?php
-              $locations = get_nav_menu_locations();
-              $menu_id   = $locations['header-menu'] ?? 0;
+  <?php
+  $locations = get_nav_menu_locations();
+  $menu_id   = $locations['header-menu'] ?? 0;
 
-              if ($menu_id) {
-                $menu_items = wp_get_nav_menu_items($menu_id);
-                if ($menu_items) {
-                  $current_url = home_url($_SERVER['REQUEST_URI']);
-                  $current_url_normalized = trailingslashit($current_url);
+  $tree = [];
+  $current_url_normalized = trailingslashit(home_url($_SERVER['REQUEST_URI']));
 
-                  // Indexa por ID + cria array children
-                  $by_id = [];
-                  foreach ($menu_items as $it) {
-                    $it->children = [];
-                    $by_id[$it->ID] = $it;
-                  }
+  if ($menu_id) {
+    $menu_items = wp_get_nav_menu_items($menu_id);
 
-                  // Monta árvore
-                  $tree = [];
-                  foreach ($by_id as $it) {
-                    $parent_id = (int) $it->menu_item_parent;
-                    if ($parent_id && isset($by_id[$parent_id])) {
-                      $by_id[$parent_id]->children[] = $it;
-                    } else {
-                      $tree[] = $it;
-                    }
-                  }
-              ?>
+    if ($menu_items) {
+      $by_id = [];
 
-                  <!-- wrapper novo (não muda suas classes existentes) -->
-                  <div class="inline-flex items-center gap-6">
-                    <?php
-                      $index = 1;
-                      foreach ($tree as $item): ?>
-                      <?php
-                      $item_url_normalized = trailingslashit($item->url);
-                      $active_class = ($item_url_normalized === $current_url_normalized) ? 'active' : '';
-                      $has_children = !empty($item->children);
-                      
-                      ?>
+      foreach ($menu_items as $it) {
+        $it->children = [];
+        $by_id[$it->ID] = $it;
+      }
 
-                      <!-- wrapper novo por item -->
-                      <div class="site-nav__item relative <?php $has_children ? 'has-children' : '' ?> anim" data-delay="<?php echo $index; $index  = $index + 0.1; ?>" data-anim="up">
-                        <a class="inline-flex items-center justify-center gap-2"
-                          href="<?php esc_url($item->url) ?>"
-                          <?php $has_children ? 'aria-haspopup="true" aria-expanded="false"' : '' ?>>
-                          <span class="flex gap-2 <?php esc_attr($active_class) ?>">
-                            <?php if ($active_class == "active"): ?>
-                              <img class="w-4 h-4 mt-[2px]" src="https://c.animaapp.com/mmah2hinwUF90F/img/arrow.svg" alt="" />
-                            <?php endif; ?>
-                            <span class="nav-link "><?php esc_html($item->title) ?></span>
-                          </span>
+      foreach ($by_id as $it) {
+        $parent_id = (int) $it->menu_item_parent;
+        if ($parent_id && isset($by_id[$parent_id])) {
+          $by_id[$parent_id]->children[] = $it;
+        } else {
+          $tree[] = $it;
+        }
+      }
+    }
+  }
 
-                          <?php if ($has_children): ?>
-                            <!-- NÃO MUDA: mesma imagem, agora condicional -->
-                            <div class="w-5 h-5 site-nav__caret">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" style="var(--arrow-color,var(--color-white));">
-                            <path d="M10.0002 14.0005C9.41691 14.0005 8.83358 13.7755 8.39191 13.3338L2.95859 7.90052C2.71693 7.65885 2.71693 7.25885 2.95859 7.01719C3.20026 6.77552 3.60026 6.77552 3.84193 7.01719L9.27524 12.4505C9.67524 12.8505 10.3252 12.8505 10.7252 12.4505L16.1586 7.01719C16.4002 6.77552 16.8002 6.77552 17.0419 7.01719C17.2836 7.25885 17.2836 7.65885 17.0419 7.90052L11.6086 13.3338C11.1669 13.7755 10.5836 14.0005 10.0002 14.0005Z" fill="white"></path>
-                            </svg>
-                            </div>
-                          <?php endif; ?>
-                        </a>
+  $logo_id  = get_theme_mod('custom_logo');
+  $logo_url = wp_get_attachment_image_url($logo_id, 'full');
+  $logo_svg = get_field('logo_svg', 'option');
+  ?>
 
-                        <?php if ($has_children): ?>
-                          <!-- dropdown (classes novas) -->
-                          <div class="site-nav__dropdown min-[1180px]:absolute 
-                            min-[1180px]:left-0 
-                            min-[1180px]:top-full 
-                            min-[1180px]:bg-white 
-                            min-[1180px]:px-[20px] 
-                            min-[1180px]:py-[28px] 
-                            min-[1180px]:shadow-[0px_10px_15px_-3px_#0000001A,0px_4px_6px_-4px_#0000001A]">
-                            <?php foreach ($item->children as $child): ?>
-                              <?php
-                              $child_url_normalized = trailingslashit($child->url);
-                              $child_active_class = ($child_url_normalized === $current_url_normalized) ? 'active' : '';
-                              ?>
-                              <a class="site-nav__dropdown-link block  min-[1180px]:py-[12px]  min-[1180px]:min-w-[340px]  min-[1180px]:text-[16px]  min-[1180px]:leading-[22px]  
-                              min-[1180px]:font-semibold  <?php esc_attr($child_active_class) ?>"
-                                href="<?php esc_url($child->url) ?>">
-                                <?php esc_html($child->title) ?>
-                              </a>
-                            <?php endforeach; ?>
-                          </div>
-                        <?php endif; ?>
-                      </div>
+  <!-- DESKTOP HEADER -->
+  <div class="site-header anim hidden min-[1180px]:flex self-stretch flex-[0_0_auto] px-10 min-[1250px]:px-20 md:pt-8">
+    <div class="wrapper min-[1180px]:flex justify-between w-full items-center">
 
-                    <?php endforeach; ?>
-                  </div>
-              <?php
-                }
-              } else {
-                echo '<p>empty menu</p>';
-              }
-              ?>
-            </nav>
-            <a class="btn-primary" href="<?php esc_url(get_field('lets_talk_link', 'option')) ?>">LETS TALK</a>
-          </div>
-      </div>
-    </div>
-    
-    <div class="header-dropdown flex w-full justify-between items-center min-[1180px]:hidden self-stretch flex-[0_0_auto] px-4 md:px-10 min-[890px]:px-20  pt-4 md:pt-8 pb-4  md:pb-0 wrapper">
-      <div class="relative w-[106px] md:w-[120px]  ">
-        <?php
-        $logo_id = get_theme_mod('custom_logo');
-        $logo_url = wp_get_attachment_image_url($logo_id, 'full');
-        ?>
+      <!-- LOGO -->
+      <div class="relative w-[140px] h-8">
         <a href="<?php echo esc_url(home_url('/')); ?>">
-          <img src="<?php $logo_url ?>" alt="MLR Group">
+          <?php if ($logo_svg): ?>
+            <?php echo $logo_svg; ?>
+          <?php elseif ($logo_url): ?>
+            <img src="<?php echo esc_url($logo_url); ?>" alt="Logo">
+          <?php endif; ?>
         </a>
       </div>
-      <div class="mobile-menu">
-        <div class="mobile-menu-header site-header anim px-4 md:px-15  min-[1250px]:px-25 pt-6 md:pt-13 max-w-[1920px]">
 
-          <div class="relative w-[106px] md:w-[120px]">
+      <!-- NAV -->
+      <div class="site-header__nav inline-flex items-center gap-5 min-[1350px]:gap-10 flex-[0_0_auto] anim">
 
+        <nav>
+          <div class="inline-flex items-center gap-6">
             <?php
-            if ($logo_svg): ?>
-              <a class="site-header__logo-image site-header__logo-image--mobile" href="<?php echo esc_url(home_url('/')); ?>">
-                <?php echo $logo_svg; ?>
-              </a>
-            <?php endif; ?>
-          </div>
-
-          <button class="mobile-menu-close">
-            <img src="<?php get_template_directory_uri() ?>/assets/imgs/Remove.svg" alt="close">
-          </button>
-
-        </div>
-        <div class="mobile-menu-inner ">
-
-          <nav class="mobile-nav">
-            <?php foreach ($tree as $item): ?>
-              <?php
+            $index = 1;
+            foreach ($tree as $item):
               $item_url_normalized = trailingslashit($item->url);
-              $active_class = ($item_url_normalized === $current_url_normalized) ? 'is-active' : '';
-              ?>
-              <?php $has_children = !empty($item->children); ?>
+              $active_class = ($item_url_normalized === $current_url_normalized) ? 'active' : '';
+              $has_children = !empty($item->children);
+            ?>
 
-              <div class="mobile-nav-item <?php $has_children ? 'has-children' : '' ?>" >
+              <div class="site-nav__item relative <?php echo $has_children ? 'has-children' : ''; ?> anim"
+                   data-delay="<?php echo $index; $index += 0.1; ?>" data-anim="up">
 
-                <span  class="mobile-nav-trigger <?php $active_class ?>">
-                  <a href="<?php esc_url($item->url) ?>" class="mobile-item-name"><?php esc_html($item->title) ?></a>
+                <a class="inline-flex items-center justify-center gap-2"
+                   href="<?php echo esc_url($item->url); ?>"
+                   <?php echo $has_children ? 'aria-haspopup="true" aria-expanded="false"' : ''; ?>>
+
+                  <span class="flex gap-2 <?php echo esc_attr($active_class); ?>">
+                    <?php if ($active_class === "active"): ?>
+                      <img class="w-4 h-4 mt-[2px]" src="https://c.animaapp.com/mmah2hinwUF90F/img/arrow.svg" alt="">
+                    <?php endif; ?>
+
+                    <span class="nav-link"><?php echo esc_html($item->title); ?></span>
+                  </span>
 
                   <?php if ($has_children): ?>
-                    <span class="mobile-nav-arrow"></span>
+                    <div class="w-5 h-5 site-nav__caret">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                        <path d="M10 14c-.6 0-1.2-.2-1.6-.7L3 7.9c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l5.4 5.4c.4.4 1 .4 1.4 0l5.4-5.4c.2-.2.6-.2.8 0 .2.2.2.6 0 .8l-5.4 5.4c-.4.5-1 .7-1.6.7z" fill="white"/>
+                      </svg>
+                    </div>
                   <?php endif; ?>
-                </span>
+                </a>
 
                 <?php if ($has_children): ?>
-                  <div class="mobile-submenu">
-                    <?php foreach ($item->children as $child): ?>
-                      <a href="<?php esc_url($child->url) ?>">
-                        <?php esc_html($child->title) ?>
+                  <div class="site-nav__dropdown min-[1180px]:absolute min-[1180px]:left-0 min-[1180px]:top-full min-[1180px]:bg-white min-[1180px]:px-[20px] min-[1180px]:py-[28px] min-[1180px]:shadow-lg">
+                    <?php foreach ($item->children as $child):
+                      $child_url_normalized = trailingslashit($child->url);
+                      $child_active_class = ($child_url_normalized === $current_url_normalized) ? 'active' : '';
+                    ?>
+                      <a class="block py-2 min-w-[340px] font-semibold <?php echo esc_attr($child_active_class); ?>"
+                         href="<?php echo esc_url($child->url); ?>">
+                        <?php echo esc_html($child->title); ?>
                       </a>
                     <?php endforeach; ?>
                   </div>
@@ -202,17 +120,83 @@
               </div>
 
             <?php endforeach; ?>
-          </nav>
-
-          <div class="mobile-menu-footer">
-            <a class="btn-primary" href="<?php esc_url(get_field('lets_talk_link', 'option')) ?>">LET'S TALK</a>
           </div>
+        </nav>
 
+        <a class="btn-primary" href="<?php echo esc_url(get_field('lets_talk_link', 'option')); ?>">
+          LETS TALK
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE HEADER -->
+  <div class="header-dropdown flex w-full justify-between items-center min-[1180px]:hidden px-4 md:px-10 pt-4 pb-4">
+
+    <!-- LOGO -->
+    <div class="relative w-[106px] md:w-[120px]">
+      <a href="<?php echo esc_url(home_url('/')); ?>">
+        <?php if ($logo_svg): ?>
+          <?php echo $logo_svg; ?>
+        <?php elseif ($logo_url): ?>
+          <img src="<?php echo esc_url($logo_url); ?>" alt="Logo">
+        <?php endif; ?>
+      </a>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu">
+      <div class="mobile-menu-inner">
+
+        <nav class="mobile-nav">
+          <?php foreach ($tree as $item):
+            $item_url_normalized = trailingslashit($item->url);
+            $active_class = ($item_url_normalized === $current_url_normalized) ? 'is-active' : '';
+            $has_children = !empty($item->children);
+          ?>
+
+            <div class="mobile-nav-item <?php echo $has_children ? 'has-children' : ''; ?>">
+
+              <span class="mobile-nav-trigger <?php echo esc_attr($active_class); ?>">
+                <a href="<?php echo esc_url($item->url); ?>" class="mobile-item-name">
+                  <?php echo esc_html($item->title); ?>
+                </a>
+
+                <?php if ($has_children): ?>
+                  <span class="mobile-nav-arrow"></span>
+                <?php endif; ?>
+              </span>
+
+              <?php if ($has_children): ?>
+                <div class="mobile-submenu">
+                  <?php foreach ($item->children as $child): ?>
+                    <a href="<?php echo esc_url($child->url); ?>">
+                      <?php echo esc_html($child->title); ?>
+                    </a>
+                  <?php endforeach; ?>
+                </div>
+              <?php endif; ?>
+
+            </div>
+
+          <?php endforeach; ?>
+        </nav>
+
+        <div class="mobile-menu-footer">
+          <a class="btn-primary" href="<?php echo esc_url(get_field('lets_talk_link', 'option')); ?>">
+            LET'S TALK
+          </a>
         </div>
 
       </div>
-      <div class="hamb-group">
-        <img src="<?php get_template_directory_uri() ?>/assets/imgs/Menu.svg" alt="">
-      </div>
     </div>
-  </header>
+
+    <!-- HAMBURGER -->
+    <div class="hamb-group">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/Menu.svg" alt="menu">
+    </div>
+
+  </div>
+
+</header>
