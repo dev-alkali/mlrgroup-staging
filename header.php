@@ -145,6 +145,10 @@
       </a>
     </div>
 
+     <button class="mobile-menu-close">
+        <img src="<?= get_template_directory_uri() ?>/assets/imgs/Remove.svg" alt="close">
+      </button>
+
     <!-- MOBILE MENU -->
     <div class="mobile-menu">
       <div class="mobile-menu-inner">
