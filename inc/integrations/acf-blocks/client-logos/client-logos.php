@@ -69,30 +69,28 @@ if (!empty($block['className'])) {
         </div>
         <?php endif; ?>
 
-        <div class="logo-card">
-                 <?php if (have_rows('logo_lists')) : ?>
-                  <?php while (have_rows('logo_lists')) : the_row();                      
-                      $logo = get_sub_field('logo_img');
-                      $bg_color = get_sub_field('background_color');
-                      $industry = get_sub_field('industries_filter');
-                      
-                    ?>
+        <div class="logo-cards grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <?php if (have_rows('logo_lists')) : ?>
+              <?php while (have_rows('logo_lists')) : the_row();                      
+                $logo = get_sub_field('logo_img');
+                $bg_color = get_sub_field('background_color');
+                $industry = get_sub_field('industries_filter');
+              ?>
 
-                      <div class="flex items-center justify-center p-6 <?php echo esc_attr($bg_color); ?>">
-
-                        <?php if ($logo) : ?>
-                          <img 
-                            src="<?php echo esc_url($logo['url']); ?>" 
-                            alt="<?php echo esc_attr($logo['alt']); ?>" 
-                            class="max-w-full h-auto"
-                          />
-                        <?php endif; ?>
-                          <h2><?php echo esc_html($industry); ?></h2> 
-                      </div>
-
-                    <?php endwhile; ?>
+                <div class="p-6" style="background-color:<?php echo esc_attr($bg_color); ?>;">
+                  <?php if ($logo) : ?>
+                    <img 
+                      src="<?php echo esc_url($logo['url']); ?>" 
+                      alt="<?php echo esc_attr($logo['alt']); ?>" 
+                      class="max-w-full h-auto"
+                    />
                   <?php endif; ?>
-        </div>
+                  <h2><?php echo esc_html($industry); ?></h2> 
+                </div>
+
+              <?php endwhile; ?>
+            <?php endif; ?>
+          </div>
 
 
 
