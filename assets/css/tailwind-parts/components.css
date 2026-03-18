@@ -224,6 +224,11 @@
     text-decoration-color: #fd4338;
   }
 
+  .mobile-nav-item.open .mobile-item-name {
+    color: #FD4338;
+    text-decoration: underline;
+  }
+
   .mobile-nav-arrow {
     width: 10px;
     height: 10px;
