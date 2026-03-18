@@ -57,7 +57,7 @@
 
       <!-- LOGO -->
       <div class="relative w-[140px] h-8">
-        <a href="<?php echo esc_url(home_url('/')); ?>">
+        <a class="site-header__logo-image" href="<?php echo esc_url(home_url('/')); ?>">
           <?php if ($logo_svg): ?>
             <?php echo $logo_svg; ?>
           <?php elseif ($logo_url): ?>
@@ -135,8 +135,8 @@
   <div class="header-dropdown flex w-full justify-between items-center min-[1180px]:hidden px-4 md:px-10 pt-4 pb-4">
 
     <!-- LOGO -->
-    <div class="relative w-[106px] md:w-[120px]">
-      <a href="<?php echo esc_url(home_url('/')); ?>">
+    <div class="relative w-[106px] md:w-[120px] site-header anim">
+      <a class="site-header__logo-image" href="<?php echo esc_url(home_url('/')); ?>">
         <?php if ($logo_svg): ?>
           <?php echo $logo_svg; ?>
         <?php elseif ($logo_url): ?>
