@@ -12,6 +12,11 @@
     font-family: var(--font-body);
   }
 
+  .anim {
+    opacity: 0;
+    transition: opacity ease;
+  }
+
   /* --- BUTTONS --- */
   .btn-primary:hover {
     background-color: var(--color-accent-hover);
@@ -84,6 +89,14 @@
     overflow: hidden;
     max-height: 0px;
   }
+
+.site-header.is-sticky { 
+  position: fixed; top: 0; box-shadow: 0px 10px 15px -3px #0000001A; box-shadow: 0px 4px 6px -4px #0000001A; background: #fff; padding: 20px 0; left: 0; max-width: 100%; width: 100%; 
+}
+
+.site-header.is-sticky .nav-link {   
+  color: #525252; 
+}
 
   /* --- MOBILE MENU & HAMBURGER --- */
   .hamb-group {

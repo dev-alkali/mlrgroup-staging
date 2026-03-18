@@ -17,7 +17,8 @@
   <?php wp_body_open(); ?>
 
   <header class=" absolute z-50 flex w-full justify-center items-center min-[600px]:px-5 min-[600px]:pt-5">
-    <div class="site-header hidden min-[1180px]:flex self-stretch flex-[0_0_auto] px-10  min-[1250px]:px-20  min-[600px]:pt-8 max-w-[1920px]">
+    <div class="site-header hidden min-[1180px]:flex self-stretch flex-[0_0_auto] px-10  min-[1250px]:px-20  min-[600px]:pt-8">
+      <div class="max-w-[1920px] min-[1180px]:flex self-stretch flex-[0_0_auto]"
       <div class="relative w-[140px] h-8">
         <?php
           $logo_id = get_theme_mod('custom_logo');
@@ -114,6 +115,7 @@
           ?>
         </nav>
         <a class="btn-primary" href="<?= esc_url(get_field('lets_talk_link', 'option')) ?>">LETS TALK</a>
+      </div>
       </div>
     </div>
     <div class="header-dropdown flex w-full justify-between items-center min-[1180px]:hidden self-stretch flex-[0_0_auto] px-4 min-[600px]:px-10 min-[890px]:px-20  pt-4 min-[600px]:pt-8 pb-4  min-[600px]:pb-0 max-w-[1920px]">
