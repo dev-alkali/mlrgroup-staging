@@ -38,97 +38,94 @@
               </a>
             <?php endif; ?>
           </div>
+          <div class="site-header__nav inline-flex items-center gap-5 min-[1350px]:gap-10 flex-[0_0_auto]">
+            <nav>
+              <?php
+              $locations = get_nav_menu_locations();
+              $menu_id   = $locations['header-menu'] ?? 0;
 
-      </div>
+              if ($menu_id) {
+                $menu_items = wp_get_nav_menu_items($menu_id);
+                if ($menu_items) {
+                  $current_url = home_url($_SERVER['REQUEST_URI']);
+                  $current_url_normalized = trailingslashit($current_url);
 
-      <div class="site-header__nav inline-flex items-center gap-5 min-[1350px]:gap-10 flex-[0_0_auto]">
-        <nav>
-          <?php
-          $locations = get_nav_menu_locations();
-          $menu_id   = $locations['header-menu'] ?? 0;
+                  // Indexa por ID + cria array children
+                  $by_id = [];
+                  foreach ($menu_items as $it) {
+                    $it->children = [];
+                    $by_id[$it->ID] = $it;
+                  }
 
-          if ($menu_id) {
-            $menu_items = wp_get_nav_menu_items($menu_id);
-            if ($menu_items) {
-              $current_url = home_url($_SERVER['REQUEST_URI']);
-              $current_url_normalized = trailingslashit($current_url);
+                  // Monta árvore
+                  $tree = [];
+                  foreach ($by_id as $it) {
+                    $parent_id = (int) $it->menu_item_parent;
+                    if ($parent_id && isset($by_id[$parent_id])) {
+                      $by_id[$parent_id]->children[] = $it;
+                    } else {
+                      $tree[] = $it;
+                    }
+                  }
+              ?>
 
-              // Indexa por ID + cria array children
-              $by_id = [];
-              foreach ($menu_items as $it) {
-                $it->children = [];
-                $by_id[$it->ID] = $it;
-              }
+                  <!-- wrapper novo (não muda suas classes existentes) -->
+                  <div class="inline-flex items-center gap-6">
+                    <?php foreach ($tree as $item): ?>
+                      <?php
+                      $item_url_normalized = trailingslashit($item->url);
+                      $active_class = ($item_url_normalized === $current_url_normalized) ? 'active' : '';
+                      $has_children = !empty($item->children);
+                      $index = 1;
+                      ?>
 
-              // Monta árvore
-              $tree = [];
-              foreach ($by_id as $it) {
-                $parent_id = (int) $it->menu_item_parent;
-                if ($parent_id && isset($by_id[$parent_id])) {
-                  $by_id[$parent_id]->children[] = $it;
-                } else {
-                  $tree[] = $it;
-                }
-              }
-          ?>
+                      <!-- wrapper novo por item -->
+                      <div class="site-nav__item <?= $has_children ? 'has-children' : '' ?> anim" data-delay="<?php echo $index; $index  = $index + 0.1; ?>" data-anim="up">
+                        <a class="inline-flex items-center justify-center gap-2"
+                          href="<?= esc_url($item->url) ?>"
+                          <?= $has_children ? 'aria-haspopup="true" aria-expanded="false"' : '' ?>>
+                          <span class="flex gap-2 <?= esc_attr($active_class) ?>">
+                            <?php if ($active_class == "active"): ?>
+                              <img class="w-4 h-4 mt-[2px]" src="https://c.animaapp.com/mmah2hinwUF90F/img/arrow.svg" alt="" />
+                            <?php endif; ?>
+                            <span class="nav-link "><?= esc_html($item->title) ?></span>
+                          </span>
 
-              <!-- wrapper novo (não muda suas classes existentes) -->
-              <div class="inline-flex items-center gap-6">
-                <?php foreach ($tree as $item): ?>
-                  <?php
-                  $item_url_normalized = trailingslashit($item->url);
-                  $active_class = ($item_url_normalized === $current_url_normalized) ? 'active' : '';
-                  $has_children = !empty($item->children);
-                  $index = 1;
-                  ?>
+                          <?php if ($has_children): ?>
+                            <!-- NÃO MUDA: mesma imagem, agora condicional -->
+                            <img class="w-5 h-5 site-nav__caret"
+                              src="https://c.animaapp.com/mmah2hinwUF90F/img/frame.svg" alt="" />
+                          <?php endif; ?>
+                        </a>
 
-                  <!-- wrapper novo por item -->
-                  <div class="site-nav__item <?= $has_children ? 'has-children' : '' ?> anim" data-delay="<?php echo $index; $index  = $index + 0.1; ?>" data-anim="up">
-                    <a class="inline-flex items-center justify-center gap-2"
-                      href="<?= esc_url($item->url) ?>"
-                      <?= $has_children ? 'aria-haspopup="true" aria-expanded="false"' : '' ?>>
-                      <span class="flex gap-2 <?= esc_attr($active_class) ?>">
-                        <?php if ($active_class == "active"): ?>
-                          <img class="w-4 h-4 mt-[2px]" src="https://c.animaapp.com/mmah2hinwUF90F/img/arrow.svg" alt="" />
+                        <?php if ($has_children): ?>
+                          <!-- dropdown (classes novas) -->
+                          <div class="site-nav__dropdown">
+                            <?php foreach ($item->children as $child): ?>
+                              <?php
+                              $child_url_normalized = trailingslashit($child->url);
+                              $child_active_class = ($child_url_normalized === $current_url_normalized) ? 'active' : '';
+                              ?>
+                              <a class="site-nav__dropdown-link <?= esc_attr($child_active_class) ?>"
+                                href="<?= esc_url($child->url) ?>">
+                                <?= esc_html($child->title) ?>
+                              </a>
+                            <?php endforeach; ?>
+                          </div>
                         <?php endif; ?>
-                        <span class="nav-link "><?= esc_html($item->title) ?></span>
-                      </span>
-
-                      <?php if ($has_children): ?>
-                        <!-- NÃO MUDA: mesma imagem, agora condicional -->
-                        <img class="w-5 h-5 site-nav__caret"
-                          src="https://c.animaapp.com/mmah2hinwUF90F/img/frame.svg" alt="" />
-                      <?php endif; ?>
-                    </a>
-
-                    <?php if ($has_children): ?>
-                      <!-- dropdown (classes novas) -->
-                      <div class="site-nav__dropdown">
-                        <?php foreach ($item->children as $child): ?>
-                          <?php
-                          $child_url_normalized = trailingslashit($child->url);
-                          $child_active_class = ($child_url_normalized === $current_url_normalized) ? 'active' : '';
-                          ?>
-                          <a class="site-nav__dropdown-link <?= esc_attr($child_active_class) ?>"
-                            href="<?= esc_url($child->url) ?>">
-                            <?= esc_html($child->title) ?>
-                          </a>
-                        <?php endforeach; ?>
                       </div>
-                    <?php endif; ?>
-                  </div>
 
-                <?php endforeach; ?>
-              </div>
-          <?php
-            }
-          } else {
-            echo '<p>empty menu</p>';
-          }
-          ?>
-        </nav>
-        <a class="btn-primary" href="<?= esc_url(get_field('lets_talk_link', 'option')) ?>">LETS TALK</a>
-      </div>
+                    <?php endforeach; ?>
+                  </div>
+              <?php
+                }
+              } else {
+                echo '<p>empty menu</p>';
+              }
+              ?>
+            </nav>
+            <a class="btn-primary" href="<?= esc_url(get_field('lets_talk_link', 'option')) ?>">LETS TALK</a>
+          </div>
       </div>
     </div>
     <div class="header-dropdown flex w-full justify-between items-center min-[1180px]:hidden self-stretch flex-[0_0_auto] px-4 min-[600px]:px-10 min-[890px]:px-20  pt-4 min-[600px]:pt-8 pb-4  min-[600px]:pb-0 max-w-[1920px]">
@@ -149,7 +146,7 @@
             <?php
             if ($logo_svg): ?>
               <a class="site-header__logo-image site-header__logo-image--mobile" href="<?php echo esc_url(home_url('/')); ?>">
-                <?php echo $logo_svg; ?>"
+                <?php echo $logo_svg; ?>
               </a>
             <?php endif; ?>
           </div>
