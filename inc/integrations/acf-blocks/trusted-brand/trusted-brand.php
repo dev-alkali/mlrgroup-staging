@@ -20,7 +20,7 @@ if (!empty($block['className'])) {
 
 <?php if (have_rows('trusted_brand')) :  while (have_rows('trusted_brand')) : the_row(); ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>min-[1024px]:pt-10 min-[1025px]:pb-10  min-[1024px]:px-5">
-      <div class="flex items-center gap-2 pl-4 pr-4 py-10 w-full wrapper relative">
+      <div class="gap-2 w-full wrapper relative">
         <?php if (have_rows('brands')) :  while (have_rows('brands')) : the_row(); ?>          
             <div class="flex items-start min-[767px]:justify-start justify-center gap-2 min-[767px]:gap-3 shrink-0 mb-[50px]">
               <div class="relative mt-[1.5px] min-[767px]:mt-[3px]"><img class="w-4 min-[767px]:w-5 " src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-blue-brands.svg" alt="arrow"></div>
