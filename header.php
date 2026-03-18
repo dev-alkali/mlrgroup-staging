@@ -171,9 +171,9 @@
               ?>
               <?php $has_children = !empty($item->children); ?>
 
-              <div class="mobile-nav-item px-4 min-[600px]px-15 <?= $has_children ? 'has-children' : '' ?> >
+              <div class="mobile-nav-item px-4 min-[600px]px-15 <?= $has_children ? 'has-children' : '' ?>" >
 
-                <span  class="mobile-nav-trigger <?= $active_class  ?>">
+                <span  class="mobile-nav-trigger <?= $active_class ?>">
                   <a href="<?= esc_url($item->url) ?>" class="mobile-item-name"><?= esc_html($item->title) ?></a>
 
                   <?php if ($has_children): ?>
