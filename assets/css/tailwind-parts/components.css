@@ -153,6 +153,7 @@
   }
 
   .mobile-menu-header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -177,6 +178,7 @@
   }
 
   .mobile-menu-inner {
+    width: 100%;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -185,6 +187,7 @@
   .mobile-nav {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
 
   .mobile-nav-item {

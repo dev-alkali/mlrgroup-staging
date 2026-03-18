@@ -161,7 +161,7 @@
           </button>
 
         </div>
-        <div class="mobile-menu-inner px-4 min-[600px]px-15">
+        <div class="mobile-menu-inner ">
 
           <nav class="mobile-nav">
             <?php foreach ($tree as $item): ?>
@@ -171,7 +171,7 @@
               ?>
               <?php $has_children = !empty($item->children); ?>
 
-              <div class="mobile-nav-item  <?= $has_children ? 'has-children' : '' ?> >
+              <div class="mobile-nav-item px-4 min-[600px]px-15 <?= $has_children ? 'has-children' : '' ?> >
 
                 <span  class="mobile-nav-trigger <?= $active_class  ?>">
                   <a href="<?= esc_url($item->url) ?>" class="mobile-item-name"><?= esc_html($item->title) ?></a>
