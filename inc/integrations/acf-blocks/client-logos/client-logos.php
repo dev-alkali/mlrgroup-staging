@@ -69,7 +69,7 @@ if (!empty($block['className'])) {
         </div>
         <?php endif; ?>
 
-        <div class="logo-cards grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div class="logo-cards grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full">
             <?php if (have_rows('logo_lists')) : ?>
               <?php while (have_rows('logo_lists')) : the_row();                      
                 $logo = get_sub_field('logo_img');
