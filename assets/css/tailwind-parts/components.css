@@ -72,6 +72,13 @@
   .site-header.is-visible .site-header__logo-image .letter-o { animation-delay: 0.2s; }
   .site-header.is-visible .site-header__logo-image .letter-u { animation-delay: 0.15s; }
 
+  .site-nav__dropdown { visibility: hidden; pointer-events: none; transform: translatey(60px); opacity: 0; transition: 0.5s ease; }
+  .site-nav__item.has-children:hover .site-nav__dropdown { visibility: visible; pointer-events: auto; transform: translatey(0); opacity: 1; }
+  .site-nav__item.has-children:hover:before { content: ''; height: 40px; width: 100%; top: 200%; position: absolute; left: 0; transform: translateY(-30px); }
+  .site-nav__dropdown-link { color: #525252; }
+  .site-nav__dropdown-link:hover { color: var(--color-accent); }
+  .site-header.is-sticky .site-nav__dropdown { top: calc(100% + 30px); } 
+
   @keyframes fadeLetters {
     0% { opacity: 1; transform: translatey(-40%); }
     100% { opacity: 0; transform: translatey(-150%); }  }
