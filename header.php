@@ -23,13 +23,14 @@
         <?php
           $logo_id = get_theme_mod('custom_logo');
           $logo_url = wp_get_attachment_image_url($logo_id, 'full');
+           $logo_svg = get_field('logo_svg', 'option');
         ?>
 
          <?php
-            $logo_svg = get_field('logo_svg', 'option');
+           
             if ($logo_svg): ?>
               <a class="site-header__logo-image" href="<?php echo esc_url(home_url('/')); ?>">
-                <?php echo esc_url($logo_svg); ?>"
+                <?php echo $logo_svg; ?>"
               </a>
             <?php else: ?>
               <a class="site-header__logo-image" href="<?php echo esc_url(home_url('/')); ?>">
@@ -37,7 +38,7 @@
               </a>
             <?php endif; ?>
           </div>
-          
+
       </div>
 
       <div class="site-header__nav inline-flex items-center gap-5 min-[1350px]:gap-10 flex-[0_0_auto]">
@@ -147,7 +148,7 @@
             <?php
             if ($logo_svg): ?>
               <a class="site-header__logo-image site-header__logo-image--mobile" href="<?php echo esc_url(home_url('/')); ?>">
-                <?php echo esc_url($logo_svg); ?>"
+                <?php echo $logo_svg; ?>"
               </a>
             <?php endif; ?>
           </div>
