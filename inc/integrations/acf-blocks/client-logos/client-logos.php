@@ -80,7 +80,7 @@ if (!empty($block['className'])) {
                       $industry = $item['industry'];
                   ?>
                       <div
-                          class="logo-card p-6 flex items-center text-center justify-center aspect-1"
+                          class="logo-card p-6 flex items-center text-center justify-center aspect-square"
                           style="background-color: <?php echo esc_attr($bg_color); ?>;"
                           data-industry="<?php echo esc_attr($industry); ?>"
                       >
