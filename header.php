@@ -123,9 +123,9 @@
           </div>
         </nav>
 
-        <a class="btn-primary" href="<?php echo esc_url(get_field('lets_talk_link', 'option')); ?>">
-          LETS TALK
-        </a>
+        <?php if(get_field('lets_talk_link', 'option')): ?>
+        <a class="btn-primary" href="<?php echo esc_url(get_field('lets_talk_link', 'option')); ?>">LETS TALK</a>
+        <?php endif; ?>
 
       </div>
     </div>
@@ -184,9 +184,10 @@
         </nav>
 
         <div class="mobile-menu-footer">
-          <a class="btn-primary" href="<?php echo esc_url(get_field('lets_talk_link', 'option')); ?>">
-            LET'S TALK
-          </a>
+          <?php if(get_field('lets_talk_link', 'option')): ?>
+            <a class="btn-primary" href="<?php echo esc_url(get_field('lets_talk_link', 'option')); ?>">LETS TALK</a>
+          <?php endif; ?>
+
         </div>
 
       </div>
