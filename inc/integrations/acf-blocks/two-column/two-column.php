@@ -4,12 +4,12 @@
  * Two Column Block Template.
  */
 
-$id = 'inner-hero-' . $block['id'];
+$id = 'two-col' . $block['id'];
 if (!empty($block['anchor'])) {
   $id = $block['anchor'];
 }
 
-$className = 'inner-hero';
+$className = 'two-col';
 if (!empty($block['className'])) {
   $className .= ' ' . $block['className'];
 }
@@ -22,8 +22,8 @@ $title_row_2 = get_sub_field('title_row_2');
 $description = get_sub_field('description');
 
 ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> w-full px-4 min-[600px]:px-10 pt-[118px] pb-[120px]">
-      <div class="gap-[30px] min-[767px]:gap-[60px] w-full max-w-[1920px] mx-auto flex flex-col min-[767px]:flex-row items-center flex-wrap">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-4 md:py-[120px]">
+      <div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col md:flex-row items-center flex-wrap">
         <div class="w-full flex-1">
           <figure><?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, ['class' => 'w-full h-auto']); ?></figure>
         </div>
@@ -50,11 +50,10 @@ $description = get_sub_field('description');
                   $link_title = $link['title'];
                   $link_target = $link['target'] ? $link['target'] : '_self';
                   ?>
-                  <a class="btn-primary " href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                  <a class="btn-primary mt-[40px]" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
               <?php endif; ?>
           </div>
         </div>
-
       </div>
     </section>
 <?php endwhile;
