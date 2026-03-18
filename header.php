@@ -20,11 +20,11 @@
     <div class="site-header hidden min-[1180px]:flex self-stretch flex-[0_0_auto] px-10  min-[1250px]:px-20  min-[600px]:pt-8 max-w-[1920px]">
       <div class="relative w-[140px] h-8">
         <?php
-        $logo_id = get_theme_mod('custom_logo');
-        $logo_url = wp_get_attachment_image_url($logo_id, 'full');
+          $logo_id = get_theme_mod('custom_logo');
+          $logo_url = wp_get_attachment_image_url($logo_id, 'full');
         ?>
-        <a class=" " href="<?php echo esc_url(home_url('/')); ?>">
-          <img src="<?= $logo_url ?>" alt="MLR Group">
+        <a class="site-header__logo-link" href="<?php echo esc_url(home_url('/')); ?>">
+          <img class="site-header__logo-image" src="<?= $logo_url ?>" alt="MLR Group">
         </a>
       </div>
 
@@ -132,10 +132,7 @@
           <div class="relative w-[106px] min-[600px]:w-[120px]">
 
             <?php
-
             $black_logo = get_field('black_logo', 'option');
-
-
             if ($black_logo): ?>
               <a href="<?php echo esc_url(home_url('/')); ?>">
                 <img src="<?php echo esc_url($black_logo); ?>" alt="">

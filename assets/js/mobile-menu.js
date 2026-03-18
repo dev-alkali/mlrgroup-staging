@@ -26,5 +26,6 @@ jQuery(function ($) {
   $(".mobile-nav-trigger").on("click", function () {
     const $item = $(this).parent();
     $item.toggleClass("open");
+    $item.siblings('.mobile-submenu').slideToggle('800');
   });
 });
