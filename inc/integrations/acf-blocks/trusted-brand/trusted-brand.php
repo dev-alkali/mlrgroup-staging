@@ -19,7 +19,7 @@ if (!empty($block['className'])) {
 
 
 <?php if (have_rows('trusted_brand')) :  while (have_rows('trusted_brand')) : the_row(); ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> trusted_brand px-4 py-4 lg:py-10 lg:px-5">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> trusted_brand px-4 md:px-10 py-4 md:py-10">
       <div class="w-full wrapper relative">
         <?php if (have_rows('brands')) :  while (have_rows('brands')) : the_row(); ?>          
             <div class="flex md:justify-start justify-center gap-2 md:gap-3 shrink-0 mb-[50px]">
