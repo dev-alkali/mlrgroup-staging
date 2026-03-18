@@ -24,8 +24,8 @@ jQuery(function ($) {
   });
 
   $(".mobile-nav-trigger").on("click", function () {
+    $(this).siblings('.mobile-submenu').slideToggle('800');
     const $item = $(this).parent();
-    $item.toggleClass("open");
-    $item.siblings('.mobile-submenu').slideToggle('800');
+    $item.toggleClass("open").siblings('.mobile-nav-item').removeClass('open');
   });
 });

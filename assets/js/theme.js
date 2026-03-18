@@ -37,26 +37,25 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   /**------------------------ Animation GSAP Ends -------------------------**/
 
+  /**------------------------ Sticky Header -------------------------**/
+    const header = document.querySelector('.site-header');
+    const hero   = document.querySelector('.c-hero');  
+
+    if (!header || !hero) return;
+
+    ScrollTrigger.create({
+        trigger: hero,
+        start: 'bottom top',
+        onEnter: () => {
+        header.classList.add('is-sticky');
+        },
+        onLeaveBack: () => {
+        header.classList.remove('is-sticky');
+        }
+    });
+    /**------------------------ Sticky Header Ends -------------------------**/
+
 });
 
 
 
-/**------------------------ Sticky Header -------------------------**/
-gsap.registerPlugin(ScrollTrigger);
-
-  const header = document.querySelector('.site-header');
-  const hero   = document.querySelector('.c-hero'); // your hero section
-
-  if (!header || !hero) return;
-
-  ScrollTrigger.create({
-    trigger: hero,
-    start: 'bottom top',
-    onEnter: () => {
-      header.classList.add('is-sticky');
-    },
-    onLeaveBack: () => {
-      header.classList.remove('is-sticky');
-    }
-  });
-/**------------------------ Sticky Header Ends -------------------------**/
