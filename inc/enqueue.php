@@ -71,6 +71,14 @@ function register_script()
     true
   );
 
+   wp_enqueue_script(
+    'theme',
+    get_template_directory_uri() . '/assets/js/theme.js',
+    array('jquery-core'),
+    '1.0.0',
+    true
+  );
+
 
   /**
    * ==============================
