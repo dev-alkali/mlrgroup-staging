@@ -41,7 +41,7 @@ if (!empty($block['className'])) {
               <?php endif; ?>
             </div>
 
-        <?php if (get_field('filter_display')) : ?>
+        <?php if (get_sub_field('filter_display')) : ?>
         <div class="">
 
            <?php if (have_rows('logo_lists')) : ?>
@@ -76,7 +76,6 @@ if (!empty($block['className'])) {
                 $bg_color = get_sub_field('background_color');
                 $industry = get_sub_field('industries_filter');
               ?>
-
                 <div class="p-6 flex items-center text-center justify-center aspect-1" style="background-color:<?php echo esc_attr($bg_color); ?>;" data-att="<?php echo esc_html($industry); ?>">
                   <?php if ($logo) : ?>
                     <img 
