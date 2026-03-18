@@ -77,12 +77,12 @@ if (!empty($block['className'])) {
                 $industry = get_sub_field('industries_filter');
               ?>
 
-                <div class="p-6" style="background-color:<?php echo esc_attr($bg_color); ?>;">
+                <div class="p-6 flex items-center text-center justify-center" style="background-color:<?php echo esc_attr($bg_color); ?>;">
                   <?php if ($logo) : ?>
                     <img 
                       src="<?php echo esc_url($logo['url']); ?>" 
                       alt="<?php echo esc_attr($logo['alt']); ?>" 
-                      class="max-w-full h-auto"
+                      class="max-w-[155px] h-auto"
                     />
                   <?php endif; ?>
                   <h2><?php echo esc_html($industry); ?></h2> 
@@ -102,6 +102,13 @@ if (!empty($block['className'])) {
                   $link_target = $link['target'] ? $link['target'] : '_self';
                   ?>
                   <a class="btn-primary mt-[40px]" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+
+                  <p class=" service-card-link inline-flex  gap-2 relative flex-[0_0_auto]">
+                      <span class="font-bold text-accent text-lg leading-7 uppercase relative w-fit  font-heading tracking-[0] whitespace-nowrap">
+                          View more                                                                    </span>
+
+                      <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="https://wordpress-755960-6249701.cloudwaysapps.com/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg">
+                  </p>
               <?php endif; ?>
 
       </div>
