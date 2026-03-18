@@ -19,17 +19,18 @@ if (!empty($block['className'])) {
 
 
 <?php if (have_rows('trusted_brand')) :  while (have_rows('trusted_brand')) : the_row(); ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> trusted_brand min-[1024px]:pt-10 min-[1024px]:pb-10  min-[1024px]:px-5">
-      <div class="gap-2 w-full wrapper relative">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> trusted_brand px-4 py-4 lg:py-10 lg:px-5">
+      <div class="w-full wrapper relative">
         <?php if (have_rows('brands')) :  while (have_rows('brands')) : the_row(); ?>          
-            <div class="flex items-start min-[767px]:justify-start justify-center gap-2 min-[767px]:gap-3 shrink-0 mb-[50px]">
-              <div class="relative mt-[1.5px] min-[767px]:mt-[3px]"><img class="w-4 min-[767px]:w-5 " src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-blue-brands.svg" alt="arrow"></div>
-              <p class="text-[16px] font-medium min-[767px]:text-[32px] min-[767px]:tracking-[-2%] leading-6 min-[767px]:leading-8 text-black font-heading"><?= wp_kses_post(get_sub_field('title')) ?></p>
+            <div class="flex md:justify-start justify-center gap-2 md:gap-3 shrink-0 mb-[50px]">
+              <div class="relative mt-[1.5px] md:mt-[3px]"><img class="w-4 md:w-5 " src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-blue-brands.svg" alt="arrow"></div>
+              <p class="text-[16px] font-medium md:text-[32px] md:tracking-[-2%] leading-6 md:leading-8 text-black font-heading"><?= wp_kses_post(get_sub_field('title')) ?></p>
             </div>
         <!-- MARQUEE -->
-            <div class="flex-1  overflow-hidden relative h-[91.15px] md:h-auto">
-              <div class="absolute -top-4 left-[-3%] w-[133px] max-[1024px]:hidden h-[139px] bg-white z-20 blur-[16px]"></div>
-              <div class="absolute -top-4 right-[-3%] w-[133px] h-[139px] max-[1024px]:hidden bg-white z-20  blur-[16px]"></div>
+            <div class="flex-1 overflow-hidden relative h-[91.15px] md:h-auto">
+              <div class="absolute -top-4 left-[-3%] w-[133px] h-[139px] bg-white blur-[16px] z-20 max-lg:hidden"></div>
+              <div class="absolute -top-4 right-[-3%] w-[133px] h-[139px] bg-white blur-[16px] z-20 max-lg:hidden"></div>
+              
               <div class="marquee-wrapper overflow-hidden w-full">
                 <div class="marquee-track relative">
                   <div class="marquee-group">
@@ -55,3 +56,4 @@ if (!empty($block['className'])) {
 
 <?php endwhile;
 endif; ?>
+
