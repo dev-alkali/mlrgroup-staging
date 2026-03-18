@@ -21,7 +21,7 @@ $title2 = get_sub_field('title_row_2');
 $map_code = get_sub_field('map_code');
 
 ?>
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> <?php echo esc_attr($overlay_class); ?> map-sec px-4 md:px-10 py-[60px] md:py-[120px]">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> map-sec px-4 md:px-10 py-[60px] md:py-[120px]">
   <div class="wrapper">
       <?php if ($title1 || $title2) : ?>
         <div class="serve-heading md:mb-[80px] md-[32px]">
