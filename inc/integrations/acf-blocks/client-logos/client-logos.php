@@ -19,14 +19,12 @@ if (!empty($block['className'])) {
 
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex justify-center">
       <div class="flex flex-col w-full items-start gap-8 min-[600px]:gap-[60px] max-w-[1920px]">
-
-        <?php if (have_rows('header_content')) : ?>
-          <?php while (have_rows('header_content')) : the_row(); ?>
             <div class="">
               <?php 
                 $title1 = get_sub_field('title_row_1');
                 $title2 = get_sub_field('title_row_2');
                 $subtitle = get_sub_field('subtitle');
+
               ?>
 
               <?php if ($title1 || $title2) : ?>
@@ -42,8 +40,6 @@ if (!empty($block['className'])) {
                 </p>
               <?php endif; ?>
             </div>
-          <?php endwhile; ?>
-        <?php endif; ?>
 
         <?php if (get_field('filter_display')) : ?>
         <div class="">
@@ -97,6 +93,18 @@ if (!empty($block['className'])) {
                     <?php endwhile; ?>
                   <?php endif; ?>
         </div>
+
+
+
+        <?php 
+              $link = get_sub_field('button');
+              if( $link ): 
+                  $link_url = $link['url'];
+                  $link_title = $link['title'];
+                  $link_target = $link['target'] ? $link['target'] : '_self';
+                  ?>
+                  <a class="btn-primary mt-[40px]" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+              <?php endif; ?>
 
       </div>
     </section>
