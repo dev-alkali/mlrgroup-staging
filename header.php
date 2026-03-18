@@ -86,11 +86,11 @@
                         <a class="inline-flex items-center justify-center gap-2"
                           href="<?php esc_url($item->url) ?>"
                           <?php $has_children ? 'aria-haspopup="true" aria-expanded="false"' : '' ?>>
-                          <span class="flex gap-2 <?php esc_attr($active_class) ?>">
+                          <span class="flex gap-2 <?php echo esc_attr($active_class) ?>">
                             <?php if ($active_class == "active"): ?>
                               <img class="w-4 h-4 mt-[2px]" src="https://c.animaapp.com/mmah2hinwUF90F/img/arrow.svg" alt="" />
                             <?php endif; ?>
-                            <span class="nav-link "><?php esc_html($item->title) ?></span>
+                            <span class="nav-link "><?php echo esc_html($item->title) ?></span>
                           </span>
 
                           <?php if ($has_children): ?>
@@ -118,9 +118,9 @@
                               $child_active_class = ($child_url_normalized === $current_url_normalized) ? 'active' : '';
                               ?>
                               <a class="site-nav__dropdown-link block  min-[1180px]:py-[12px]  min-[1180px]:min-w-[340px]  min-[1180px]:text-[16px]  min-[1180px]:leading-[22px]  
-                              min-[1180px]:font-semibold  <?php esc_attr($child_active_class) ?>"
-                                href="<?php esc_url($child->url) ?>">
-                                <?php esc_html($child->title) ?>
+                              min-[1180px]:font-semibold  <?php echo esc_attr($child_active_class) ?>"
+                                href="<?php echo esc_url($child->url) ?>">
+                                <?php echo esc_html($child->title) ?>
                               </a>
                             <?php endforeach; ?>
                           </div>
@@ -136,7 +136,7 @@
               }
               ?>
             </nav>
-            <a class="btn-primary" href="<?php esc_url(get_field('lets_talk_link', 'option')) ?>">LETS TALK</a>
+            <a class="btn-primary" href="<?php echo esc_url(get_field('lets_talk_link', 'option')) ?>">LETS TALK</a>
           </div>
       </div>
     </div>
