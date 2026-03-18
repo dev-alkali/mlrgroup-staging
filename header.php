@@ -82,7 +82,7 @@
               <div class="site-nav__item relative <?php echo $has_children ? 'has-children' : ''; ?> anim"
                    data-delay="<?php echo $index; $index += 0.1; ?>" data-anim="up">
 
-                <a class="inline-flex items-center justify-center gap-2"
+                <a class="nav-link inline-flex items-center justify-center gap-2"
                    href="<?php echo esc_url($item->url); ?>"
                    <?php echo $has_children ? 'aria-haspopup="true" aria-expanded="false"' : ''; ?>>
 
@@ -91,13 +91,13 @@
                       <img class="w-4 h-4 mt-[2px]" src="https://c.animaapp.com/mmah2hinwUF90F/img/arrow.svg" alt="">
                     <?php endif; ?>
 
-                    <span class="nav-link"><?php echo esc_html($item->title); ?></span>
+                    <span class="nav-link__title"><?php echo esc_html($item->title); ?></span>
                   </span>
 
                   <?php if ($has_children): ?>
                     <div class="w-5 h-5 site-nav__caret">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                        <path d="M10 14c-.6 0-1.2-.2-1.6-.7L3 7.9c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l5.4 5.4c.4.4 1 .4 1.4 0l5.4-5.4c.2-.2.6-.2.8 0 .2.2.2.6 0 .8l-5.4 5.4c-.4.5-1 .7-1.6.7z" fill="white"/>
+                        <path d="M10 14c-.6 0-1.2-.2-1.6-.7L3 7.9c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l5.4 5.4c.4.4 1 .4 1.4 0l5.4-5.4c.2-.2.6-.2.8 0 .2.2.2.6 0 .8l-5.4 5.4c-.4.5-1 .7-1.6.7z" fill="var(--arrow-color, #fff)"/>
                       </svg>
                     </div>
                   <?php endif; ?>
@@ -109,7 +109,7 @@
                       $child_url_normalized = trailingslashit($child->url);
                       $child_active_class = ($child_url_normalized === $current_url_normalized) ? 'active' : '';
                     ?>
-                      <a class="block py-2 min-w-[340px] font-semibold <?php echo esc_attr($child_active_class); ?>"
+                      <a class="site-nav__dropdown-link block py-2 min-w-[340px] font-semibold <?php echo esc_attr($child_active_class); ?>"
                          href="<?php echo esc_url($child->url); ?>">
                         <?php echo esc_html($child->title); ?>
                       </a>
