@@ -53,7 +53,7 @@
 
   <!-- DESKTOP HEADER -->
   <div class="site-header anim hidden min-[1180px]:flex self-stretch flex-[0_0_auto] md:pt-8" data-delay="2.25" data-anim="up" data-start="top 100%">
-    <div class="max-w-[1920px] min-[1180px]:flex justify-between w-full items-center px-10 mx-auto min-[1024px]:pt-8 min-[2000px]:px-0">
+    <div class="max-w-[1920px] min-[1180px]:flex justify-between w-full items-center px-10 mx-auto min-[1024px]:pt-8 min-[767px]:px-20 ">
 
       <!-- LOGO -->
       <div class="relative w-[140px] h-8">
