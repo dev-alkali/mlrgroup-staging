@@ -17,12 +17,26 @@ if (!empty($block['className'])) {
 
                 <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
                         <!-- TITLE -->
-                        <div class="solutions-header w-full max-w-[1920px] mb-8 min-[600px]:mb-[60px]">
-                            <h2 class="max-w-[943px] text-[44px] min-[600px]:text-5xl leading-[56px] min-[600px]:leading-[60px] tracking-[-2%] font-heading text-neutral-800">
+                        <div class="solutions-header flex w-full max-w-[1920px] mb-8 min-[600px]:mb-[60px]">
+                            <?php 
+                                $title_bold = get_sub_field('title_bold');
+                                $title_light = get_sub_field('title_light');
+                                $description = get_sub_field('description');
+                            ?>
+
+                            <?php if (!empty($title_bold) || !empty($title_light)) : ?>
+                            <h2 class="solutions-header__title text-[44px] min-[600px]:text-5xl leading-[56px] min-[600px]:leading-[60px] tracking-[-2%] font-heading text-neutral-800">
                                 <span class="font-bold text-neutral-800"><?= wp_kses_post(get_sub_field('title_bold')) ?></span>
                                 <span class="font-light text-neutral-500"><?= wp_kses_post(get_sub_field('title_light')) ?><span class="text-accent font-bold">.</span></span>
+                            </h2>                                
+                            <?php endif; ?>
 
-                            </h2>
+                            <?php if (!empty($description)) : ?>
+                            <p class="solutions-header__description">
+                                <?php echo wp_kses_post($description); ?>
+                            </p>
+                            <?php endif; ?>
+
                         </div>
                 <?php endwhile;
                 endif; ?>
