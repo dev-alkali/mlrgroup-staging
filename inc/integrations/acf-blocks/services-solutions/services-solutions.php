@@ -144,26 +144,14 @@ if (!empty($block['className'])) {
 
                                             <?php endwhile;
                                             endif; ?>
-
                                         </div>
-
                                     </div>
                             <?php endwhile;
                             endif; ?>
-
-
-
-
-
                         </div>
-
-
                 <?php endwhile;
                 endif; ?>
-
             </div>
-
-
         </section>
 <?php endwhile;
 endif; ?>
