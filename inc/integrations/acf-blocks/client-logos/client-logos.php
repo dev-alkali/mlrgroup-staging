@@ -18,8 +18,8 @@ if (!empty($block['className'])) {
   <?php while (have_rows('client-logos')) : the_row(); ?>
 
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> client-logos flex justify-center  px-4 md:px-10 py-[60px] md:py-[120px]">
-      <div class="flex flex-col w-full items-start gap-8 min-[600px]:gap-[60px] max-w-[1920px]">
-            <div class="mb-[60px]">
+      <div class="w-full wrapper">
+            <div class="mb-[32px] md:mb-[60px]">
               <?php 
                 $title1 = get_sub_field('title_row_1');
                 $title2 = get_sub_field('title_row_2');
@@ -101,7 +101,7 @@ if (!empty($block['className'])) {
                   $link_title = $link['title'];
                   $link_target = $link['target'] ? $link['target'] : '_self';
                   ?>
-                  <div class="text-center mt-[40px]">
+                  <div class="text-center mt-[32px] md:mt-[40px]">
                   <a class="inline-flex  gap-2 relative " href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
                       <span class="font-bold text-accent text-lg leading-7 uppercase relative w-fit font-heading tracking-[0]"><?php echo esc_html( $link_title ); ?></span>
                       <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="https://wordpress-755960-6249701.cloudwaysapps.com/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg">
