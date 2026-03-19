@@ -21,7 +21,7 @@ if (have_rows('inner_hero')) :  while (have_rows('inner_hero')) : the_row();
   $description = get_sub_field('description');
 ?>
 
-<?php if(get_sub_field('select_banner_height') == 'full'): ?>
+<?php if(get_sub_field('select_banner_height') == 'Full'): ?>
   
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> w-full px-4 md:px-10" style="background-image: url('<?php echo esc_url(get_sub_field('bg_image')); ?>');background-position: center;background-size: cover;background-repeat: no-repeat;background-color: rgba(0, 0, 0, 0.5);background-blend-mode: overlay;">
       <div class="gap-10 w-full wrapper min-h-screen py-[80px] md:py-[118px] flex items-end">
