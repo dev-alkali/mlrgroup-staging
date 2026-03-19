@@ -15,7 +15,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<?php $header_schema = get_field('header_schema') == 'light-skin' ? 'absolute min-[1024px]:pt-8' : 'relative dark-skin min-[1024px]:py-4';?>
+<?php $header_schema = get_field('header_schema') == 'light-skin' ? 'absolute min-[1180px]:pt-8' : 'relative dark-skin min-[1024px]:py-4';?>
 
 <header class=" <?php echo $header_schema.' '.get_field('header_schema'); ?> z-50 w-full site-header anim px-10 min-[767px]:px-20" data-delay="2.25" data-anim="up" data-start="top 100%">
 
