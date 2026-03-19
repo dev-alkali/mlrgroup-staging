@@ -21,6 +21,8 @@ $title_row_1 = get_sub_field('title_row_1');
 $title_row_2 = get_sub_field('title_row_2');
 $description = get_sub_field('description');
 
+$form_shortcode = get_sub_field('form_shortcode');
+
 ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> contact-form-sec px-4 md:px-10 py-[60px] md:py-[120px]">
       <div class="c-contact__container py-15 md:py-20 lg:py-40 px-4 min-[600px]:px-10">
@@ -38,7 +40,7 @@ $description = get_sub_field('description');
             <?php endif; ?>        
 
             <?php if ($description): ?>
-              <div class="c-contact__description text-[18] md:text[20] leading-[26] md:tracking-[28] mb-[32px] md:mb-[40px]">
+              <div class="c-contact__description text-[18px] md:text-[20px] leading-[26px] md:tracking-[28px] mb-[32px] md:mb-[40px]">
                 <?php echo wp_kses_post($description); ?>
               </div>
             <?php endif; ?>
@@ -58,7 +60,7 @@ $description = get_sub_field('description');
                       <?php if ($icon_id): ?>
                         <?php echo wp_get_attachment_image(
                           $icon_id,
-                          'thumbnail', false, [ 'class' => 'c-contact__social-icon w-11 h-11 object-contain', 'alt' => esc_attr(get_post_meta($icon_id, '_wp_attachment_image_alt', true)) ]
+                          'thumbnail', false, [ 'class' => 'c-contact__social-icon w-[11px] h-[11px] object-contain', 'alt' => esc_attr(get_post_meta($icon_id, '_wp_attachment_image_alt', true)) ]
                         ); ?>
                       <?php endif; ?>
                       <span><?php echo esc_html($link['title']); ?></span>
@@ -70,14 +72,13 @@ $description = get_sub_field('description');
           </div>
 
           <!-- RIGHT -->
-          <div class="c-contact__right space-y-6">
-            <!-- FORM -->
-            <?php if ($form_shortcode): ?>
+           <?php if ($form_shortcode): ?>
+          <div class="c-contact__right space-y-6">            
               <div class="c-contact__form bg-white shadow-lg rounded-2xl p-6">
                 <?php echo do_shortcode($form_shortcode); ?>
               </div>
-            <?php endif; ?>
           </div>
+          <?php endif; ?>
         </div>
       </div>  
     </section>
