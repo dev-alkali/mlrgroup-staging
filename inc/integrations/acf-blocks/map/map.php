@@ -576,7 +576,7 @@ $map_code = get_sub_field('map_code');
 <path fill-rule="evenodd" clip-rule="evenodd" d="M506.807 64.7563C506.636 66.555 505.275 67.9041 503.744 67.9041C502.213 67.9041 501.022 66.555 501.192 64.7563C501.362 62.9575 502.723 61.6084 504.254 61.6084C505.786 61.6084 506.977 63.1823 506.807 64.7563Z" fill="#CCCCCC"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M499.487 64.7563C499.317 66.555 497.955 67.9041 496.424 67.9041C494.893 67.9041 493.702 66.555 493.872 64.7563C494.042 62.9575 495.403 61.6084 496.934 61.6084C498.467 61.6084 499.658 63.1823 499.487 64.7563Z" fill="#CCCCCC"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M552.234 117.145C552.234 118.944 550.703 120.293 549.172 120.293C547.471 120.293 546.28 118.944 546.45 117.145C546.45 115.347 547.981 113.998 549.512 113.998C551.043 114.222 552.405 115.571 552.234 117.145Z" fill="#CCCCCC"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M543.727 117.145C543.727 118.944 542.195 120.293 540.664 120.293C538.963 120.293 537.772 118.944 537.942 117.145C538.112 115.347 539.473 113.998 541.004 113.998C542.706 114.222 543.897 115.571 543.727 117.145Z" fill="#FD4338"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M543.727 117.145C543.727 118.944 542.195 120.293 540.664 120.293C538.963 120.293 537.772 118.944 537.942 117.145C538.112 115.347 539.473 113.998 541.004 113.998C542.706 114.222 543.897 115.571 543.727 117.145Z" fill="#CCCCCC"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M526.884 117.145C526.714 118.944 525.353 120.293 523.821 120.293C522.119 120.293 520.928 118.944 521.098 117.145C521.268 115.347 522.629 113.998 524.162 113.998C525.863 113.998 527.054 115.571 526.884 117.145Z" fill="#CCCCCC"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M560.061 135.358C560.061 137.157 558.7 138.506 556.999 138.506C555.296 138.506 554.105 137.157 554.105 135.358C554.105 133.559 555.637 132.21 557.169 132.21C558.87 132.21 560.231 133.784 560.061 135.358Z" fill="#CCCCCC"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M568.228 135.358C568.228 137.157 566.867 138.506 565.166 138.506C563.464 138.506 562.273 137.157 562.273 135.358C562.273 133.559 563.635 132.21 565.336 132.21C567.037 132.21 568.228 133.784 568.228 135.358Z" fill="#CCCCCC"/>
@@ -1758,7 +1758,7 @@ $map_code = get_sub_field('map_code');
 <path fill-rule="evenodd" clip-rule="evenodd" d="M974.384 207.084C974.894 208.883 973.874 210.232 972.172 210.232C970.471 210.232 968.599 208.883 968.089 207.084C967.578 205.286 968.599 203.937 970.301 203.937C972.002 203.937 973.874 205.286 974.384 207.084Z" fill="#CCCCCC"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M1001.44 207.084C1001.95 208.883 1001.1 210.232 999.227 210.232C997.526 210.232 995.655 208.883 994.974 207.084C994.464 205.286 995.314 203.937 997.186 203.937C998.887 203.937 1000.93 205.511 1001.44 207.084Z" fill="#CCCCCC"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M1010.63 207.084C1011.14 208.883 1010.29 210.232 1008.58 210.232C1006.88 210.232 1005.01 208.883 1004.33 207.084C1003.82 205.286 1004.67 203.937 1006.37 203.937C1008.07 204.162 1009.95 205.511 1010.63 207.084Z" fill="#CCCCCC"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M1019.47 207.084C1020.15 208.883 1019.13 210.232 1017.43 210.232C1015.73 210.232 1013.86 208.883 1013.18 207.084C1012.5 205.286 1013.52 203.937 1015.22 203.937C1017.09 204.162 1018.96 205.511 1019.47 207.084Z" fill="#4A78FF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1019.47 207.084C1020.15 208.883 1019.13 210.232 1017.43 210.232C1015.73 210.232 1013.86 208.883 1013.18 207.084C1012.5 205.286 1013.52 203.937 1015.22 203.937C1017.09 204.162 1018.96 205.511 1019.47 207.084Z" fill="#CCCCCC"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M954.476 233.841C954.986 235.64 953.966 236.989 952.093 236.989C950.222 236.989 948.52 235.64 948.01 233.841C947.499 232.043 948.52 230.694 950.392 230.694C952.093 230.694 953.965 232.043 954.476 233.841Z" fill="#CCCCCC"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M963.666 233.841C964.178 235.64 963.156 236.989 961.285 236.989C959.413 236.989 957.712 235.64 957.201 233.841C956.691 232.043 957.712 230.694 959.583 230.694C961.285 230.694 963.156 232.043 963.666 233.841Z" fill="#CCCCCC"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M973.022 233.841C973.532 235.64 972.511 236.989 970.64 236.989C968.768 236.989 967.067 235.64 966.557 233.841C966.046 232.043 967.067 230.694 968.939 230.694C970.64 230.694 972.511 232.043 973.022 233.841Z" fill="#CCCCCC"/>
@@ -3311,107 +3311,22 @@ $map_code = get_sub_field('map_code');
 
 <!-- ===== Dotted World Map | Use Your Own SVG ===== -->
 <style>
-  #wmap-section {
-    width: 100%;
-    background: #fff;
-    overflow: hidden;
-    padding: 40px 0 60px;
-  }
-
-  #wmap-inner {
-    position: relative;
-    width: 100%;
-    max-width: 1360px;
-    margin: 0 auto;
-  }
-
-  /* Your SVG fills the container */
-  #wmap-inner svg,
-  #wmap-inner img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  /* ── Marker base ── */
-  .wmap-marker {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    z-index: 20;
-  }
-
-  /* Default: small colored dot */
-  .wmap-dot {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    transition: opacity 0.2s;
-  }
-
-  /* Pin — hidden by default */
-  .wmap-pin {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%) translateY(50%) scale(0);
-    transform-origin: bottom center;
-    transition: transform 0.2s ease;
-    pointer-events: none;
-  }
-
-  .wmap-marker:hover .wmap-dot {
-    opacity: 0;
-  }
-  .wmap-marker:hover .wmap-pin {
-    transform: translateX(-50%) translateY(50%) scale(1);
-  }
-
-  /* Tooltip */
-  .wmap-tooltip {
-    position: absolute;
-    bottom: calc(100% + 44px);
-    left: 50%;
-    transform: translateX(-50%) translateY(6px);
-    background: #fff;
-    border-radius: 10px;
-    padding: 8px 18px 10px;
-    white-space: nowrap;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.14);
-    border: 1px solid rgba(0,0,0,0.07);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    min-width: 135px;
-  }
-  .wmap-tooltip::after {
-    content: '';
-    position: absolute;
-    top: 100%; left: 50%;
-    transform: translateX(-50%);
-    border: 7px solid transparent;
-    border-top-color: #fff;
-  }
-  .wmap-marker:hover .wmap-tooltip {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-
-  .wmap-tip-country {
-    display: block;
-    font-size: 14px;
-    font-weight: 700;
-    margin-bottom: 3px;
-  }
-  .wmap-tip-city {
-    display: block;
-    font-size: 12px;
-    color: #999;
-  }
-  .wmap-red  { color: #e84040; }
-  .wmap-blue { color: #2563be; }
+  #wmap-section {width: 100%;overflow: hidden;}
+  #wmap-inner {position: relative;width: 100%;margin: 0 auto;}
+  /*max-width: 1360px;*/
+  #wmap-inner svg,#wmap-inner img {display: block;width: 100%;height: auto;}  
+  .wmap-marker {position: absolute;transform: translate(-50%, -50%);cursor: pointer;z-index: 20;}
+  .wmap-dot {width: 7px;height: 7px;border-radius: 50%;transition: opacity 0.2s;}
+  .wmap-pin {position: absolute;top: -40px;left: 50%;transform: translateX(-50%) translateY(50%) scale(0);transform-origin: bottom center;transition: transform 0.2s ease;pointer-events: none;    width: 20px;height: 20px;}
+  .wmap-marker:hover .wmap-dot {opacity: 0;}
+  .wmap-marker:hover .wmap-pin {transform: translateX(-50%) translateY(50%) scale(1);}
+  .wmap-tooltip {position: absolute;bottom: calc(100% + 44px);left: 50%;transform: translateX(-50%) translateY(6px);background: #fff;border-radius: 10px;padding: 8px 18px 10px;white-space: nowrap;text-align: center;box-shadow: 0px 8px 10px -6px #0000001A;border: 1px solid rgba(0,0,0,0.07);font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;opacity: 0;pointer-events: none;transition: opacity 0.2s ease, transform 0.2s ease;min-width: 135px; }
+  .wmap-tooltip::after {content: '';position: absolute;top: 100%; left: 50%;transform: translateX(-50%);border: 7px solid transparent;border-top-color: #fff;}
+  .wmap-marker:hover .wmap-tooltip {opacity: 1;transform: translateX(-50%) translateY(0);}
+  .wmap-tip-country {display: block;font-size: 14px;font-weight: 600;margin-bottom: 3px;}
+  .wmap-tip-city {display: block;font-size: 12px;color: #525252;}
+  .wmap-red  { color: #FD4338; }
+  .wmap-blue { color: #4A78FF; }
 </style>
 
 
@@ -3419,40 +3334,28 @@ $map_code = get_sub_field('map_code');
 <script>
 (function () {
 
-  /* ============================================= */
-  /* STEP 2: SET MARKER POSITIONS                  */
-  /* Use percentage (%) based on your SVG size     */
-  /*                                               */
-  /* HOW TO FIND POSITION:                         */
-  /* Open your SVG in browser, right-click the dot */
-  /* → Inspect → check cx/cy or x/y values        */
-  /* Divide by SVG width/height × 100 = %         */
-  /* ============================================= */
-
-  /* Positions calculated from SVG viewBox 0 0 1360 586 */
   var MARKERS = [
     {
       label : 'United Kingdom',
       city  : 'London',
-      left  : '39%',   /* x ≈ 530 / 1360 */
-      top   : '23%',   /* y ≈ 135 / 586  */
-      color : '#e84040',
+      left  : '39.8%',   /* x ≈ 530 / 1360 */
+      top   : '20%',   /* y ≈ 135 / 586  */
+      color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
       label : 'China',
       city  : 'Jiangsu',
-      left  : '72.5%', /* x ≈ 986 / 1360 */
-      top   : '35%',   /* y ≈ 205 / 586  */
-      color : '#2563be',
+      left  : '74.7%', /* x ≈ 986 / 1360 */
+      top   : '35.5%',   /* y ≈ 205 / 586  */
+      color : '#4A78FF',
       cls   : 'wmap-blue'
     },
   ];
 
   function makePinSVG(color) {
-    return '<svg width="26" height="36" viewBox="0 0 26 36" xmlns="http://www.w3.org/2000/svg">'
-      + '<path d="M13 0C7.48 0 3 4.48 3 10C3 18.5 13 36 13 36C13 36 23 18.5 23 10C23 4.48 18.52 0 13 0Z" fill="' + color + '"/>'
-      + '<circle cx="13" cy="10" r="4.5" fill="#fff"/>'
+    return '<svg width="20" height="28" viewBox="0 0 20 28" fill="none" xmlns="http://www.w3.org/2000/svg">'
+      + '<path d="M9.625 13.0625C8.71332 13.0625 7.83898 12.7003 7.19432 12.0557C6.54966 11.411 6.1875 10.5367 6.1875 9.625C6.1875 8.71332 6.54966 7.83898 7.19432 7.19432C7.83898 6.54966 8.71332 6.1875 9.625 6.1875C10.5367 6.1875 11.411 6.54966 12.0557 7.19432C12.7003 7.83898 13.0625 8.71332 13.0625 9.625C13.0625 10.0764 12.9736 10.5234 12.8008 10.9405C12.6281 11.3575 12.3749 11.7365 12.0557 12.0557C11.7365 12.3749 11.3575 12.6281 10.9405 12.8008C10.5234 12.9736 10.0764 13.0625 9.625 13.0625ZM9.625 0C7.07229 0 4.62413 1.01406 2.8191 2.8191C1.01406 4.62413 0 7.07229 0 9.625C0 16.8438 9.625 27.5 9.625 27.5C9.625 27.5 19.25 16.8438 19.25 9.625C19.25 7.07229 18.2359 4.62413 16.4309 2.8191C14.6259 1.01406 12.1777 0 9.625 0Z" fill="' + color + '"/>'
       + '</svg>';
   }
 
@@ -3482,4 +3385,3 @@ $map_code = get_sub_field('map_code');
 
 })();
 </script>
-<!-- ===== End World Map ===== -->
