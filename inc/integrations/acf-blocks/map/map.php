@@ -3308,6 +3308,7 @@ $map_code = get_sub_field('map_code');
 <?php endwhile; endif; ?>
 
 
+
 <!-- ===== Dotted World Map | Use Your Own SVG ===== -->
 <style>
   #wmap-section {
@@ -3320,7 +3321,7 @@ $map_code = get_sub_field('map_code');
   #wmap-inner {
     position: relative;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1360px;
     margin: 0 auto;
   }
 
@@ -3428,20 +3429,21 @@ $map_code = get_sub_field('map_code');
   /* Divide by SVG width/height × 100 = %         */
   /* ============================================= */
 
+  /* Positions calculated from SVG viewBox 0 0 1360 586 */
   var MARKERS = [
     {
       label : 'United Kingdom',
       city  : 'London',
-      left  : '38%',   /* <-- change this: horizontal position */
-      top   : '22%',   /* <-- change this: vertical position   */
+      left  : '39%',   /* x ≈ 530 / 1360 */
+      top   : '23%',   /* y ≈ 135 / 586  */
       color : '#e84040',
       cls   : 'wmap-red'
     },
     {
       label : 'China',
       city  : 'Jiangsu',
-      left  : '72%',   /* <-- change this: horizontal position */
-      top   : '30%',   /* <-- change this: vertical position   */
+      left  : '72.5%', /* x ≈ 986 / 1360 */
+      top   : '35%',   /* y ≈ 205 / 586  */
       color : '#2563be',
       cls   : 'wmap-blue'
     },
