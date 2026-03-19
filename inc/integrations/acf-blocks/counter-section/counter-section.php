@@ -24,16 +24,16 @@ if (!empty($block['className'])) {
         <div class="flex items-center max-w-[938px] w-full justify-between min-[567px]:justify-evenly min-[1023px]:justify-between gap-8 min-[600px]:gap-4 max-[1440px]:flex-wrap flex-1">
             <?php if (have_rows('counter_list')) :  while (have_rows('counter_list')) : the_row(); ?>
                     <div class="performance-item inline-flex flex-col max-[567px]:max-w-[163px] max-[567px]:w-full  w-max min-[567px]:items-center gap-1 min-[600px]:gap-3">
-                        <div class="relative flex items-center justify-items-start min-[567px]:justify-center text-[40px] min-[600px]:text-[50px] min-[890px]:text-6xl leading-[48px] min-[600px]:leading-[52px] font-bold tracking-[-2%] font-[poppins] text-white">
-                            <div class="invisible" aria-hidden="true">
+                        <div class="relative flex items-center justify-items-start min-[567px]:justify-center text-[40px] min-[600px]:text-[50px] min-[890px]:text-6xl leading-[48px] min-[600px]:leading-[52px] font-bold tracking-[-2%] font-[poppins]">
+                            <div class="invisible text-[#262626]" aria-hidden="true">
                                 <?= wp_kses_post(get_sub_field('value')) ?>
                             </div>
 
-                            <div class="absolute count-box tabular-nums">
+                            <div class="absolute count-box tabular-nums text-[#262626]">
                                 <?= wp_kses_post(get_sub_field('value')) ?>
                             </div>
                         </div>
-                        <p class="min-[567px]:max-w-[133px] text-[14px] min-[600px]:text-base leading-[20px] min-[600px]:leading-6 text-white font-body min-[567px]:text-center">
+                        <p class="min-[567px]:max-w-[133px] text-[14px] min-[600px]:text-base leading-[20px] min-[600px]:leading-6  text-[##525252] font-body min-[567px]:text-center">
                             <?= wp_kses_post(get_sub_field('description')) ?>
                         </p>
                     </div>
