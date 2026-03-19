@@ -3311,13 +3311,7 @@ $map_code = get_sub_field('map_code');
 
 <!-- ===== Dotted World Map | Use Your Own SVG ===== -->
 <style>
-  #wmap-section {
-    width: 100%;
-    background: #fff;
-    overflow: hidden;
-    padding: 40px 0 60px;
-  }
-
+  #wmap-section {width: 100%;overflow: hidden;}
   #wmap-inner {
     position: relative;
     width: 100%;
@@ -3343,8 +3337,8 @@ $map_code = get_sub_field('map_code');
 
   /* Default: small colored dot */
   .wmap-dot {
-    width: 9px;
-    height: 9px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     transition: opacity 0.2s;
   }
@@ -3378,13 +3372,15 @@ $map_code = get_sub_field('map_code');
     padding: 8px 18px 10px;
     white-space: nowrap;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.14);
+    box-shadow: 0px 8px 10px -6px #0000001A;
     border: 1px solid rgba(0,0,0,0.07);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease, transform 0.2s ease;
     min-width: 135px;
+
+  
   }
   .wmap-tooltip::after {
     content: '';
@@ -3394,22 +3390,9 @@ $map_code = get_sub_field('map_code');
     border: 7px solid transparent;
     border-top-color: #fff;
   }
-  .wmap-marker:hover .wmap-tooltip {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-
-  .wmap-tip-country {
-    display: block;
-    font-size: 14px;
-    font-weight: 700;
-    margin-bottom: 3px;
-  }
-  .wmap-tip-city {
-    display: block;
-    font-size: 12px;
-    color: #999;
-  }
+  .wmap-marker:hover .wmap-tooltip {opacity: 1;transform: translateX(-50%) translateY(0);}
+  .wmap-tip-country {display: block;font-size: 14px;font-weight: 600;margin-bottom: 3px;}
+  .wmap-tip-city {display: block;font-size: 12px;color: #525252;}
   .wmap-red  { color: #FD4338; }
   .wmap-blue { color: #4A78FF; }
 </style>
@@ -3419,17 +3402,6 @@ $map_code = get_sub_field('map_code');
 <script>
 (function () {
 
-  /* ============================================= */
-  /* STEP 2: SET MARKER POSITIONS                  */
-  /* Use percentage (%) based on your SVG size     */
-  /*                                               */
-  /* HOW TO FIND POSITION:                         */
-  /* Open your SVG in browser, right-click the dot */
-  /* → Inspect → check cx/cy or x/y values        */
-  /* Divide by SVG width/height × 100 = %         */
-  /* ============================================= */
-
-  /* Positions calculated from SVG viewBox 0 0 1360 586 */
   var MARKERS = [
     {
       label : 'United Kingdom',
@@ -3481,4 +3453,3 @@ $map_code = get_sub_field('map_code');
 
 })();
 </script>
-<!-- ===== End World Map ===== -->
