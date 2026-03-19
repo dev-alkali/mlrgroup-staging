@@ -134,7 +134,7 @@
   </div>
 
   <!-- MOBILE HEADER -->
-  <div class="header-dropdown flex w-full justify-between items-center min-[1180px]:hidden px-4 pt-4 pb-4 min-[600px]:px-10 min-[1024px]:pt-8">
+  <div class="header-dropdown flex w-full justify-between items-center min-[1180px]:hidden py-4">
 
     <!-- LOGO -->
     <div class="relative w-[106px] md:w-[120px]">
