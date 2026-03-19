@@ -144,7 +144,7 @@ $map_code = get_sub_field('map_code');
   #map-section {
     position: relative;
     width: 100%;
-    background: #000;
+    //background: #000;
     overflow: hidden;
     padding: 40px 0;
   }
