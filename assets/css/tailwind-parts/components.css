@@ -73,9 +73,13 @@
   .site-header.is-visible .site-header__logo-image .letter-u { animation-delay: 0.15s; }
 
 
-  .site-header.is-sticky { position: fixed !important; top: 0; box-shadow: 0px 10px 15px -3px #0000001A; box-shadow: 0px 4px 6px -4px #0000001A; background: #fff; 
-  padding-top: 20px; left: 0; max-width: 100%; width: 100%; padding-bottom: 20px; --logo-color: #11171E;
-  animation: stickyHeaderAnim 1s ease; }
+.site-header.is-sticky { position: fixed !important; top: 0; box-shadow: 0px 10px 15px -3px #0000001A; box-shadow: 0px 4px 6px -4px #0000001A; background: #fff; 
+   left: 0; max-width: 100%; width: 100%;  --logo-color: #11171E; animation: stickyHeaderAnim 1s ease; }
+
+
+.site-header.is-sticky .hamb-group { filter: invert(1); }
+
+
 
   .site-nav__dropdown { visibility: hidden; pointer-events: none; transform: translatey(60px); opacity: 0; transition: 0.5s ease; }
   .site-nav__item.has-children:hover .site-nav__dropdown { visibility: visible; pointer-events: auto; transform: translatey(0); opacity: 1; }
@@ -162,13 +166,16 @@
 
   }
 
-.menu-open .header-dropdown .site-header {  --logo-color: #11171E; }
+.menu-open .site-header {
+    --logo-color: #11171E;
+}
 
 .menu-open .header-dropdown { background: #f3f3f3; }
 
 .menu-open .header-dropdown { padding-top: 24px !important; padding-bottom: 28px !important; border-bottom: 1px solid #E5E5E5; }
 
-.site-header .menu-open .site-header__logo-image .hide-letter, .menu-open .header-dropdown .site-header.is-visible .site-header__logo-image .hide-letter { opacity: 1;  transition: 0s;  }
+.site-header:has(.mobile-menu.open) .site-header__logo-image .hide-letter, 
+.menu-open .header-dropdown .site-header.is-visible .site-header__logo-image .hide-letter { opacity: 1; transition: 0s; }
 
 
 .site-header.light-skin .menu-open { --logo-color: #11171E; --arrow-color: #11171E; }
@@ -265,6 +272,17 @@
     transform: rotate(45deg) translateY(-4px);
     transition: transform 0.3s ease;
   }
+
+
+
+
+
+@media (min-width: 1024px) {
+
+.site-header.is-sticky {
+	padding-top: 20px; padding-bottom: 20px; } 
+	
+}
 
   .mobile-submenu {
     padding-top: 16px;
