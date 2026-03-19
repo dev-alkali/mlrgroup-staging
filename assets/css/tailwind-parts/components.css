@@ -51,7 +51,7 @@
 
 /* --- HEADER & NAVIGATION --- */
   .site-header {
-    @apply flex items-center justify-between w-full bg-transparent; --logo-color: #fff;
+    @apply flex items-center justify-between w-full bg-transparent; 
   }
 
   @keyframes stickyHeaderAnim {		
@@ -60,7 +60,7 @@
   }
 
 
-  .site-header.light-skin { --logo-color: #fff; }
+  .site-header.light-skin { --logo-color: #fff; --arrow-color: #fff; }
   .site-header.light-skin .nav-link { color: #fff; }  
 
   .site-header.is-sticky .nav-link { color: #525252; --arrow-color: #525252; }  
@@ -90,11 +90,10 @@
 
   .site-header__logo-image { display: block; }
   .site-header__logo-image img,.site-header__logo-image svg { width: 100%; height: auto; }
-  .site-header__nav { }
 
   .nav-link {
     font-family: "poppins", Helvetica;
-    color: var(--color-white);
+    color: #525252;
     position: relative;
     font-weight: 600;
     font-style: SemiBold;
