@@ -95,43 +95,39 @@ if (!empty($block['className'])) {
 <?php endwhile; endif; ?>
 
 <?php if (have_rows('brands')) : while (have_rows('brands')) : the_row(); ?>
-      <?php $brand_title = get_sub_field('title'); ?>
-      <section class="c-brands flex items-center gap-2 px-4 py-6 lg:pl-[58px]">
-        <div class="wrapper flex flex-col min-[890px]:flex-row items-center gap-6 w-full">
-          <?php if (!empty($brand_title)) : ?>
-            <div class="flex items-center gap-2">
-              <img class="w-4 md:w-5" src="<?php echo get_template_directory_uri(); ?>/assets/imgs/Arrow-blue-brands.svg" alt="arrow">
-              <p class="c-brands__desc text-[16px] md:text-2xl text-black font-heading">
-                <?php echo esc_html($brand_title); ?>
-              </p>
-            </div>
-          <?php endif; ?>
+    <?php $brand_title = get_sub_field('title'); ?>
+    <section class="c-brands flex items-center gap-2 px-4 py-6 lg:pl-[58px]">
+      <div class="wrapper flex flex-col min-[890px]:flex-row items-center gap-6 w-full">
+        <?php if (!empty($brand_title)) : ?>
+          <div class="flex items-center gap-2">
+            <img class="w-4 md:w-5" src="<?php echo get_template_directory_uri(); ?>/assets/imgs/Arrow-blue-brands.svg" alt="arrow">
+            <p class="c-brands__desc text-[16px] md:text-2xl text-black font-heading">
+              <?php echo esc_html($brand_title); ?>
+            </p>
+          </div>
+        <?php endif; ?>
 
-          <?php if (have_rows('images_brands')) : ?>
-            <div class="flex-1 overflow-hidden relative">
+        <?php if (have_rows('images_brands')) : ?>
+          <div class="flex-1 overflow-hidden relative">
 
-              <div class="marquee-wrapper overflow-hidden w-full">
-                <div class="marquee-track">
-                  <?php for ($i = 0; $i < 2; $i++) : ?>
-                    <div class="marquee-group" <?php if ($i === 1) echo 'aria-hidden="true"'; ?>>
-                      <?php while (have_rows('images_brands')) : the_row();
-                        $img = get_sub_field('image');
-                        if (!empty($img)) :
-                      ?>
-                          <img class="c-brands__logo h-[91px] w-auto" src="<?php echo esc_url($img); ?>" alt="Brand logo" />
-                      <?php endif; endwhile; ?>
-                    </div>
-                    <?php reset_rows(); ?>
-                  <?php endfor; ?>
-                </div>
+            <div class="marquee-wrapper overflow-hidden w-full">
+              <div class="marquee-track">
+                <?php for ($i = 0; $i < 2; $i++) : ?>
+                  <div class="marquee-group" <?php if ($i === 1) echo 'aria-hidden="true"'; ?>>
+                    <?php while (have_rows('images_brands')) : the_row();
+                      $img = get_sub_field('image');
+                      if (!empty($img)) :
+                    ?>
+                        <img class="c-brands__logo h-[91px] w-auto" src="<?php echo esc_url($img); ?>" alt="Brand logo" />
+                    <?php endif; endwhile; ?>
+                  </div>
+                  <?php reset_rows(); ?>
+                <?php endfor; ?>
               </div>
             </div>
-          <?php endif; ?>
-        </div>
-      </section>
-    <?php endwhile; endif; ?>
-  </section>
-    </div>
-  <?php endwhile; endif; ?>
-</section>
+          </div>
+        <?php endif; ?>
+      </div>
+    </section>
 <?php endwhile; endif; ?>
+   
