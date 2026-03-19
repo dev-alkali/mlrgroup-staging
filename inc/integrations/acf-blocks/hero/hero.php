@@ -91,12 +91,16 @@ if (!empty($block['className'])) {
 </section>
 <?php endwhile; endif; ?>
 
+Test
+
 <?php if (have_rows('brands')) : while (have_rows('brands')) : the_row(); ?>
 
   <?php 
     $brand_title = get_sub_field('title');
     $images = get_sub_field('images_brands');
   ?>
+
+  Test2
 
   <section class="c-brands flex items-center gap-2 px-4 py-6 lg:pl-[58px]">
     <div class="wrapper flex flex-col min-[890px]:flex-row items-center gap-6 w-full">
