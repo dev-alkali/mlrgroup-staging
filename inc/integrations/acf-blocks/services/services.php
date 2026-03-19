@@ -38,9 +38,18 @@ if ($card_overlay === 'Grayscale') {
     $overlay_class = 'overlay-pink-gradient';
 }
 
-$select_3_column_grid = get_sub_field('card_overlay');
+$select_3_column_grid = get_sub_field('select_3_column_grid');
 
+$wrapper_class = $select_3_column_grid
+    ? "grid grid-cols-1 min-[600px]:grid-cols-2 min-[1440px]:grid-cols-3 gap-4 min-[600px]:gap-2 self-stretch w-full"
+    : "flex items-center justify-center max-[1440px]:flex-wrap gap-4 min-[600px]:gap-2 self-stretch w-full";
+
+$article_class = $select_3_column_grid
+    ? "source-card max-[600px]:h-[380px] max-[1440px]:h-[420px] w-full min-[1440px]:aspect-[334/420] relative overflow-hidden"
+    : "source-card max-[600px]:h-[380px] max-[1440px]:h-[420px] w-full min-[1440px]:aspect-[334/420] max-[1440px]:max-w-[49%] max-[768px]:max-w-[100%] relative overflow-hidden";
 ?>
+
+
 
 
 
@@ -87,27 +96,20 @@ $select_3_column_grid = get_sub_field('card_overlay');
       endif; ?>
 
         <?php if (have_rows('main_content')) :  while (have_rows('main_content')) : the_row(); ?>
-            <div class="flex items-center justify-center max-[1440px]:flex-wrap  gap-4 min-[600px]:gap-2 self-stretch w-full">
+
+            <div class="<?= esc_attr($wrapper_class) ?>">
               <?php if (have_rows('services')) :  while (have_rows('services')) : the_row(); ?>
                   <?php if (have_rows('service')) :  while (have_rows('service')) : the_row(); ?>
-                      <article class="source-card max-[600px]:h-[380px] max-[1440px]:h-[420px]  w-full min-[1440px]:aspect-[334/420] max-[1440px]:max-w-[49%] max-[768px]:max-w-[100%] relative overflow-hidden">
-
+                      <article class="<?= esc_attr($article_class) ?>">
                         <div class="bg-image absolute inset-0" style=" background-image: url('<?php echo esc_url(get_sub_field('image')); ?>'); background-position: center center; background-size: cover; background-repeat: no-repeat; filter: grayscale(100%); ">
-                        </div>
-           
+                        </div>           
                         <a href="<?= esc_url(get_sub_field('link_path')) ?>" class="gradient-box absolute flex flex-col flex-1 justify-between px-5 min-[600px]:px-6 py-7 w-full h-full">
-
                           <img class="arrow absolute w-10 z-10" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="" />
-
                           <div class="flex flex-col gap-3 min-[600px]:gap-4 content z-10">
                             <h3 class="text-white card-title"><?= wp_kses_post(get_sub_field('title')) ?></h3>
-                            <p class="text-white text-[16px] min-[600px]:text-lg leading-[26px] min-[600px]:leading-7 font-body">
-                              <?= wp_kses_post(get_sub_field('paragraph')) ?>
-                            </p>
+                            <p class="text-white text-[16px] min-[600px]:text-lg leading-[26px] min-[600px]:leading-7 font-body"><?= wp_kses_post(get_sub_field('paragraph')) ?></p>
                           </div>
-
                         </a>
-
                       </article>
 
                   <?php endwhile;
@@ -115,6 +117,7 @@ $select_3_column_grid = get_sub_field('card_overlay');
               <?php endwhile;
               endif; ?>
             </div>
+
         <?php endwhile;
         endif; ?>
         <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
