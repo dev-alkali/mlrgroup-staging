@@ -67,7 +67,7 @@ if (!empty($block['className'])) {
                             $label = ucwords(str_replace(['-', '_'], ' ', $industry));
                             ?>
                               <option value="<?php echo esc_attr($industry); ?>">
-                                  <?php echo esc_html($industry); ?> <?php echo esc_html($label); ?>
+                                  <?php echo esc_html($label); ?>
                               </option>
                           <?php endforeach; ?>
                       </select>
