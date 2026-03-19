@@ -132,7 +132,7 @@
   </div>
 
   <!-- MOBILE HEADER -->
-  <div class="header-dropdown flex w-full justify-between items-center min-[1180px]:hidden px-4 md:px-10 pt-4 pb-4">
+  <div class="header-dropdown flex w-full justify-between items-center min-[1180px]:hidden px-4 md:px-10 pt-4 pb-4 min-[1024px]:pt-8">
 
     <!-- LOGO -->
     <div class="relative w-[106px] md:w-[120px] site-header anim">
