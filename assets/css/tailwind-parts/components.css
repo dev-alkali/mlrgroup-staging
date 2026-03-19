@@ -684,6 +684,9 @@
     border-bottom: 1px solid #000000 !important;
   }
 
+
+  .solutions-header > h2:only-child, .solutions-header > p:only-child { max-width: 100%; }
+
   .solutions-tab.is-active button {
     background: #fd4338;
     color: #fff;
