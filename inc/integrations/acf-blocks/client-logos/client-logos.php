@@ -60,7 +60,7 @@ if (!empty($block['className'])) {
               ?>
 
               <?php if ($show_filter && ! empty($industries)) : ?>
-                  <div class="logo-filter mb-6 w-full text-right">
+                  <div class="logo-filter mb-[20px] w-full text-right">
                       <span class="mr-[12px]">Filter by</span> <select id="industry-filter" class="">
                           <option value="all">All Industries</option>
                           <?php foreach ($industries as $industry) : ?>
