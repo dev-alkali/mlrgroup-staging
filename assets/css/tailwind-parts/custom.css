@@ -18,3 +18,7 @@
 .logo-card:after {content: '';background: #F5F5F5;position: absolute;left: 0;top: 0;width: 100%;position: absolute;z-index: 0;height: 100%;transition:all 0.3s ease;}
 .logo-card img{z-index: 1;filter: grayscale(1);}
 .logo-card:hover:after{content:'';opacity:0;}
+
+
+.view-more-btn .arrow {will-change: transform;transition: transform .45s cubic-bezier(.2, .8, .2, 1);transform: rotate(0);}
+.view-more-btn a:hover .arrow {transform: rotate(45deg);}

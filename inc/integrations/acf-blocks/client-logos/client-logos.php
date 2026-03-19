@@ -17,18 +17,17 @@ if (!empty($block['className'])) {
 <?php if (have_rows('client-logos')) : ?>
   <?php while (have_rows('client-logos')) : the_row(); ?>
 
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex justify-center">
-      <div class="flex flex-col w-full items-start gap-8 min-[600px]:gap-[60px] max-w-[1920px]">
-            <div class="">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> client-logos flex justify-center  px-4 md:px-10 py-[60px] md:py-[120px]">
+      <div class="w-full wrapper">
+            <div class="mb-[32px] md:mb-[60px]">
               <?php 
                 $title1 = get_sub_field('title_row_1');
                 $title2 = get_sub_field('title_row_2');
                 $subtitle = get_sub_field('subtitle');
-
               ?>
 
               <?php if ($title1 || $title2) : ?>
-                <h2 class="text-[44px] min-[600px]:text-[54px] min-[767px]:text-[68px] tracking-[-0.02em] leading-[56px] min-[600px]:leading-[64px] min-[767px]:leading-[78px] font-heading">
+                <h2 class="text-[clamp(44px,5vw,68px)] leading-[clamp(56px,6vw,78px)] tracking-[-0.02em] font-heading">
                   <span class="font-bold text-neutral-800"><?php echo wp_kses_post($title1); ?></span>
                   <span class="font-light text-neutral-500"><?php echo wp_kses_post($title2); ?></span>
                 </h2>
@@ -73,22 +72,20 @@ if (!empty($block['className'])) {
                   </div>
               <?php endif; ?>
 
-              <div class="logo-cards grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full">
+              <div class="logo-cards grid gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full">
                   <?php foreach ($logos as $item) :
                       $logo     = $item['logo'];
                       $bg_color = $item['bg_color'];
                       $industry = $item['industry'];
                   ?>
-                      <div
-                          class="logo-card p-6 flex items-center text-center justify-center aspect-square relative"
+                      <div class="logo-card p-6 flex items-center text-center justify-center aspect-square relative"
                           style="background-color: <?php echo esc_attr($bg_color); ?>;"
-                          data-industry="<?php echo esc_attr($industry); ?>"
-                      >
+                          data-industry="<?php echo esc_attr($industry); ?>">
                           <?php if ($logo) : ?>
                               <img
                                   src="<?php echo esc_url($logo['url']); ?>"
                                   alt="<?php echo esc_attr($logo['alt']); ?>"
-                                  class="max-w-[155px] h-auto"
+                                  class="max-w-[90px] md:max-w-[110px] lg:max-w-[155px] h-auto"
                               />
                           <?php endif; ?>
                       </div>
@@ -104,7 +101,7 @@ if (!empty($block['className'])) {
                   $link_title = $link['title'];
                   $link_target = $link['target'] ? $link['target'] : '_self';
                   ?>
-                  <div class="text-center mt-[40px]">
+                  <div class="text-center mt-[32px] md:mt-[40px] view-more-btn">
                   <a class="inline-flex  gap-2 relative " href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
                       <span class="font-bold text-accent text-lg leading-7 uppercase relative w-fit font-heading tracking-[0]"><?php echo esc_html( $link_title ); ?></span>
                       <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="https://wordpress-755960-6249701.cloudwaysapps.com/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg">
