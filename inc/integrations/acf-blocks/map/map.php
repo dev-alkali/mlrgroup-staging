@@ -3312,7 +3312,8 @@ $map_code = get_sub_field('map_code');
 <!-- ===== Dotted World Map | Use Your Own SVG ===== -->
 <style>
   #wmap-section {width: 100%;overflow: hidden;}
-  #wmap-inner {position: relative;width: 100%;max-width: 1360px;margin: 0 auto;}
+  #wmap-inner {position: relative;width: 100%;margin: 0 auto;}
+  /*max-width: 1360px;*/
   #wmap-inner svg,#wmap-inner img {display: block;width: 100%;height: auto;}  
   .wmap-marker {position: absolute;transform: translate(-50%, -50%);cursor: pointer;z-index: 20;}
   .wmap-dot {width: 7px;height: 7px;border-radius: 50%;transition: opacity 0.2s;}
