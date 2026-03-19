@@ -12,7 +12,7 @@ if (!empty($block['className'])) {
 }
 ?>
 <?php if (have_rows('services_solutions')) :  while (have_rows('services_solutions')) : the_row(); ?>
-        <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> solutions-tabs-slider px-4 py-[60px] min-[600px]:py-[120px] flex justify-center">
+        <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> solutions-tabs-slider px-4  min-[600px]:px-10 py-[60px] min-[600px]:py-[120px] flex justify-center">
             <div class="w-full flex items-center flex-col max-w-[1920px]">
 
                 <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
