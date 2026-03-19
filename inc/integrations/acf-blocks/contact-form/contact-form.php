@@ -26,7 +26,7 @@ $form_shortcode = get_sub_field('form_shortcode');
 ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> contact-form-sec px-4 md:px-10 py-[60px] md:py-[120px]">
       <div class="c-contact__container py-15 md:py-20 lg:py-40 px-4 min-[600px]:px-10">
-        <div class="flex min-[992px]:gap-[60px] w-full max-w-[1920px]">
+        <div class="flex px-0 min-[992px]:gap-[60px] w-full wrapper mx-auto">
 
           <!-- LEFT -->
           <div class="c-contact__content space-y-6">
