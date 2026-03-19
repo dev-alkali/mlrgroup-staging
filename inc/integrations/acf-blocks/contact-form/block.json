@@ -1,14 +1,14 @@
 {
-    "name": "acf/two-column",
-    "title": "Two Column",
-    "description": "Two Column Section",
-    "style": ["file:./two-column.css"],
+    "name": "acf/contact-form",
+    "title": "Contact Form",
+    "description": "Contact Form Section",
+    "style": ["file:./contact-form.css"],
     "category": "formatting",
     "icon": "admin-comments",
-    "keywords": ["two-column", "section"],
+    "keywords": ["contact-form", "section"],
     "acf": {
       "mode": "edit",
-      "renderTemplate": "two-column.php"
+      "renderTemplate": "contact-form.php"
     },
-    "script": "two-columnJS"
+    "script": "contact-formJS"
 }
