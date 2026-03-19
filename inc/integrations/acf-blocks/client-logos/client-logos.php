@@ -19,16 +19,15 @@ if (!empty($block['className'])) {
 
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex justify-center">
       <div class="flex flex-col w-full items-start gap-8 min-[600px]:gap-[60px] max-w-[1920px]">
-            <div class="">
+            <div class="mb-[60px]">
               <?php 
                 $title1 = get_sub_field('title_row_1');
                 $title2 = get_sub_field('title_row_2');
                 $subtitle = get_sub_field('subtitle');
-
               ?>
 
               <?php if ($title1 || $title2) : ?>
-                <h2 class="text-[44px] min-[600px]:text-[54px] min-[767px]:text-[68px] tracking-[-0.02em] leading-[56px] min-[600px]:leading-[64px] min-[767px]:leading-[78px] font-heading">
+                <h2 class="text-[clamp(44px,5vw,68px)] leading-[clamp(56px,6vw,78px)] tracking-[-0.02em] font-heading">
                   <span class="font-bold text-neutral-800"><?php echo wp_kses_post($title1); ?></span>
                   <span class="font-light text-neutral-500"><?php echo wp_kses_post($title2); ?></span>
                 </h2>
@@ -79,11 +78,9 @@ if (!empty($block['className'])) {
                       $bg_color = $item['bg_color'];
                       $industry = $item['industry'];
                   ?>
-                      <div
-                          class="logo-card p-6 flex items-center text-center justify-center aspect-square relative"
+                      <div class="logo-card p-6 flex items-center text-center justify-center aspect-square relative"
                           style="background-color: <?php echo esc_attr($bg_color); ?>;"
-                          data-industry="<?php echo esc_attr($industry); ?>"
-                      >
+                          data-industry="<?php echo esc_attr($industry); ?>">
                           <?php if ($logo) : ?>
                               <img
                                   src="<?php echo esc_url($logo['url']); ?>"
