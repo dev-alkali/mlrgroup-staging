@@ -61,7 +61,7 @@ if (!empty($block['className'])) {
                                                         <div class="flex flex-col w-full items-start gap-4 relative">
 
                                                             <img class="self-stretch w-full h-[409px]" src="<?= esc_url(get_sub_field('image')) ?>" alt="">
-                                                            <div class="flex flex-col w-[371px] items-start gap-4 relative flex-[0_0_auto]">
+                                                            <div class="flex flex-col w-[371px] items-start gap-4 relative flex-[0_0_auto] max-w-[100%]">
                                                                 <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
                                                                     <div
                                                                         class="relative self-stretch  font-bold tracking-[-2%] text-[24px] leading-8 font-heading text-neutral-800 ">

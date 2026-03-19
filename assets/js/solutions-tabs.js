@@ -43,6 +43,15 @@ jQuery(function ($) {
         el: $slider.find(".solutions-dots")[0],
         clickable: true,
       },
+      breakpoints: {
+        1024: {
+          slidesPerView: 3,
+        },
+        1440: {
+          slidesPerView: 4,
+        }
+      }
+
     });
   }
 
