@@ -101,7 +101,12 @@
   }
 
   /* Underline Animation for Nav Links */
-  .nav-link::after {
+
+  .nav-link__title {
+    position: relative;
+  }
+
+  .nav-link__title:after {
     content: "";
     position: absolute;
     left: 0;
@@ -114,7 +119,7 @@
     transition: transform 0.35s ease;
   }
 
-  .nav-link:hover::after {
+  .nav-link__title:hover::after {
     transform: scaleX(1);
   }
 
