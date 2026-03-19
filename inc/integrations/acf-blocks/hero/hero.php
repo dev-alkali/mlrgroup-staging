@@ -42,7 +42,7 @@ if (!empty($block['className'])) {
                 $has_titles_row1 = have_rows('titles_row_1_change'); // store result
               ?>
                 <?php if ($has_titles_row1 || !empty($title_row_2)) : ?>
-                  <h1 class="c-hero__title max-w-[936px] font-bold text-[44px] md:text-[64px] min-[767px]:text-[70px] min-[1200px]:text-[90px] text-white font-heading anim" data-delay="0.1" data-anim="up">
+                  <h1 class="c-hero__title rotating-anim max-w-[936px] font-bold text-[44px] md:text-[64px] min-[767px]:text-[70px] min-[1200px]:text-[90px] text-white font-heading anim" data-delay="0.1" data-anim="up">
                     <?php if ($has_titles_row1) : ?>
                       <span class="flex items-center">
                         <?php
@@ -51,7 +51,7 @@ if (!empty($block['className'])) {
                           $title = get_sub_field('title');
                           if (!empty($title)) :
                         ?>
-                            <span class="title" style="display: <?php echo $is_first ? 'inline-block' : 'none'; ?>;">
+                            <span class="rotate-text title" style="display: <?php echo $is_first ? 'inline-block' : 'none'; ?>;">
                               <?php echo esc_html($title); ?>
                             </span>
                         <?php

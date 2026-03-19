@@ -52,8 +52,8 @@
   ?>
 
   <!-- DESKTOP HEADER -->
-  <div class="site-header anim hidden min-[1180px]:flex self-stretch flex-[0_0_auto] px-10 min-[1250px]:px-20 md:pt-8">
-    <div class="wrapper min-[1180px]:flex justify-between w-full items-center">
+  <div class="site-header anim hidden min-[1180px]:flex self-stretch flex-[0_0_auto] md:pt-8">
+    <div class="max-w-[1920px] min-[1180px]:flex justify-between w-full items-center px-10 min-[1250px]:px-20">
 
       <!-- LOGO -->
       <div class="relative w-[140px] h-8">

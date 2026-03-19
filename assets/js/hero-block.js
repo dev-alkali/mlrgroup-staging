@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   if (typeof gsap === "undefined") return;
 
-  const words = document.querySelectorAll('#text-element .title');
+  const words = document.querySelectorAll('.rotating-anim .rotate-text');
   if (words.length <= 1) return;
 
   let currentIndex = 0;
