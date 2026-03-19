@@ -3410,8 +3410,8 @@ $map_code = get_sub_field('map_code');
     font-size: 12px;
     color: #999;
   }
-  .wmap-red  { color: #e84040; }
-  .wmap-blue { color: #2563be; }
+  .wmap-red  { color: #FD4338; }
+  .wmap-blue { color: #4A78FF; }
 </style>
 
 
@@ -3436,7 +3436,7 @@ $map_code = get_sub_field('map_code');
       city  : 'London',
       left  : '39.8%',   /* x ≈ 530 / 1360 */
       top   : '20%',   /* y ≈ 135 / 586  */
-      color : '#e84040',
+      color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
@@ -3444,7 +3444,7 @@ $map_code = get_sub_field('map_code');
       city  : 'Jiangsu',
       left  : '74.7%', /* x ≈ 986 / 1360 */
       top   : '35.5%',   /* y ≈ 205 / 586  */
-      color : '#2563be',
+      color : '#4A78FF',
       cls   : 'wmap-blue'
     },
   ];
