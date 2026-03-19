@@ -168,6 +168,7 @@
 
 .menu-open .site-header {
     --logo-color: #11171E;
+    background: #f3f3f3;
 }
 
 .menu-open .header-dropdown { background: #f3f3f3; }
@@ -177,6 +178,7 @@
 .site-header:has(.mobile-menu.open) .site-header__logo-image .hide-letter, 
 .menu-open .header-dropdown .site-header.is-visible .site-header__logo-image .hide-letter { opacity: 1; transition: 0s; }
 
+.
 
 .site-header.light-skin .menu-open { --logo-color: #11171E; --arrow-color: #11171E; }
 
