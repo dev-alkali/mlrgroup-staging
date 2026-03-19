@@ -164,7 +164,7 @@ $map_code = get_sub_field('map_code');
   }
   .wmap-red  { color: #e84040; }
   .wmap-blue { color: #2563be; }
-</style>
+</style> 
 
 
 
