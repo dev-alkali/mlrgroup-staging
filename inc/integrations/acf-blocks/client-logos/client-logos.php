@@ -85,7 +85,7 @@ if (!empty($block['className'])) {
                               <img
                                   src="<?php echo esc_url($logo['url']); ?>"
                                   alt="<?php echo esc_attr($logo['alt']); ?>"
-                                  class="max-w-[90px] md:max-w-[155px] h-auto"
+                                  class="max-w-[90px] md:max-w-[110px] lg:max-w-[155px] h-auto"
                               />
                           <?php endif; ?>
                       </div>
