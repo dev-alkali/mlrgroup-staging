@@ -89,72 +89,7 @@ if (!empty($block['className'])) {
     </div>
   <?php endwhile; endif; ?>
 </section>
-<?php endwhile; endif; ?>
 
-
-
-
-
-
-<?php if (have_rows('brands')) :  while (have_rows('brands')) : the_row(); ?>
-
-  Innet test
-          <section class=" flex items-center gap-2 pl-0 min-[1024px]:pl-[58px] pr-0 py-10  w-full max-w-[1920px] bg-white">
-            <div class="flex flex-col min-[1024px]:flex-row items-center gap-4 min-[600px]:gap-[30px] min-[1024px]:gap-[105px] relative w-full ">
-              <div class="flex items-start min-[600px]:justify-start justify-center gap-2 min-[600px]:gap-3 shrink-0">
-                <div class="relative mt-[1.5px] min-[767px]:mt-[3px]">
-                  <img class="w-4 min-[767px]:w-5 " src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-blue-brands.svg" alt="arrow">
-
-                </div>
-
-                <p class="text-[16px] font-medium min-[767px]:text-xl min-[1024px]:text-2xl min-[1024px]:tracking-[-2%] leading-6 min-[767px]:leading-7 min-[1024px]:leading-8 text-black font-heading">
-                  <?= wp_kses_post(get_sub_field('title')) ?>
-                </p>
-              </div>
-
-              <!-- MARQUEE -->
-              <div class="flex-1 w-full max-w-full overflow-hidden relative h-[91.15px] md:h-auto">
-
-                <div class="absolute -top-4 left-[-7%] w-[133px] max-[890px]:hidden h-[139px] bg-white z-20 blur-[16px]"></div>
-                <div class="absolute -top-4 right-[-12%] w-[133px] h-[139px] max-[890px]:hidden bg-white z-20  blur-[16px]"></div>
-
-
-                <div class="marquee-wrapper overflow-hidden w-full max-w-full ">
-                  <div class="marquee-track relative">
-
-                    <div class="marquee-group">
-                      <?php if (have_rows('images_brands')) : while (have_rows('images_brands')) : the_row(); ?>
-                          <img class="h-[91.15px] gray-icon w-auto max-w-none block" src="<?= esc_url(get_sub_field('image')) ?>" alt="Brand logos" />
-                      <?php endwhile;
-                      endif; ?>
-                    </div>
-
-                    <div class="marquee-group" aria-hidden="true">
-                      <?php if (have_rows('images_brands')) : while (have_rows('images_brands')) : the_row(); ?>
-                          <img class="h-[91.15px] gray-icon w-auto max-w-none block" src="<?= esc_url(get_sub_field('image')) ?>" alt="Brand logos" />
-                      <?php endwhile;
-                      endif; ?>
-                    </div>
-
-                  </div>
-                </div>
-                <svg style="width:0; height:0; position:absolute;" aria-hidden="true" focusable="false">
-                  <filter id="gray-color">
-                    <feColorMatrix type="matrix" values="
-      0 0 0 0 0.5
-      0 0 0 0 0.5
-      0 0 0 0 0.5
-      0 0 0 1 0
-    " />
-                  </filter>
-                </svg>
-              </div>
-          <?php endwhile;
-      endif; ?>
-
-
-
-Test
 
 <?php if (have_rows('brands')) : while (have_rows('brands')) : the_row(); ?>
 
@@ -162,8 +97,6 @@ Test
     $brand_title = get_sub_field('title');
     $images = get_sub_field('images_brands');
   ?>
-
-  Test2
 
   <section class="c-brands flex items-center gap-2 px-4 py-6 lg:pl-[58px]">
     <div class="wrapper flex flex-col min-[890px]:flex-row items-center gap-6 w-full">
@@ -207,3 +140,6 @@ Test
    
 
  
+
+<?php endwhile; endif; ?>
+
