@@ -44,21 +44,36 @@ elements.forEach((el) => {
   /**------------------------ Animation GSAP Ends -------------------------**/
 
   /**------------------------ Sticky Header -------------------------**/
-    const header = document.querySelector('.site-header');
-    const hero   = document.querySelector('.c-hero');
+  const header = document.querySelector('.site-header');
+  const hero   = document.querySelector('.c-hero');
 
-    if (!header || !hero) return;
+    if (!header) return;
 
-    ScrollTrigger.create({
+    // If hero exists 
+    if (hero) {
+      ScrollTrigger.create({
         trigger: hero,
         start: 'bottom top',
+
         onEnter: () => {
-        header.classList.add('is-sticky');
+          header.classList.add('is-sticky');
         },
         onLeaveBack: () => {
-        header.classList.remove('is-sticky');
+          header.classList.remove('is-sticky');
         }
-    });
+      });
+
+    } else {
+      ScrollTrigger.create({
+        start: 'top -100vh',
+        onEnter: () => {
+          header.classList.add('is-sticky');
+        },
+        onLeaveBack: () => {
+          header.classList.remove('is-sticky');
+        }
+      });
+    }
     /**------------------------ Sticky Header Ends -------------------------**/
 
 });

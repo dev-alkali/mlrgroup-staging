@@ -52,7 +52,7 @@
   ?>
 
   <!-- DESKTOP HEADER -->
-  <div class="site-header anim hidden min-[1180px]:flex self-stretch flex-[0_0_auto] md:pt-8" data-delay="2.1" data-anim="up" data-start="top 100%">
+  <div class="site-header anim hidden min-[1180px]:flex self-stretch flex-[0_0_auto] md:pt-8" data-delay="2.25" data-anim="up" data-start="top 100%">
     <div class="max-w-[1920px] min-[1180px]:flex justify-between w-full items-center px-10 mx-auto min-[1024px]:pt-8">
 
       <!-- LOGO -->
@@ -72,7 +72,7 @@
         <nav>
           <div class="inline-flex items-center gap-6">
             <?php
-            $index = 2.25;
+            $index = 2.45;
             foreach ($tree as $item):
               $item_url_normalized = trailingslashit($item->url);
               $active_class = ($item_url_normalized === $current_url_normalized) ? 'active' : '';
@@ -124,7 +124,7 @@
         </nav>
 
         <?php if(get_field('lets_talk_link', 'option')): ?>
-        <a class="btn-primary anim" href="<?php echo esc_url(get_field('lets_talk_link', 'option')); ?>"  data-delay="<?php echo $index ? : 3.35; ?>" data-anim="up">LETS TALK</a>
+        <a class="btn-primary anim" href="<?php echo esc_url(get_field('lets_talk_link', 'option')); ?>"  data-delay="<?php echo $index ? : 3.85; ?>" data-anim="up">LETS TALK</a>
         <?php endif; ?>
 
       </div>
@@ -198,7 +198,7 @@
     </div>
 
     <!-- HAMBURGER -->
-    <div class="hamb-group">
+    <div class="hamb-group anim" data-delay="3" data-anim="up">
       <img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/Menu.svg" alt="menu">
     </div>
 
