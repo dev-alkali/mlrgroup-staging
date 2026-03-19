@@ -3434,16 +3434,16 @@ $map_code = get_sub_field('map_code');
     {
       label : 'United Kingdom',
       city  : 'London',
-      left  : '39%',   /* x ≈ 530 / 1360 */
-      top   : '23%',   /* y ≈ 135 / 586  */
+      left  : '39.8%',   /* x ≈ 530 / 1360 */
+      top   : '20%',   /* y ≈ 135 / 586  */
       color : '#e84040',
       cls   : 'wmap-red'
     },
     {
       label : 'China',
       city  : 'Jiangsu',
-      left  : '72.5%', /* x ≈ 986 / 1360 */
-      top   : '35%',   /* y ≈ 205 / 586  */
+      left  : '74.7%', /* x ≈ 986 / 1360 */
+      top   : '35.5%',   /* y ≈ 205 / 586  */
       color : '#2563be',
       cls   : 'wmap-blue'
     },
