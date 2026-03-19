@@ -1,0 +1,14 @@
+{
+    "name": "acf/two-column",
+    "title": "Two Column",
+    "description": "Two Column Section",
+    "style": ["file:./two-column.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["two-column", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "two-column.php"
+    },
+    "script": "two-columnJS"
+}
