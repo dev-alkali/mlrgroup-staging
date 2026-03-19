@@ -45,8 +45,8 @@ $wrapper_class = $select_3_column_grid
     : "flex items-center justify-center max-[1440px]:flex-wrap gap-4 min-[600px]:gap-2 self-stretch w-full";
 
 $article_class = $select_3_column_grid
-    ? "source-card max-[600px]:h-[380px] max-[1440px]:h-[420px] w-full min-[1440px]:aspect-[334/420] relative overflow-hidden"
-    : "source-card max-[600px]:h-[380px] max-[1440px]:h-[420px] w-full min-[1440px]:aspect-[16/15] max-[1440px]:max-w-[49%] max-[768px]:max-w-[100%] relative overflow-hidden";
+    ? "source-card max-[600px]:h-[380px] max-[1440px]:h-[420px] w-full min-[1440px]:aspect-[16/15] relative overflow-hidden"
+    : "source-card max-[600px]:h-[380px] max-[1440px]:h-[420px] w-full min-[1440px]:aspect-[334/420] max-[1440px]:max-w-[49%] max-[768px]:max-w-[100%] relative overflow-hidden";
 ?>
 
 
