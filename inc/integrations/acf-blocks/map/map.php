@@ -3352,12 +3352,12 @@ $map_code = get_sub_field('map_code');
   /* Pin — hidden by default */
   .wmap-pin {
     position: absolute;
-    bottom: 0;
+    top: -40px;
     left: 50%;
     transform: translateX(-50%) translateY(50%) scale(0);
     transform-origin: bottom center;
     transition: transform 0.2s ease;
-    pointer-events: none;
+    pointer-events: none;    width: 20px;height: 20px;
   }
 
   .wmap-marker:hover .wmap-dot {
