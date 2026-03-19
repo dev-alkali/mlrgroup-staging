@@ -17,7 +17,7 @@ if (!empty($block['className'])) {
 <?php if (have_rows('client-logos')) : ?>
   <?php while (have_rows('client-logos')) : the_row(); ?>
 
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex justify-center">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> client-logos flex justify-center  px-4 md:px-10 py-[60px] md:py-[120px]">
       <div class="flex flex-col w-full items-start gap-8 min-[600px]:gap-[60px] max-w-[1920px]">
             <div class="mb-[60px]">
               <?php 
