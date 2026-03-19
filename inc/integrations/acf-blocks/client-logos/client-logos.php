@@ -63,9 +63,11 @@ if (!empty($block['className'])) {
                   <div class="logo-filter mb-[20px] w-full text-right">
                       <span class="mr-[12px] text-[#525252] text-[16px] font-medium">Filter by</span> <select id="industry-filter" class="">
                           <option value="all">All Industries</option>
-                          <?php foreach ($industries as $industry) : ?>
+                          <?php foreach ($industries as $industry) : 
+                            $label = ucwords(str_replace(['-', '_'], ' ', $industry));
+                            ?>
                               <option value="<?php echo esc_attr($industry); ?>">
-                                  <?php echo esc_html($industry); ?>
+                                  <?php echo esc_html($industry); ?> <?php echo esc_html($label); ?>
                               </option>
                           <?php endforeach; ?>
                       </select>
