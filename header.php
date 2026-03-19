@@ -17,7 +17,7 @@
 
 <?php $header_schema = get_field('header_schema') == 'light-skin' ? 'absolute min-[1024px]:pt-8' : 'relative dark-skin min-[1024px]:py-4';?>
 
-<header class=" <?php echo $header_schema.' '.get_field('header_schema'); ?> z-50 w-full site-header anim" data-delay="2.25" data-anim="up" data-start="top 100%">
+<header class=" <?php echo $header_schema.' '.get_field('header_schema'); ?> z-50 w-full site-header anim px-10 min-[767px]:px-20" data-delay="2.25" data-anim="up" data-start="top 100%">
 
   <?php
   $locations = get_nav_menu_locations();
@@ -55,9 +55,9 @@
 
   <!-- DESKTOP HEADER -->
   <div class="hidden min-[1180px]:flex self-stretch flex-[0_0_auto] w-full">
-    <div class="max-w-[1920px] min-[1180px]:flex justify-between w-full items-center px-10 mx-auto min-[767px]:px-20 ">
+    <div class="max-w-[1920px] min-[1180px]:flex justify-between w-full items-center  mx-auto min-[767px]:px-20 ">
 
-      <!-- LOGO -->
+    <!-- LOGO -->
       <div class="relative w-[140px] h-8">
         <a class="site-header__logo-image" href="<?php echo esc_url(home_url('/')); ?>">
           <?php if ($logo_svg): ?>
