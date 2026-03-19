@@ -198,7 +198,7 @@
     </div>
 
     <!-- HAMBURGER -->
-    <div class="hamb-group">
+    <div class="hamb-group anim" data-delay="3" data-anim="up">
       <img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/Menu.svg" alt="menu">
     </div>
 
