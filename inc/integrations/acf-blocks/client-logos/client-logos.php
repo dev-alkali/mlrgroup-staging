@@ -23,7 +23,7 @@ if (!empty($block['className'])) {
               <?php 
                 $title1 = get_sub_field('title_row_1');
                 $title2 = get_sub_field('title_row_2');
-                $subtitle = get_sub_field('subtitle');
+                $subtitle = get_sub_field('description');
               ?>
 
               <?php if ($title1 || $title2) : ?>
