@@ -98,7 +98,7 @@ if (!empty($block['className'])) {
     $images = get_sub_field('images_brands');
   ?>
 
-  <section class="c-brands flex items-center gap-2 px-4 py-6 lg:pl-[58px]">
+  <section class="c-brands py-6">
     <div class="wrapper flex flex-col min-[890px]:flex-row items-center gap-6 w-full">
 
       <?php if (!empty($brand_title)) : ?>
@@ -117,29 +117,20 @@ if (!empty($block['className'])) {
 
               <?php for ($i = 0; $i < 2; $i++) : ?>
                 <div class="marquee-group" <?php if ($i === 1) echo 'aria-hidden="true"'; ?>>
-
                   <?php foreach ($images as $row): 
                     $img = $row['image'];
                     if (!empty($img)) :
                   ?>
                     <img class="c-brands__logo h-[91px] w-auto" src="<?php echo esc_url($img); ?>" alt="Brand logo" />
                   <?php endif; endforeach; ?>
-
                 </div>
               <?php endfor; ?>
-
             </div>
           </div>
         </div>
       <?php endif; ?>
-
     </div>
   </section>
-
-<?php endwhile; endif; ?>
-   
-
- 
-
 <?php endwhile; endif; ?>
 
+<?php endwhile; endif; ?>

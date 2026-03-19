@@ -45,6 +45,7 @@ elements.forEach((el) => {
 
   /**------------------------ Sticky Header -------------------------**/
   const header = document.querySelector('.site-header');
+  const headerMobile = document.querySelector('.site-header--mobile');
   const hero   = document.querySelector('.c-hero');
 
     if (!header) return;
@@ -57,9 +58,11 @@ elements.forEach((el) => {
 
         onEnter: () => {
           header.classList.add('is-sticky');
+          headerMobile.classList.add('is-sticky');
         },
         onLeaveBack: () => {
           header.classList.remove('is-sticky');
+          headerMobile.classList.remove('is-sticky');
         }
       });
 
@@ -68,9 +71,11 @@ elements.forEach((el) => {
         start: 'top -100vh',
         onEnter: () => {
           header.classList.add('is-sticky');
+          headerMobile.classList.add('is-sticky');
         },
         onLeaveBack: () => {
           header.classList.remove('is-sticky');
+          headerMobile.classList.remove('is-sticky');
         }
       });
     }
