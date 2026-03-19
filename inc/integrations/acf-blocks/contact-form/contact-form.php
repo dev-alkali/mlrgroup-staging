@@ -25,11 +25,10 @@ $form_shortcode = get_sub_field('form_shortcode');
 
 ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> contact-form-sec px-4 md:px-10 py-[60px] md:py-[120px]">
-      <div class="c-contact__container py-15 md:py-20 lg:py-40 px-4 min-[600px]:px-10">
-        <div class="flex px-0 min-[992px]:gap-[60px] w-full wrapper mx-auto">
-
+      <div class="c-contact__container">
+        <div class="flex min-[992px]:gap-[40px] min-[1440px]:gap-[60px] w-full wrapper">
           <!-- LEFT -->
-          <div class="c-contact__content space-y-6">
+          <div class="c-contact__content anim" data-anim="up" >
             <?php if ($title_row_1 || $title_row_2): ?>
               <h2 class="c-contact__title text-[36px] leading-[44px] tracking-[-0.02em] lg:text-[68px] lg:leading-[78px] mb-[20px]">
                 <span class="font-bold"><?php echo esc_html($title_row_1); ?></span>
@@ -73,7 +72,7 @@ $form_shortcode = get_sub_field('form_shortcode');
 
           <!-- RIGHT -->
            <?php if ($form_shortcode): ?>
-          <div class="c-contact__right space-y-6">            
+          <div class="c-contact__right anim" data-anim="up" data-delay=".5" >
               <div class="c-contact__form">
                 <?php echo do_shortcode($form_shortcode); ?>
               </div>
