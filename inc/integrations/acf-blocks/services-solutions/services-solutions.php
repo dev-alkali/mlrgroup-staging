@@ -12,7 +12,7 @@ if (!empty($block['className'])) {
 }
 ?>
 <?php if (have_rows('services_solutions')) :  while (have_rows('services_solutions')) : the_row(); ?>
-        <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> solutions-tabs-slider px-4 min-[600px]:px-[40px] py-[60px] min-[600px]:py-[120px] flex justify-center">
+        <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> solutions-tabs-slider px-4 py-[60px] min-[600px]:py-[120px] flex justify-center">
             <div class="w-full flex items-center flex-col max-w-[1920px]">
 
                 <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
@@ -34,7 +34,7 @@ if (!empty($block['className'])) {
 
                             <?php if (have_rows('service_group')) : while (have_rows('service_group')) : the_row(); ?>
 
-                                    <div class="solutions-tab <?= get_row_index() === 1 ? 'is-active' : '' ?> max-[600px]:max-w-[184px] w-full min-[600px]:min-w-[240px] min-[1024px]:min-w-auto flex-none min-[600px]:flex-1"
+                                    <div class="solutions-tab <?= get_row_index() === 1 ? 'is-active' : '' ?> max-[600px]:max-w-[184px] w-full min-[600px]:min-w-[280px] min-[1024px]:min-w-auto flex-none min-[600px]:flex-1"
                                         data-solution="<?= wp_kses_post(get_sub_field('service_name')) ?>">
 
                                         <button class="px-[10.5px] min-[600px]:px-4 min-[1206px]:px-6 w-full pt-[21px] min-[600px]:pt-[27px] pb-[19px] min-[600px]:pb-[25px] gap-2 capitalize min-[600px]:uppercase font-medium">

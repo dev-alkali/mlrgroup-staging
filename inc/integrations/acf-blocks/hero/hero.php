@@ -32,7 +32,7 @@ if (!empty($block['className'])) {
         style="background-image:url('<?php echo esc_url($bg_image); ?>'); background-position:50% 20%; background-size:cover; background-repeat:no-repeat;"
       <?php endif; ?>
     >
-      <div class="w-full h-full flex flex-col items-start gap-[162px] px-4 md:px-10 min-[767px]:px-20 relative [background:linear-gradient(0deg,rgba(0,0,0,0.35)_0%,rgba(0,0,0,0.35)_100%)]">
+      <div class="w-full h-full flex flex-col items-start gap-[162px] px-4 min-[600px]:px-10 min-[767px]:px-20 relative [background:linear-gradient(0deg,rgba(0,0,0,0.35)_0%,rgba(0,0,0,0.35)_100%)]">
         <div class="flex flex-col items-start justify-end pt-8 pb-20 md:pb-16 flex-1 w-full">
           <div class="flex flex-col items-start justify-center gap-10 w-full">
             <div class="flex flex-col items-start justify-center gap-5 w-full">

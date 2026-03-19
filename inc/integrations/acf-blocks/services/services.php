@@ -85,17 +85,9 @@ if ($card_overlay === 'Grayscale') {
             <div class="flex items-center justify-center max-[1440px]:flex-wrap  gap-4 min-[600px]:gap-2 self-stretch w-full">
               <?php if (have_rows('services')) :  while (have_rows('services')) : the_row(); ?>
                   <?php if (have_rows('service')) :  while (have_rows('service')) : the_row(); ?>
-                      <article class="source-card max-[600px]:h-[380px] max-[1440px]:h-[420px]    w-full min-[1440px]:aspect-[334/420] max-[1440px]:max-w-[49%] relative overflow-hidden">
+                      <article class="source-card max-[600px]:h-[380px] max-[1440px]:h-[420px]  w-full min-[1440px]:aspect-[334/420] max-[1440px]:max-w-[49%] max-[768px]:max-w-[100%] relative overflow-hidden">
 
-                        <div
-                          class="bg-image absolute inset-0"
-                          style="
-    background-image: url('<?php echo esc_url(get_sub_field('image')); ?>');
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    filter: grayscale(100%);
-  ">
+                        <div class="bg-image absolute inset-0" style=" background-image: url('<?php echo esc_url(get_sub_field('image')); ?>'); background-position: center center; background-size: cover; background-repeat: no-repeat; filter: grayscale(100%); ">
                         </div>
            
                         <a href="<?= esc_url(get_sub_field('link_path')) ?>" class="gradient-box absolute flex flex-col flex-1 justify-between px-5 min-[600px]:px-6 py-7 w-full h-full">
