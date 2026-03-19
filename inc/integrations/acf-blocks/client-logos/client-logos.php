@@ -61,7 +61,7 @@ if (!empty($block['className'])) {
 
               <?php if ($show_filter && ! empty($industries)) : ?>
                   <div class="logo-filter mb-6 w-full text-right">
-                      <span>Filter by</span> <select id="industry-filter" class="border rounded px-4 py-2">
+                      <span class="mr-[12px]">Filter by</span> <select id="industry-filter" class="">
                           <option value="all">All Industries</option>
                           <?php foreach ($industries as $industry) : ?>
                               <option value="<?php echo esc_attr($industry); ?>">
