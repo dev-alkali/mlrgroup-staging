@@ -54,7 +54,7 @@
   ?>
 
   <!-- DESKTOP HEADER -->
-  <div class="hidden min-[1180px]:flex self-stretch flex-[0_0_auto] md:pt-8">
+  <div class="hidden min-[1180px]:flex self-stretch flex-[0_0_auto] md:pt-8 w-full">
     <div class="max-w-[1920px] min-[1180px]:flex justify-between w-full items-center px-10 mx-auto min-[1024px]:pt-8 min-[767px]:px-20 ">
 
       <!-- LOGO -->
@@ -99,7 +99,7 @@
                   <?php if ($has_children): ?>
                     <div class="w-5 h-5 site-nav__caret">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                        <path d="M10 14c-.6 0-1.2-.2-1.6-.7L3 7.9c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l5.4 5.4c.4.4 1 .4 1.4 0l5.4-5.4c.2-.2.6-.2.8 0 .2.2.2.6 0 .8l-5.4 5.4c-.4.5-1 .7-1.6.7z" fill="var(--arrow-color, #fff)"/>
+                        <path d="M10 14c-.6 0-1.2-.2-1.6-.7L3 7.9c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l5.4 5.4c.4.4 1 .4 1.4 0l5.4-5.4c.2-.2.6-.2.8 0 .2.2.2.6 0 .8l-5.4 5.4c-.4.5-1 .7-1.6.7z" fill="var(--arrow-color, #11171E)"/>
                       </svg>
                     </div>
                   <?php endif; ?>
