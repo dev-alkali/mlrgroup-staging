@@ -23,4 +23,4 @@
 .view-more-btn .arrow {will-change: transform;transition: transform .45s cubic-bezier(.2, .8, .2, 1);transform: rotate(0);}
 .view-more-btn a:hover .arrow {transform: rotate(45deg);}
 .logo-filter{}
-.logo-filter select{ -webkit-appearance: none;-moz-appearance:none;appearance:none;border:1px solid #CCCCCC;background-image: url(/wp-content/uploads/2026/03/down-arrow.svg);background-position: center right 10px;background-repeat:no-repeat;pading:16px 11px;color:#525252;}
+.logo-filter select{ -webkit-appearance: none;-moz-appearance:none;appearance:none;border:1px solid #CCCCCC;background-image: url(/wp-content/uploads/2026/03/down-arrow.svg);background-position: center right 10px;background-repeat:no-repeat;pading:10px 40px 10px 16px;color:#525252;}
