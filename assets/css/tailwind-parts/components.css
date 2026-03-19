@@ -280,7 +280,7 @@
 @media (min-width: 1024px) {
 
 .site-header.is-sticky {
-	padding-top: 20px; padding-bottom: 20px; } 
+	padding-top: 20px !important; padding-bottom: 20px; } 
 	
 }
 
