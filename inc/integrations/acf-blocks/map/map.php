@@ -35,13 +35,15 @@ $map_code = get_sub_field('map_code');
       <?php echo $map_code; ?>
 
 
-<div id="map-section">
-  <div id="map-perspective-wrap">
-    <div id="map-canvas-wrap">
-      <canvas id="map-canvas"></canvas>
+
+<div id="wmap-section">
+  <div id="wmap-tilt">
+    <div id="wmap-inner">
+      <canvas id="wmap-canvas"></canvas>
     </div>
   </div>
 </div>
+
 
 
 
@@ -54,94 +56,114 @@ $map_code = get_sub_field('map_code');
 
 
 
-<!-- Dotted World Map with Perspective Tilt + Dot Markers + Hover Tooltips -->
+<!-- ===== Dotted World Map | Dot → Pin + Tooltip on Hover ===== -->
 <style>
-  #map-section {
-    position: relative;
+  #wmap-section {
     width: 100%;
-    background: #ffffff;
+    background: #fff;
     overflow: hidden;
     padding: 40px 0 60px;
   }
-  #map-perspective-wrap {
+
+  /* Perspective tilt wrapper — matches your SVG look */
+  #wmap-tilt {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    transform: perspective(900px) rotateX(18deg) rotateY(-8deg) rotateZ(2deg);
-    transform-origin: center center;
+    transform: perspective(1100px) rotateX(22deg) rotateY(-10deg) rotateZ(3deg) scale(1.05);
+    transform-origin: 55% 45%;
   }
-  #map-canvas-wrap {
+
+  #wmap-inner {
     position: relative;
     width: 100%;
   }
-  #map-canvas {
+
+  #wmap-canvas {
     display: block;
     width: 100%;
     height: auto;
   }
 
-  /* Marker = colored dot */
-  .map-marker {
+  /* ── Marker base ── */
+  .wmap-marker {
     position: absolute;
     transform: translate(-50%, -50%);
     cursor: pointer;
-    z-index: 10;
+    z-index: 20;
   }
-  .map-dot-marker {
+
+  /* Default state: small colored dot */
+  .wmap-dot {
     width: 9px;
     height: 9px;
     border-radius: 50%;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .map-marker:hover .map-dot-marker {
-    transform: scale(1.6);
-    box-shadow: 0 0 0 3px rgba(255,255,255,0.8);
+    transition: opacity 0.2s;
   }
 
-  /* Tooltip — hidden by default, shows on hover */
-  .map-tooltip {
+  /* Pin — hidden by default, shown on hover */
+  .wmap-pin {
     position: absolute;
-    bottom: calc(100% + 10px);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%) scale(0);
+    transform-origin: bottom center;
+    transition: transform 0.2s ease;
+    pointer-events: none;
+  }
+
+  .wmap-marker:hover .wmap-dot {
+    opacity: 0;
+  }
+  .wmap-marker:hover .wmap-pin {
+    transform: translateX(-50%) translateY(50%) scale(1);
+  }
+
+  /* Tooltip — hidden by default */
+  .wmap-tooltip {
+    position: absolute;
+    bottom: calc(100% + 44px); /* above the pin */
     left: 50%;
     transform: translateX(-50%) translateY(6px);
-    background: #ffffff;
+    background: #fff;
     border-radius: 10px;
     padding: 8px 18px 10px;
     white-space: nowrap;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.14);
     border: 1px solid rgba(0,0,0,0.07);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease, transform 0.2s ease;
-    min-width: 130px;
+    min-width: 135px;
   }
-  .map-tooltip::after {
+  .wmap-tooltip::after {
     content: '';
     position: absolute;
     top: 100%; left: 50%;
     transform: translateX(-50%);
     border: 7px solid transparent;
-    border-top-color: #ffffff;
+    border-top-color: #fff;
   }
-  .map-marker:hover .map-tooltip {
+  .wmap-marker:hover .wmap-tooltip {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
   }
-  .tip-country {
+
+  .wmap-tip-country {
     display: block;
     font-size: 14px;
     font-weight: 700;
     margin-bottom: 3px;
   }
-  .tip-city {
+  .wmap-tip-city {
     display: block;
     font-size: 12px;
     color: #999;
   }
-  .tip-red  { color: #e84040; }
-  .tip-blue { color: #2563be; }
+  .wmap-red  { color: #e84040; }
+  .wmap-blue { color: #2563be; }
 </style>
 
 
@@ -150,78 +172,91 @@ $map_code = get_sub_field('map_code');
 <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
 <script>
 (function () {
-  var wrap   = document.getElementById('map-canvas-wrap');
-  var canvas = document.getElementById('map-canvas');
-  var ctx    = canvas.getContext('2d');
 
-  /* ── Edit your markers here ── */
-  var markers = [
-    { label: 'United Kingdom', city: 'London',  lon: -0.1276,  lat: 51.5072, color: '#e84040', tipColor: 'tip-red'  },
-    { label: 'China',          city: 'Jiangsu', lon: 118.7969, lat: 32.0603, color: '#2563be', tipColor: 'tip-blue' },
+  /* ── MARKER CONFIG — edit locations here ── */
+  var MARKERS = [
+    { label: 'United Kingdom', city: 'London',  lon: -0.1276,  lat: 51.5072, color: '#e84040', cls: 'wmap-red'  },
+    { label: 'China',          city: 'Jiangsu', lon: 118.7969, lat: 32.0603, color: '#2563be', cls: 'wmap-blue' },
   ];
 
-  var W = 1400, H = 620;
-  canvas.width  = W;
-  canvas.height = H;
+  var inner  = document.getElementById('wmap-inner');
+  var canvas = document.getElementById('wmap-canvas');
+  var ctx    = canvas.getContext('2d');
+  var CW = 1400, CH = 620;
+  canvas.width = CW; canvas.height = CH;
 
   var proj = d3.geoNaturalEarth1()
-    .scale(W / 6.2)
-    .translate([W * 0.5, H * 0.52]);
+    .scale(CW / 6.2)
+    .translate([CW * 0.5, CH * 0.52]);
 
-  function placeDots() {
-    document.querySelectorAll('.map-marker').forEach(function(e) { e.remove(); });
+  /* SVG pin path */
+  function makePinSVG(color) {
+    return '<svg width="26" height="36" viewBox="0 0 26 36" xmlns="http://www.w3.org/2000/svg">'
+      + '<path d="M13 0C7.48 0 3 4.48 3 10C3 18.5 13 36 13 36C13 36 23 18.5 23 10C23 4.48 18.52 0 13 0Z" fill="' + color + '"/>'
+      + '<circle cx="13" cy="10" r="4.5" fill="#fff"/>'
+      + '</svg>';
+  }
+
+  function placeMarkers() {
+    document.querySelectorAll('.wmap-marker').forEach(function(e) { e.remove(); });
     var rect   = canvas.getBoundingClientRect();
-    var scaleX = rect.width  / W;
-    var scaleY = rect.height / H;
+    var sx = rect.width  / CW;
+    var sy = rect.height / CH;
 
-    markers.forEach(function (m) {
-      var coords = proj([m.lon, m.lat]);
-      var px = coords[0] * scaleX;
-      var py = coords[1] * scaleY;
+    MARKERS.forEach(function(m) {
+      var pt = proj([m.lon, m.lat]);
+      var px = pt[0] * sx;
+      var py = pt[1] * sy;
 
       var el = document.createElement('div');
-      el.className = 'map-marker';
+      el.className = 'wmap-marker';
       el.style.left = px + 'px';
       el.style.top  = py + 'px';
       el.innerHTML =
-        '<div class="map-tooltip">'
-        + '<span class="tip-country ' + m.tipColor + '">' + m.label + '</span>'
-        + '<span class="tip-city">' + m.city + '</span>'
+        '<div class="wmap-tooltip">'
+          + '<span class="wmap-tip-country ' + m.cls + '">' + m.label + '</span>'
+          + '<span class="wmap-tip-city">' + m.city + '</span>'
         + '</div>'
-        + '<div class="map-dot-marker" style="background:' + m.color + ';"></div>';
-      wrap.appendChild(el);
+        + '<div class="wmap-pin">' + makePinSVG(m.color) + '</div>'
+        + '<div class="wmap-dot" style="background:' + m.color + ';"></div>';
+
+      inner.appendChild(el);
     });
   }
 
   fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
-    .then(function (r) { return r.json(); })
-    .then(function (world) {
+    .then(function(r) { return r.json(); })
+    .then(function(world) {
       var land = topojson.feature(world, world.objects.land);
 
+      /* render land mask on offscreen canvas */
       var off = document.createElement('canvas');
-      off.width = W; off.height = H;
-      var oc  = off.getContext('2d');
-      var p2  = d3.geoPath(proj, oc);
+      off.width = CW; off.height = CH;
+      var oc = off.getContext('2d');
       oc.fillStyle = '#fff';
-      oc.beginPath(); p2(land); oc.fill();
-      var img = oc.getImageData(0, 0, W, H);
+      oc.beginPath();
+      d3.geoPath(proj, oc)(land);
+      oc.fill();
+      var px = oc.getImageData(0, 0, CW, CH);
 
+      /* draw dots */
       var SP = 9, R = 3.2;
-      for (var x = SP; x < W; x += SP) {
-        for (var y = SP; y < H; y += SP) {
-          var i = (y * W + x) * 4;
-          if (img.data[i] > 128) {
+      for (var x = SP; x < CW; x += SP) {
+        for (var y = SP; y < CH; y += SP) {
+          var i = (y * CW + x) * 4;
+          if (px.data[i] > 128) {
             ctx.beginPath();
             ctx.arc(x, y, R, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(185,185,185,0.75)';
+            ctx.fillStyle = 'rgba(185,185,185,0.72)';
             ctx.fill();
           }
         }
       }
-      placeDots();
-      window.addEventListener('resize', placeDots);
+
+      placeMarkers();
+      window.addEventListener('resize', placeMarkers);
     });
+
 })();
 </script>
-<!-- End Dotted World Map -->
-
+<!-- ===== End World Map ===== -->
