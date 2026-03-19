@@ -19,7 +19,7 @@ if (!empty($block['className'])) {
 <?php if (have_rows('counter-section')) : ?>
   <?php while (have_rows('counter-section')) : the_row(); ?>
 
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>  flex justify-center  px-4 md:px-10 py-[60px] md:py-[120px]">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> performance flex justify-center  px-4 md:px-10 py-[60px] md:py-[120px]">
       <div class="w-full wrapper">
         <div class="flex items-center justify-between md:justify-evenly lg:justify-between gap-8 md:gap-4 max-[1440px]:flex-wrap flex-1">
             <?php if (have_rows('counter_list')) :  while (have_rows('counter_list')) : the_row(); ?>
