@@ -17,7 +17,7 @@
 
 <?php $header_schema = get_field('header_schema') == 'light-skin' ? 'absolute' : 'relative dark-skin';?>
 
-<header class="c-site-head <?php echo $header_schema.' '.get_field('header_schema'); ?> z-50 w-full">
+<header class=" <?php echo $header_schema.' '.get_field('header_schema'); ?> z-50 w-full site-header anim" data-delay="2.25" data-anim="up" data-start="top 100%">
 
   <?php
   $locations = get_nav_menu_locations();
@@ -54,7 +54,7 @@
   ?>
 
   <!-- DESKTOP HEADER -->
-  <div class="site-header anim hidden min-[1180px]:flex self-stretch flex-[0_0_auto] md:pt-8" data-delay="2.25" data-anim="up" data-start="top 100%">
+  <div class="hidden min-[1180px]:flex self-stretch flex-[0_0_auto] md:pt-8">
     <div class="max-w-[1920px] min-[1180px]:flex justify-between w-full items-center px-10 mx-auto min-[1024px]:pt-8 min-[767px]:px-20 ">
 
       <!-- LOGO -->
@@ -137,7 +137,7 @@
   <div class="header-dropdown flex w-full justify-between items-center min-[1180px]:hidden px-4 pt-4 pb-4 min-[600px]:px-10 min-[1024px]:pt-8">
 
     <!-- LOGO -->
-    <div class="relative w-[106px] md:w-[120px] site-header site-header--mobile anim">
+    <div class="relative w-[106px] md:w-[120px]">
       <a class="site-header__logo-image" href="<?php echo esc_url(home_url('/')); ?>">
         <?php if ($logo_svg): ?>
           <?php echo $logo_svg; ?>
