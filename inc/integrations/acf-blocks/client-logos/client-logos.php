@@ -72,7 +72,7 @@ if (!empty($block['className'])) {
                   </div>
               <?php endif; ?>
 
-              <div class="logo-cards grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full">
+              <div class="logo-cards grid gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full">
                   <?php foreach ($logos as $item) :
                       $logo     = $item['logo'];
                       $bg_color = $item['bg_color'];
