@@ -30,7 +30,7 @@ jQuery(function ($) {
     if (!el) return;
 
     swipers[key] = new Swiper(el, {
-      slidesPerView: "auto",
+      slidesPerView: 4,
       spaceBetween: 20,
       speed: 450,
       watchOverflow: true,
@@ -43,6 +43,15 @@ jQuery(function ($) {
         el: $slider.find(".solutions-dots")[0],
         clickable: true,
       },
+      breakpoints: {
+        1024: {
+          slidesPerView: 3,
+        },
+        1440: {
+          slidesPerView: 4,
+        }
+      }
+
     });
   }
 

@@ -987,3 +987,6 @@
     @apply h-px bg-neutral-300 w-full;
   }
 }
+
+
+.c-hero { min-height:800px; }

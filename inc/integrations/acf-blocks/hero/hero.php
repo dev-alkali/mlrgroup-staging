@@ -66,15 +66,12 @@ if (!empty($block['className'])) {
                         <?php echo esc_html($title_row_2); ?><span class="text-accent">.</span>
                       </span>
                     <?php endif; ?>
-
                   </h1>
-
                 <?php endif; ?>
-
               <?php endwhile; endif; ?>
 
               <?php if (!empty($subtitle)) : ?>
-                <p class="c-hero__subtitle max-w-[800px] text-[18px] md:text-xl text-gray-50 anim" data-delay="1.2" data-anim="up">
+                <p class="c-hero__subtitle max-w-[800px] text-[18px] md:text-xl text-gray-50 anim" data-delay="1.2" data-anim="up" data-start="top 100%">
                   <?php echo wp_kses_post($subtitle); ?>
                 </p>
               <?php endif; ?>
@@ -82,7 +79,7 @@ if (!empty($block['className'])) {
             </div>
 
             <?php if (!empty($btn_path) && !empty($btn_label)) : ?>
-              <a href="<?php echo esc_url($btn_path); ?>" class="c-hero__button btn-primary anim" data-delay="2" data-anim="up">
+              <a href="<?php echo esc_url($btn_path); ?>" class="c-hero__button btn-primary anim" data-delay="2" data-anim="up" data-start="top 100%">
                 <?php echo esc_html($btn_label); ?>
               </a>
             <?php endif; ?>
@@ -109,7 +106,6 @@ if (!empty($block['className'])) {
 
         <?php if (have_rows('images_brands')) : ?>
           <div class="flex-1 overflow-hidden relative">
-
             <div class="marquee-wrapper overflow-hidden w-full">
               <div class="marquee-track">
                 <?php for ($i = 0; $i < 2; $i++) : ?>
@@ -131,3 +127,5 @@ if (!empty($block['className'])) {
     </section>
 <?php endwhile; endif; ?>
    
+
+ 

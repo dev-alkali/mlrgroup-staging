@@ -52,7 +52,7 @@
   ?>
 
   <!-- DESKTOP HEADER -->
-  <div class="site-header anim hidden min-[1180px]:flex self-stretch flex-[0_0_auto] md:pt-8">
+  <div class="site-header anim hidden min-[1180px]:flex self-stretch flex-[0_0_auto] md:pt-8" data-delay="2.1" data-anim="up" data-start="top 100%">
     <div class="max-w-[1920px] min-[1180px]:flex justify-between w-full items-center px-10 mx-auto min-[1024px]:pt-8">
 
       <!-- LOGO -->
@@ -72,7 +72,7 @@
         <nav>
           <div class="inline-flex items-center gap-6">
             <?php
-            $index = 1;
+            $index = 2.25;
             foreach ($tree as $item):
               $item_url_normalized = trailingslashit($item->url);
               $active_class = ($item_url_normalized === $current_url_normalized) ? 'active' : '';
@@ -80,7 +80,7 @@
             ?>
 
               <div class="site-nav__item relative <?php echo $has_children ? 'has-children' : ''; ?> anim"
-                   data-delay="<?php echo $index; $index += 0.1; ?>" data-anim="up">
+                   data-delay="<?php echo $index; $index += 0.2; ?>" data-anim="up">
 
                 <a class="nav-link inline-flex items-center justify-center gap-2"
                    href="<?php echo esc_url($item->url); ?>"
@@ -124,7 +124,7 @@
         </nav>
 
         <?php if(get_field('lets_talk_link', 'option')): ?>
-        <a class="btn-primary" href="<?php echo esc_url(get_field('lets_talk_link', 'option')); ?>">LETS TALK</a>
+        <a class="btn-primary anim" href="<?php echo esc_url(get_field('lets_talk_link', 'option')); ?>"  data-delay="<?php echo $index ? : 3.35; ?>" data-anim="up">LETS TALK</a>
         <?php endif; ?>
 
       </div>
@@ -132,7 +132,7 @@
   </div>
 
   <!-- MOBILE HEADER -->
-  <div class="header-dropdown flex w-full justify-between items-center min-[1180px]:hidden px-4 md:px-10 pt-4 pb-4">
+  <div class="header-dropdown flex w-full justify-between items-center min-[1180px]:hidden px-4 md:px-10 pt-4 pb-4 min-[1024px]:pt-8">
 
     <!-- LOGO -->
     <div class="relative w-[106px] md:w-[120px] site-header anim">

@@ -57,11 +57,11 @@ if (!empty($block['className'])) {
                                     <div class="solutions-slider max-[1024px]:hidden <?= get_row_index() === 1 ? 'is-active' : '' ?>" data-solution="<?= wp_kses_post(get_sub_field('service_name')) ?>">
                                         <div class="solutions-track">
                                             <?php if (have_rows('slider_solutions')) :  while (have_rows('slider_solutions')) : the_row(); ?>
-                                                    <a class="solution-card max-w-[400px]" href="<?= esc_url(get_sub_field('link_path')) ?>">
+                                                    <a class="solution-card max-[1023px]:max-w-[400px]" href="<?= esc_url(get_sub_field('link_path')) ?>">
                                                         <div class="flex flex-col w-full items-start gap-4 relative">
 
                                                             <img class="self-stretch w-full h-[409px]" src="<?= esc_url(get_sub_field('image')) ?>" alt="">
-                                                            <div class="flex flex-col w-[371px] items-start gap-4 relative flex-[0_0_auto]">
+                                                            <div class="flex flex-col w-[371px] items-start gap-4 relative flex-[0_0_auto] max-w-[100%]">
                                                                 <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
                                                                     <div
                                                                         class="relative self-stretch  font-bold tracking-[-2%] text-[24px] leading-8 font-heading text-neutral-800 ">
