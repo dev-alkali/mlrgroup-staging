@@ -37,7 +37,12 @@ if ($card_overlay === 'Grayscale') {
 } elseif ($card_overlay === 'Pink Gradient') {
     $overlay_class = 'overlay-pink-gradient';
 }
+
+$select_3_column_grid = get_sub_field('card_overlay');
+
 ?>
+
+
 
 
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> <?php echo esc_attr($overlay_class); ?> flex w-full justify-center px-4 min-[600px]:px-10 py-[60px] min-[600px]:py-[120px]">      
