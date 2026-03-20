@@ -33,6 +33,8 @@ function register_my_menus()
     'contacts-menu' => __('Contacts menu', 'mlrgroup'),
     'services-menu' => __('services menu', 'mlrgroup'),
     'work-menu' => __('work menu', 'mlrgroup'),
+    'privacy-menu' => __('Privacy Menu', 'mlrgroup'),
+    
   ));
 }
 add_action('init', 'register_my_menus');
