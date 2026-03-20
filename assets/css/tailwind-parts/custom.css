@@ -31,6 +31,8 @@
 
 .footer-privacy-menu .footer-item .dropdown-item-footer,
 .footer-privacy-menu .footer-item img{display: none;}
+.footer-privacy-menu .footer-item .footer-title{text-transform: unset !important;font-weight: normal !important;color: #D1D5DC;}
+
 
 
 
