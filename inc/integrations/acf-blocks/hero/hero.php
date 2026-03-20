@@ -116,29 +116,23 @@ if (!empty($block['className'])) {
           <div class="absolute -top-4 right-[-12%] w-[133px] h-[139px] max-[890px]:hidden bg-white z-20  blur-[16px]"></div>
 
           <div class="marquee-wrapper overflow-hidden w-full max-w-full ">
-                  <div class="marquee-track relative">
-                    <div class="marquee-group">
-                      <?php if (have_rows('images_brands')) : while (have_rows('images_brands')) : the_row(); ?>
-                          <img class="h-[91.15px] gray-icon w-auto max-w-none block" src="<?= esc_url(get_sub_field('image')) ?>" alt="Brand logos" />
-                      <?php endwhile;
-                      endif; ?>
-                    </div>
+            <div class="marquee-track relative">
+              <div class="marquee-group">
+                <?php if (have_rows('images_brands')) : while (have_rows('images_brands')) : the_row(); ?>
+                    <img class="h-[91.15px] gray-icon w-auto max-w-none block" src="<?= esc_url(get_sub_field('image')) ?>" alt="Brand logos" />
+                <?php endwhile;
+                endif; ?>
+              </div>
 
-                    <div class="marquee-group" aria-hidden="true">
-                      <?php if (have_rows('images_brands')) : while (have_rows('images_brands')) : the_row(); ?>
-                          <img class="h-[91.15px] gray-icon w-auto max-w-none block" src="<?= esc_url(get_sub_field('image')) ?>" alt="Brand logos" />
-                      <?php endwhile;
-                      endif; ?>
-                    </div>
-
-                  </div>
-                </div>
-
-
-
-         
-
-
+              <div class="marquee-group" aria-hidden="true">
+                <?php if (have_rows('images_brands')) : while (have_rows('images_brands')) : the_row(); ?>
+                    <img class="h-[91.15px] gray-icon w-auto max-w-none block" src="<?= esc_url(get_sub_field('image')) ?>" alt="Brand logos" />
+                <?php endwhile;
+                endif; ?>
+              </div>
+            </div>
+          </div>
+            <svg style="width:0; height:0; position:absolute;" aria-hidden="true" focusable="false"><filter id="gray-color"><feColorMatrix type="matrix" values="0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 1 0" /></filter></svg>       
         </div>
       <?php endif; ?>
     </div>
