@@ -22,7 +22,7 @@ if (!empty($block['className'])) {
 
                 <div class="flex max-w-[1920px] w-full flex-col xl:flex-row xl:items-center justify-between gap-8 sm:gap-[50px] lg:gap-[100px]">
                     <!-- Title -->
-                    <div class="flex items-center md:justify-center gap-2 xl:max-w-[322px]">
+                    <div class="flex items-center gap-2 xl:max-w-[322px]">
                         <h2 class="text-[44px] md:text-5xl leading-[56px] font-bold tracking-[-2%] font-[poppins] text-white">
                             <?= wp_kses_post(get_sub_field('title')) ?>
                             <span class="text-[#4a78ff]">.</span>
