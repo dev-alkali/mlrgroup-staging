@@ -75,15 +75,15 @@ elements.forEach((el) => {
   //     });
   //   }
 
-const header = document.querySelector('.site-header');
-if (!header) return;
+  const header = document.querySelector('.site-header');
+  if (!header) return;
 
-// Trigger header after 100vh scroll
-ScrollTrigger.create({
-  start: 'top+=100% top', // 100% of viewport height scrolled
-  onEnter: () => header.classList.add('is-sticky'),
-  onLeaveBack: () => header.classList.remove('is-sticky')
-});
+  // Trigger header after 100vh scroll
+  ScrollTrigger.create({
+    start: 'top+=100% top', // 100% of viewport height scrolled
+    onEnter: () => header.classList.add('is-sticky'),
+    onLeaveBack: () => header.classList.remove('is-sticky')
+  });
     /**------------------------ Sticky Header Ends -------------------------**/
 
 });
