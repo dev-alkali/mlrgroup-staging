@@ -559,13 +559,6 @@
     transform: translateY(95cqh) rotate(45deg);
   }
 
-
-  /*@media (max-width: 599px) {
-    .source-card:hover .arrow {
-      transform: translateY(300px) rotate(45deg);
-    }
-  }*/
-
   .source-card .content {
     margin-top: auto;
     transform: translateY(0);
@@ -578,24 +571,7 @@
       transform: translateY(calc(-100% + 10cqh));
     }
 
-  /*@media (min-width: 600px) {
-    .source-card:hover .content {
-      transform: translateY(calc(-364px + 100%));
-    }
-  }*/
- /* @media (min-width: 1441px) {
-    .source-card {
-      container-type: inline-size;
-    }
 
-    .source-card:hover .arrow {
-      transform: translateY(97cqw) rotate(45deg);
-    }
-
-    .source-card:hover .content {
-      transform: translateY(calc(-109cqw + 100%));
-    }
-  }*/
   /* Marquee Track for logos/text scrolling */
   .marquee-wrapper {
     overflow: hidden;
