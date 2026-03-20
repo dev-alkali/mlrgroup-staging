@@ -121,7 +121,7 @@
         <!-- Newsletter -->
 
         <div class="flex items-end justify-around gap-5 w-full newsletter-gf-container">
-          <?php echo get_sub_field('newsletter_title', 'option');?>
+          <div class="font-poppins font-medium text-base leading-6 tracking-normal text-[#F9FAFB]"><?php echo get_sub_field('newsletter_title', 'option');?></div>
           <?php
           $form_id = sanitize_text_field(get_field('newsletter_form_id', 'option'));
 
@@ -132,7 +132,7 @@
           ?>
         </div>
       </div>
-      <div class=" flex min-[600px]:hidden w-full items-center gap-3">
+      <div class="flex min-[600px]:hidden w-full items-center gap-3">
         <?php if (have_rows('results_images', 'option')): while (have_rows('results_images', 'option')): the_row(); ?>
             <img class="w-[49px] h-[50px]" src="<?= esc_url(get_sub_field('image')) ?>" alt="">
         <?php endwhile;
