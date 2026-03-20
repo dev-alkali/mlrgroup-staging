@@ -126,23 +126,16 @@
               </div>
               <?php if( have_rows('contact_info','option') ): ?>
               <div class="footer-item-content  flex flex-col items-start gap-4 pl-2">                      
-                  <a class="footer-text" href="#">contact@mrl.com</a>
-                  <a class="footer-text" href="#">+1 (XXX) XXX-XXXX</a>                      
-                  <a class="footer-text" href="#">Florida, United states</a>
-
-
-                    <ul class="contact-info-list">
-                        <?php while( have_rows('contact_info','option') ) : the_row(); 
-                            $label = get_sub_field('contact_info_label','option');
-                            $link = get_sub_field('contact_info_link','option');
-                        ?>
-                            <?php if( $link ): ?>
-                                <a class="footer-text" href="<?php echo esc_url($link); ?>"><?php echo $label; ?></a>
-                            <?php else: ?>
-                                <span class="footer-text" ><?php echo $label; ?></span>
-                            <?php endif; ?>                            
-                        <?php endwhile; ?>
-                    </ul>
+                  <?php while( have_rows('contact_info','option') ) : the_row(); 
+                      $label = get_sub_field('contact_info_label','option');
+                      $link = get_sub_field('contact_info_link','option');
+                  ?>
+                      <?php if( $link ): ?>
+                          <a class="footer-text" href="<?php echo esc_url($link); ?>"><?php echo $label; ?></a>
+                      <?php else: ?>
+                          <span class="footer-text" ><?php echo $label; ?></span>
+                      <?php endif; ?>                            
+                  <?php endwhile; ?>                    
               </div>
               <?php endif; ?>
 
