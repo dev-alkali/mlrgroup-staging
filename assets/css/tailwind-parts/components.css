@@ -557,8 +557,8 @@
 
   .source-card:hover .arrow {
     transform: translateY(0) rotate(0deg) !important; 
-    top:auto;
-    bottom:28px;
+    top:90%;
+    
   }
 
   .source-card .content {
