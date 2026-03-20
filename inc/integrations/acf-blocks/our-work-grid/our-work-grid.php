@@ -31,7 +31,8 @@ if (!empty($block['className'])) {
         </div>
 
        <!-- Work Grid -->
-<div class="w-full bg-white grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+<!-- Work Grid -->
+<div class="w-full bg-white grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
     <?php if (have_rows('works_rows')) : while (have_rows('works_rows')) : the_row(); ?>
         <?php if (have_rows('works')) : while (have_rows('works')) : the_row(); ?>
@@ -74,7 +75,7 @@ if (!empty($block['className'])) {
     <?php endwhile; endif; ?>
 
 </div>
-        
+
     </div>
 </section>
 
