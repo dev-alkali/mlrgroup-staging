@@ -121,7 +121,7 @@
         <!-- Newsletter -->
 
         <div class="flex items-end justify-around gap-5 w-full newsletter-gf-container">
-          <div class="font-poppins font-medium text-base leading-6 tracking-normal text-[#F9FAFB]"><?= esc_url(get_field('newsletter_title', 'option')); ?> <?php echo get_sub_field('newsletter_title', 'option');?></div>
+          <div class="font-poppins font-medium text-base leading-6 tracking-normal text-[#F9FAFB]"><?= echo get_field('newsletter_title', 'option'); ?> </div>
           <?php
           $form_id = sanitize_text_field(get_field('newsletter_form_id', 'option'));
 
