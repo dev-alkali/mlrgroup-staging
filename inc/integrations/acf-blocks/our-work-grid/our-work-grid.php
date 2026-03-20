@@ -30,35 +30,51 @@ if (!empty($block['className'])) {
             </h2>
         </div>
 
-        <!-- Work Grid -->
-        <div class="flex flex-col lg:flex-col w-full bg-white">
-            <?php if (have_rows('works_rows')) : while (have_rows('works_rows')) : the_row(); ?>
-                <div class="flex flex-col md:flex-row lg:flex-row justify-center w-full">
-                    <?php if (have_rows('works')) : while (have_rows('works')) : the_row(); ?>
-                        <a href="<?php echo esc_url(get_sub_field('item_path')); ?>"
-                           class="work-card w-full md:w-1/2 lg:w-full h-[240px] sm:h-[300px] md:h-auto md:aspect-[360/400]"
-                           style="
-                                background-image: url('<?php echo esc_url(get_sub_field('bg_image')); ?>');
-                                background-position: 50% 50%;
-                                background-size: cover;
-                                background-repeat: no-repeat;
-                           ">
-                            <div class="gradient-box flex flex-col items-start justify-end gap-2 px-3 sm:px-6 py-4 sm:py-7 h-full">
-                                <div class="content flex items-center justify-end gap-1 sm:gap-2 w-full">
-                                    <div class="flex-1 text-white uppercase font-heading font-semibold
-                                        text-[clamp(12px,1.5vw,18px)]
-                                        leading-[clamp(18px,2vw,28px)]
-                                        whitespace-nowrap">                                        
-                                        <?= wp_kses_post(get_sub_field('title')) ?>
-                                    </div>
-                                    <img class="arrow relative w-[11px] sm:w-[20px] md:w-[24px] h-[10px] sm:h-5 md:h-6 mt-[-2px]" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="Arrow">
-                                </div>
-                            </div>
-                        </a>
-                    <?php endwhile; endif; ?>
+       <!-- Work Grid -->
+<div class="w-full bg-white grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+
+    <?php if (have_rows('works_rows')) : while (have_rows('works_rows')) : the_row(); ?>
+        <?php if (have_rows('works')) : while (have_rows('works')) : the_row(); ?>
+
+            <a href="<?php echo esc_url(get_sub_field('item_path')); ?>"
+               class="work-card w-full h-[240px] sm:h-[300px] md:h-auto md:aspect-[360/400]"
+               style="
+                    background-image: url('<?php echo esc_url(get_sub_field('bg_image')); ?>');
+                    background-position: 50% 50%;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+               ">
+
+                <div class="gradient-box flex flex-col items-start justify-end gap-2 px-3 sm:px-6 py-4 sm:py-7 h-full">
+
+                    <div class="content flex items-center justify-end gap-1 sm:gap-2 w-full">
+
+                        <div class="flex-1 text-white uppercase font-heading font-semibold
+                            text-[clamp(12px,1.5vw,18px)]
+                            leading-[clamp(18px,2vw,28px)]
+                            whitespace-nowrap">
+                            
+                            <?= wp_kses_post(get_sub_field('title')) ?>
+
+                        </div>
+
+                        <img
+                            class="arrow relative w-[11px] sm:w-[20px] md:w-[24px] h-[10px] sm:h-5 md:h-6 mt-[-2px]"
+                            src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg"
+                            alt="Arrow"
+                        >
+
+                    </div>
+
                 </div>
-            <?php endwhile; endif; ?>
-        </div>
+
+            </a>
+
+        <?php endwhile; endif; ?>
+    <?php endwhile; endif; ?>
+
+</div>
+        
     </div>
 </section>
 
