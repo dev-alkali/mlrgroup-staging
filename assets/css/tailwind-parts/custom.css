@@ -29,13 +29,14 @@
 .logo-filter select{ -webkit-appearance: none;-moz-appearance:none;appearance:none;border:1px solid #CCCCCC;background-image: url(/wp-content/uploads/2026/03/down-arrow.svg);background-position: center right 10px;background-repeat:no-repeat;padding:10px 40px 10px 16px;color:#525252;}
 
 
-.footer-privacy-menu .footer-item .dropdown-item-footer,
+/*.footer-privacy-menu .footer-item .dropdown-item-footer,
 .footer-privacy-menu .footer-item img{display: none;}
 .footer-privacy-menu .footer-item .footer-title{text-transform: unset !important;font-weight: normal !important;color: #D1D5DC;}
+
 .footer-privacy-menu .footer-item a{display:inline-block;}
 .footer-privacy-menu .footer-item .flex-1{flex: unset;}
 .footer-privacy-menu .footer-item,
-.footer-privacy-menu .footer-title{display:block;}
+.footer-privacy-menu .footer-title{display:block;}*/
 
 
 
