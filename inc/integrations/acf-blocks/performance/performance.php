@@ -32,7 +32,8 @@ if (!empty($block['className'])) {
     </div>    
 
     <!-- Grid Items -->
-    <div class="grid w-full max-w-[938px] gap-8 md:gap-6 grid-cols-2 lg:grid-cols-4 flex-1">
+    
+    <div class="grid w-full max-w-[938px] gap-8 md:gap-6 grid-cols-2 xl:grid-cols-4 flex-1">
         
         <?php if (have_rows('infos')) : while (have_rows('infos')) : the_row(); ?>
 
@@ -40,6 +41,7 @@ if (!empty($block['className'])) {
                 
                 <!-- Number -->
                 <div class="relative flex items-center justify-center text-[40px] md:text-[50px] lg:text-6xl leading-[48px] md:leading-[52px] font-bold tracking-[-2%] font-[poppins] text-white">
+
                     <div class="invisible" aria-hidden="true">
                         <?= wp_kses_post(get_sub_field('value')) ?>
                     </div>
