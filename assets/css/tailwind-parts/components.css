@@ -506,6 +506,7 @@
   .source-card {
     position: relative;
     overflow: hidden;
+    container-type: inline-size;
   }
 
   .source-card .gradient-box {
@@ -555,14 +556,15 @@
   }
 
   .source-card:hover .arrow {
-    transform: translateY(324px) rotate(45deg);
+    transform: translateY(95cqh) rotate(45deg);
   }
 
-  @media (max-width: 599px) {
+
+  /*@media (max-width: 599px) {
     .source-card:hover .arrow {
       transform: translateY(300px) rotate(45deg);
     }
-  }
+  }*/
 
   .source-card .content {
     margin-top: auto;
@@ -571,16 +573,17 @@
     will-change: transform;
   }
 
-  .source-card:hover .content {
-    transform: translateY(calc(-324px + 100%));
-  }
+  /* Content hover → move to top */
+    .source-card:hover .content {
+      transform: translateY(calc(-100% + 10cqh));
+    }
 
-  @media (min-width: 600px) {
+  /*@media (min-width: 600px) {
     .source-card:hover .content {
       transform: translateY(calc(-364px + 100%));
     }
-  }
-  @media (min-width: 1441px) {
+  }*/
+ /* @media (min-width: 1441px) {
     .source-card {
       container-type: inline-size;
     }
@@ -592,7 +595,7 @@
     .source-card:hover .content {
       transform: translateY(calc(-109cqw + 100%));
     }
-  }
+  }*/
   /* Marquee Track for logos/text scrolling */
   .marquee-wrapper {
     overflow: hidden;
