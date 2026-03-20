@@ -78,7 +78,7 @@ if (!empty($block['className'])) {
                                                                     </p>
                                                                 </div>
                                                                 <p class="service-card-link inline-flex  gap-2 relative flex-[0_0_auto]">
-                                                                    <span class="font-bold text-accent text-lg leading-7 uppercase relative w-fit  font-heading tracking-[0] whitespace-nowrap">
+                                                                    <span class="font-semibold text-accent uppercase relative w-fit whitespace-nowrap font-heading tracking-[0] text-[clamp(16px,1.5vw,18px)] leading-[clamp(24px,2vw,28px)]">
                                                                         <?= wp_kses_post(get_sub_field('link_label')) ?>
                                                                     </span>
 
@@ -120,7 +120,7 @@ if (!empty($block['className'])) {
                                                                     </p>
                                                                 </div>
                                                                 <p class="service-card-link inline-flex  gap-2 relative flex-[0_0_auto]">
-                                                                    <span class="font-heading font-normal text-[#525252] text-[16px] md:text-[18px] leading-[28px] uppercase relative w-fit whitespace-nowrap">
+                                                                    <span class="font-semibold text-accent uppercase relative w-fit whitespace-nowrap font-heading tracking-[0] text-[clamp(16px,1.5vw,18px)] leading-[clamp(24px,2vw,28px)]">
                                                                         <?= wp_kses_post(get_sub_field('link_label')) ?>
                                                                     </span>
 
