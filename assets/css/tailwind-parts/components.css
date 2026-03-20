@@ -556,7 +556,9 @@
   }
 
   .source-card:hover .arrow {
-    transform: translateY(95cqh) rotate(45deg) !important; 
+    transform: translateY(0) rotate(0deg) !important; 
+    top:auto;
+    bottom:28px;
   }
 
   .source-card .content {
@@ -568,7 +570,8 @@
 
   /* Content hover → move to top */
     .source-card:hover .content {
-      transform: translateY(calc(-100% + 10cqh)) !important; 
+      margin-top:0px;
+      transform: translateY(0) !important;
     }
 
 
