@@ -69,7 +69,7 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
       <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
 
           <div class="flex flex-col items-center gap-8 md:gap-[60px] wrapper">
-            <div class="flex flex-col lg:flex-row lg:items-center  gap-[50px] self-stretch w-full">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-[20px] md:gap-[50px] self-stretch w-full">
               <?php if (have_rows('title_group')) :  while (have_rows('title_group')) : the_row(); 
                     $title1 = get_sub_field('title_row_1');
                     $title2 = get_sub_field('title_row_2');
