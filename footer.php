@@ -114,7 +114,41 @@
 
             <?php render_footer_menu('work-menu'); ?>
 
-            <?php render_footer_menu('contacts-menu'); ?>
+            <?php //render_footer_menu('contacts-menu'); ?>
+
+            <div class="footer-item flex flex-col items-start min-[600px]:gap-5 w-full flex-1">
+              <div class=" footer-title flex justify-center gap-1 w-full">
+                <img class="w-4 h-4" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-blue.svg" alt="">
+                <div class="footer-title flex justify-between w-full uppercase flex-1">
+                  <a href="#">Contact</a> 
+                  <span class="dropdown-item-footer  min-[600px]:hidden"><img src="/wp-content/themes/Mlrgroup/assets/imgs/Caret-down.svg" alt=""></span>
+                </div>
+              </div>
+              <?php if( have_rows('contact_info') ): ?>
+              <div class="footer-item-content  flex flex-col items-start gap-4 pl-2">                      
+                  <a class="footer-text" href="#">contact@mrl.com</a>
+                  <a class="footer-text" href="#">+1 (XXX) XXX-XXXX</a>                      
+                  <a class="footer-text" href="#">Florida, United states</a>
+
+
+                    <ul class="contact-info-list">
+                        <?php while( have_rows('contact_info') ) : the_row(); 
+                            $label = get_sub_field('contact_info_label');
+                            $link = get_sub_field('contact_info_link');
+                        ?>
+                            
+                                <?php if( $link ): ?>
+                                    <a class="footer-text" href="<?php echo esc_url($link); ?>"><?php echo esc_html($label); ?></a>
+                                <?php else: ?>
+                                    <span class="footer-text" ><?php echo esc_html($label); ?></span>
+                                <?php endif; ?>
+                            
+                        <?php endwhile; ?>
+                    </ul>
+              </div>
+              <?php endif; ?>
+
+            </div>
           </div>
         </div>
 
