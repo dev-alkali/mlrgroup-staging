@@ -29,6 +29,11 @@
 .logo-filter select{ -webkit-appearance: none;-moz-appearance:none;appearance:none;border:1px solid #CCCCCC;background-image: url(/wp-content/uploads/2026/03/down-arrow.svg);background-position: center right 10px;background-repeat:no-repeat;padding:10px 40px 10px 16px;color:#525252;}
 
 
+.footer-privacy-menu .footer-item .dropdown-item-footer,
+.footer-privacy-menu .footer-item img{display: none;}
+
+
+
 @media (min-width: 1441px) {
     .services .grid .source-card:hover .content {transform: translateY(calc(100% - 85cqw));}
     .services .grid .source-card:hover .arrow {transform: translateY(79cqw) rotate(45deg);}

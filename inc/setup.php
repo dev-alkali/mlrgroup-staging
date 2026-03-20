@@ -39,12 +39,3 @@ function register_my_menus()
 }
 add_action('init', 'register_my_menus');
 
-
-add_filter('nav_menu_link_attributes', function($atts, $item, $args) {
-    if ($args->theme_location === 'privacy-menu') {
-        $atts['class'] = isset($atts['class']) 
-            ? $atts['class'] . ' footer-link' 
-            : 'footer-link';
-    }
-    return $atts;
-}, 10, 3);

@@ -133,11 +133,11 @@
         <div class="flex max-w-[819px] flex-col min-[600px]:flex-row max-[600px]:gap-5 w-full items-start min-[600px]:items-center justify-between">
           <p class="footer-text">© 2026 THE MRL GROUP</p>
 
-          <div class="inline-flex items-start min-[600px]:items-center flex-col min-[600px]:flex-row justify-end gap-5 min-[600px]:gap-[60px]">
+          <div class="inline-flex items-start min-[600px]:items-center flex-col min-[600px]:flex-row justify-end gap-5 min-[600px]:gap-[60px] footer-privacy-menu">
             <?php render_footer_menu('privacy-menu'); ?>
-            <a class="footer-link" href="#">Privacy Policy</a>
+            <!-- <a class="footer-link" href="#">Privacy Policy</a>
             <a class="footer-link" href="#">Legal</a>
-            <a class="footer-link" href="#">Terms of Use</a>
+            <a class="footer-link" href="#">Terms of Use</a> -->
           </div>
         </div>
       </div>
