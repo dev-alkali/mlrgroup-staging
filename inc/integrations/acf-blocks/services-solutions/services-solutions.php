@@ -12,12 +12,12 @@ if (!empty($block['className'])) {
 }
 ?>
 <?php if (have_rows('services_solutions')) :  while (have_rows('services_solutions')) : the_row(); ?>
-        <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> solutions-tabs-slider px-4  min-[600px]:px-10 py-[60px] min-[600px]:py-[120px] flex justify-center">
-            <div class="w-full flex items-center flex-col max-w-[1920px]">
+        <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> solutions-tabs-slider px-4  md:px-10 py-[60px] md:py-[120px]">
+            <div class="w-full flex items-center flex-col wrapper">
 
                 <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
                         <!-- TITLE -->
-                        <div class="solutions-header flex w-full max-w-[1920px] mb-8 min-[600px]:mb-[60px]">
+                        <div class="solutions-header flex w-full max-w-[1920px] mb-8 md:mb-[60px]">
                             <?php 
                                 $title_bold = get_sub_field('title_bold');
                                 $title_light = get_sub_field('title_light');
@@ -25,7 +25,7 @@ if (!empty($block['className'])) {
                             ?>
 
                             <?php if (!empty($title_bold) || !empty($title_light)) : ?>
-                            <h2 class="solutions-header__title text-[44px] min-[600px]:text-5xl leading-[56px] min-[600px]:leading-[60px] tracking-[-2%] font-heading text-neutral-800">
+                            <h2 class="solutions-header__title text-[44px] md:text-5xl leading-[56px] md:leading-[60px] tracking-[-2%] font-heading text-neutral-800">
                                 <span class="font-bold text-neutral-800"><?= wp_kses_post(get_sub_field('title_bold')) ?></span>
                                 <span class="font-light text-neutral-500"><?= wp_kses_post(get_sub_field('title_light')) ?><span class="text-accent font-bold">.</span></span>
                             </h2>                                
@@ -48,19 +48,15 @@ if (!empty($block['className'])) {
 
                             <?php if (have_rows('service_group')) : while (have_rows('service_group')) : the_row(); ?>
 
-                                    <div class="solutions-tab <?= get_row_index() === 1 ? 'is-active' : '' ?> max-[600px]:max-w-[184px] w-full min-[600px]:min-w-[280px] min-[1024px]:min-w-auto flex-none min-[600px]:flex-1"
+                                    <div class="solutions-tab <?= get_row_index() === 1 ? 'is-active' : '' ?> md:max-w-[184px] w-full md:min-w-[280px] lg:min-w-auto flex-none md:flex-1"
                                         data-solution="<?= wp_kses_post(get_sub_field('service_name')) ?>">
-
-                                        <button class="px-[10.5px] min-[600px]:px-4 min-[1206px]:px-6 w-full pt-[21px] min-[600px]:pt-[27px] pb-[19px] min-[600px]:pb-[25px] gap-2 capitalize min-[600px]:uppercase font-medium">
-                                            <img class="w-3 min-[600px]:mt-[3px] min-[600px]:w-[19px] h-3 min-[600px]:h-[18px] arrow " src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-tabs.svg" alt="">
+                                        <button class="px-[10.5px] md:px-4 min-[1206px]:px-6 w-full pt-[21px] md:pt-[27px] pb-[19px] md:pb-[25px] gap-2 capitalize md:uppercase font-medium">
+                                            <img class="w-3 md:mt-[3px] md:w-[19px] h-3 md:h-[18px] arrow " src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-tabs.svg" alt="">
                                             <?= wp_kses_post(get_sub_field('service_name')) ?>
                                         </button>
-
                                     </div>
-
                             <?php endwhile;
                             endif; ?>
-
                         </div>
 
                         <!-- SLIDERS WRAPPER -->
@@ -68,25 +64,23 @@ if (!empty($block['className'])) {
                             <?php if (have_rows('service_group')) :  while (have_rows('service_group')) : the_row(); ?>
 
                                     <!-- EXECUTION -->
-                                    <div class="solutions-slider max-[1024px]:hidden <?= get_row_index() === 1 ? 'is-active' : '' ?>" data-solution="<?= wp_kses_post(get_sub_field('service_name')) ?>">
+                                    <div class="solutions-slider max-lg:hidden <?= get_row_index() === 1 ? 'is-active' : '' ?>" data-solution="<?= wp_kses_post(get_sub_field('service_name')) ?>">
                                         <div class="solutions-track">
                                             <?php if (have_rows('slider_solutions')) :  while (have_rows('slider_solutions')) : the_row(); ?>
-                                                    <a class="solution-card max-[1023px]:max-w-[400px]" href="<?= esc_url(get_sub_field('link_path')) ?>">
+                                                    <a class="solution-card max-lg:max-w-[400px]" href="<?= esc_url(get_sub_field('link_path')) ?>">
                                                         <div class="flex flex-col w-full items-start gap-4 relative">
 
                                                             <img class="self-stretch w-full h-[409px]" src="<?= esc_url(get_sub_field('image')) ?>" alt="">
                                                             <div class="flex flex-col w-[371px] items-start gap-4 relative flex-[0_0_auto] max-w-[100%]">
                                                                 <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                                                                    <div
-                                                                        class="relative self-stretch  font-bold tracking-[-2%] text-[24px] leading-8 font-heading text-neutral-800 ">
+                                                                    <div class="relative self-stretch font-heading font-bold text-[#262626] text-[24px] leading-[32px] tracking-[-0.02em]">
                                                                         <?= wp_kses_post(get_sub_field('title')) ?>
                                                                     </div>
-                                                                    <p
-                                                                        class="relative self-stretch text-[18px] leading-7 font-body font-normal text-neutral-600 text-lg tracking-[0] ">
+                                                                    <p class="relative self-stretch font-body font-normal text-[#525252] text-[clamp(16px,1.2vw,18px)] leading-[28px]">
                                                                         <?= wp_kses_post(get_sub_field('paragraph')) ?>
                                                                     </p>
                                                                 </div>
-                                                                <p class=" service-card-link inline-flex  gap-2 relative flex-[0_0_auto]">
+                                                                <p class="service-card-link inline-flex  gap-2 relative flex-[0_0_auto]">
                                                                     <span class="font-bold text-accent text-lg leading-7 uppercase relative w-fit  font-heading tracking-[0] whitespace-nowrap">
                                                                         <?= wp_kses_post(get_sub_field('link_label')) ?>
                                                                     </span>
@@ -120,23 +114,21 @@ if (!empty($block['className'])) {
                                                         <div class="flex flex-col w-full items-start gap-4 relative">
 
                                                             <img class="self-stretch w-full h-[409px]" src="<?= esc_url(get_sub_field('image')) ?>" alt="">
-                                                            <div class="flex flex-col w-full max-w-[358px] min-[600px]:max-w-[371px] items-start gap-4 relative flex-[0_0_auto]">
+                                                            <div class="flex flex-col w-full max-w-[358px] md:max-w-[371px] items-start gap-4 relative flex-[0_0_auto]">
                                                                 <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-                                                                    <div
-                                                                        class="relative self-stretch  font-bold tracking-[-2%] text-[24px] leading-8 font-heading text-neutral-800 ">
+                                                                    <div class="relative self-stretch font-heading font-bold text-[#262626] text-[24px] leading-[32px] tracking-[-0.02em]">
                                                                         <?= wp_kses_post(get_sub_field('title')) ?>
                                                                     </div>
-                                                                    <p
-                                                                        class="relative self-stretch text-[16px] leading-7 font-body font-normal text-neutral-600 min-[600px]text-lg tracking-[0] ">
+                                                                    <p class="relative self-stretch font-body font-normal text-[#525252] text-[clamp(16px,1.2vw,18px)] leading-[28px]">
                                                                         <?= wp_kses_post(get_sub_field('paragraph')) ?>
                                                                     </p>
                                                                 </div>
                                                                 <p class="service-card-link inline-flex  gap-2 relative flex-[0_0_auto]">
-                                                                    <span class="font-semibold text-accent text-[16px] min-[600px]:text-lg leading-6 min-[600px]:leading-7 uppercase relative w-fit  font-heading tracking-[0] whitespace-nowrap">
+                                                                    <span class="font-heading font-normal text-[#525252] text-[16px] md:text-[18px] leading-[28px] uppercase relative w-fit whitespace-nowrap">
                                                                         <?= wp_kses_post(get_sub_field('link_label')) ?>
                                                                     </span>
 
-                                                                    <img class="arrow relative w-4 h-4 mt-[3px] min-[600px]:mt-1" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" />
+                                                                    <img class="arrow relative w-4 h-4 mt-[3px] md:mt-1" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" />
                                                                 </p>
                                                             </div>
                                                         </div>

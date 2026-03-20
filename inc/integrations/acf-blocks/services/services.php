@@ -40,21 +40,9 @@ if ($card_overlay === 'Grayscale') {
 
 $select_3_column_grid = get_sub_field('select_3_column_grid');
 
-// $wrapper_class = $select_3_column_grid
-//     ? "grid grid-cols-1 md:grid-cols-2 min-[1440px]:grid-cols-3 gap-4 md:gap-2 w-full"
-//     : "flex items-center justify-center flex-wrap gap-4 md:gap-2 w-full";
-
-// $article_class = $select_3_column_grid
-//     ? "source-card relative overflow-hidden w-full aspect-[16/15]"
-//     : "source-card relative overflow-hidden w-full aspect-[334/420] max-[1440px]:basis-[49%]";
-
-
 $wrapper_class = $select_3_column_grid
     ? "grid grid-cols-1 md:grid-cols-2 min-[1440px]:grid-cols-3 gap-4 md:gap-2 w-full"
     : "grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4 md:gap-2 w-full";
-    
-    //: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-2 w-full";
-
 
 $article_class = $select_3_column_grid
     ? "source-card relative overflow-hidden w-full aspect-[16/15]"
@@ -98,7 +86,7 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
                   $btn_label = get_sub_field('btn_label');
                 ?>
                 <?php if ($btn_label) : ?>
-                  <a href="<?= esc_url($btn_path) ?>" class="btn-primary max-[767px]:hidden"><?= wp_kses_post($btn_label) ?></a>
+                  <a href="<?= esc_url($btn_path) ?>" class="btn-primary max-lg:hidden"><?= wp_kses_post($btn_label) ?></a>
                 <?php endif; ?>
               </div>
 
@@ -114,11 +102,11 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
                       <article class="<?= esc_attr($article_class) ?>">
                         <div class="bg-image absolute inset-0" style=" background-image: url('<?php echo esc_url(get_sub_field('image')); ?>'); background-position: center center; background-size: cover; background-repeat: no-repeat; filter: grayscale(100%); ">
                         </div>           
-                        <a href="<?= esc_url(get_sub_field('link_path')) ?>" class="gradient-box absolute flex flex-col flex-1 justify-between px-5 min-[600px]:px-6 py-7 w-full h-full">
+                        <a href="<?= esc_url(get_sub_field('link_path')) ?>" class="gradient-box absolute flex flex-col flex-1 justify-between px-5 md:px-6 py-7 w-full h-full">
                           <img class="arrow absolute w-10 z-10" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="" />
-                          <div class="flex flex-col gap-3 min-[600px]:gap-4 content z-10">
+                          <div class="flex flex-col gap-3 md:gap-4 content z-10">
                             <h3 class="text-white card-title"><?= wp_kses_post(get_sub_field('title')) ?></h3>
-                            <p class="text-white text-[16px] min-[600px]:text-lg leading-[26px] min-[600px]:leading-7 font-body"><?= wp_kses_post(get_sub_field('paragraph')) ?></p>
+                            <p class="text-white text-[16px] md:text-lg leading-[26px] md:leading-7 font-body"><?= wp_kses_post(get_sub_field('paragraph')) ?></p>
                           </div>
                         </a>
                       </article>
@@ -132,7 +120,7 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
         <?php endwhile;
         endif; ?>
         <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
-            <div class="min-[767px]:hidden max-w-[358px] min-[600px]:max-w-[334px] w-full flex justify-center">
+            <div class="lg:hidden max-w-[358px] md:max-w-[334px] w-full flex justify-center">
 
               <a href="<?= esc_url(get_sub_field('btn_path')) ?>" class="btn-primary "><?= wp_kses_post(get_sub_field('btn_label')) ?></a>
             </div>
