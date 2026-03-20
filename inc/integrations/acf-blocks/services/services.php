@@ -41,18 +41,20 @@ if ($card_overlay === 'Grayscale') {
 $select_3_column_grid = get_sub_field('select_3_column_grid');
 
 $wrapper_class = $select_3_column_grid
-    ? "grid grid-cols-1 md:grid-cols-2 min-[1440px]:grid-cols-3 gap-4 md:gap-2 w-full"
-    : "flex items-center justify-center flex-wrap gap-4 md:gap-2 w-full";
+    ? "grid grid-cols-1 min-[600px]:grid-cols-2 min-[1440px]:grid-cols-3 gap-4 min-[600px]:gap-2 self-stretch w-full"
+    : "flex items-center justify-center max-[1440px]:flex-wrap gap-4 min-[600px]:gap-2 self-stretch w-full";
 
 $article_class = $select_3_column_grid
-    ? "source-card max-[600px]:h-[380px] max-[1440px]:h-[420px] w-full min-[1440px]:aspect-[16/15] relative overflow-hidden"
-    : "source-card max-md:h-[380px] max-[1440px]:h-[420px] w-full min-[1440px]:aspect-[334/420] max-[1440px]:max-w-[49%] max-md:max-w-[100%] relative overflow-hidden";
-    
-    // ? "source-card relative overflow-hidden w-full max-md:h-[380px] max-[1440px]:h-[420px] min-[1440px]:aspect-[16/15]"
-    // : "source-card relative overflow-hidden w-full max-md:h-[380px] max-[1440px]:h-[420px] min-[1440px]:aspect-[334/420] max-[1440px]:max-w-[49%]";
     ? "source-card relative overflow-hidden w-full aspect-[16/15]"
-    : "source-card relative overflow-hidden w-full aspect-[334/420] max-[1440px]:max-w-[49%]";
+    : "source-card relative overflow-hidden w-full aspect-[334/420] max-[1440px]:basis-[49%]";
+    // ? "source-card max-[600px]:h-[380px] max-[1440px]:h-[420px] w-full min-[1440px]:aspect-[16/15] relative overflow-hidden"
+    // : "source-card max-[600px]:h-[380px] max-[1440px]:h-[420px] w-full min-[1440px]:aspect-[334/420] max-[1440px]:max-w-[49%] max-[768px]:max-w-[100%] relative overflow-hidden";
 ?>
+
+
+
+
+
 
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> <?php echo esc_attr($overlay_class); ?> flex w-full justify-center px-4 min-[600px]:px-10 py-[60px] min-[600px]:py-[120px]">      
       <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
