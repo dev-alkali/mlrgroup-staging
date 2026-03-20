@@ -110,7 +110,7 @@ if (!empty($block['className'])) {
                                 class="relative w-fit  uppercase font-heading font-semibold text-base text-center tracking-[0] leading-6 min-[600px]:leading-[18px] whitespace-nowrap">
                                 <?= wp_kses_post(get_sub_field('link_label')) ?>
                               </span>
-                              <img class="relative w-4 h-4 max-[600px]:mt-[3px]" src="<?= $arrow_color ?>" alt="arrow" />
+                              <img class="relative w-4 h-4 max-[600px]:mt-[3px] arrow" src="<?= $arrow_color ?>" alt="arrow" />
 
                             </p>
                           </a>

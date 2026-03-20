@@ -904,6 +904,9 @@
     opacity: 0;
   }
 
+  .collection-item img.arrow{transition: all 0.3s ease;}
+  .collection-item:hover img.arrow{transform: rotate(45deg);}
+
   /*****/
   /* =========================================================
    ESTILIZAÇÃO GRAVITY FORMS - ID 2
