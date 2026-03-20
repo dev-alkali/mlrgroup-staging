@@ -42,12 +42,11 @@ $select_3_column_grid = get_sub_field('select_3_column_grid');
 
 $wrapper_class = $select_3_column_grid
     ? "grid grid-cols-1 md:grid-cols-2 min-[1440px]:grid-cols-3 gap-4 md:gap-2 w-full"
-    : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 min-[1440px]:grid-cols-4 gap-4 md:gap-2 w-full";
+    : "flex items-center justify-center flex-wrap gap-4 md:gap-2 w-full";
 
 $article_class = $select_3_column_grid
     ? "source-card relative overflow-hidden w-full aspect-[16/15]"
-    : "source-card relative overflow-hidden w-full aspect-[334/420]";
-
+    : "source-card relative overflow-hidden w-full aspect-[334/420] max-[1440px]:basis-[49%]";
 
 $width = get_sub_field('select_short_content_width');
 $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
