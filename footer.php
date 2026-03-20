@@ -132,7 +132,7 @@
       <div class="flex max-w-[1920px] w-full items-end gap-5">
         <div class="flex flex-col md:flex-row md:gap-5 w-full items-start md:items-center justify-between">
           <p class="footer-text">© 2026 THE MRL GROUP</p>
-          <div class="inline-flex items-start md:items-center flex-col mid:flex-row justify-end gap-5 md:gap-[60px] footer-privacy-menu">
+          <div class="inline-flex gap-5 md:gap-[60px] footer-privacy-menu">
             <?php render_footer_menu('privacy-menu'); ?>
           </div>
         </div>
