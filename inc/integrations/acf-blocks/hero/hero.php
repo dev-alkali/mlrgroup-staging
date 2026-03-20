@@ -99,7 +99,7 @@ if (!empty($block['className'])) {
   ?>
 
   <section class="c-brands py-6">
-    <div class="wrapper flex flex-col min-[890px]:flex-row items-center gap-6 w-full">
+    <div class="wrapper flex flex-col min-[890px]:flex-row items-center gap-[20px] lg:gap-[105px] w-full">
 
       <?php if (!empty($brand_title)) : ?>
         <div class="flex items-center gap-2">
