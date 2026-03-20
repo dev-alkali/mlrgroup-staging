@@ -421,7 +421,7 @@
     line-height: 18px;
   }
   .newsletter-gf-container .gform_wrapper.gravity-theme .gform_footer {
-    @apply mx-0! mb-0! mt-[24px]! p-0!;
+    @apply mx-0! mb-0! mt-[0px]! p-0!;
   }
   @media only screen and (max-width: 641px) {
     .gform_wrapper.gravity-theme
