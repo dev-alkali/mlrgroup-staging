@@ -673,7 +673,7 @@
   }
 
   .work-card:hover .arrow {
-    transform: translateY(0);
+    transform: translateY(0) rotate(45deg);
   }
 
   /* Solutions Tabs & Sliders */
