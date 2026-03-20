@@ -104,7 +104,7 @@ if (!empty($block['className'])) {
       <?php if (!empty($brand_title)) : ?>
         <div class="flex items-center gap-2">
           <img class="w-4 md:w-5" src="<?php echo get_template_directory_uri(); ?>/assets/imgs/Arrow-blue-brands.svg" alt="arrow">
-          <p class="c-brands__desc text-[16px] md:text-2xl text-black font-heading">
+          <p class="c-brands__desc font-heading text-[#404040] font-medium text-[clamp(16px,2.2vw,24px)] leading-[clamp(24px,2.8vw,32px)] tracking-[clamp(0em,-0.2vw,-0.02em)]">            
             <?php echo esc_html($brand_title); ?>
           </p>
         </div>
