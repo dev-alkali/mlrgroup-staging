@@ -137,9 +137,9 @@
                             $link = get_sub_field('contact_info_link','option');
                         ?>
                             <?php if( $link ): ?>
-                                <a class="footer-text" href="<?php echo esc_url($link); ?>"><?php echo esc_html($label); ?></a>
+                                <a class="footer-text" href="<?php echo esc_url($link); ?>"><?php echo $label; ?></a>
                             <?php else: ?>
-                                <span class="footer-text" ><?php echo esc_html($label); ?></span>
+                                <span class="footer-text" ><?php echo $label; ?></span>
                             <?php endif; ?>                            
                         <?php endwhile; ?>
                     </ul>
