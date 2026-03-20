@@ -47,8 +47,9 @@ $wrapper_class = $select_3_column_grid
 $article_class = $select_3_column_grid
     ? "source-card relative overflow-hidden w-full aspect-[16/15]"
     : "source-card relative overflow-hidden w-full aspect-[334/420] max-[1440px]:basis-[49%]";
-    // ? "source-card max-[600px]:h-[380px] max-[1440px]:h-[420px] w-full min-[1440px]:aspect-[16/15] relative overflow-hidden"
-    // : "source-card max-[600px]:h-[380px] max-[1440px]:h-[420px] w-full min-[1440px]:aspect-[334/420] max-[1440px]:max-w-[49%] max-[768px]:max-w-[100%] relative overflow-hidden";
+
+$width = get_sub_field('select_short_content_width');
+$max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
 ?>
 
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> <?php echo esc_attr($overlay_class); ?> flex w-full justify-center px-4 md:px-10 py-[60px] md:py-[120px]">      
@@ -75,7 +76,7 @@ $article_class = $select_3_column_grid
 
               <div class="flex flex-col items-start gap-8 flex-1 serve-content">
                 <?php if (get_sub_field('subtitle')) : ?>
-                <p class="max-w-[526px] text-xl leading-7 text-neutral-600 font-body">
+                <p class="<?= $max_width_class; ?> font-body font-normal text-[#525252] text-[clamp(18px,2.2vw,20px)] leading-[clamp(26px,2.6vw,28px)]">
                   <?= wp_kses_post(get_sub_field('subtitle')) ?>
                 </p>
                 <?php endif; ?>
