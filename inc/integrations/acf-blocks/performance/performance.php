@@ -33,7 +33,7 @@ if (!empty($block['className'])) {
                     <div class="w-full max-w-[938px] flex-1 grid grid-cols-2 gap-6 md:flex md:flex-wrap md:justify-evenly lg:justify-between md:gap-4 xl:flex-wrap">
                         <?php if (have_rows('infos')) : while (have_rows('infos')) : the_row(); ?>
                             <div class="performance-item flex flex-col items-start md:items-center gap-1 md:gap-3 w-full md:max-w-[163px]">
-                                <div class="relative flex items-center md:justify-center text-[40px] md:text-[50px] lg:text-6xl leading-[48px] md:leading-[52px] font-bold tracking-[-2%] font-[poppins] text-white">                                                        
+                                <div class="relative flex items-center md:justify-center font-bold font-[poppins] text-white tracking-[-0.02em] text-[clamp(40px,4vw,60px)] leading-[clamp(48px,4.5vw,60px)]">
                                     <div class="invisible" aria-hidden="true">
                                         <?= wp_kses_post(get_sub_field('value')) ?>
                                     </div>
@@ -42,7 +42,7 @@ if (!empty($block['className'])) {
                                         <?= wp_kses_post(get_sub_field('value')) ?>
                                     </div>
                                 </div>
-                                <p class="text-[14px] md:text-base leading-[20px] md:leading-6 text-white font-body md:text-center md:max-w-[133px]"> <?= wp_kses_post(get_sub_field('description')) ?></p>
+                                <p class="text-[clamp(14px,1.2vw,16px)] leading-[clamp(20px,1.6vw,24px)] text-white font-normal font-body md:text-center md:max-w-[133px]"> <?= wp_kses_post(get_sub_field('description')) ?></p>
                             </div>
                         <?php endwhile; endif; ?>
                     </div>
