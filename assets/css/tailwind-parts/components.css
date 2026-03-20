@@ -551,20 +551,20 @@
     top: 28px;
     right: 23px;
     transform: translateY(0) rotate(0deg);
-    transition: transform 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: all 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
     will-change: transform;
   }
 
   .source-card:hover .arrow {
     transform: translateY(0) rotate(0deg) !important; 
     top:90%;
-    
+
   }
 
   .source-card .content {
     margin-top: auto;
     transform: translateY(0);
-    transition: transform 500ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition: all 500ms cubic-bezier(0.22, 0.61, 0.36, 1);
     will-change: transform;
   }
 
