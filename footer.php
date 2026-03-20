@@ -129,13 +129,11 @@
 
     <!-- Bottom bar -->
     <div class="flex flex-col items-center gap-[60px] px-4 md:px-10 py-5 w-full border-t border-[#6e454766]">
-      <div class="flex max-w-[1920px] w-full items-end gap-5">
-        <div class="flex flex-col md:flex-row md:gap-5 w-full items-start md:items-center justify-between">
+      <div class="flex max-w-[1920px] w-full gap-5 flex-col md:flex-row md:gap-5 w-full items-start md:items-center justify-between">
           <p class="footer-text">© 2026 THE MRL GROUP</p>
           <div class="inline-flex gap-5 md:gap-[60px] footer-privacy-menu">
             <?php render_footer_menu('privacy-menu'); ?>
           </div>
-        </div>
       </div>
     </div>
   </div>
