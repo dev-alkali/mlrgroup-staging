@@ -136,13 +136,11 @@
                             $label = get_sub_field('contact_info_label');
                             $link = get_sub_field('contact_info_link');
                         ?>
-                            
-                                <?php if( $link ): ?>
-                                    <a class="footer-text" href="<?php echo esc_url($link); ?>"><?php echo esc_html($label); ?></a>
-                                <?php else: ?>
-                                    <span class="footer-text" ><?php echo esc_html($label); ?></span>
-                                <?php endif; ?>
-                            
+                            <?php if( $link ): ?>
+                                <a class="footer-text" href="<?php echo esc_url($link); ?>"><?php echo esc_html($label); ?></a>
+                            <?php else: ?>
+                                <span class="footer-text" ><?php echo esc_html($label); ?></span>
+                            <?php endif; ?>                            
                         <?php endwhile; ?>
                     </ul>
               </div>
