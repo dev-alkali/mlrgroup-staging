@@ -30,24 +30,38 @@ if (!empty($block['className'])) {
                     </div>    
 
                     <!-- Info Items -->
-                    <div class="flex items-center w-full max-w-[938px] flex-1 justify-between md:justify-evenly lg:justify-between gap-8 md:gap-4 xl:flex-wrap">
-                        <?php if (have_rows('infos')) : while (have_rows('infos')) : the_row(); ?>
-                            <div class="performance-item inline-flex flex-col w-max md:w-full md:max-w-[163px] gap-1 md:gap-3 md:items-center">
-                                <div class="relative flex items-center md:justify-center text-[40px] md:text-[50px] lg:text-6xl leading-[48px] md:leading-[52px] font-bold tracking-[-2%] font-[poppins] text-white">                    
-                                    <div class="invisible" aria-hidden="true">
-                                        <?= wp_kses_post(get_sub_field('value')) ?>
-                                    </div>
+                    <div class="
+    w-full max-w-[938px] flex-1
+    grid grid-cols-2 gap-6
+    md:flex md:flex-wrap md:justify-evenly lg:justify-between md:gap-4
+    xl:flex-wrap
+">
 
-                                    <div class="absolute count-box tabular-nums">
-                                        <?= wp_kses_post(get_sub_field('value')) ?>
-                                    </div>
-                                </div>
-                                <p class="text-[14px] md:text-base leading-[20px] md:leading-6 text-white font-body md:text-center md:max-w-[133px]">
-                                    <?= wp_kses_post(get_sub_field('description')) ?>
-                                </p>
-                            </div>
-                        <?php endwhile; endif; ?>
-                    </div>
+    <?php if (have_rows('infos')) : while (have_rows('infos')) : the_row(); ?>
+
+        <div class="performance-item flex flex-col items-start md:items-center gap-1 md:gap-3 w-full md:max-w-[163px]">
+
+            <div class="relative flex items-center md:justify-center text-[40px] md:text-[50px] lg:text-6xl leading-[48px] md:leading-[52px] font-bold tracking-[-2%] font-[poppins] text-white">                    
+                
+                <div class="invisible" aria-hidden="true">
+                    <?= wp_kses_post(get_sub_field('value')) ?>
+                </div>
+
+                <div class="absolute count-box tabular-nums">
+                    <?= wp_kses_post(get_sub_field('value')) ?>
+                </div>
+
+            </div>
+
+            <p class="text-[14px] md:text-base leading-[20px] md:leading-6 text-white font-body md:text-center md:max-w-[133px]">
+                <?= wp_kses_post(get_sub_field('description')) ?>
+            </p>
+
+        </div>
+
+    <?php endwhile; endif; ?>
+
+</div>
                 </div>
 
                 <div class="arrows-row flex max-w-[1360px] w-full items-center justify-center gap-3  overflow-hidden max-[1200px]:[&>img:nth-child(1)]:hidden max-[1024px]:[&>img:nth-child(2)]:hidden max-[768px]:[&>img:nth-child(3)]:hidden max-[640px]:[&>img:nth-child(4)]:hidden">
