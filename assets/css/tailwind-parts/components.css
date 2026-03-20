@@ -506,7 +506,6 @@
   .source-card {
     position: relative;
     overflow: hidden;
-    container-type: inline-size;
   }
 
   .source-card .gradient-box {
@@ -551,30 +550,49 @@
     top: 28px;
     right: 23px;
     transform: translateY(0) rotate(0deg);
-    transition: all 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: transform 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
     will-change: transform;
   }
 
   .source-card:hover .arrow {
-    transform: translateY(0) rotate(0deg) !important; 
-    top:90%;
+    transform: translateY(324px) rotate(45deg);
+  }
 
+  @media (max-width: 599px) {
+    .source-card:hover .arrow {
+      transform: translateY(300px) rotate(45deg);
+    }
   }
 
   .source-card .content {
     margin-top: auto;
     transform: translateY(0);
-    transition: all 500ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition: transform 500ms cubic-bezier(0.22, 0.61, 0.36, 1);
     will-change: transform;
   }
 
-  /* Content hover → move to top */
+  .source-card:hover .content {
+    transform: translateY(calc(-324px + 100%));
+  }
+
+  @media (min-width: 600px) {
     .source-card:hover .content {
-      margin-top:0px;
-      transform: translateY(0) !important;
+      transform: translateY(calc(-364px + 100%));
+    }
+  }
+  @media (min-width: 1441px) {
+    .source-card {
+      container-type: inline-size;
     }
 
+    .source-card:hover .arrow {
+      transform: translateY(97cqw) rotate(45deg);
+    }
 
+    .source-card:hover .content {
+      transform: translateY(calc(-109cqw + 100%));
+    }
+  }
   /* Marquee Track for logos/text scrolling */
   .marquee-wrapper {
     overflow: hidden;
