@@ -35,7 +35,7 @@ if (!empty($block['className'])) {
       <div class="w-full h-full flex flex-col items-start gap-[162px] px-4 min-[600px]:px-10 min-[767px]:px-20 relative [background:linear-gradient(0deg,rgba(0,0,0,0.35)_0%,rgba(0,0,0,0.35)_100%)]">
         <div class="flex flex-col items-start justify-end pt-8 pb-20 md:pb-16 flex-1 w-full">
           <div class="flex flex-col items-start justify-center gap-10 w-full">
-            <div class="flex flex-col items-start justify-center gap-[20px] w-full">
+            <div class="flex flex-col items-start justify-center gap-[10px] w-full">
               <?php if (have_rows('title_group')) : while (have_rows('title_group')) : the_row();
                 $title_row_2 = get_sub_field('title_row_2');
                 $has_titles_row1 = have_rows('titles_row_1_change'); // store result
@@ -111,22 +111,34 @@ if (!empty($block['className'])) {
       <?php endif; ?>
 
       <?php if (!empty($images)) : ?>
-        <div class="flex-1 overflow-hidden relative">
-          <div class="marquee-wrapper overflow-hidden w-full">
-            <div class="marquee-track">
+        <div class="flex-1 overflow-hidden relative relative h-[91.15px] md:h-auto">
+          <div class="absolute -top-4 left-[-7%] w-[133px] max-[890px]:hidden h-[139px] bg-white z-20 blur-[16px]"></div>
+          <div class="absolute -top-4 right-[-12%] w-[133px] h-[139px] max-[890px]:hidden bg-white z-20  blur-[16px]"></div>
 
-              <?php for ($i = 0; $i < 2; $i++) : ?>
-                <div class="marquee-group" <?php if ($i === 1) echo 'aria-hidden="true"'; ?>>
-                  <?php foreach ($images as $row): 
-                    $img = $row['image'];
-                    if (!empty($img)) :
-                  ?>
-                    <img class="c-brands__logo h-[91px] w-auto" src="<?php echo esc_url($img); ?>" alt="Brand logo" />
-                  <?php endif; endforeach; ?>
+          <div class="marquee-wrapper overflow-hidden w-full max-w-full ">
+                  <div class="marquee-track relative">
+                    <div class="marquee-group">
+                      <?php if (have_rows('images_brands')) : while (have_rows('images_brands')) : the_row(); ?>
+                          <img class="h-[91.15px] gray-icon w-auto max-w-none block" src="<?= esc_url(get_sub_field('image')) ?>" alt="Brand logos" />
+                      <?php endwhile;
+                      endif; ?>
+                    </div>
+
+                    <div class="marquee-group" aria-hidden="true">
+                      <?php if (have_rows('images_brands')) : while (have_rows('images_brands')) : the_row(); ?>
+                          <img class="h-[91.15px] gray-icon w-auto max-w-none block" src="<?= esc_url(get_sub_field('image')) ?>" alt="Brand logos" />
+                      <?php endwhile;
+                      endif; ?>
+                    </div>
+
+                  </div>
                 </div>
-              <?php endfor; ?>
-            </div>
-          </div>
+
+
+
+         
+
+
         </div>
       <?php endif; ?>
     </div>
