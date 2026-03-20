@@ -41,8 +41,8 @@ if ($card_overlay === 'Grayscale') {
 $select_3_column_grid = get_sub_field('select_3_column_grid');
 
 $wrapper_class = $select_3_column_grid
-    ? "grid grid-cols-1 min-[600px]:grid-cols-2 min-[1440px]:grid-cols-3 gap-4 min-[600px]:gap-2 self-stretch w-full"
-    : "flex items-center justify-center max-[1440px]:flex-wrap gap-4 min-[600px]:gap-2 self-stretch w-full";
+    ? "grid grid-cols-1 md:grid-cols-2 min-[1440px]:grid-cols-3 gap-4 md:gap-2 w-full"
+    : "flex items-center justify-center flex-wrap gap-4 md:gap-2 w-full";
 
 $article_class = $select_3_column_grid
     ? "source-card relative overflow-hidden w-full aspect-[16/15]"
