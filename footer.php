@@ -121,6 +121,7 @@
         <!-- Newsletter -->
 
         <div class="flex items-end justify-around gap-5 w-full newsletter-gf-container">
+          <?php echo get_sub_field('newsletter_title', 'option');?>
           <?php
           $form_id = sanitize_text_field(get_field('newsletter_form_id', 'option'));
 
