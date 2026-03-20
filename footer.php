@@ -38,6 +38,18 @@
               $menu_items = wp_get_nav_menu_items($menu_id);
               if (!$menu_items) return;
 
+              // SPECIAL CASE: privacy menu (NO DIV, only links)
+              if ($location === 'privacy-menu') {
+                foreach ($menu_items as $item) {
+                  ?>
+                  <a class="footer-link" href="<?= esc_url($item->url) ?>">
+                    <?= esc_html($item->title) ?>
+                  </a>
+                  <?php
+                }
+                return; // stop further structure
+              }
+
              
               $by_id = [];
 
