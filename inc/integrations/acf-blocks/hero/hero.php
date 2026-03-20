@@ -16,7 +16,7 @@ if (!empty($block['className'])) {
 
 <?php if (have_rows('hero')) : while (have_rows('hero')) : the_row(); ?>
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> c-hero flex flex-col w-full items-center p-0 lg:pt-5 lg:pb-0 lg:px-5 bg-white h-screen">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> c-hero flex flex-col w-full items-center p-0 lg:pt-5 lg:pb-0 lg:px-5 bg-white h-[calc(100vh-185px)]">
 
   <?php if (have_rows('main')) : while (have_rows('main')) : the_row();
 
