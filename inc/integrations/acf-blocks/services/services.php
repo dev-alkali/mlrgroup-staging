@@ -42,20 +42,21 @@ $select_3_column_grid = get_sub_field('select_3_column_grid');
 
 $wrapper_class = $select_3_column_grid
     ? "grid grid-cols-1 md:grid-cols-2 min-[1440px]:grid-cols-3 gap-4 md:gap-2 w-full"
-    : "flex items-center justify-center flex-wrap gap-4 md:gap-2 w-full";
+    : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 min-[1440px]:grid-cols-4 gap-4 md:gap-2 w-full";
 
 $article_class = $select_3_column_grid
     ? "source-card relative overflow-hidden w-full aspect-[16/15]"
-    : "source-card relative overflow-hidden w-full aspect-[334/420] max-[1440px]:basis-[49%]";
+    : "source-card relative overflow-hidden w-full aspect-[334/420]";
+
 
 $width = get_sub_field('select_short_content_width');
 $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
 ?>
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> <?php echo esc_attr($overlay_class); ?> flex w-full justify-center px-4 md:px-10 py-[60px] md:py-[120px]">      
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> <?php echo esc_attr($overlay_class); ?> px-4 md:px-10 py-[60px] md:py-[120px]">      
       <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
 
-          <div class="flex flex-col items-center gap-8 md:gap-[60px] w-full max-w-[1920px]">
+          <div class="flex flex-col items-center gap-8 md:gap-[60px] wrapper">
             <div class="flex flex-col lg:flex-row lg:items-center  gap-[50px] self-stretch w-full">
               <?php if (have_rows('title_group')) :  while (have_rows('title_group')) : the_row(); 
                     $title1 = get_sub_field('title_row_1');
