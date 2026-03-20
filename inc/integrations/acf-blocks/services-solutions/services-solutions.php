@@ -67,7 +67,7 @@ if (!empty($block['className'])) {
                                                     <a class="solution-card max-lg:max-w-[400px]" href="<?= esc_url(get_sub_field('link_path')) ?>">
                                                         <div class="flex flex-col w-full items-start gap-4 relative">
 
-                                                            <img class="self-stretch w-full h-[409px]" src="<?= esc_url(get_sub_field('image')) ?>" alt="">
+                                                            <img class="self-stretch w-full h-[409px] object-cover" src="<?= esc_url(get_sub_field('image')) ?>" alt="">
                                                             <div class="flex flex-col w-[371px] items-start gap-4 relative flex-[0_0_auto] max-w-[100%]">
                                                                 <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
                                                                     <div class="relative self-stretch font-heading font-bold text-[#262626] text-[24px] leading-[32px] tracking-[-0.02em]">
@@ -109,7 +109,7 @@ if (!empty($block['className'])) {
                                                     <a href="<?= esc_url(get_sub_field('link_path')) ?>" class="solution-card  max-w-[400px]">
                                                         <div class="flex flex-col w-full items-start gap-4 relative">
 
-                                                            <img class="self-stretch w-full h-[409px]" src="<?= esc_url(get_sub_field('image')) ?>" alt="">
+                                                            <img class="self-stretch w-full h-[409px] object-cover" src="<?= esc_url(get_sub_field('image')) ?>" alt="">
                                                             <div class="flex flex-col w-full max-w-[358px] md:max-w-[371px] items-start gap-4 relative flex-[0_0_auto]">
                                                                 <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
                                                                     <div class="relative self-stretch font-heading font-bold text-[#262626] text-[24px] leading-[32px] tracking-[-0.02em]">
