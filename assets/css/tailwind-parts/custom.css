@@ -34,7 +34,8 @@
 .footer-privacy-menu .footer-item .footer-title{text-transform: unset !important;font-weight: normal !important;color: #D1D5DC;}
 .footer-privacy-menu .footer-item a{display:inline-block;}
 .footer-privacy-menu .footer-item .flex-1{flex: unset;}
-.footer-privacy-menu .footer-item{display:block;}
+.footer-privacy-menu .footer-item,
+.footer-privacy-menu .footer-title{display:block;}
 
 
 
