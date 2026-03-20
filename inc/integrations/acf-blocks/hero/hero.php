@@ -35,7 +35,7 @@ if (!empty($block['className'])) {
       <div class="w-full h-full flex flex-col items-start gap-[162px] px-4 min-[600px]:px-10 min-[767px]:px-20 relative [background:linear-gradient(0deg,rgba(0,0,0,0.35)_0%,rgba(0,0,0,0.35)_100%)]">
         <div class="flex flex-col items-start justify-end pt-8 pb-20 md:pb-16 flex-1 w-full">
           <div class="flex flex-col items-start justify-center gap-10 w-full">
-            <div class="flex flex-col items-start justify-center gap-5 w-full">
+            <div class="flex flex-col items-start justify-center gap-[20px] w-full">
               <?php if (have_rows('title_group')) : while (have_rows('title_group')) : the_row();
                 $title_row_2 = get_sub_field('title_row_2');
                 $has_titles_row1 = have_rows('titles_row_1_change'); // store result
