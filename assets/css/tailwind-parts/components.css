@@ -1182,7 +1182,7 @@
     width: 20px;
     height: 20px;
     z-index: -1;
-    background-image: url('../imgs/faq-arrow.svg');
+    background-image: url('../../imgs/faq-arrow.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
