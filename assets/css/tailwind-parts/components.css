@@ -1141,7 +1141,7 @@
 
 .c-contact__right .gfield .ginput_container_consent label,
 .c-contact__right .ginput_container .gchoice label {
-  @apply relative pl-[33px] m-0 text-[16px] leading-[24px] cursor-pointer flex;
+  @apply relative md:pl-[33px] pl-[25px] m-0 text-[16px] leading-[24px] cursor-pointer flex;
   font-family: var(--font-heading);
 }
 
