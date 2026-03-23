@@ -3355,16 +3355,16 @@ $map_code = get_sub_field('map_code');
     {
       label : 'United States',
       city  : 'Fort Lauderdale',
-      left  : '16.5%',
-      top   : '40.2%',
+      left  : '16.2%',
+      top   : '35%',
       color : '#4A78FF',
       cls   : 'wmap-blue'
     },
     {
       label : 'United States',
       city  : 'Nashville',
-      left  : '14.5%',
-      top   : '32.2%',
+      left  : '16.6%',
+      top   : '27.4%',
       color : '#4A78FF',
       cls   : 'wmap-blue'
     },
@@ -3374,64 +3374,64 @@ $map_code = get_sub_field('map_code');
   {
     label : 'United States',
     city  : 'Atlanta',
-    left  : '15.2%',
-    top   : '34.1%',
+    left  : '19.8%',
+    top   : '27.1%',
     color : '#FD4338',
     cls   : 'wmap-red'
   },
   {
     label : 'United States',
     city  : 'Charleston',
-    left  : '16.5%',
-    top   : '34.9%',
+    left  : '20.1%',
+    top   : '24.5%',
     color : '#FD4338',
     cls   : 'wmap-red'
   },
   {
     label : 'United States',
     city  : 'Charlotte',
-    left  : '16.3%',
-    top   : '33.0%',
+    left  : '17.8%',
+    top   : '22.9%',
     color : '#FD4338',
     cls   : 'wmap-red'
   },
   {
     label : 'United States',
     city  : 'Chicago',
-    left  : '14.3%',
-    top   : '27.6%',
+    left  : '18%',
+    top   : '25.9%',
     color : '#FD4338',
     cls   : 'wmap-red'
   },
   {
     label : 'United States',
     city  : 'Columbus',
-    left  : '15.6%',
-    top   : '29.1%',
+    left  : '17%',
+    top   : '19%',
     color : '#FD4338',
     cls   : 'wmap-red'
   },
   {
     label : 'United States',
     city  : 'Dallas',
-    left  : '11.6%',
-    top   : '34.9%',
+    left  : '12.5%',
+    top   : '28.9%',
     color : '#FD4338',
     cls   : 'wmap-red'
   },
   {
     label : 'United States',
     city  : 'Denver',
-    left  : '9.3%',
-    top   : '29.4%',
+    left  : '8%',
+    top   : '28.8%',
     color : '#FD4338',
     cls   : 'wmap-red'
   },
   {
     label : 'United States',
     city  : 'Las Vegas',
-    left  : '6.3%',
-    top   : '32.2%',
+    left  : '8.3%',
+    top   : '30.4%',
     color : '#FD4338',
     cls   : 'wmap-red'
   },
@@ -3446,27 +3446,27 @@ $map_code = get_sub_field('map_code');
   {
     label : 'United States',
     city  : 'Los Angeles',
-    left  : '5.4%',
-    top   : '33.8%',
+    left  : '7.4%',
+    top   : '32%',
     color : '#FD4338',
     cls   : 'wmap-red'
   },
   {
     label : 'United States',
     city  : 'Miami',
-    left  : '16.5%',
-    top   : '40.4%',
+    left  : '15.1%',
+    top   : '37.9%',
     color : '#FD4338',
     cls   : 'wmap-red'
   },
-  {
-    label : 'United States',
-    city  : 'Nashville',
-    left  : '14.5%',
-    top   : '32.2%',
-    color : '#FD4338',
-    cls   : 'wmap-red'
-  },
+  // {
+  //   label : 'United States',
+  //   city  : 'Nashville',
+  //   left  : '14.5%',
+  //   top   : '32.2%',
+  //   color : '#FD4338',
+  //   cls   : 'wmap-red'
+  // },
   {
     label : 'United States',
     city  : 'New York',
@@ -3478,16 +3478,16 @@ $map_code = get_sub_field('map_code');
   {
     label : 'United States',
     city  : 'San Francisco',
-    left  : '4.2%',
-    top   : '30.9%',
+    left  : '6.7%',
+    top   : '28.9%',
     color : '#FD4338',
     cls   : 'wmap-red'
   },
   {
     label : 'United States',
     city  : 'Scottsdale',
-    left  : '7.2%',
-    top   : '34.3%',
+    left  : '13.4%',
+    top   : '32%',
     color : '#FD4338',
     cls   : 'wmap-red'
   },
