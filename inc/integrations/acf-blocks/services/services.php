@@ -15,26 +15,15 @@ if (!empty($block['className'])) {
 }
 ?>
 
-<?php if (have_rows('services')) :  while (have_rows('services')) : the_row(); ?>
+<?php if (have_rows('services')) : while (have_rows('services')) : the_row(); ?>
 
 <?php 
 $section_background = get_sub_field('section_background');
 
-$bg_class = '';
-if ($section_background === 'Black') {
-    $bg_class = 'bg-black';
-} elseif ($section_background === 'White') {
-    $bg_class = 'bg-white';
-}
+$bg_class = ($section_background === 'Black') ? 'bg-black' : 'bg-white';
 
 $card_overlay = get_sub_field('card_overlay');
-
-$overlay_class = '';
-if ($card_overlay === 'Grayscale') {
-    $overlay_class = 'overlay-grayscale';
-} elseif ($card_overlay === 'Pink Gradient') {
-    $overlay_class = 'overlay-pink-gradient';
-}
+$overlay_class = ($card_overlay === 'Pink Gradient') ? 'overlay-pink-gradient' : 'overlay-grayscale';
 
 $select_3_column_grid = get_sub_field('select_3_column_grid');
 
@@ -50,7 +39,7 @@ $width = get_sub_field('select_short_content_width');
 $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
 ?>
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> <?php echo esc_attr($overlay_class); ?> px-4 md:px-10 py-[60px] md:py-[120px]">      
+<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($className . ' ' . $bg_class . ' ' . $overlay_class); ?> px-4 md:px-10 py-[60px] md:py-[120px]">      
 
   <?php if (have_rows('header_content')) : while (have_rows('header_content')) : the_row(); ?>
     <div class="flex flex-col items-center gap-8 md:gap-[60px] wrapper">
@@ -73,18 +62,14 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
 
         <div class="flex flex-col items-start gap-8 flex-1 serve-content">
           <?php if (get_sub_field('subtitle')) : ?>
-            <p class="<?= $max_width_class; ?> font-body font-normal text-[#525252] text-[clamp(18px,2.2vw,20px)] leading-[clamp(26px,2.6vw,28px)]">
+            <p class="<?= $max_width_class; ?> font-body text-[#525252] text-[clamp(18px,2.2vw,20px)] leading-[clamp(26px,2.6vw,28px)]">
               <?= wp_kses_post(get_sub_field('subtitle')) ?>
             </p>
           <?php endif; ?>
 
-          <?php 
-            $btn_path = get_sub_field('btn_path');
-            $btn_label = get_sub_field('btn_label');
-          ?>
-          <?php if ($btn_label) : ?>
-            <a href="<?= esc_url($btn_path) ?>" class="btn-primary max-lg:hidden">
-              <?= wp_kses_post($btn_label) ?>
+          <?php if (get_sub_field('btn_label')) : ?>
+            <a href="<?= esc_url(get_sub_field('btn_path')) ?>" class="btn-primary max-lg:hidden">
+              <?= wp_kses_post(get_sub_field('btn_label')) ?>
             </a>
           <?php endif; ?>
         </div>
@@ -95,45 +80,54 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
 
   <?php if (have_rows('main_content')) : while (have_rows('main_content')) : the_row(); ?>
 
+    <?php
+    // ✅ STEP 1: COUNT ALL ITEMS (IMPORTANT FIX)
+    $total = 0;
+
+    if (have_rows('services')) :
+      while (have_rows('services')) : the_row();
+        if (have_rows('service')) :
+          while (have_rows('service')) : the_row();
+            $total++;
+          endwhile;
+        endif;
+      endwhile;
+    endif;
+
+    // ✅ RESET LOOP
+    reset_rows();
+
+    $index = 0;
+    ?>
+
     <div class="<?= esc_attr($wrapper_class) ?>">
 
       <?php if (have_rows('services')) : while (have_rows('services')) : the_row(); ?>
 
-        <?php if (have_rows('service')) : 
+        <?php if (have_rows('service')) : while (have_rows('service')) : the_row(); 
 
-          // ✅ Count total items
-          $services = get_sub_field('service');
-          $total = is_array($services) ? count($services) : 0;
-          $index = 0;
+          $index++;
 
-          while (have_rows('service')) : the_row(); 
-            $index++;
+          $is_last = ($index === $total);
+          $is_odd  = ($total % 2 !== 0);
 
-            // ✅ Conditions
-            $is_last = ($index === $total);
-            $is_odd  = ($total % 2 !== 0);
-
-            // ✅ Apply span logic
-            $extra_class = ($select_3_column_grid && $is_odd && $is_last)
-              ? 'md:col-span-2 xl:col-span-1'
-              : '';
+          $extra_class = ($select_3_column_grid && $is_odd && $is_last)
+            ? 'md:col-span-2 xl:col-span-1'
+            : '';
         ?>
 
           <article class="<?= esc_attr($article_class . ' ' . $extra_class) ?>">
 
             <div class="bg-image absolute inset-0"
-              style="background-image: url('<?php echo esc_url(get_sub_field('image')); ?>'); background-position: center; background-size: cover; background-repeat: no-repeat; filter: grayscale(100%);">
-            </div>           
+              style="background-image: url('<?= esc_url(get_sub_field('image')); ?>'); background-position: center; background-size: cover; background-repeat: no-repeat; filter: grayscale(100%);">
+            </div>
 
-            <a href="<?= esc_url(get_sub_field('link_path')) ?>" class="gradient-box absolute flex flex-col flex-1 justify-between px-5 md:px-6 py-7 w-full h-full">
+            <a href="<?= esc_url(get_sub_field('link_path')) ?>" class="gradient-box absolute flex flex-col justify-between px-5 md:px-6 py-7 w-full h-full">
 
               <img class="arrow absolute w-10 z-10" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="" />
 
               <div class="flex flex-col gap-3 md:gap-4 content z-10">
-                <h3 class="text-white card-title">
-                  <?= wp_kses_post(get_sub_field('title')) ?>
-                </h3>
-
+                <h3 class="text-white card-title"><?= wp_kses_post(get_sub_field('title')) ?></h3>
                 <p class="text-white text-[16px] md:text-lg leading-[26px] md:leading-7 font-body">
                   <?= wp_kses_post(get_sub_field('paragraph')) ?>
                 </p>
