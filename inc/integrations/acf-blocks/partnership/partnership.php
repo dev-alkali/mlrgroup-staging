@@ -46,7 +46,7 @@ $description = get_sub_field('description');
             <?php endif; ?>
           </div>
           <?php if($description): ?>
-            <div class="w-full text-[clamp(16px,3vw,18px)] leading-[28px] text-[#525252] font-body flex flex-col gap-[30px]"><?= wp_kses_post($description) ?></div>
+            <div class=""><p class="font-body font-normal text-[18px] leading-[26px] tracking-[0em] text-[#525252]"><?= wp_kses_post($description) ?></p></div>
           <?php endif; ?>
         </div>
 
