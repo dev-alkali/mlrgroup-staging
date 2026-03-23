@@ -1135,7 +1135,7 @@
 
 .c-contact__right .gfield .ginput_container_consent label::before,
 .c-contact__right .ginput_container .gchoice label::before {
-  @apply bg-white border border-[#262626] cursor-pointer block absolute left-0 w-[20px] h-[20px] rounded-none top-1/2 -translate-y-1/2;
+  @apply bg-white border border-[#262626] cursor-pointer block absolute left-0 md:w-[20px] md:h-[20px] w-[16px] h-[16px] rounded-none top-[35%] md:top-1/2 -translate-y-1/2;
   content: "";
 }
 
