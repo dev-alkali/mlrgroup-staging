@@ -1167,3 +1167,17 @@
   height: 219px;
 }
 
+.answer{
+  @apply max-h-0 overflow-hidden transition-all duration-300 ease-in-out;
+}
+.answer.active{
+  @apply max-h-[1000px] overflow-hidden transition-all duration-300 ease-in-out;
+}
+
+.question.active{
+  @apply font-bold;
+}
+
+.question:not(.active){
+  @apply font-normal;
+}
