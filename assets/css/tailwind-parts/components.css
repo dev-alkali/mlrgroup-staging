@@ -1045,4 +1045,13 @@
   }
 }
 
+.reviews-dots {
+  @apply flex justify-center mt-[30px] md:mt-[50px];
+}
+.reviews-dots .swiper-pagination-bullet {
+  transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease, border-radius 0.3s ease;
+}
+.reviews-dots .swiper-pagination-bullet-active {
+  @apply !bg-[#fd4338] !w-[40px] !rounded-[20px];
+}
 

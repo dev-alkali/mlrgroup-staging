@@ -30,7 +30,7 @@ $review_sliders = get_sub_field('review_sliders');
 $mobileFlex = 'flex-col-reverse';
 
 ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] md:py-[120px]">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] md:py-[120px] overflow-hidden">
 		<div class="gap-[30px] md:gap-[60px] w-full wrapper ">
 
 			<div class="w-full ">
@@ -46,8 +46,8 @@ $mobileFlex = 'flex-col-reverse';
 				<?php endif; ?>
 			</div>
 
-			<div class="w-full">
-				<div class="reviews-slider-wrapper swiper">
+			<div class="w-full ">
+				<div class="reviews-slider-wrapper swiper overflow-visible">
 					<div class="reviews-slider swiper-wrapper">
 						<?php foreach($review_sliders as $review_slider): 
 							$review_image = $review_slider['review_image'];
@@ -56,7 +56,7 @@ $mobileFlex = 'flex-col-reverse';
 							$review_author_name = $review_slider['review_author_name'];
 							$review_author_role = $review_slider['review_author_role'];
 							?>
-							<div class="review-slider-item swiper-slide !w-[clamp(360px,calc(360px+(100vw-375px)*0.98),1206px)]">
+							<div class="review-slider-item swiper-slide !w-[1600px] max-w-[95%] md:max-w-[90%]">
 								<div class="flex flex-col md:flex-row p-[20px] md:p-[30px] lg:p-[40px] bg-black text-white gap-[32px] items-center">
 									<div class="w-full md:w-1/2 flex items-center justify-center">
 										<div class="w-full h-full pt-[100%] relative overflow-hidden">
