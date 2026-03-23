@@ -1122,7 +1122,7 @@
 }
 
 .c-contact__right .ginput_container .gfield_checkbox {
-  @apply flex flex-wrap gap-x-[10px] gap-y-[10px] mt-[10px];
+  @apply flex flex-wrap gap-x-[10px] gap-y-[16px] mt-[18px] mb-[11px];
 }
 
 .c-contact__right .gfield .ginput_container_consent {
@@ -1137,13 +1137,13 @@
 .c-contact__right .ginput_container .gchoice label::before {
   @apply bg-white border border-[#262626] cursor-pointer block absolute left-0 w-[16px] h-[16px] rounded-none;
   content: "";
-  top: 45%;
+  top: 50%;
   transform: translateY(-50%);
 }
 
 .c-contact__right .gfield .ginput_container_consent label,
 .c-contact__right .ginput_container .gchoice label {
-  @apply relative pl-[25px] m-0 text-[16px] leading-[24px] cursor-pointer flex;
+  @apply relative pl-[33px] m-0 text-[16px] leading-[24px] cursor-pointer flex;
   font-family: var(--font-heading);
 }
 
@@ -1159,5 +1159,9 @@
 
 .c-contact__right .gfield .ginput_container_consent label .gfield_required {
   @apply hidden;
+}
+
+.c-contact__right .gform_wrapper.gravity-theme .gform_footer{
+  @apply mt-[32px];
 }
 
