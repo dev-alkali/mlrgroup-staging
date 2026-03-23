@@ -58,7 +58,7 @@ $mobileFlex = 'flex-col-reverse';
 							?>
 							<div class="review-slider-item swiper-slide !w-[1600px] max-w-[95%] md:max-w-[90%]">
 								<div class="flex flex-col md:flex-row p-[20px] md:p-[30px] lg:p-[40px] bg-black text-white gap-[32px] items-center relative">
-									<div class="top-arrow-imgs absolute top-0 right-[20px] md:w-[calc(50%-25px)]">
+									<div class="top-arrow-imgs absolute top-0 right-[20px] md:w-[calc(50%-25px)] flex">
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin-red.svg" alt="" class="w-[100%]">
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">
@@ -66,7 +66,7 @@ $mobileFlex = 'flex-col-reverse';
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">										
 									</div>
-									<div class="bottom-arrow-imgs absolute bottom-0 right-20px md:w-[calc(50%-25px)]">
+									<div class="bottom-arrow-imgs absolute bottom-0 right-20px md:w-[calc(50%-25px)] flex">
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">
