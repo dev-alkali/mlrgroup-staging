@@ -76,7 +76,7 @@ $mobileFlex = 'flex-col-reverse';
 										<div class="text-[clamp(16px,2.2vw,24px)] leading-[clamp(24px,2.8vw,32px)] tracking-[clamp(0em,-0.2vw,-0.02em)] mb-[20px]"><?php echo $review_content; ?></div>
 										<div class="flex items-center gap-[16px]">
 											<img src="<?php echo $review_company_logo['url']; ?>" alt="<?php echo $review_company_logo['alt']; ?>" class="w-[60px] h-[60px] object-contain">
-											<div class="flex flex-col flex-1">
+											<div class="flex flex-col flex-1 gap-[5px]">
 												<div class="text-[16px] leading-[18px] font-bold text-white"><?php echo $review_author_name; ?></div>
 												<div class="text-[14px] leading-[16px] font-normal text-white"><?php echo $review_author_role; ?></div>
 											</div>
