@@ -36,7 +36,7 @@ $mobileFlex = 'flex-col-reverse';
 		<?php if($title_row_1 || $title_row_2 || $description): ?>
 		<div class="flex flex-col lg:flex-row gap-[20px] lg:gap-[50px] self-stretch w-full wrapper mb-[40px]">
 			<?php if($title_row_1 || $title_row_2): ?>
-				<h2 class="text-[clamp(32px,6vw,68px)] leading-[clamp(40px,7vw,76px)] tracking-[-4%] text-[#262626] font-heading mb-[20px]">
+				<h2 class="text-[clamp(32px,6vw,68px)] leading-[clamp(40px,7vw,76px)] tracking-[-4%] text-[#262626] font-heading lg:mb-[20px]">
 					<?php if($title_row_1): ?>
 						<span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
 					<?php endif; ?>
@@ -69,7 +69,7 @@ $mobileFlex = 'flex-col-reverse';
 									$answer   = ! empty( $faq['answer'] ) ? $faq['answer'] : '';
 								?>
 									<div class="flex flex-col bg-black text-white md:px-[28px] px-[20px] md:py-[36px] py-[20px] relative">
-										<h3 class="font-heading question font-medium text-white text-[clamp(18px,2.2vw,20px)] relative leading-[clamp(26px,2.6vw,28px)] pr-[50px]">
+										<h3 class="font-heading question font-medium text-white text-[clamp(16px,2.2vw,20px)] relative leading-[clamp(24px,2.6vw,28px)] pr-[50px]">
 											<?php echo $i . '. ' . esc_html( $question ); ?>
 										</h3>
 										<div class="answer md:pr-[50px] pr-[30px]" role="region">
