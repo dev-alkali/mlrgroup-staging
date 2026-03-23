@@ -34,7 +34,7 @@ if (!empty($block['className'])) {
               <?php endif; ?>
 
               <?php if ($subtitle) : ?>
-                <p class="text-xl leading-7 text-neutral-600 font-body mt[20px]">
+                <p class="font-body font-normal text-[clamp(18px,1.5vw,20px)] leading-[clamp(26px,2vw,28px)] text-neutral-600 mt-[20px]">
                   <?php echo wp_kses_post($subtitle); ?>
                 </p>
               <?php endif; ?>
