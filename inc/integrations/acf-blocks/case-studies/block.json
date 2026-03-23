@@ -1,0 +1,14 @@
+{
+    "name": "acf/case-studies",
+    "title": "Case Studies",
+    "description": "Case Studies Section",
+    "style": ["file:./case-studies.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["case-studies", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "case-studies.php"
+    },
+    "script": "case-studiesJS"
+}
