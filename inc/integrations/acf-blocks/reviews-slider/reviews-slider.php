@@ -47,7 +47,7 @@ $mobileFlex = 'flex-col-reverse';
 			</div>
 
 			<div class="w-full ">
-				<div class="reviews-slider-wrapper swiper overflow-visible">
+				<div class="reviews-slider-wrapper swiper !overflow-visible">
 					<div class="reviews-slider swiper-wrapper">
 						<?php foreach($review_sliders as $review_slider): 
 							$review_image = $review_slider['review_image'];
