@@ -33,7 +33,7 @@ $form_shortcode = get_sub_field('form_shortcode');
 					<h2 class="c-contact__title text-[36px] leading-[44px] tracking-[-0.02em] lg:text-[68px] lg:leading-[78px] mb-[20px]">
 						<span class="font-bold"><?php echo $title_row_1; ?></span>
 						<?php if ($title_row_2): ?>
-						<span class="font-light"><?php echo $title_row_2; ?></span>
+						<span class="font-light color-[#ccc]"><?php echo $title_row_2; ?></span>
 						<?php endif; ?>
 					</h2>
 					<?php endif; ?>
@@ -46,20 +46,19 @@ $form_shortcode = get_sub_field('form_shortcode');
 
 					<!-- SOCIAL -->
 					<?php if (have_rows('social_links')): ?>
-					<div class="c-contact__social mb-[32px] pt-[20px] md:pt-6">
+					<div class="c-contact__social mb-[32px] pt-[20px] md:pt-6 flex flex-col gap-[20px]">
 
 						<?php while (have_rows('social_links')): the_row(); 
 						$icon_id = get_sub_field('icon');
 						$link    = get_sub_field('social_link');
 						?>
 						<?php if ($link): ?>
-							<a class="c-contact__social-link flex items-center flex-wrap mb-4" href="<?php echo esc_url($link['url']); ?>"
-							target="<?php echo esc_attr($link['target'] ?: '_self'); ?>"
-							class="c-contact__social-link flex items-center justify-center transition text-lg leading-[28px]">
+							<a class="c-contact__social-link flex items-center flex-wrap gap-[8px]" href="<?php echo esc_url($link['url']); ?>"
+							target="<?php echo esc_attr($link['target'] ?: '_self'); ?>">
 							<?php if ($icon_id): ?>
 								<?php echo wp_get_attachment_image(
 								$icon_id,
-								'thumbnail', false, [ 'class' => 'c-contact__social-icon w-[11px] h-[11px] object-contain', 'alt' => esc_attr(get_post_meta($icon_id, '_wp_attachment_image_alt', true)) ]
+								'thumbnail', false, [ 'class' => 'c-contact__social-icon w-[15px] h-[15px] object-contain', 'alt' => esc_attr(get_post_meta($icon_id, '_wp_attachment_image_alt', true)) ]
 								); ?>
 							<?php endif; ?>
 							<span><?php echo esc_html($link['title']); ?></span>
