@@ -143,7 +143,7 @@ if (!empty($block['className'])) {
     <div class="flex-col items-start w-full flex-[0_0_auto] flex relative">
         <div class="<?= $grid_class ?> w-full">
 
-            <?php if (have_rows('items')) : while (have_rows('items')) : the_row();
+            <?php /* if (have_rows('items')) : while (have_rows('items')) : the_row();
                 $item_index++;
 
                 // ── Span classes ─────────────────────────────────────────────
@@ -172,7 +172,7 @@ if (!empty($block['className'])) {
                  *  5 items       → item1: 380px mobile / 800px desktop
                  *                  item2+: 380px mobile / 390px desktop
                  */
-                if ($item_count === 1) {
+               /* if ($item_count === 1) {
                     $height_class = 'h-[380px] min-[1024px]:h-[800px]';
                 } elseif ($item_count === 2) {
                     $height_class = 'h-[380px] min-[1024px]:h-[800px]';
@@ -259,7 +259,7 @@ if (!empty($block['className'])) {
         </div>
     </div>
 
-<?php endwhile; endif; ?>
+<?php endwhile; endif; */ ?>
 
 
 
