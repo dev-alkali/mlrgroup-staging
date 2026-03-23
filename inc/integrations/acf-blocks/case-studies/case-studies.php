@@ -39,20 +39,8 @@ if (!empty($block['className'])) {
 
         <?php if (have_rows('main_content')) :  while (have_rows('main_content')) : the_row(); ?>
             <div class="flex-col items-start max-[600px]:gap-6 max-[1024px]:gap-10 w-full flex-[0_0_auto] flex relative">
-              <?php if (have_rows('collection_rows')) :  while (have_rows('collection_rows')) : the_row(); ?>
-                  <?php
-                  ?>
-                  <?php
-                  $row_height = "";
-                  if (wp_kses_post(get_sub_field('row_height')) == 'normal') {
-                    // 1440 (largura total) / 409 (altura desejada)
-                    $row_height = ' min-[1441px]:aspect-[1440/409] max-[1441px]:h-[409px] max-[1024px]:h-auto ';
-                  } elseif (wp_kses_post(get_sub_field('row_height')) == 'big') {
-                    // 1440 (largura total) / 434 (altura desejada)
-                    $row_height = ' min-[1441px]:aspect-[1440/434] max-[1441px]:h-[434.56px] max-[1024px]:h-auto ';
-                  }
-                  ?>
-                  <div class="flex flex-col min-[1024px]:flex-row max-[600px]:gap-6 max-[1024px]:gap-10 items-start relative <?= $row_height ?> w-full collection-parent">
+              
+                  <div class="flex flex-col min-[1024px]:flex-row max-[600px]:gap-6 max-[1024px]:gap-10 items-start relative min-[1441px]:aspect-[1440/409] max-[1441px]:h-[409px] max-[1024px]:h-auto w-full collection-parent">
                     <?php if (have_rows('items')) :  while (have_rows('items')) : the_row(); ?>
 
                         <?php
@@ -115,10 +103,7 @@ if (!empty($block['className'])) {
 
 
 
-
                   </div>
-              <?php endwhile;
-              endif; ?>
 
             </div>
 
