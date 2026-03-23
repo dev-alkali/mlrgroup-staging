@@ -82,11 +82,11 @@ $description = get_sub_field('description');
 
         <!-- Image -->
         <?php if ($image) : ?>
-          <figure>
+          <figure class="aspect-[256/340]">
             <img 
               src="<?php echo esc_url($image['url']); ?>" 
               alt="<?php echo esc_attr($image['alt']); ?>" 
-              class="w-full h-auto"
+              class="w-full w-full h-full object-cover"
             >
           </figure>
         <?php endif; ?>
