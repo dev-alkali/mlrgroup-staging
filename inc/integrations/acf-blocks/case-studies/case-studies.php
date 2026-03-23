@@ -26,8 +26,6 @@ if (!empty($block['className'])) {
                 <span class="font-bold text-neutral-800 "><?= wp_kses_post(get_sub_field('title_row_1')) ?> </span>
                 <span class="font-light text-neutral-500 "><?= wp_kses_post(get_sub_field('title_row_2')) ?></span>
               </h2>
-
-
               <p
                 class=" font-body  text-neutral-600 text-xl tracking-[0] leading-7">
                 <?= wp_kses_post(get_sub_field('paragraph')) ?>
