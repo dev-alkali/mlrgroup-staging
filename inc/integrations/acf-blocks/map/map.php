@@ -3351,6 +3351,146 @@ $map_code = get_sub_field('map_code');
       color : '#4A78FF',
       cls   : 'wmap-blue'
     },
+    /* ── BLUE DOTS ── */
+    {
+      label : 'United States',
+      city  : 'Fort Lauderdale',
+      left  : '16.5%',
+      top   : '40.2%',
+      color : '#4A78FF',
+      cls   : 'wmap-blue'
+    },
+    {
+      label : 'United States',
+      city  : 'Nashville',
+      left  : '14.5%',
+      top   : '32.2%',
+      color : '#4A78FF',
+      cls   : 'wmap-blue'
+    },
+
+
+    /* ── RED DOTS ── */
+  {
+    label : 'United States',
+    city  : 'Atlanta',
+    left  : '15.2%',
+    top   : '34.1%',
+    color : '#FD4338',
+    cls   : 'wmap-red'
+  },
+  {
+    label : 'United States',
+    city  : 'Charleston',
+    left  : '16.5%',
+    top   : '34.9%',
+    color : '#FD4338',
+    cls   : 'wmap-red'
+  },
+  {
+    label : 'United States',
+    city  : 'Charlotte',
+    left  : '16.3%',
+    top   : '33.0%',
+    color : '#FD4338',
+    cls   : 'wmap-red'
+  },
+  {
+    label : 'United States',
+    city  : 'Chicago',
+    left  : '14.3%',
+    top   : '27.6%',
+    color : '#FD4338',
+    cls   : 'wmap-red'
+  },
+  {
+    label : 'United States',
+    city  : 'Columbus',
+    left  : '15.6%',
+    top   : '29.1%',
+    color : '#FD4338',
+    cls   : 'wmap-red'
+  },
+  {
+    label : 'United States',
+    city  : 'Dallas',
+    left  : '11.6%',
+    top   : '34.9%',
+    color : '#FD4338',
+    cls   : 'wmap-red'
+  },
+  {
+    label : 'United States',
+    city  : 'Denver',
+    left  : '9.3%',
+    top   : '29.4%',
+    color : '#FD4338',
+    cls   : 'wmap-red'
+  },
+  {
+    label : 'United States',
+    city  : 'Las Vegas',
+    left  : '6.3%',
+    top   : '32.2%',
+    color : '#FD4338',
+    cls   : 'wmap-red'
+  },
+  // {
+  //   label : 'United Kingdom',
+  //   city  : 'London',
+  //   left  : '39.8%',
+  //   top   : '20%',
+  //   color : '#FD4338',
+  //   cls   : 'wmap-red'
+  // },
+  {
+    label : 'United States',
+    city  : 'Los Angeles',
+    left  : '5.4%',
+    top   : '33.8%',
+    color : '#FD4338',
+    cls   : 'wmap-red'
+  },
+  {
+    label : 'United States',
+    city  : 'Miami',
+    left  : '16.5%',
+    top   : '40.4%',
+    color : '#FD4338',
+    cls   : 'wmap-red'
+  },
+  {
+    label : 'United States',
+    city  : 'Nashville',
+    left  : '14.5%',
+    top   : '32.2%',
+    color : '#FD4338',
+    cls   : 'wmap-red'
+  },
+  {
+    label : 'United States',
+    city  : 'New York',
+    left  : '18.3%',
+    top   : '28.6%',
+    color : '#FD4338',
+    cls   : 'wmap-red'
+  },
+  {
+    label : 'United States',
+    city  : 'San Francisco',
+    left  : '4.2%',
+    top   : '30.9%',
+    color : '#FD4338',
+    cls   : 'wmap-red'
+  },
+  {
+    label : 'United States',
+    city  : 'Scottsdale',
+    left  : '7.2%',
+    top   : '34.3%',
+    color : '#FD4338',
+    cls   : 'wmap-red'
+  },
   ];
 
   function makePinSVG(color) {
