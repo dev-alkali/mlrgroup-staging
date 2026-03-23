@@ -90,13 +90,15 @@ elements.forEach((el) => {
 
 
 
-  var swiper = new Swiper(".reviews-slider-wrapper .reviews-slider", {
+document.querySelectorAll(".reviews-slider-wrapper").forEach((slider) => {
+  new Swiper(slider, {
     slidesPerView: "auto",
     spaceBetween: 8,
     pagination: {
-      el: ".reviews-dots",
+      el: slider.querySelector(".reviews-dots"),
       clickable: true,
     },
   });
+});
 
 
