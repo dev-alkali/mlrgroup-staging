@@ -35,7 +35,7 @@ $description = get_sub_field('description');
         <div class="top-title-sec">
           <div class="left-title">
             <?php if($title_row_1 || $title_row_2): ?>
-            <h2 class="text-[clamp(32px,6vw,68px)] leading-[clamp(40px,7vw,76px)] tracking-[-4%] text-[#262626] font-heading mb-[20px]">
+            <h2 class="text-[clamp(36px,6vw,68px)] leading-[clamp(44px,7vw,76px)] tracking-[-4%] text-[#262626] font-heading mb-[20px]">
               <?php if($title_row_1): ?>
                   <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
               <?php endif; ?>
