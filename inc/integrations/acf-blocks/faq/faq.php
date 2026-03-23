@@ -63,9 +63,9 @@ $mobileFlex = 'flex-col-reverse';
 							<?php 
 							 $i = 1;
 							foreach($faq_lists as $faq $i++): ?>
-								<div class="flex flex-col bg-black text-white">
-									<h3 class="font-heading question font-bold text-white text-[clamp(18px,2.2vw,20px)] leading-[clamp(26px,2.6vw,28px)] max-w-[90%]"><?php echo $i; ?> <?php echo $faq['question']; ?></h3>
-									<div class="answer max-w-[90%]">
+								<div class="flex flex-col bg-black text-white px-[28px] py-[36px] relative">
+									<h3 class="font-heading question font-medium text-white text-[clamp(18px,2.2vw,20px)] relative leading-[clamp(26px,2.6vw,28px)] pr-[50px]"><?php echo $i; ?> <?php echo $faq['question']; ?></h3>
+									<div class="answer pr-[50px]">
 										<div class="font-body font-normal text-white text-[clamp(14px,1.7vw,16px)] leading-[clamp(24px,2.8vw,26px)] "><?php echo $faq['answer']; ?></div>
 									</div>
 								</div>
