@@ -1122,7 +1122,7 @@
 }
 
 .c-contact__right .ginput_container .gfield_checkbox {
-  @apply flex flex-wrap gap-x-[10px] gap-y-[16px] mt-[18px] mb-[11px];
+  @apply flex flex-wrap gap-x-[10px] md:gap-y-[16px] gap-y-[10px] mt-[18px] mb-[11px];
 }
 
 .c-contact__right .gfield .ginput_container_consent {
