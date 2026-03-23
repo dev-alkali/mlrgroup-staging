@@ -46,7 +46,7 @@ $description = get_sub_field('description');
             <?php endif; ?>
           </div>
           <?php if($description): ?>
-            <div class="basis-[62.5%] max-md:w-full"><p class="font-body font-normal text-[18px] leading-[26px] tracking-[0em] text-[#525252]"><?=  echo $description; ?></p></div>
+            <div class="basis-[62.5%] max-md:w-full"><p class="font-body font-normal text-[18px] leading-[26px] tracking-[0em] text-[#525252]"><?php echo $description; ?></p></div>
           <?php endif; ?>
         </div>
 
