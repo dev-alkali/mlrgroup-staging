@@ -33,7 +33,7 @@ $form_shortcode = get_sub_field('form_shortcode');
 					<h2 class="c-contact__title text-[36px] leading-[44px] tracking-[-0.02em] lg:text-[68px] lg:leading-[78px] mb-[20px]">
 						<span class="font-bold"><?php echo $title_row_1; ?></span>
 						<?php if ($title_row_2): ?>
-						<span class="font-light color-[#ccc]"><?php echo $title_row_2; ?></span>
+						<span class="font-light text-[#ccc]"><?php echo $title_row_2; ?></span>
 						<?php endif; ?>
 					</h2>
 					<?php endif; ?>
