@@ -25,7 +25,7 @@ if (!empty($block['className'])) {
                             ?>
 
                             <?php if (!empty($title_bold) || !empty($title_light)) : ?>
-                            <h2 class="solutions-header__title text-[44px] md:text-5xl leading-[56px] md:leading-[60px] tracking-[-2%] font-heading text-neutral-800">
+                            <h2 class="solutions-header__title text-[44px] md:text-5xl leading-[56px] md:leading-[60px] tracking-[-2%] font-heading text-neutral-800 md:min-w-[515px]">
                                 <span class="font-bold text-neutral-800"><?= wp_kses_post(get_sub_field('title_bold')) ?></span>
                                 <span class="font-light text-neutral-500"><?= wp_kses_post(get_sub_field('title_light')) ?><span class="text-accent font-bold">.</span></span>
                             </h2>                                
