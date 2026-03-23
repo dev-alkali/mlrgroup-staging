@@ -31,7 +31,7 @@ $description = get_sub_field('description');
 
 ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] md:py-[120px]">
-      <div class="wrapper">
+      <div class="wrapper flex flex-col gap-[60px]">
         <div class="top-title-sec">
           <div class="left-title">
             <?php if($title_row_1 || $title_row_2): ?>
@@ -58,18 +58,16 @@ $description = get_sub_field('description');
     
     <?php 
     $i = 1;
-    while (have_rows('partnership_list')) : the_row(); 
-        
+    while (have_rows('partnership_list')) : the_row();         
       $image   = get_sub_field('p_image');
       $title   = get_sub_field('p_title');
       $content = get_sub_field('p_content');
     ?>
 
-      <div class="">
-        
+      <div class="flex flex-col gap-[20px]">        
         <!-- Index -->
-        <h3 class="font-[Poppins] font-bold text-[clamp(28px,4vw,40px)] leading-[clamp(36px,5vw,48px)] tracking-[-0.02em] text-[#262626]">
-          <?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?>
+        <h3 class="font-[Poppins] font-bold text-[clamp(28px,4vw,40px)] leading-[clamp(36px,5vw,48px)] tracking-[-0.02em] text-[#262626] flex gap-[20px]">
+          <span><?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?> </span> <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.80347 6.1875H34.3533V34.8426" stroke="#4A78FF" stroke-miterlimit="10"/><path d="M34.1687 6.36914L5.9884 34.6532" stroke="#4A78FF" stroke-miterlimit="10"/></svg>
         </h3>
 
         <!-- Title -->
@@ -84,11 +82,11 @@ $description = get_sub_field('description');
 
         <!-- Image -->
         <?php if ($image) : ?>
-          <figure>
+          <figure class="aspect-[256/340]">
             <img 
               src="<?php echo esc_url($image['url']); ?>" 
               alt="<?php echo esc_attr($image['alt']); ?>" 
-              class="w-full h-auto"
+              class="w-full w-full h-full object-cover"
             >
           </figure>
         <?php endif; ?>
