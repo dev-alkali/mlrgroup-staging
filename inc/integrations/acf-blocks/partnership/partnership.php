@@ -64,7 +64,7 @@ $description = get_sub_field('description');
       $content = get_sub_field('p_content');
     ?>
 
-      <div class="flex flex-col gap-[20px]">
+      <div class="flex flex-col gap-[20px] justify-between">
 
         <!-- Index -->
         <div class="">
