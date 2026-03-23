@@ -15,28 +15,14 @@ if (!empty($block['className'])) {
 }
 ?>
 
-<?php if (have_rows('services')) :  while (have_rows('services')) : the_row(); ?>
+<?php if (have_rows('services')) : while (have_rows('services')) : the_row(); ?>
+
 <?php 
 $section_background = get_sub_field('section_background');
+$bg_class = ($section_background === 'Black') ? 'bg-black' : 'bg-white';
 
-$bg_class = '';
-if ($section_background === 'Black') {
-    $bg_class = 'bg-black';
-} elseif ($section_background === 'White') {
-    $bg_class = 'bg-white';
-}
-?>
-
-<?php 
 $card_overlay = get_sub_field('card_overlay');
-
-$overlay_class = '';
-
-if ($card_overlay === 'Grayscale') {
-    $overlay_class = 'overlay-grayscale';
-} elseif ($card_overlay === 'Pink Gradient') {
-    $overlay_class = 'overlay-pink-gradient';
-}
+$overlay_class = ($card_overlay === 'Pink Gradient') ? 'overlay-pink-gradient' : 'overlay-grayscale';
 
 $select_3_column_grid = get_sub_field('select_3_column_grid');
 
@@ -48,87 +34,120 @@ $article_class = $select_3_column_grid
     ? "source-card relative overflow-hidden w-full aspect-[16/15]"
     : "source-card relative overflow-hidden w-full aspect-[334/420]";
 
-
 $width = get_sub_field('select_short_content_width');
 $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
 ?>
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> <?php echo esc_attr($overlay_class); ?> px-4 md:px-10 py-[60px] md:py-[120px]">      
-      <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
+<section id="<?= esc_attr($id); ?>" class="<?= esc_attr($className . ' ' . $bg_class . ' ' . $overlay_class); ?> px-4 md:px-10 py-[60px] md:py-[120px]">      
 
-          <div class="flex flex-col items-center gap-8 md:gap-[60px] wrapper">
-            <div class="flex flex-col lg:flex-row lg:items-center gap-[20px] lg:gap-[50px] self-stretch w-full">
-              <?php if (have_rows('title_group')) :  while (have_rows('title_group')) : the_row(); 
-                    $title1 = get_sub_field('title_row_1');
-                    $title2 = get_sub_field('title_row_2');
-              ?>
-                 <?php if ($title1 || $title2) : ?>
-                  <div class="serve-heading">
-                    <h2 class="max-w-[426px] w-full flex flex-col font-heading font-bold text-[clamp(36px,5vw,68px)] leading-[clamp(44px,6vw,78px)] tracking-[-0.02em]">
-                      <span class="font-bold text-neutral-800"><?= wp_kses_post($title1) ?></span>
-                      <span class="font-light text-neutral-500"><?= wp_kses_post($title2) ?></span>
-                    </h2>
-                  </div>
+  <?php if (have_rows('header_content')) : while (have_rows('header_content')) : the_row(); ?>
+    <div class="flex flex-col items-center gap-8 md:gap-[60px] wrapper">
 
-                <?php endif; ?>
+      <div class="flex flex-col lg:flex-row lg:items-center gap-[20px] lg:gap-[50px] self-stretch w-full">
 
-              <?php endwhile;
-              endif; ?>
-
-              <div class="flex flex-col items-start gap-8 flex-1 serve-content">
-                <?php if (get_sub_field('subtitle')) : ?>
-                <p class="<?= $max_width_class; ?> font-body font-normal text-[#525252] text-[clamp(18px,2.2vw,20px)] leading-[clamp(26px,2.6vw,28px)]">
-                  <?= wp_kses_post(get_sub_field('subtitle')) ?>
-                </p>
-                <?php endif; ?>
-                <?php 
-                  $btn_path = get_sub_field('btn_path');
-                  $btn_label = get_sub_field('btn_label');
-                ?>
-                <?php if ($btn_label) : ?>
-                  <a href="<?= esc_url($btn_path) ?>" class="btn-primary max-lg:hidden"><?= wp_kses_post($btn_label) ?></a>
-                <?php endif; ?>
-              </div>
-
-            </div>
-        <?php endwhile;
-      endif; ?>
-
-        <?php if (have_rows('main_content')) :  while (have_rows('main_content')) : the_row(); ?>
-
-            <div class="<?= esc_attr($wrapper_class) ?>">
-              <?php if (have_rows('services')) :  while (have_rows('services')) : the_row(); ?>
-                  <?php if (have_rows('service')) :  while (have_rows('service')) : the_row(); ?>
-                      <article class="<?= esc_attr($article_class) ?>">
-                        <div class="bg-image absolute inset-0" style=" background-image: url('<?php echo esc_url(get_sub_field('image')); ?>'); background-position: center center; background-size: cover; background-repeat: no-repeat; filter: grayscale(100%); ">
-                        </div>           
-                        <a href="<?= esc_url(get_sub_field('link_path')) ?>" class="gradient-box absolute flex flex-col flex-1 justify-between px-5 md:px-6 py-7 w-full h-full">
-                          <img class="arrow absolute w-10 z-10" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="" />
-                          <div class="flex flex-col gap-3 md:gap-4 content z-10">
-                            <h3 class="text-white card-title"><?= wp_kses_post(get_sub_field('title')) ?></h3>
-                            <p class="text-white text-[16px] md:text-lg leading-[26px] md:leading-7 font-body"><?= wp_kses_post(get_sub_field('paragraph')) ?></p>
-                          </div>
-                        </a>
-                      </article>
-
-                  <?php endwhile;
-                  endif; ?>
-              <?php endwhile;
-              endif; ?>
-            </div>
-
-        <?php endwhile;
-        endif; ?>
-        <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
-          <?php if (get_sub_field('btn_path')) : ?>
-            <div class="lg:hidden max-w-[358px] md:max-w-[334px] w-full flex justify-center">
-              <a href="<?= esc_url(get_sub_field('btn_path')) ?>" class="btn-primary "><?= wp_kses_post(get_sub_field('btn_label')) ?></a>
+        <?php if (have_rows('title_group')) : while (have_rows('title_group')) : the_row(); 
+          $title1 = get_sub_field('title_row_1');
+          $title2 = get_sub_field('title_row_2');
+        ?>
+          <?php if ($title1 || $title2) : ?>
+            <div class="serve-heading">
+              <h2 class="max-w-[426px] w-full flex flex-col font-heading font-bold text-[clamp(36px,5vw,68px)] leading-[clamp(44px,6vw,78px)] tracking-[-0.02em]">
+                <span class="font-bold text-neutral-800"><?= wp_kses_post($title1) ?></span>
+                <span class="font-light text-neutral-500"><?= wp_kses_post($title2) ?></span>
+              </h2>
             </div>
           <?php endif; ?>
+        <?php endwhile; endif; ?>
 
-        <?php endwhile;
-        endif; ?>
+        <div class="flex flex-col items-start gap-8 flex-1 serve-content">
+          <?php if (get_sub_field('subtitle')) : ?>
+            <p class="<?= $max_width_class; ?> font-body text-[#525252] text-[clamp(18px,2.2vw,20px)] leading-[clamp(26px,2.6vw,28px)]">
+              <?= wp_kses_post(get_sub_field('subtitle')) ?>
+            </p>
+          <?php endif; ?>
+
+          <?php if (get_sub_field('btn_label')) : ?>
+            <a href="<?= esc_url(get_sub_field('btn_path')) ?>" class="btn-primary max-lg:hidden">
+              <?= wp_kses_post(get_sub_field('btn_label')) ?>
+            </a>
+          <?php endif; ?>
+        </div>
+
+      </div>
+  <?php endwhile; endif; ?>
+
+  <?php if (have_rows('main_content')) : while (have_rows('main_content')) : the_row(); ?>
+
+    <?php
+    // ✅ SAFE: Flatten all nested services
+    $services_rows = get_sub_field('services');
+    $all_items = [];
+
+    if ($services_rows) {
+      foreach ($services_rows as $row) {
+        if (!empty($row['service'])) {
+          foreach ($row['service'] as $item) {
+            $all_items[] = $item;
+          }
+        }
+      }
+    }
+
+    $total = count($all_items);
+    $index = 0;
+    ?>
+
+    <div class="<?= esc_attr($wrapper_class) ?>">
+
+      <?php foreach ($all_items as $item) : 
+        $index++;
+
+        $is_last = ($index === $total);
+        $is_odd  = ($total % 2 !== 0);
+
+        $extra_class = ($select_3_column_grid && $is_odd && $is_last)
+          ? 'md:col-span-2 xl:col-span-1'
+          : '';
+      ?>
+
+        <article class="<?= esc_attr($article_class . ' ' . $extra_class) ?>">
+
+          <div class="bg-image absolute inset-0"
+            style="background-image: url('<?= esc_url($item['image']); ?>'); background-position: center; background-size: cover; background-repeat: no-repeat; filter: grayscale(100%);">
           </div>
-    </section>
-<?php endwhile;
-endif; ?>
+
+          <a href="<?= esc_url($item['link_path']); ?>" class="gradient-box absolute flex flex-col justify-between px-5 md:px-6 py-7 w-full h-full">
+
+            <img class="arrow absolute w-10 z-10" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="" />
+
+            <div class="flex flex-col gap-3 md:gap-4 content z-10">
+              <h3 class="text-white card-title"><?= wp_kses_post($item['title']); ?></h3>
+              <p class="text-white text-[16px] md:text-lg leading-[26px] md:leading-7 font-body">
+                <?= wp_kses_post($item['paragraph']); ?>
+              </p>
+            </div>
+
+          </a>
+
+        </article>
+
+      <?php endforeach; ?>
+
+    </div>
+
+  <?php endwhile; endif; ?>
+
+  <?php if (have_rows('header_content')) : while (have_rows('header_content')) : the_row(); ?>
+    <?php if (get_sub_field('btn_path')) : ?>
+      <div class="lg:hidden max-w-[358px] md:max-w-[334px] w-full flex justify-center">
+        <a href="<?= esc_url(get_sub_field('btn_path')) ?>" class="btn-primary">
+          <?= wp_kses_post(get_sub_field('btn_label')) ?>
+        </a>
+      </div>
+    <?php endif; ?>
+  <?php endwhile; endif; ?>
+
+    </div>
+</section>
+
+<?php endwhile; endif; ?>
