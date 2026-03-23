@@ -78,7 +78,7 @@ $mobileFlex = 'flex-col-reverse';
 						<?php endforeach; ?>
 					</div>
 					<!-- If we need pagination -->
-  					<div class="swiper-pagination"></div>
+					<div class="reviews-dots"></div>
 				</div>
 			</div>
 		</div>
