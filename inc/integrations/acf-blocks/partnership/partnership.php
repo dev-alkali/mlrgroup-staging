@@ -69,7 +69,7 @@ $description = get_sub_field('description');
         
         <!-- Index -->
         <h3 class="font-[Poppins] font-bold text-[clamp(28px,4vw,40px)] leading-[clamp(36px,5vw,48px)] tracking-[-0.02em] text-[#262626]">
-          <?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?>
+          <span><?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?> </span> <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.80347 6.1875H34.3533V34.8426" stroke="#4A78FF" stroke-miterlimit="10"/><path d="M34.1687 6.36914L5.9884 34.6532" stroke="#4A78FF" stroke-miterlimit="10"/></svg>
         </h3>
 
         <!-- Title -->
