@@ -40,12 +40,27 @@ if ($card_overlay === 'Grayscale') {
 
 $select_3_column_grid = get_sub_field('select_3_column_grid');
 
+// $wrapper_class = $select_3_column_grid
+//     ? "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-2 w-full"
+//     : "grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4 md:gap-2 w-full";
+
+
+
+// $wrapper_class = $select_3_column_grid
+//     ? "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-2 w-full [&>article:last-child:nth-child(odd)]:md:col-span-2 [&>article:last-child:nth-child(odd)]:xl:col-span-1"
+//     : "grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4 md:gap-2 w-full";    
+
+// $article_class = $select_3_column_grid
+//     ? "source-card relative overflow-hidden w-full aspect-[16/15] h-[420px] xl:h-auto"
+//     : "source-card relative overflow-hidden w-full aspect-[334/420] ";
+
+
 $wrapper_class = $select_3_column_grid
-    ? "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-2 w-full"
+    ? "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 [&:has(>article:nth-child(2):last-child)]:xl:grid-cols-2 gap-4 md:gap-2 w-full [&>article:last-child:nth-child(odd)]:md:col-span-2 [&>article:last-child:nth-child(odd)]:xl:col-span-1"
     : "grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4 md:gap-2 w-full";
 
 $article_class = $select_3_column_grid
-    ? "source-card relative overflow-hidden w-full aspect-[16/15]"
+    ? "source-card relative overflow-hidden w-full aspect-[16/15] h-[420px] max-h-[420px] xl:h-auto"
     : "source-card relative overflow-hidden w-full aspect-[334/420]";
 
 
