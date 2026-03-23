@@ -1174,6 +1174,24 @@
   @apply max-h-[1000px] overflow-hidden transition-all duration-300 ease-in-out;
 }
 
+.question::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    z-index: -1;
+    background-image: url('../../images/faq-arrow.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.question.active::before{
+  @apply rotate-180;
+}
+
 /* .question.active{
   @apply font-bold;
 }

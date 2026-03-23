@@ -71,7 +71,7 @@ $mobileFlex = 'flex-col-reverse';
 											<?php echo $i . '. ' . esc_html( $question ); ?>
 										</h3>
 										<div class="answer md:pr-[50px] pr-[30px]" role="region">
-											<div class="font-body font-normal text-white text-[clamp(14px,1.7vw,16px)] leading-[clamp(24px,2.8vw,26px)]">
+											<div class="font-body font-normal text-white text-[clamp(14px,1.7vw,16px)] leading-[clamp(24px,2.8vw,26px)] mt-[10px]">
 												<?php echo wp_kses_post( $answer ); ?>
 											</div>
 										</div>
