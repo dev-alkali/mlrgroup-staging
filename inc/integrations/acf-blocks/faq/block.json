@@ -1,0 +1,14 @@
+{
+    "name": "acf/faq",
+    "title": "Faq",
+    "description": "Faq Section",
+    "style": ["file:./faq.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["faq", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "faq.php"
+    },
+    "script": "faqJS"
+}
