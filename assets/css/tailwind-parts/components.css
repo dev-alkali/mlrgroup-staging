@@ -1116,8 +1116,48 @@
 }
 
 .c-contact__right .gform_wrapper.gravity-theme .gform_footer input[type="submit"] {
-  @apply block w-full max-w-full text-white font-semibold uppercase
-         text-[16px] leading-[18px] p-[16px] m-0 rounded-[50px];
+  @apply block w-full max-w-full text-white font-semibold uppercase text-[16px] leading-[18px] p-[16px] m-0 rounded-[50px];
   background-color: #FD4338;
   font-family: var(--font-heading);
 }
+
+.c-contact__right .ginput_container .gfield_checkbox {
+  @apply flex flex-wrap gap-x-[10px] gap-y-[10px] mt-[10px];
+}
+
+.c-contact__right .gfield .ginput_container_consent {
+  @apply relative;
+}
+
+.c-contact__right .ginput_container .gchoice {
+  @apply relative w-[49%];
+}
+
+.c-contact__right .gfield .ginput_container_consent label::before,
+.c-contact__right .ginput_container .gchoice label::before {
+  @apply bg-white border border-[#262626] cursor-pointer block absolute left-0 w-[16px] h-[16px] rounded-none;
+  content: "";
+  top: 45%;
+  transform: translateY(-50%);
+}
+
+.c-contact__right .gfield .ginput_container_consent label,
+.c-contact__right .ginput_container .gchoice label {
+  @apply relative pl-[25px] m-0 text-[16px] leading-[24px] cursor-pointer flex;
+  font-family: var(--font-heading);
+}
+
+.c-contact__right .gfield .ginput_container_consent input[type="checkbox"],
+.c-contact__right .ginput_container .gchoice input[type="checkbox"] {
+  @apply invisible hidden opacity-0;
+}
+
+.c-contact__right .gfield .ginput_container_consent input[type="checkbox"]:checked + label::before,
+.c-contact__right .ginput_container .gchoice input[type="checkbox"]:checked + label::before {
+  @apply bg-[#FD4338];
+}
+
+.c-contact__right .gfield .ginput_container_consent label .gfield_required {
+  @apply hidden;
+}
+
