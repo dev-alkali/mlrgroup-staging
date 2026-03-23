@@ -60,7 +60,7 @@ $mobileFlex = 'flex-col-reverse';
 				<div class="">
 					<?php if($faq_lists): ?>
 						<?php if ( ! empty( $faq_lists ) && is_array( $faq_lists ) ) : ?>
-							<div class="flex flex-col gap-[20px]">
+							<div class="flex flex-col gap-[16px]">
 								<?php $i = 1; ?>
 								<?php foreach ( $faq_lists as $faq ) : 
 									$question = ! empty( $faq['question'] ) ? $faq['question'] : '';

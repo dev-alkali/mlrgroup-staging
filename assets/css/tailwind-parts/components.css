@@ -1174,10 +1174,10 @@
   @apply max-h-[1000px] overflow-hidden transition-all duration-300 ease-in-out;
 }
 
-.question.active{
+/* .question.active{
   @apply font-bold;
 }
 
 .question:not(.active){
   @apply font-normal;
-}
+} */
