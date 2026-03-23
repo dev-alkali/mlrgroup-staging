@@ -89,14 +89,14 @@ elements.forEach((el) => {
 });
 
 
-jQuery(document).ready(function($) {
-  var swiper = new Swiper(".mySwiper", {
+
+  var swiper = new Swiper(".reviews-slider-wrapper .reviews-slider", {
     slidesPerView: "auto",
-    spaceBetween: 30,
+    spaceBetween: 8,
     pagination: {
       el: ".reviews-dots",
       clickable: true,
     },
   });
-});
+
 
