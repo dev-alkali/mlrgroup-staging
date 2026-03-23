@@ -50,35 +50,52 @@ $description = get_sub_field('description');
           <?php endif; ?>
         </div>
 
-        <?php if (have_rows('partnership_list')) : $i = 1;?>
-            <div class="partnership-list">              
-              <?php while (have_rows('partnership_list')) : the_row();                 
-                $image   = get_sub_field('p_image');
-                $title   = get_sub_field('p_title');
-                $content = get_sub_field('p_content');
-              ?>
+        <?php if (have_rows('partnership_list')) : 
+          $count = count(get_field('partnership_list')); // total items
+          $cols = min($count, 5); // max 5 columns
+          $i = 1;
+        ?>
 
-                <div class="">                  
-                  <!-- Index -->
-                  <h3 class="font-[Poppins] font-bold text-[clamp(28px,4vw,40px)] leading-[clamp(36px,5vw,48px)] tracking-[-0.02em] text-[#262626]"><?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?></h3>
-                  <!-- Title -->
-                  <h4 class="font-[Poppins] font-medium text-[24px] leading-[32px] tracking-[-0.02em] md:text-[28px] md:leading-[36px] text-[#262626]"><?php echo esc_html($title); ?></h4>
-                  <!-- Content -->
-                  <p class="font-body font-normal text-[18px] leading-[26px] text-[#525252]"><?php echo esc_html($content); ?></p>
+          <div class="partnership-list grid gap-6 grid-cols-<?php echo $cols; ?>">
+            
+            <?php while (have_rows('partnership_list')) : the_row(); 
+              
+              $image   = get_sub_field('p_image');
+              $title   = get_sub_field('p_title');
+              $content = get_sub_field('p_content');
+            ?>
 
-                  <!-- Image -->
-                  <?php if ($image) : ?>
-                    <figure><img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="w-full h-auto"></figure>
-                  <?php endif; ?>
-                </div>
+              <div class="">
+                
+                <!-- Index -->
+                <h3 class="font-[Poppins] font-bold text-[clamp(28px,4vw,40px)] leading-[clamp(36px,5vw,48px)] tracking-[-0.02em] text-[#262626]">
+                  <?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?>
+                </h3>
 
-              <?php 
-                $i++; 
-                endwhile; 
-              ?>
+                <!-- Title -->
+                <h4 class="font-[Poppins] font-medium text-[24px] leading-[32px] tracking-[-0.02em] md:text-[28px] md:leading-[36px] text-[#262626]">
+                  <?php echo esc_html($title); ?>
+                </h4>
 
-            </div>
-          <?php endif; ?>
+                <!-- Content -->
+                <p class="font-body font-normal text-[18px] leading-[26px] text-[#525252]">
+                  <?php echo esc_html($content); ?>
+                </p>
+
+                <!-- Image -->
+                <?php if ($image) : ?>
+                  <figure>
+                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="w-full h-auto">
+                  </figure>
+                <?php endif; ?>
+
+              </div>
+
+            <?php $i++; endwhile; ?>
+
+          </div>
+
+        <?php endif; ?>
 
 
       </div> 
