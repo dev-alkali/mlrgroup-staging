@@ -35,7 +35,7 @@ if (!empty($block['className'])) {
         <?php endwhile;
         endif; ?>
 
-        <?php if (have_rows('main_content')) :  while (have_rows('main_content')) : the_row(); ?>
+        <?php /* if (have_rows('main_content')) :  while (have_rows('main_content')) : the_row(); ?>
             <div class="flex-col items-start max-[600px]:gap-6 max-[1024px]:gap-10 w-full flex-[0_0_auto] flex relative">              
                   <div class="flex flex-col min-[1024px]:flex-row max-[600px]:gap-6 max-[1024px]:gap-10 items-start relative min-[1441px]:aspect-[1440/409] max-[1441px]:h-[409px] max-[1024px]:h-auto w-full collection-parent">
                     <?php if (have_rows('items')) :  while (have_rows('items')) : the_row(); ?>
@@ -96,7 +96,7 @@ if (!empty($block['className'])) {
                     <?php endwhile; endif; ?>
                   </div>
             </div>
-        <?php endwhile; endif; ?>
+        <?php endwhile; endif; */ ?>
 
 
 
@@ -259,7 +259,7 @@ if (!empty($block['className'])) {
 
 <?php endwhile; endif; ?>
 
-        
+
       </div>
     </section>
 <?php endwhile; endif; ?>
