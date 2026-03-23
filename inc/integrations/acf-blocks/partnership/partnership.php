@@ -31,7 +31,7 @@ $description = get_sub_field('description');
 
 ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] md:py-[120px]">
-      <div class="wrapper">
+      <div class="wrapper flex flex-col gap-[60px]">
         <div class="top-title-sec">
           <div class="left-title">
             <?php if($title_row_1 || $title_row_2): ?>
@@ -58,8 +58,7 @@ $description = get_sub_field('description');
     
     <?php 
     $i = 1;
-    while (have_rows('partnership_list')) : the_row(); 
-        
+    while (have_rows('partnership_list')) : the_row();         
       $image   = get_sub_field('p_image');
       $title   = get_sub_field('p_title');
       $content = get_sub_field('p_content');
