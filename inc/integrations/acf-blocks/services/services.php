@@ -41,7 +41,7 @@ if ($card_overlay === 'Grayscale') {
 $select_3_column_grid = get_sub_field('select_3_column_grid');
 
 $wrapper_class = $select_3_column_grid
-    ? "grid grid-cols-1 md:grid-cols-2 min-[1440px]:grid-cols-3 gap-4 md:gap-2 w-full"
+    ? "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-2 w-full"
     : "grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4 md:gap-2 w-full";
 
 $article_class = $select_3_column_grid
