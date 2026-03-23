@@ -57,14 +57,14 @@ $mobileFlex = 'flex-col-reverse';
 							$review_author_role = $review_slider['review_author_role'];
 							?>
 							<div class="review-slider-item swiper-slide !w-[1600px] max-w-[95%] md:max-w-[90%]">
-								<div class="flex flex-col md:flex-row p-[20px] md:p-[30px] lg:p-[40px] bg-black text-white gap-[32px] items-center relative">
+								<div class="flex flex-col md:flex-row p-[20px] md:p-[30px] lg:p-[40px] bg-black text-white md:gap-[32px] gap-[20px] items-center relative">
 									
 									<div class="w-full md:w-1/2 flex items-center justify-center">
 										<div class="w-full h-full pt-[100%] relative overflow-hidden">
 											<img src="<?php echo $review_image['url']; ?>" alt="<?php echo $review_image['alt']; ?>" class="absolute top-0 left-0 w-full h-full object-cover object-center">
 										</div>
 									</div>
-									<div class="top-arrow-imgs md:absolute md:top-[11px] lg:top-[21px]  right-[20px] md:w-[calc(50%-25px)] flex mb-[20px] md:mb-[0px]">
+									<div class="top-arrow-imgs md:absolute md:top-[11px] lg:top-[21px]  right-[20px] md:w-[calc(50%-25px)] flex">
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin-red.svg" alt="" class="w-[16.67%]">
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[16.67%]">
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[16.67%]">
@@ -82,7 +82,7 @@ $mobileFlex = 'flex-col-reverse';
 											</div>
 										</div>
 									</div>
-									<div class="bottom-arrow-imgs md:absolute md:bottom-[30px] lg:bottom-[40px] right-[20px] md:w-[calc(50%-25px)] flex mt-[20px] md:mt-[0px]">
+									<div class="bottom-arrow-imgs md:absolute md:bottom-[30px] lg:bottom-[40px] right-[20px] md:w-[calc(50%-25px)] flex">
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[16.67%]">
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[16.67%]">
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[16.67%]">
