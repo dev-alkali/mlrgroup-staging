@@ -119,10 +119,15 @@ if (!empty($block['className'])) {
 
     switch ($item_count) {
         case 5:
+            /*
+             * 6-col grid so widths can flip between rows:
+             *   Row 1: [Item1 col1-2] [Item2 col3-5 WIDE] [Item3 col6 NARROW]
+             *   Row 2: [Item1 col1-2] [Item4 col3 NARROW] [Item5 col4-6 WIDE]
+             */
             $grid_class = 'grid
                            max-[600px]:grid-cols-1
                            min-[600px]:grid-cols-2
-                           min-[1024px]:grid-cols-3
+                           min-[1024px]:grid-cols-6
                            min-[1024px]:grid-rows-2';
             break;
         case 4:
@@ -156,11 +161,25 @@ if (!empty($block['className'])) {
                 $item_index++;
 
                 /*
-                 * First item gets row-span-2 when there are 3 or 5 items
-                 * so it fills the full height on the left side.
+                 * Per-item col/row span classes for 5-item layout (desktop only).
+                 *
+                 *  Item 1 → col-span-2  row-span-2  (tall left card)
+                 *  Item 2 → col-span-3              (wide  — top right)
+                 *  Item 3 → col-span-1              (narrow — top far-right)
+                 *  Item 4 → col-span-1              (narrow — bottom left of right block)
+                 *  Item 5 → col-span-3              (wide  — bottom right)
                  */
                 $row_span_class = '';
-                if ($item_index === 1 && in_array($item_count, [3, 5])) {
+                if ($item_count === 5) {
+                    $span_map = [
+                        1 => 'min-[1024px]:col-span-2 min-[1024px]:row-span-2',
+                        2 => 'min-[1024px]:col-span-3',
+                        3 => 'min-[1024px]:col-span-1',
+                        4 => 'min-[1024px]:col-span-1',
+                        5 => 'min-[1024px]:col-span-3',
+                    ];
+                    $row_span_class = $span_map[$item_index] ?? '';
+                } elseif ($item_index === 1 && in_array($item_count, [3])) {
                     $row_span_class = 'min-[1024px]:row-span-2';
                 }
 
