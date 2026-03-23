@@ -33,7 +33,8 @@ $mobileFlex = 'flex-col-reverse';
 ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>-sec px-4 md:px-10 py-[60px] md:py-[120px]">
 		<!-- <div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col md:flex-row items-center flex-wrap"> -->
-		<div class="flex flex-col lg:flex-row lg:items-center gap-[20px] lg:gap-[50px] self-stretch w-full">
+		<?php if($title_row_1 || $title_row_2 || $description): ?>
+		<div class="flex flex-col lg:flex-row 	 gap-[20px] lg:gap-[50px] self-stretch w-full wrapper">
 			<?php if($title_row_1 || $title_row_2): ?>
 				<h2 class="text-[clamp(32px,6vw,68px)] leading-[clamp(40px,7vw,76px)] tracking-[-4%] text-[#262626] font-heading mb-[20px]">
 					<?php if($title_row_1): ?>
@@ -50,6 +51,7 @@ $mobileFlex = 'flex-col-reverse';
 				</div>
 			<?php endif; ?>
 		</div>
+		<?php endif; ?>
 		<div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col <?php echo $mobileFlex . ' ' . $desktopFlex; ?>">
 
 			<div class="w-full flex-1 relative">
