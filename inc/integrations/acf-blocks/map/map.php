@@ -3318,7 +3318,7 @@ $map_code = get_sub_field('map_code');
   .wmap-marker {position: absolute;transform: translate(-50%, -50%);cursor: pointer;z-index: 20;}
   .wmap-dot {width: 7px;height: 7px;border-radius: 50%;transition: opacity 0.2s;}
   .wmap-pin {position: absolute;top: -40px;left: 50%;transform: translateX(-50%) translateY(50%) scale(0);transform-origin: bottom center;transition: transform 0.2s ease;pointer-events: none;    width: 20px;height: 20px;}
-  .wmap-marker:hover .wmap-dot {opacity: 0;}
+  /*.wmap-marker:hover .wmap-dot {opacity: 0;}*/
   .wmap-marker:hover .wmap-pin {transform: translateX(-50%) translateY(50%) scale(1);}
   .wmap-tooltip {position: absolute;bottom: calc(100% + 44px);left: 50%;transform: translateX(-50%) translateY(6px);background: #fff;border-radius: 10px;padding: 8px 18px 10px;white-space: nowrap;text-align: center;box-shadow: 0px 8px 10px -6px #0000001A;border: 1px solid rgba(0,0,0,0.07);font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;opacity: 0;pointer-events: none;transition: opacity 0.2s ease, transform 0.2s ease;min-width: 135px; }
   .wmap-tooltip::after {content: '';position: absolute;top: 100%; left: 50%;transform: translateX(-50%);border: 7px solid transparent;border-top-color: #fff;}
