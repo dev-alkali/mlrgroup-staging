@@ -17,7 +17,7 @@ if (!empty($block['className'])) {
 
                 <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
                         <!-- TITLE -->
-                        <div class="solutions-header flex w-full max-w-[1920px] mb-8 md:mb-[60px]">
+                        <div class="solutions-header flex flex-col md:flex-row w-full max-w-[1920px] mb-8 md:mb-[60px]">
                             <?php 
                                 $title_bold = get_sub_field('title_bold');
                                 $title_light = get_sub_field('title_light');
