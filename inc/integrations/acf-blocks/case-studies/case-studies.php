@@ -1,15 +1,15 @@
 <?php
 
 /**
- * Collection Block Template.
+ * Case Studies Block Template.
  */
 
-$id = 'collection-' . $block['id'];
+$id = 'case_studies-' . $block['id'];
 if (!empty($block['anchor'])) {
   $id = $block['anchor'];
 }
 
-$className = 'collection';
+$className = 'case_studies';
 if (!empty($block['className'])) {
   $className .= ' ' . $block['className'];
 }
