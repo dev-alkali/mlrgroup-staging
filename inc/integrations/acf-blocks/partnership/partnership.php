@@ -33,7 +33,7 @@ $description = get_sub_field('description');
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] md:py-[120px]">
       <div class="wrapper flex flex-col gap-[60px]">
         <div class="top-title-sec flex flex-wrap">
-          <div class="top_title basis-[37.5%] max-md:w-full">
+          <div class="top_title basis-[37.5%] max-md:w-full md:pr-[20px]">
             <?php if($title_row_1 || $title_row_2): ?>
             <h2 class="text-[clamp(36px,6vw,68px)] leading-[clamp(44px,7vw,76px)] tracking-[-4%] text-[#262626] font-heading mb-[20px]">
               <?php if($title_row_1): ?>
@@ -46,7 +46,7 @@ $description = get_sub_field('description');
             <?php endif; ?>
           </div>
           <?php if($description): ?>
-            <div class="basis-[62.5%] max-md:w-full"><p class="font-body font-normal text-[18px] leading-[26px] tracking-[0em] text-[#525252]"><?php echo $description; ?></p></div>
+            <div class="basis-[62.5%] max-md:w-full md:pl-[20px]"><p class="font-body font-normal text-[18px] leading-[26px] tracking-[0em] text-[#525252]"><?php echo $description; ?></p></div>
           <?php endif; ?>
         </div>
 
