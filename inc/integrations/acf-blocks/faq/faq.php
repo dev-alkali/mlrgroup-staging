@@ -31,7 +31,7 @@ $faq_lists = get_sub_field('faq_lists');
 $mobileFlex = 'flex-col-reverse';
 
 ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] md:py-[120px]">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>-sec px-4 md:px-10 py-[60px] md:py-[120px]">
 		<!-- <div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col md:flex-row items-center flex-wrap"> -->
 		<div class="flex flex-col lg:flex-row lg:items-center gap-[20px] lg:gap-[50px] self-stretch w-full">
 			<?php if($title_row_1 || $title_row_2): ?>
@@ -50,27 +50,27 @@ $mobileFlex = 'flex-col-reverse';
 				</div>
 			<?php endif; ?>
 		</div>
-		<div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col <?php echo $mobileFlex . ' ' . $desktopFlex; ?> items-center">
+		<div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col <?php echo $mobileFlex . ' ' . $desktopFlex; ?>">
 
-			<div class="w-full flex-1">
-			<figure><?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, ['class' => 'w-full h-auto']); ?></figure>
+			<div class="w-full flex-1 relative">
+			<figure><?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, ['class' => 'w-full h-auto md:absolute md:top-0 md:right-0 w-full h-full object-cover']); ?></figure>
 			</div>
 
 			<div class="w-full flex-1">
 				<div class="">
 					<?php if($faq_lists): ?>
 						<?php if ( ! empty( $faq_lists ) && is_array( $faq_lists ) ) : ?>
-							<div class="flex flex-col gap-[16px]">
+							<div class="flex flex-col md:gap-[16px] gap-[10px]">
 								<?php $i = 1; ?>
 								<?php foreach ( $faq_lists as $faq ) : 
 									$question = ! empty( $faq['question'] ) ? $faq['question'] : '';
 									$answer   = ! empty( $faq['answer'] ) ? $faq['answer'] : '';
 								?>
-									<div class="flex flex-col bg-black text-white px-[28px] py-[36px] relative">
+									<div class="flex flex-col bg-black text-white md:px-[28px] px-[20px] md:py-[36px] py-[20px] relative">
 										<h3 class="font-heading question font-medium text-white text-[clamp(18px,2.2vw,20px)] relative leading-[clamp(26px,2.6vw,28px)] pr-[50px]">
 											<?php echo $i . '. ' . esc_html( $question ); ?>
 										</h3>
-										<div class="answer pr-[50px]" role="region">
+										<div class="answer md:pr-[50px] pr-[30px]" role="region">
 											<div class="font-body font-normal text-white text-[clamp(14px,1.7vw,16px)] leading-[clamp(24px,2.8vw,26px)]">
 												<?php echo wp_kses_post( $answer ); ?>
 											</div>
