@@ -59,18 +59,26 @@ $mobileFlex = 'flex-col-reverse';
 			<div class="w-full flex-1">
 				<div class="">
 					<?php if($faq_lists): ?>
-						<div class="flex flex-col gap-[20px]">
-							<?php 
-							 $i = 1;
-							foreach($faq_lists as $faq $i++): ?>
-								<div class="flex flex-col bg-black text-white">
-									<h3 class="font-heading question font-bold text-white text-[clamp(18px,2.2vw,20px)] leading-[clamp(26px,2.6vw,28px)] max-w-[90%]"><?php echo $i; ?> <?php echo $faq['question']; ?></h3>
-									<div class="answer max-w-[90%]">
-										<div class="font-body font-normal text-white text-[clamp(14px,1.7vw,16px)] leading-[clamp(24px,2.8vw,26px)] "><?php echo $faq['answer']; ?></div>
+						<?php if ( ! empty( $faq_lists ) && is_array( $faq_lists ) ) : ?>
+							<div class="flex flex-col gap-[20px]">
+								<?php $i = 1; ?>
+								<?php foreach ( $faq_lists as $faq ) : 
+									$question = ! empty( $faq['question'] ) ? $faq['question'] : '';
+									$answer   = ! empty( $faq['answer'] ) ? $faq['answer'] : '';
+								?>
+									<div class="flex flex-col bg-black text-white px-[28px] py-[36px] relative">
+										<h3 class="font-heading question font-medium text-white text-[clamp(18px,2.2vw,20px)] relative leading-[clamp(26px,2.6vw,28px)] pr-[50px]">
+											<?php echo $i . '. ' . esc_html( $question ); ?>
+										</h3>
+										<div class="answer pr-[50px]" role="region">
+											<div class="font-body font-normal text-white text-[clamp(14px,1.7vw,16px)] leading-[clamp(24px,2.8vw,26px)]">
+												<?php echo wp_kses_post( $answer ); ?>
+											</div>
+										</div>
 									</div>
-								</div>
-							<?php endforeach; ?>
-						</div>
+								<?php $i++; endforeach; ?>
+							</div>
+						<?php endif; ?>
 					<?php endif; ?>
 				</div>
 			</div>
