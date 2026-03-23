@@ -51,7 +51,7 @@ $description = get_sub_field('description');
         </div>
 
         <?php if (have_rows('partnership_list')) : 
-          $count = count(get_field('partnership_list')); // total items
+          $count = count(get_sub_field('partnership_list')); // total items
           $cols = min($count, 5); // max 5 columns
           $i = 1;
         ?>
