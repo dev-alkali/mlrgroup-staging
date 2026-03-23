@@ -90,14 +90,13 @@ elements.forEach((el) => {
 
 
 jQuery(document).ready(function($) {
-  $('.reviews-slider').slick({
-    dots: true,
-    infinite: false,
-    speed: 300,
-    arrows: false,
-    slidesToShow: 1,
-    centerMode: true,
-    variableWidth: true
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: "auto",
+    spaceBetween: 30,
+    pagination: {
+      el: ".reviews-dots",
+      clickable: true,
+    },
   });
 });
 
