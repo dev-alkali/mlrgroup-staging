@@ -65,12 +65,15 @@ $description = get_sub_field('description');
     ?>
 
       <div class="flex flex-col gap-[20px]">
+
         <!-- Index -->
-        <h3 class="font-[Poppins] font-bold text-[clamp(28px,4vw,40px)] leading-[clamp(36px,5vw,48px)] tracking-[-0.02em] text-[#262626] flex gap-[20px]"><span><?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?> </span> <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.80347 6.1875H34.3533V34.8426" stroke="#4A78FF" stroke-miterlimit="10"/><path d="M34.1687 6.36914L5.9884 34.6532" stroke="#4A78FF" stroke-miterlimit="10"/></svg></h3>
-        <!-- Title -->
-        <h4 class="font-[Poppins] font-medium text-[24px] leading-[32px] tracking-[-0.02em] md:text-[28px] md:leading-[36px] text-[#262626]"><?php echo esc_html($title); ?></h4>
-        <!-- Content -->
-        <p class="font-body font-normal text-[18px] leading-[26px] text-[#525252]"><?php echo esc_html($content); ?></p>
+        <div class="">
+          <h3 class="font-[Poppins] font-bold text-[clamp(28px,4vw,40px)] leading-[clamp(36px,5vw,48px)] tracking-[-0.02em] text-[#262626] flex gap-[20px]"><span><?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?> </span> <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.80347 6.1875H34.3533V34.8426" stroke="#4A78FF" stroke-miterlimit="10"/><path d="M34.1687 6.36914L5.9884 34.6532" stroke="#4A78FF" stroke-miterlimit="10"/></svg></h3>
+          <!-- Title -->
+          <h4 class="font-[Poppins] font-medium text-[24px] leading-[32px] tracking-[-0.02em] md:text-[28px] md:leading-[36px] text-[#262626]"><?php echo esc_html($title); ?></h4>
+          <!-- Content -->
+          <p class="font-body font-normal text-[18px] leading-[26px] text-[#525252]"><?php echo esc_html($content); ?></p>
+        </div>
 
         <!-- Image -->
         <?php if ($image) : ?>
