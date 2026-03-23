@@ -1130,15 +1130,13 @@
 }
 
 .c-contact__right .ginput_container .gchoice {
-  @apply relative w-[49%];
+  @apply relative md:w-[49%] w-full;
 }
 
 .c-contact__right .gfield .ginput_container_consent label::before,
 .c-contact__right .ginput_container .gchoice label::before {
-  @apply bg-white border border-[#262626] cursor-pointer block absolute left-0 w-[20px] h-[20px] rounded-none;
+  @apply bg-white border border-[#262626] cursor-pointer block absolute left-0 w-[20px] h-[20px] rounded-none top-1/2 -translate-y-1/2;
   content: "";
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .c-contact__right .gfield .ginput_container_consent label,
