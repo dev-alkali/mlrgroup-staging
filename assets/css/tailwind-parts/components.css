@@ -1055,3 +1055,19 @@
   @apply !bg-[#fd4338] !w-[40px] !rounded-[20px];
 }
 
+.c-contact__description {
+  @apply border-b border-[#CCCCCC] mb-0 pb-2;
+}
+
+.c-contact__description p a {
+  @apply font-semibold;
+  font-family: var(--font-heading);
+}
+
+.c-contact__description p:first-child {
+  margin-bottom: 40px;
+}
+
+.c-contact__description p:not(:first-child) {
+  margin-bottom: 15px;
+}
