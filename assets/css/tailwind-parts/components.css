@@ -1165,3 +1165,7 @@
   @apply mt-[32px];
 }
 
+.c-contact__right .gform_wrapper.gravity-theme .gfield textarea.large{
+  height: 219px;
+}
+
