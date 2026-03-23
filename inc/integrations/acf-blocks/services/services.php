@@ -49,7 +49,7 @@ $wrapper_class = $select_3_column_grid
     : "grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4 md:gap-2 w-full";    
 
 $article_class = $select_3_column_grid
-    ? "source-card relative overflow-hidden w-full aspect-[16/15] h-[420px] lg:h-auto"
+    ? "source-card relative overflow-hidden w-full aspect-[16/15] h-[420px] xl:h-auto"
     : "source-card relative overflow-hidden w-full aspect-[334/420] ";
 
 
