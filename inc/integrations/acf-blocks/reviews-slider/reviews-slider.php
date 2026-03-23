@@ -58,21 +58,13 @@ $mobileFlex = 'flex-col-reverse';
 							?>
 							<div class="review-slider-item swiper-slide !w-[1600px] max-w-[95%] md:max-w-[90%]">
 								<div class="flex flex-col md:flex-row p-[20px] md:p-[30px] lg:p-[40px] bg-black text-white gap-[32px] items-center relative">
-									<div class="top-arrow-imgs absolute top-0 right-[20px] md:w-[calc(50%-25px)] flex">
+									<div class="top-arrow-imgs md:absolute md:top-[11px] lg:top-[21px]  right-[20px] md:w-[calc(50%-25px)] flex mb-[20px] md:mb-[0px]">
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin-red.svg" alt="" class="w-[100%]">
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">										
-									</div>
-									<div class="bottom-arrow-imgs absolute bottom-0 right-20px md:w-[calc(50%-25px)] flex">
-										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">
-										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">
-										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">
-										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">
-										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">										
-										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin-red.svg" alt="" class="w-[100%]">
 									</div>
 									<div class="w-full md:w-1/2 flex items-center justify-center">
 										<div class="w-full h-full pt-[100%] relative overflow-hidden">
@@ -88,6 +80,14 @@ $mobileFlex = 'flex-col-reverse';
 												<div class="text-[14px] leading-[16px] font-normal text-white"><?php echo $review_author_role; ?></div>
 											</div>
 										</div>
+									</div>
+									<div class="bottom-arrow-imgs md:absolute md:bottom-[30px] lg:bottom-[40px] right-[20px] md:w-[calc(50%-25px)] flex mt-[20px] md:mt-[0px]">
+										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">
+										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">
+										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">
+										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">
+										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="" class="w-[100%]">										
+										<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin-red.svg" alt="" class="w-[100%]">
 									</div>
 								</div>
 							</div>
