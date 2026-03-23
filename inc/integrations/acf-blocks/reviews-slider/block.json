@@ -1,0 +1,14 @@
+{
+    "name": "acf/reviews-slider",
+    "title": "Reviews Slider",
+    "description": "Reviews slider Section",
+    "style": ["file:./reviews-slider.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["reviews-slider", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "reviews-slider.php"
+    },
+    "script": "reviews-sliderJS"
+}
