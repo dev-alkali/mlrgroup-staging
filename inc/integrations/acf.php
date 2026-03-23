@@ -21,6 +21,8 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/acf-blocks/how-it-works');
   register_block_type(__DIR__ . '/acf-blocks/contact-form');
   register_block_type(__DIR__ . '/acf-blocks/reviews-slider');
+  register_block_type(__DIR__ . '/acf-blocks/partnership');
+  
   
   
   

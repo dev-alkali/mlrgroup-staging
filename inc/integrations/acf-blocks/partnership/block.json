@@ -1,0 +1,14 @@
+{
+    "name": "acf/partnership",
+    "title": "Partnership",
+    "description": "Partnership Section",
+    "style": ["file:./partnership.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["partnership", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "partnership.php"
+    },
+    "script": "partnershipJS"
+}
