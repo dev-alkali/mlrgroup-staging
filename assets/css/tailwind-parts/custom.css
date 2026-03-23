@@ -50,9 +50,9 @@ body .newsletter-gf-container .gform_wrapper.gravity-theme .gform_footer{margin-
 }
 
 @media (max-width: 767px) {
-    .collection .collection-item:first-child{order:0;}
-    .collection .collection-item:second-child{order:2;}
-    .collection .collection-item:last-child{order:1;}
+    .collection-parent:first-child .collection-item:first-child{order:0;}
+    .collection-parent:first-child .collection-item:second-child{order:2;}
+    .collection-parent:first-child .collection-item:last-child{order:1;}
 }   
 
 
