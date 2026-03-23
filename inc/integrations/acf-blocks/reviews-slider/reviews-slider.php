@@ -57,13 +57,13 @@ $mobileFlex = 'flex-col-reverse';
 							$review_author_role = $review_slider['review_author_role'];
 							?>
 							<div class="review-slider-item swiper-slide !w-[1600px] max-w-[95%] md:max-w-[90%]">
-								<div class="flex flex-col md:flex-row p-[20px] md:p-[30px] lg:p-[40px] bg-black text-white gap-[32px] items-center">
+								<div class="flex flex-col md:flex-row p-[20px] md:p-[30px] lg:p-[40px] bg-black text-white gap-[32px] items-center relative">
 									<div class="w-full md:w-1/2 flex items-center justify-center">
 										<div class="w-full h-full pt-[100%] relative overflow-hidden">
 											<img src="<?php echo $review_image['url']; ?>" alt="<?php echo $review_image['alt']; ?>" class="absolute top-0 left-0 w-full h-full object-cover object-center">
 										</div>
 									</div>
-									<div class="w-full md:w-1/2">
+									<div class="w-full md:w-1/2 relative">
 										<div class="text-[clamp(16px,2.2vw,24px)] leading-[clamp(24px,2.8vw,32px)] tracking-[clamp(0em,-0.2vw,-0.02em)] mb-[20px]"><?php echo $review_content; ?></div>
 										<div class="flex items-center gap-[16px]">
 											<img src="<?php echo $review_company_logo['url']; ?>" alt="<?php echo $review_company_logo['alt']; ?>" class="w-[60px] h-[60px] object-contain">
@@ -71,6 +71,22 @@ $mobileFlex = 'flex-col-reverse';
 												<div class="text-[16px] leading-[18px] font-bold text-white"><?php echo $review_author_name; ?></div>
 												<div class="text-[14px] leading-[16px] font-normal text-white"><?php echo $review_author_role; ?></div>
 											</div>
+										</div>
+										<div class="top-arrow-imgs absolute top-0 left-0">
+											<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin-red.svg" alt="">
+											<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="">
+											<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="">
+											<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="">
+											<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="">
+											<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="">										
+										</div>
+										<div class="bottom-arrow-imgs absolute bottom-0 left-0">
+											<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="">
+											<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="">
+											<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="">
+											<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="">
+											<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" alt="">										
+											<img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin-red.svg" alt="">
 										</div>
 									</div>
 								</div>
