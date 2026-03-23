@@ -47,34 +47,38 @@ $mobileFlex = 'flex-col-reverse';
 			</div>
 
 			<div class="w-full">
-				<div class="reviews-slider">
-					<?php foreach($review_sliders as $review_slider): 
-						$review_image = $review_slider['review_image'];
-						$review_content = $review_slider['review_content'];
-						$review_company_logo = $review_slider['review_company_logo'];
-						$review_author_name = $review_slider['review_author_name'];
-						$review_author_role = $review_slider['review_author_role'];
-						?>
-						<div class="review-slider-item lg:w-[1206px] md:w-[738px] sm:w-[500px] w-[360px]">
-							<div class="flex flex-col md:flex-row flex-wrap p-[20px] md:p-[30px] lg:p-[40px] bg-black text-white gap-[32px]">
-								<div class="w-full md:w-1/2 flex items-center justify-center">
-									<div class="w-full h-full">
-										<img src="<?php echo $review_image['url']; ?>" alt="<?php echo $review_image['alt']; ?>">
+				<div class="reviews-slider-wrapper swiper">
+					<div class="reviews-slider swiper-wrapper">
+						<?php foreach($review_sliders as $review_slider): 
+							$review_image = $review_slider['review_image'];
+							$review_content = $review_slider['review_content'];
+							$review_company_logo = $review_slider['review_company_logo'];
+							$review_author_name = $review_slider['review_author_name'];
+							$review_author_role = $review_slider['review_author_role'];
+							?>
+							<div class="review-slider-item swiper-slide w-[clamp(360px,calc(360px+(100vw-375px)*0.98),1206px)]">
+								<div class="flex flex-col md:flex-row flex-wrap p-[20px] md:p-[30px] lg:p-[40px] bg-black text-white gap-[32px]">
+									<div class="w-full md:w-1/2 flex items-center justify-center">
+										<div class="w-full h-full">
+											<img src="<?php echo $review_image['url']; ?>" alt="<?php echo $review_image['alt']; ?>">
+										</div>
 									</div>
-								</div>
-								<div class="w-full md:w-1/2">
-									<div class="text-[clamp(16px,2.2vw,24px)] leading-[clamp(24px,2.8vw,32px)] tracking-[clamp(0em,-0.2vw,-0.02em)] mb-[20px]"><?php echo $review_content; ?></div>
-									<div class="flex items-center gap-[16px]">
-										<img src="<?php echo $review_company_logo['url']; ?>" alt="<?php echo $review_company_logo['alt']; ?>" class="w-[60px] h-[60px] object-contain">
-										<div class="flex flex-col flex-1">
-											<div class="text-[16px] leading-[18px] font-bold text-white"><?php echo $review_author_name; ?></div>
-											<div class="text-[14px] leading-[16px] font-normal text-white"><?php echo $review_author_role; ?></div>
+									<div class="w-full md:w-1/2">
+										<div class="text-[clamp(16px,2.2vw,24px)] leading-[clamp(24px,2.8vw,32px)] tracking-[clamp(0em,-0.2vw,-0.02em)] mb-[20px]"><?php echo $review_content; ?></div>
+										<div class="flex items-center gap-[16px]">
+											<img src="<?php echo $review_company_logo['url']; ?>" alt="<?php echo $review_company_logo['alt']; ?>" class="w-[60px] h-[60px] object-contain">
+											<div class="flex flex-col flex-1">
+												<div class="text-[16px] leading-[18px] font-bold text-white"><?php echo $review_author_name; ?></div>
+												<div class="text-[14px] leading-[16px] font-normal text-white"><?php echo $review_author_role; ?></div>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					<?php endforeach; ?>
+						<?php endforeach; ?>
+					</div>
+					<!-- If we need pagination -->
+  					<div class="swiper-pagination"></div>
 				</div>
 			</div>
 		</div>
