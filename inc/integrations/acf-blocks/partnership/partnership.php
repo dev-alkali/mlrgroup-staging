@@ -50,16 +50,15 @@ $description = get_sub_field('description');
           <?php endif; ?>
         </div>
 
-       <?php if (have_rows('partnership_list')) : 
 
-  $rows = get_field('partnership_list') ?: [];
-  $cols = min(count($rows), 5);
-  $i = 1;
-?>
 
-  <div class="partnership-list grid gap-6 grid-cols-<?php echo $cols ?: 1; ?>">
+<?php if (have_rows('partnership_list')) : ?>
+  
+  <div class="partnership-list grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]">
     
-    <?php while (have_rows('partnership_list')) : the_row(); 
+    <?php 
+    $i = 1;
+    while (have_rows('partnership_list')) : the_row(); 
         
       $image   = get_sub_field('p_image');
       $title   = get_sub_field('p_title');
@@ -96,11 +95,15 @@ $description = get_sub_field('description');
 
       </div>
 
-    <?php $i++; endwhile; ?>
+    <?php 
+      $i++; 
+      endwhile; 
+    ?>
 
   </div>
 
 <?php endif; ?>
+
 
 
       </div> 
