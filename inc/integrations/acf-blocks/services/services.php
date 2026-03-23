@@ -120,10 +120,11 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
         <?php endwhile;
         endif; ?>
         <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
+          <?php if(get_sub_field('btn_path'))?>
             <div class="lg:hidden max-w-[358px] md:max-w-[334px] w-full flex justify-center">
-
               <a href="<?= esc_url(get_sub_field('btn_path')) ?>" class="btn-primary "><?= wp_kses_post(get_sub_field('btn_label')) ?></a>
             </div>
+          <?php endif?>
 
         <?php endwhile;
         endif; ?>
