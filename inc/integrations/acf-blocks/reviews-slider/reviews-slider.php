@@ -57,7 +57,7 @@ $mobileFlex = 'flex-col-reverse';
 							$review_author_role = $review_slider['review_author_role'];
 							?>
 							<div class="review-slider-item swiper-slide w-[clamp(360px,calc(360px+(100vw-375px)*0.98),1206px)]">
-								<div class="flex flex-col md:flex-row flex-wrap p-[20px] md:p-[30px] lg:p-[40px] bg-black text-white gap-[32px]">
+								<div class="flex flex-col md:flex-row p-[20px] md:p-[30px] lg:p-[40px] bg-black text-white gap-[32px] items-center">
 									<div class="w-full md:w-1/2 flex items-center justify-center">
 										<div class="w-full h-full">
 											<img src="<?php echo $review_image['url']; ?>" alt="<?php echo $review_image['alt']; ?>">
