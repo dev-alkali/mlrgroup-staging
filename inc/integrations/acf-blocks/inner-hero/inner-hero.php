@@ -22,8 +22,7 @@ if (have_rows('inner_hero')) :  while (have_rows('inner_hero')) : the_row();
   $bg_desktop_img = get_sub_field('bg_image');
   $bg_mobile_image = get_sub_field('bg_mobile_image');
 
-  $desktop_url = $bg_desktop_img ? esc_url($bg_desktop_img) : '';
-  $mobile_url  = $bg_mobile_img  ? esc_url($bg_mobile_img)  : $desktop_url;
+
 
 ?>
 
@@ -62,7 +61,7 @@ if (have_rows('inner_hero')) :  while (have_rows('inner_hero')) : the_row();
 <?php else: ?>
 
 
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> w-full px-4 md:px-10 bg-center bg-cover bg-no-repeat bg-[rgba(0,0,0,0.5)] bg-blend-overlay" style="--bg-desktop: url('<?php echo $desktop_url; ?>');<?php if($mobile_url): ?>--bg-mobile: url('<?php echo $mobile_url; ?>');<?php endif; ?>">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> w-full px-4 md:px-10 bg-center bg-cover bg-no-repeat bg-[rgba(0,0,0,0.5)] bg-blend-overlay" style="--bg-desktop: url('<?php echo $bg_desktop_img; ?>');<?php if($bg_mobile_image): ?>--bg-mobile: url('<?php echo $bg_mobile_image; ?>');<?php endif; ?>">
       <div class="gap-10 w-full wrapper min-h-screen md:min-h-[670px] pt-[80px] md:pt-[118px] pb-[80px] md:pb-[60px] flex items-end ">
         <div class="max-w-[800px]">
           <?php if($title_row_1 || $title_row_2): ?>
