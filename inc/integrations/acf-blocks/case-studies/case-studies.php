@@ -134,12 +134,7 @@ if (!empty($block['className'])) {
             $grid_class = 'grid max-[1024px]:grid-cols-1 min-[1024px]:grid-cols-2 min-[1024px]:grid-rows-2 gap-5';
             break;
         case 4:
-            /*
-             * 4-col grid so widths flip between rows:
-             *   Row 1: [Item1 col-span-3 WIDE ] [Item2 col-span-1 NARROW]
-             *   Row 2: [Item3 col-span-1 NARROW] [Item4 col-span-3 WIDE ]
-             */
-            $grid_class = 'grid max-[600px]:grid-cols-1 min-[600px]:grid-cols-2 min-[1024px]:grid-cols-4 min-[1024px]:grid-rows-2 gap-5';
+            $grid_class = 'grid max-[600px]:grid-cols-1 min-[600px]:grid-cols-2 min-[1024px]:[grid-template-columns:3fr_1fr] min-[1024px]:grid-rows-2 gap-5';
             break;
         case 5:
         default:
@@ -167,11 +162,11 @@ if (!empty($block['className'])) {
                     ];
                     $span_class = $span_map[$item_index] ?? '';
                 } elseif ($item_count === 4) {
-                    $span_map = [
-                        1 => 'min-[1024px]:col-span-3',
-                        2 => 'min-[1024px]:col-span-1',
-                        3 => 'min-[1024px]:col-span-1',
-                        4 => 'min-[1024px]:col-span-3',
+                     $span_map = [
+                        1 => '',                         // auto → col 1 (3fr, wide)   row 1
+                        2 => '',                         // auto → col 2 (1fr, narrow) row 1
+                        3 => 'min-[1024px]:col-start-2', // forced → col 2 (1fr, narrow) row 2
+                        4 => '',                         // auto-fills → col 1 (3fr, wide) row 2
                     ];
                     $span_class = $span_map[$item_index] ?? '';
                 } elseif ($item_count === 3 && $item_index === 1) {
