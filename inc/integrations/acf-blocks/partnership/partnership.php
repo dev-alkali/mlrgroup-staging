@@ -66,7 +66,7 @@ if ($background_color == 'black') {
             </h2>
             <?php endif; ?>
             <?php if($description): ?>
-              <div class="md:basis-[60%] max-md:w-full md:pl-[20px]"><p class="font-body font-normal text-[18px] leading-[26px] tracking-[0em] <?php echo $descClass; ?>"><?php echo $description; ?></p></div>
+              <div class="max-md:w-full "><p class="font-body font-normal text-[18px] leading-[26px] tracking-[0em] <?php echo $descClass; ?>"><?php echo $description; ?></p></div>
             <?php endif; ?>
           </div>
           
