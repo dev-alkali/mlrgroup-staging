@@ -747,6 +747,10 @@
     color: #fff;
   }
 
+  @media(max-width: 1199px){
+    .solutions-tab button{font-size: 16px;}
+  }
+
   @media (max-width: 599px) {
     .solutions-tab button {
       font-size: 14px;
