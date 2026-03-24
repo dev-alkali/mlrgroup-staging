@@ -240,7 +240,7 @@ if (!empty($block['className'])) {
                        class="<?= $bg_image === '' ? 'color-bg-hover' : 'collection-gradient-box' ?>
                               flex flex-col justify-end w-full h-full px-6 py-10 relative">
 
-                        <div class="flex flex-col relative z-20 items-start
+                        <div class="mb-[40px] flex flex-col relative z-20 items-start
                                     <?= esc_url(get_sub_field('icon')) !== '' ? '' : 'pt-[88px]' ?>
                                     gap-5 self-stretch w-full flex-[0_0_auto]">
 
