@@ -9,9 +9,9 @@
         <div class="flex flex-col lg:flex-row w-full lg:justify-between items-start gap-16 md:gap-28">
           <!-- Brand -->
           <div class="flex flex-col max-w-[305px] w-full items-start gap-5">
-            <div class="relative max-w-[274px] overflow-hidden">
+            <a class="relative max-w-[274px] overflow-hidden flex" href="<?= home_url(); ?>">
               <img class="w-full max-w-[266px] md:max-w-[274px] h-[61.8px]" src="<?= esc_url(get_field('footer_logo', 'option')); ?>" alt="logo">
-            </div>
+            </a>
             <div class="flex gap-4 items-center">
               <?php if (have_rows('social_links', 'option')): while (have_rows('social_links', 'option')): the_row(); ?>
                 <a href="<?= esc_url(get_sub_field('link')) ?>">
