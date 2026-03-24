@@ -32,7 +32,7 @@ $background_color = get_sub_field('background_color');
 
 // Background & text color classes based on selected background color
 if ($background_color == 'black') {
-  $bgclassName  = 'bg-black md:mt-[40px]';
+  $bgclassName  = 'bg-black';
   $textClass    = 'text-white';
   $titleClass   = 'text-white';
   $subtitleClass = 'text-white';
