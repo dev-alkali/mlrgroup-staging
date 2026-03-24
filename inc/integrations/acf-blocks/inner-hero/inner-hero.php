@@ -19,6 +19,7 @@ if (have_rows('inner_hero')) :  while (have_rows('inner_hero')) : the_row();
   $title_row_1 = get_sub_field('title_row_1');
   $title_row_2 = get_sub_field('title_row_2');
   $description = get_sub_field('description');
+
   $bg_desktop_img = get_sub_field('bg_image');
   $bg_mobile_image = get_sub_field('bg_mobile_image');
 
@@ -100,7 +101,7 @@ if (have_rows('inner_hero')) :  while (have_rows('inner_hero')) : the_row();
     background-image: var(--bg-desktop);
     <?php if($bg_mobile_image): ?>
       @media(max-width: 767px){
-        background-image: var(--bg-mobile);
+        background-image: var(--bg_mobile_image);
       }
     <?php endif; ?>
   }
