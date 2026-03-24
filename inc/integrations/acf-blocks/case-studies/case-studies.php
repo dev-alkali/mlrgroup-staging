@@ -91,7 +91,7 @@ if (!empty($block['className'])) {
             <a href="<?= $item['link_path'] ?>"
                class="<?= !$has_image ? 'color-bg-hover' : 'collection-gradient-box' ?> flex flex-col justify-end w-full h-full px-6 py-10 relative">
 
-                <div class="flex flex-col relative z-20 items-start <?= $item['icon'] !== '' ? '' : 'pt-[88px]' ?> gap-5 self-stretch w-full flex-[0_0_auto]">
+                <div class="mb-[32px] md:mb-[40px] flex flex-col relative z-20 items-start <?= $item['icon'] !== '' ? '' : 'pt-[88px]' ?> gap-5 self-stretch w-full flex-[0_0_auto]">
                     <?php if ($item['icon'] !== '') : ?>
                         <img class="relative w-[70px] h-[70px] object-cover" src="<?= $item['icon'] ?>" alt="icon" />
                     <?php endif; ?>
@@ -222,9 +222,9 @@ if (!empty($block['className'])) {
                     <?= $bg_image !== '' ? 'style="background-image:url(' . $bg_image . ');background-position:50% 50%;background-size:cover;background-repeat:no-repeat;"' : '' ?>>
 
                     <a href="<?= wp_kses_post(get_sub_field('link_path')) ?>"
-                       class="<?= $bg_image === '' ? 'color-bg-hover' : 'collection-gradient-box' ?> flex flex-col items-end justify-between w-full h-full px-6 py-10 relative">
+                       class="<?= $bg_image === '' ? 'color-bg-hover' : 'collection-gradient-box' ?> flex flex-col justify-end w-full h-full px-6 py-10 relative">
 
-                        <div class="flex flex-col relative z-20 items-start <?= esc_url(get_sub_field('icon')) !== '' ? '' : 'pt-[88px]' ?> gap-5 self-stretch w-full flex-[0_0_auto]">
+                        <div class="mb-[32px] md:mb-[40px] flex flex-col relative z-20 items-start <?= esc_url(get_sub_field('icon')) !== '' ? '' : 'pt-[88px]' ?> gap-5 self-stretch w-full flex-[0_0_auto]">
                             <?php if (esc_url(get_sub_field('icon')) !== '') : ?>
                                 <img class="relative w-[70px] h-[70px] object-cover" src="<?= esc_url(get_sub_field('icon')) ?>" alt="icon" />
                             <?php endif; ?>
