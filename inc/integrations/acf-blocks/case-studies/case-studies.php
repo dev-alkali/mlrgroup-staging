@@ -99,47 +99,25 @@ if (!empty($block['className'])) {
         <?php endwhile; endif; */ ?>
 
 
-
-
-
 <?php if (have_rows('main_content')) : while (have_rows('main_content')) : the_row();
 
     $items      = get_sub_field('items');
     $item_count = is_array($items) ? count($items) : 0;
     $item_index = 0;
 
-    /*
-     * ┌─────────────────────────────────────────────────────────┐
-     *  Layout rules per item count
-     *
-     *  1 item  → 1 col  | item1: desktop 800px  / mobile 380px
-     *  2 items → 2 cols | all:   desktop 800px  / mobile 380px | gap 20px
-     *  3 items → 2 cols | item1: desktop 800px (row-span-2)     | gap 20px
-     *                   | item2+3: desktop 390px
-     *  4 items → 2 cols | all:   desktop 390px  / mobile 380px  | gap 20px
-     *  5 items → 6 cols | item1: desktop 800px (col-span-2 row-span-2) / mobile 380px
-     *                   | item2-5: desktop 390px                | gap 20px
-     * └─────────────────────────────────────────────────────────┘
-     */
-
     switch ($item_count) {
         case 1:
             $grid_class = 'grid grid-cols-1 gap-5';
             break;
         case 2:
-            // 750:590 ratio → 75fr : 59fr
             $grid_class = 'grid max-[1024px]:grid-cols-1 min-[1024px]:[grid-template-columns:75fr_59fr] gap-5';
             break;
         case 3:
             $grid_class = 'grid max-[1024px]:grid-cols-1 min-[1024px]:grid-cols-2 min-[1024px]:grid-rows-2 gap-5';
             break;
         case 4:
-            /*
-             * 4-col grid so widths flip between rows:
-             *   Row 1: [Item1 col-span-3 WIDE ] [Item2 col-span-1 NARROW]
-             *   Row 2: [Item3 col-span-1 NARROW] [Item4 col-span-3 WIDE ]
-             */
-            $grid_class = 'grid max-[600px]:grid-cols-1 min-[600px]:grid-cols-2 min-[1024px]:grid-cols-4 min-[1024px]:grid-rows-2 gap-5';
+            // flex-wrap so row 1: wide+narrow, row 2: narrow+wide
+            $grid_class = 'flex flex-wrap gap-5';
             break;
         case 5:
         default:
@@ -154,7 +132,7 @@ if (!empty($block['className'])) {
             <?php if (have_rows('items')) : while (have_rows('items')) : the_row();
                 $item_index++;
 
-                // ── Span classes ─────────────────────────────────────────────
+                // ── Span / width classes ──────────────────────────────────────
                 $span_class = '';
 
                 if ($item_count === 5) {
@@ -166,28 +144,33 @@ if (!empty($block['className'])) {
                         5 => 'min-[1024px]:col-span-3',
                     ];
                     $span_class = $span_map[$item_index] ?? '';
+
                 } elseif ($item_count === 4) {
+                    /*
+                     * Row 1: Item1 WIDE  (75%) | Item2 NARROW (25%)
+                     * Row 2: Item3 NARROW(25%) | Item4 WIDE   (75%)
+                     *
+                     * With gap-5 (20px), each pair must fill the row:
+                     *   wide   = calc(75% - 10px)
+                     *   narrow = calc(25% - 10px)
+                     * → 75%-10px + 20px gap + 25%-10px = 100% ✓
+                     */
+                    $wide   = 'flex-none max-[600px]:w-full min-[600px]:max-[1024px]:w-[calc(50%-10px)] min-[1024px]:w-[calc(75%-10px)]';
+                    $narrow = 'flex-none max-[600px]:w-full min-[600px]:max-[1024px]:w-[calc(50%-10px)] min-[1024px]:w-[calc(25%-10px)]';
+
                     $span_map = [
-                        1 => 'min-[1024px]:col-span-3',
-                        2 => 'min-[1024px]:col-span-1',
-                        3 => 'min-[1024px]:col-span-1',
-                        4 => 'min-[1024px]:col-span-3',
+                        1 => $wide,
+                        2 => $narrow,
+                        3 => $narrow,
+                        4 => $wide,
                     ];
                     $span_class = $span_map[$item_index] ?? '';
+
                 } elseif ($item_count === 3 && $item_index === 1) {
                     $span_class = 'min-[1024px]:row-span-2';
                 }
 
-                // ── Height classes ───────────────────────────────────────────
-                /*
-                 *  1 item        → all: 380px mobile / 800px desktop
-                 *  2 items       → all: 380px mobile / 800px desktop
-                 *  3 items       → item1: 380px mobile / 800px desktop
-                 *                  item2+: 380px mobile / 390px desktop
-                 *  4 items       → all: 380px mobile / 390px desktop
-                 *  5 items       → item1: 380px mobile / 800px desktop
-                 *                  item2+: 380px mobile / 390px desktop
-                 */
+                // ── Height classes ────────────────────────────────────────────
                 if ($item_count === 1) {
                     $height_class = 'h-[380px] min-[1024px]:h-[800px]';
                 } elseif ($item_count === 2) {
@@ -204,7 +187,7 @@ if (!empty($block['className'])) {
                         : 'h-[380px] min-[1024px]:h-[390px]';
                 }
 
-                // ── Existing bg / text / arrow logic (unchanged) ─────────────
+                // ── bg / text / arrow (unchanged) ─────────────────────────────
                 $bg_color  = '';
                 $bg_image  = esc_url(get_sub_field('bg_image'));
 
@@ -238,9 +221,9 @@ if (!empty($block['className'])) {
 
                     <a href="<?= wp_kses_post(get_sub_field('link_path')) ?>"
                        class="<?= $bg_image === '' ? 'color-bg-hover' : 'collection-gradient-box' ?>
-                              flex flex-col justify-end w-full h-full px-6 py-10 relative">
+                              flex flex-col items-end justify-between w-full h-full px-6 py-10 relative">
 
-                        <div class="mb-[40px] flex flex-col relative z-20 items-start
+                        <div class="flex flex-col relative z-20 items-start
                                     <?= esc_url(get_sub_field('icon')) !== '' ? '' : 'pt-[88px]' ?>
                                     gap-5 self-stretch w-full flex-[0_0_auto]">
 
@@ -276,7 +259,6 @@ if (!empty($block['className'])) {
     </div>
 
 <?php endwhile; endif; ?>
-
 
 
 
