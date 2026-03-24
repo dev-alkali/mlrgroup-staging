@@ -1167,14 +1167,14 @@
   height: 219px;
 }
 
-.answer{
+.faq-sec .answer{
   @apply max-h-0 overflow-hidden transition-all duration-300 ease-in-out;
 }
-.answer.active{
+.faq-sec .answer.active{
   @apply max-h-[1000px] overflow-hidden transition-all duration-300 ease-in-out;
 }
 
-.question::before{
+.faq-sec .question::before{
     content: '';
     position: absolute;
     top: 0;
@@ -1189,14 +1189,10 @@
     z-index: 1;
 }
 
-.question.active::before{
+.faq-sec .question.active::before{
   @apply rotate-180;
 }
 
-/* .question.active{
+.newsletter-gf--text b{
   @apply font-bold;
 }
-
-.question:not(.active){
-  @apply font-normal;
-} */

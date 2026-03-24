@@ -121,7 +121,7 @@
 
         <!-- Newsletter -->
         <div class="flex flex-col gap-1 w-full newsletter-gf-container">
-          <div class="font-poppins font-medium text-base leading-6 text-[#F9FAFB]">
+          <div class="font-poppins font-light text-base leading-6 text-[#F9FAFB] newsletter-gf--text">
             <?= get_field('newsletter_title', 'option'); ?>
           </div>
           <?php
