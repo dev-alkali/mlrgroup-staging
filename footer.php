@@ -68,7 +68,7 @@
                       <img class="w-4 h-4" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-blue.svg" alt="">
                       <a href="<?= esc_url($item->url) ?>"><?= esc_html($item->title) ?></a>
                     </div>
-                    <span class="dropdown-item-footer md:hidden">
+                    <span class="dropdown-item-footer sm:hidden">
                       <img src="<?= get_template_directory_uri() ?>/assets/imgs/Caret-down.svg" alt="">
                     </span>
                   </div>
@@ -97,7 +97,7 @@
                   <img class="w-4 h-4" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-blue.svg" alt="">
                   <a href="#">Contact</a>
                 </div>
-                <span class="dropdown-item-footer md:hidden">
+                <span class="dropdown-item-footer sm:hidden">
                   <img src="/wp-content/themes/Mlrgroup/assets/imgs/Caret-down.svg" alt="">
                 </span>
               </div>
