@@ -54,7 +54,7 @@ if ($background_color == 'black') {
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec <?php echo $bgclassName; ?> px-4 md:px-10 py-[60px] md:py-[120px]">
       <div class="wrapper flex flex-col gap-[60px]">
         <div class="top-title-sec flex flex-wrap">
-          <div class="top_title md:basis-[40%] max-md:w-full md:pr-[20px]">
+          <div class="top_title md:max-w-[750px] max-md:w-full md:pr-[20px]">
             <?php if($title_row_1 || $title_row_2): ?>
             <h2 class="text-[clamp(36px,6vw,68px)] leading-[clamp(44px,7vw,76px)] tracking-[-4%] <?php echo $titleClass; ?> font-heading mb-[20px]">
               <?php if($title_row_1): ?>
