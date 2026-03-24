@@ -32,16 +32,7 @@
 body .newsletter-gf-container .gform_wrapper.gravity-theme .gform_footer{margin-top:0px !important;margin:0px !important}
 .footer-text:hover{color:#ffffff;}
 
-/*.footer-privacy-menu .footer-item .dropdown-item-footer,
-.footer-privacy-menu .footer-item img{display: none;}
-.footer-privacy-menu .footer-item .footer-title{text-transform: unset !important;font-weight: normal !important;color: #D1D5DC;}
-
-.footer-privacy-menu .footer-item a{display:inline-block;}
-.footer-privacy-menu .footer-item .flex-1{flex: unset;}
-.footer-privacy-menu .footer-item,
-.footer-privacy-menu .footer-title{display:block;}*/
-
-
+.case-studies-sec .collection-item .collection-gradient-box:after {background: linear-gradient(318.51deg, rgba(0, 0, 0, 0.9) -57.23%, rgba(253, 67, 56, 0.9) 105.13%);}
 
 
 @media (min-width: 1441px) {

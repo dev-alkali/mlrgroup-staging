@@ -16,13 +16,13 @@ if (!empty($block['className'])) {
 ?>
 <?php if (have_rows('case_studies')) :  while (have_rows('case_studies')) : the_row(); ?>
 
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex justify-center px-4 min-[600px]:px-10 py-[60px] min-[600px]:py-[120px] bg-white">
-      <div class="flex flex-col w-full items-start gap-8 min-[600px]:gap-[60px] max-w-[1920px]">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> case-studies-sec flex justify-center px-4 md:px-10 py-[60px] md:py-[120px] bg-white">
+      <div class="flex flex-col w-full items-start gap-8 md:gap-[60px] max-w-[1920px]">
         <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
 
             <div class="flex flex-col  items-start gap-5 relative ">
               <h2
-                class=" flex flex-col font-heading text-[44px] min-[600px]:text-[54px] min-[767px]:text-[68px] tracking-[-2%] max-w-[700px] leading-[56px] min-[600px]:leading-[64px] min-[767px]:leading-[78px]">
+                class=" flex flex-col font-heading text-[44px] md:text-[54px] min-[767px]:text-[68px] tracking-[-2%] max-w-[700px] leading-[56px] md:leading-[64px] min-[767px]:leading-[78px]">
                 <span class="font-bold text-neutral-800 "><?= wp_kses_post(get_sub_field('title_row_1')) ?> </span>
                 <span class="font-light text-neutral-500 "><?= wp_kses_post(get_sub_field('title_row_2')) ?></span>
               </h2>
@@ -89,19 +89,19 @@ if (!empty($block['className'])) {
         ?>
         <div class="<?= $text_color ?> <?= $size_class ?> <?= $extra_class ?> collection-item <?= !$has_image ? $bg_color : '' ?>" <?= $bg_style ?>>
             <a href="<?= $item['link_path'] ?>"
-               class="<?= !$has_image ? 'color-bg-hover' : 'collection-gradient-box' ?> flex flex-col items-end justify-between w-full h-full px-6 py-10 relative">
+               class="<?= !$has_image ? 'color-bg-hover' : 'collection-gradient-box' ?> flex flex-col justify-end w-full h-full px-6 py-10 relative">
 
-                <div class="flex flex-col relative z-20 items-start <?= $item['icon'] !== '' ? '' : 'pt-[88px]' ?> gap-5 self-stretch w-full flex-[0_0_auto]">
+                <div class="mb-[32px] md:mb-[40px] flex flex-col relative z-20 items-start <?= $item['icon'] !== '' ? '' : 'pt-[88px]' ?> gap-5 self-stretch w-full flex-[0_0_auto]">
                     <?php if ($item['icon'] !== '') : ?>
                         <img class="relative w-[70px] h-[70px] object-cover" src="<?= $item['icon'] ?>" alt="icon" />
                     <?php endif; ?>
-                    <p class="relative font-heading text-[20px] min-[600px]:text-[24px] max-w-[406px] tracking-[-2%] leading-7 min-[600px]:leading-8">
+                    <p class="relative font-heading text-[20px] md:text-[24px] max-w-[406px] tracking-[-2%] leading-7 md:leading-8">
                         <?= $item['title'] ?>
                     </p>
                 </div>
 
                 <p class="inline-flex z-20 gap-2 relative flex-[0_0_auto]">
-                    <span class="relative w-fit uppercase font-heading font-semibold text-base text-center tracking-[0] leading-6 min-[600px]:leading-[18px] whitespace-nowrap">
+                    <span class="relative w-fit uppercase font-heading font-semibold text-base text-center tracking-[0] leading-6 md:leading-[18px] whitespace-nowrap">
                         <?= $item['link_label'] ?>
                     </span>
                     <img class="relative w-4 h-4 max-[600px]:mt-[3px] arrow" src="<?= $arrow_color ?>" alt="arrow" />
@@ -188,12 +188,12 @@ if (!empty($block['className'])) {
                     $span_map = [1 => $wide, 2 => $narrow, 3 => $narrow, 4 => $wide];
                     $span_class = $span_map[$item_index] ?? '';
                 } elseif ($item_count === 3 && $item_index === 1) {
-                    $span_class = 'min-[1024px]:row-span-2';
+                    $span_class = 'lg:row-span-2';
                 }
 
                 // Height classes
                 if (in_array($item_count, [1, 2])) {
-                    $height_class = 'h-[380px] min-[1024px]:h-[800px]';
+                    $height_class = 'h-[380px] lg:h-[800px]';
                 } elseif ($item_count === 3) {
                     $height_class = ($item_index === 1) ? 'h-[380px] lg:h-[800px]' : 'h-[380px] lg:h-[390px]';
                 } else { // 4
@@ -222,22 +222,22 @@ if (!empty($block['className'])) {
                     <?= $bg_image !== '' ? 'style="background-image:url(' . $bg_image . ');background-position:50% 50%;background-size:cover;background-repeat:no-repeat;"' : '' ?>>
 
                     <a href="<?= wp_kses_post(get_sub_field('link_path')) ?>"
-                       class="<?= $bg_image === '' ? 'color-bg-hover' : 'collection-gradient-box' ?> flex flex-col items-end justify-between w-full h-full px-6 py-10 relative">
+                       class="<?= $bg_image === '' ? 'color-bg-hover' : 'collection-gradient-box' ?> flex flex-col justify-end w-full h-full px-6 py-10 relative">
 
-                        <div class="flex flex-col relative z-20 items-start <?= esc_url(get_sub_field('icon')) !== '' ? '' : 'pt-[88px]' ?> gap-5 self-stretch w-full flex-[0_0_auto]">
+                        <div class="mb-[32px] md:mb-[40px] flex flex-col relative z-20 items-start <?= esc_url(get_sub_field('icon')) !== '' ? '' : 'pt-[88px]' ?> gap-5 self-stretch w-full flex-[0_0_auto]">
                             <?php if (esc_url(get_sub_field('icon')) !== '') : ?>
                                 <img class="relative w-[70px] h-[70px] object-cover" src="<?= esc_url(get_sub_field('icon')) ?>" alt="icon" />
                             <?php endif; ?>
-                            <p class="relative font-heading text-[20px] min-[600px]:text-[24px] max-w-[406px] tracking-[-2%] leading-7 min-[600px]:leading-8">
+                            <p class="relative font-heading text-[20px] md:text-[24px] max-w-[406px] tracking-[-2%] leading-7 md:leading-8">
                                 <?= wp_kses_post(get_sub_field('title')) ?>
                             </p>
                         </div>
 
                         <p class="inline-flex z-20 gap-2 relative flex-[0_0_auto]">
-                            <span class="relative w-fit uppercase font-heading font-semibold text-base text-center tracking-[0] leading-6 min-[600px]:leading-[18px] whitespace-nowrap">
+                            <span class="relative w-fit uppercase font-heading font-semibold text-base text-center tracking-[0] leading-6 md:leading-[18px] whitespace-nowrap">
                                 <?= wp_kses_post(get_sub_field('link_label')) ?>
                             </span>
-                            <img class="relative w-4 h-4 max-[600px]:mt-[3px] arrow" src="<?= $arrow_color ?>" alt="arrow" />
+                            <img class="relative w-4 h-4 max-md:mt-[3px] arrow" src="<?= $arrow_color ?>" alt="arrow" />
                         </p>
 
                     </a>
