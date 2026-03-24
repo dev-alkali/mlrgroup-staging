@@ -35,7 +35,7 @@ if (!empty($block['className'])) {
       <div class="flex-1 overflow-hidden relative h-[131px] md:h-auto">
 
         <div class="absolute top-[-30px] left-[-7%] w-[189px] max-[890px]:hidden h-[200px] bg-white z-20 blur-[16px]"></div>
-        <div class="absolute top-[30px] right-[-150px] w-[189px] h-[200px] max-[890px]:hidden bg-white z-20  blur-[16px]"></div>
+        <div class="absolute top-[-30px] right-[-140px] w-[189px] h-[200px] max-[890px]:hidden bg-white z-20  blur-[16px]"></div>
 
 
         <div class="marquee-wrapper overflow-hidden w-full">
