@@ -36,9 +36,9 @@ if ($background_color == 'black') {
   $textClass    = 'text-white';
   $titleClass   = 'text-white';
   $subtitleClass = 'text-[#a3a3a3]';
-  $descClass    = 'text-[#d4d4d4]';
+  $descClass    = 'text-[#E5E5E5]';
   $cardTitleClass = 'text-white';
-  $cardTextClass  = 'text-[#d4d4d4]';
+  $cardTextClass  = 'text-[#E5E5E5]';
 } else {
   // Default: white
   $bgclassName  = 'bg-white';
@@ -65,10 +65,11 @@ if ($background_color == 'black') {
               <?php endif; ?>
             </h2>
             <?php endif; ?>
+            <?php if($description): ?>
+              <div class="md:basis-[60%] max-md:w-full md:pl-[20px]"><p class="font-body font-normal text-[18px] leading-[26px] tracking-[0em] <?php echo $descClass; ?>"><?php echo $description; ?></p></div>
+            <?php endif; ?>
           </div>
-          <?php if($description): ?>
-            <div class="md:basis-[60%] max-md:w-full md:pl-[20px]"><p class="font-body font-normal text-[18px] leading-[26px] tracking-[0em] <?php echo $descClass; ?>"><?php echo $description; ?></p></div>
-          <?php endif; ?>
+          
         </div>
 
 
