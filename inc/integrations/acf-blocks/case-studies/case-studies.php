@@ -98,224 +98,165 @@ if (!empty($block['className'])) {
             </div>
         <?php endwhile; endif; */ ?>
 
-        <?php
 
-/**
- * Case Studies Block Template.
- */
+<?php if (have_rows('main_content')) : while (have_rows('main_content')) : the_row();
 
-$id = 'case_studies-' . $block['id'];
-if (!empty($block['anchor'])) {
-  $id = $block['anchor'];
-}
+    $items      = get_sub_field('items');
+    $item_count = is_array($items) ? count($items) : 0;
+    $item_index = 0;
 
-$className = 'case_studies';
-if (!empty($block['className'])) {
-  $className .= ' ' . $block['className'];
-}
+    switch ($item_count) {
+        case 1:
+            $grid_class = 'grid grid-cols-1 gap-5';
+            break;
+        case 2:
+            $grid_class = 'grid max-[1024px]:grid-cols-1 min-[1024px]:[grid-template-columns:75fr_59fr] gap-5';
+            break;
+        case 3:
+            $grid_class = 'grid max-[1024px]:grid-cols-1 min-[1024px]:grid-cols-2 min-[1024px]:grid-rows-2 gap-5';
+            break;
+        case 4:
+            // flex-wrap so row 1: wide+narrow, row 2: narrow+wide
+            $grid_class = 'flex flex-wrap gap-5';
+            break;
+        case 5:
+        default:
+            $grid_class = 'grid max-[600px]:grid-cols-1 min-[600px]:grid-cols-2 min-[1024px]:grid-cols-6 min-[1024px]:grid-rows-2 gap-5';
+            break;
+    }
 ?>
-<?php if (have_rows('case_studies')) : while (have_rows('case_studies')) : the_row(); ?>
 
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex justify-center px-4 min-[600px]:px-10 py-[60px] min-[600px]:py-[120px] bg-white">
-      <div class="flex flex-col w-full items-start gap-8 min-[600px]:gap-[60px] max-w-[1920px]">
+    <div class="flex-col items-start w-full flex-[0_0_auto] flex relative">
+        <div class="<?= $grid_class ?> w-full">
 
-        <?php if (have_rows('header_content')) : while (have_rows('header_content')) : the_row(); ?>
-            <div class="flex flex-col items-start gap-5 relative">
-              <h2 class="flex flex-col font-heading text-[44px] min-[600px]:text-[54px] min-[767px]:text-[68px] tracking-[-2%] max-w-[700px] leading-[56px] min-[600px]:leading-[64px] min-[767px]:leading-[78px]">
-                <span class="font-bold text-neutral-800"><?= wp_kses_post(get_sub_field('title_row_1')) ?></span>
-                <span class="font-light text-neutral-500"><?= wp_kses_post(get_sub_field('title_row_2')) ?></span>
-              </h2>
-              <p class="font-body text-neutral-600 text-xl tracking-[0] leading-7">
-                <?= wp_kses_post(get_sub_field('paragraph')) ?>
-              </p>
-            </div>
-        <?php endwhile; endif; ?>
+            <?php if (have_rows('items')) : while (have_rows('items')) : the_row();
+                $item_index++;
 
-        <?php if (have_rows('main_content')) : while (have_rows('main_content')) : the_row();
+                // ── Span / width classes ──────────────────────────────────────
+                $span_class = '';
 
-            $items      = get_sub_field('items');
-            $item_count = is_array($items) ? count($items) : 0;
-            $item_index = 0;
+                if ($item_count === 5) {
+                    $span_map = [
+                        1 => 'min-[1024px]:col-span-2 min-[1024px]:row-span-2',
+                        2 => 'min-[1024px]:col-span-3',
+                        3 => 'min-[1024px]:col-span-1',
+                        4 => 'min-[1024px]:col-span-1',
+                        5 => 'min-[1024px]:col-span-3',
+                    ];
+                    $span_class = $span_map[$item_index] ?? '';
 
-            /*
-             * ┌──────────────────────────────────────────────────────────────┐
-             *  Layout rules per item count
-             *
-             *  1 item  → 1 col  | item1: desktop 800px  / mobile 380px
-             *  2 items → 2 cols | all:   desktop 800px  / mobile 380px
-             *  3 items → 2 cols | item1: desktop 800px (row-span-2)
-             *                   | item2+3: desktop 390px
-             *  4 items → flex   | row1: wide(~56%) + narrow(~44%)
-             *                   | row2: narrow(~44%) + wide(~56%)
-             *  5 items → 6 cols | item1: col-span-2 row-span-2 (800px tall)
-             *                   | item2 & 5: col-span-3 (same width)
-             *                   | item3 & 4: col-span-1 (same width)
-             * └──────────────────────────────────────────────────────────────┘
-             */
+                } elseif ($item_count === 4) {
+                    /*
+                     * Row 1: Item1 WIDE  (75%) | Item2 NARROW (25%)
+                     * Row 2: Item3 NARROW(25%) | Item4 WIDE   (75%)
+                     *
+                     * With gap-5 (20px), each pair must fill the row:
+                     *   wide   = calc(75% - 10px)
+                     *   narrow = calc(25% - 10px)
+                     * → 75%-10px + 20px gap + 25%-10px = 100% ✓
+                     */
+                    $wide   = 'flex-none w-full md:w-[calc(56%-10px)]';
+                    $narrow = 'flex-none w-full md:w-[calc(44%-10px)]';
 
-            switch ($item_count) {
-                case 1:
-                    $grid_class = 'grid grid-cols-1 gap-5';
-                    break;
-                case 2:
-                    $grid_class = 'grid max-[1024px]:grid-cols-1 min-[1024px]:[grid-template-columns:75fr_59fr] gap-5';
-                    break;
-                case 3:
-                    $grid_class = 'grid max-[1024px]:grid-cols-1 min-[1024px]:grid-cols-2 min-[1024px]:grid-rows-2 gap-5';
-                    break;
-                case 4:
-                    $grid_class = 'flex flex-wrap gap-5';
-                    break;
-                case 5:
-                default:
-                    $grid_class = 'grid max-[600px]:grid-cols-1 min-[600px]:grid-cols-2 min-[1024px]:grid-cols-6 min-[1024px]:grid-rows-2 gap-5';
-                    break;
-            }
-        ?>
+                    $span_map = [
+                        1 => $wide,
+                        2 => $narrow,
+                        3 => $narrow,
+                        4 => $wide,
+                    ];
+                    $span_class = $span_map[$item_index] ?? '';
 
-            <div class="flex-col items-start w-full flex-[0_0_auto] flex relative">
-                <div class="<?= $grid_class ?> w-full">
+                } elseif ($item_count === 3 && $item_index === 1) {
+                    $span_class = 'min-[1024px]:row-span-2';
+                }
 
-                    <?php if (have_rows('items')) : while (have_rows('items')) : the_row();
-                        $item_index++;
+                // ── Height classes ────────────────────────────────────────────
+                if ($item_count === 1) {
+                    $height_class = 'h-[380px] min-[1024px]:h-[800px]';
+                } elseif ($item_count === 2) {
+                    $height_class = 'h-[380px] min-[1024px]:h-[800px]';
+                } elseif ($item_count === 3) {
+                    $height_class = ($item_index === 1)
+                        ? 'h-[380px] min-[1024px]:h-[800px]'
+                        : 'h-[380px] min-[1024px]:h-[390px]';
+                } elseif ($item_count === 4) {
+                    $height_class = 'h-[380px] min-[1024px]:h-[390px]';
+                } else { // 5
+                    $height_class = ($item_index === 1)
+                        ? 'h-[380px] min-[1024px]:h-[800px]'
+                        : 'h-[380px] min-[1024px]:h-[390px]';
+                }
 
-                        // ── Span / width classes ──────────────────────────────
-                        $span_class = '';
+                // ── bg / text / arrow (unchanged) ─────────────────────────────
+                $bg_color  = '';
+                $bg_image  = esc_url(get_sub_field('bg_image'));
 
-                        if ($item_count === 5) {
-                            /*
-                             * 6-col grid, item1 anchors col1-2 rows1-2.
-                             * Explicit col-start on every item guarantees
-                             * item2 & item5 render at identical widths (col-span-3),
-                             * and item3 & item4 render at identical widths (col-span-1).
-                             *
-                             * Row 1: [item1 col1-2] [item2 col3-5] [item3 col6]
-                             * Row 2: [item1 col1-2] [item4 col3  ] [item5 col4-6]
-                             */
-                            $span_map = [
-                                1 => 'min-[1024px]:col-start-1 min-[1024px]:col-span-2 min-[1024px]:row-span-2',
-                                2 => 'min-[1024px]:col-start-3 min-[1024px]:col-span-3',
-                                3 => 'min-[1024px]:col-start-6 min-[1024px]:col-span-1',
-                                4 => 'min-[1024px]:col-start-3 min-[1024px]:col-span-1',
-                                5 => 'min-[1024px]:col-start-4 min-[1024px]:col-span-3',
-                            ];
-                            $span_class = $span_map[$item_index] ?? '';
+                if (wp_kses_post(get_sub_field('bg_color')) == 'white') {
+                    $bg_color = 'bg-white';
+                } elseif (wp_kses_post(get_sub_field('bg_color')) == 'gray') {
+                    $bg_color = 'bg-[#CCCCCC]';
+                } elseif (wp_kses_post(get_sub_field('bg_color')) == 'blue') {
+                    $bg_color = 'bg-[#4a78ff]';
+                }
 
-                        } elseif ($item_count === 4) {
-                            /*
-                             * flex-wrap layout:
-                             * Row 1: Item1 WIDE  (~56%) | Item2 NARROW (~44%)
-                             * Row 2: Item3 NARROW(~44%) | Item4 WIDE   (~56%)
-                             *
-                             * calc subtracts half the gap (20px / 2 = 10px) per item.
-                             */
-                            $wide   = 'flex-none max-[600px]:w-full min-[600px]:max-[1024px]:w-[calc(50%-10px)] min-[1024px]:w-[calc(56%-10px)]';
-                            $narrow = 'flex-none max-[600px]:w-full min-[600px]:max-[1024px]:w-[calc(50%-10px)] min-[1024px]:w-[calc(44%-10px)]';
+                $text_color  = '';
+                $arrow_color = '';
+                if (wp_kses_post(get_sub_field('text_color')) == 'white') {
+                    $text_color  = 'text-white';
+                    $arrow_color = get_template_directory_uri() . '/assets/imgs/Arrow.svg';
+                } elseif (wp_kses_post(get_sub_field('text_color')) == 'black') {
+                    $text_color  = 'text-black';
+                    $arrow_color = get_template_directory_uri() . '/assets/imgs/Arrow-black.svg';
+                }
+            ?>
 
-                            $span_map = [
-                                1 => $wide,
-                                2 => $narrow,
-                                3 => $narrow,
-                                4 => $wide,
-                            ];
-                            $span_class = $span_map[$item_index] ?? '';
+                <div class="<?= $text_color ?> <?= $span_class ?> <?= $height_class ?> collection-item
+                            <?= $bg_image === '' ? $bg_color : '' ?>"
+                    <?= $bg_image !== '' ? 'style="
+                        background-image: url(' . $bg_image . ');
+                        background-position: 50% 50%;
+                        background-size: cover;
+                        background-repeat: no-repeat;"'
+                    : ''; ?>>
 
-                        } elseif ($item_count === 3 && $item_index === 1) {
-                            $span_class = 'min-[1024px]:row-span-2';
-                        }
+                    <a href="<?= wp_kses_post(get_sub_field('link_path')) ?>"
+                       class="<?= $bg_image === '' ? 'color-bg-hover' : 'collection-gradient-box' ?>
+                              flex flex-col items-end justify-between w-full h-full px-6 py-10 relative">
 
-                        // ── Height classes ────────────────────────────────────
-                        if ($item_count === 1) {
-                            $height_class = 'h-[380px] min-[1024px]:h-[800px]';
-                        } elseif ($item_count === 2) {
-                            $height_class = 'h-[380px] min-[1024px]:h-[800px]';
-                        } elseif ($item_count === 3) {
-                            $height_class = ($item_index === 1)
-                                ? 'h-[380px] min-[1024px]:h-[800px]'
-                                : 'h-[380px] min-[1024px]:h-[390px]';
-                        } elseif ($item_count === 4) {
-                            $height_class = 'h-[380px] min-[1024px]:h-[390px]';
-                        } else { // 5
-                            $height_class = ($item_index === 1)
-                                ? 'h-[380px] min-[1024px]:h-[800px]'
-                                : 'h-[380px] min-[1024px]:h-[390px]';
-                        }
+                        <div class="flex flex-col relative z-20 items-start
+                                    <?= esc_url(get_sub_field('icon')) !== '' ? '' : 'pt-[88px]' ?>
+                                    gap-5 self-stretch w-full flex-[0_0_auto]">
 
-                        // ── bg / text / arrow ─────────────────────────────────
-                        $bg_color  = '';
-                        $bg_image  = esc_url(get_sub_field('bg_image'));
+                            <?php if (esc_url(get_sub_field('icon')) !== '') : ?>
+                                <img class="relative w-[70px] h-[70px] object-cover"
+                                     src="<?= esc_url(get_sub_field('icon')) ?>"
+                                     alt="icon" />
+                            <?php endif; ?>
 
-                        if (wp_kses_post(get_sub_field('bg_color')) == 'white') {
-                            $bg_color = 'bg-white';
-                        } elseif (wp_kses_post(get_sub_field('bg_color')) == 'gray') {
-                            $bg_color = 'bg-[#CCCCCC]';
-                        } elseif (wp_kses_post(get_sub_field('bg_color')) == 'blue') {
-                            $bg_color = 'bg-[#4a78ff]';
-                        }
-
-                        $text_color  = '';
-                        $arrow_color = '';
-                        if (wp_kses_post(get_sub_field('text_color')) == 'white') {
-                            $text_color  = 'text-white';
-                            $arrow_color = get_template_directory_uri() . '/assets/imgs/Arrow.svg';
-                        } elseif (wp_kses_post(get_sub_field('text_color')) == 'black') {
-                            $text_color  = 'text-black';
-                            $arrow_color = get_template_directory_uri() . '/assets/imgs/Arrow-black.svg';
-                        }
-                    ?>
-
-                        <div class="<?= $text_color ?> <?= $span_class ?> <?= $height_class ?> collection-item
-                                    <?= $bg_image === '' ? $bg_color : '' ?>"
-                            <?= $bg_image !== '' ? 'style="
-                                background-image: url(' . $bg_image . ');
-                                background-position: 50% 50%;
-                                background-size: cover;
-                                background-repeat: no-repeat;"'
-                            : ''; ?>>
-
-                            <a href="<?= wp_kses_post(get_sub_field('link_path')) ?>"
-                               class="<?= $bg_image === '' ? 'color-bg-hover' : 'collection-gradient-box' ?>
-                                      flex flex-col items-end justify-between w-full h-full px-6 py-10 relative">
-
-                                <div class="flex flex-col relative z-20 items-start
-                                            <?= esc_url(get_sub_field('icon')) !== '' ? '' : 'pt-[88px]' ?>
-                                            gap-5 self-stretch w-full flex-[0_0_auto]">
-
-                                    <?php if (esc_url(get_sub_field('icon')) !== '') : ?>
-                                        <img class="relative w-[70px] h-[70px] object-cover"
-                                             src="<?= esc_url(get_sub_field('icon')) ?>"
-                                             alt="icon" />
-                                    <?php endif; ?>
-
-                                    <p class="relative font-heading text-[20px] min-[600px]:text-[24px]
-                                              max-w-[406px] tracking-[-2%] leading-7 min-[600px]:leading-8">
-                                        <?= wp_kses_post(get_sub_field('title')) ?>
-                                    </p>
-                                </div>
-
-                                <p class="inline-flex z-20 gap-2 relative flex-[0_0_auto]">
-                                    <span class="relative w-fit uppercase font-heading font-semibold
-                                                 text-base text-center tracking-[0] leading-6
-                                                 min-[600px]:leading-[18px] whitespace-nowrap">
-                                        <?= wp_kses_post(get_sub_field('link_label')) ?>
-                                    </span>
-                                    <img class="relative w-4 h-4 max-[600px]:mt-[3px] arrow"
-                                         src="<?= $arrow_color ?>"
-                                         alt="arrow" />
-                                </p>
-
-                            </a>
+                            <p class="relative font-heading text-[20px] min-[600px]:text-[24px]
+                                      max-w-[406px] tracking-[-2%] leading-7 min-[600px]:leading-8">
+                                <?= wp_kses_post(get_sub_field('title')) ?>
+                            </p>
                         </div>
 
-                    <?php endwhile; endif; ?>
+                        <p class="inline-flex z-20 gap-2 relative flex-[0_0_auto]">
+                            <span class="relative w-fit uppercase font-heading font-semibold
+                                         text-base text-center tracking-[0] leading-6
+                                         min-[600px]:leading-[18px] whitespace-nowrap">
+                                <?= wp_kses_post(get_sub_field('link_label')) ?>
+                            </span>
+                            <img class="relative w-4 h-4 max-[600px]:mt-[3px] arrow"
+                                 src="<?= $arrow_color ?>"
+                                 alt="arrow" />
+                        </p>
 
+                    </a>
                 </div>
-            </div>
 
-        <?php endwhile; endif; ?>
+            <?php endwhile; endif; ?>
 
-      </div>
-    </section>
+        </div>
+    </div>
 
 <?php endwhile; endif; ?>
 
