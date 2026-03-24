@@ -89,7 +89,7 @@ if (!empty($block['className'])) {
         ?>
         <div class="<?= $text_color ?> <?= $size_class ?> <?= $extra_class ?> collection-item <?= !$has_image ? $bg_color : '' ?>" <?= $bg_style ?>>
             <a href="<?= $item['link_path'] ?>"
-               class="<?= !$has_image ? 'color-bg-hover' : 'collection-gradient-box' ?> flex flex-col items-end justify-between w-full h-full px-6 py-10 relative">
+               class="<?= !$has_image ? 'color-bg-hover' : 'collection-gradient-box' ?> flex flex-col justify-end w-full h-full px-6 py-10 relative">
 
                 <div class="flex flex-col relative z-20 items-start <?= $item['icon'] !== '' ? '' : 'pt-[88px]' ?> gap-5 self-stretch w-full flex-[0_0_auto]">
                     <?php if ($item['icon'] !== '') : ?>
