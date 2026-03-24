@@ -155,8 +155,8 @@ if (!empty($block['className'])) {
                      *   narrow = calc(25% - 10px)
                      * → 75%-10px + 20px gap + 25%-10px = 100% ✓
                      */
-                    $wide   = 'flex-none max-[600px]:w-full min-[600px]:max-[1024px]:w-[calc(50%-10px)] min-[1024px]:w-[calc(75%-10px)]';
-                    $narrow = 'flex-none max-[600px]:w-full min-[600px]:max-[1024px]:w-[calc(50%-10px)] min-[1024px]:w-[calc(25%-10px)]';
+                    $wide   = 'flex-none max-[600px]:w-full min-[600px]:max-[1024px]:w-[calc(50%-10px)] min-[1024px]:w-[calc(66%-10px)]';
+                    $narrow = 'flex-none max-[600px]:w-full min-[600px]:max-[1024px]:w-[calc(50%-10px)] min-[1024px]:w-[calc(34%-10px)]';
 
                     $span_map = [
                         1 => $wide,
