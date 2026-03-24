@@ -1,0 +1,58 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419 26" width="419" height="26">
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m10 0h399v25.27h-399z"/>
+		</clipPath>
+	</defs>
+	<style>
+		.s0 { fill: none;stroke: #000000;stroke-miterlimit:10 } 
+	</style>
+	<g id="Clip-Path" clip-path="url(#cp1)">
+		<g>
+			<g style="opacity: .3">
+				<path class="s0" d="m13.54 4.35h17.41v17.19"/>
+				<path class="s0" d="m30.83 4.46l-17.18 16.97"/>
+			</g>
+			<g style="opacity: .3">
+				<path class="s0" d="m50.54 4.35h17.41v17.19"/>
+				<path class="s0" d="m67.83 4.46l-17.18 16.97"/>
+			</g>
+			<g style="opacity: .3">
+				<path class="s0" d="m87.54 4.35h17.41v17.19"/>
+				<path class="s0" d="m104.83 4.46l-17.18 16.97"/>
+			</g>
+			<g style="opacity: .3">
+				<path class="s0" d="m124.54 4.35h17.41v17.19"/>
+				<path class="s0" d="m141.83 4.46l-17.18 16.97"/>
+			</g>
+			<g style="opacity: .3">
+				<path class="s0" d="m161.54 4.35h17.41v17.19"/>
+				<path class="s0" d="m178.83 4.46l-17.18 16.97"/>
+			</g>
+			<g style="opacity: .3">
+				<path class="s0" d="m198.54 4.35h17.41v17.19"/>
+				<path class="s0" d="m215.83 4.46l-17.18 16.97"/>
+			</g>
+			<g style="opacity: .3">
+				<path class="s0" d="m235.54 4.35h17.41v17.19"/>
+				<path class="s0" d="m252.83 4.46l-17.18 16.97"/>
+			</g>
+			<g style="opacity: .3">
+				<path class="s0" d="m272.68 3.91h18.1v18.1"/>
+				<path class="s0" d="m290.67 4.02l-17.87 17.87"/>
+			</g>
+			<g style="opacity: .3">
+				<path class="s0" d="m310.68 3.91h18.1v18.1"/>
+				<path class="s0" d="m328.67 4.02l-17.87 17.87"/>
+			</g>
+			<g style="opacity: .3">
+				<path class="s0" d="m348.68 3.91h18.1v18.1"/>
+				<path class="s0" d="m366.67 4.02l-17.87 17.87"/>
+			</g>
+			<g style="opacity: .3">
+				<path class="s0" d="m386.68 3.91h18.1v18.1"/>
+				<path class="s0" d="m404.67 4.02l-17.87 17.87"/>
+			</g>
+		</g>
+	</g>
+</svg>
