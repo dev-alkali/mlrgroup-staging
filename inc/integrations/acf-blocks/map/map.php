@@ -3327,6 +3327,7 @@ $map_code = get_sub_field('map_code');
   .wmap-tip-city {display: block;font-size: 12px;color: #525252;}
   .wmap-red  { color: #FD4338; }
   .wmap-blue { color: #4A78FF; }
+  .wmap-marker:hover{z-index: 21;}
 </style>
 
 
