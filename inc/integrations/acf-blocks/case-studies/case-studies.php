@@ -118,10 +118,10 @@ if (!empty($block['className'])) {
             $grid_class = 'grid grid-cols-1 gap-5';
             break;
         case 2:
-            $grid_class = 'grid max-[1024px]:grid-cols-1 min-[1024px]:[grid-template-columns:75fr_59fr] gap-5';
+            $grid_class = 'grid grid-cols-1 lg:[grid-template-columns:75fr_59fr] gap-5';
             break;
         case 3:
-            $grid_class = 'grid max-[1024px]:grid-cols-1 min-[1024px]:grid-cols-2 min-[1024px]:grid-rows-2 gap-5';
+            $grid_class = 'grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-5';
             break;
         case 4:
             $grid_class = 'flex flex-wrap gap-5';
@@ -147,25 +147,25 @@ if (!empty($block['className'])) {
              item2 & item5 → flex-1 (same width ✓)
              item3 & item4 → w-[30%] (same width ✓)
         -->
-        <div class="max-[1024px]:flex max-[1024px]:flex-col min-[1024px]:flex min-[1024px]:flex-row gap-5 w-full">
+        <div class="flex flex-col lg:flex-row gap-5 w-full">
 
             <!-- Item 1: tall left panel -->
             <?php $render_card(
                 $five_items[0],
-                'w-full min-[1024px]:w-[calc(33%-10px)] h-[380px] min-[1024px]:h-[800px]'
+                'w-full lg:w-[calc(33%-10px)] h-[380px] lg:h-[800px]'
             ); ?>
 
             <!-- Right side: two rows -->
             <div class="flex flex-col gap-5 flex-1">
 
                 <!-- Row 1: item2 (wide) + item3 (narrow) -->
-                <div class="flex max-[600px]:flex-col md:flex-row gap-5">
+                <div class="flex flex-col md:flex-row gap-5">
                     <?php $render_card($five_items[1], 'flex-1 h-[380px] md:h-[390px]'); ?>
                     <?php $render_card($five_items[2], 'w-full md:w-[44%] h-[380px] lg:h-[390px]'); ?>
                 </div>
 
                 <!-- Row 2: item4 (narrow) + item5 (wide) -->
-                <div class="flex max-[600px]:flex-col min-[600px]:flex-row gap-5">
+                <div class="flex flex-col md:flex-row gap-5">
                     <?php $render_card($five_items[3], 'w-full md:w-[44%] h-[380px] lg:h-[390px]'); ?>
                     <?php $render_card($five_items[4], 'flex-1 h-[380px] lg:h-[390px]'); ?>
                 </div>
@@ -195,9 +195,9 @@ if (!empty($block['className'])) {
                 if (in_array($item_count, [1, 2])) {
                     $height_class = 'h-[380px] min-[1024px]:h-[800px]';
                 } elseif ($item_count === 3) {
-                    $height_class = ($item_index === 1) ? 'h-[380px] min-[1024px]:h-[800px]' : 'h-[380px] min-[1024px]:h-[390px]';
+                    $height_class = ($item_index === 1) ? 'h-[380px] lg:h-[800px]' : 'h-[380px] lg:h-[390px]';
                 } else { // 4
-                    $height_class = 'h-[380px] min-[1024px]:h-[390px]';
+                    $height_class = 'h-[380px] lg:h-[390px]';
                 }
 
                 // bg / text / arrow
