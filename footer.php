@@ -22,7 +22,7 @@
           </div>
 
           <!-- Footer Columns -->
-          <div class="flex flex-col md:flex-row items-start gap-8 w-full max-w-[863px] flex-1">
+          <div class="flex flex-col md:flex-row items-start gap-8 w-full max-w-[958px] flex-1">
             <?php
             function render_footer_menu($location)
             {
@@ -120,7 +120,7 @@
         </div>
 
         <!-- Newsletter -->
-        <div class="flex flex-col gap-5 w-full newsletter-gf-container">
+        <div class="flex flex-col gap-1 w-full newsletter-gf-container">
           <div class="font-poppins font-medium text-base leading-6 text-[#F9FAFB]">
             <?= get_field('newsletter_title', 'option'); ?>
           </div>

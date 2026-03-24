@@ -415,7 +415,7 @@
   }
 
   .newsletter-gf-container input[type="submit"] {
-    @apply inline-flex items-center justify-center gap-2 px-5 m-0! py-4 bg-white border border-solid border-[#737373] text-neutral-800 cursor-pointer h-[50px] m-0 w-auto transition-all appearance-none;
+    @apply inline-flex items-center justify-center gap-2 px-5 m-0! py-4 bg-white border border-solid border-[#737373] text-neutral-800 cursor-pointer h-[50px] m-0 w-auto transition-all appearance-none uppercase;
     font-family: var(--font-heading);
     font-weight: 600;
     line-height: 18px;
