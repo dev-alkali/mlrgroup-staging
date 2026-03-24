@@ -46,4 +46,7 @@ body .newsletter-gf-container .gform_wrapper.gravity-theme .gform_footer{margin-
     .collection-parent:first-child .collection-item:nth-child(3){order:1;}
 }   
 
+@media(max-width: 767px){
+    .wrapper{padding-left: 0px;padding-right: 0px;}
+}
 
