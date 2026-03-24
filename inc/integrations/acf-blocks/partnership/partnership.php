@@ -35,7 +35,7 @@ if ($background_color == 'black') {
   $bgclassName  = 'bg-black md:mt-[40px]';
   $textClass    = 'text-white';
   $titleClass   = 'text-white';
-  $subtitleClass = 'text-[#a3a3a3]';
+  $subtitleClass = 'text-white';
   $descClass    = 'text-[#E5E5E5]';
   $cardTitleClass = 'text-white';
   $cardTextClass  = 'text-[#E5E5E5]';
