@@ -29,7 +29,7 @@ $description = get_sub_field('description');
     background-size: cover;
     background-repeat: no-repeat;
   ">
-      <div class="flex flex-col items-center w-full h-full justify-end gap-[40px] min-[600px]:gap-[100px] min-[767px]:gap-[162px] pl-4 min-[600px]:pl-10 lg:pl-[140px] pr-4 min-[600px]:pr-10 min-[767px]:pr-20 pt-10 pb-[60px] min-[600px]:pb-[100px] [background:linear-gradient(222deg,rgba(0,0,0,0)_4.72%,rgba(0,0,0,1)_79.68%)]">
+      <div class="flex flex-col items-center w-full h-full justify-end gap-[40px] min-[600px]:gap-[100px] min-[767px]:gap-[162px] pl-4 min-[600px]:pl-10 lg:pl-[140px] pr-4 min-[600px]:pr-10 md:pr-20 lg:pr-[140px] pt-10 pb-[60px] min-[600px]:pb-[100px] [background:linear-gradient(222deg,rgba(0,0,0,0)_4.72%,rgba(0,0,0,1)_79.68%)]">
 
         <div class="flex flex-col items-start gap-10 min-[600px]:gap-[60px] w-full max-w-[1920px]">
           <div class="flex flex-col items-start gap-5 w-full">
