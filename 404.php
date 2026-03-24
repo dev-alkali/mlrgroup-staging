@@ -13,13 +13,13 @@ get_header();
 
 			
 			<div class="flex relative items-center justify-center">
-				<div class="absolute top-0 left-0 w-1/2 h-full bg-repeat-x img-position-left" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/404-arrow-imgs-3.svg');"></div>
-				<div class="absolute top-0 right-0 w-1/2 h-full bg-repeat-x img-position-right" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/404-arrow-imgs-3.svg');"></div>
+				<div class="absolute top-[3px] left-0 w-1/2 h-full bg-repeat-x img-position-left" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/404-arrow-imgs-3.svg');"></div>
+				<div class="absolute top-[3px] right-0 w-1/2 h-full bg-repeat-x img-position-right" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/404-arrow-imgs-3.svg');"></div>
 				<p class="text-[#525252] text-[clamp(18px,2.2vw,24px)] leading-[clamp(26px,2.8vw,32px)] tracking-[-0.02em] text-center font-heading font-medium bg-white relative px-[10px]">Sorry, we can’t find that page. But don’t worry, if you follow <a href="<?= home_url() ?>" class="text-accent underline">this link</a></p>
 			</div>
 			<div class="flex relative items-center justify-center">
-				<div class="absolute top-0 left-0 w-1/2 h-full bg-repeat-x img-position-left" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/404-arrow-imgs-04.svg');"></div>
-				<div class="absolute top-0 right-0 w-1/2 h-full bg-repeat-x img-position-right" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/404-arrow-imgs-04.svg');"></div>
+				<div class="absolute top-[3px] left-0 w-1/2 h-full bg-repeat-x img-position-left" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/404-arrow-imgs-04.svg');"></div>
+				<div class="absolute top-[3px] right-0 w-1/2 h-full bg-repeat-x img-position-right" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/404-arrow-imgs-04.svg');"></div>
 				<p class="text-[#525252] text-[clamp(18px,2.2vw,24px)] leading-[clamp(26px,2.8vw,32px)] tracking-[-0.02em] text-center font-heading font-medium bg-white relative px-[10px]">we can get you back to the homepage in no time.</p>
 			</div>
 			
