@@ -34,7 +34,7 @@ $description = get_sub_field('description');
         <div class="flex flex-col items-start gap-10 min-[600px]:gap-[60px] w-full max-w-[1920px]">
           <div class="flex flex-col items-start gap-5 w-full">
             <?php if($title_row_1 || $title_row_2): ?>
-            <h2 class="max-w-[622px] w-full text-[clamp(36px,6vw,80px)] tracking-[-0.02em] leading-[clamp(50px,calc(50px+(100vw-375px)*0.093),92px)] text-white font-heading">
+            <h2 class="max-w-[622px] w-full text-[clamp(36px,6vw,80px)] tracking-[-0.02em] leading-[clamp(44px,6.1vw,92px)] text-white font-heading">
               <?php if($title_row_1): ?>
                   <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
               <?php endif; ?>
