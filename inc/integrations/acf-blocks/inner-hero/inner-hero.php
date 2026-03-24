@@ -22,8 +22,8 @@ if (have_rows('inner_hero')) :  while (have_rows('inner_hero')) : the_row();
   $bg_desktop_img = get_sub_field('bg_image');
   $bg_mobile_image = get_sub_field('bg_mobile_image');
 
-  $desktop_url = $bg_desktop_img ? esc_url($bg_desktop_img['url']) : '';
-  $mobile_url  = $bg_mobile_img  ? esc_url($bg_mobile_img['url'])  : $desktop_url;
+  $desktop_url = $bg_desktop_img ? esc_url($bg_desktop_img) : '';
+  $mobile_url  = $bg_mobile_img  ? esc_url($bg_mobile_img)  : $desktop_url;
 
 ?>
 
