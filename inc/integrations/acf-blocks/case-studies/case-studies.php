@@ -160,14 +160,14 @@ if (!empty($block['className'])) {
 
                 <!-- Row 1: item2 (wide) + item3 (narrow) -->
                 <div class="flex flex-col md:flex-row gap-5">
-                    <?php $render_card($five_items[1], 'flex-1 h-[380px] md:h-[390px]'); ?>
+                    <?php $render_card($five_items[1], 'md:flex-1 h-[380px] md:h-[390px]'); ?>
                     <?php $render_card($five_items[2], 'w-full md:w-[44%] h-[380px] lg:h-[390px]'); ?>
                 </div>
 
                 <!-- Row 2: item4 (narrow) + item5 (wide) -->
                 <div class="flex flex-col md:flex-row gap-5">
                     <?php $render_card($five_items[3], 'w-full md:w-[44%] h-[380px] lg:h-[390px]'); ?>
-                    <?php $render_card($five_items[4], 'flex-1 h-[380px] lg:h-[390px]'); ?>
+                    <?php $render_card($five_items[4], 'md:flex-1 h-[380px] lg:h-[390px]'); ?>
                 </div>
 
             </div>
