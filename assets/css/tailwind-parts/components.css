@@ -1200,3 +1200,10 @@
 .card-text br{
   @apply max-md:hidden;
 }
+
+.inner-hero{
+  background-image: var(--bg-desktop);
+  @media(max-width: 767px){
+    background-image: var(--bg-mobile);
+  }
+}
