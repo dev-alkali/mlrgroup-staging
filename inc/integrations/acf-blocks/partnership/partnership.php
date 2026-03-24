@@ -31,7 +31,7 @@ $background_color = get_sub_field('background_color');
 //$mobileFlex = 'flex-col-reverse';
 
 // Background & text color classes based on selected background color
-if ($background_color === 'Black') {
+if ($background_color == 'black') {
   $bgclassName  = 'bg-black';
   $textClass    = 'text-white';
   $titleClass   = 'text-white';
