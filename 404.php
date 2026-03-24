@@ -8,44 +8,12 @@ get_header();
 
 		<section class="error-404 not-found">
 			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'devine' ); ?></h1>
+				<h1 class="page-title text-[#262626] text-[clamp(96px,18vw,300px)] leading-[clamp(96px,18vw,300px)] tracking-[-0.02em]"><?php esc_html_e( '404 <span class="text-accent text-[clamp(64px,12vw,200px)] leading-[clamp(96px,18vw,300px)]">.</span>', 'devine' ); ?></h1>
 			</header><!-- .page-header -->
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'devine' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'devine' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$devine_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'devine' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$devine_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
+			<div class="flex flex-col items-center justify-center gap-4">
+				<p class="text-[#525252] text-[clamp(18px,2.2vw,24px)] leading-[clamp(26px,2.8vw,32px)] tracking-[-0.02em] text-center"><?php esc_html_e( 'Sorry, we can’t find that page. But don’t worry, if you follow <a href="' . home_url() . '" class="text-accent">this link</a> <br> we can get you back to the homepage in no time.', 'devine' ); ?></p>
+			</div>
 		</section><!-- .error-404 -->
 
 	</main><!-- #main -->
