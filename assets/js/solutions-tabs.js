@@ -1,12 +1,38 @@
 jQuery(function ($) {
   const swipers = {};
 
-  // Returns how many slides are visible at current viewport width
+  // Must match your Swiper breakpoints
   function getSlidesPerView() {
     const w = window.innerWidth;
     if (w >= 1440) return 4;
     if (w >= 1024) return 3;
     return 1;
+  }
+
+  // Apply static equal-column flex layout (no Swiper needed)
+  function applyStaticLayout($slider, count) {
+    const $track = $slider.find(".solutions-track").first();
+    $track
+      .css({
+        display: "flex",
+        flexWrap: "nowrap",
+        gap: "20px",
+      })
+      .attr("data-static-cols", count);
+
+    $track.children().css({
+      flex: "1 1 0%",
+      minWidth: "0",
+      maxWidth: count === 1 ? "100%" : "",
+    });
+  }
+
+  // Remove static layout styles
+  function removeStaticLayout($slider) {
+    const $track = $slider.find(".solutions-track").first();
+    if (!$track.attr("data-static-cols")) return;
+    $track.css({ display: "", flexWrap: "", gap: "" }).removeAttr("data-static-cols");
+    $track.children().css({ flex: "", minWidth: "", maxWidth: "" });
   }
 
   function ensureSwiperMarkup($slider) {
@@ -22,7 +48,6 @@ jQuery(function ($) {
         .not(".solutions-prev, .solutions-next, .solutions-dots");
       $slides.addClass("swiper-slide");
       $slides.wrapAll('<div class="swiper-wrapper"></div>');
-      $wrapper = $track.children(".swiper-wrapper");
     } else {
       $wrapper.children().addClass("swiper-slide");
     }
@@ -32,21 +57,26 @@ jQuery(function ($) {
 
   function initSolutionSlider($slider) {
     const key = $slider.data("solution");
-
-    // Skip if already initialised or not visible
     if (swipers[key] || !$slider.is(":visible")) return;
 
     const $track = $slider.find(".solutions-track").first();
     if (!$track.length) return;
 
-    // Count real slides BEFORE any DOM wrapping
+    // Count real slides before any DOM changes
     const slideCount = $track
       .children()
       .not(".solutions-prev, .solutions-next, .solutions-dots").length;
 
-    // Only init Swiper when slides exceed what fits in view
-    if (slideCount <= getSlidesPerView()) return;
+    const perView = getSlidesPerView();
 
+    if (slideCount <= perView) {
+      // Not enough slides for a slider — show as equal columns
+      // 1 slide → full width | 2 slides → 2 equal cols | 3 slides → 3 equal cols
+      applyStaticLayout($slider, slideCount);
+      return;
+    }
+
+    // Enough slides — init Swiper normally
     const el = ensureSwiperMarkup($slider);
     if (!el) return;
 
@@ -64,21 +94,23 @@ jQuery(function ($) {
         clickable: true,
       },
       breakpoints: {
-        1024: {
-          slidesPerView: 3,
-        },
-        1440: {
-          slidesPerView: 4,
-        },
+        1024: { slidesPerView: 3 },
+        1440: { slidesPerView: 4 },
       },
     });
   }
 
   function destroySolutionSlider($slider) {
     const key = $slider.data("solution");
-    if (!swipers[key]) return;
-    swipers[key].destroy(true, true);
-    delete swipers[key];
+
+    // Destroy Swiper if it exists
+    if (swipers[key]) {
+      swipers[key].destroy(true, true);
+      delete swipers[key];
+    }
+
+    // Remove static layout if it was applied
+    removeStaticLayout($slider);
   }
 
   function activateSolution(key) {
@@ -87,13 +119,12 @@ jQuery(function ($) {
     $('.solutions-tab[data-solution="' + key + '"]').addClass("is-active");
 
     // Destroy & deactivate current slider
-    const $currentSliders = $(".solutions-slider.is-active");
-    $currentSliders.each(function () {
+    $(".solutions-slider.is-active").each(function () {
       destroySolutionSlider($(this));
       $(this).removeClass("is-active");
     });
 
-    // Activate & init next slider only if it needs Swiper
+    // Activate & init next slider
     const $nextSlider = $('.solutions-slider[data-solution="' + key + '"]');
     $nextSlider.addClass("is-active");
     initSolutionSlider($nextSlider);
@@ -108,8 +139,7 @@ jQuery(function ($) {
 
   // Tab click
   $(document).on("click", ".solutions-tab", function () {
-    const solutionKey = $(this).data("solution");
-    activateSolution(solutionKey);
+    activateSolution($(this).data("solution"));
   });
 
   // Source card anchor click (scroll + activate tab)
@@ -129,13 +159,11 @@ jQuery(function ($) {
         );
       }
 
-      if (solutionKey) {
-        activateSolution(solutionKey);
-      }
+      if (solutionKey) activateSolution(solutionKey);
     }
   });
 
-  // Resize handler — re-evaluate active slider
+  // Resize — re-evaluate active slider
   let resizeTimer;
   $(window).on("resize", function () {
     clearTimeout(resizeTimer);
@@ -145,13 +173,9 @@ jQuery(function ($) {
 
       const key = $activeSlider.data("solution");
 
-      if (swipers[key]) {
-        // Swiper exists — just update it
-        swipers[key].update();
-      } else {
-        // Swiper doesn't exist yet — try to init (viewport may have grown)
-        initSolutionSlider($activeSlider);
-      }
+      // Full reset so layout re-evaluates correctly
+      destroySolutionSlider($activeSlider);
+      initSolutionSlider($activeSlider);
     }, 200);
   });
 });
