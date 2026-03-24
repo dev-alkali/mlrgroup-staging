@@ -31,8 +31,8 @@ $background_color = get_sub_field('background_color');
 //$mobileFlex = 'flex-col-reverse';
 
 // Background & text color classes based on selected background color
-if ($background_color === 'black') {
-  $bgclassName  = 'bg-[#262626]';
+if ($background_color === 'Black') {
+  $bgclassName  = 'bg-black';
   $textClass    = 'text-white';
   $titleClass   = 'text-white';
   $subtitleClass = 'text-[#a3a3a3]';
@@ -56,9 +56,9 @@ if ($background_color === 'black') {
         <div class="top-title-sec flex flex-wrap">
           <div class="top_title md:basis-[40%] max-md:w-full md:pr-[20px]">
             <?php if($title_row_1 || $title_row_2): ?>
-            <h2 class="text-[clamp(36px,6vw,68px)] leading-[clamp(44px,7vw,76px)] tracking-[-4%] text-[#262626] font-heading mb-[20px]">
+            <h2 class="text-[clamp(36px,6vw,68px)] leading-[clamp(44px,7vw,76px)] tracking-[-4%] <?php echo $titleClass; ?> font-heading mb-[20px]">
               <?php if($title_row_1): ?>
-                  <span class="font-bold <?php echo $titleClass; ?>"><?= wp_kses_post($title_row_1) ?></span>
+                  <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
               <?php endif; ?>
               <?php if($title_row_2): ?>
                   <span class="font-light <?php echo $subtitleClass; ?>"><?= wp_kses_post($title_row_2) ?></span>
@@ -67,7 +67,7 @@ if ($background_color === 'black') {
             <?php endif; ?>
           </div>
           <?php if($description): ?>
-            <div class="md:basis-[60%] max-md:w-full md:pl-[20px]"><p class="font-body font-normal text-[18px] leading-[26px] tracking-[0em] text-[#525252]"><?php echo $description; ?></p></div>
+            <div class="md:basis-[60%] max-md:w-full md:pl-[20px]"><p class="font-body font-normal text-[18px] leading-[26px] tracking-[0em] <?php echo $descClass; ?>"><?php echo $description; ?></p></div>
           <?php endif; ?>
         </div>
 
