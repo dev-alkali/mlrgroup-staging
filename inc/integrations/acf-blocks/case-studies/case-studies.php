@@ -238,7 +238,7 @@ if (!empty($block['className'])) {
 
                     <a href="<?= wp_kses_post(get_sub_field('link_path')) ?>"
                        class="<?= $bg_image === '' ? 'color-bg-hover' : 'collection-gradient-box' ?>
-                              flex flex-col w-full h-full px-6 py-10 relative">
+                              flex flex-col justify-end w-full h-full px-6 py-10 relative">
 
                         <div class="flex flex-col relative z-20 items-start
                                     <?= esc_url(get_sub_field('icon')) !== '' ? '' : 'pt-[88px]' ?>
