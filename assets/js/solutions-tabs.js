@@ -12,27 +12,38 @@ jQuery(function ($) {
   // Apply static equal-column flex layout (no Swiper needed)
   function applyStaticLayout($slider, count) {
     const $track = $slider.find(".solutions-track").first();
+
+    // FIX #1 — hide nav/pagination when no slider needed
+    $slider.find(".solutions-prev, .solutions-next, .solutions-dots").hide();
+
     $track
-      .css({
-        display: "flex",
-        flexWrap: "nowrap",
-        gap: "20px",
-      })
+      .css({ display: "flex", flexWrap: "nowrap", gap: "20px" })
       .attr("data-static-cols", count);
 
-    $track.children().css({
-      flex: "1 1 0%",
-      minWidth: "0",
-      maxWidth: count === 1 ? "100%" : "",
-    });
+    $track.children()
+      .not(".solutions-prev, .solutions-next, .solutions-dots")
+      .css({
+        flex: "1 1 0%",
+        minWidth: "0",
+        maxWidth: count === 1 ? "100%" : "",
+      });
   }
 
   // Remove static layout styles
   function removeStaticLayout($slider) {
     const $track = $slider.find(".solutions-track").first();
     if (!$track.attr("data-static-cols")) return;
-    $track.css({ display: "", flexWrap: "", gap: "" }).removeAttr("data-static-cols");
-    $track.children().css({ flex: "", minWidth: "", maxWidth: "" });
+
+    // FIX #1 — restore nav/pagination visibility
+    $slider.find(".solutions-prev, .solutions-next, .solutions-dots").show();
+
+    $track
+      .css({ display: "", flexWrap: "", gap: "" })
+      .removeAttr("data-static-cols");
+
+    $track.children()
+      .not(".solutions-prev, .solutions-next, .solutions-dots")
+      .css({ flex: "", minWidth: "", maxWidth: "" });
   }
 
   function ensureSwiperMarkup($slider) {
@@ -55,6 +66,19 @@ jQuery(function ($) {
     return $track[0];
   }
 
+  // FIX #2 — fully reset DOM so re-init works cleanly
+  function resetSwiperMarkup($slider) {
+    const $track = $slider.find(".solutions-track").first();
+    if (!$track.length) return;
+
+    $track.removeClass("swiper");
+
+    const $wrapper = $track.find(".swiper-wrapper");
+    if ($wrapper.length) {
+      $wrapper.children().removeClass("swiper-slide").unwrap();
+    }
+  }
+
   function initSolutionSlider($slider) {
     const key = $slider.data("solution");
     if (swipers[key] || !$slider.is(":visible")) return;
@@ -70,13 +94,12 @@ jQuery(function ($) {
     const perView = getSlidesPerView();
 
     if (slideCount <= perView) {
-      // Not enough slides for a slider — show as equal columns
-      // 1 slide → full width | 2 slides → 2 equal cols | 3 slides → 3 equal cols
+      // FIX #1 — static equal-column layout, no Swiper, no nav
       applyStaticLayout($slider, slideCount);
       return;
     }
 
-    // Enough slides — init Swiper normally
+    // Enough slides — init Swiper
     const el = ensureSwiperMarkup($slider);
     if (!el) return;
 
@@ -103,10 +126,11 @@ jQuery(function ($) {
   function destroySolutionSlider($slider) {
     const key = $slider.data("solution");
 
-    // Destroy Swiper if it exists
     if (swipers[key]) {
       swipers[key].destroy(true, true);
       delete swipers[key];
+      // FIX #2 — reset DOM so next init starts from a clean state
+      resetSwiperMarkup($slider);
     }
 
     // Remove static layout if it was applied
@@ -114,7 +138,6 @@ jQuery(function ($) {
   }
 
   function activateSolution(key) {
-    // Update tab active state
     $(".solutions-tab").removeClass("is-active");
     $('.solutions-tab[data-solution="' + key + '"]').addClass("is-active");
 
@@ -171,9 +194,6 @@ jQuery(function ($) {
       const $activeSlider = $(".solutions-slider.is-active");
       if (!$activeSlider.length) return;
 
-      const key = $activeSlider.data("solution");
-
-      // Full reset so layout re-evaluates correctly
       destroySolutionSlider($activeSlider);
       initSolutionSlider($activeSlider);
     }, 200);
