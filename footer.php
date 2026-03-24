@@ -134,7 +134,7 @@
       </div>
 
       <!-- Results Images (mobile only) -->
-      <div class="flex md:hidden w-full items-center gap-3">
+      <div class="flex hidden w-full items-center gap-3">
         <?php if (have_rows('results_images', 'option')): while (have_rows('results_images', 'option')): the_row(); ?>
           <img class="w-[49px] h-[50px]" src="<?= esc_url(get_sub_field('image')) ?>" alt="">
         <?php endwhile; endif; ?>
