@@ -590,7 +590,7 @@
     }
 
     .source-card:hover .content {
-      transform: translateY(calc(-109cqw + 100%));
+      transform: translateY(calc(50% - 50cqw));
     }
   }
   /* Marquee Track for logos/text scrolling */
