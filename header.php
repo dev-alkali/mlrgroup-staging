@@ -17,7 +17,7 @@
 
 <?php $header_schema = get_field('header_schema') == 'light-skin' ? 'absolute min-[1024px]:pt-8' : 'relative dark-skin min-[1024px]:py-4';?>
 
-<header class=" <?php echo $header_schema.' '.get_field('header_schema'); ?> z-50 w-full site-header anim px-4 min-[600px]:px-10 lg:px-[100px]" data-delay="2.25" data-anim="up" data-start="top 100%">
+<header class=" <?php echo $header_schema.' '.get_field('header_schema'); ?> z-50 w-full site-header anim px-4 min-[600px]:px-10 min-[767px]:px-20 lg:px-[100px]" data-delay="2.25" data-anim="up" data-start="top 100%">
 
   <?php
   $locations = get_nav_menu_locations();
