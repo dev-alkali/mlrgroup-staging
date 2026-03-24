@@ -159,15 +159,15 @@ if (!empty($block['className'])) {
             <div class="flex flex-col gap-5 flex-1">
 
                 <!-- Row 1: item2 (wide) + item3 (narrow) -->
-                <div class="flex max-[600px]:flex-col min-[600px]:flex-row gap-5">
-                    <?php $render_card($five_items[1], 'flex-1 h-[380px] min-[1024px]:h-[390px]'); ?>
-                    <?php $render_card($five_items[2], 'max-[600px]:w-full min-[600px]:w-[30%] h-[380px] min-[1024px]:h-[390px]'); ?>
+                <div class="flex max-[600px]:flex-col md:flex-row gap-5">
+                    <?php $render_card($five_items[1], 'flex-1 h-[380px] md:h-[390px]'); ?>
+                    <?php $render_card($five_items[2], 'w-full md:w-[44%] h-[380px] lg:h-[390px]'); ?>
                 </div>
 
                 <!-- Row 2: item4 (narrow) + item5 (wide) -->
                 <div class="flex max-[600px]:flex-col min-[600px]:flex-row gap-5">
-                    <?php $render_card($five_items[3], 'max-[600px]:w-full min-[600px]:w-[30%] h-[380px] min-[1024px]:h-[390px]'); ?>
-                    <?php $render_card($five_items[4], 'flex-1 h-[380px] min-[1024px]:h-[390px]'); ?>
+                    <?php $render_card($five_items[3], 'w-full md:w-[44%] h-[380px] lg:h-[390px]'); ?>
+                    <?php $render_card($five_items[4], 'flex-1 h-[380px] lg:h-[390px]'); ?>
                 </div>
 
             </div>
@@ -183,8 +183,8 @@ if (!empty($block['className'])) {
                 // Span / width classes
                 $span_class = '';
                 if ($item_count === 4) {
-                    $wide   = 'flex-none max-[600px]:w-full min-[600px]:max-[1024px]:w-[calc(50%-10px)] min-[1024px]:w-[calc(56%-10px)]';
-                    $narrow = 'flex-none max-[600px]:w-full min-[600px]:max-[1024px]:w-[calc(50%-10px)] min-[1024px]:w-[calc(44%-10px)]';
+                    $wide   = 'flex-none w-full md:w-[calc(56%-10px)]';
+                    $narrow = 'flex-none w-full md:w-[calc(44%-10px)]';
                     $span_map = [1 => $wide, 2 => $narrow, 3 => $narrow, 4 => $wide];
                     $span_class = $span_map[$item_index] ?? '';
                 } elseif ($item_count === 3 && $item_index === 1) {
