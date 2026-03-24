@@ -22,7 +22,7 @@ if (!empty($block['className'])) {
 
             <div class="flex flex-col  items-start gap-5 relative ">
               <h2
-                class=" flex flex-col font-heading text-[44px] min-[600px]:text-[54px] min-[767px]:text-[68px] tracking-[-2%] max-w-[700px] leading-[56px] min-[600px]:leading-[64px] min-[767px]:leading-[78px]">
+                class=" flex flex-col font-heading text-[36px] min-[600px]:text-[54px] min-[767px]:text-[68px] tracking-[-2%] max-w-[700px] leading-[44px] min-[600px]:leading-[64px] min-[767px]:leading-[78px]">
                 <span class="font-bold text-neutral-800 "><?= wp_kses_post(get_sub_field('title_row_1')) ?> </span>
                 <span class="font-light text-neutral-500 "><?= wp_kses_post(get_sub_field('title_row_2')) ?></span>
               </h2>
