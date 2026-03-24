@@ -113,7 +113,7 @@ if (!empty($block['className'])) {
       <?php if (!empty($images)) : ?>
         <div class="flex-1 overflow-hidden  relative h-[91.15px] md:h-auto">
           <div class="absolute -top-4 left-[-7%] w-[133px] max-[890px]:hidden h-[139px] bg-white z-20 blur-[16px]"></div>
-          <div class="absolute -top-4 right-[-5%] w-[133px] h-[139px] max-[890px]:hidden bg-white z-20  blur-[16px]"></div>
+          <div class="absolute -top-4 right-[-100px] w-[133px] h-[139px] max-[890px]:hidden bg-white z-20  blur-[16px]"></div>
 
           <div class="marquee-wrapper overflow-hidden w-full max-w-full ">
             <div class="marquee-track relative">
