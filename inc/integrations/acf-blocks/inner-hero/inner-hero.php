@@ -95,6 +95,15 @@ if (have_rows('inner_hero')) :  while (have_rows('inner_hero')) : the_row();
     
 <?php endif; ?>
 
-
+<style>
+  .inner-hero{
+    background-image: var(--bg-desktop);
+    <?php if($bg_mobile_image): ?>
+      @media(max-width: 767px){
+        background-image: var(--bg-mobile);
+      }
+    <?php endif; ?>
+  }
+</style>
 <?php endwhile;
 endif; ?>
