@@ -1196,3 +1196,7 @@
 .newsletter-gf--text b{
   @apply font-bold;
 }
+
+.card-text br{
+  @apply max-md:hidden;
+}

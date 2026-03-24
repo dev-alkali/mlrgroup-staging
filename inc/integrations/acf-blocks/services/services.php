@@ -129,7 +129,7 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
                           <img class="arrow absolute w-10 z-10" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="" />
                           <div class="flex flex-col gap-3 md:gap-4 content z-10">
                             <h3 class="text-white card-title"><?= wp_kses_post(get_sub_field('title')) ?></h3>
-                            <p class="text-white text-[16px] md:text-lg leading-[26px] md:leading-7 font-body md:max-w-[286px]"><?= wp_kses_post(get_sub_field('paragraph')) ?></p>
+                            <p class="text-white text-[16px] md:text-lg leading-[26px] md:leading-7 font-body card-text"><?= wp_kses_post(get_sub_field('paragraph')) ?></p>
                           </div>
                         </a>
                       </article>
