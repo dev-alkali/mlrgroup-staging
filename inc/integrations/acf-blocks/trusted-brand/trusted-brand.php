@@ -23,8 +23,8 @@ if (!empty($block['className'])) {
       <div class="w-full wrapper relative">
         <?php if (have_rows('brands')) :  while (have_rows('brands')) : the_row(); ?>          
             <div class="flex md:justify-start justify-center gap-2 md:gap-3 shrink-0 mb-[50px]">
-              <div class="relative mt-[1.5px] md:mt-[3px]"><img class="w-4 md:w-5 " src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-blue-brands.svg" alt="arrow"></div>
-              <p class="text-[16px] font-medium md:text-[32px] md:tracking-[-2%] leading-6 md:leading-8 text-black font-heading"><?= wp_kses_post(get_sub_field('title')) ?></p>
+              <div class="relative "><img class="w-4 md:w-[27px] md:h-[27px]" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-blue-brands.svg" alt="arrow"></div>
+              <p class="text-[16px] font-medium md:text-[32px] md:tracking-[-2%] leading-6 md:leading-[40px] text-black font-heading"><?= wp_kses_post(get_sub_field('title')) ?></p>
             </div>
         <!-- MARQUEE -->
             <div class="flex-1 overflow-hidden relative h-[91.15px] md:h-auto">
