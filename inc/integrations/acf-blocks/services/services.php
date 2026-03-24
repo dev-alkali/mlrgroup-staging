@@ -76,7 +76,7 @@ $width = get_sub_field('select_short_content_width');
 $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
 ?>
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> <?php echo esc_attr($overlay_class); ?> px-4 md:px-10 py-[60px] md:py-[120px]">      
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> <?php echo esc_attr($overlay_class); ?> px-4 md:px-[40px] py-[60px] md:py-[120px]">      
       <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
 
           <div class="flex flex-col items-center gap-8 md:gap-[60px] wrapper">
@@ -129,7 +129,7 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
                           <img class="arrow absolute w-10 z-10" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="" />
                           <div class="flex flex-col gap-3 md:gap-4 content z-10">
                             <h3 class="text-white card-title"><?= wp_kses_post(get_sub_field('title')) ?></h3>
-                            <p class="text-white text-[16px] md:text-lg leading-[26px] md:leading-7 font-body"><?= wp_kses_post(get_sub_field('paragraph')) ?></p>
+                            <p class="text-white text-[16px] md:text-lg leading-[26px] md:leading-7 font-body md:max-w-[286px]"><?= wp_kses_post(get_sub_field('paragraph')) ?></p>
                           </div>
                         </a>
                       </article>
