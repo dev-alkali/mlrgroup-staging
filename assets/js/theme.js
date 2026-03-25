@@ -121,3 +121,48 @@ question.forEach(question => {
 })
 
 
+/* Work Sidebar */
+
+jQuery(document).ready(function ($) {
+
+  const $sidebar = $(".sidebar-cat");
+  const $toggleBtn = $(".filter-toggle-btn");
+  const $heading = $(".filter-heading");
+
+  // 👉 SIDEBAR TOGGLE
+  function toggleSidebar() {
+    $toggleBtn.toggleClass("change-btn");
+    $sidebar.stop(true, true).slideToggle(300);
+  }
+
+  $toggleBtn.on("click", function (e) {
+    e.stopPropagation();
+    toggleSidebar();
+  });
+
+  $heading.on("click", function () {
+    toggleSidebar();
+  });
+
+
+  // 👉 CHILD ACCORDION
+  $("[data-toggle]").on("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const $arrow = $(this);
+    const $li = $arrow.closest("li");
+    const $childList = $li.find(".child-list").first();
+
+    if (!$childList.length) return;
+
+    // close others (optional - remove if not needed)
+    $li.siblings().find(".child-list:visible").slideUp(300);
+    $li.siblings().find("[data-toggle]").removeClass("rotate-180");
+
+    // toggle current
+    $childList.stop(true, true).slideToggle(300);
+    $arrow.toggleClass("rotate-180");
+  });
+
+});
