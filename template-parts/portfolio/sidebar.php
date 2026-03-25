@@ -22,8 +22,8 @@ $parent_terms = get_terms(array(
    </div>
 
    <div class="sidebar-cat w-full">
-      <div class="">
-            <a href="<?php echo esc_url(home_url('/work')); ?>" class="inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline transition-all duration-300 pl-0 hover:pl-6">
+      <div class="pb-[28px]">
+            <a href="<?php echo esc_url(home_url('/work')); ?>" class="group relative inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline transition-all duration-300 pl-0 hover:pl-6">
                <svg class="absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200" width="16" height="16" viewBox="0 0 16 16" fill="none">
                  <path d="M2.26562 2.47461H13.407V13.9366" stroke="#FD4338"/>
                  <path d="M13.3351 2.54785L2.33789 13.8615" stroke="#FD4338"/>
@@ -122,7 +122,7 @@ if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
         echo '<li class="'. ($has_child ? 'has-child' : '') .'">';
 
         // ✅ Parent Row
-        echo '<div class="flex items-center justify-between space-y-[28px]">';
+        echo '<div class="flex items-start justify-between space-y-[28px]">';
 
         // ✅ Parent class (dynamic)
         $parent_class = $has_child
@@ -145,7 +145,7 @@ if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
 
         // ✅ Arrow toggle
         if ($has_child) {
-            echo '<span class="arrow cursor-pointer ml-2 transition-transform duration-300" data-toggle>
+            echo '<span class="arrow cursor-pointer ml-2 transition-transform duration-300 mt-[9px]" data-toggle>
                     <svg width="14" height="9" viewBox="0 0 14 9" fill="none">
                         <path d="M6.75 0.00019455L13.5 6.7502L11.925 8.3252L6.75 3.15019L1.575 8.3252L0 6.7502L6.75 0.00019455Z" fill="#525252"/>
                     </svg>
