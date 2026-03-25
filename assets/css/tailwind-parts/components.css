@@ -64,7 +64,7 @@
   .site-header.light-skin .nav-link { color: #fff; }  
   .site-header.is-sticky .nav-link { color: #525252; --arrow-color: #525252; }  
   .site-header.is-visible .site-header__logo-image .hide-letter { animation: fadeLetters 0.5s ease; opacity: 0; transition-delay: .45s; }
-  .site-header.is-visible .site-header__logo-image .dot-pl { transform: translateX(-84px); transition-delay: 2s; transition: 1.5s ease; }
+  .site-header.is-visible .site-header__logo-image .dot-pl { transform: translateX(-84px); transition-delay: 3s; transition: 1.5s ease; }
   .site-header.is-visible .site-header__logo-image .letter-g { animation-delay: 0.4s; }
   .site-header.is-visible .site-header__logo-image .letter-r { animation-delay: 0.3s; }
   .site-header.is-visible .site-header__logo-image .letter-o { animation-delay: 0.2s; }
