@@ -14,6 +14,7 @@ if (!empty($block['className'])) {
   $className .= ' ' . $block['className'];
 }
 
+$row_index = get_row_index();
 ?>
 <?php if (have_rows('two_column')) :  while (have_rows('two_column')) : the_row();
 
@@ -31,11 +32,15 @@ $mobileFlex = 'flex-col-reverse';
 $content_width = get_sub_field('content_width');
 
 if ( $content_width ){
-  $content_width_class = 'max-w-[. ' $content_width . 'px]';
+  echo '<style>
+    .layout-'.$row_index.' .two-col-sec .content-width {
+      max-width: ' . $content_width . 'px;
+    }
+  </style>';
 }
 
 ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] md:py-[120px]">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] md:py-[120px] layout-<?php echo $row_index; ?>">
       <!-- <div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col md:flex-row items-center flex-wrap"> -->
       <div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col <?php echo $mobileFlex . ' ' . $desktopFlex; ?> items-center">
 
