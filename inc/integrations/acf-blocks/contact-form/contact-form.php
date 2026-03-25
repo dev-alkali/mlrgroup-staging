@@ -53,7 +53,7 @@ $form_shortcode = get_sub_field('form_shortcode');
 						$link    = get_sub_field('social_link');
 						?>
 						<?php if ($link): ?>
-							<a class="c-contact__social-link flex items-center flex-wrap gap-[8px]" href="<?php echo esc_url($link['url']); ?>"
+							<a class="c-contact__social-link flex items-center flex-wrap gap-[8px] text-[#525252] hover:text-accent transition-colors duration-300" href="<?php echo esc_url($link['url']); ?>"
 							target="<?php echo esc_attr($link['target'] ?: '_self'); ?>">
 							<?php if ($icon_id): ?>
 								<?php echo wp_get_attachment_image(
