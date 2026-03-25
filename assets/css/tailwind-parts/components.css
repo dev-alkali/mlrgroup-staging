@@ -63,12 +63,12 @@
   .site-header.light-skin { --logo-color: #fff; --arrow-color: #fff; }
   .site-header.light-skin .nav-link { color: #fff; }  
   .site-header.is-sticky .nav-link { color: #525252; --arrow-color: #525252; }  
-  .site-header.is-visible .site-header__logo-image .hide-letter { animation: fadeLetters 0.5s ease; opacity: 0; transition-delay: .45s; }
-  .site-header.is-visible .site-header__logo-image .dot-pl { transform: translateX(-84px); transition-delay: 3s; transition: 1.5s ease; }
-  .site-header.is-visible .site-header__logo-image .letter-g { animation-delay: 0.4s; }
-  .site-header.is-visible .site-header__logo-image .letter-r { animation-delay: 0.3s; }
-  .site-header.is-visible .site-header__logo-image .letter-o { animation-delay: 0.2s; }
-  .site-header.is-visible .site-header__logo-image .letter-u { animation-delay: 0.15s; }
+  .site-header.is-visible .site-header__logo-image .hide-letter { animation: fadeLetters 3s ease; opacity: 0; transition-delay: 3s; }
+  .site-header.is-visible .site-header__logo-image .dot-pl { transform: translateX(-84px); transition-delay: 4.1s; transition: 4.1s ease; }
+  .site-header.is-visible .site-header__logo-image .letter-g { animation-delay: 4s; }
+  .site-header.is-visible .site-header__logo-image .letter-r { animation-delay: 3.45s; }
+  .site-header.is-visible .site-header__logo-image .letter-o { animation-delay: 3.3s; }
+  .site-header.is-visible .site-header__logo-image .letter-u { animation-delay: 3.1s; }
   .site-header.is-sticky { position: fixed !important; top: 0; box-shadow: 0px 10px 15px -3px #0000001A; box-shadow: 0px 4px 6px -4px #0000001A; background: #fff;left: 0; max-width: 100%; width: 100%;  --logo-color: #11171E; animation: stickyHeaderAnim 1s ease;}
   .site-header.is-sticky .hamb-group { filter: invert(1);}
   .site-nav__dropdown { visibility: hidden; pointer-events: none; transform: translatey(60px); opacity: 0; transition: 0.5s ease; }
