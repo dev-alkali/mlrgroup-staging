@@ -33,7 +33,7 @@ $content_width = get_sub_field('content_width');
 
 if ( $content_width ){
   echo '<style>
-    .layout-'.$row_index.'.two-col-sec .content-width {
+    .layout-'.$row_index.'.two-col-sec .description-content {
       max-width: ' . $content_width . ';
     }
   </style>';
@@ -61,7 +61,7 @@ if ( $content_width ){
             </h2>
             <?php endif; ?>
             <?php if($description): ?>
-              <div class="w-full text-[clamp(16px,3vw,18px)] leading-[28px] text-[#525252] font-body flex flex-col gap-[30px] <?php echo $content_width_class; ?>"><?= wp_kses_post($description) ?></div>
+              <div class="w-full text-[clamp(16px,3vw,18px)] leading-[28px] text-[#525252] font-body flex flex-col gap-[30px] description-content"><?= wp_kses_post($description) ?></div>
             <?php endif; ?>
 
             <?php 
