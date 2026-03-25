@@ -12,6 +12,11 @@ $parent_terms = get_terms(array(
 ?>
 
 <aside id="sidebar-filter" class="hidden lg:flex flex-col w-full lg:w-[280px] xl:w-[360px] flex-shrink-0 items-start gap-4 bg-white" aria-label="Filter categories">
+   <div class="border-b border-[#CCCCCC] pb-[24px] mb-[24px]">
+      <p class="text-[#525252] font-[Poppins] font-medium text-[16px] leading-[24px] md:text-[16px] md:leading-[24px]">Get inspired: Browse our portfolio, filter by category, add elements you like to your Inquiry List.</p>
+   </div>
+
+
    <div class="items-center gap-2 px-5 py-3 self-stretch w-full flex-[0_0_auto] flex relative cursor-pointer">
       <div class="flex items-center gap-2 relative flex-1 grow">
          <a href="<?php echo esc_url(home_url('/work')); ?>" class="relative flex-1 font-heading font-medium text-neutral-700 text-lg tracking-[0] leading-7">
