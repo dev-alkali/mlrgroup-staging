@@ -62,25 +62,15 @@
 
   .site-header.light-skin { --logo-color: #fff; --arrow-color: #fff; }
   .site-header.light-skin .nav-link { color: #fff; }  
-
   .site-header.is-sticky .nav-link { color: #525252; --arrow-color: #525252; }  
-
   .site-header.is-visible .site-header__logo-image .hide-letter { animation: fadeLetters 0.5s ease; opacity: 0; transition-delay: .45s; }
   .site-header.is-visible .site-header__logo-image .dot-pl { transform: translateX(-84px); transition-delay: 2s; transition: 1.5s ease; }
   .site-header.is-visible .site-header__logo-image .letter-g { animation-delay: 0.4s; }
   .site-header.is-visible .site-header__logo-image .letter-r { animation-delay: 0.3s; }
   .site-header.is-visible .site-header__logo-image .letter-o { animation-delay: 0.2s; }
   .site-header.is-visible .site-header__logo-image .letter-u { animation-delay: 0.15s; }
-
-
-.site-header.is-sticky { position: fixed !important; top: 0; box-shadow: 0px 10px 15px -3px #0000001A; box-shadow: 0px 4px 6px -4px #0000001A; background: #fff; 
-   left: 0; max-width: 100%; width: 100%;  --logo-color: #11171E; animation: stickyHeaderAnim 1s ease; }
-
-
-.site-header.is-sticky .hamb-group { filter: invert(1); }
-
-
-
+  .site-header.is-sticky { position: fixed !important; top: 0; box-shadow: 0px 10px 15px -3px #0000001A; box-shadow: 0px 4px 6px -4px #0000001A; background: #fff;left: 0; max-width: 100%; width: 100%;  --logo-color: #11171E; animation: stickyHeaderAnim 1s ease;}
+  .site-header.is-sticky .hamb-group { filter: invert(1);}
   .site-nav__dropdown { visibility: hidden; pointer-events: none; transform: translatey(60px); opacity: 0; transition: 0.5s ease; }
   .site-nav__item.has-children:hover .site-nav__dropdown { visibility: visible; pointer-events: auto; transform: translatey(0); opacity: 1; }
   .site-nav__item.has-children:hover:before { content: ''; height: 40px; width: 100%; top: 200%; position: absolute; left: 0; transform: translateY(-30px); }
@@ -94,29 +84,11 @@
 
   .site-header__logo-image { display: block; }
   .site-header__logo-image img,.site-header__logo-image svg { width: 100%; height: auto; }
-
-  .nav-link {
-    font-family: "poppins", Helvetica;
-    color: #525252;
-    position: relative;
-    font-weight: 600;
-    font-style: SemiBold;
-    font-size: 16px;
-    line-height: 22px;
-    letter-spacing: 0%;
-    text-align: center;
-    text-transform: uppercase;
-  }
+  .nav-link {font-family: "poppins", Helvetica;color: #525252;position: relative;font-weight: 600;font-size: 16px;line-height: 22px;letter-spacing: 0%;text-align: center;text-transform: uppercase;}
 
   /* Underline Animation for Nav Links */
-
-  .nav-link__title {
-    position: relative;
-  }
-
-  .nav-link:has(img) .nav-link__title:after {
-      transform: inherit;
-  }
+  .nav-link__title {position: relative;}
+  .nav-link:has(img) .nav-link__title:after {transform: inherit;}
 
   .nav-link__title:after {
     content: "";
@@ -131,9 +103,7 @@
     transition: transform 0.35s ease;
   }
 
-  .nav-link__title:hover::after {
-    transform: scaleX(1);
-  }
+  .nav-link__title:hover::after {transform: scaleX(1);}
 
   
   /* --- MOBILE MENU & HAMBURGER --- */
