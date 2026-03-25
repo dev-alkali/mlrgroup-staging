@@ -122,7 +122,7 @@ if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
         echo '<li class="'. ($has_child ? 'has-child' : '') .'">';
 
         // ✅ Parent Row
-        echo '<div class="flex items-center justify-between py-[2px]">';
+        echo '<div class="flex items-center justify-between space-y-[28px]">';
 
         // ✅ Parent class (dynamic)
         $parent_class = $has_child
