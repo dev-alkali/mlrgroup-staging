@@ -103,10 +103,10 @@ $parent_terms = get_terms(array(
          endforeach;
       endif; */ ?>
 
-         <?php
+        <?php
 if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
 
-    echo '<ul class="space-y-2">'; // parent gap = 8px
+    echo '<ul class="space-y-[28px]">'; // ✅ 8px between parent items
 
     foreach ($parent_terms as $parent) :
 
@@ -121,16 +121,17 @@ if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
 
         echo '<li class="'. ($has_child ? 'has-child' : '') .'">';
 
-        echo '<div class="flex items-center justify-between">';
+        // ✅ Parent Row
+        echo '<div class="flex items-center justify-between space-y-[28px]">';
 
-        // ✅ Dynamic parent class
+        // ✅ Parent class (dynamic)
         $parent_class = $has_child
             ? 'font-[Poppins] font-bold text-[18px] leading-[28px] text-[#262626] hover:text-[#FD4338] no-underline transition-colors'
             : 'group relative inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline transition-all duration-300 pl-0 hover:pl-6';
 
         echo '<a href="'. esc_url($parent_link) .'" class="'. $parent_class .'">';
 
-        // ✅ SVG for NO child (hover only)
+        // ✅ SVG (only if NO child)
         if (!$has_child) {
             echo '<svg class="absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200"
                     width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -153,10 +154,10 @@ if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
 
         echo '</div>';
 
-        // ✅ Child list
+        // ✅ Child list (FIXED spacing)
         if ($has_child) {
 
-            echo '<ul class="child-list mt-2 space-y-7 max-h-0 overflow-hidden transition-all duration-300">'; // 28px gap
+            echo '<ul class="child-list space-y-[28px] max-h-0 overflow-hidden transition-all duration-300">';
 
             foreach ($child_terms as $child) :
 
@@ -167,7 +168,7 @@ if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
                 echo '<a href="'. esc_url($child_link) .'" 
                         class="group relative inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline transition-all duration-300 pl-0 hover:pl-6">';
 
-                // ✅ SVG hover icon
+                // ✅ Hover SVG (no layout shift)
                 echo '<svg class="absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200"
                         width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M2.26562 2.47461H13.407V13.9366" stroke="#FD4338"/>
