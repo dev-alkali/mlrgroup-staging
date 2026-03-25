@@ -33,9 +33,11 @@ $content_width = get_sub_field('content_width');
 
 if ( $content_width ){
   echo '<style>
+  @media (min-width: 1025px) {
     .layout-'.$row_index.'.two-col-sec .description-content {
       max-width: ' . $content_width . ';
     }
+  }
   </style>';
 }
 
