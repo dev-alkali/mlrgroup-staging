@@ -68,7 +68,7 @@ if ( $section_color == 'black' ){
         </div>
 
         <div class="w-full flex-1">
-          <div class="">
+          <div class="md:max-w-[92%]">
             <?php if($title_row_1 || $title_row_2): ?>
             <h2 class="text-[clamp(32px,6vw,68px)] leading-[clamp(40px,7vw,76px)] tracking-[-4%] <?php echo $text_262626_class; ?> font-heading mb-[20px]">
               <?php if($title_row_1): ?>
@@ -80,7 +80,7 @@ if ( $section_color == 'black' ){
             </h2>
             <?php endif; ?>
             <?php if($description): ?>
-              <div class="w-full text-[clamp(16px,3vw,18px)] leading-[28px] <?php echo $text_525252_class; ?> font-body flex flex-col gap-[30px] description-content"><?= wp_kses_post($description) ?></div>
+              <div class="w-full text-[clamp(16px,3vw,18px)] leading-[28px] <?php echo $text_525252_class; ?> font-body flex flex-col gap-[30px] description-content "><?= wp_kses_post($description) ?></div>
             <?php endif; ?>
 
             <?php 
