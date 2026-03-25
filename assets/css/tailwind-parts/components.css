@@ -168,7 +168,7 @@
 @media(min-width: 1180px) and (max-width: 1280px){
   .nav-link{font-size:13px;}
   .site-header_nav-list{
-    @apply gap-4;
+    @apply !gap-4;
   }
 }
 
