@@ -22,7 +22,7 @@ $parent_terms = get_terms(array(
    </div>
 
    <div class="sidebar-cat w-full">
-      <div class="">
+      <div class="space-y-[28px]">
             <a href="<?php echo esc_url(home_url('/work')); ?>" class="inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline transition-all duration-300 pl-0 hover:pl-6">
                <svg class="absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200" width="16" height="16" viewBox="0 0 16 16" fill="none">
                  <path d="M2.26562 2.47461H13.407V13.9366" stroke="#FD4338"/>
@@ -122,7 +122,7 @@ if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
         echo '<li class="'. ($has_child ? 'has-child' : '') .'">';
 
         // ✅ Parent Row
-        echo '<div class="flex items-center justify-between space-y-[28px]">';
+        echo '<div class="flex items-start justify-between space-y-[28px]">';
 
         // ✅ Parent class (dynamic)
         $parent_class = $has_child
