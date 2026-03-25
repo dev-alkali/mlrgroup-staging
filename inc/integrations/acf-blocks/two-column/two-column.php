@@ -28,6 +28,12 @@ $desktopFlex = ($layout === 'Right Image') ? 'md:flex-row-reverse' : 'md:flex-ro
 // Mobile: always content first, image bottom
 $mobileFlex = 'flex-col-reverse';
 
+$content_width = get_sub_field('content_width');
+
+if ( $content_width ){
+  $content_width_class = 'max-w-[. ' $content_width . 'px]';
+}
+
 ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] md:py-[120px]">
       <!-- <div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col md:flex-row items-center flex-wrap"> -->
@@ -50,7 +56,7 @@ $mobileFlex = 'flex-col-reverse';
             </h2>
             <?php endif; ?>
             <?php if($description): ?>
-              <div class="w-full text-[clamp(16px,3vw,18px)] leading-[28px] text-[#525252] font-body flex flex-col gap-[30px]"><?= wp_kses_post($description) ?></div>
+              <div class="w-full text-[clamp(16px,3vw,18px)] leading-[28px] text-[#525252] font-body flex flex-col gap-[30px] <?php echo $content_width_class; ?>"><?= wp_kses_post($description) ?></div>
             <?php endif; ?>
 
             <?php 
