@@ -949,8 +949,13 @@
 }
 
 .c-contact__description p a {
-  @apply font-semibold;
+  @apply font-semibold text-[#262626];
   font-family: var(--font-heading);
+  transition: color 0.3s ease;
+}
+
+.c-contact__description p a:hover{
+  @apply text-accent;
 }
 
 .c-contact__description p:first-child {
