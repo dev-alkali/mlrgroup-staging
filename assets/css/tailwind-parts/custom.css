@@ -46,7 +46,7 @@ a.footer-text:hover{color:#ffffff;}
 
 @media (min-width: 1441px) {
     /* .services .grid .source-card:hover .content {transform: translateY(calc(100% - 55cqw));} */
-    .services .grid .source-card:hover .arrow {transform: translateY(100cqw) rotate(45deg);}
+    /*.services .grid .source-card:hover .arrow {transform: translateY(100cqw) rotate(45deg);}*/
 }
 
 @media (max-width: 1024px) {
