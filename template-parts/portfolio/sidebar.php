@@ -18,8 +18,8 @@ $parent_terms = get_terms(array(
 
    <div class="flex justify-between items-center w-full mb-[28px]">
      <h3 class="font-[Poppins] font-medium text-[24px] leading-[32px] tracking-[-0.02em] text-[#262626] filter-heading">Filters</h3>
-     <a href="javascript:void(0);" class="font-[Poppins] font-medium text-[16px] leading-[24px] text-[#525252] underline hover:no-underline hover:text-accent transition-colors">Reset</a>
-     <div class="filter-toggle-btn">
+     <a href="javascript:void(0);" class="hidden md:inline-block font-[Poppins] font-medium text-[16px] leading-[24px] text-[#525252] underline hover:no-underline hover:text-accent transition-colors">Reset</a>
+     <div class="filter-toggle-btn block md:hidden">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
