@@ -22,7 +22,7 @@ $parent_terms = get_terms(array(
    </div>
 
    <div class="sidebar-cat">
-      
+
       <div class="items-center gap-2 px-5 py-3 self-stretch w-full flex-[0_0_auto] flex relative cursor-pointer">
          <div class="flex items-center gap-2 relative flex-1 grow">
             <a href="<?php echo esc_url(home_url('/work')); ?>" class="relative flex-1 font-heading font-medium text-neutral-700 text-lg tracking-[0] leading-7">
@@ -104,5 +104,64 @@ $parent_terms = get_terms(array(
          endforeach;
       endif;
       ?>
+
+
+
+
+
+      <?php
+function render_taxonomy_tree($taxonomy, $parent = 0, $current_term = null) {
+
+    $terms = get_terms([
+        'taxonomy'   => $taxonomy,
+        'parent'     => $parent,
+        'hide_empty' => false,
+        'orderby'    => 'term_id',
+        'order'      => 'DESC',
+    ]);
+
+    if (!empty($terms) && !is_wp_error($terms)) {
+        echo '<ul>';
+
+        foreach ($terms as $term) {
+
+            $term_link = get_term_link($term);
+
+            // Check active
+            $is_active = (isset($current_term->term_id) && $current_term->term_id === $term->term_id);
+
+            // Check children
+            $children = get_terms([
+                'taxonomy'   => $taxonomy,
+                'parent'     => $term->term_id,
+                'hide_empty' => false,
+            ]);
+
+            $has_child = !empty($children) && !is_wp_error($children);
+
+            echo '<li class="'. ($has_child ? 'has-child' : '') .'">';
+
+            // Link
+            echo '<a href="'. esc_url($term_link) .'" class="'. ($is_active ? 'active text-accent underline' : '') .'">';
+            echo esc_html($term->name);
+            echo '</a>';
+
+            // Arrow if child
+            if ($has_child) {
+                echo '<span class="arrow"></span>';
+
+                // Recursive call for children
+                render_taxonomy_tree($taxonomy, $term->term_id, $current_term);
+            }
+
+            echo '</li>';
+        }
+
+        echo '</ul>';
+    }
+}
+?>
+
+
    </div>
 </aside>
