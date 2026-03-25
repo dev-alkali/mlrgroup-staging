@@ -121,35 +121,42 @@ if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
         ]);
 
         $parent_link = get_term_link($parent);
-
-        $has_child = !empty($child_terms) && !is_wp_error($child_terms);
+        $has_child   = !empty($child_terms) && !is_wp_error($child_terms);
 
         echo '<li class="'. ($has_child ? 'has-child' : '') .'">';
 
         echo '<div class="flex items-center justify-between">';
 
-        // Parent link
-        echo '<a href="'. esc_url($parent_link) .'" class="parent-link">';
+        // ✅ Parent link styles
+        echo '<a href="'. esc_url($parent_link) .'" 
+                class="font-[Poppins] font-bold text-[18px] leading-[28px] text-[#262626] hover:text-accent transition-colors">';
         echo esc_html($parent->name);
         echo '</a>';
 
-        // Arrow (CLICK TARGET)
         if ($has_child) {
-            echo '<span class="arrow cursor-pointer" data-toggle></span>';
+            echo '<span class="arrow cursor-pointer ml-2" data-toggle></span>';
         }
 
         echo '</div>';
 
-        // Child list (hidden by default)
+        // Child list
         if ($has_child) {
-            echo '<ul class="child-list hidden">';
+            echo '<ul class="child-list hidden pl-4 mt-2">';
 
             foreach ($child_terms as $child) :
+
                 $child_link = get_term_link($child);
 
                 echo '<li>';
-                echo '<a href="'. esc_url($child_link) .'">'. esc_html($child->name) .'</a>';
+
+                // ✅ Child link styles
+                echo '<a href="'. esc_url($child_link) .'" 
+                        class="font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-accent transition-colors">';
+                echo esc_html($child->name);
+                echo '</a>';
+
                 echo '</li>';
+
             endforeach;
 
             echo '</ul>';
@@ -163,6 +170,7 @@ if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
 
 endif;
 ?>
+
 
 
    </div>
@@ -202,4 +210,9 @@ document.addEventListener("DOMContentLoaded", function () {
   background: red;
   transition: transform 0.3s ease;
 }
+
+
+
+
+
 </style>
