@@ -145,7 +145,7 @@ if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
 
         // ✅ Arrow toggle
         if ($has_child) {
-            echo '<span class="arrow cursor-pointer ml-2 transition-transform duration-300" data-toggle>
+            echo '<span class="arrow cursor-pointer ml-2 transition-transform duration-300 mt-[9px]" data-toggle>
                     <svg width="14" height="9" viewBox="0 0 14 9" fill="none">
                         <path d="M6.75 0.00019455L13.5 6.7502L11.925 8.3252L6.75 3.15019L1.575 8.3252L0 6.7502L6.75 0.00019455Z" fill="#525252"/>
                     </svg>
