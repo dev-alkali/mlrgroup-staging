@@ -173,17 +173,9 @@ endif; ?>
 
 <style>
    
-.child-list {
-  display: none;
-}
-
-.arrow {
-  display: inline-flex;
-  transition: transform 0.3s ease;
-}
-
-
-.filter-toggle-btn{display: inline-block;cursor: pointer;}
+.child-list {display: none;}
+.arrow {display: inline-flex;transition: transform 0.3s ease;}
+.filter-toggle-btn{cursor: pointer;}
 .bar1, .bar2, .bar3 {width: 30px;height: 3px;background-color: #262626;margin: 6px 0;transition: 0.4s;}
 .change-btn .bar1 {transform: translate(0, 8px) rotate(-45deg);}
 .change-btn .bar2 {opacity: 0;}
