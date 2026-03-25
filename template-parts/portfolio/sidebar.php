@@ -16,9 +16,14 @@ $parent_terms = get_terms(array(
       <p class="text-[#525252] font-[Poppins] font-medium text-[16px] leading-[24px] md:text-[16px] md:leading-[24px]">Get inspired: Browse our portfolio, filter by category, add elements you like to your Inquiry List.</p>
    </div>
 
-   <div class="flex justify-between items-center w-full">
-     <h3 class="font-[Poppins] font-medium text-[24px] leading-[32px] tracking-[-0.02em] text-[#262626]">Filters</h3>
+   <div class="flex justify-between items-center w-full mb-[28px]">
+     <h3 class="font-[Poppins] font-medium text-[24px] leading-[32px] tracking-[-0.02em] text-[#262626] filter-heading">Filters</h3>
      <a href="javascript:void(0);" class="font-[Poppins] font-medium text-[16px] leading-[24px] text-[#525252] underline hover:no-underline hover:text-accent transition-colors">Reset</a>
+     <div class="filter-toggle-btn">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
    </div>
 
    <div class="sidebar-cat w-full">
@@ -103,13 +108,9 @@ $parent_terms = get_terms(array(
          endforeach;
       endif; */ ?>
 
-        <?php
-if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
-
-    echo '<ul class="space-y-[28px]">'; // ✅ 8px between parent items
-
+        <?php if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
+         echo '<ul class="space-y-[28px]">'; 
     foreach ($parent_terms as $parent) :
-
         $child_terms = get_terms([
             'taxonomy'   => $taxonomy,
             'parent'     => $parent->term_id,
@@ -120,32 +121,22 @@ if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
         $has_child   = !empty($child_terms) && !is_wp_error($child_terms);
 
         echo '<li class="'. ($has_child ? 'has-child' : '') .'">';
-
-        // ✅ Parent Row
-        echo '<div class="flex items-start justify-between space-y-[28px]">';
-
-        // ✅ Parent class (dynamic)
+         echo '<div class="flex items-start justify-between space-y-[28px]">';
         $parent_class = $has_child
             ? 'font-[Poppins] font-bold text-[18px] leading-[28px] text-[#262626] hover:text-[#FD4338] no-underline transition-colors'
             : 'group relative inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline transition-all duration-300 pl-0 hover:pl-6';
 
         echo '<a href="'. esc_url($parent_link) .'" class="'. $parent_class .'">';
 
-        // ✅ SVG (only if NO child)
         if (!$has_child) {
-            echo '<svg class="absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200"
-                    width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M2.26562 2.47461H13.407V13.9366" stroke="#FD4338"/>
-                    <path d="M13.3351 2.54785L2.33789 13.8615" stroke="#FD4338"/>
-                  </svg>';
+            echo '<svg class="absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.26562 2.47461H13.407V13.9366" stroke="#FD4338"/><path d="M13.3351 2.54785L2.33789 13.8615" stroke="#FD4338"/></svg>';
         }
 
         echo esc_html($parent->name);
         echo '</a>';
 
-        // ✅ Arrow toggle
         if ($has_child) {
-            echo '<span class="arrow cursor-pointer ml-2 transition-transform duration-300 mt-[9px]" data-toggle>
+            echo '<span class="arrow cursor-pointer ml-2 transition-transform duration-300 mt-[9px] rotate-180" data-toggle>
                     <svg width="14" height="9" viewBox="0 0 14 9" fill="none">
                         <path d="M6.75 0.00019455L13.5 6.7502L11.925 8.3252L6.75 3.15019L1.575 8.3252L0 6.7502L6.75 0.00019455Z" fill="#525252"/>
                     </svg>
@@ -154,58 +145,41 @@ if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
 
         echo '</div>';
 
-        // ✅ Child list (FIXED spacing)
         if ($has_child) {
-
             echo '<ul class="child-list space-y-[28px] max-h-0 overflow-hidden transition-all duration-300">';
-
             foreach ($child_terms as $child) :
-
                 $child_link = get_term_link($child);
-
                 echo '<li>';
-
-                echo '<a href="'. esc_url($child_link) .'" 
-                        class="group relative inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline transition-all duration-300 pl-0 hover:pl-6">';
-
-                // ✅ Hover SVG (no layout shift)
+                echo '<a href="'. esc_url($child_link) .'" class="group relative inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline transition-all duration-300 pl-0 hover:pl-6">';
                 echo '<svg class="absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200"
                         width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M2.26562 2.47461H13.407V13.9366" stroke="#FD4338"/>
                         <path d="M13.3351 2.54785L2.33789 13.8615" stroke="#FD4338"/>
                       </svg>';
-
                 echo esc_html($child->name);
-
                 echo '</a>';
-
                 echo '</li>';
-
             endforeach;
-
             echo '</ul>';
         }
-
         echo '</li>';
-
     endforeach;
-
     echo '</ul>';
-
-endif;
-?>
-
+endif; ?>
 
    </div>
 </aside>
 
 
-
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  document.querySelectorAll("[data-toggle]").forEach(function (arrow) {
+  const toggleBtn = document.querySelector(".filter-toggle-btn");
+  const heading   = document.querySelector(".filter-heading");
+  const sidebar   = document.querySelector(".sidebar-cat");
 
+  // 👉 CHILD ACCORDION
+  document.querySelectorAll("[data-toggle]").forEach(function (arrow) {
     arrow.addEventListener("click", function (e) {
       e.preventDefault();
       e.stopPropagation();
@@ -225,19 +199,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // rotate arrow
       arrow.classList.toggle("rotate-180");
-    });
 
+      // ✅ IMPORTANT: update parent height after toggle
+      if (sidebar.classList.contains("open")) {
+        sidebar.style.maxHeight = sidebar.scrollHeight + "px";
+      }
+    });
   });
 
+  // 👉 SIDEBAR TOGGLE
+  function toggleFilter() {
+    toggleBtn.classList.toggle("change-btn");
+    sidebar.classList.toggle("open");
+
+    if (sidebar.classList.contains("open")) {
+      sidebar.style.maxHeight = sidebar.scrollHeight + "px";
+    } else {
+      sidebar.style.maxHeight = "0px";
+    }
+  }
+
+  toggleBtn.addEventListener("click", toggleFilter);
+  heading.addEventListener("click", toggleFilter);
+
 });
-
 </script>
-
 <style>
-   .arrow {
+   .sidebar-cat,
+.child-list {
+  display: none;
+}
+
+.arrow {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
   transition: transform 0.3s ease;
 }
 </style>
