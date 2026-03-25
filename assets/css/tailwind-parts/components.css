@@ -165,6 +165,13 @@
 .mobile-nav-item.open .mobile-item-name{color:#FD4338;text-decoration:underline;}
 .mobile-nav-arrow{width:10px;height:10px;border-right:2px solid #000;border-bottom:2px solid #000;transform:rotate(45deg) translateY(-4px);transition:transform 0.3s ease;}
 
+@media(min-width: 1180px) and (max-width: 1280px){
+  .nav-link{font-size:13px;}
+  .site-header_nav-list{
+    @apply gap-4;
+  }
+}
+
 @media (min-width: 1024px) {
 
 .site-header.is-sticky {
