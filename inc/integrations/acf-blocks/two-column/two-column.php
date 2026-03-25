@@ -33,7 +33,7 @@ $content_width = get_sub_field('content_width');
 
 if ( $content_width ){
   echo '<style>
-    .layout-'.$row_index.' .two-col-sec .content-width {
+    .layout-'.$row_index.'.two-col-sec .content-width {
       max-width: ' . $content_width . ';
     }
   </style>';
