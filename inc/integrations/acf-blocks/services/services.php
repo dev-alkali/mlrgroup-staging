@@ -79,11 +79,11 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
 
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> <?php echo esc_attr($overlay_class); ?> px-4 md:px-[40px] py-[60px] md:py-[120px]">      
       <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); 
-      $heading_and_content = get_sub_field('heading_and_content')
+      $heading_and_content = get_sub_field('heading_and_content');
       ?>
 
           <div class="flex flex-col items-center gap-8 md:gap-[60px] wrapper">
-            <div class="flex flex-col gap-[20px] lg:gap-[50px] self-stretch w-full <?php echo $heading_and_content === 'Single Row' ? 'lg:flex-row lg:items-center' : ''; ?>">
+            <div class="flex flex-col gap-[20px] lg:gap-[50px] self-stretch w-full <?php echo $heading_and_content === 'Single Row' ? 'lg:flex-row lg:items-center' : 'no-single-row'; ?>">
               <?php if (have_rows('title_group')) :  while (have_rows('title_group')) : the_row(); 
                     $title1 = get_sub_field('title_row_1');
                     $title2 = get_sub_field('title_row_2');
