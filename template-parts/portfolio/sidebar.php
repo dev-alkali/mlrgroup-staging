@@ -172,57 +172,57 @@ endif; ?>
 
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+// document.addEventListener("DOMContentLoaded", function () {
 
-  const toggleBtn = document.querySelector(".filter-toggle-btn");
-  const heading   = document.querySelector(".filter-heading");
-  const sidebar   = document.querySelector(".sidebar-cat");
+//   const toggleBtn = document.querySelector(".filter-toggle-btn");
+//   const heading   = document.querySelector(".filter-heading");
+//   const sidebar   = document.querySelector(".sidebar-cat");
 
-  // 👉 CHILD ACCORDION
-  document.querySelectorAll("[data-toggle]").forEach(function (arrow) {
-    arrow.addEventListener("click", function (e) {
-      e.preventDefault();
-      e.stopPropagation();
+//   // 👉 CHILD ACCORDION
+//   document.querySelectorAll("[data-toggle]").forEach(function (arrow) {
+//     arrow.addEventListener("click", function (e) {
+//       e.preventDefault();
+//       e.stopPropagation();
 
-      const li = arrow.closest("li");
-      const childList = li.querySelector(".child-list");
+//       const li = arrow.closest("li");
+//       const childList = li.querySelector(".child-list");
 
-      if (!childList) return;
+//       if (!childList) return;
 
-      if (childList.classList.contains("open")) {
-        childList.style.maxHeight = "0px";
-        childList.classList.remove("open");
-      } else {
-        childList.style.maxHeight = childList.scrollHeight + "px";
-        childList.classList.add("open");
-      }
+//       if (childList.classList.contains("open")) {
+//         childList.style.maxHeight = "0px";
+//         childList.classList.remove("open");
+//       } else {
+//         childList.style.maxHeight = childList.scrollHeight + "px";
+//         childList.classList.add("open");
+//       }
 
-      // rotate arrow
-      arrow.classList.toggle("rotate-180");
+//       // rotate arrow
+//       arrow.classList.toggle("rotate-180");
 
-      // ✅ IMPORTANT: update parent height after toggle
-      if (sidebar.classList.contains("open")) {
-        sidebar.style.maxHeight = sidebar.scrollHeight + "px";
-      }
-    });
-  });
+//       // ✅ IMPORTANT: update parent height after toggle
+//       if (sidebar.classList.contains("open")) {
+//         sidebar.style.maxHeight = sidebar.scrollHeight + "px";
+//       }
+//     });
+//   });
 
-  // 👉 SIDEBAR TOGGLE
-  function toggleFilter() {
-    toggleBtn.classList.toggle("change-btn");
-    sidebar.classList.toggle("open");
+//   // 👉 SIDEBAR TOGGLE
+//   function toggleFilter() {
+//     toggleBtn.classList.toggle("change-btn");
+//     sidebar.classList.toggle("open");
 
-    if (sidebar.classList.contains("open")) {
-      sidebar.style.maxHeight = sidebar.scrollHeight + "px";
-    } else {
-      sidebar.style.maxHeight = "0px";
-    }
-  }
+//     if (sidebar.classList.contains("open")) {
+//       sidebar.style.maxHeight = sidebar.scrollHeight + "px";
+//     } else {
+//       sidebar.style.maxHeight = "0px";
+//     }
+//   }
 
-  toggleBtn.addEventListener("click", toggleFilter);
-  heading.addEventListener("click", toggleFilter);
+//   toggleBtn.addEventListener("click", toggleFilter);
+//   heading.addEventListener("click", toggleFilter);
 
-});
+// });
 </script>
 <style>
    .sidebar-cat,
