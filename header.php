@@ -72,7 +72,7 @@
       <div class="site-header__nav inline-flex items-center gap-5 min-[1350px]:gap-10 flex-[0_0_auto] anim">
 
         <nav>
-          <div class="inline-flex items-center gap-6">
+          <div class="inline-flex items-center gap-6 site-header_nav-list">
             <?php
             $index = 2.45;
             foreach ($tree as $item):
