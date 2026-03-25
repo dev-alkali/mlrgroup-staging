@@ -30,7 +30,7 @@ $desktopFlex = ($layout === 'Right Image') ? 'md:flex-row-reverse img-right' : '
 $mobileFlex = 'flex-col-reverse';
 
 $content_width = get_sub_field('content_width');
-$content_width = get_sub_field('content_width');
+$section_color = get_sub_field('section_color');
 
 if ( $content_width ){
   echo '<style>
@@ -42,8 +42,24 @@ if ( $content_width ){
   </style>';
 }
 
+if ( $section_color == 'black' ){
+  $bg_color_class = 'bg-black';
+  $text_262626_class = 'text-white';
+  $text_737373_class = 'text-white';
+  $text_525252_class = 'text-white';
+  $text_e5e5e5_class = 'text-white';
+  $text_white_class = 'text-white';
+}elseif ( $section_color == 'white' ){
+  $bg_color_class = 'bg-white';
+  $text_262626_class = 'text-[#262626]';
+  $text_737373_class = 'text-[#737373]';
+  $text_525252_class = 'text-[#525252]';
+  $text_e5e5e5_class = 'text-[#E5E5E5]';
+  $text_white_class = 'text-white';
+}
+
 ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] md:py-[120px] layout-<?php echo $row_index; ?>">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] md:py-[120px] <?php echo $bg_color_class; ?>">
       <!-- <div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col md:flex-row items-center flex-wrap"> -->
       <div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col <?php echo $mobileFlex . ' ' . $desktopFlex; ?> items-center">
 
@@ -54,17 +70,17 @@ if ( $content_width ){
         <div class="w-full flex-1">
           <div class="">
             <?php if($title_row_1 || $title_row_2): ?>
-            <h2 class="text-[clamp(32px,6vw,68px)] leading-[clamp(40px,7vw,76px)] tracking-[-4%] text-[#262626] font-heading mb-[20px]">
+            <h2 class="text-[clamp(32px,6vw,68px)] leading-[clamp(40px,7vw,76px)] tracking-[-4%] <?php echo $text_262626_class; ?> font-heading mb-[20px]">
               <?php if($title_row_1): ?>
                   <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
               <?php endif; ?>
               <?php if($title_row_2): ?>
-                  <span class="font-light text-[#737373]"><?= wp_kses_post($title_row_2) ?></span>
+                  <span class="font-light <?php echo $text_737373_class; ?>"><?= wp_kses_post($title_row_2) ?></span>
               <?php endif; ?>
             </h2>
             <?php endif; ?>
             <?php if($description): ?>
-              <div class="w-full text-[clamp(16px,3vw,18px)] leading-[28px] text-[#525252] font-body flex flex-col gap-[30px] description-content"><?= wp_kses_post($description) ?></div>
+              <div class="w-full text-[clamp(16px,3vw,18px)] leading-[28px] <?php echo $text_525252_class; ?> font-body flex flex-col gap-[30px] description-content"><?= wp_kses_post($description) ?></div>
             <?php endif; ?>
 
             <?php 
