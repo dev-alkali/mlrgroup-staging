@@ -7,7 +7,7 @@ get_header();
 	<main id="primary" class="site-main">
 
 		<section class="error-404 not-found lg:py-[200px] md:py-[140px] py-[80px]">
-			<header class="page-header">
+			<header class="page-header !pt-0">
 				<h1 class="page-title text-[#262626] font-heading text-[clamp(96px,18vw,300px)] leading-[clamp(96px,18vw,300px)] tracking-[-0.02em] text-center font-bold">404<span class="text-accent text-[clamp(64px,12vw,200px)] leading-[clamp(96px,18vw,300px)]">.</span></h1>
 			</header><!-- .page-header -->
 
