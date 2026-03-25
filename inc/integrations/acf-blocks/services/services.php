@@ -91,7 +91,7 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
               ?>
                  <?php if ($title1 || $title2) : ?>
                   <div class="serve-heading">
-                    <h2 class="max-w-[500px] w-full flex flex-col font-heading font-bold text-[clamp(36px,5vw,68px)] leading-[clamp(44px,6vw,78px)] tracking-[-0.02em]">
+                    <h2 class="w-full font-heading font-bold text-[clamp(36px,5vw,68px)] leading-[clamp(44px,6vw,78px)] tracking-[-0.02em]">
                       <span class="font-bold text-neutral-800"><?= wp_kses_post($title1) ?></span>
                       <span class="font-light text-neutral-500"><?= wp_kses_post($title2) ?></span>
                     </h2>
