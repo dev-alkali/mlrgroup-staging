@@ -77,11 +77,12 @@
 }
 
 /* Step 2: Stagger (one by one AFTER 3s hold) */
-.site-header.is-visible .site-header__logo-image .letter-u { animation-delay: 3s; }
-.site-header.is-visible .site-header__logo-image .letter-o { animation-delay: 3.15s; }
-.site-header.is-visible .site-header__logo-image .letter-r { animation-delay: 3.3s; }
-.site-header.is-visible .site-header__logo-image .letter-g { animation-delay: 3.45s; }
-.site-header.is-visible .site-header__logo-image .letter-p { animation-delay: 3.6s; }
+.site-header.is-visible .site-header__logo-image .letter-p { animation-delay: 3s; }
+.site-header.is-visible .site-header__logo-image .letter-u { animation-delay: 3.15s; }
+.site-header.is-visible .site-header__logo-image .letter-o { animation-delay: 3.3s; }
+.site-header.is-visible .site-header__logo-image .letter-r { animation-delay: 3.45s; }
+.site-header.is-visible .site-header__logo-image .letter-g { animation-delay: 4s; }
+
 
 /* Step 3: Dot moves AFTER letters finish */
 .site-header.is-visible .site-header__logo-image .dot-pl {
