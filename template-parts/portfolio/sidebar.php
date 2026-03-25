@@ -149,19 +149,14 @@ if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
 
                 echo '<li>';
 
-                // ✅ Child link (GROUP for hover control)
-                echo '<a href="'. esc_url($child_link) .'" 
-                        class="group flex items-center gap-2 font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline transition-colors">';
-
-                // ✅ SVG (hidden by default, show on hover)
-                echo '<svg class="opacity-0 group-hover:opacity-100 transition-opacity duration-200" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.26562 2.47461H13.407V13.9366" stroke="#FD4338"/>
-                        <path d="M13.3351 2.54785L2.33789 13.8615" stroke="#FD4338"/>
-                      </svg>';
-
-                echo esc_html($child->name);
-
-                echo '</a>';
+                echo '<a href="'. esc_url($child_link) .'" class="group relative inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline transition-colors pl-0 hover:pl-6">';
+                  echo '<svg class="absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200"
+                          width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <path d="M2.26562 2.47461H13.407V13.9366" stroke="#FD4338"/>
+                          <path d="M13.3351 2.54785L2.33789 13.8615" stroke="#FD4338"/>
+                        </svg>';
+                  echo esc_html($child->name);
+                  echo '</a>';
 
                 echo '</li>';
 
