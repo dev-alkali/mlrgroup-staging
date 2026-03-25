@@ -86,7 +86,7 @@ if ($background_color == 'black') {
       $content = get_sub_field('p_content');
     ?>
 
-      <div class="flex flex-col gap-[20px] justify-between min-[1199px]:w-[20%] md:w-[31%]">
+      <div class="flex flex-col gap-[20px] justify-between min-[1199px]:w-[20%] sm:w-[30%]">
 
         <!-- Index -->
         <div class="flex flex-col gap-[20px]">
