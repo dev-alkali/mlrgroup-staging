@@ -10,7 +10,7 @@ if (!empty($block['anchor'])) {
   $id = $block['anchor'];
 }
 
-
+$row_index = get_row_index();
 $className = 'trusted_brand';
 if (!empty($block['className'])) {
   $className .= ' ' . $block['className'];
