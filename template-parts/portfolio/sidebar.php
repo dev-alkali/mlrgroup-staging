@@ -21,7 +21,7 @@ $parent_terms = get_terms(array(
      <a href="javascript:void(0);" class="font-[Poppins] font-medium text-[16px] leading-[24px] text-[#525252] underline hover:no-underline hover:text-accent transition-colors">Reset</a>
    </div>
 
-   <div class="sidebar-cat">
+   <div class="sidebar-cat w-full">
 
       <div class="items-center gap-2 px-5 py-3 self-stretch w-full flex-[0_0_auto] flex relative cursor-pointer">
          <div class="flex items-center gap-2 relative flex-1 grow">
