@@ -16,9 +16,9 @@
 <?php wp_body_open(); ?>
 
 <?php $header_schema = get_field('header_schema') == 'light-skin' ? 'absolute min-[1024px]:pt-[52px]' : 'relative dark-skin min-[1024px]:py-4';?>
-<div class="header-wrapper bg-white">
-<header class=" <?php echo $header_schema.' '.get_field('header_schema'); ?> z-50 w-full site-header anim px-4 min-[600px]:px-10 min-[767px]:px-20 lg:px-[100px]" data-delay="2.25" data-anim="up" data-start="top 100%">
 
+<header class=" <?php echo $header_schema.' '.get_field('header_schema'); ?> z-50 w-full site-header anim px-4 min-[600px]:px-10 min-[767px]:px-20 lg:px-[100px]" data-delay="2.25" data-anim="up" data-start="top 100%">
+  
   <?php
   $locations = get_nav_menu_locations();
   $menu_id   = $locations['header-menu'] ?? 0;
@@ -54,8 +54,8 @@
   ?>
 
   <!-- DESKTOP HEADER -->
-  <div class="hidden min-[1180px]:flex self-stretch flex-[0_0_auto] w-full">
-    <div class="dark-reset-x max-w-[1920px] min-[1180px]:flex justify-between w-full items-center mx-auto min-[767px]:px-20">
+  <div class="hidden min-[1180px]:flex self-stretch flex-[0_0_auto] w-full max-w-[1752px]">
+    <div class="dark-reset-x  min-[1180px]:flex justify-between w-full items-center mx-auto min-[767px]:px-20">
 
     <!-- LOGO -->
       <div class="relative w-[140px] h-8">
@@ -207,4 +207,3 @@
   </div>
 
 </header>
-</div>
