@@ -225,6 +225,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 <style>
-   .arrow {display: inline-flex;align-items: center;justify-content: center;transition: transform 0.3s ease;}
-   .sidebar-cat {overflow: hidden;max-height: 0; transition: max-height 0.4s ease;}
+   .sidebar-cat,
+.child-list {
+  display: none;
+}
+
+.arrow {
+  display: inline-flex;
+  transition: transform 0.3s ease;
+}
 </style>
