@@ -786,13 +786,17 @@
     width: 70px;
     height: 70px;
     border-radius: 999px;
-    background: rgba(204, 204, 204, 0.6);
+    /* background: rgba(204, 204, 204, 0.6); */
+    background-color: var(--color-accent);
     border: none;
     z-index: 90;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
+  .solutions-prev:hover,
+  .solutions-next:hover{background-color: #000;}
   .solutions-dots {
     display: flex;
     justify-content: center;
@@ -1205,3 +1209,6 @@
   @apply max-md:hidden;
 }
 
+button.swiper-button-disabled {
+  @apply hidden;
+}
