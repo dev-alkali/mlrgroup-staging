@@ -110,7 +110,7 @@ $parent_terms = get_terms(array(
 <?php
 if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
 
-    echo '<ul>';
+    echo '<ul class="flex flex-col gap-2">'; // ✅ parent gap = 8px
 
     foreach ($parent_terms as $parent) :
 
@@ -127,9 +127,9 @@ if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
 
         echo '<div class="flex items-center justify-between">';
 
-        // ✅ Parent link styles
+        // ✅ Parent link
         echo '<a href="'. esc_url($parent_link) .'" 
-                class="font-[Poppins] font-bold text-[18px] leading-[28px] text-[#262626] hover:text-accent transition-colors">';
+                class="font-[Poppins] font-bold text-[18px] leading-[28px] text-[#262626] hover:text-[#FD4338] no-underline transition-colors">';
         echo esc_html($parent->name);
         echo '</a>';
 
@@ -139,9 +139,9 @@ if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
 
         echo '</div>';
 
-        // Child list
+        // ✅ Child list
         if ($has_child) {
-            echo '<ul class="child-list hidden pl-4 mt-2">';
+            echo '<ul class="child-list hidden flex flex-col gap-7 mt-2 pl-4">'; // gap-7 = 28px
 
             foreach ($child_terms as $child) :
 
@@ -149,10 +149,17 @@ if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
 
                 echo '<li>';
 
-                // ✅ Child link styles
+                // ✅ Child link with SVG hover
                 echo '<a href="'. esc_url($child_link) .'" 
-                        class="font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-accent transition-colors">';
+                        class="group flex items-center gap-2 font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline transition-colors">';
+
                 echo esc_html($child->name);
+
+                // ✅ SVG (hidden → show on hover)
+                echo '<svg class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M5 10h10M10 5l5 5-5 5"/>
+                      </svg>';
+
                 echo '</a>';
 
                 echo '</li>';
@@ -170,7 +177,6 @@ if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
 
 endif;
 ?>
-
 
 
    </div>
