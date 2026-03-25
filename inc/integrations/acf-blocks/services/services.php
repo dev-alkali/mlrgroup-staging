@@ -79,7 +79,7 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
 
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> <?php echo esc_attr($overlay_class); ?> px-4 md:px-[40px] py-[60px] md:py-[120px]">      
       <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); 
-      $heading_and_content = get_sub_field('heading_and_content')
+      $heading_and_content = get_sub_field('heading_and_content');
       ?>
 
           <div class="flex flex-col items-center gap-8 md:gap-[60px] wrapper">
