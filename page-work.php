@@ -36,10 +36,10 @@
         <div class="max-w-[800px]">
           <?php if($title_row_1 || $title_row_2): ?>
           <h2 class="text-[clamp(44px,6vw,70px)] leading-[clamp(56px,7vw,88px)] tracking-[-0.02em] text-white font-heading anim" data-delay="0.1" data-anim="up">            
-            <?php if($title_row_1): ?>
+            <?php if(get_sub_field('title_row_1')): ?>
                 <span class="font-bold"><?= wp_kses_post(get_sub_field('title_row_1')) ?></span>
             <?php endif; ?>
-            <?php if($title_row_2): ?>
+            <?php if(get_sub_field('title_row_2')): ?>
                 <span class="font-light"><?= wp_kses_post(get_sub_field('title_row_2')) ?> </span>
             <?php endif; ?>
           </h2>
