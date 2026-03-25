@@ -68,7 +68,7 @@ if ( $section_color == 'black' ){
         </div>
 
         <div class="w-full flex-1">
-          <div class="md:max-w-[92%]">
+          <div class="md:max-w-[92%] <?php if ($section_color) == 'black' { echo 'md:ml-auto'; } ?>">
             <?php if($title_row_1 || $title_row_2): ?>
             <h2 class="text-[clamp(32px,6vw,68px)] leading-[clamp(40px,7vw,76px)] tracking-[-4%] <?php echo $text_262626_class; ?> font-heading mb-[20px]">
               <?php if($title_row_1): ?>
