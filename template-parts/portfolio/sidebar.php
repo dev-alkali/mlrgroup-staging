@@ -16,7 +16,7 @@ $parent_terms = get_terms(array(
       <p class="text-[#525252] font-[Poppins] font-medium text-[16px] leading-[24px] md:text-[16px] md:leading-[24px]">Get inspired: Browse our portfolio, filter by category, add elements you like to your Inquiry List.</p>
    </div>
 
-   <div class="flex justify-between items-center">
+   <div class="flex justify-between items-center w-full">
      <h3 class="font-[Poppins] font-medium text-[24px] leading-[32px] tracking-[-0.02em] text-[#262626]">Filters</h3>
      <a href="javascript:void(0);" class="font-[Poppins] font-medium text-[16px] leading-[24px] text-[#525252] underline">Reset</a>
    </div>
