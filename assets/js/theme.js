@@ -129,7 +129,7 @@ jQuery(document).ready(function ($) {
   const $toggleBtn = $(".filter-toggle-btn");
   const $heading = $(".filter-heading");
 
-  // 👉 SIDEBAR TOGGLE
+
   function toggleSidebar() {
     $toggleBtn.toggleClass("change-btn");
     $sidebar.stop(true, true).slideToggle(300);
@@ -145,7 +145,6 @@ jQuery(document).ready(function ($) {
   });
 
 
-  // 👉 CHILD ACCORDION
   $("[data-toggle]").on("click", function (e) {
     e.preventDefault();
     e.stopPropagation();
