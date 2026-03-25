@@ -23,7 +23,7 @@ $parent_terms = get_terms(array(
 
    <div class="sidebar-cat w-full">
       <div class="pb-[28px]">
-            <a href="<?php echo esc_url(home_url('/work')); ?>" class="inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline transition-all duration-300 pl-0 hover:pl-6">
+            <a href="<?php echo esc_url(home_url('/work')); ?>" class="group relative inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline transition-all duration-300 pl-0 hover:pl-6">
                <svg class="absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200" width="16" height="16" viewBox="0 0 16 16" fill="none">
                  <path d="M2.26562 2.47461H13.407V13.9366" stroke="#FD4338"/>
                  <path d="M13.3351 2.54785L2.33789 13.8615" stroke="#FD4338"/>
