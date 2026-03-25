@@ -34,6 +34,15 @@ a.footer-text:hover{color:#ffffff;}
 
 .case-studies-sec .collection-item .collection-gradient-box:after {background: linear-gradient(318.51deg, rgba(0, 0, 0, 0.9) -57.23%, rgba(253, 67, 56, 0.9) 105.13%);}
 
+.child-list {display: none;}
+.arrow {display: inline-flex;transition: transform 0.3s ease;}
+.filter-toggle-btn{cursor: pointer;}
+.bar1, .bar2, .bar3 {width: 30px;height: 3px;background-color: #262626;margin: 6px 0;transition: 0.4s;}
+.change-btn .bar1 {transform: translate(0, 8px) rotate(-45deg);}
+.change-btn .bar2 {opacity: 0;}
+.change-btn .bar3 {transform: translate(0, -10px) rotate(45deg);}
+
+
 
 @media (min-width: 1441px) {
     /* .services .grid .source-card:hover .content {transform: translateY(calc(100% - 55cqw));} */

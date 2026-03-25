@@ -11,7 +11,7 @@ $parent_terms = get_terms(array(
 ));
 ?>
 
-<aside id="sidebar-filter" class="hidden lg:flex flex-col w-full lg:w-[280px] xl:w-[360px] flex-shrink-0 items-start gap-4 bg-white" aria-label="Filter categories">
+<aside id="sidebar-filter" class="flex flex-col w-full lg:w-[280px] xl:w-[360px] flex-shrink-0 items-start gap-4 bg-white" aria-label="Filter categories">
    <div class="border-b border-[#CCCCCC] pb-[24px] mb-[24px]">
       <p class="text-[#525252] font-[Poppins] font-medium text-[16px] leading-[24px] md:text-[16px] md:leading-[24px]">Get inspired: Browse our portfolio, filter by category, add elements you like to your Inquiry List.</p>
    </div>
@@ -169,16 +169,3 @@ endif; ?>
 
    </div>
 </aside>
-
-
-<style>
-   
-.child-list {display: none;}
-.arrow {display: inline-flex;transition: transform 0.3s ease;}
-.filter-toggle-btn{cursor: pointer;}
-.bar1, .bar2, .bar3 {width: 30px;height: 3px;background-color: #262626;margin: 6px 0;transition: 0.4s;}
-.change-btn .bar1 {transform: translate(0, 8px) rotate(-45deg);}
-.change-btn .bar2 {opacity: 0;}
-.change-btn .bar3 {transform: translate(0, -10px) rotate(45deg);}
-
-</style>
