@@ -181,4 +181,12 @@ endif; ?>
   display: inline-flex;
   transition: transform 0.3s ease;
 }
+
+
+.filter-toggle-btn{display: inline-block;cursor: pointer;}
+.bar1, .bar2, .bar3 {width: 35px;height: 5px;background-color: #333;margin: 6px 0;transition: 0.4s;}
+.change-btn .bar1 {transform: translate(0, 11px) rotate(-45deg);}
+.change-btn .bar2 {opacity: 0;}
+.change-btn .bar3 {transform: translate(0, -11px) rotate(45deg);}
+
 </style>
