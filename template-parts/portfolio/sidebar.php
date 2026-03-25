@@ -195,10 +195,35 @@ document.addEventListener("DOMContentLoaded", function () {
       arrow.classList.toggle("rotate-180");
     });
   });
+
+  const toggleBtn = document.querySelector(".filter-toggle-btn");
+  const heading   = document.querySelector(".filter-heading");
+  const sidebar   = document.querySelector(".sidebar-cat");
+
+  function toggleFilter() {
+    // toggle button class
+    toggleBtn.classList.toggle("change-btn");
+
+    // slide toggle
+    if (sidebar.style.maxHeight) {
+      sidebar.style.maxHeight = null;
+    } else {
+      sidebar.style.maxHeight = sidebar.scrollHeight + "px";
+    }
+  }
+
+  // click on button
+  toggleBtn.addEventListener("click", toggleFilter);
+
+  // click on heading
+  heading.addEventListener("click", toggleFilter);
+  
+  
 });
 
 </script>
 
 <style>
    .arrow {display: inline-flex;align-items: center;justify-content: center;transition: transform 0.3s ease;}
+   .sidebar-cat {overflow: hidden;max-height: 0; transition: max-height 0.4s ease;}
 </style>
