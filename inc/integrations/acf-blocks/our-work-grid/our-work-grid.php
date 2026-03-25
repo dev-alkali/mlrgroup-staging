@@ -31,7 +31,7 @@ if (!empty($block['className'])) {
         </div>
 
         <!-- Work Grid -->
-        <div class="w-full bg-white grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div class="w-full bg-white grid grid-cols-2 lg:grid-cols-4">
             <?php if (have_rows('works_rows')) : while (have_rows('works_rows')) : the_row(); ?>
                 <?php if (have_rows('works')) : while (have_rows('works')) : the_row(); ?>
                     <a href="<?php echo esc_url(get_sub_field('item_path')); ?>"
