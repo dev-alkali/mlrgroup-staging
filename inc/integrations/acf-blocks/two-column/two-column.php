@@ -14,7 +14,7 @@ if (!empty($block['className'])) {
   $className .= ' ' . $block['className'];
 }
 
-$row_index = get_row_index();
+
 ?>
 <?php if (have_rows('two_column')) :  while (have_rows('two_column')) : the_row();
 
@@ -24,7 +24,7 @@ $description = get_sub_field('description');
 //$left_image_or_right_image = get_sub_field('left_image_or_right_image');
 $layout = get_sub_field('left_image_or_right_image'); // left / right
 // Desktop layout
-$desktopFlex = ($layout === 'Right Image') ? 'md:flex-row-reverse' : 'md:flex-row';
+$desktopFlex = ($layout === 'Right Image') ? 'md:flex-row-reverse img-right' : 'md:flex-row img-left';
 
 // Mobile: always content first, image bottom
 $mobileFlex = 'flex-col-reverse';
@@ -35,7 +35,7 @@ $content_width = get_sub_field('content_width');
 if ( $content_width ){
   echo '<style>
   @media (min-width: 1025px) {
-    .layout-'.$row_index.'.two-col-sec .description-content {
+    .two-col-sec .description-content {
       max-width: ' . $content_width . ';
     }
   }
