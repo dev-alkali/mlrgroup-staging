@@ -54,7 +54,7 @@
   ?>
 
   <!-- DESKTOP HEADER -->
-  <div class="hidden min-[1180px]:flex self-stretch flex-[0_0_auto] w-full max-w-[1752px]">
+  <div class="hidden min-[1180px]:flex self-stretch flex-[0_0_auto] w-full max-w-[1752px] mx-auto">
     <div class="dark-reset-x  min-[1180px]:flex justify-between w-full items-center mx-auto min-[767px]:px-20">
 
     <!-- LOGO -->
