@@ -76,7 +76,7 @@ if ($background_color == 'black') {
 
 <?php if (have_rows('partnership_list')) : ?>
   
-  <div class="partnership-list grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]">
+  <div class="partnership-list flex flex-wrap min-[1199px]:flex-nowrap justify-center gap-6">
     
     <?php 
     $i = 1;
@@ -86,7 +86,7 @@ if ($background_color == 'black') {
       $content = get_sub_field('p_content');
     ?>
 
-      <div class="flex flex-col gap-[20px] justify-between">
+      <div class="flex flex-col gap-[20px] justify-between min-[1199px]:w-[20%] md:w-[32%] flex-1">
 
         <!-- Index -->
         <div class="flex flex-col gap-[20px]">
