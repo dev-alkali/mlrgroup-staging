@@ -1103,5 +1103,5 @@ button.swiper-button-disabled {
 }
 .description-content ul li::before{
   @apply block w-[24px] h-[24px] bg-cover bg-center content-[''] absolute left-0 top-0;
-  background-image: url('../../imgs/faq-arrow.svg');
+  background-image: url('../../imgs/list-icon.svg');
 }
