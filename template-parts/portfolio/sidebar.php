@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: red;
+  /*background: red;*/
   transition: transform 0.3s ease;
 }
 
