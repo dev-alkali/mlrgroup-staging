@@ -172,7 +172,7 @@ endif; ?>
 
 
 <style>
-   .sidebar-cat,
+   
 .child-list {
   display: none;
 }
