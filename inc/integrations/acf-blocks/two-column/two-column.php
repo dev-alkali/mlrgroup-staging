@@ -30,6 +30,7 @@ $desktopFlex = ($layout === 'Right Image') ? 'md:flex-row-reverse' : 'md:flex-ro
 $mobileFlex = 'flex-col-reverse';
 
 $content_width = get_sub_field('content_width');
+$content_width = get_sub_field('content_width');
 
 if ( $content_width ){
   echo '<style>
