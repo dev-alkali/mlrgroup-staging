@@ -3315,7 +3315,7 @@ $map_code = get_sub_field('map_code');
   #wmap-inner {position: relative;width: 100%;margin: 0 auto;}
   /*max-width: 1360px;*/
   #wmap-inner svg,#wmap-inner img {display: block;width: 100%;height: auto;}  
-  .wmap-marker {position: absolute;transform: translate(-50%, -50%);cursor: pointer;z-index: 20;}
+  .wmap-marker {position: absolute;transform: translate(-50%, -50%);cursor: pointer;z-index: 20;transition: z-index 0s 3s;}
   .wmap-dot {width: 7px;height: 7px;border-radius: 50%;transition: opacity 0.2s;}
   .wmap-pin {position: absolute;top: -40px;left: 50%;transform: translateX(-50%) translateY(50%) scale(0);transform-origin: bottom center;transition: transform 0.2s ease;pointer-events: none;    width: 20px;height: 20px;transition: transform 0.2s ease 3s;}
   /*.wmap-marker:hover .wmap-dot {opacity: 0;}*/
@@ -3327,7 +3327,7 @@ $map_code = get_sub_field('map_code');
   .wmap-tip-city {display: block;font-size: 12px;color: #525252;}
   .wmap-red  { color: #FD4338; }
   .wmap-blue { color: #4A78FF; }
-  .wmap-marker:hover{z-index: 21;}
+  .wmap-marker:hover{z-index: 21;transition: z-index 0s 0s;}
 </style>
 
 
