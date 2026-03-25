@@ -106,7 +106,7 @@ $parent_terms = get_terms(array(
         <?php
 if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
 
-    echo '<ul class="space-y-2">'; // ✅ 8px between parent items
+    echo '<ul class="space-y-[28px]">'; // ✅ 8px between parent items
 
     foreach ($parent_terms as $parent) :
 
