@@ -61,5 +61,5 @@ a.footer-text:hover{color:#ffffff;}
 
 
 
-.source-card .content {margin-top: 100%;transition: all 0.3s ease;}
-.source-card:hover .content {transform: unset !important;margin-top: 0;}
+.source-card .content {margin-top: 100% !important;transition: all 0.3s ease;}
+.source-card:hover .content {transform: unset !important;margin-top: 0!important;}
