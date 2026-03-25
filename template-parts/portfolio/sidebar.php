@@ -106,6 +106,7 @@ $parent_terms = get_terms(array(
       ?>
 
 
+
 <?php
 if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
 
@@ -113,59 +114,42 @@ if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
 
     foreach ($parent_terms as $parent) :
 
-        // ✅ FIX: use parent instead of child_of
         $child_terms = get_terms([
             'taxonomy'   => $taxonomy,
             'parent'     => $parent->term_id,
             'hide_empty' => false,
-            'orderby'    => 'term_id',
-            'order'      => 'DESC',
         ]);
 
         $parent_link = get_term_link($parent);
 
-        // Active check
-        $is_active = (isset($current_term->term_id) && $current_term->term_id === $parent->term_id);
-
-        // Check if any child is active
-        $is_child_active = false;
-        if (!empty($child_terms)) {
-            foreach ($child_terms as $child) {
-                if (isset($current_term->term_id) && $current_term->term_id === $child->term_id) {
-                    $is_child_active = true;
-                    break;
-                }
-            }
-        }
-
-        $has_child = !empty($child_terms);
+        $has_child = !empty($child_terms) && !is_wp_error($child_terms);
 
         echo '<li class="'. ($has_child ? 'has-child' : '') .'">';
 
+        echo '<div class="flex items-center justify-between">';
+
         // Parent link
-        echo '<a href="'. esc_url($parent_link) .'" class="'. ($is_active ? 'text-accent underline' : 'text-neutral-700') .'">';
+        echo '<a href="'. esc_url($parent_link) .'" class="parent-link">';
         echo esc_html($parent->name);
         echo '</a>';
 
-        // Arrow
+        // Arrow (CLICK TARGET)
         if ($has_child) {
-            echo '<span class="arrow"></span>';
+            echo '<span class="arrow cursor-pointer" data-toggle></span>';
+        }
 
-            echo '<ul class="'. ($is_child_active ? 'block' : 'hidden') .'">';
+        echo '</div>';
+
+        // Child list (hidden by default)
+        if ($has_child) {
+            echo '<ul class="child-list hidden">';
 
             foreach ($child_terms as $child) :
-
                 $child_link = get_term_link($child);
-                $child_active = (isset($current_term->term_id) && $current_term->term_id === $child->term_id);
 
                 echo '<li>';
-
-                echo '<a href="'. esc_url($child_link) .'" class="'. ($child_active ? 'text-accent underline' : 'text-neutral-600') .'">';
-                echo esc_html($child->name);
-                echo '</a>';
-
+                echo '<a href="'. esc_url($child_link) .'">'. esc_html($child->name) .'</a>';
                 echo '</li>';
-
             endforeach;
 
             echo '</ul>';
@@ -183,3 +167,39 @@ endif;
 
    </div>
 </aside>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  document.querySelectorAll("[data-toggle]").forEach(function (arrow) {
+
+    arrow.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const li = arrow.closest("li");
+      const childList = li.querySelector(".child-list");
+
+      if (!childList) return;
+
+      childList.classList.toggle("hidden");
+
+      // rotate arrow
+      arrow.classList.toggle("rotate-180");
+    });
+
+  });
+
+});
+</script>
+
+<style>
+   .arrow {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: red;
+  transition: transform 0.3s ease;
+}
+</style>
