@@ -843,7 +843,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    transition: opacity 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: all 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
   .collection-item .collection-gradient-box::before {
@@ -864,12 +864,13 @@
     );
   }
 
-  .collection-item:hover .collection-gradient-box::after {
+  /* .collection-item:hover .collection-gradient-box::after {
     opacity: 1;
-  }
+  } */
 
   .collection-item:hover .collection-gradient-box::before {
-    opacity: 0;
+    /* opacity: 0; */
+    background-color: linear-gradient(90deg,#000000e6 .42%,#0006 179.14%);
   }
 
   /*******/
