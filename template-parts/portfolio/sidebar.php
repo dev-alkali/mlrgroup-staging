@@ -146,7 +146,7 @@ $parent_terms = get_terms(array(
         echo '</div>';
 
         if ($has_child) {
-            echo '<ul class="child-list space-y-[28px]overflow-hidden transition-all duration-300">';
+            echo '<ul class="child-list space-y-[28px] overflow-hidden transition-all duration-300">';
             foreach ($child_terms as $child) :
                 $child_link = get_term_link($child);
                 echo '<li>';
