@@ -141,7 +141,7 @@ if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
 
         // ✅ Child list
         if ($has_child) {
-            echo '<ul class="child-list hidden pl-4 mt-2 space-y-7">'; // ✅ 28px gap
+            echo '<ul class="child-list hidden mt-2 space-y-7">'; // ✅ 28px gap
 
             foreach ($child_terms as $child) :
 
