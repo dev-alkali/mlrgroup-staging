@@ -31,7 +31,7 @@ $parent_terms = get_terms(array(
          </div>
       </div>
 
-      <?php
+      <?php /*
       if (! empty($parent_terms) && ! is_wp_error($parent_terms)) :
          foreach ($parent_terms as $parent) :
             $child_terms = get_terms(array(
@@ -102,77 +102,53 @@ $parent_terms = get_terms(array(
       <?php
             endif;
          endforeach;
-      endif;
-      ?>
+      endif; */ ?>
 
+         <?php if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
+             echo '<ul class="space-y-2">'; 
+             foreach ($parent_terms as $parent) :
+                 $child_terms = get_terms([
+                     'taxonomy'   => $taxonomy,
+                     'parent'     => $parent->term_id,
+                     'hide_empty' => false,
+                 ]);
 
+                 $parent_link = get_term_link($parent);
+                 $has_child   = !empty($child_terms) && !is_wp_error($child_terms);
 
-<?php
-if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
+                 echo '<li class="'. ($has_child ? 'has-child' : '') .'">';
+                 echo '<div class="flex items-center justify-between">';
+                    echo '<a href="'. esc_url($parent_link) .'" 
+                            class="font-[Poppins] font-bold text-[18px] leading-[28px] text-[#262626] hover:text-[#FD4338] no-underline transition-colors">';
+                    echo esc_html($parent->name);
+                    echo '</a>';
 
-    echo '<ul class="space-y-2">'; // ✅ parent-child gap = 8px
+                    if ($has_child) {
+                        echo '<span class="arrow cursor-pointer ml-2" data-toggle><svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.75 0.00019455L13.5 6.7502L11.925 8.3252L6.75 3.15019L1.575 8.3252L0 6.7502L6.75 0.00019455Z" fill="#525252"/></svg></span>';
+                    }
+                 echo '</div>';
 
-    foreach ($parent_terms as $parent) :
-
-        $child_terms = get_terms([
-            'taxonomy'   => $taxonomy,
-            'parent'     => $parent->term_id,
-            'hide_empty' => false,
-        ]);
-
-        $parent_link = get_term_link($parent);
-        $has_child   = !empty($child_terms) && !is_wp_error($child_terms);
-
-        echo '<li class="'. ($has_child ? 'has-child' : '') .'">';
-
-        echo '<div class="flex items-center justify-between">';
-
-        // ✅ Parent link
-        echo '<a href="'. esc_url($parent_link) .'" 
-                class="font-[Poppins] font-bold text-[18px] leading-[28px] text-[#262626] hover:text-[#FD4338] no-underline transition-colors">';
-        echo esc_html($parent->name);
-        echo '</a>';
-
-        if ($has_child) {
-            echo '<span class="arrow cursor-pointer ml-2" data-toggle><svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.75 0.00019455L13.5 6.7502L11.925 8.3252L6.75 3.15019L1.575 8.3252L0 6.7502L6.75 0.00019455Z" fill="#525252"/></svg></span>';
-        }
-
-        echo '</div>';
-
-        // ✅ Child list
-        if ($has_child) {
-            echo '<ul class="child-list hidden mt-2 space-y-7">'; // ✅ 28px gap
-
-            foreach ($child_terms as $child) :
-
-                $child_link = get_term_link($child);
-
-                echo '<li>';
-
-                echo '<a href="'. esc_url($child_link) .'" class="group relative inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline transition-colors pl-0 hover:pl-6">';
-                  echo '<svg class="absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200"
-                          width="16" height="16" viewBox="0 0 16 16" fill="none">
-                          <path d="M2.26562 2.47461H13.407V13.9366" stroke="#FD4338"/>
-                          <path d="M13.3351 2.54785L2.33789 13.8615" stroke="#FD4338"/>
-                        </svg>';
-                  echo esc_html($child->name);
-                  echo '</a>';
-
-                echo '</li>';
-
-            endforeach;
-
-            echo '</ul>';
-        }
-
-        echo '</li>';
-
-    endforeach;
-
-    echo '</ul>';
-
-endif;
-?>
+                 if ($has_child) {
+                     echo '<ul class="child-list hidden mt-2 space-y-7">'; 
+                     foreach ($child_terms as $child) :
+                         $child_link = get_term_link($child);
+                         echo '<li>';
+                         echo '<a href="'. esc_url($child_link) .'" class="group relative inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline transition-colors pl-0 hover:pl-6">';
+                           echo '<svg class="absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200"
+                                   width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                   <path d="M2.26562 2.47461H13.407V13.9366" stroke="#FD4338"/>
+                                   <path d="M13.3351 2.54785L2.33789 13.8615" stroke="#FD4338"/>
+                                 </svg>';
+                           echo esc_html($child->name);
+                           echo '</a>';
+                         echo '</li>';
+                     endforeach;
+                     echo '</ul>';
+                 }
+                 echo '</li>';
+             endforeach;
+             echo '</ul>';
+         endif;?>
 
 
    </div>
