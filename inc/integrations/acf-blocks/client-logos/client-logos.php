@@ -74,13 +74,13 @@ if (!empty($block['className'])) {
                   </div>
               <?php endif; ?>
 
-              <div class="logo-cards grid gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full">
+              <div class="logo-cards grid gap-2 flex justify-center flex-wrap">
                   <?php foreach ($logos as $item) :
                       $logo     = $item['logo'];
                       $bg_color = $item['bg_color'];
                       $industry = $item['industry'];
                   ?>
-                      <div class="logo-card p-6 flex items-center text-center justify-center aspect-square relative"
+                      <div class="logo-card p-6 flex items-center text-center justify-center aspect-square relative lg:w-[calc(25%-6px)] sm:w-[calc(33.33%-6px)] w-[calc(50%-6px)]"
                           style="background-color: <?php echo esc_attr($bg_color); ?>;"
                           data-industry="<?php echo esc_attr($industry); ?>">
                           <?php if ($logo) : ?>
