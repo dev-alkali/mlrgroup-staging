@@ -171,9 +171,14 @@ endif; ?>
 </aside>
 
 
-
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+
+  const toggleBtn = document.querySelector(".filter-toggle-btn");
+  const heading   = document.querySelector(".filter-heading");
+  const sidebar   = document.querySelector(".sidebar-cat");
+
+  // 👉 CHILD ACCORDION
   document.querySelectorAll("[data-toggle]").forEach(function (arrow) {
     arrow.addEventListener("click", function (e) {
       e.preventDefault();
@@ -183,6 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const childList = li.querySelector(".child-list");
 
       if (!childList) return;
+
       if (childList.classList.contains("open")) {
         childList.style.maxHeight = "0px";
         childList.classList.remove("open");
@@ -193,36 +199,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // rotate arrow
       arrow.classList.toggle("rotate-180");
+
+      // ✅ IMPORTANT: update parent height after toggle
+      if (sidebar.classList.contains("open")) {
+        sidebar.style.maxHeight = sidebar.scrollHeight + "px";
+      }
     });
   });
 
-  const toggleBtn = document.querySelector(".filter-toggle-btn");
-  const heading   = document.querySelector(".filter-heading");
-  const sidebar   = document.querySelector(".sidebar-cat");
-
+  // 👉 SIDEBAR TOGGLE
   function toggleFilter() {
-    // toggle button class
     toggleBtn.classList.toggle("change-btn");
+    sidebar.classList.toggle("open");
 
-    // slide toggle
-    if (sidebar.style.maxHeight) {
-      sidebar.style.maxHeight = null;
-    } else {
+    if (sidebar.classList.contains("open")) {
       sidebar.style.maxHeight = sidebar.scrollHeight + "px";
+    } else {
+      sidebar.style.maxHeight = "0px";
     }
   }
 
-  // click on button
   toggleBtn.addEventListener("click", toggleFilter);
-
-  // click on heading
   heading.addEventListener("click", toggleFilter);
-  
-  
+
 });
-
 </script>
-
 <style>
    .arrow {display: inline-flex;align-items: center;justify-content: center;transition: transform 0.3s ease;}
    .sidebar-cat {overflow: hidden;max-height: 0; transition: max-height 0.4s ease;}
