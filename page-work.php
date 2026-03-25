@@ -20,7 +20,7 @@
           </h2>
           
           <?php if(get_sub_field('paragraph')): ?>
-            <p class="w-full text-[clamp(18px,3vw,20px)] leading-[28px] text-gray-50 font-body anim" data-delay="1.2" data-anim="up" data-start="top 100%"><?= wp_kses_post(get_sub_field('paragraph')) ?></p>
+            <p class="w-full text-[clamp(18px,3vw,20px)] leading-[28px] text-gray-50 font-body anim mt-[12px]" data-delay="1.2" data-anim="up" data-start="top 100%"><?= wp_kses_post(get_sub_field('paragraph')) ?></p>
           <?php endif; ?>
         </div>
       </div>
