@@ -12,9 +12,9 @@ $parent_terms = get_terms(array(
 ?>
 
 <aside id="sidebar-filter" class="flex flex-col w-full md:w-[220px] lg:w-[280px] xl:w-[360px] flex-shrink-0 gap-4" aria-label="Filter categories">
-   <div class="border-b border-[#CCCCCC] pb-[20px] mb-[10px]">
+   <!-- <div class="border-b border-[#CCCCCC] pb-[20px] mb-[10px] hidden">
       <p class="text-[#525252] font-[Poppins] font-medium text-[16px] leading-[24px] md:text-[16px] md:leading-[24px]">Get inspired: Browse our portfolio, filter by category, add elements you like to your Inquiry List.</p>
-   </div>
+   </div> -->
 
    <div class="flex justify-between items-center w-full mb-[15px]">
      <h3 class="font-[Poppins] font-medium text-[24px] leading-[32px] tracking-[-0.02em] text-[#262626] filter-heading">Filters</h3>
