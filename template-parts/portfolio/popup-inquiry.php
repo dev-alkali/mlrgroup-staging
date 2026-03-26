@@ -28,6 +28,16 @@
          <div class="flex flex-col md:flex-row gap-[40px] md:gap-[60px]">
             <section class="w-full flex flex-col gap-10">
                <img class="inquiry-img w-full max-h-[546px] h-full object-cover object-center" src="" alt="">
+               
+               <div class="mt-4 mb-4 block md:hidden">
+                  <div class=" flex justify-between w-full mb-3">
+                     <h2 class="inquiry-title text-[28px] leading-[36px] tracking-[-2%] font-heading font-bold "></h2>
+                     <img class="close cursor-pointer" src="<?= get_template_directory_uri() ?>/assets/imgs/close-pop-up.svg" alt="exit">
+                  </div>
+                  <div class="inquiry-categories">
+                  </div>
+               </div>
+
                <div class="flex justify-end gap-2">
                   <button item-id="" class="add-inquiry btn-primary w-full mb-[2px]"><img class="w-[13px]" src="<?= get_template_directory_uri() ?>/assets/imgs/plus.svg" alt="i">Add to Your Inquiry List</button>
 
@@ -43,14 +53,6 @@
                   </div>
                </div>
 
-               <div class="mt-4 block md:hidden">
-                  <div class=" flex justify-between w-full mb-3">
-                     <h2 class="inquiry-title text-[28px] leading-[36px] tracking-[-2%] font-heading font-bold "></h2>
-                     <img class="close cursor-pointer" src="<?= get_template_directory_uri() ?>/assets/imgs/close-pop-up.svg" alt="exit">
-                  </div>
-                  <div class="inquiry-categories">
-                  </div>
-               </div>
 
             </section>
             <section id="inquiry-normal-form" class="w-full">
