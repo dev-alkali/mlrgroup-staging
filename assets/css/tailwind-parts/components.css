@@ -1100,7 +1100,10 @@
 }
 
 .faq-lists.faq-lists-columns .question::before{
-  background-image: url('../../imgs/faq-plus-icon.svg.svg');
+  background-image: url('../../imgs/faq-plus-icon.svg');
+}
+.faq-lists.faq-lists-columns .question.active:before {
+  transform: rotate(45deg);
 }
 
 .newsletter-gf--text b{
