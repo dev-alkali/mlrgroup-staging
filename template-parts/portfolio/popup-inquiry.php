@@ -55,7 +55,7 @@
                <img class="close cursor-pointer" src="<?= get_template_directory_uri() ?>/assets/imgs/close-pop-up.svg" alt="exit">
             </div>
          </div>
-         <div class="flex gap-[60px]">
+         <div class="flex flex-col md:flex-row gap-[60px]">
             <section class="w-full flex flex-col gap-8">
                <div id="inquiry-list-content" class="w-full flex flex-col gap-6 pb-6">
                </div>
