@@ -979,7 +979,7 @@
 .c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container > input[type="text"],
 .c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container > input[type="tel"],
 .c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container > input[type="number"],
-.c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container > select,
+.c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container.ginput_container_select,
 .c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container > textarea,
 .c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container > input[type="email"] {
   @apply mb-[15px];
