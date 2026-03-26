@@ -979,7 +979,7 @@
 .c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container > input[type="text"],
 .c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container > input[type="tel"],
 .c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container > input[type="number"],
-.c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container > select,
+.c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container.ginput_container_select,
 .c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container > textarea,
 .c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container > input[type="email"] {
   @apply mb-[15px];
@@ -1073,6 +1073,28 @@
 
 .c-contact__right .gfield .ginput_container_consent label a {text-decoration: underline;}
 .c-contact__right .gfield .ginput_container_consent label a:hover{color: var(--color-accent);}
+
+.c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container.ginput_container_select {
+  position: relative;
+}
+
+.c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container.ginput_container_select select {
+  appearance: none;--webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;
+}
+
+.c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container.ginput_container_select::before {
+  content: '';
+  width: 13px;
+  height: 8px;
+  background-image: url('../../imgs/contact-select-arrow.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
 .faq-lists .answer{
   @apply max-h-0 overflow-hidden transition-all duration-300 ease-in-out;
