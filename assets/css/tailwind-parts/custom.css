@@ -67,4 +67,4 @@ a.footer-text:hover{color:#ffffff;}
 .source-card:hover .arrow {transform: unset !important;top: calc(100% - 60px);}
 */
 .service-card a{transition:all 0.3s ease;}
-.service-card a:hover{}
+.service-card a:hover{flex-direction: column-reverse;}
