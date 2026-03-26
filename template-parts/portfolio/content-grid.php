@@ -51,7 +51,7 @@ $term_id = isset($current_term->term_id) ? absint($current_term->term_id) : 0;
                     $post_id = get_the_ID();
                     $image_url = has_post_thumbnail() ? get_the_post_thumbnail_url($post_id, 'full') : '';
             ?>
-                    <article class="gallery-card group flex min-[1440px]:w-full flex-col items-start gap-3">
+                    <article class="gallery-card group">
                         <div class="card-image-wrap relative overflow-hidden aspect-[333.33/360] w-full" style="background-image: url('<?= esc_url($image_url); ?>'); background-position: 50% 50%; background-size: cover; background-repeat: no-repeat;">
                             <div class="card-overlay absolute inset-0 [background:linear-gradient(312deg,rgba(0,0,0,0.82)_0%,rgba(253,67,56,0.82)_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2 px-6">
                                 <button type="button" item-id="<?= esc_attr($post_id); ?>" class="view-inquery bg-black flex items-center justify-center gap-2 px-4 py-3 w-full rounded-[30px] cursor-pointer border-0 hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors translate-y-3 card-btn-transition">
