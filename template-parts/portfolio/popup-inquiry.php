@@ -64,7 +64,7 @@
       </section>
       <section id="list-content" class="hidden flex-col w-full ">
          <div class="mb-4">
-            <div class=" flex justify-between w-full mb-7">
+            <div class=" flex justify-between w-full mb-7 border-b border-[#CCCCCC] md:border-0 pb-[20px] md:pb-0">
                <h2 class="text-[28px] leading-[36px] tracking-[-2%] font-heading font-bold">Your Inquiry List</h2>
                <img class="close cursor-pointer" src="<?= get_template_directory_uri() ?>/assets/imgs/close-pop-up.svg" alt="exit">
             </div>
