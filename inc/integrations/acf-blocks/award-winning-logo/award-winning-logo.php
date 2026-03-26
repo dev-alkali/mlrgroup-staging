@@ -19,10 +19,10 @@ if (!empty($block['className'])) {
 
 <?php if (have_rows('award_winning_logo')) : while (have_rows('award_winning_logo')) : the_row(); ?>
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> p-0 py-[40px] px-[20px] md:py-[60px]">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> p-0 py-[40px] px-[0px] md:px-[20px] md:py-[60px]">
   <div class="flex items-center gap-2 wrapper">
     <div class="flex flex-col min-[890px]:flex-row gap-4 min-[600px]:gap-[40px] min-[890px]:gap-[105px] relative w-full">
-      <div class="flex items-center justify-start gap-2 min-[600px]:gap-3 shrink-0">
+      <div class="flex items-center justify-start gap-2 min-[600px]:gap-3 shrink-0 px-[20px] md:px-[0px]">
         <div class="relative flex">
           <img class="w-4 min-[600px]:w-5 md:w-[27px] md:h-[27px]" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-blue-brands.svg" alt="arrow">
         </div>
