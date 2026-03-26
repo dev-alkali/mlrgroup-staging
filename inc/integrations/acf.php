@@ -25,6 +25,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/acf-blocks/case-studies');
   register_block_type(__DIR__ . '/acf-blocks/faq');
   register_block_type(__DIR__ . '/acf-blocks/our-values');
+  register_block_type(__DIR__ . '/acf-blocks/faq-columns');
   
   
   
