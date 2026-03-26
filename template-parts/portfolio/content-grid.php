@@ -24,7 +24,7 @@ $term_id = isset($current_term->term_id) ? absint($current_term->term_id) : 0;
     </div>
 
     <div class="w-full">
-        <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full">
+        <div id="portfolio-grid" class="grid grid-cols-2 md:grid-cols-3 w-full">
             <?php
             $query_args = array(
                 'post_type'      => 'portfolio',
