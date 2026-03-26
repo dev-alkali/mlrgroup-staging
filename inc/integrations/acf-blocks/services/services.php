@@ -127,7 +127,7 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
               <?php if (have_rows('services')) :  while (have_rows('services')) : the_row(); ?>
                   <?php if (have_rows('service')) :  while (have_rows('service')) : the_row(); ?>
                       <article class="<?= esc_attr($article_class) ?>">
-                        <div class="bg-image absolute inset-0"  style=" background-image: url('<?php echo esc_url(get_sub_field('image')); ?>'); background-position: center center; background-size: cover; background-repeat: no-repeat; filter:grayscale(100%);">
+                        <div class="bg-image absolute inset-0 z-0" style=" background-image: url('<?php echo esc_url(get_sub_field('image')); ?>'); background-position: center center; background-size: cover; background-repeat: no-repeat; filter:grayscale(100%);">
                         </div>
                         <a href="<?= esc_url(get_sub_field('link_path')) ?>" class="gradient-box flex flex-col flex-1 justify-between px-5 md:px-6 py-7 w-full h-full">
                           <figure class="text-right z-10 relative">
