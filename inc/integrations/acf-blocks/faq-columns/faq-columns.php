@@ -47,7 +47,7 @@ $faq_lists = get_sub_field('faq_lists');
 						$col1 = array_slice( $faq_lists, 0, $half );
 						$col2 = array_slice( $faq_lists, $half );
 					?>
-					<div class="flex flex-col md:flex-row md:gap-[60px] faq-columns-wrapper first:border-t border-solid border-[#404040]">
+					<div class="flex flex-col md:flex-row md:gap-[60px] faq-columns-wrapper md:first:border-t-0 first:border-t border-solid border-[#404040]">
 
 						<?php foreach ( [ $col1, $col2 ] as $col_index => $column_faqs ) : ?>
 						<div class="faq-column flex-1 flex flex-col">
