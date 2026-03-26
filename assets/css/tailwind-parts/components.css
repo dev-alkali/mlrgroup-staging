@@ -1030,7 +1030,7 @@
 }
 
 .c-contact__right .ginput_container .gchoice {
-  @apply relative lg:w-[49%] md:w-[calc(50%-3px)] w-full;
+  @apply relative lg:w-[calc(50%-5px)] md:w-[calc(50%-3px)] w-full;
 }
 
 .c-contact__right .gfield .ginput_container_consent label::before,
