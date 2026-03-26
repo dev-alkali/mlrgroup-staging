@@ -17,7 +17,7 @@
 
    <div id="inquiry-pop-up" class="bg-white max-w-[1200px] w-full hidden flex-col p-[16px] md:p-[40px] text-neutral-800 overflow-auto max-h-[90vh]">
       <section id="normal-content" class="hidden flex-col w-full ">
-         <div class="mb-4">
+         <div class="mb-4 hidden md:block">
             <div class=" flex justify-between w-full mb-3">
                <h2 class="inquiry-title text-[28px] leading-[36px] tracking-[-2%] font-heading font-bold "></h2>
                <img class="close cursor-pointer" src="<?= get_template_directory_uri() ?>/assets/imgs/close-pop-up.svg" alt="exit">
@@ -42,6 +42,16 @@
                      </div>
                   </div>
                </div>
+
+               <div class="mt-4 block md:hidden">
+                  <div class=" flex justify-between w-full mb-3">
+                     <h2 class="inquiry-title text-[28px] leading-[36px] tracking-[-2%] font-heading font-bold "></h2>
+                     <img class="close cursor-pointer" src="<?= get_template_directory_uri() ?>/assets/imgs/close-pop-up.svg" alt="exit">
+                  </div>
+                  <div class="inquiry-categories">
+                  </div>
+               </div>
+
             </section>
             <section id="inquiry-normal-form" class="w-full">
                <?= do_shortcode('[gravityform id="2" title="false" description="false" ajax="true"]'); ?>
