@@ -22,20 +22,12 @@ document.querySelectorAll('.gradient-box').forEach(card => {
 });
 
 
-// ✅ Add this BEFORE DOMContentLoaded or at the very top
 history.scrollRestoration = 'manual';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ✅ Force scroll to top before GSAP initializes
   window.scrollTo(0, 0);
-
   gsap.registerPlugin(ScrollTrigger);
-
-  // ✅ Ensure ScrollTrigger recalculates after everything is settled
-  window.addEventListener('load', () => {
-    ScrollTrigger.refresh();
-  });
 
   const elements = document.querySelectorAll('.anim');
 
@@ -55,23 +47,25 @@ document.addEventListener('DOMContentLoaded', () => {
       default:      y = 40;  break;
     }
 
+    // ✅ Set initial state immediately so elements don't flicker
+    gsap.set(el, { opacity: 0, x: x, y: y });
+
     ScrollTrigger.create({
       trigger: el,
       start: start,
       once: once,
       onEnter: () => {
-        gsap.fromTo(
-          el,
-          { opacity: 0, x: x, y: y },
-          {
-            opacity: 1, x: 0, y: 0,
-            delay: delay, duration: 0.7, ease: 'power2.out',
-            onStart: () => el.classList.add('is-visible')
-          }
-        );
+        gsap.to(el, {
+          opacity: 1, x: 0, y: 0,
+          delay: delay, duration: 0.7, ease: 'power2.out',
+          onStart: () => el.classList.add('is-visible')
+        });
       }
     });
   });
+
+  // ✅ Refresh AFTER all triggers are created, not in a nested load event
+  ScrollTrigger.refresh();
 });
   /**------------------------ Animation GSAP Ends -------------------------**/
 
