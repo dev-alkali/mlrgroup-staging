@@ -165,7 +165,7 @@
             <div class="mobile-nav-item <?php echo $has_children ? 'has-children' : ''; ?>">
 
               <span class="mobile-nav-trigger <?php echo esc_attr($active_class); ?>">
-                <a href="<?php echo esc_url($item->url); ?>" class="mobile-item-name">
+                <a href="<?php echo esc_url($item->url); ?>" class="mobile-item-name uppercase">
                   <?php echo esc_html($item->title); ?>
                 </a>
 
