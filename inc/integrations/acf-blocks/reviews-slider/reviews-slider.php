@@ -30,7 +30,7 @@ $review_sliders = get_sub_field('review_sliders');
 $mobileFlex = 'flex-col-reverse';
 
 ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] md:py-[120px] overflow-hidden">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] overflow-hidden">
 		<div class="gap-[30px] md:gap-[60px] w-full wrapper ">
 
 			<div class="w-full ">

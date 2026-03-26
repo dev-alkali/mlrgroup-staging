@@ -24,7 +24,7 @@ $description = get_sub_field('description');
 $form_shortcode = get_sub_field('form_shortcode');
 
 ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> contact-form-sec px-4 md:px-10 py-[60px] md:py-[120px]">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> contact-form-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px]">
       	<div class="c-contact__container">
         	<div class="flex min-[992px]:gap-[40px] min-[1440px]:gap-[60px] w-full wrapper flex-col md:flex-row">
 				<!-- LEFT -->

@@ -26,7 +26,7 @@ $lists = get_sub_field('lists');
 
 
 ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> our-values-sec py-[60px] md:py-[120px] overflow-hidden <?php echo $bg_color_class; ?>">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> our-values-sec py-[60px] lg:py-[80px] xl:py-[120px] overflow-hidden <?php echo $bg_color_class; ?>">
       
       <div class="gap-[30px] md:gap-[0px] w-full wrapper flex flex-col">
 
