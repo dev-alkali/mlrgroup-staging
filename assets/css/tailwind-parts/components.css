@@ -1075,7 +1075,11 @@
 .c-contact__right .gfield .ginput_container_consent label a:hover{color: var(--color-accent);}
 
 .c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container.ginput_container_select {
-  position: relative;appearance: none;--webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;
+  position: relative;
+}
+
+.c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container.ginput_container_select {
+  appearance: none;--webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;
 }
 
 .c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container.ginput_container_select::before {
