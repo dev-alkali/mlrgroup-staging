@@ -1073,14 +1073,14 @@
 .c-contact__right .gfield .ginput_container_consent label a {text-decoration: underline;}
 .c-contact__right .gfield .ginput_container_consent label a:hover{color: var(--color-accent);}
 
-.faq-sec .answer{
+.faq-lists .answer{
   @apply max-h-0 overflow-hidden transition-all duration-300 ease-in-out;
 }
-.faq-sec .answer.active{
+.faq-lists .answer.active{
   @apply max-h-[1000px] overflow-hidden transition-all duration-300 ease-in-out;
 }
 
-.faq-sec .question::before{
+.faq-lists .question::before{
     content: '';
     position: absolute;
     top: 0;
@@ -1095,7 +1095,7 @@
     z-index: 1;
 }
 
-.faq-sec .question.active::before{
+.faq-lists .question.active::before{
   @apply rotate-180;
 }
 

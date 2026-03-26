@@ -38,33 +38,33 @@ $faq_lists = get_sub_field('faq_lists');
 			<?php endif; ?>
 		</div>
 		<?php endif; ?>
-		<div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col ">
-			<div class="w-full flex-1">
-				<div class="">
-					<?php if($faq_lists): ?>
-						<?php if ( ! empty( $faq_lists ) && is_array( $faq_lists ) ) : ?>
-							<div class="flex flex-col md:gap-[16px] gap-[10px]">
-								<?php $i = 1; ?>
-								<?php foreach ( $faq_lists as $faq ) : 
-									$question = ! empty( $faq['question'] ) ? $faq['question'] : '';
-									$answer   = ! empty( $faq['answer'] ) ? $faq['answer'] : '';
-								?>
-									<div class="flex flex-col bg-black text-white md:px-[28px] px-[20px] md:py-[36px] py-[20px] relative">
-										<h3 class="font-heading question font-medium text-white text-[clamp(16px,2.2vw,20px)] relative leading-[clamp(24px,2.6vw,28px)] pr-[50px]">
-											<?php echo $i . '. ' . esc_html( $question ); ?>
-										</h3>
-										<div class="answer md:pr-[50px] pr-[30px]" role="region">
-											<div class="font-body font-normal text-white text-[clamp(14px,1.7vw,16px)] leading-[clamp(22px,2.8vw,24px)] mt-[10px]">
-												<?php echo wp_kses_post( $answer ); ?>
-											</div>
+		<div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col">
+			
+			<div class="faq-lists">
+				<?php if($faq_lists): ?>
+					<?php if ( ! empty( $faq_lists ) && is_array( $faq_lists ) ) : ?>
+						<div class="flex flex-col md:gap-[16px] gap-[10px]">
+							<?php $i = 1; ?>
+							<?php foreach ( $faq_lists as $faq ) : 
+								$question = ! empty( $faq['question'] ) ? $faq['question'] : '';
+								$answer   = ! empty( $faq['answer'] ) ? $faq['answer'] : '';
+							?>
+								<div class="flex flex-col bg-black text-white md:px-[28px] px-[20px] md:py-[36px] py-[20px] relative">
+									<h3 class="font-heading question font-medium text-white text-[clamp(16px,2.2vw,20px)] relative leading-[clamp(24px,2.6vw,28px)] pr-[50px]">
+										<?php echo $i . '. ' . esc_html( $question ); ?>
+									</h3>
+									<div class="answer md:pr-[50px] pr-[30px]" role="region">
+										<div class="font-body font-normal text-white text-[clamp(14px,1.7vw,16px)] leading-[clamp(22px,2.8vw,24px)] mt-[10px]">
+											<?php echo wp_kses_post( $answer ); ?>
 										</div>
 									</div>
-								<?php $i++; endforeach; ?>
-							</div>
-						<?php endif; ?>
+								</div>
+							<?php $i++; endforeach; ?>
+						</div>
 					<?php endif; ?>
-				</div>
+				<?php endif; ?>
 			</div>
+			
 		</div>
     </section>
 <?php endwhile;

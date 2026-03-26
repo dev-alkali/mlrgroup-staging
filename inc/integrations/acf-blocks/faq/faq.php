@@ -59,7 +59,7 @@ $mobileFlex = 'flex-col-reverse';
 			</div>
 
 			<div class="w-full flex-1">
-				<div class="">
+				<div class="faq-lists">
 					<?php if($faq_lists): ?>
 						<?php if ( ! empty( $faq_lists ) && is_array( $faq_lists ) ) : ?>
 							<div class="flex flex-col md:gap-[16px] gap-[10px]">
