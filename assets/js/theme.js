@@ -101,24 +101,53 @@ document.querySelectorAll(".reviews-slider-wrapper").forEach((slider) => {
   });
 });
 
-let question = document.querySelectorAll(".question");
+// let question = document.querySelectorAll(".question");
 
-question.forEach(question => {
+// question.forEach(question => {
+//   question.addEventListener("click", event => {
+//     const active = document.querySelector(".question.active");
+//     if(active && active !== question ) {
+//       active.classList.toggle("active");
+//       active.nextElementSibling.style.maxHeight = 0;
+//     }
+//     question.classList.toggle("active");
+//     const answer = question.nextElementSibling;
+//     if(question.classList.contains("active")){
+//       answer.style.maxHeight = answer.scrollHeight + "px";
+//     } else {
+//       answer.style.maxHeight = 0;
+//     }
+//   })
+// })
+let questions = document.querySelectorAll(".question");
+
+questions.forEach(question => {
   question.addEventListener("click", event => {
-    const active = document.querySelector(".question.active");
-    if(active && active !== question ) {
-      active.classList.toggle("active");
+
+    // md breakpoint = 768px — match Tailwind's default
+    const isMd = window.innerWidth >= 768;
+
+    // On mobile: scope to the whole list. On md+: scope to the column only
+    const scope = isMd
+      ? question.closest('.faq-column')
+      : question.closest('.faq-lists');
+
+    const active = scope.querySelector(".question.active");
+
+    if (active && active !== question) {
+      active.classList.remove("active");
       active.nextElementSibling.style.maxHeight = 0;
     }
+
     question.classList.toggle("active");
     const answer = question.nextElementSibling;
-    if(question.classList.contains("active")){
+    if (question.classList.contains("active")) {
       answer.style.maxHeight = answer.scrollHeight + "px";
     } else {
       answer.style.maxHeight = 0;
     }
-  })
-})
+  });
+});
 
 
 /* Work Sidebar */
