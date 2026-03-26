@@ -52,7 +52,7 @@ if ( $section_color == 'black' ){
 }elseif ( $section_color == 'white' ){
   $bg_color_class = 'bg-white';
   $text_262626_class = 'text-[#262626]';
-  $text_737373_class = 'text-[#737373]';
+  $text_737373_class .= 'text-[#737373]';
   $text_525252_class = 'text-[#525252]';
   $text_e5e5e5_class = 'text-[#E5E5E5]';
   $text_white_class = 'text-white';

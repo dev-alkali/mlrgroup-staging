@@ -24,7 +24,7 @@ $map_code = get_sub_field('map_code');
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> map-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] overflow-hidden">
   <div class="wrapper">
       <?php if ($title1 || $title2) : ?>
-        <div class="serve-heading md:mb-[80px] md-[32px]">
+        <div class="serve-heading xl:mb-[80px] lg:mb-[50px] mb-[32px]">
           <h2 class="flex flex-col font-heading font-bold text-[clamp(36px,4.5vw,68px)] leading-[clamp(44px,5.2vw,78px)] tracking-[-0.02em]">
             <span class="font-bold text-neutral-800"><?= wp_kses_post($title1) ?></span>
             <span class="font-light text-neutral-500"><?= wp_kses_post($title2) ?></span>
