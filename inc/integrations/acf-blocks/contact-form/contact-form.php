@@ -26,7 +26,7 @@ $form_shortcode = get_sub_field('form_shortcode');
 ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> contact-form-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px]">
       	<div class="c-contact__container">
-        	<div class="flex min-[992px]:gap-[40px] min-[1280px]:gap-[60px] md:gap-[25px] w-full wrapper flex-col md:flex-row">
+        	<div class="flex min-[992px]:gap-[40px] min-[1280px]:gap-[60px] gap-[30px] w-full wrapper flex-col md:flex-row">
 				<!-- LEFT -->
 				<div class="w-full md:w-1/2 c-contact__content anim" data-anim="up" >
 					<?php if ($title_row_1 || $title_row_2): ?>
