@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-});
+
   /**------------------------ Animation GSAP Ends -------------------------**/
 
   /**------------------------ Sticky Header -------------------------**/
