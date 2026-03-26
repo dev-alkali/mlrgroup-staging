@@ -1,0 +1,14 @@
+{
+    "name": "acf/our-values",
+    "title": "Our Values",
+    "description": "Our Values Section",
+    "style": ["file:./our-values.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["our-values", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "our-values.php"
+    },
+    "script": "our-valuesJS"
+}
