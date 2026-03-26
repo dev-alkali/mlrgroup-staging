@@ -1,5 +1,5 @@
 <section class="pop-up hidden justify-center items-center w-full h-screen fixed top-0 bg-[#000000CC] backdrop-blur-[20px] z-50 p-[30px]">
-   <div id="inquiry-empty-pop-up" class="bg-white hidden max-w-[600px] flex-col p-10">
+   <div id="inquiry-empty-pop-up" class="bg-white hidden max-w-[600px] flex-col p-10 overflow-auto max-h-[90vh]">
       <div class="w-full flex justify-end mb-[28px]">
          <img class="close" src="<?= get_template_directory_uri() ?>/assets/imgs/close-pop-up.svg" alt="exit">
       </div>
@@ -15,7 +15,7 @@
       </button>
    </div>
 
-   <div id="inquiry-pop-up" class="bg-white max-w-[1200px] w-full hidden flex-col p-10 text-neutral-800">
+   <div id="inquiry-pop-up" class="bg-white max-w-[1200px] w-full hidden flex-col p-10 text-neutral-800 overflow-auto max-h-[90vh]">
       <section id="normal-content" class="hidden flex-col w-full ">
          <div class="mb-4">
             <div class=" flex justify-between w-full mb-3">
