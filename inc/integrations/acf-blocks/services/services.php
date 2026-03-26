@@ -69,8 +69,8 @@ $wrapper_class = $select_3_column_grid
     : "grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] min-[767px]:grid-cols-2 min-[1280px]:grid-cols-4 gap-4 md:gap-2 w-full";
 
 $article_class = $select_3_column_grid
-    ? "source-card relative overflow-hidden w-full aspect-[16/15] "
-    : "source-card relative overflow-hidden w-full aspect-[334/420]";
+    ? "source-card1 relative overflow-hidden w-full aspect-[16/15] service-card"
+    : "source-card1 relative overflow-hidden w-full aspect-[334/420] service-card";
 
 
 $width = get_sub_field('select_short_content_width');
