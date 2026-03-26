@@ -16,7 +16,7 @@ if (!empty($block['className'])) {
 ?>
 <?php if (have_rows('collection')) :  while (have_rows('collection')) : the_row(); ?>
 
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex justify-center px-4 min-[600px]:px-10 py-[60px] min-[600px]:py-[120px] bg-white">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> px-4 min-[600px]:px-10 py-[60px] min-[600px]:py-[120px] bg-white">
         <div class="flex flex-col w-full items-start gap-8 min-[600px]:gap-[60px] max-w-[1920px]">
                 <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
 
@@ -139,7 +139,7 @@ if (!empty($block['className'])) {
                     $btn_target = $btn['target'] ? $btn['target'] : '_self';
                     ?>
                     <div class="text-center d-flex items-center justify-center gap-2 mt-[40px] w-full">
-                        <a class="relative w-fit uppercase font-heading font-semibold text-accent text-center tracking-[0] leading-[24px] min-[600px]:leading-[18px] whitespace-nowrap" href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>">
+                        <a class="relative w-fit uppercase font-heading font-semibold text-accent text-center tracking-[0] leading-[24px] min-[600px]:leading-[18px] whitespace-nowrap view-more-btn" href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>">
                             <?php echo esc_html( $btn_title ); ?>
                             <img class="relative w-4 h-4 max-[600px]:mt-[3px] arrow" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" alt="Arrow">
                         </a>
