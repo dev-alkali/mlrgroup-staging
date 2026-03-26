@@ -31,7 +31,7 @@ $lists = get_sub_field('lists');
       <div class="gap-[30px] md:gap-[0px] w-full wrapper flex flex-col">
 
 	  <?php if($title_row_1 || $title_row_2 ): ?>
-			<div class="flex flex-col lg:flex-row gap-[20px] lg:gap-[50px] self-stretch w-full wrapper mb-[40px] px-4 md:px-10 overflow-visible">
+			<div class="w-full wrapper mb-[40px] px-4 md:px-10 overflow-visible">
 				<?php if($title_row_1 || $title_row_2): ?>
 				<h2 class="text-[clamp(32px,6vw,68px)] leading-[clamp(40px,7vw,76px)] tracking-[-4%] text-[#262626] font-heading lg:mb-[20px]">
 					<?php if($title_row_1): ?>
