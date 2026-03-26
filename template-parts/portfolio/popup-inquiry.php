@@ -7,7 +7,7 @@
          <img src="<?= get_template_directory_uri() ?>/assets/imgs/clipboard.svg" alt="clipboard">
          <div class="flex flex-col items-center gap-3 ">
             <h2 class="font-heading font-bold text-[clamp(20px,4vw,28px)] leading-[clamp(28px,5vw,36px)] tracking-[-0.02em] text-neutral-800 text-center">Your Inquiry List is empty</h2>
-            <p class="text-center font-body text-base leading-6 tracking-[0%] text-neutral-600">To add an item to your inquiry list, click an image and select <br class="md:hidden"><a href="" class="add-inq-btn">+Add to Inquiry List.</a></p>
+            <p class="text-center font-body text-base leading-6 tracking-[0%] text-neutral-600">To add an item to your inquiry list, click an image and select <br class="md:hidden"><a href="" class="add-inq-btn font-bold">+Add to Inquiry List.</a></p>
          </div>
       </div>
       <button class="btn-primary hidden">
