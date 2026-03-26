@@ -11,7 +11,7 @@ $parent_terms = get_terms(array(
 ));
 ?>
 
-<aside id="sidebar-filter" class="flex flex-col w-full md:w-[220px] lg:w-[280px] xl:w-[360px] flex-shrink-0 gap-4" aria-label="Filter categories">
+<aside id="sidebar-filter" class="flex flex-col w-full md:w-[220px] lg:w-[280px] xl:w-[360px] flex-shrink-0 gap-4 mt-[25px]" aria-label="Filter categories">
    <!-- <div class="border-b border-[#CCCCCC] pb-[20px] mb-[10px] hidden">
       <p class="text-[#525252] font-[Poppins] font-medium text-[16px] leading-[24px] md:text-[16px] md:leading-[24px]">Get inspired: Browse our portfolio, filter by category, add elements you like to your Inquiry List.</p>
    </div> -->
