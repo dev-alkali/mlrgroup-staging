@@ -1138,4 +1138,6 @@ button.swiper-button-disabled {
   .arrow-img-position{
     background-size: 160%;
   }
+  p br,
+  h2 br {display: none;}
 }
