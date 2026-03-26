@@ -1,71 +1,45 @@
-document.querySelectorAll('.gradient-box').forEach(card => {
-  const figure  = card.querySelector('figure');
-  const content = card.querySelector('.content');
-
-  card.addEventListener('mouseenter', () => {
-    const cardH    = card.offsetHeight;
-    const figH     = figure.offsetHeight;
-    const contentH = content.offsetHeight;
-    const py       = parseFloat(getComputedStyle(card).paddingTop);
-
-    const figMove     = cardH - (2 * py) - figH;
-    const contentMove = cardH - (2 * py) - contentH;
-
-    figure.style.transform  = `translateY(${figMove}px)`;
-    content.style.transform = `translateY(-${contentMove}px)`;
-  });
-
-  card.addEventListener('mouseleave', () => {
-    figure.style.transform  = '';
-    content.style.transform = '';
-  });
-});
-
-
-history.scrollRestoration = 'manual';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  window.scrollTo(0, 0);
   gsap.registerPlugin(ScrollTrigger);
-
+  /**------------------------ Animation GSAP -------------------------**/
   const elements = document.querySelectorAll('.anim');
 
-  elements.forEach((el) => {
-    const delay = parseFloat(el.dataset.delay) || 0;
-    const direction = el.dataset.anim || 'up';
-    const start = el.dataset.start || 'top 85%';
-    const once = el.dataset.once !== 'false';
+elements.forEach((el) => {
 
-    let x = 0; let y = 0;
+  const delay = parseFloat(el.dataset.delay) || 0;
+  const direction = el.dataset.anim || 'up';
+  const start = el.dataset.start || 'top 85%';
+  const once = el.dataset.once !== 'false';
+  
+  let x = 0; let y = 0;
 
-    switch (direction) {
-      case 'left':  x = -40; break;
-      case 'right': x = 40;  break;
-      case 'down':  y = 40;  break;
-      case 'up':
-      default:      y = 40;  break;
+  switch (direction) {
+    case 'left':
+      x = -40; break;
+    case 'right':
+      x = 40; break;
+    case 'down':
+      y = 40; break;
+    case 'up':
+    default:
+      y = 40; break;
+  }
+
+  ScrollTrigger.create({ trigger: el, start: start, once: once,
+
+    onEnter: () => {
+      gsap.fromTo(
+        el, { opacity: 0, x: x, y: y },
+        { opacity: 1, x: 0, y: 0, delay: delay, duration: 0.7, ease: 'power2.out',
+          onStart: () => {
+            el.classList.add('is-visible');
+          }
+        }
+      );
     }
-
-    // ✅ Set initial state immediately so elements don't flicker
-    gsap.set(el, { opacity: 0, x: x, y: y });
-
-    ScrollTrigger.create({
-      trigger: el,
-      start: start,
-      once: once,
-      onEnter: () => {
-        gsap.to(el, {
-          opacity: 1, x: 0, y: 0,
-          delay: delay, duration: 0.7, ease: 'power2.out',
-          onStart: () => el.classList.add('is-visible')
-        });
-      }
-    });
   });
 
-  // ✅ Refresh AFTER all triggers are created, not in a nested load event
-  ScrollTrigger.refresh();
 });
   /**------------------------ Animation GSAP Ends -------------------------**/
 
