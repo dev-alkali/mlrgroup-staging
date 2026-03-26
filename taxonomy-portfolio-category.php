@@ -29,8 +29,8 @@
   endif; ?>
 
 <section>
-    <div class="border-b border-[#CCCCCC] pb-[20px] mb-[10px] w-full md:w-[220px] lg:w-[280px] xl:w-[360px]">
-      <p class="text-[#525252] font-[Poppins] font-medium text-[16px] leading-[24px] md:text-[16px] md:leading-[24px]">Get inspired: Browse our portfolio, filter by category, add elements you like to your Inquiry List.</p>
+   <div class="border-b border-[#CCCCCC] pb-[20px] mb-[10px] w-full md:w-[220px] lg:w-[280px] xl:w-[360px]">
+    <p class="text-[#525252] font-[Poppins] font-medium text-[16px] leading-[24px] md:text-[16px] md:leading-[24px]">Get inspired: Browse our portfolio, filter by category, add elements you like to your Inquiry List.</p>
    </div>
    <div class="flex items-center justify-end w-full">
       <button type="button" id="view-inquery-list" class="btn-primary relative inline-flex items-center gap-2" aria-label="View inquiry list, 3 items">
