@@ -27,6 +27,30 @@
 
   <?php endwhile;
   endif; ?>
+
+<section>
+    <div class="border-b border-[#CCCCCC] pb-[20px] mb-[10px] w-full md:w-[220px] lg:w-[280px] xl:w-[360px]">
+      <p class="text-[#525252] font-[Poppins] font-medium text-[16px] leading-[24px] md:text-[16px] md:leading-[24px]">Get inspired: Browse our portfolio, filter by category, add elements you like to your Inquiry List.</p>
+   </div>
+   <div class="flex items-center justify-end w-full">
+      <button type="button" id="view-inquery-list" class="btn-primary relative inline-flex items-center gap-2" aria-label="View inquiry list, 3 items">
+        <div class="inline-flex items-center gap-2 justify-center">
+            <div class="relative w-[17px] h-4 mt-[-2px]">
+                <img src="<?= esc_url(get_template_directory_uri() . '/assets/imgs/Arrow-white-large.svg'); ?>" alt="arrow">
+            </div>
+            <span class="font-heading font-semibold text-white text-sm md:text-base tracking-[0] leading-7 whitespace-nowrap">
+                VIEW INQUIRY LIST
+            </span>
+        </div>
+        <span aria-label="3 items in list" class="inline-flex items-center justify-center w-[26px] h-[26px] absolute -top-1 -right-1 bg-black rounded-full">
+            <span class="inquiry-list-quantity font-heading font-normal text-white text-[16px] text-center leading-none mb-[-1px]" aria-hidden="true">
+                0
+            </span>
+        </span>
+    </button>
+  </div>
+</section>
+
   <section
     class="w-full flex flex-col items-center gap-10 md:gap-[60px] pt-10 md:pt-[60px] pb-16 md:pb-[120px] bg-white px-4 md:px-10"
     aria-label="Portfolio gallery">
