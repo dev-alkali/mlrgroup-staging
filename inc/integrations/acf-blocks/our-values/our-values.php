@@ -33,17 +33,16 @@ $lists = get_sub_field('lists');
 	  <?php if($title_row_1 || $title_row_2 ): ?>
 			<div class="w-full wrapper mb-[40px] px-4 md:px-10 overflow-visible">
 				<?php if($title_row_1 || $title_row_2): ?>
-				<h2 class="text-[clamp(32px,6vw,68px)] leading-[clamp(40px,7vw,76px)] tracking-[-4%] text-[#262626] font-heading lg:mb-[20px]">
+				<h2 class="text-[clamp(32px,6vw,68px)] leading-[clamp(40px,7vw,76px)] tracking-[-4%] text-[#262626] font-heading lg:mb-[20px] relative">
+					<div class="lg:h-[70px] h-[50px] bg-repeat absolute top-[3px] left-0 right-[calc(100%+100px)] img-position-left w-full" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/our-value-arrow.svg');"></div>
 					<?php if($title_row_1): ?>
 						<span class="relative w-full block flex gap-[10px]">
-							<span class="font-bold "><?= wp_kses_post($title_row_1) ?></span>
-							<div class="md:h-[70px] h-[50px] bg-repeat-x bg-contain img-position-left w-full flex-1" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/our-value-arrow.svg');"></div>
+							<span class="font-bold bg-white pr-[10px]"><?= wp_kses_post($title_row_1) ?></span>
 						</span>
 					<?php endif; ?>
 					<?php if($title_row_2): ?>
 						<span class="relative w-full block flex gap-[10px]">
-							<span class="font-light text-[#737373]"><?= wp_kses_post($title_row_2) ?></span>
-							<div class="md:h-[70px] h-[50px] bg-repeat-x bg-contain img-position-right w-full flex-1" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/our-value-arrow.svg');"></div>
+							<span class="font-light text-[#737373] pr-[10px] bg-white"><?= wp_kses_post($title_row_2) ?></span>
 						</span>
 					<?php endif; ?>
 				</h2>
