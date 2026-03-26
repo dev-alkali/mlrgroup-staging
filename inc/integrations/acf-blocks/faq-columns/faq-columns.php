@@ -25,7 +25,7 @@ $faq_lists = get_sub_field('faq_lists');
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> faq-columns-sec bg-black bpx-4 md:px-10 pt-[60px] lg:pt-[80px] xl:pt-[120px] lg:pb-[100px] pb-[60px]">
 		<!-- <div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col md:flex-row items-center flex-wrap"> -->
 		<?php if($title_row_1 || $title_row_2 || $description): ?>
-		<div class="flex flex-col lg:flex-row gap-[20px] lg:gap-[50px] self-stretch w-full wrapper lg:mb-[60px] mb-[40px]">
+		<div class="flex flex-col lg:flex-row gap-[20px] lg:gap-[50px] self-stretch w-full wrapper mb-[40px]">
 			<?php if($title_row_1 || $title_row_2): ?>
 				<h2 class="text-[clamp(32px,6vw,68px)] leading-[clamp(40px,7vw,76px)] tracking-[-4%] text-white font-heading lg:mb-[20px]">
 					<?php if($title_row_1): ?>
@@ -40,7 +40,7 @@ $faq_lists = get_sub_field('faq_lists');
 		<?php endif; ?>
 		<div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col">
 			
-			<div class="faq-lists">
+			<div class="faq-lists faq-lists-columns">
 				<?php if($faq_lists): ?>
 					<?php if ( ! empty( $faq_lists ) && is_array( $faq_lists ) ) : ?>
 						<div class="flex flex-col md:gap-[32px] gap-[16px]">

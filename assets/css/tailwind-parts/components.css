@@ -1099,6 +1099,10 @@
   @apply rotate-180;
 }
 
+.faq-lists.faq-lists-columns .question::before{
+  background-image: url('../../imgs/faq-plus-icon.svg.svg');
+}
+
 .newsletter-gf--text b{
   @apply font-medium;
 }
