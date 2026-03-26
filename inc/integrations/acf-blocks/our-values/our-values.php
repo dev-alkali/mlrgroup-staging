@@ -63,10 +63,10 @@ $lists = get_sub_field('lists');
 						</div>
 						<div class="flex flex-col flex-1">
 							<?php if($heading): ?>
-								<h3 class="text-[clamp(20px,2.6vw,28px)] leading-[clamp(28px,3.2vw,36px)] tracking-[-0.02em] text-[#262626] font-heading"><?php echo $heading; ?></h3>
+								<h3 class="text-[clamp(20px,2.6vw,28px)] leading-[clamp(28px,3.2vw,36px)] tracking-[-0.02em] text-[#262626] font-heading font-bold"><?php echo $heading; ?></h3>
 							<?php endif; ?>
 							<?php if($content): ?>
-								<div class="text-[clamp(16px,1.8vw,18px)] leading-[clamp(24px,2.2vw,26px)] text-[#525252] font-body"><?php $content; ?></div>
+								<div class="text-[clamp(16px,1.8vw,18px)] leading-[clamp(24px,2.2vw,26px)] text-[#525252] font-body"><?php echo $content; ?></div>
 							<?php endif; ?>
 						</div>
 					</div>
