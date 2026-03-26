@@ -1,3 +1,26 @@
+document.querySelectorAll('.gradient-box').forEach(card => {
+  const figure  = card.querySelector('figure');
+  const content = card.querySelector('.content');
+
+  card.addEventListener('mouseenter', () => {
+    const cardH    = card.offsetHeight;
+    const figH     = figure.offsetHeight;
+    const contentH = content.offsetHeight;
+    const py       = parseFloat(getComputedStyle(card).paddingTop);
+
+    const figMove     = cardH - (2 * py) - figH;
+    const contentMove = cardH - (2 * py) - contentH;
+
+    figure.style.transform  = `translateY(${figMove}px)`;
+    content.style.transform = `translateY(-${contentMove}px)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    figure.style.transform  = '';
+    content.style.transform = '';
+  });
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
