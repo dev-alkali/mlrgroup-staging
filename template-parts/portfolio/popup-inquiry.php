@@ -18,9 +18,9 @@
    <div id="inquiry-pop-up" class="bg-white max-w-[1200px] w-full hidden flex-col p-[16px] md:p-[40px] text-neutral-800 overflow-auto max-h-[90vh]">
       <section id="normal-content" class="hidden flex-col w-full ">
          <div class="mb-4 hidden md:block">
-            <div class=" flex justify-between w-full mb-3">
-               <h2 class="inquiry-title text-[28px] leading-[36px] tracking-[-2%] font-heading font-bold "></h2>
-               <h2 class="text-[20px] leading-[28px] tracking-[-2%] font-heading font-bold ">Quick item view</h2>
+            <div class="flex justify-between w-full mb-3">
+               <h2 class="inquiry-title text-[28px] leading-[36px] tracking-[-2%] font-heading font-bold hidden md:block"></h2>
+               <h2 class="text-[20px] leading-[28px] tracking-[-2%] font-heading font-bold block md:hidden">Quick item view</h2>
                
                <img class="close cursor-pointer" src="<?= get_template_directory_uri() ?>/assets/imgs/close-pop-up.svg" alt="exit">
             </div>
