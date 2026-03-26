@@ -1167,7 +1167,7 @@ button.swiper-button-disabled {
   transform: rotate(45deg);
 }
 
-@media(max-width: 1299px){
+@media(max-width: 1399px){
   .card-text br {display: none;}
 }
 @media (max-width: 1190px){
