@@ -1061,6 +1061,10 @@
   height: 219px;
 }
 
+.c-contact__right .gform_wrapper.gravity-theme .gfield textarea{
+  outline: none;
+}
+
 .c-contact__right .gfield .ginput_container_consent label a {text-decoration: underline;}
 .c-contact__right .gfield .ginput_container_consent label a:hover{color: var(--color-accent);}
 
