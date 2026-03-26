@@ -20,6 +20,8 @@
          <div class="mb-4 hidden md:block">
             <div class=" flex justify-between w-full mb-3">
                <h2 class="inquiry-title text-[28px] leading-[36px] tracking-[-2%] font-heading font-bold "></h2>
+               <h2 class="text-[20px] leading-[28px] tracking-[-2%] font-heading font-bold ">Quick item view</h2>
+               
                <img class="close cursor-pointer" src="<?= get_template_directory_uri() ?>/assets/imgs/close-pop-up.svg" alt="exit">
             </div>
             <div class="inquiry-categories">
@@ -32,7 +34,7 @@
                <div class="mt-4 mb-4 block md:hidden">
                   <div class=" flex justify-between w-full mb-3">
                      <h2 class="inquiry-title text-[28px] leading-[36px] tracking-[-2%] font-heading font-bold "></h2>
-                     <img class="close cursor-pointer" src="<?= get_template_directory_uri() ?>/assets/imgs/close-pop-up.svg" alt="exit">
+                     
                   </div>
                   <div class="inquiry-categories">
                   </div>
