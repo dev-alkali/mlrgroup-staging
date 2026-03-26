@@ -1100,7 +1100,7 @@
 }
 
 .newsletter-gf--text b{
-  @apply font-bold;
+  @apply font-medium;
 }
 
 .card-text br{
