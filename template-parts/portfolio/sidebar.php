@@ -12,11 +12,11 @@ $parent_terms = get_terms(array(
 ?>
 
 <aside id="sidebar-filter" class="flex flex-col w-full md:w-[220px] lg:w-[280px] xl:w-[360px] flex-shrink-0 gap-4" aria-label="Filter categories">
-   <div class="border-b border-[#CCCCCC] pb-[24px] mb-[24px]">
+   <div class="border-b border-[#CCCCCC] pb-[20px] mb-[10px]">
       <p class="text-[#525252] font-[Poppins] font-medium text-[16px] leading-[24px] md:text-[16px] md:leading-[24px]">Get inspired: Browse our portfolio, filter by category, add elements you like to your Inquiry List.</p>
    </div>
 
-   <div class="flex justify-between items-center w-full mb-[28px]">
+   <div class="flex justify-between items-center w-full mb-[15px]">
      <h3 class="font-[Poppins] font-medium text-[24px] leading-[32px] tracking-[-0.02em] text-[#262626] filter-heading">Filters</h3>
      <a href="javascript:void(0);" class="hidden md:inline-block font-[Poppins] font-medium text-[16px] leading-[24px] text-[#525252] underline hover:no-underline hover:text-accent transition-colors">Reset</a>
      <div class="filter-toggle-btn block md:hidden">
@@ -27,7 +27,7 @@ $parent_terms = get_terms(array(
    </div>
 
    <div class="sidebar-cat w-full hidden md:block">
-      <div class="pb-[28px]">
+      <div class="pb-[18px]">
             <a href="<?php echo esc_url(home_url('/work')); ?>" class="group relative inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline transition-all duration-300 pl-0 hover:pl-6">
                <svg class="absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200" width="16" height="16" viewBox="0 0 16 16" fill="none">
                  <path d="M2.26562 2.47461H13.407V13.9366" stroke="#FD4338"/>
