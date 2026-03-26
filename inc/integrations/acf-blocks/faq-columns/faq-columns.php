@@ -43,13 +43,13 @@ $faq_lists = get_sub_field('faq_lists');
 			<div class="faq-lists">
 				<?php if($faq_lists): ?>
 					<?php if ( ! empty( $faq_lists ) && is_array( $faq_lists ) ) : ?>
-						<div class="flex flex-col md:gap-[16px] gap-[10px]">
+						<div class="flex flex-col md:gap-[32px] gap-[16px]">
 							<?php $i = 1; ?>
 							<?php foreach ( $faq_lists as $faq ) : 
 								$question = ! empty( $faq['question'] ) ? $faq['question'] : '';
 								$answer   = ! empty( $faq['answer'] ) ? $faq['answer'] : '';
 							?>
-								<div class="flex flex-col bg-black text-white md:px-[28px] px-[20px] md:py-[36px] py-[20px] relative">
+								<div class="flex flex-col bg-black text-white md:px-[28px] px-[20px] md:py-[16px] py-[10px] relative border-b border-[#404040] first:border-t border-solid">
 									<h3 class="font-heading question font-medium text-white text-[clamp(16px,2.2vw,20px)] relative leading-[clamp(24px,2.6vw,28px)] pr-[50px]">
 										<?php echo $i . '. ' . esc_html( $question ); ?>
 									</h3>
