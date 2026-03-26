@@ -51,21 +51,21 @@ $lists = get_sub_field('lists');
 		<?php endif; ?>
 
 		<?php if($lists): ?>
-			<div class="flex flex-wrap md:gap-x-[60px] md:gap-y-[90px] gap-x-[30px] sm:gap-y-[40px] gap-y-[25px] px-4 md:px-10">
+			<div class="flex flex-wrap md:gap-x-[60px] md:gap-y-[90px] gap-x-[30px] sm:gap-y-[40px] gap-y-[30px] px-4 md:px-10">
 				<?php foreach($lists as $list): 
 					$heading = $list['heading'];
 					$content = $list['content'];
 					?>
 					<div class=" flex flex-row gap-[20px] md:w-[calc(33.33%-40px)]">
-						<div class="flex w-[50px] h-[50px] relative top-[-14px]">
+						<div class="flex w-[50px] h-[50px] relative md:top-[-14px] top-[-8px]">
 							<img src="<?php echo get_template_directory_uri() ?>/assets/imgs/list-icon.svg" alt="" class="w-full">
 						</div>
 						<div class="flex flex-col flex-1">
 							<?php if($heading): ?>
-								<h3 class="text-[clamp(20px,2.6vw,28px)] leading-[clamp(28px,3.2vw,36px)] tracking-[-2%] text-[#262626] font-heading font-bold mb-[18px]"><?php echo $heading; ?></h3>
+								<h3 class="text-[clamp(20px,2.6vw,28px)] leading-[clamp(28px,3.2vw,36px)] tracking-[-2%] text-[#262626] font-heading font-bold md:mb-[18px] mb-[28px]"><?php echo $heading; ?></h3>
 							<?php endif; ?>
 							<?php if($content): ?>
-								<div class="text-[clamp(16px,1.8vw,18px)] leading-[clamp(24px,2.2vw,26px)] text-[#525252] font-body tracking-[0px]"><?php echo $content; ?></div>
+								<div class="text-[18px] leading-[26px] text-[#525252] font-body tracking-[0px]"><?php echo $content; ?></div>
 							<?php endif; ?>
 						</div>
 					</div>
