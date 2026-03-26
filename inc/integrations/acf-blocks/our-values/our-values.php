@@ -56,7 +56,7 @@ $lists = get_sub_field('lists');
 					$heading = $list['heading'];
 					$content = $list['content'];
 					?>
-					<div class=" flex flex-row gap-[20px] xl:w-[calc(33.33%-40px)]">
+					<div class=" flex flex-row gap-[20px] xl:w-[calc(33.33%-40px)] md:w-[calc(50%-15px)]">
 						<div class="flex w-[50px] h-[50px] relative md:top-[-14px] top-[-8px]">
 							<img src="<?php echo get_template_directory_uri() ?>/assets/imgs/list-icon.svg" alt="" class="w-full">
 						</div>
