@@ -82,4 +82,17 @@ $term_id = isset($current_term->term_id) ? absint($current_term->term_id) : 0;
         <?php endif;
         wp_reset_postdata(); ?>
     </div>
+
+
+    <?php
+        $term = get_queried_object(); // Current taxonomy term
+        ?>
+        <?php if ( !empty($term->description) ) : ?>
+        <section class="taxonomy-header p-8 bg-gray-100">
+            <h1 class="text-3xl font-bold"><?php echo esc_html($term->name); ?></h1>
+                    <div class="taxonomy-description mt-4 text-gray-700">
+                    <?php echo wp_kses_post($term->description); ?>
+                </div>
+        </section>
+        <?php endif; ?>
 </div>
