@@ -4,7 +4,7 @@ $current_term = get_queried_object();
 $term_id = isset($current_term->term_id) ? absint($current_term->term_id) : 0;
 ?>
 
-<div class="flex flex-col items-start gap-5 flex-1 min-w-0 justify-center w-full lg:w-auto">
+<div class="flex flex-col items-start gap-5 flex-1 min-w-0 justify-center w-full md:w-auto">
     <div class="flex items-center justify-end w-full">
         <button type="button" id="view-inquery-list" class="btn-primary relative inline-flex items-center gap-2" aria-label="View inquiry list, 3 items">
             <div class="inline-flex items-center gap-2 justify-center">

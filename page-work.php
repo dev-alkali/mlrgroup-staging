@@ -32,7 +32,7 @@
   <section
     class="w-full flex flex-col items-center gap-10 md:gap-[60px] pt-10 md:pt-[60px] pb-16 md:pb-[120px] bg-white px-4 md:px-10"
     aria-label="Portfolio gallery">
-    <div class="flex flex-col lg:flex-row items-start gap-6 lg:gap-10 w-full max-w-[1920px] mx-auto">
+    <div class="flex flex-col md:flex-row items-start gap-6 md:gap-10 w-full max-w-[1920px] mx-auto">
       <?php get_template_part('template-parts/portfolio/sidebar'); ?>
 
       <?php get_template_part('template-parts/portfolio/content-grid'); ?>
