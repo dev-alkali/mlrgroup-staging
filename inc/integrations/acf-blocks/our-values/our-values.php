@@ -31,9 +31,9 @@ $lists = get_sub_field('lists');
       <div class="gap-[30px] md:gap-[0px] w-full wrapper flex flex-col">
 
 	  <?php if($title_row_1 || $title_row_2 ): ?>
-			<div class="w-full wrapper mb-[40px] overflow-visible">
+			<div class="w-full wrapper lg:mb-[70px] mb-[40px] overflow-visible">
 				<?php if($title_row_1 || $title_row_2): ?>
-				<h2 class="text-[clamp(32px,6vw,68px)] leading-[clamp(40px,7vw,76px)] tracking-[-4%] text-[#262626] font-heading lg:mb-[20px] relative md:w-[calc(100%-80px)] mx-auto w-[calc(100%-32px)] heading-our-values">
+				<h2 class="text-[clamp(32px,6vw,68px)] leading-[clamp(40px,7vw,76px)] tracking-[-2%] text-[#262626] font-heading lg:mb-[20px] relative md:w-[calc(100%-80px)] mx-auto w-[calc(100%-32px)] heading-our-values">
 					<div class="bg-repeat absolute top-[0px] left-[10%] right-[calc(100%+100px)] arrow-img-position w-full h-[100%]" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/our-value-arrow.svg');"></div>
 					<?php if($title_row_1): ?>
 						<span class="relative w-full block flex gap-[10px] title-our-values-1">
@@ -57,15 +57,15 @@ $lists = get_sub_field('lists');
 					$content = $list['content'];
 					?>
 					<div class=" flex flex-row gap-[20px] md:w-[calc(33.33%-40px)]">
-						<div class="flex w-[50px] h-[50px]">
+						<div class="flex w-[50px] h-[50px] relative top-[-14px]">
 							<img src="<?php echo get_template_directory_uri() ?>/assets/imgs/list-icon.svg" alt="" class="w-full">
 						</div>
 						<div class="flex flex-col flex-1">
 							<?php if($heading): ?>
-								<h3 class="text-[clamp(20px,2.6vw,28px)] leading-[clamp(28px,3.2vw,36px)] tracking-[-0.02em] text-[#262626] font-heading font-bold"><?php echo $heading; ?></h3>
+								<h3 class="text-[clamp(20px,2.6vw,28px)] leading-[clamp(28px,3.2vw,36px)] tracking-[-2%] text-[#262626] font-heading font-bold mb-[18px]"><?php echo $heading; ?></h3>
 							<?php endif; ?>
 							<?php if($content): ?>
-								<div class="text-[clamp(16px,1.8vw,18px)] leading-[clamp(24px,2.2vw,26px)] text-[#525252] font-body"><?php echo $content; ?></div>
+								<div class="text-[clamp(16px,1.8vw,18px)] leading-[clamp(24px,2.2vw,26px)] text-[#525252] font-body tracking-[0px]"><?php echo $content; ?></div>
 							<?php endif; ?>
 						</div>
 					</div>
