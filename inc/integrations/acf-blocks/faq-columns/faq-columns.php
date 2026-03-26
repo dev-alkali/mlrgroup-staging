@@ -47,7 +47,7 @@ $faq_lists = get_sub_field('faq_lists');
 						$col1 = array_slice( $faq_lists, 0, $half );
 						$col2 = array_slice( $faq_lists, $half );
 					?>
-					<div class="flex flex-col md:flex-row gap-[30px] md:gap-[60px]">
+					<div class="flex flex-col md:flex-row md:gap-[60px] faq-columns-wrapper first:border-t border-solid border-[#404040]">
 
 						<?php foreach ( [ $col1, $col2 ] as $col_index => $column_faqs ) : ?>
 						<div class="faq-column flex-1 flex flex-col">
@@ -56,7 +56,7 @@ $faq_lists = get_sub_field('faq_lists');
 								$question = ! empty( $faq['question'] ) ? $faq['question'] : '';
 								$answer   = ! empty( $faq['answer'] ) ? $faq['answer'] : '';
 							?>
-								<div class="flex flex-col bg-black text-white xl:py-[32px] lg:py-[24px] py-[20px] relative border-b border-[#404040] first:border-t border-solid">
+								<div class="flex flex-col bg-black text-white xl:py-[32px] lg:py-[24px] py-[20px] relative border-b border-[#404040]  border-solid">
 									<h3 class="font-heading question font-medium text-white text-[clamp(16px,2.2vw,20px)] relative leading-[clamp(24px,2.6vw,28px)] pr-[50px]">
 										<?php echo $i . '. ' . esc_html( $question ); ?>
 									</h3>
