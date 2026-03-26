@@ -1093,6 +1093,7 @@
     background-repeat: no-repeat;
     background-position: center;
     z-index: 1;
+    transition: all 0.3s ease;
 }
 
 .faq-lists .question.active::before{

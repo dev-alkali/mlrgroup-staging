@@ -59,7 +59,7 @@ $faq_lists = get_sub_field('faq_lists');
 										</div>
 									</div>
 								</div>
-							<?php $i++; endforeach; ?>
+							<?php endforeach; ?>
 						</div>
 					<?php endif; ?>
 				<?php endif; ?>
