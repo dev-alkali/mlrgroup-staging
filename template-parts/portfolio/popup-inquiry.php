@@ -1,4 +1,4 @@
-<section class="pop-up hidden justify-center items-center w-full h-screen fixed top-0 bg-[#000000CC] backdrop-blur-[20px] z-50 p-[30px]">
+<section class="pop-up hidden justify-center items-center w-full h-screen fixed top-0 bg-[#000000CC] backdrop-blur-[20px] z-100 p-[30px]">
    <div id="inquiry-empty-pop-up" class="bg-white hidden max-w-[600px] flex-col p-[16px] md:p-[40px] overflow-auto max-h-[90vh]">
       <div class="w-full flex justify-end mb-[28px]">
          <img class="close" src="<?= get_template_directory_uri() ?>/assets/imgs/close-pop-up.svg" alt="exit">
