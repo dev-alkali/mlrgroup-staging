@@ -11,7 +11,7 @@ $parent_terms = get_terms(array(
 ));
 ?>
 
-<aside id="sidebar-filter" class="flex flex-col w-full lg:w-[280px] xl:w-[360px] flex-shrink-0 gap-4" aria-label="Filter categories">
+<aside id="sidebar-filter" class="flex flex-col w-full md:w-[220px] lg:w-[280px] xl:w-[360px] flex-shrink-0 gap-4" aria-label="Filter categories">
    <div class="border-b border-[#CCCCCC] pb-[24px] mb-[24px]">
       <p class="text-[#525252] font-[Poppins] font-medium text-[16px] leading-[24px] md:text-[16px] md:leading-[24px]">Get inspired: Browse our portfolio, filter by category, add elements you like to your Inquiry List.</p>
    </div>
@@ -26,7 +26,7 @@ $parent_terms = get_terms(array(
       </div>
    </div>
 
-   <div class="sidebar-cat w-full">
+   <div class="sidebar-cat w-full hidden md:block">
       <div class="pb-[28px]">
             <a href="<?php echo esc_url(home_url('/work')); ?>" class="group relative inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline transition-all duration-300 pl-0 hover:pl-6">
                <svg class="absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200" width="16" height="16" viewBox="0 0 16 16" fill="none">
