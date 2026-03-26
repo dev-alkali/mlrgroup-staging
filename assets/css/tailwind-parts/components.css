@@ -1010,9 +1010,14 @@
 }
 
 .c-contact__right .gform_wrapper.gravity-theme .gform_footer input[type="submit"] {
-  @apply block w-full max-w-full text-white font-semibold uppercase text-[16px] leading-[18px] p-[16px] m-0 rounded-[50px];
+  @apply block w-full max-w-full text-white font-semibold uppercase text-[16px] leading-[18px] p-[16px] m-0 rounded-[50px] cursor-pointer;
   background-color: var(--color-accent);
   font-family: var(--font-heading);
+  transition: background-color 0.3s ease;
+}
+
+.c-contact__right .gform_wrapper.gravity-theme .gform_footer input[type="submit"]:hover{
+  @apply bg-accent-hover;
 }
 
 .c-contact__right .ginput_container .gfield_checkbox {
