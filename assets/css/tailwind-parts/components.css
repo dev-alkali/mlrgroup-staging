@@ -1011,7 +1011,7 @@
 
 .c-contact__right .gform_wrapper.gravity-theme .gform_footer input[type="submit"] {
   @apply block w-full max-w-full text-white font-semibold uppercase text-[16px] leading-[18px] p-[16px] m-0 rounded-[50px];
-  background-color: #FD4338;
+  background-color: var(--color-accent);
   font-family: var(--font-heading);
 }
 
@@ -1029,7 +1029,7 @@
 
 .c-contact__right .gfield .ginput_container_consent label::before,
 .c-contact__right .ginput_container .gchoice label::before {
-  @apply bg-white border border-[#262626] cursor-pointer block absolute left-0 md:w-[20px] md:h-[20px] w-[16px] h-[16px] rounded-none top-[35%] md:top-1/2 -translate-y-1/2;
+  @apply bg-white border border-[#262626] cursor-pointer block absolute left-0 md:w-[20px] md:h-[20px] w-[16px] h-[16px] rounded-none top-[11px] -translate-y-1/2;
   content: "";
 }
 
@@ -1060,6 +1060,9 @@
 .c-contact__right .gform_wrapper.gravity-theme .gfield textarea.large{
   height: 219px;
 }
+
+.c-contact__right .gfield .ginput_container_consent label a {text-decoration: underline;}
+.c-contact__right .gfield .ginput_container_consent label a:hover{color: var(--color-accent);}
 
 .faq-sec .answer{
   @apply max-h-0 overflow-hidden transition-all duration-300 ease-in-out;
