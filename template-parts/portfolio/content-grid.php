@@ -9,7 +9,7 @@ $term_id = isset($current_term->term_id) ? absint($current_term->term_id) : 0;
         <!-- <button type="button" id="view-inquery-list" class="btn-primary relative inline-flex items-center gap-2" aria-label="View inquiry list, 3 items">
             <div class="inline-flex items-center gap-2 justify-center">
                 <div class="relative w-[17px] h-4 mt-[-2px]">
-                    <img src="<?= //esc_url(get_template_directory_uri() . '/assets/imgs/Arrow-white-large.svg'); ?>" alt="arrow">
+                    <img src=" //esc_url(get_template_directory_uri() . '/assets/imgs/Arrow-white-large.svg'); ?>" alt="arrow">
                 </div>
                 <span class="font-heading font-semibold text-white text-sm md:text-base tracking-[0] leading-7 whitespace-nowrap">
                     VIEW INQUIRY LIST
