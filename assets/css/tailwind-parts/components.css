@@ -1162,6 +1162,9 @@ button.swiper-button-disabled {
 .cta.black-cta .cta-wrapper p{max-width: 100%;}
 .cta.black-cta .cta-wrapper .cta-content{justify-content: center;align-items: center;gap: 40px;}
 
+@media(max-width: 1299px){
+  .card-text br {display: none;}
+}
 @media (max-width: 1190px){
   .arrow-img-position{
     background-size: 100%;
