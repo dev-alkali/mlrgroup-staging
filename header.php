@@ -21,7 +21,20 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<?php $header_schema = get_field('header_schema') == 'light-skin' ? 'absolute min-[1024px]:pt-[52px]' : 'relative dark-skin min-[1024px]:py-4';?>
+
+<?php
+$is_transparent_page = is_archive() || is_tax() || is_category() || is_tag();
+$acf_schema          = get_field('header_schema');
+
+if ( $is_transparent_page ) {
+    $header_schema = 'absolute min-[1024px]:pt-[52px] light-skin';
+} elseif ( $acf_schema === 'light-skin' ) {
+    $header_schema = 'absolute min-[1024px]:pt-[52px]';
+} else {
+    $header_schema = 'relative dark-skin min-[1024px]:py-4';
+}
+?>
+<?php //$header_schema = get_field('header_schema') == 'light-skin' ? 'absolute min-[1024px]:pt-[52px]' : 'relative dark-skin min-[1024px]:py-4';?>
 
 <header class=" <?php echo $header_schema.' '.get_field('header_schema'); ?> z-[99] w-full site-header anim px-4 min-[600px]:px-10 min-[767px]:px-20 lg:px-[100px]" data-delay="2.25" data-anim="up" data-start="top 100%">
   
