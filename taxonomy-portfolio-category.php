@@ -29,8 +29,8 @@
   endif; ?>
 
 <section class="w-full flex flex-col items-center gap-10 md:gap-[60px] pt-10 md:pt-[60px] px-4 md:px-10">
-  <div class="flex flex-col md:flex-row items-start gap-6 md:gap-10 w-full max-w-[1920px] mx-auto max-[768px]:border-b border-[#CCCCCC]">
-     <div class="md:border-b border-[#CCCCCC] pb-[20px] mb-[10px] w-full md:w-[220px] lg:w-[280px] xl:w-[380px]">
+  <div class="flex flex-col md:flex-row items-start gap-[20px] md:gap-10 w-full max-w-[1920px] mx-auto max-[768px]:border-b border-[#CCCCCC]">
+     <div class="md:border-b border-[#CCCCCC] md:pb-[20px] md:mb-[10px] w-full md:w-[220px] lg:w-[280px] xl:w-[380px]">
       <p class="text-[#525252] font-[Poppins] font-medium text-[16px] leading-[24px] md:text-[16px] md:leading-[24px]">Get inspired: Browse our portfolio, filter by category, add elements you like to your Inquiry List.</p>
      </div>
      <div class="flex items-center justify-end w-full">
