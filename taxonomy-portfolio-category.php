@@ -40,18 +40,7 @@
     </div>
   </section>
 
-  <?php
-$term = get_queried_object(); // Current taxonomy term
-?>
 
-<section class="taxonomy-header p-8 bg-gray-100">
-    <h1 class="text-3xl font-bold"><?php echo esc_html($term->name); ?></h1>
-    <?php if ( !empty($term->description) ) : ?>
-        <div class="taxonomy-description mt-4 text-gray-700">
-            <?php echo wp_kses_post($term->description); ?>
-        </div>
-    <?php endif; ?>
-</section>
 
   <!-- ===================== CTA SECTION ===================== -->
 
