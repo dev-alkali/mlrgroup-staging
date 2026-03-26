@@ -22,48 +22,48 @@ document.querySelectorAll('.gradient-box').forEach(card => {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
 
-  gsap.registerPlugin(ScrollTrigger);
-  /**------------------------ Animation GSAP -------------------------**/
-  const elements = document.querySelectorAll('.anim');
+//   gsap.registerPlugin(ScrollTrigger);
+//   /**------------------------ Animation GSAP -------------------------**/
+//   const elements = document.querySelectorAll('.anim');
 
-elements.forEach((el) => {
+// elements.forEach((el) => {
 
-  const delay = parseFloat(el.dataset.delay) || 0;
-  const direction = el.dataset.anim || 'up';
-  const start = el.dataset.start || 'top 85%';
-  const once = el.dataset.once !== 'false';
+//   const delay = parseFloat(el.dataset.delay) || 0;
+//   const direction = el.dataset.anim || 'up';
+//   const start = el.dataset.start || 'top 85%';
+//   const once = el.dataset.once !== 'false';
   
-  let x = 0; let y = 0;
+//   let x = 0; let y = 0;
 
-  switch (direction) {
-    case 'left':
-      x = -40; break;
-    case 'right':
-      x = 40; break;
-    case 'down':
-      y = 40; break;
-    case 'up':
-    default:
-      y = 40; break;
-  }
+//   switch (direction) {
+//     case 'left':
+//       x = -40; break;
+//     case 'right':
+//       x = 40; break;
+//     case 'down':
+//       y = 40; break;
+//     case 'up':
+//     default:
+//       y = 40; break;
+//   }
 
-  ScrollTrigger.create({ trigger: el, start: start, once: once,
+//   ScrollTrigger.create({ trigger: el, start: start, once: once,
 
-    onEnter: () => {
-      gsap.fromTo(
-        el, { opacity: 0, x: x, y: y },
-        { opacity: 1, x: 0, y: 0, delay: delay, duration: 0.7, ease: 'power2.out',
-          onStart: () => {
-            el.classList.add('is-visible');
-          }
-        }
-      );
-    }
-  });
+//     onEnter: () => {
+//       gsap.fromTo(
+//         el, { opacity: 0, x: x, y: y },
+//         { opacity: 1, x: 0, y: 0, delay: delay, duration: 0.7, ease: 'power2.out',
+//           onStart: () => {
+//             el.classList.add('is-visible');
+//           }
+//         }
+//       );
+//     }
+//   });
 
-});
+// });
   /**------------------------ Animation GSAP Ends -------------------------**/
 
   /**------------------------ Sticky Header -------------------------**/
@@ -98,15 +98,15 @@ elements.forEach((el) => {
   //     });
   //   }
 
-  const header = document.querySelector('.site-header');
-  if (!header) return;
+  // const header = document.querySelector('.site-header');
+  // if (!header) return;
 
-  // Trigger header after 100vh scroll
-  ScrollTrigger.create({
-    start: 'top+=100% top', // 100% of viewport height scrolled
-    onEnter: () => header.classList.add('is-sticky'),
-    onLeaveBack: () => header.classList.remove('is-sticky')
-  });
+  // // Trigger header after 100vh scroll
+  // ScrollTrigger.create({
+  //   start: 'top+=100% top', // 100% of viewport height scrolled
+  //   onEnter: () => header.classList.add('is-sticky'),
+  //   onLeaveBack: () => header.classList.remove('is-sticky')
+  // });
     /**------------------------ Sticky Header Ends -------------------------**/
 
 });
