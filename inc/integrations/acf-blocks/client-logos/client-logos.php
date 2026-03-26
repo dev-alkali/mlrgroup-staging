@@ -19,14 +19,16 @@ if (!empty($block['className'])) {
 
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> client-logos flex justify-center  px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px]">
       <div class="w-full wrapper">
-            <div class="mb-[32px] md:mb-[60px]">
+            
               <?php 
                 $title1 = get_sub_field('title_row_1');
                 $title2 = get_sub_field('title_row_2');
                 $subtitle = get_sub_field('description');
               ?>
-
+              <?php if ($title1 || $title2 || $subtitle) : ?>
+              <div class="mb-[32px] md:mb-[60px]">
               <?php if ($title1 || $title2) : ?>
+                
                 <h2 class="text-[clamp(44px,5vw,68px)] leading-[clamp(56px,6vw,78px)] tracking-[-0.02em] font-heading">
                   <span class="font-bold text-neutral-800"><?php echo wp_kses_post($title1); ?></span>
                   <span class="font-light text-neutral-500"><?php echo wp_kses_post($title2); ?></span>
@@ -39,6 +41,7 @@ if (!empty($block['className'])) {
                 </p>
               <?php endif; ?>
             </div>
+            <?php endif; ?>
 
           <?php
               // Collect all logo data upfront — have_rows() can only loop once
