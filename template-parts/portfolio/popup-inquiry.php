@@ -20,7 +20,7 @@
          <div class="mb-4 hidden md:block">
             <div class="flex justify-between w-full mb-3">
                <h2 class="inquiry-title text-[28px] leading-[36px] tracking-[-2%] font-heading font-bold hidden md:block"></h2>
-               <h2 class="text-[20px] leading-[28px] tracking-[-2%] font-heading font-bold block md:hidden">Quick item view</h2>
+               <h2 class="text-[20px] leading-[28px] tracking-[-2%] font-heading font-medium block md:hidden">Quick item view</h2>
                
                <img class="close cursor-pointer" src="<?= get_template_directory_uri() ?>/assets/imgs/close-pop-up.svg" alt="exit">
             </div>
