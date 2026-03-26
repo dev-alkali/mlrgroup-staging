@@ -1078,7 +1078,7 @@
   position: relative;
 }
 
-.c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container.ginput_container_select {
+.c-contact__right .gform_wrapper.gravity-theme .gform_fields .ginput_container.ginput_container_select select {
   appearance: none;--webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;
 }
 
