@@ -1111,6 +1111,7 @@ button.swiper-button-disabled {
   @apply hidden;
 }
 
+.site-nav__dropdown  a.site-nav__dropdown-link.active {color: var(--color-accent);}
 
 .description-content ul{
   @apply flex flex-col gap-3;
