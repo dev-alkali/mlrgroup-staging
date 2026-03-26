@@ -19,8 +19,7 @@ if (!empty($block['className'])) {
         <div class="flex flex-col w-full items-center gap-10">
         <!-- Heading -->
         <div class="max-w-[1920px] w-full flex flex-col items-start justify-center gap-5 px-4 sm:px-10">            
-            <h2 class="flex flex-col max-w-[512px] font-heading text-black tracking-[-0.02em]
-            text-[clamp(44px,5vw,68px)] leading-[clamp(56px,6vw,80px)]">
+            <h2 class="flex flex-col max-w-[512px] font-heading text-black tracking-[-0.02em] text-[clamp(36px,5vw,68px)] leading-[clamp(44px,6vw,80px)]">
                 <span class="font-bold">
                     <?= wp_kses_post(get_sub_field('title_row_1')) ?>
                 </span>
@@ -43,16 +42,10 @@ if (!empty($block['className'])) {
                             background-repeat: no-repeat;">
                         <div class="gradient-box flex flex-col items-start justify-end gap-2 px-3 sm:px-6 py-4 sm:py-7 h-full">
                             <div class="content flex items-center justify-end gap-1 sm:gap-2 w-full">
-                                <div class="flex-1 text-white uppercase font-heading font-semibold
-                                    text-[clamp(12px,1.5vw,18px)]
-                                    leading-[clamp(18px,2vw,28px)]
-                                    whitespace-nowrap">                                    
+                                <div class="flex-1 text-white uppercase font-heading font-semibold text-[clamp(12px,1.4vw,18px)] leading-[clamp(18px,2vw,28px)] whitespace-nowrap">                                    
                                     <?= wp_kses_post(get_sub_field('title')) ?>
                                 </div>
-                                <img
-                                    class="arrow relative w-[11px] sm:w-[20px] md:w-[24px] h-[10px] sm:h-5 md:h-6 mt-[-2px]"
-                                    src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg"
-                                    alt="Arrow">
+                                <img class="arrow relative w-[11px] sm:w-[20px] xl:w-[24px] h-[10px] sm:h-5 xl:h-6 mt-[-2px]" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="Arrow">
                             </div>
                         </div>
                     </a>
