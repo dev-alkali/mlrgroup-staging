@@ -6,7 +6,7 @@
       <div class="flex flex-col items-center gap-5 px-[54px] py-[72px] border border-neutral-300 mb-20">
          <img src="<?= get_template_directory_uri() ?>/assets/imgs/clipboard.svg" alt="clipboard">
          <div class="flex flex-col items-center gap-3 ">
-            <h2 class="font-heading font-bold text-[28px] leading-9 tracking-[-2%] text-neutral-800">Your Inquiry List is empty</h2>
+            <h2 class="font-heading font-bold text-[28px] leading-9 tracking-[-2%] text-neutral-800 text-center">Your Inquiry List is empty</h2>
             <p class="text-center font-body text-base leading-6 tracking-[0%] text-neutral-600">You currently have no item in the Inquiry List. Expand an image and add it into your inquiry list</p>
          </div>
       </div>
