@@ -138,9 +138,14 @@ if (!empty($block['className'])) {
                     $btn_title = $btn['title'];
                     $btn_target = $btn['target'] ? $btn['target'] : '_self';
                     ?>
-                    <div class="text-center "><a class="btn-primary" href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>"><?php echo esc_html( $btn_title ); ?></a></div>
+                    <div class="text-center d-flex items-center justify-center gap-2">
+                        <a class="relative w-fit uppercase font-heading font-semibold text-base text-center tracking-[0] leading-[24px] min-[600px]:leading-[18px] whitespace-nowrap" href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>">
+                            <?php echo esc_html( $btn_title ); ?>
+                            <img class="relative w-4 h-4 max-[600px]:mt-[3px] arrow" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" alt="Arrow">
+                        </a>
+                    </div>
                 <?php endif; ?>
-                ?>
+                
         </div>
     </section>
 <?php endwhile;
