@@ -34,7 +34,7 @@ $lists = get_sub_field('lists');
 			<div class="w-full wrapper mb-[40px] overflow-visible">
 				<?php if($title_row_1 || $title_row_2): ?>
 				<h2 class="text-[clamp(32px,6vw,68px)] leading-[clamp(40px,7vw,76px)] tracking-[-4%] text-[#262626] font-heading lg:mb-[20px] relative md:w-[calc(100%-80px)] mx-auto w-[calc(100%-32px)] ">
-					<div class="lg:h-[70px] h-[50px] bg-repeat absolute top-[3px] left-[10%] right-[calc(100%+100px)] img-position-left w-full" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/our-value-arrow.svg');"></div>
+					<div class="bg-repeat absolute top-[3px] left-[10%] right-[calc(100%+100px)] img-position-left w-full h-[100%]" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/our-value-arrow.svg');"></div>
 					<?php if($title_row_1): ?>
 						<span class="relative w-full block flex gap-[10px]">
 							<span class="font-bold bg-white pr-[10px]"><?= wp_kses_post($title_row_1) ?></span>
