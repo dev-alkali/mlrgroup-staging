@@ -16,7 +16,7 @@ if (!empty($block['className'])) {
 ?>
 <?php if (have_rows('collection')) :  while (have_rows('collection')) : the_row(); ?>
 
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> px-4 min-[600px]:px-10 py-[60px] min-[600px]:py-[120px] bg-white">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> px-4 min-[600px]:px-10 py-[60px] min-[600px]:py-[120px] bg-white flex justify-center">
         <div class="flex flex-col w-full items-start gap-8 min-[600px]:gap-[60px] max-w-[1920px]">
                 <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
 
