@@ -45,7 +45,7 @@ if (!empty($block['className'])) {
                                 <div class="flex-1 text-white uppercase font-heading font-semibold text-[clamp(12px,1.4vw,18px)] leading-[clamp(18px,2vw,28px)] whitespace-nowrap">                                    
                                     <?= wp_kses_post(get_sub_field('title')) ?>
                                 </div>
-                                <img class="arrow relative w-[11px] sm:w-[20px] lg:w-[24px] h-[10px] sm:h-5 lg:h-6 mt-[-2px]" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="Arrow">
+                                <img class="arrow relative w-[11px] sm:w-[20px] xl:w-[24px] h-[10px] sm:h-5 xl:h-6 mt-[-2px]" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="Arrow">
                             </div>
                         </div>
                     </a>
