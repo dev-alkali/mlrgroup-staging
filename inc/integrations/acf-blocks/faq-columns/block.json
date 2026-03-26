@@ -1,0 +1,14 @@
+{
+    "name": "acf/faq-columns",
+    "title": "Faq Columns",
+    "description": "Faq Columns Section",
+    "style": ["file:./faq-columns.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["faq-columns", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "faq-columns.php"
+    },
+    "script": "faq-columnsJS"
+}
