@@ -48,17 +48,17 @@ if (!empty($block['className'])) {
                 </div>
 
                 <div class="arrows-row flex max-w-[1360px] w-full items-center justify-center gap-3  overflow-hidden max-[1200px]:[&>img:nth-child(1)]:hidden max-[1024px]:[&>img:nth-child(2)]:hidden max-[768px]:[&>img:nth-child(3)]:hidden max-[640px]:[&>img:nth-child(4)]:hidden">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-thin-red.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-red.svg" class="arrow w-[clamp(35px,7vw,120px)] h-[clamp(35px,7vw,117px)]" alt="">
 
                 </div>
             </div>
