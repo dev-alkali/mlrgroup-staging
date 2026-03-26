@@ -65,5 +65,6 @@ a.footer-text:hover{color:#ffffff;}
 .source-card:hover .content {transform: unset !important;margin-top: 0!important;}
 .source-card .arrow{transition: all 0.3s ease;}
 .source-card:hover .arrow {transform: unset !important;top: calc(100% - 60px);}
-
 */
+.service-card a{transition:all 0.3s ease;}
+.service-card a:hover{}
