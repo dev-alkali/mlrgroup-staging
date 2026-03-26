@@ -41,15 +41,22 @@ $faq_lists = get_sub_field('faq_lists');
 		<div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col">
 			
 			<div class="faq-lists faq-lists-columns">
-				<?php if($faq_lists): ?>
-					<?php if ( ! empty( $faq_lists ) && is_array( $faq_lists ) ) : ?>
-						<div class="flex flex-col">
-							<?php $i = 1; ?>
-							<?php foreach ( $faq_lists as $faq ) : 
+				<?php if ( ! empty( $faq_lists ) && is_array( $faq_lists ) ) : ?>
+					<?php
+						$half = (int) ceil( count( $faq_lists ) / 2 );
+						$col1 = array_slice( $faq_lists, 0, $half );
+						$col2 = array_slice( $faq_lists, $half );
+					?>
+					<div class="flex flex-col md:flex-row gap-[30px] md:gap-[60px]">
+
+						<?php foreach ( [ $col1, $col2 ] as $col_index => $column_faqs ) : ?>
+						<div class="faq-column flex-1 flex flex-col">
+							<?php $i = ( $col_index * $half ) + 1; ?>
+							<?php foreach ( $column_faqs as $faq ) :
 								$question = ! empty( $faq['question'] ) ? $faq['question'] : '';
 								$answer   = ! empty( $faq['answer'] ) ? $faq['answer'] : '';
 							?>
-								<div class="flex flex-col bg-black text-white md:px-[28px] px-[20px] xl:py-[32px] lg:py-[24px] py-[20px] relative border-b border-[#404040] first:border-t border-solid">
+								<div class="flex flex-col bg-black text-white xl:py-[32px] lg:py-[24px] py-[20px] relative border-b border-[#404040] first:border-t border-solid">
 									<h3 class="font-heading question font-medium text-white text-[clamp(16px,2.2vw,20px)] relative leading-[clamp(24px,2.6vw,28px)] pr-[50px]">
 										<?php echo $i . '. ' . esc_html( $question ); ?>
 									</h3>
@@ -59,9 +66,11 @@ $faq_lists = get_sub_field('faq_lists');
 										</div>
 									</div>
 								</div>
-							<?php endforeach; ?>
+							<?php $i++; endforeach; ?>
 						</div>
-					<?php endif; ?>
+						<?php endforeach; ?>
+
+					</div>
 				<?php endif; ?>
 			</div>
 			
