@@ -25,7 +25,7 @@
             <div class="inquiry-categories">
             </div>
          </div>
-         <div class="flex-col md:flex-row gap-[40px] md:gap-[60px]">
+         <div class="flex flex-col md:flex-row gap-[40px] md:gap-[60px]">
             <section class="w-full flex flex-col gap-10">
                <img class="inquiry-img w-full max-h-[546px] h-full object-cover object-center" src="" alt="">
                <div class="flex justify-end gap-2">
