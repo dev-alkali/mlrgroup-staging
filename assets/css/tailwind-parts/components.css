@@ -382,6 +382,7 @@
   }
 
   /* Source Card (with gradient hover effect) */
+  .service-card,
   .source-card {
     position: relative;
     overflow: hidden;
