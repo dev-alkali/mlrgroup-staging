@@ -3328,6 +3328,9 @@ $map_code = get_sub_field('map_code');
   .wmap-red  { color: #FD4338; }
   .wmap-blue { color: #4A78FF; }
   .wmap-marker:hover{z-index: 21;transition: z-index 0s 0s;}
+  @media (max-width: 767px){
+    #wmap-inner{max-width: 80%;}
+  }
 </style>
 
 
