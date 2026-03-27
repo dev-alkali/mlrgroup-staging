@@ -11,6 +11,13 @@ get_header();
   <section class="px-4 md:px-10 pt-[140px] md:pt-[180px] pb-[40px] lg:pb-[60px]">
     <div class="wrapper">
       <?php while (have_posts()) : the_post(); ?>
+
+        cs_logo
+
+        <h1 class="font-heading font-bold text-[clamp(34px,5vw,56px)] leading-[1.1] tracking-[-0.02em] text-[#262626]">
+          <?php the_title(); ?>
+        </h1>
+
         <?php
           $taxonomy = 'case-studies-categories';
           $terms    = get_the_terms(get_the_ID(), $taxonomy);
@@ -26,13 +33,9 @@ get_header();
           </div>
         <?php endif; ?>
 
-        <h1 class="font-heading font-bold text-[clamp(34px,5vw,56px)] leading-[1.1] tracking-[-0.02em] text-[#262626]">
-          <?php the_title(); ?>
-        </h1>
-
         <?php if (has_post_thumbnail()) : ?>
           <div class="mt-[28px] overflow-hidden">
-            <div class="aspect-[16/9] bg-[#F5F5F5]">
+            <div class="aspect-[17/10] bg-[#F5F5F5]">
               <?php the_post_thumbnail('full', ['class' => 'w-full h-full object-cover']); ?>
             </div>
           </div>
