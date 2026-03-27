@@ -6,9 +6,10 @@
 ?>
 <?php if (have_rows('cta_global', 'option')) : while (have_rows('cta_global', 'option')) : the_row();
 
-$title_row_1 = get_sub_field('title_row_1');
-$title_row_2 = get_sub_field('title_row_2');
-$description = get_sub_field('description');
+$title_row_1 = get_sub_field('cta_title_row1');
+$title_row_2 = get_sub_field('cta_title_row2');
+$description = get_sub_field('cta_content');
+$link = get_sub_field('cta_button');
 ?>
 
     <section
@@ -38,10 +39,16 @@ $description = get_sub_field('description');
               <p class="max-w-[622px] w-full text-[18px]  min-[600px]:text-xl leading-[26px] min-[600px]:leading-7 text-gray-50 font-body"><?= wp_kses_post($description) ?></p>
             <?php endif; ?>
           </div>
-          
-          <?php if (get_sub_field('btn_label')): ?>
-            <a href="<?= esc_url(get_sub_field('btn_path')) ?>" class="btn-primary"><?= wp_kses_post(get_sub_field('btn_label')) ?></a>
-          <?php endif; ?>
+
+          <?php 
+            
+            if( $link ): 
+                $link_url = $link['url'];
+                $link_title = $link['title'];
+                $link_target = $link['target'] ? $link['target'] : '_self';
+                ?>
+                <a class="btn-primary" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+            <?php endif; ?>
         </div>
       </div>
 
