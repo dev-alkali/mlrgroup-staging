@@ -21,8 +21,8 @@
                     >
                         <a href="<?php the_permalink(); ?>" class="block">
                             <?php if (has_post_thumbnail()) : ?>
-                                <div class="aspect-[16/10] overflow-hidden">
-                                    <?php the_post_thumbnail('large', ['class' => 'w-full h-full object-cover']); ?>
+                                <div class="aspect-[1/1] overflow-hidden">
+                                    <?php the_post_thumbnail('full', ['class' => 'w-full h-full object-cover']); ?>
                                 </div>
                             <?php endif; ?>
                         </a>
