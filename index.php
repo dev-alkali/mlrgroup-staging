@@ -3,16 +3,9 @@
         <?php get_template_part('template-parts/blog/blog-hero'); ?>
         <?php the_content()?>
 
-
-
         <?php if (have_posts()) : ?>
-
-        <?php if (is_home() && !is_front_page()) : ?>
-            <header>
-                <h1 class="page-title"><?php single_post_title(); ?></h1>
-            </header>
-        <?php endif; ?>
-
+    <section class="px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px]">
+        <div class="wrapper">
         <?php
         // Start the Loop
         while (have_posts()) :
@@ -48,10 +41,11 @@
         // Pagination
         the_posts_pagination();
 
-    else :
-        ?>
-
+        else : ?>
         <p><?php esc_html_e('No posts found.', 'score-site'); ?></p>
+        </div>
+    </section>
+
 
     <?php endif; ?>
     <?php get_template_part('template-parts/cta/cta'); ?>
