@@ -38,7 +38,7 @@
 
                 <footer class="entry-footer">
                     <span class="posted-on"><?php echo get_the_date(); ?></span>
-                    <span class="byline"> <?php esc_html_e('by', 'score-site'); ?> <?php the_author(); ?></span>
+                    <span class="byline"> <?php esc_html_e('by', 'mrl-site'); ?> <?php the_author(); ?></span>
                 </footer>
             </article>
 
