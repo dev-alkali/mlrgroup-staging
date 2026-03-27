@@ -38,7 +38,7 @@ get_header();
         <?php endif; ?>
 
         <?php if (has_post_thumbnail()) : ?>
-          <div class="mt-[28px] overflow-hidden">
+          <div class="mt-[20px] overflow-hidden">
             <div class="aspect-[17/10] bg-[#F5F5F5]">
               <?php the_post_thumbnail('full', ['class' => 'w-full h-full object-cover']); ?>
             </div>
