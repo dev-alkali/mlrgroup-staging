@@ -49,8 +49,8 @@
 
             <?php if ($post_index > 6) : ?>
                 
-                    <div class="mt-[32px] md:mt-[60px] text-center">
-                      <button id="view-more-posts" type="button" class="inline-flex gap-2 relative" id="view-more-posts">
+                    <div class="mt-[32px] md:mt-[60px] text-center view-more-btn">
+                      <button id="view-more-posts" type="button" class="inline-flex gap-2 relative cursor-pointer">
                           <span class="font-semibold text-accent text-[16px] leading-[24px] uppercase relative w-fit font-heading tracking-[0]"><?php esc_html_e('VIEW MORE', 'mrl-site'); ?></span>
                           <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg">
                       </button>
