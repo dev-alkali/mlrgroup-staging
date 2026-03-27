@@ -3,9 +3,9 @@
  * Case Studies Archive Hero Section.
  */
 if (have_rows('hero_case_study', 'option')) : while (have_rows('hero_case_study', 'option')) : the_row();
-  $title_row_1 = get_sub_field('title_row_1');
-  $title_row_2 = get_sub_field('title_row_2');
-  $description = get_sub_field('description');
+  $title_row_1 = get_sub_field('case_study_title_row1');
+  $title_row_2 = get_sub_field('case_study_title_row2');
+  $description = get_sub_field('case_study_content');
   $bg_desktop_img = get_sub_field('case_study_bg_image');
   $bg_mobile_image = get_sub_field('case_study_bg_mobile_image');
 ?>
