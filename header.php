@@ -23,7 +23,7 @@
 
 
 <?php
-$is_transparent_page = is_archive() || is_tax() || is_category() || is_tag() || is_home() || is_post_type_archive('case-studies');
+$is_transparent_page = is_archive() || is_tax() || is_category() || is_tag() || is_home();
 $acf_schema          = get_field('header_schema');
 
 if ( $is_transparent_page ) {
