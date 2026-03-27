@@ -48,11 +48,14 @@
             </div>
 
             <?php if ($post_index > 6) : ?>
-                <div class="mt-10 text-center">
-                    <button id="view-more-posts" type="button" class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold border border-[#111827] text-[#111827] hover:bg-[#111827] hover:text-white transition-colors">
-                        <?php esc_html_e('VIEW MORE', 'mrl-site'); ?>
-                    </button>
-                </div>
+                
+                    <div class="mt-[16px] text-center">
+                      <button id="view-more-posts" type="button" class="inline-flex gap-2 relative" id="view-more-posts">
+                          <span class="font-semibold text-accent text-[16px] leading-[24px] uppercase relative w-fit font-heading tracking-[0]"><?php esc_html_e('VIEW MORE', 'mrl-site'); ?></span>
+                          <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg">
+                      </button>
+                    </div>
+                
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
                         const viewMoreButton = document.getElementById('view-more-posts');
