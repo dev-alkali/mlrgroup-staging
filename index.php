@@ -16,12 +16,12 @@
                     <article
                         id="post-<?php the_ID(); ?>"
                         data-initially-hidden="<?php echo $is_hidden ? '1' : '0'; ?>"
-                        <?php post_class('bg-white rounded overflow-hidden view-more-item'); ?>
+                        <?php post_class('overflow-hidden view-more-item blog-card'); ?>
                         style="<?php echo $is_hidden ? 'display:none;' : ''; ?>"
                     >
-                        <a href="<?php the_permalink(); ?>" class="block">
+                        <a href="<?php the_permalink(); ?>" class="block relative">
                             <?php if (has_post_thumbnail()) : ?>
-                                <div class="aspect-[1/1] overflow-hidden">
+                                <div class="aspect-[1/1]">
                                     <?php the_post_thumbnail('full', ['class' => 'w-full h-full object-cover']); ?>
                                 </div>
                             <?php endif; ?>
