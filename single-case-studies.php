@@ -45,8 +45,8 @@ get_header();
           </div>
         <?php endif; ?>
 
-        <article id="post-<?php the_ID(); ?>" <?php post_class('mt-[28px]'); ?>>
-          <div class="prose prose-lg max-w-none prose-headings:font-heading prose-p:font-body">
+        <article class="mt-[28px]">
+          <div class="blog-content">
             <?php the_content(); ?>
           </div>
         </article>

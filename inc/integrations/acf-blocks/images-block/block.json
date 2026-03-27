@@ -1,0 +1,14 @@
+{
+    "name": "acf/images-block",
+    "title": "Images Block",
+    "description": "Images Block Section",
+    //"style": ["file:./two-column.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["images-block", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "images-block.php"
+    },
+    //"script": "two-columnJS"
+}
