@@ -51,13 +51,13 @@ $lists = get_sub_field('lists');
 		<?php endif; ?>
 
 		<?php if($lists): ?>
-			<div class="flex flex-wrap xl:gap-x-[60px] md:gap-y-[90px] lg:gap-x-[30px] gap-x-[20px] sm:gap-y-[40px] gap-y-[30px] px-4 md:px-10">
+			<div class="flex flex-wrap xl:gap-x-[60px] md:gap-y-[90px] lg:gap-x-[30px] gap-x-[20px] sm:gap-y-[40px] gap-y-[40px] px-4 md:px-10">
 				<?php foreach($lists as $list): 
 					$heading = $list['heading'];
 					$content = $list['content'];
 					?>
 					<div class=" flex flex-row gap-[20px] xl:w-[calc(33.33%-40px)] md:w-[calc(50%-15px)]">
-						<div class="flex w-[50px] h-[50px] relative md:top-[-14px] top-[-8px]">
+						<div class="flex md:w-[50px] md:h-[50px] w-[45px] h-[45px] relative md:top-[-14px] top-[-8px]">
 							<img src="<?php echo get_template_directory_uri() ?>/assets/imgs/list-icon.svg" alt="" class="w-full">
 						</div>
 						<div class="flex flex-col flex-1">
