@@ -1205,6 +1205,11 @@ button.swiper-button-disabled {
   .title-our-values-1{max-width: 35vw;}
   .cta.black-cta .cta-wrapper{padding-bottom: 60px;}
 }
+
+@media(max-width: 600px){
+  .newsletter-gf--text br{display: none;}
+}
+
 @media (max-width: 480px){
   .title-our-values-1{max-width: 160px;}
   .arrow-img-position{
