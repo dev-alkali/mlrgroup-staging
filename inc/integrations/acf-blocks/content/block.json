@@ -1,0 +1,14 @@
+{
+    "name": "acf/content",
+    "title": "Content",
+    "description": "Content Section",
+    "style": ["file:./content.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["content", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "content.php"
+    },
+    "script": "contentJS"
+}
