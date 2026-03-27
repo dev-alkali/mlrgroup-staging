@@ -15,7 +15,7 @@ $link = get_sub_field('cta_button');
     <section
       class="cta flex w-full h-[700px] min-[600px]:h-[855px]"
       style="
-    background-image: url('<?php echo esc_url(get_sub_field('bg_image')); ?>');
+    background-image: url('<?php echo esc_url(get_sub_field('cta_bg_img')); ?>');
     background-position: 50% 38%;
     background-size: cover;
     background-repeat: no-repeat;
