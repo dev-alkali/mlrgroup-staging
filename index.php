@@ -13,7 +13,12 @@
                     the_post();
                     $is_hidden = $post_index >= 6;
                     ?>
-                    <article id="post-<?php the_ID(); ?>" <?php post_class('bg-white rounded overflow-hidden shadow-sm border border-[#E5E7EB]' . ($is_hidden ? ' hidden view-more-item' : ' view-more-item')); ?>>
+                    <article
+                        id="post-<?php the_ID(); ?>"
+                        data-initially-hidden="<?php echo $is_hidden ? '1' : '0'; ?>"
+                        <?php post_class('bg-white rounded overflow-hidden shadow-sm border border-[#E5E7EB] view-more-item'); ?>
+                        style="<?php echo $is_hidden ? 'display:none;' : ''; ?>"
+                    >
                         <a href="<?php the_permalink(); ?>" class="block">
                             <?php if (has_post_thumbnail()) : ?>
                                 <div class="aspect-[16/10] overflow-hidden">
@@ -53,20 +58,30 @@
                             return;
                         }
 
+                        const getHiddenItems = function () {
+                            return Array.from(document.querySelectorAll('#blog-grid .view-more-item')).filter(function (item) {
+                                return window.getComputedStyle(item).display === 'none';
+                            });
+                        };
+
                         const updateButtonState = function () {
-                            const remainingHiddenItems = document.querySelectorAll('#blog-grid .view-more-item.hidden');
+                            const remainingHiddenItems = getHiddenItems();
                             if (remainingHiddenItems.length === 0) {
-                                viewMoreButton.classList.add('hidden');
+                                viewMoreButton.style.display = 'none';
+                                viewMoreButton.setAttribute('aria-hidden', 'true');
+                            } else {
+                                viewMoreButton.style.display = '';
+                                viewMoreButton.removeAttribute('aria-hidden');
                             }
                         };
 
                         updateButtonState();
 
                         viewMoreButton.addEventListener('click', function () {
-                            const hiddenItems = Array.from(document.querySelectorAll('#blog-grid .view-more-item.hidden'));
+                            const hiddenItems = getHiddenItems();
                             const nextItems = hiddenItems.slice(0, step);
                             nextItems.forEach(function (item) {
-                                item.classList.remove('hidden');
+                                item.style.display = '';
                             });
                             updateButtonState();
                         });
