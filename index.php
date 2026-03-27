@@ -12,7 +12,7 @@ $initial_posts_query = new WP_Query(
 );
 ?>
 <main class="overflow-hidden">
-    <?php the_content(); ?>
+    <?php //the_content(); ?>
 
 <?php if ($initial_posts_query->have_posts()) : ?>
     <?php get_template_part('template-parts/blog/blog-hero'); ?>
