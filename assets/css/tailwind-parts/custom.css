@@ -64,3 +64,6 @@ a.footer-text:hover{color:#ffffff;}
 .service-card .gradient-box:hover:before {opacity: 0;}
 .service-card .gradient-box:hover:after {opacity: 1;}
 .service-card .gradient-box:hover .arrow{transform: rotate(45deg);}
+
+
+/* Blog Single */

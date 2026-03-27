@@ -22,15 +22,11 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/acf-blocks/contact-form');
   register_block_type(__DIR__ . '/acf-blocks/reviews-slider');
   register_block_type(__DIR__ . '/acf-blocks/partnership');
-  register_block_type(__DIR__ . '/acf-blocks/case-studies');
+  register_block_type(__DIR__ . '/acf-blocks/case-studies');  
   register_block_type(__DIR__ . '/acf-blocks/faq');
   register_block_type(__DIR__ . '/acf-blocks/our-values');
   register_block_type(__DIR__ . '/acf-blocks/faq-columns');
-  register_block_type(__DIR__ . '/acf-blocks/content');
-  register_block_type(__DIR__ . '/acf-blocks/images-block');
-  
-  
-  
+  register_block_type(__DIR__ . '/acf-blocks/content');  
   
   
   
