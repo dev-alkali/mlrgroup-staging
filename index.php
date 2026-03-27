@@ -1,5 +1,6 @@
 <?php get_header() ?>
 <main class="overflow-hidden">
+        <?php get_template_part('template-parts/blog/blog-hero'); ?>
         <?php the_content()?>
 
 
@@ -53,6 +54,7 @@
         <p><?php esc_html_e('No posts found.', 'score-site'); ?></p>
 
     <?php endif; ?>
+    <?php get_template_part('template-parts/cta/cta'); ?>
 </main>
 
 <?php get_footer() ?>
