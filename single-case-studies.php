@@ -15,10 +15,10 @@ get_header();
         <?php 
         $image = get_field('cs_logo');
         if( !empty( $image ) ): ?>
-            <figure><img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /></figure>
+            <figure class="mb-20px"><img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /></figure>
         <?php endif; ?>
 
-        <h1 class="font-heading font-bold text-[clamp(34px,5vw,56px)] leading-[1.1] tracking-[-0.02em] text-[#262626]">
+        <h1 class="font-poppins font-bold text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em] text-[#262626]">
           <?php the_title(); ?>
         </h1>
 
