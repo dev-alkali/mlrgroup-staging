@@ -39,9 +39,6 @@
                                   <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg">
                               </a>
                           </div>
-                            <a href="<?php the_permalink(); ?>" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium border border-[#111827] text-[#111827] hover:bg-[#111827] hover:text-white transition-colors">
-                                
-                            </a>
                         </div>
                     </article>
                     <?php
