@@ -80,7 +80,7 @@ if (!$case_studies_query->have_posts() && have_posts()) {
             data-taxonomy="<?php echo esc_attr($filter_taxonomy); ?>"
             data-taxonomy-rest-base="<?php echo esc_attr($taxonomy_rest_base); ?>"
             data-selected-term="<?php echo esc_attr($selected_term); ?>"
-            style="background-image: url(<?php get_template_directory_uri() ?>/assets/imgs/down-arrow.svg) ?>; background-repeat: no-repeat;background-position: center right 10px;"
+            style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/imgs/down-arrow.svg); background-repeat: no-repeat; background-position: center right 10px;"
           >
             <option value="0"><?php esc_html_e('All', 'mrl-site'); ?></option>
             <?php if (!is_wp_error($filter_terms)) : ?>
