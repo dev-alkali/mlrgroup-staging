@@ -22,6 +22,18 @@ if ($post_type === '') {
 
 $post_type_obj  = get_post_type_object($post_type);
 $rest_base      = !empty($post_type_obj->rest_base) ? $post_type_obj->rest_base : $post_type;
+$filter_taxonomy = 'case-studies-categories';
+$taxonomy_rest_base = '';
+$selected_term = isset($_GET['cs_category']) ? absint($_GET['cs_category']) : 0;
+
+if ($filter_taxonomy !== '') {
+    $taxonomy_obj = get_taxonomy($filter_taxonomy);
+    if ($taxonomy_obj && !empty($taxonomy_obj->rest_base)) {
+        $taxonomy_rest_base = $taxonomy_obj->rest_base;
+    } else {
+        $taxonomy_rest_base = $filter_taxonomy;
+    }
+}
 
 $case_studies_query = new WP_Query(
     [
@@ -29,6 +41,15 @@ $case_studies_query = new WP_Query(
         'post_status'         => 'publish',
         'posts_per_page'      => $posts_per_page,
         'ignore_sticky_posts' => true,
+        'tax_query'           => ($filter_taxonomy !== '' && $selected_term > 0)
+            ? [
+                [
+                    'taxonomy' => $filter_taxonomy,
+                    'field'    => 'term_id',
+                    'terms'    => [$selected_term],
+                ],
+            ]
+            : [],
     ]
 );
 
@@ -40,9 +61,39 @@ if (!$case_studies_query->have_posts() && have_posts()) {
 <main class="overflow-hidden">
   <?php get_template_part('template-parts/case-study/case-study-hero'); ?>
 
-  <?php if ($case_studies_query->have_posts()) : ?>
-    <section class="px-4 md:px-10 py-[40px] lg:py-[80px] xl:py-[60px]">
-      <div class="wrapper">
+  <section class="px-4 md:px-10 py-[40px] lg:py-[80px] xl:py-[60px]">
+    <div class="wrapper">
+      <?php if ($filter_taxonomy !== '') : ?>
+        <?php
+        $filter_terms = get_terms(
+            [
+                'taxonomy'   => $filter_taxonomy,
+                'hide_empty' => true,
+            ]
+        );
+        ?>
+        <div class="mb-8 md:mb-10">
+          <label for="case-studies-filter" class="mr-2 text-[#525252] font-body text-[16px] leading-[24px]"><?php esc_html_e('Filter by', 'mrl-site'); ?></label>
+          <select
+            id="case-studies-filter"
+            class="border border-[#D9D9D9] rounded-[4px] px-3 py-2 min-w-[180px] text-[16px] leading-[24px]"
+            data-taxonomy="<?php echo esc_attr($filter_taxonomy); ?>"
+            data-taxonomy-rest-base="<?php echo esc_attr($taxonomy_rest_base); ?>"
+            data-selected-term="<?php echo esc_attr($selected_term); ?>"
+          >
+            <option value="0"><?php esc_html_e('All', 'mrl-site'); ?></option>
+            <?php if (!is_wp_error($filter_terms)) : ?>
+              <?php foreach ($filter_terms as $term) : ?>
+                <option value="<?php echo esc_attr($term->term_id); ?>" <?php selected($selected_term, (int) $term->term_id); ?>>
+                  <?php echo esc_html($term->name); ?>
+                </option>
+              <?php endforeach; ?>
+            <?php endif; ?>
+          </select>
+        </div>
+      <?php endif; ?>
+
+      <?php if ($case_studies_query->have_posts()) : ?>
         <div id="case-studies-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10">
           <?php while ($case_studies_query->have_posts()) : $case_studies_query->the_post(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class('overflow-hidden view-more-item'); ?>>
@@ -55,14 +106,26 @@ if (!$case_studies_query->have_posts() && have_posts()) {
               </a>
 
               <div>
-                <p class="font-body font-normal text-[18px] leading-[28px] tracking-[0] text-[#525252] mt-[16px] mb-[6px]"><?php echo esc_html(get_the_date()); ?></p>
                 <h2 class="font-[Poppins] font-bold text-[20px] leading-[28px] tracking-[-0.02em] text-[#262626]">
                   <a href="<?php the_permalink(); ?>" class="hover:opacity-80 transition-opacity"><?php the_title(); ?></a>
                 </h2>
 
+                <?php if ($filter_taxonomy !== '') : ?>
+                  <?php $terms = get_the_terms(get_the_ID(), $filter_taxonomy); ?>
+                  <?php if (!empty($terms) && !is_wp_error($terms)) : ?>
+                    <div class="mt-[14px] flex flex-wrap gap-2">
+                      <?php foreach ($terms as $term) : ?>
+                        <span class="inline-flex items-center rounded-full border border-[#CFCFCF] px-[12px] py-[4px] text-[12px] leading-[16px] text-[#737373]">
+                          <?php echo esc_html($term->name); ?>
+                        </span>
+                      <?php endforeach; ?>
+                    </div>
+                  <?php endif; ?>
+                <?php endif; ?>
+
                 <div class="mt-[16px] view-more-btn">
                   <a class="inline-flex gap-2 relative" href="<?php the_permalink(); ?>" target="_self">
-                    <span class="font-semibold text-accent text-[16px] leading-[24px] uppercase relative w-fit font-heading tracking-[0]"><?php esc_html_e('READ MORE', 'mrl-site'); ?></span>
+                    <span class="font-semibold text-accent text-[16px] leading-[24px] uppercase relative w-fit font-heading tracking-[0]"><?php esc_html_e('VIEW CASE STUDY', 'mrl-site'); ?></span>
                     <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg" alt="">
                   </a>
                 </div>
@@ -70,6 +133,13 @@ if (!$case_studies_query->have_posts() && have_posts()) {
             </article>
           <?php endwhile; ?>
         </div>
+      <?php else : ?>
+        <div id="case-studies-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10"></div>
+      <?php endif; ?>
+
+      <p id="case-studies-empty" class="mt-8 <?php echo $case_studies_query->have_posts() ? 'hidden' : ''; ?>">
+        <?php esc_html_e('No case studies found.', 'score-site'); ?>
+      </p>
 
         <?php if ($case_studies_query->max_num_pages > 1) : ?>
           <div class="mt-[32px] md:mt-[60px] text-center view-more-btn">
@@ -89,18 +159,26 @@ if (!$case_studies_query->have_posts() && have_posts()) {
             document.addEventListener('DOMContentLoaded', function () {
               const viewMoreButton = document.getElementById('view-more-case-studies');
               const grid = document.getElementById('case-studies-grid');
+              const filterSelect = document.getElementById('case-studies-filter');
+              const emptyState = document.getElementById('case-studies-empty');
               const loadingText = '<?php echo esc_js(__('LOADING...', 'mrl-site')); ?>';
               const viewMoreText = '<?php echo esc_js(__('VIEW MORE', 'mrl-site')); ?>';
+              const viewCaseStudyText = '<?php echo esc_js(__('VIEW CASE STUDY', 'mrl-site')); ?>';
+              const taxonomyRestBase = filterSelect ? filterSelect.getAttribute('data-taxonomy-rest-base') : '';
 
-              if (!viewMoreButton || !grid) {
+              if (!grid) {
                 return;
               }
 
-              const totalPages = parseInt(viewMoreButton.getAttribute('data-total-pages'), 10);
-              let currentPage = parseInt(viewMoreButton.getAttribute('data-current-page'), 10);
+              let totalPages = viewMoreButton ? parseInt(viewMoreButton.getAttribute('data-total-pages'), 10) : 1;
+              let currentPage = viewMoreButton ? parseInt(viewMoreButton.getAttribute('data-current-page'), 10) : 1;
               let isLoading = false;
+              let selectedTerm = filterSelect ? parseInt(filterSelect.value, 10) : 0;
 
               const updateButtonState = function () {
+                if (!viewMoreButton) {
+                  return;
+                }
                 if (currentPage >= totalPages) {
                   viewMoreButton.style.display = 'none';
                   viewMoreButton.setAttribute('aria-hidden', 'true');
@@ -139,10 +217,19 @@ if (!$case_studies_query->have_posts() && have_posts()) {
 
                 const title = post.title && post.title.rendered ? post.title.rendered : '';
                 const featuredImageUrl = getFeaturedImageUrl(post);
-                const postDate = new Date(post.date);
-                const formattedDate = isNaN(postDate.getTime())
-                  ? ''
-                  : postDate.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+                let termsMarkup = '';
+
+                if (post._embedded && post._embedded['wp:term']) {
+                  const allTerms = post._embedded['wp:term'].flat();
+                  const visibleTerms = taxonomyRestBase
+                    ? allTerms.filter(function (term) {
+                        return term && term.taxonomy === '<?php echo esc_js($filter_taxonomy); ?>';
+                      })
+                    : allTerms;
+                  termsMarkup = visibleTerms.map(function (term) {
+                    return `<span class="inline-flex items-center rounded-full border border-[#CFCFCF] px-[12px] py-[4px] text-[12px] leading-[16px] text-[#737373]">${term.name}</span>`;
+                  }).join('');
+                }
 
                 article.innerHTML = `
                   <a href="${post.link}" class="block relative blog-card">
@@ -153,13 +240,13 @@ if (!$case_studies_query->have_posts() && have_posts()) {
                     ` : ''}
                   </a>
                   <div>
-                    <p class="font-body font-normal text-[18px] leading-[28px] tracking-[0] text-[#525252] mt-[16px] mb-[6px]">${formattedDate}</p>
                     <h2 class="font-[Poppins] font-bold text-[20px] leading-[28px] tracking-[-0.02em] text-[#262626]">
                       <a href="${post.link}" class="hover:opacity-80 transition-opacity">${title}</a>
                     </h2>
+                    ${termsMarkup ? `<div class="mt-[14px] flex flex-wrap gap-2">${termsMarkup}</div>` : ''}
                     <div class="mt-[16px] view-more-btn">
                       <a class="inline-flex gap-2 relative" href="${post.link}" target="_self">
-                        <span class="font-semibold text-accent text-[16px] leading-[24px] uppercase relative w-fit font-heading tracking-[0]"><?php echo esc_js(__('READ MORE', 'mrl-site')); ?></span>
+                        <span class="font-semibold text-accent text-[16px] leading-[24px] uppercase relative w-fit font-heading tracking-[0]">${viewCaseStudyText}</span>
                         <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg" alt="">
                       </a>
                     </div>
@@ -169,33 +256,53 @@ if (!$case_studies_query->have_posts() && have_posts()) {
                 grid.appendChild(article);
               };
 
-              viewMoreButton.addEventListener('click', function () {
+              const fetchPostsPage = function (page, shouldAppend) {
                 if (isLoading || currentPage >= totalPages) {
-                  return;
+                  return Promise.resolve();
                 }
 
                 isLoading = true;
-                const label = viewMoreButton.querySelector('span');
-                if (label) {
+                const label = viewMoreButton ? viewMoreButton.querySelector('span') : null;
+                if (label && shouldAppend) {
                   label.textContent = loadingText;
                 }
 
-                const nextPage = currentPage + 1;
-                const endpoint = `${window.location.origin}/wp-json/wp/v2/<?php echo esc_js($rest_base); ?>?per_page=<?php echo esc_js($posts_per_page); ?>&page=${nextPage}&_embed`;
+                const endpoint = new URL(`${window.location.origin}/wp-json/wp/v2/<?php echo esc_js($rest_base); ?>`);
+                endpoint.searchParams.set('per_page', '<?php echo esc_js($posts_per_page); ?>');
+                endpoint.searchParams.set('page', String(page));
+                endpoint.searchParams.set('_embed', '1');
+                if (selectedTerm > 0 && taxonomyRestBase) {
+                  endpoint.searchParams.set(taxonomyRestBase, String(selectedTerm));
+                }
 
-                fetch(endpoint, {
+                return fetch(endpoint.toString(), {
                   headers: { 'X-WP-Nonce': '<?php echo esc_js(wp_create_nonce('wp_rest')); ?>' }
                 })
                 .then(function (response) {
                   if (!response.ok) {
                     throw new Error('Failed to fetch case studies');
                   }
+                  const totalPagesHeader = parseInt(response.headers.get('X-WP-TotalPages') || '1', 10);
+                  totalPages = isNaN(totalPagesHeader) ? 1 : totalPagesHeader;
                   return response.json();
                 })
                 .then(function (posts) {
+                  if (!shouldAppend) {
+                    grid.innerHTML = '';
+                  }
                   posts.forEach(createCard);
-                  currentPage = nextPage;
-                  viewMoreButton.setAttribute('data-current-page', String(currentPage));
+                  currentPage = page;
+                  if (viewMoreButton) {
+                    viewMoreButton.setAttribute('data-current-page', String(currentPage));
+                    viewMoreButton.setAttribute('data-total-pages', String(totalPages));
+                  }
+                  if (emptyState) {
+                    if (grid.children.length === 0) {
+                      emptyState.classList.remove('hidden');
+                    } else {
+                      emptyState.classList.add('hidden');
+                    }
+                  }
                   updateButtonState();
                 })
                 .catch(function () {
@@ -203,25 +310,40 @@ if (!$case_studies_query->have_posts() && have_posts()) {
                 })
                 .finally(function () {
                   isLoading = false;
-                  if (label) {
+                  if (label && shouldAppend) {
                     label.textContent = viewMoreText;
                   }
                 });
-              });
+              };
+
+              if (viewMoreButton) {
+                viewMoreButton.addEventListener('click', function () {
+                  if (isLoading || currentPage >= totalPages) {
+                    return;
+                  }
+                  fetchPostsPage(currentPage + 1, true);
+                });
+              }
+
+              if (filterSelect) {
+                filterSelect.addEventListener('change', function () {
+                  selectedTerm = parseInt(filterSelect.value, 10) || 0;
+                  currentPage = 0;
+                  totalPages = 1;
+                  fetchPostsPage(1, false);
+                });
+              }
+
+              if (viewMoreButton && !viewMoreButton.getAttribute('data-total-pages')) {
+                updateButtonState();
+              }
 
               updateButtonState();
             });
           </script>
         <?php endif; ?>
-      </div>
-    </section>
-  <?php else : ?>
-    <section class="px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px]">
-      <div class="wrapper">
-        <p><?php esc_html_e('No case studies found.', 'score-site'); ?></p>
-      </div>
-    </section>
-  <?php endif; ?>
+    </div>
+  </section>
   <?php wp_reset_postdata(); ?>
 
   <?php get_template_part('template-parts/cta/cta'); ?>
