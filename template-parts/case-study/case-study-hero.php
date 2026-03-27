@@ -24,7 +24,7 @@ if (have_rows('hero_case_study', 'option')) : while (have_rows('hero_case_study'
           <?php endif; ?>
 
           <?php if ($description): ?>
-            <p class="w-full text-[clamp(18px,3vw,20px)] leading-[28px] text-gray-50 font-body anim" data-delay="1.2" data-anim="up" data-start="top 100%"><?= wp_kses_post($description) ?></p>
+            <p class="w-full text-[clamp(18px,3vw,20px)] leading-[28px] text-gray-50 font-body anim max-w-[630px]" data-delay="1.2" data-anim="up" data-start="top 100%"><?= wp_kses_post($description) ?></p>
           <?php endif; ?>
 
           <?php
