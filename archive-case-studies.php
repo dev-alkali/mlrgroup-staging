@@ -106,16 +106,16 @@ if (!$case_studies_query->have_posts() && have_posts()) {
               </a>
 
               <div>
-                <h2 class="font-[Poppins] font-bold text-[20px] leading-[28px] tracking-[-0.02em] text-[#262626]">
+                <h2 class="font-[Poppins] font-bold text-[24px] leading-[32px] tracking-[-0.02em] text-[#262626]">
                   <a href="<?php the_permalink(); ?>" class="hover:opacity-80 transition-opacity"><?php the_title(); ?></a>
                 </h2>
 
                 <?php if ($filter_taxonomy !== '') : ?>
                   <?php $terms = get_the_terms(get_the_ID(), $filter_taxonomy); ?>
                   <?php if (!empty($terms) && !is_wp_error($terms)) : ?>
-                    <div class="mt-[14px] flex flex-wrap gap-2">
+                    <div class="mt-[14px] flex flex-wrap gap-[8px]">
                       <?php foreach ($terms as $term) : ?>
-                        <span class="inline-flex items-center rounded-full border border-[#CFCFCF] px-[12px] py-[4px] text-[12px] leading-[16px] text-[#737373]">
+                        <span class="inline-flex items-center rounded-full border border-[#525252] px-[12px] py-[4px] text-[14px] leading-[20px] text-[#525252] shadow-[0px_1px_2px_0px_#0A0D120D]">
                           <?php echo esc_html($term->name); ?>
                         </span>
                       <?php endforeach; ?>
