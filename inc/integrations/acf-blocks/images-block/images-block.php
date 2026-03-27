@@ -16,7 +16,7 @@ if (!empty($block['className'])) {
 
 
 ?>
-<?php if (have_rows('two_column')) :  while (have_rows('two_column')) : the_row();
+<?php if (have_rows('images-block')) :  while (have_rows('images-block')) : the_row();
 
 $title_row_1 = get_sub_field('title_row_1');
 $title_row_2 = get_sub_field('title_row_2');
