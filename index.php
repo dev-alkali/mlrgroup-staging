@@ -4,7 +4,7 @@
 
 <?php if (have_posts()) : ?>
     <?php get_template_part('template-parts/blog/blog-hero'); ?>
-    <section class="px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px]">
+    <section class="px-4 md:px-10 py-[40px] lg:py-[80px] xl:py-[60px]">
         <div class="wrapper">
             <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10">
                 <?php
