@@ -1,9 +1,9 @@
 <?php get_header() ?>
 <main class="overflow-hidden">
-        <?php get_template_part('template-parts/blog/blog-hero'); ?>
-        <?php the_content()?>
+    <?php the_content()?>
 
 <?php if (have_posts()) : ?>
+    <?php get_template_part('template-parts/blog/blog-hero'); ?>
     <section class="px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px]">
         <div class="wrapper">
             <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px]">
