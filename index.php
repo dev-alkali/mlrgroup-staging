@@ -16,7 +16,7 @@
                     <article
                         id="post-<?php the_ID(); ?>"
                         data-initially-hidden="<?php echo $is_hidden ? '1' : '0'; ?>"
-                        <?php post_class('bg-white rounded overflow-hidden shadow-sm border border-[#E5E7EB] view-more-item'); ?>
+                        <?php post_class('bg-white rounded overflow-hidden view-more-item'); ?>
                         style="<?php echo $is_hidden ? 'display:none;' : ''; ?>"
                     >
                         <a href="<?php the_permalink(); ?>" class="block">
