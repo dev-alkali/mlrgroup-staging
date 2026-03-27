@@ -35,7 +35,7 @@
 
                             <div class="mt-[16px] view-more-btn">
                               <a class="inline-flex  gap-2 relative " href="<?php the_permalink(); ?>" target="_self">
-                                  <span class="font-semibold text-accent text-lg leading-7 uppercase relative w-fit font-heading tracking-[0]"><?php esc_html_e('READ MORE', 'mrl-site'); ?></span>
+                                  <span class="font-semibold text-accent text-[16px] leading-[24px] uppercase relative w-fit font-heading tracking-[0]"><?php esc_html_e('READ MORE', 'mrl-site'); ?></span>
                                   <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg">
                               </a>
                           </div>
