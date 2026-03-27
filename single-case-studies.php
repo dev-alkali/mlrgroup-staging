@@ -15,7 +15,7 @@ get_header();
         <?php 
         $image = get_field('cs_logo');
         if( !empty( $image ) ): ?>
-            <figure class="mb-20px"><img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /></figure>
+            <figure class="mb-[25px]"><img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /></figure>
         <?php endif; ?>
 
         <h1 class="font-poppins font-bold text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em] text-[#262626]">
