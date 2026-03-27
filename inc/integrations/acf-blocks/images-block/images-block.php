@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Images Block Block Template.
+ * Images Block  Template.
  */
 
 $id = 'images-block' . $block['id'];
