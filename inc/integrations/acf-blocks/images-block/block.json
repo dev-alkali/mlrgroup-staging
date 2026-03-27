@@ -10,5 +10,5 @@
       "mode": "edit",
       "renderTemplate": "images-block.php"
     },
-    //"script": "two-columnJS"
+    "script": "images-blockJS"
 }
