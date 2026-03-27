@@ -47,7 +47,7 @@ $mobileFlex = 'flex-col-reverse';
 			<?php endif; ?>
 			<?php if($description): ?>
 				<div class="flex flex-col items-start gap-8 flex-1 serve-content ">
-					<p class="font-body font-normal text-[#525252] text-[clamp(18px,2.2vw,20px)] leading-[clamp(26px,2.6vw,28px)]"><?php echo $description; ?></p>
+					<p class="font-body font-normal text-[#525252] text-[clamp(18px,2vw,20px)] leading-[clamp(26px,2.6vw,28px)]"><?php echo $description; ?></p>
 				</div>
 			<?php endif; ?>
 		</div>
