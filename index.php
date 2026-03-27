@@ -47,24 +47,28 @@
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
                         const viewMoreButton = document.getElementById('view-more-posts');
-                        const hiddenItems = Array.from(document.querySelectorAll('#blog-grid .view-more-item.hidden'));
-                        let currentIndex = 0;
                         const step = 6;
 
                         if (!viewMoreButton) {
                             return;
                         }
 
+                        const updateButtonState = function () {
+                            const remainingHiddenItems = document.querySelectorAll('#blog-grid .view-more-item.hidden');
+                            if (remainingHiddenItems.length === 0) {
+                                viewMoreButton.classList.add('hidden');
+                            }
+                        };
+
+                        updateButtonState();
+
                         viewMoreButton.addEventListener('click', function () {
-                            const nextItems = hiddenItems.slice(currentIndex, currentIndex + step);
+                            const hiddenItems = Array.from(document.querySelectorAll('#blog-grid .view-more-item.hidden'));
+                            const nextItems = hiddenItems.slice(0, step);
                             nextItems.forEach(function (item) {
                                 item.classList.remove('hidden');
                             });
-                            currentIndex += step;
-
-                            if (currentIndex >= hiddenItems.length) {
-                                viewMoreButton.classList.add('hidden');
-                            }
+                            updateButtonState();
                         });
                     });
                 </script>
