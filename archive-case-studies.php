@@ -2,7 +2,24 @@
 get_header();
 
 $posts_per_page = 6;
-$post_type      = get_post_type() ?: 'case-studies';
+$queried_object = get_queried_object();
+$post_type      = '';
+
+if ($queried_object instanceof WP_Post_Type && !empty($queried_object->name)) {
+    $post_type = $queried_object->name;
+} else {
+    $post_type_query_var = get_query_var('post_type');
+    if (is_array($post_type_query_var)) {
+        $post_type = (string) reset($post_type_query_var);
+    } elseif (is_string($post_type_query_var)) {
+        $post_type = $post_type_query_var;
+    }
+}
+
+if ($post_type === '') {
+    $post_type = 'case-studies';
+}
+
 $post_type_obj  = get_post_type_object($post_type);
 $rest_base      = !empty($post_type_obj->rest_base) ? $post_type_obj->rest_base : $post_type;
 
@@ -14,6 +31,11 @@ $case_studies_query = new WP_Query(
         'ignore_sticky_posts' => true,
     ]
 );
+
+if (!$case_studies_query->have_posts() && have_posts()) {
+    global $wp_query;
+    $case_studies_query = $wp_query;
+}
 ?>
 <main class="overflow-hidden">
   <?php get_template_part('template-parts/case-study/case-study-hero'); ?>
