@@ -28,7 +28,7 @@
                         </a>
 
                         <div class="">
-                            <p class="font-body font-normal text-[18px] leading-[28px] tracking-[0] text-[#525252]"><?php echo esc_html(get_the_date()); ?></p>
+                            <p class="font-body font-normal text-[18px] leading-[28px] tracking-[0] text-[#525252] mt-[16px] mb-[6px]"><?php echo esc_html(get_the_date()); ?></p>
                             <h2 class="font-[Poppins] font-bold text-[20px] leading-[28px] tracking-[-0.02em] text-[#262626]">
                                 <a href="<?php the_permalink(); ?>" class="hover:opacity-80 transition-opacity"><?php the_title(); ?></a>
                             </h2>
