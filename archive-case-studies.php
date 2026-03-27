@@ -76,11 +76,11 @@ if (!$case_studies_query->have_posts() && have_posts()) {
           <label for="case-studies-filter" class="mr-2 text-[#525252] font-body text-[16px] leading-[24px]"><?php esc_html_e('Filter by', 'mrl-site'); ?></label>
           <select
             id="case-studies-filter"
-            class="border border-[#CCCCCC] rounded-[0px] px-3 py-2 min-w-[200px] text-[16px] leading-[24px] appearance-none"
+            class="border border-[#CCCCCC] rounded-[0px] min-w-[200px] text-[16px] leading-[24px] appearance-none pl-[14px] pr-[30px] pt-[10px] pb-[5px]"
             data-taxonomy="<?php echo esc_attr($filter_taxonomy); ?>"
             data-taxonomy-rest-base="<?php echo esc_attr($taxonomy_rest_base); ?>"
             data-selected-term="<?php echo esc_attr($selected_term); ?>"
-            style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/imgs/down-arrow.svg); background-repeat: no-repeat; background-position: center right 10px;"
+            style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/imgs/down-arrow.svg); background-repeat: no-repeat; background-position: center right 17px;"
           >
             <option value="0"><?php esc_html_e('All', 'mrl-site'); ?></option>
             <?php if (!is_wp_error($filter_terms)) : ?>
