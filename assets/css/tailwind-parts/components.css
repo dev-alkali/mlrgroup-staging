@@ -1204,9 +1204,10 @@ button.swiper-button-disabled {
 .services .services-grid-3 .service-card:nth-child(3){
   @apply [@media(min-width:768px)_and_(max-width:1279px)]:aspect-[676/420];
 }
-
+.services .services-grid-3 .service-card,
+.services .services-grid-4 .service-card,
 .services .services-grid-6 .service-card {
-  @apply max-[767px]:aspect-ratio-[358/300];
+  @apply max-[767px]:aspect-[358/300];
 }
 
 .menu-open header .mobile-menu-logo{display: block;}
@@ -1214,6 +1215,9 @@ button.swiper-button-disabled {
 
 .blog-content .content-sec {padding: 0px;}
 .blog-content .content-sec h2 {border: none;padding: 0px;}
+.blog-content .content-sec ul {
+  @apply ml-[30px];
+}
 
 .blog-content .quote-content *:not(br){
   @apply text-[clamp(24px,5vw,36px)] leading-[clamp(36px,5.1vw,52px)] tracking-[-2%] font-heading;
