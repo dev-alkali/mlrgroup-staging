@@ -1192,13 +1192,13 @@ button.swiper-button-disabled {
 
 
 .services .services-grid-5 .service-card:nth-child(4){
-  @apply min-[1280px]:aspect-[676/420]
+  @apply min-[1280px]:aspect-[676/420];
 }
 .services .services-grid-5 .service-card:nth-child(5){
-  @apply min-[768px]:aspect-[676/420]
+  @apply min-[768px]:aspect-[676/420];
 }
 .services .services-grid-2 .service-card{
-  @apply min-[768px]:aspect-[676/420]
+  @apply min-[1024px]:aspect-[676/420] min-[768px]:aspect-[676/600];
 }
 
 .menu-open header .mobile-menu-logo{display: block;}
