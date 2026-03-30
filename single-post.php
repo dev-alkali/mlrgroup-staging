@@ -13,7 +13,7 @@ get_header();
           <?php echo esc_html(get_the_date()); ?>
         </p>
 
-        <h1 class="font-heading font-bold text-[clamp(34px,5vw,56px)] leading-[1.1] tracking-[-0.02em] text-[#262626]">
+        <h1 class="font-heading font-bold max-w-[1125px] text-[clamp(34px,5vw,56px)] leading-[1.1] tracking-[-0.02em] text-[#262626]">
           <?php the_title(); ?>
         </h1>
 
