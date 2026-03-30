@@ -128,9 +128,11 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
 				$extra_class = '';
 				if ($total_cards === 5) {
 					$extra_class = ' services-grid-5';
+				} elseif ($total_cards === 3) {
+					$extra_class = ' services-grid-3';
 				} elseif ($total_cards === 2) {
 					$extra_class = ' services-grid-2';
-				}
+        }
 				$grid_class = $wrapper_class . $extra_class;
 			?>
 
