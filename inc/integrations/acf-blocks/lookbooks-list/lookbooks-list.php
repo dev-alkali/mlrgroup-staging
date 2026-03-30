@@ -24,7 +24,7 @@ if (!empty($block['className'])) {
           <?php while ( have_rows( 'lookbooks' ) ) : the_row(); ?>
           <?php $year = get_sub_field( 'year' ); ?>
       <div class="lookbook-year">
-        <h2 class="font-[poppins] font-bold text-[#262626] leading-[clamp(44px,4vw,60px)] text-[clamp(36px,5vw,60px)] tracking-[-0.02em] mb-[28px]"><?php echo esc_html( $year ); ?></h2>
+        <h2 class="font-[poppins] font-bold text-[#262626] leading-[clamp(44px,4vw,60px)] text-[clamp(36px,5vw,60px)] tracking-[-0.02em] mb-[28px]"><img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" alt="" class="w-[35px] h-[35px] md:w-[42px] md:h-[42px]"> <?php echo esc_html( $year ); ?></h2>
 
         <?php if ( have_rows( 'l_lists' ) ) : ?>
           <div class="lookbook-list columns-1 sm:columns-2 gap-x-[30px]">
