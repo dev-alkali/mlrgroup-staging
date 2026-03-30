@@ -129,6 +129,10 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
 					foreach ($services_rows as $service_row) {
 						if (!empty($service_row['service'])) {
 							$total_cards += count($service_row['service']);
+							echo $total_cards;
+							echo '<pre>';
+							print_r($service_row['service']);
+							echo '</pre>';
 						}
 					}
 				}
