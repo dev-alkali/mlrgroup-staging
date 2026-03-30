@@ -228,7 +228,7 @@ if (!$case_studies_query->have_posts() && have_posts()) {
                       })
                     : allTerms;
                   termsMarkup = visibleTerms.map(function (term) {
-                    return `<span class="inline-flex items-center rounded-full border border-[#CFCFCF] px-[12px] py-[4px] text-[12px] leading-[16px] text-[#737373]">${term.name}</span>`;
+                    return `<span class="inline-flex items-center rounded-full border border-[#525252] px-[17px] py-[5px] text-[14px] leading-[20px] text-[#525252] shadow-[0px_1px_2px_0px_#0A0D120D]">${term.name}</span>`;
                   }).join('');
                 }
 
@@ -241,10 +241,10 @@ if (!$case_studies_query->have_posts() && have_posts()) {
                     ` : ''}
                   </a>
                   <div>
-                    <h2 class="font-[Poppins] font-bold text-[20px] leading-[28px] tracking-[-0.02em] text-[#262626]">
+                    <h2 class="font-[Poppins] font-bold text-[24px] leading-[32px] tracking-[-0.02em] text-[#262626] mt-[18px]">
                       <a href="${post.link}" class="hover:opacity-80 transition-opacity">${title}</a>
                     </h2>
-                    ${termsMarkup ? `<div class="mt-[14px] flex flex-wrap gap-2">${termsMarkup}</div>` : ''}
+                    ${termsMarkup ? `<div class="mt-[10px] flex flex-wrap gap-[8px]">${termsMarkup}</div>` : ''}
                     <div class="mt-[16px] view-more-btn">
                       <a class="inline-flex gap-2 relative" href="${post.link}" target="_self">
                         <span class="font-semibold text-accent text-[16px] leading-[24px] uppercase relative w-fit font-heading tracking-[0]">${viewCaseStudyText}</span>
