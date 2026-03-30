@@ -166,7 +166,7 @@ if ( $is_transparent_page ) {
         <?php endif; ?>
       </a>
       <?php if ($mobile_menu_logo): ?>
-        <a href="<?php echo esc_url(home_url('/')); ?>"><img class="mobile-menu-logo hidden" src="<?php echo esc_url($mobile_menu_logo['url']); ?>" alt="<?php echo esc_attr($mobile_menu_logo['alt']); ?>"></a>
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="mobile-menu-logo hidden"><img src="<?php echo esc_url($mobile_menu_logo['url']); ?>" alt="<?php echo esc_attr($mobile_menu_logo['alt']); ?>"></a>
       <?php endif; ?>
     </div>
 
