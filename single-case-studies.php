@@ -8,7 +8,7 @@ get_header();
 ?>
 
 <main class="overflow-hidden">
-  <section class="px-4 md:px-10 pt-[140px] md:pt-[180px] pb-[40px] lg:pb-[60px]">
+  <section class="px-4 md:px-10 pt-[40px] md:pt-[80px] xl:pt-[120px] pb-[40px] lg:pb-[60px]">
     <div class="wrapper">
       <?php while (have_posts()) : the_post(); ?>
 
@@ -18,7 +18,7 @@ get_header();
             <figure class="mb-[25px]"><img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /></figure>
         <?php endif; ?>
 
-        <h1 class="font-poppins font-bold text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em] text-[#262626] mb-[17px]">
+        <h1 class="font-heading max-w-[1054px] w-full font-bold text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em] text-[#262626] mb-[17px]">
           <?php the_title(); ?>
         </h1>
 
@@ -45,8 +45,8 @@ get_header();
           </div>
         <?php endif; ?>
 
-        <article class="mt-[28px]">
-          <div class="">
+        <article class="md:my-[120px] my-[60px] md:px-[120px]">
+          <div class="mb-[20px]">
             <h2 class="font-poppins font-bold text-[clamp(28px,4vw,40px)] leading-[clamp(36px,4.5vw,48px)] tracking-[-0.02em] text-[#262626]">Summary:</h2>
           </div>
           <div class="blog-content">  
