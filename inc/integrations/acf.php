@@ -27,6 +27,8 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/acf-blocks/our-values');
   register_block_type(__DIR__ . '/acf-blocks/faq-columns');
   register_block_type(__DIR__ . '/acf-blocks/content');  
+  register_block_type(__DIR__ . '/acf-blocks/spacing');  
+  register_block_type(__DIR__ . '/acf-blocks/lookbooks-list');  
   
   
   
