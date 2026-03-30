@@ -18,7 +18,7 @@ get_header();
             <figure class="mb-[25px]"><img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /></figure>
         <?php endif; ?>
 
-        <h1 class="font-poppins font-bold text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em] text-[#262626] mb-[17px]">
+        <h1 class="font-heading max-w-[1054px] w-full font-bold text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em] text-[#262626] mb-[17px]">
           <?php the_title(); ?>
         </h1>
 
