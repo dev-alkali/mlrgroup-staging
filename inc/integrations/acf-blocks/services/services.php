@@ -122,20 +122,9 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
       endif; ?>
 
 			<?php if (have_rows('main_content')) :  while (have_rows('main_content')) : the_row();
-				// Count total service cards to conditionally apply services-grid-5
-				$total_cards = 0;
+				// Each repeater row in 'services' = 1 card (service is a group, not a repeater)
 				$services_rows = get_sub_field('services');
-				if ($services_rows) {
-					foreach ($services_rows as $service_row) {
-						if (!empty($service_row['service'])) {
-							$total_cards += count($service_row['service']);
-							echo $total_cards;
-							echo '<pre>';
-							print_r($service_row['service']);
-							echo '</pre>';
-						}
-					}
-				}
+				$total_cards = is_array($services_rows) ? count($services_rows) : 0;
 				$grid_class = $wrapper_class . ($total_cards === 5 ? ' services-grid-5' : '');
 			?>
 
