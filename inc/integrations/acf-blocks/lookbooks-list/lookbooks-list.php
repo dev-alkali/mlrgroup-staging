@@ -76,25 +76,6 @@ if (!empty($block['className'])) {
     <?php endwhile; ?>
   <?php endif; ?>
 
-          <figure class="!m-0 flex"><?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, ['class' => 'w-full h-auto']); ?></figure>
-          <div class="lg:px-[60px] <?php echo $layout === 'Right Image' ? 'pl-[0px] md:pr-[30px]' : 'pr-[0px] md:pl-[30px]'; ?>">
-            <?php if($title): ?>
-            <h2 class="text-[clamp(32px,6vw,68px)] leading-[clamp(40px,7vw,76px)] tracking-[-4%] font-heading mb-[20px]"><?= wp_kses_post($$title) ?></h2>
-            <?php endif; ?>
-            <?php if($session): ?>
-              <div class="w-full text-[clamp(16px,3vw,18px)] leading-[28px] font-body flex flex-col gap-[30px] description-content "><?= wp_kses_post($session) ?></div>
-            <?php endif; ?>
-
-            <?php 
-              $link = get_sub_field('link');
-              if( $link ): 
-                  $link_url = $link['url'];
-                  $link_title = $link['title'];
-                  $link_target = $link['target'] ? $link['target'] : '_self';
-                  ?>
-                  <a class="btn-primary mt-[40px]" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-              <?php endif; ?>
-          </div>
 
 
 
