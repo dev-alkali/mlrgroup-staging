@@ -79,14 +79,9 @@ a.footer-text:hover{color:#ffffff;}
 .blog-content h4,
 .blog-content h5,
 .blog-content h6 {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-heading);
   color: #262626;
   margin: 0px 0px 20px;
-}
-
-.blog-content li,
-.blog-content p{
-    
 }
 
 /* H1 */
