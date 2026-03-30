@@ -1192,7 +1192,7 @@ button.swiper-button-disabled {
 
 .services .services-grid-5 .service-card:nth-child(5),
 .services .services-grid-5 .service-card:nth-child(4){
-  @apply aspect-[676/420]
+  @apply min-[1280px]:aspect-[676/420]
 }
 
 @media(max-width: 1399px){
