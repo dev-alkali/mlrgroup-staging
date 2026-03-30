@@ -45,7 +45,7 @@ get_header();
           </div>
         <?php endif; ?>
 
-        <article class="md:my-[120px] my-[60px] md:px-[120px]">
+        <article class="md:pt-[120px] pt-[60px] md:px-[120px] pb-[60px]">
           <div class="mb-[20px]">
             <h2 class="font-heading font-bold text-[clamp(28px,4vw,40px)] leading-[clamp(36px,4.5vw,48px)] tracking-[-2%] text-[#262626]">Summary:</h2>
           </div>

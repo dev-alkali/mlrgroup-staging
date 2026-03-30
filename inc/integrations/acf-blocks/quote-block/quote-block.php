@@ -29,7 +29,7 @@ $arrow_display = get_sub_field('arrow_display');
             <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" alt="" class="w-[35px] h-[35px] md:w-[42px] md:h-[42px]">
           </div>
         <?php endif; ?>
-		<div class="quote-content pb-[28px] border-b border-[#FD4338] tracking-[-2%] font-heading">
+		<div class="quote-content md:pb-[28px] pb-[20px] border-b border-[#FD4338] tracking-[-2%] font-heading">
         <?php echo $quote; ?>
         </div>
 		</div>
