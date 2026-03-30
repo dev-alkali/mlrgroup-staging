@@ -1,0 +1,14 @@
+{
+    "name": "acf/multiple-images",
+    "title": "Multiple Images",
+    "description": "Multiple Images Section",
+    "style": ["file:./multiple-images.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["multiple-images", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "multiple-images.php"
+    },
+    "script": "multiple-imagesJS"
+}
