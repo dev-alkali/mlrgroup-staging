@@ -18,51 +18,14 @@ if (!empty($block['className'])) {
 ?>
 <?php if (have_rows('lookbooks-list')) :  while (have_rows('lookbooks-list')) : the_row();
 
-$title_row_1 = get_sub_field('title_row_1');
-$title_row_2 = get_sub_field('title_row_2');
-$description = get_sub_field('description');
-//$left_image_or_right_image = get_sub_field('left_image_or_right_image');
-$layout = get_sub_field('left_image_or_right_image'); // left / right
-// Desktop layout
-$desktopFlex = ($layout === 'Right Image') ? 'md:flex-row-reverse img-right' : 'md:flex-row img-left';
-
-// Mobile: always content first, image bottom
-$mobileFlex = 'flex-col-reverse';
-
-$content_width = get_sub_field('content_width');
-$section_color = get_sub_field('section_color');
-
-if ( $content_width ){
-  echo '<style>
-  @media (min-width: 1025px) {
-    .two-col-sec .description-content {
-      max-width: ' . $content_width . ';
-    }
-  }
-  </style>';
-}
-
-if ( $section_color == 'black' ){
-  $bg_color_class = 'bg-black';
-  $text_262626_class = 'text-white';
-  $text_737373_class = 'text-white';
-  $text_525252_class = 'text-white';
-  $text_e5e5e5_class = 'text-white';
-  $text_white_class = 'text-white';
-}else {
-  $bg_color_class = 'bg-white';
-  $text_262626_class = 'text-[#262626]';
-  $text_737373_class = 'text-[#737373]';
-  $text_525252_class = 'text-[#525252]';
-  $text_e5e5e5_class = 'text-[#E5E5E5]';
-  $text_white_class = 'text-white';
-}
+$session = get_sub_field('session');
+$title = get_sub_field('title');
+$image = get_sub_field('image');
 
 ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] <?php echo $bg_color_class; ?>">
-      <!-- <div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col md:flex-row items-center flex-wrap"> -->
-      <div class="gap-[30px] md:gap-[0px] w-full wrapper flex flex-col <?php echo $mobileFlex . ' ' . $desktopFlex; ?> items-center">
-
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px]">
+      <div class="gap-[30px] md:gap-[0px] w-full wrapper flex flex-col  items-center">
+        
         <div class="w-full md:w-1/2 lg:w-[47%]">
           <figure class="!m-0 flex"><?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, ['class' => 'w-full h-auto']); ?></figure>
         </div>
@@ -84,7 +47,7 @@ if ( $section_color == 'black' ){
             <?php endif; ?>
 
             <?php 
-              $link = get_sub_field('button');
+              $link = get_sub_field('link');
               if( $link ): 
                   $link_url = $link['url'];
                   $link_title = $link['title'];
@@ -98,3 +61,5 @@ if ( $section_color == 'black' ){
     </section>
 <?php endwhile;
 endif; ?>
+
+
