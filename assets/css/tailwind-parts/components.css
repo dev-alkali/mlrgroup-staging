@@ -1201,8 +1201,8 @@ button.swiper-button-disabled {
   @apply min-[768px]:aspect-[676/420]
 }
 
-.menu-open .header__logo-image .mobile-menu-logo{display: block;}
-.menu-open .header__logo-image .site-header__logo-image{display: none;}
+.menu-open header .mobile-menu-logo{display: block;}
+.menu-open header .site-header__logo-image{display: none;}
 
 @media(max-width: 1399px){
   .card-text br {display: none;}
