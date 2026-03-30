@@ -34,7 +34,7 @@
      <div class="md:border-b border-[#CCCCCC] md:pb-[20px] md:mb-[10px] w-full md:w-[220px] lg:w-[280px] xl:w-[380px]">
       <p class="text-[#525252] font-[Poppins] font-medium text-[16px] leading-[24px] md:text-[16px] md:leading-[24px]">Get inspired: Browse our portfolio, filter by category, add elements you like to your Inquiry List.</p>
      </div>
-     <div class="flex items-center justify-end w-full">
+     <div class="flex items-center justify-end max-[768px]:ml-auto md:w-full">
         <button type="button" id="view-inquery-list" class="btn-primary relative inline-flex items-center gap-2 cursor-pointer" aria-label="View inquiry list, 3 items">
           <div class="inline-flex items-center gap-2 justify-center">
               <div class="relative w-[17px] h-4 mt-[-2px]">
