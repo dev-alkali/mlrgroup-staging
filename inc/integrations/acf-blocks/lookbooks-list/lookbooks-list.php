@@ -17,7 +17,7 @@ if (!empty($block['className'])) {
 
 ?>
 <?php if (have_rows('lookbooks-list')) :  while (have_rows('lookbooks-list')) : the_row(); ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> look-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px]">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> look-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[65px]">
       <div class="gap-[30px] md:gap-[0px] w-full wrapper">     
 
         <?php if ( have_rows( 'lookbooks' ) ) : ?>
@@ -25,7 +25,7 @@ if (!empty($block['className'])) {
           <?php $year = get_sub_field( 'year' ); ?>
       <div class="lookbook-year mb-[60px] md:mb-[80px]">
 
-        <h2 class="font-[poppins] font-bold text-[#262626] leading-[clamp(44px,4vw,60px)] text-[clamp(36px,5vw,60px)] tracking-[-0.02em] mb-[28px] flex ga-[12px] md:gap-[16px]"><img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" alt="" class="w-[35px] h-[35px] md:w-[42px] md:h-[42px]"> <?php echo esc_html( $year ); ?></h2>
+        <h2 class="font-[poppins] font-bold text-[#262626] leading-[clamp(44px,4vw,60px)] text-[clamp(36px,5vw,60px)] tracking-[-0.02em] mb-[28px] flex ga-[12px] md:gap-[16px]"><img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" alt="" class="w-[35px] h-[35px] md:w-[62px] md:h-[62px]"> <?php echo esc_html( $year ); ?></h2>
 
         <?php if ( have_rows( 'l_lists' ) ) : ?>
           <div class="lookbook-list columns-1 md:columns-2 md:gap-x-[40px]">
