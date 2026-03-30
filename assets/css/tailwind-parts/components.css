@@ -1206,7 +1206,7 @@ button.swiper-button-disabled {
 }
 
 .services .services-grid-6 .service-card {
-  @apply max-[767px]:aspect-ratio-[358/300];
+  @apply max-[767px]:aspect-[358/300];
 }
 
 .menu-open header .mobile-menu-logo{display: block;}
