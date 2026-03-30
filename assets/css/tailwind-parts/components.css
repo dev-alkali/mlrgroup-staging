@@ -1190,9 +1190,12 @@ button.swiper-button-disabled {
 .content-sec .wrapper table th{border: 1px solid #949494;padding: 10px;}
 .content-sec .wrapper .wp-block-table{overflow: auto;}
 
-.services .services-grid-5 .service-card:nth-child(5),
+
 .services .services-grid-5 .service-card:nth-child(4){
   @apply min-[1280px]:aspect-[676/420]
+}
+.services .services-grid-5 .service-card:nth-child(5){
+  @apply min-[768px]:aspect-[334/420]
 }
 
 @media(max-width: 1399px){
