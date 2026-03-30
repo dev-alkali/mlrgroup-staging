@@ -70,6 +70,7 @@ if ( $is_transparent_page ) {
   $logo_id  = get_theme_mod('custom_logo');
   $logo_url = wp_get_attachment_image_url($logo_id, 'full');
   $logo_svg = get_field('logo_svg', 'option');
+  $mobile_menu_logo = get_field('mobile_menu_logo', 'option');
   ?>
 
   <!-- DESKTOP HEADER -->
@@ -163,6 +164,10 @@ if ( $is_transparent_page ) {
         <?php elseif ($logo_url): ?>
           <img src="<?php echo esc_url($logo_url); ?>" alt="Logo">
         <?php endif; ?>
+        <?php if ($mobile_menu_logo): ?>
+          <img class="mobile-menu-logo hidden" src="<?php echo esc_url($mobile_menu_logo); ?>" alt="Logo">
+        <?php endif; ?>
+
       </a>
     </div>
 
