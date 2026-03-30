@@ -70,7 +70,7 @@
             </div>
          </div>
          <div class="flex flex-col md:flex-row gap-[40px] md:gap-[60px]">
-            <section class="w-full flex flex-col gap-8">
+            <section class="w-full flex flex-col gap:[5px] md:gap-8">
                <div id="inquiry-list-content" class="w-full flex flex-col gap-6 pb-6">
                </div>
                <div class="flex gap-2">
