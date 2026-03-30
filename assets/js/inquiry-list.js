@@ -213,8 +213,10 @@
 
       if (inList) {
         $btn.hide();
+        $btn.siblings().find(".inquiry-tooltip-icon").hide();
       } else {
         $btn.show();
+        $btn.siblings().find(".inquiry-tooltip-icon").show();
       }
     });
 
@@ -499,8 +501,10 @@
 
       if (currentList.indexOf(clickedId) !== -1) {
         $btn.hide();
+        $btn.siblings().find(".inquiry-tooltip-icon").hide();
       } else {
         $btn.show();
+        $btn.siblings().find(".inquiry-tooltip-icon").show();
       }
     });
   });
