@@ -61,7 +61,7 @@ if (!$case_studies_query->have_posts() && have_posts()) {
 <main class="overflow-hidden">
   <?php get_template_part('template-parts/case-study/case-study-hero'); ?>
 
-  <section class="px-4 md:px-10 py-[40px] lg:py-[80px] xl:py-[60px]">
+  <section class="px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[60px]">
     <div class="wrapper">
       <?php if ($filter_taxonomy !== '') : ?>
         <?php
