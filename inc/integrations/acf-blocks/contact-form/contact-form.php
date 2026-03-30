@@ -30,7 +30,7 @@ $form_shortcode = get_sub_field('form_shortcode');
 				<!-- LEFT -->
 				<div class="w-full md:w-1/2 c-contact__content anim" data-anim="up" >
 					<?php if ($title_row_1 || $title_row_2): ?>
-					<h2 class="c-contact__title text-[36px] leading-[44px] tracking-[-0.02em] font-heading lg:text-[68px] lg:leading-[78px] mb-[20px]">
+					<h2 class="c-contact__title text-[clamp(36px,5vw,68px)] leading-[clamp(44px,6vw,78px)] tracking-[-2%] font-heading mb-[20px]">
 						<span class="font-bold"><?php echo $title_row_1; ?></span>
 						<?php if ($title_row_2): ?>
 						<span class="font-light text-[#737373]"><?php echo $title_row_2; ?></span>
@@ -39,7 +39,7 @@ $form_shortcode = get_sub_field('form_shortcode');
 					<?php endif; ?>
 
 					<?php if ($description): ?>
-					<div class="c-contact__description text-lg md:text-xl leading-[26px] md:leading-[28px] mb-8 md:mb-10 text-neutral-600 lg:pr-[30px]">
+					<div class="c-contact__description text-[clamp(18px,2vw,20px)] leading-[clamp(26px,2.6vw,28px)] mb-8 md:mb-10 text-neutral-600 lg:pr-[30px]">
 						<?php echo wp_kses_post($description); ?>
 					</div>
 					<?php endif; ?>
