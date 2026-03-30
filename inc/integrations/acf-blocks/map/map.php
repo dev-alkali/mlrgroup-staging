@@ -2195,7 +2195,7 @@ $map_code = get_sub_field('map_code');
   .wmap-marker:hover{z-index: 21;transition: z-index 0s 0s;}
   .wmap-marker.active .wmap-pin {transform: translateX(-50%) translateY(50%) scale(1);transition: transform 0.2s ease 0s;}
   .wmap-marker.active .wmap-tooltip {opacity: 1;transform: translateX(-50%) translateY(0);transition: opacity 0.2s ease 0s, transform 0.2s ease 0s;}
-  .wmap-marker.active {z-index: 21;}
+  .wmap-marker.active {z-index: 22;}
   /* @media (max-width: 767px){
     #wmap-inner{max-width: 80%;}
   } */
