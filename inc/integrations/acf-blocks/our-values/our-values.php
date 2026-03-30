@@ -38,11 +38,17 @@ $lists = get_sub_field('lists');
 					<?php if($title_row_1): ?>
 						<span class="relative w-full block flex gap-[10px] title-our-values-1">
 							<span class="font-bold bg-white pr-[5px]"><?= wp_kses_post($title_row_1) ?></span>
+							<div class="bg-repeat right-[calc(100%+100px)] arrow-img-position w-full h-[100%]">
+								<img src="<?= get_template_directory_uri() ?>/assets/imgs/our-values-left-arrow.svg" alt="arrow" class="w-full h-full">
+							</div>
 						</span>
 					<?php endif; ?>
 					<?php if($title_row_2): ?>
 						<span class="relative w-full block flex gap-[10px] title-our-values-2">
 							<span class="font-light text-[#737373] pr-[5px] bg-white"><?= wp_kses_post($title_row_2) ?></span>
+							<div class="bg-repeat right-[calc(100%+100px)] arrow-img-position w-full h-[100%]">
+								<img src="<?= get_template_directory_uri() ?>/assets/imgs/our-values-left-arrow.svg" alt="arrow" class="w-full h-full">
+							</div>
 						</span>
 					<?php endif; ?>
 				</h2>
