@@ -27,7 +27,7 @@ if (!empty($block['className'])) {
         <h2 class="font-[poppins] font-bold text-[#262626] leading-[clamp(44px,4vw,60px)] text-[clamp(36px,5vw,60px)] tracking-[-0.02em]"><?php echo esc_html( $year ); ?></h2>
 
         <?php if ( have_rows( 'l_lists' ) ) : ?>
-          <div class="lookbook-list">
+          <div class="lookbook-list columns-1 sm:columns-2 gap-x-[30px]">
 
             <?php while ( have_rows( 'l_lists' ) ) : the_row(); ?>
 
@@ -38,7 +38,7 @@ if (!empty($block['className'])) {
                 $link    = get_sub_field( 'link' );     // URL string
               ?>
 
-              <div class="lookbook-item">
+              <div class="lookbook-item break-inside-avoid mb-[30px]">
 
                 <!-- Image -->
                 <?php if ( ! empty( $image ) ) : ?>
