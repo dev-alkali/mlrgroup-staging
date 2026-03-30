@@ -1207,6 +1207,9 @@ button.swiper-button-disabled {
 @media(max-width: 1399px){
   .card-text br {display: none;}
 }
+@media(max-width: 1279px){
+  .arrow-img-position {background-size: 800px;}
+}
 @media (max-width: 1190px){
   .arrow-img-position{
     background-size: 100%;
@@ -1217,6 +1220,7 @@ button.swiper-button-disabled {
 @media (max-width: 767px){
   .title-our-values-1{max-width: 35vw;}
   .cta.black-cta .cta-wrapper{padding-bottom: 60px;}
+  .arrow-img-position {background-size: 453px;}
 }
 
 @media(max-width: 600px){
