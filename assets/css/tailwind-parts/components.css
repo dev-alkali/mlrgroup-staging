@@ -1211,14 +1211,11 @@ button.swiper-button-disabled {
   .arrow-img-position {background-size: 800px;}
 }
 @media (max-width: 1190px){
-  .arrow-img-position{
-    background-size: 100%;
-  }
   .cta.black-cta .cta-wrapper{padding-bottom: 80px;}
 }
 
 @media (max-width: 767px){
-  .title-our-values-1{max-width: 35vw;}
+  .title-our-values-1 span{max-width: 483px;}
   .cta.black-cta .cta-wrapper{padding-bottom: 60px;}
   .arrow-img-position {background-size: 453px;}
 }
@@ -1228,10 +1225,6 @@ button.swiper-button-disabled {
 }
 
 @media (max-width: 480px){
-  .title-our-values-1{max-width: 160px;}
-  .arrow-img-position{
-    background-size: 160%;
-  }
   p br,
   h2 br {display: none;}
 }
