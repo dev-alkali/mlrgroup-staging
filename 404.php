@@ -4,7 +4,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main !py-0">
 
 		<section class="error-404 not-found lg:py-[200px] md:py-[140px] py-[80px]">
 			<header class="page-header !pt-0">
