@@ -54,10 +54,6 @@ a.footer-text:hover{color:#ffffff;}
     .collection-parent:first-child .collection-item:nth-child(3){order:1;}
 }   
 
-@media(max-width: 767px){
-    .wrapper{padding-left: 0px;padding-right: 0px;}
-}
-
 .service-card .gradient-box figure,
 .service-card .gradient-box .content {transition: transform 0.5s ease;}
 .service-card .gradient-box:before,
