@@ -1210,6 +1210,7 @@ button.swiper-button-disabled {
 .blog-content .quote-content *:not(br){
   @apply text-[clamp(24px,5vw,36px)] leading-[clamp(36px,5.1vw,52px)] tracking-[-2%] font-heading;
 }
+.blog-content .content-sec .wrapper li:not(:last-child) {margin-bottom: 12px;}
 
 @media(max-width: 1399px){
   .card-text br {display: none;}
