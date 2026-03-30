@@ -72,7 +72,7 @@ if (!$case_studies_query->have_posts() && have_posts()) {
             ]
         );
         ?>
-        <div class="mb-8 md:mb-10">
+        <div class="mb-8 md:mb-10 text-right md:text-left">
           <label for="case-studies-filter" class="mr-2 font-[Poppins] font-medium text-[16px] leading-[18px] tracking-[0] text-center text-[#525252]"><?php esc_html_e('Filter by', 'mrl-site'); ?></label>
           <select
             id="case-studies-filter"
