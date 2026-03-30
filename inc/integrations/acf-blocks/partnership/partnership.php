@@ -104,7 +104,7 @@ if ($background_color == 'black') {
             <img 
               src="<?php echo esc_url($image['url']); ?>" 
               alt="<?php echo esc_attr($image['alt']); ?>" 
-              class="w-full w-full h-full object-cover"
+              class="w-full w-full min-[575px]:h-full object-cover h-[340px]"
             >
           </figure>
         <?php endif; ?>
