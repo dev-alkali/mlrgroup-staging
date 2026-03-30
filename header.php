@@ -164,9 +164,7 @@ if ( $is_transparent_page ) {
         <?php elseif ($logo_url): ?>
           <img src="<?php echo esc_url($logo_url); ?>" alt="Logo">
         <?php endif; ?>
-        <?php if ($mobile_menu_logo): ?>
-          <img class="mobile-menu-logo hidden" src="<?php echo esc_url($mobile_menu_logo); ?>" alt="Logo">
-        <?php endif; ?>
+        
 
       </a>
     </div>
