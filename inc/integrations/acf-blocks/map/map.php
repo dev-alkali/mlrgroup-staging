@@ -2193,6 +2193,9 @@ $map_code = get_sub_field('map_code');
   .wmap-red  { color: #FD4338; }
   .wmap-blue { color: #4A78FF; }
   .wmap-marker:hover{z-index: 21;transition: z-index 0s 0s;}
+  .wmap-marker.active .wmap-pin {transform: translateX(-50%) translateY(50%) scale(1);transition: transform 0.2s ease 0s;}
+  .wmap-marker.active .wmap-tooltip {opacity: 1;transform: translateX(-50%) translateY(0);transition: opacity 0.2s ease 0s, transform 0.2s ease 0s;}
+  .wmap-marker.active {z-index: 21;}
   /* @media (max-width: 767px){
     #wmap-inner{max-width: 80%;}
   } */
@@ -2374,6 +2377,23 @@ $map_code = get_sub_field('map_code');
 
   placeMarkers();
   window.addEventListener('resize', placeMarkers);
+
+  function autoCycle() {
+    var markers = document.querySelectorAll('.wmap-marker');
+    var current = 0;
+    function showNext() {
+      markers = document.querySelectorAll('.wmap-marker');
+      markers.forEach(function(m) { m.classList.remove('active'); });
+      if (markers.length > 0) {
+        markers[current].classList.add('active');
+        current = (current + 1) % markers.length;
+      }
+    }
+    showNext();
+    setInterval(showNext, 3000);
+  }
+
+  autoCycle();
 
 })();
 </script>
