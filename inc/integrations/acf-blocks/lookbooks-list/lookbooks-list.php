@@ -25,7 +25,7 @@ if (!empty($block['className'])) {
           <?php $year = get_sub_field( 'year' ); ?>
       <div class="lookbook-year mb-[60px] md:mb-[80px]">
 
-        <h2 class="font-[poppins] font-bold text-[#262626] leading-[clamp(44px,4vw,60px)] text-[clamp(36px,5vw,60px)] tracking-[-0.02em] mb-[28px] flex ga-[12px] md:gap-[16px]"><img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" alt="" class="w-[35px] h-[35px] md:w-[62px] md:h-[62px]"> <?php echo esc_html( $year ); ?></h2>
+        <h2 class="font-[poppins] font-bold text-[#262626] leading-[clamp(44px,4vw,60px)] text-[clamp(36px,5vw,60px)] tracking-[-0.02em] mb-[17px] md:mb-[21px] flex ga-[12px] md:gap-[16px]"><img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" alt="" class="w-[35px] h-[35px] md:w-[62px] md:h-[62px]"> <?php echo esc_html( $year ); ?></h2>
 
         <?php if ( have_rows( 'l_lists' ) ) : ?>
           <div class="lookbook-list columns-1 md:columns-2 md:gap-x-[40px]">
@@ -60,7 +60,7 @@ if (!empty($block['className'])) {
 
                 <!-- Session (select) -->
                 <?php if ( $session ) : ?>
-                  <h4 class="lookbook-session font-forma font-normal text-[#525252] text-[clamp(14px,1.2vw,16px)] leading-[20px] border border-[#525252] rounded-[30px] shadow-[0px_1px_2px_0px_#0A0D120D] inline-flex px-[16px] py-[6px]"><?php echo esc_html( $session ); ?> <?php echo esc_html( $year ); ?></h4>
+                  <h4 class="lookbook-session font-forma font-normal text-[#525252] text-[clamp(14px,1.2vw,16px)] leading-[20px] border border-[#525252] rounded-[30px] shadow-[0px_1px_2px_0px_#0A0D120D] inline-flex px-[16px] pt-[6px] pb-[4px]"><?php echo esc_html( $session ); ?> <?php echo esc_html( $year ); ?></h4>
                 <?php endif; ?>
 
                 <!-- Link (URL) -->
