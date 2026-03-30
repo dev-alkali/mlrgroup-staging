@@ -125,7 +125,13 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
 				// Each repeater row in 'services' = 1 card (service is a group, not a repeater)
 				$services_rows = get_sub_field('services');
 				$total_cards = is_array($services_rows) ? count($services_rows) : 0;
-				$grid_class = $wrapper_class . ($total_cards === 5 ? ' services-grid-5' : '');
+				$extra_class = '';
+				if ($total_cards === 5) {
+					$extra_class = ' services-grid-5';
+				} elseif ($total_cards === 2) {
+					$extra_class = ' services-grid-2';
+				}
+				$grid_class = $wrapper_class . $extra_class;
 			?>
 
 
