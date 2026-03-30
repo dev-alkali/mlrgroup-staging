@@ -25,7 +25,7 @@ $link = get_sub_field('cta_button');
         <div class="flex flex-col items-start gap-10 min-[600px]:gap-[60px] w-full max-w-[1920px] cta-content">
           <div class="flex flex-col items-start gap-5 w-full">
             <?php if($title_row_1 || $title_row_2): ?>
-            <h2 class="max-w-[622px] w-full text-[clamp(36px,6vw,80px)] tracking-[-0.02em] leading-[clamp(44px,6.1vw,92px)] text-white font-heading">
+            <h2 class="max-w-[622px] w-full xl:text-[80px] xl:leading-[92px] md:text-[68px] md:leading-[78px] sm:text-[45px] sm:leading-[56px] text-[36px] leading-[44px] tracking-[-0.02em] text-white font-heading">
               <?php if($title_row_1): ?>
                   <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
               <?php endif; ?>
