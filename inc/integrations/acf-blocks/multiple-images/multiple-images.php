@@ -1,7 +1,7 @@
 <?php
 
 /**
- * content Block Template.
+ * multiple Images Block Template.
  */
 
 $id = 'multiple-images' . $block['id'];

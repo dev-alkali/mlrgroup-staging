@@ -25,11 +25,11 @@ $arrow_display = get_sub_field('arrow_display');
 		<!-- <div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col md:flex-row items-center flex-wrap"> -->
 		<div class="wrapper ">
         <?php if($arrow_display): ?>
-          <div class="arrow-display">
-            <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" alt="">
+          <div class="arrow-display md:mb-[28px] mb-[18px]">
+            <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" alt="" class="w-[35px] h-[35px] md:w-[42px] md:h-[42px]">
           </div>
         <?php endif; ?>
-		<div class="quote-content pb-[28px] border-b border-[#FD4338]">
+		<div class="quote-content pb-[28px] border-b border-[#FD4338] text-[clamp(24px,5vw,36px)] leading-[clamp(36px,5.1vw,52px)] tracking-[-2%] font-heading">
         <?php echo $quote; ?>
         </div>
 		</div>
