@@ -1204,6 +1204,10 @@ button.swiper-button-disabled {
 .menu-open header .mobile-menu-logo{display: block;}
 .menu-open header .site-header__logo-image{display: none;}
 
+.blog-content .content-sec {padding: 0px;}
+.blog-content .content-sec h2 {border: none;padding: 0px;}
+
+
 @media(max-width: 1399px){
   .card-text br {display: none;}
 }

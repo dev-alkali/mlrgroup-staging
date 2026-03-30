@@ -47,7 +47,7 @@ get_header();
 
         <article class="md:my-[120px] my-[60px] md:px-[120px]">
           <div class="mb-[20px]">
-            <h2 class="font-poppins font-bold text-[clamp(28px,4vw,40px)] leading-[clamp(36px,4.5vw,48px)] tracking-[-0.02em] text-[#262626]">Summary:</h2>
+            <h2 class="font-heading font-bold text-[clamp(28px,4vw,40px)] leading-[clamp(36px,4.5vw,48px)] tracking-[-2%] text-[#262626]">Summary:</h2>
           </div>
           <div class="blog-content">  
             <?php the_content(); ?>

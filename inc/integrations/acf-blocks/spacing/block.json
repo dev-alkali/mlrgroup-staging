@@ -1,0 +1,14 @@
+{
+    "name": "acf/spacing",
+    "title": "Spacing",
+    "description": "Spacing Section",
+    "style": ["file:./spacing.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["spacing", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "spacing.php"
+    },
+    "script": "spacingJS"
+}
