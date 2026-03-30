@@ -1,0 +1,14 @@
+{
+    "name": "acf/quote-block",
+    "title": "Quote Block",
+    "description": "Quote Block Section",
+    "style": ["file:./quote-block.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["quote-block", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "quote-block.php"
+    },
+    "script": "quote-blockJS"
+}
