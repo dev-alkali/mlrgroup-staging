@@ -43,13 +43,17 @@ if (!empty($block['className'])) {
 
                 <!-- Image -->
                 <?php if ( ! empty( $image ) ) : ?>
-                  <div class="lookbook-images mb-[16px]">
+                  <div class="lookbook-images mb-[16px] relative">
                     <img
                       src="<?php echo esc_url( $image['url'] ); ?>"
                       alt="<?php echo esc_attr( $image['alt'] ); ?>"
                       width="100%"
                       height="<?php echo esc_attr( $image['height'] ); ?>"
                     />
+                    <!-- Link (URL) -->
+                    <?php if ( $link ) : ?>
+                      <a class="lookbook-link" href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener noreferrer">View Lookbook</a>
+                    <?php endif; ?>
                   </div>
                 <?php endif; ?>
 
@@ -61,11 +65,6 @@ if (!empty($block['className'])) {
                 <!-- Session (select) -->
                 <?php if ( $session ) : ?>
                   <h4 class="lookbook-session font-forma font-normal text-[#525252] text-[clamp(14px,1.2vw,16px)] leading-[20px] border border-[#525252] rounded-[30px] shadow-[0px_1px_2px_0px_#0A0D120D] inline-flex px-[16px] pt-[6px] pb-[4px]"><?php echo esc_html( $session ); ?> <?php echo esc_html( $year ); ?></h4>
-                <?php endif; ?>
-
-                <!-- Link (URL) -->
-                <?php if ( $link ) : ?>
-                  <a class="lookbook-link" href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener noreferrer">View Lookbook</a>
                 <?php endif; ?>
               </div><!-- .lookbook-item -->
             <?php endwhile; ?>
