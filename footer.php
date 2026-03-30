@@ -95,7 +95,7 @@
               <div class="footer-title flex justify-between w-full items-center uppercase">
                 <div class="flex gap-1 items-center">
                   <img class="w-4 h-4" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-blue.svg" alt="">
-                  <a href="#">Contact</a>
+                  <a href="<?= home_url(); ?>/contact-us/">Contact</a>
                 </div>
                 <span class="dropdown-item-footer min-[600px]:hidden">
                   <img src="/wp-content/themes/Mlrgroup/assets/imgs/Caret-down.svg" alt="">
