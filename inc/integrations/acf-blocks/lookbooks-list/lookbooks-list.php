@@ -52,7 +52,10 @@ if (!empty($block['className'])) {
                     />
                     <!-- Link (URL) -->
                     <?php if ( $link ) : ?>
-                      <a class="lookbook-link" href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener noreferrer">View Lookbook</a>
+                      <a class="lookbook-link" href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener noreferrer">
+                        <img src="<?= get_template_directory_uri() ?>/assets/imgs/arrow-with-white-bg.png" alt="" class="w-[52px] h-[52px] md:w-[56px] md:h-[56px]">
+                        <span>View Lookbook</span>
+                      </a>
                     <?php endif; ?>
                   </div>
                 <?php endif; ?>
