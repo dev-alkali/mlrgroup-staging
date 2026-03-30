@@ -100,7 +100,7 @@ if ($background_color == 'black') {
 
         <!-- Image -->
         <?php if ($image) : ?>
-          <figure class="md:aspect-[256/340] sm:aspect-[358/380] min-[575px]:aspect-[358/300] aspect-[358/380]">
+          <figure class="md:aspect-[256/340] sm:aspect-[358/340] min-[575px]:aspect-[358/300] aspect-[358/340]">
             <img 
               src="<?php echo esc_url($image['url']); ?>" 
               alt="<?php echo esc_attr($image['alt']); ?>" 
