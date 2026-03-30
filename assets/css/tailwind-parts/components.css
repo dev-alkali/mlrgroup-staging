@@ -930,6 +930,7 @@
   .inquiry-item-pop-up-remove {
     @apply font-heading underline text-[14px] leading-[16px] uppercase;
     cursor: pointer;
+    font-weight: 500;
   }
   .inquiry-item-pop-up-line {
     @apply h-px bg-neutral-300 w-full;
