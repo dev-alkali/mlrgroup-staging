@@ -232,6 +232,21 @@
         $btn.hide();
       }
     });
+
+    $(".added-badge").each(function () {
+      var $badge = $(this);
+      var rawId = $badge.attr("item-id");
+      if (!isValidId(rawId)) return;
+
+      var id = parseInt(rawId, 10);
+      var inList = list.indexOf(id) !== -1;
+
+      if (inList) {
+        $badge.removeClass("hidden").addClass("flex");
+      } else {
+        $badge.removeClass("flex").addClass("hidden");
+      }
+    });
   }
 
   /* ─────────────────────────────────────────────

@@ -53,6 +53,10 @@ $term_id = isset($current_term->term_id) ? absint($current_term->term_id) : 0;
             ?>
                     <article class="gallery-card group">
                         <div class="card-image-wrap relative overflow-hidden aspect-[333.33/360] w-full" style="background-image: url('<?= esc_url($image_url); ?>'); background-position: 50% 50%; background-size: cover; background-repeat: no-repeat;">
+                            <div class="added-badge hidden absolute top-3 right-3 z-20 bg-[#fd4338] text-white text-xs font-semibold px-3 py-1.5 rounded-full items-center gap-1 pointer-events-none" item-id="<?= esc_attr($post_id); ?>">
+                                <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                ADDED
+                            </div>
                             <div class="card-overlay absolute inset-0 [background:linear-gradient(312deg,rgba(0,0,0,0.82)_0%,rgba(253,67,56,0.82)_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2 px-6 flex flex-col">
                                 <button type="button" item-id="<?= esc_attr($post_id); ?>" class="view-inquery bg-black flex items-center justify-center gap-2 p-[13px] md:p-[16px] md:w-full rounded-[30px] cursor-pointer border-0 hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors translate-y-3 card-btn-transition md:max-w-[262px]">
                                     <span class="font-heading font-medium flex items-center justify-center  text-white text-xs md:text-sm tracking-[0] leading-5 whitespace-nowrap"><img class="h-[14px] w-[14px] mt-[-1px] md:mr-[8px]" src="<?= esc_url(get_template_directory_uri() . '/assets/imgs/magnifying.svg'); ?>" alt=""> <span class="hidden md:inline-block">QUICK VIEW</span></span>
