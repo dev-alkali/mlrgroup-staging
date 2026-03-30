@@ -24,7 +24,7 @@ if (!empty($block['className'])) {
           <?php while ( have_rows( 'lookbooks' ) ) : the_row(); ?>
           <?php $year = get_sub_field( 'year' ); ?>
       <div class="lookbook-year">
-        <h2 class="font-[poppins] font-bold text-[#262626] leading-[clamp(44px,4vw,60px)] text-[clamp(36px,5vw,60px)] tracking-[-0.02em]"><?php echo esc_html( $year ); ?></h2>
+        <h2 class="font-[poppins] font-bold text-[#262626] leading-[clamp(44px,4vw,60px)] text-[clamp(36px,5vw,60px)] tracking-[-0.02em] mb-[28px]"><?php echo esc_html( $year ); ?></h2>
 
         <?php if ( have_rows( 'l_lists' ) ) : ?>
           <div class="lookbook-list columns-1 sm:columns-2 gap-x-[30px]">
@@ -42,7 +42,7 @@ if (!empty($block['className'])) {
 
                 <!-- Image -->
                 <?php if ( ! empty( $image ) ) : ?>
-                  <div class="lookbook-images">
+                  <div class="lookbook-images mb-[16px]">
                     <img
                       src="<?php echo esc_url( $image['url'] ); ?>"
                       alt="<?php echo esc_attr( $image['alt'] ); ?>"
@@ -54,12 +54,12 @@ if (!empty($block['className'])) {
 
                 <!-- Title -->
                 <?php if ( $title ) : ?>
-                  <h3 class="lookbook-title font-[poppins] font-bold text-[24px] leading-[32px] tracking-[-0.02em] text-[#262626]"><?php echo esc_html( $title ); ?></h3>
+                  <h3 class="lookbook-title font-[poppins] font-bold text-[24px] leading-[32px] tracking-[-0.02em] text-[#262626] mb-[8px] "><?php echo esc_html( $title ); ?></h3>
                 <?php endif; ?>
 
                 <!-- Session (select) -->
                 <?php if ( $session ) : ?>
-                  <h4 class="lookbook-session font-forma font-normal text-[#525252] text-[clamp(14px,1.2vw,16px)] leading-[20px] border border-[#525252] rounded-[30px] shadow-[0px_1px_2px_0px_#0A0D120D] inline-flex"><?php echo esc_html( $session ); ?> <?php echo esc_html( $year ); ?></h4>
+                  <h4 class="lookbook-session font-forma font-normal text-[#525252] text-[clamp(14px,1.2vw,16px)] leading-[20px] border border-[#525252] rounded-[30px] shadow-[0px_1px_2px_0px_#0A0D120D] inline-flex px-[16px] py-[6px]"><?php echo esc_html( $session ); ?> <?php echo esc_html( $year ); ?></h4>
                 <?php endif; ?>
 
                 <!-- Link (URL) -->
