@@ -121,9 +121,22 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
         <?php endwhile;
       endif; ?>
 
-        <?php if (have_rows('main_content')) :  while (have_rows('main_content')) : the_row(); ?>
+			<?php if (have_rows('main_content')) :  while (have_rows('main_content')) : the_row();
+				// Count total service cards to conditionally apply services-grid-5
+				$total_cards = 0;
+				$services_rows = get_sub_field('services');
+				if ($services_rows) {
+					foreach ($services_rows as $service_row) {
+						if (!empty($service_row['service'])) {
+							$total_cards += count($service_row['service']);
+						}
+					}
+				}
+				$grid_class = $wrapper_class . ($total_cards === 5 ? ' services-grid-5' : '');
+			?>
 
-            <div class="<?= esc_attr($wrapper_class) ?>">
+
+            <div class="<?= esc_attr($grid_class) ?>">
               <?php if (have_rows('services')) :  while (have_rows('services')) : the_row(); ?>
                   <?php if (have_rows('service')) :  while (have_rows('service')) : the_row(); ?>
                       <article class="<?= esc_attr($article_class) ?>">
