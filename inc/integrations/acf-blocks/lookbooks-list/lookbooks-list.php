@@ -47,7 +47,7 @@ if (!empty($block['className'])) {
                     <img
                       src="<?php echo esc_url( $image['url'] ); ?>"
                       alt="<?php echo esc_attr( $image['alt'] ); ?>"
-                      width="<?php echo esc_attr( $image['width'] ); ?>"
+                      width="100%"
                       height="<?php echo esc_attr( $image['height'] ); ?>"
                     />
                   </div>
