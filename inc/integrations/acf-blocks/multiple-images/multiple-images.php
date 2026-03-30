@@ -25,10 +25,10 @@ $images = get_sub_field('images');
 		<div class="flex flex-wrap gap-[20px] md:flex-nowrap md:flex-row flex-col">
       <?php foreach($images as $image): 
         $main_image = $image['main_image'];
-        $image_alt = $image['alt'];
+        $image_alt = $image['alt'] ?? '';
         ?>
         <div class="w-full md:flex-1 flex">
-          <img class="w-full h-auto" src="<?php echo esc_url($main_image['url']); ?>" alt="<?php echo esc_attr($main_image['alt']); ?>">
+          <img class="w-full h-auto" src="<?php echo esc_url($main_image['url']); ?>" alt="<?php echo esc_attr($image_alt); ?>">
         </div>
       <?php endforeach; ?>
 		</div>
