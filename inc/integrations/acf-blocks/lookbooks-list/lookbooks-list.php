@@ -32,7 +32,7 @@ if (!empty($block['className'])) {
             <?php while ( have_rows( 'l_lists' ) ) : the_row(); ?>
 
               <?php
-                $images  = get_sub_field( 'image' );   // array of image arrays
+                $image   = get_sub_field( 'image' );    // single image array
                 $title   = get_sub_field( 'title' );
                 $session = get_sub_field( 'session' );  // select value
                 $link    = get_sub_field( 'link' );     // URL string
@@ -40,17 +40,15 @@ if (!empty($block['className'])) {
 
               <div class="lookbook-item">
 
-                <!-- Images (array) -->
-                <?php if ( ! empty( $images ) ) : ?>
+                <!-- Image -->
+                <?php if ( ! empty( $image ) ) : ?>
                   <div class="lookbook-images">
-                    <?php foreach ( $images as $img ) : ?>
-                      <img
-                        src="<?php echo esc_url( $img['url'] ); ?>"
-                        alt="<?php echo esc_attr( $img['alt'] ); ?>"
-                        width="<?php echo esc_attr( $img['width'] ); ?>"
-                        height="<?php echo esc_attr( $img['height'] ); ?>"
-                      />
-                    <?php endforeach; ?>
+                    <img
+                      src="<?php echo esc_url( $image['url'] ); ?>"
+                      alt="<?php echo esc_attr( $image['alt'] ); ?>"
+                      width="<?php echo esc_attr( $image['width'] ); ?>"
+                      height="<?php echo esc_attr( $image['height'] ); ?>"
+                    />
                   </div>
                 <?php endif; ?>
 
