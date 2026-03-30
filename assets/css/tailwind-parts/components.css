@@ -1226,6 +1226,13 @@ button.swiper-button-disabled {
 .blog-content .content-sec .wrapper li:not(:last-child) {margin-bottom: 12px;}
 .blog-content figure{margin: 0px !important;}
 
+.blog-content .two-col {padding: 0px;}
+.blog-content .description-content ul li:before {background: unset;padding: 0px;display: none;}
+.blog-content .description-content ul li {padding: 0px;list-style: disc !important;list-style-type: disc !important;display: revert;}
+.blog-content .description-content ul {list-style: disc !important;padding-left: 0px;margin-left: 30px;list-style-type: disc !important;}
+
+
+
 @media(max-width: 1399px){
   .card-text br {display: none;}
 }
