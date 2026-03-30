@@ -65,7 +65,7 @@
       <section id="list-content" class="hidden flex-col w-full ">
          <div class="mb-4">
             <div class=" flex justify-between w-full mb-7 border-b border-[#CCCCCC] md:border-0 pb-[20px] md:pb-0">
-               <h2 class="font-[Poppins] font-[clamp(500,700)] text-[#262626] tracking-[-0.02em] text-[clamp(1.25rem,4vw,1.75rem)] leading-[clamp(1.75rem,4vw,2.25rem)]">Your Inquiry List</h2>
+               <h2 class="font-[Poppins] font-medium md:font-bold text-[#262626] tracking-[-0.02em] text-[clamp(1.25rem,4vw,1.75rem)] leading-[clamp(1.75rem,4vw,2.25rem)]">Your Inquiry List</h2>
                <img class="close cursor-pointer" src="<?= get_template_directory_uri() ?>/assets/imgs/close-pop-up.svg" alt="exit">
             </div>
          </div>
