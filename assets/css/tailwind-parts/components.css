@@ -1201,6 +1201,10 @@ button.swiper-button-disabled {
   @apply min-[1024px]:aspect-[676/420] min-[768px]:aspect-[676/600];
 }
 
+.services .services-grid-3 .service-card:nth-child(3){
+  @apply [@media(min-width:768px)_and_(max-width:1023px)]:aspect-[676/420];
+}
+
 .menu-open header .mobile-menu-logo{display: block;}
 .menu-open header .site-header__logo-image{display: none;}
 
