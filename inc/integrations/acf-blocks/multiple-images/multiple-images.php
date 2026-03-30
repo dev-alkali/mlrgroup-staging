@@ -28,7 +28,7 @@ $images = get_sub_field('images');
         $image_alt = $image['alt'] ?? '';
         ?>
         <div class="w-full md:flex-1 flex">
-          <img class="w-full h-auto" src="<?php echo esc_url($main_image['url']); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+          <img class="w-full md:max-h-auto max-h-[400px] object-cover" src="<?php echo esc_url($main_image['url']); ?>" alt="<?php echo esc_attr($image_alt); ?>">
         </div>
       <?php endforeach; ?>
 		</div>
