@@ -31,8 +31,9 @@ $map_code = get_sub_field('map_code');
           </h2>
         </div>
       <?php endif; ?>
-    <div class="map__iframe">
-      <?php echo $map_code; ?>
+  </div>
+  <div class="map__iframe">
+      <?php //echo $map_code; ?>
 
 <div id="wmap-section">
   <div id="wmap-inner">
@@ -2161,7 +2162,7 @@ $map_code = get_sub_field('map_code');
 </svg>
 
 
-  </div>
+
 </div>
 
 
