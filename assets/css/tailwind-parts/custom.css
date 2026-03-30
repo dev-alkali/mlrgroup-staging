@@ -1,8 +1,8 @@
 .c-hero { min-height:600px;}
 
-a.blog-card:after{content: '';background: linear-gradient(359.41deg, rgba(94, 11, 6, 0.8) 0.51%, rgba(0, 0, 0, 0) 119.58%);position: absolute;left: 0;top: 0;z-index: 1;width: 100%;height: 100%;transition:all 0.3s ease;}
-.post-type-archive-case-studies a.blog-card:after{content: '';opacity: 0;}
-.post-type-archive-case-studies a.blog-card:hover:after{content: '';opacity: 1;}
+a.blog-card:after{content: '';background: linear-gradient(359.41deg, rgba(94, 11, 6, 0.8) 0.51%, rgba(0, 0, 0, 0) 119.58%);position: absolute;left: 0;top: 0;z-index: 1;width: 100%;height: 100%;transition:all 0.3s ease;opacity: 0;}
+a.blog-card:hover:after{content: '';opacity: 1;}
+
 
 
 .overlay-pink-gradient{}
