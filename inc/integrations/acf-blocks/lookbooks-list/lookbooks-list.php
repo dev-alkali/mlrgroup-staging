@@ -42,7 +42,7 @@ if (!empty($block['className'])) {
 
                 <!-- Image -->
                 <?php if ( ! empty( $image ) ) : ?>
-                  <div class="lookbook-images">
+                  <div class="lookbook-images mb-[16px]">
                     <img
                       src="<?php echo esc_url( $image['url'] ); ?>"
                       alt="<?php echo esc_attr( $image['alt'] ); ?>"
