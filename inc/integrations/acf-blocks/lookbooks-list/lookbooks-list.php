@@ -52,7 +52,7 @@ if (!empty($block['className'])) {
                     />
                     <!-- Link (URL) -->
                     <?php if ( $link ) : ?>
-                      <a class="lookbook-link absolute top-0 left-0 w-full h-full bg-gradient-to-br from-black/80 via-[#fd4338]/80 flex flex-col justify-center items-center gap-3 opacity-0 hover:opacity-100 transition-all duration-300 ease-in-out" href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener noreferrer">
+                      <a class="lookbook-link absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center gap-3 opacity-0 hover:opacity-100 transition-all duration-300 ease-in-out bg-[linear-gradient(318.51deg,rgba(0,0,0,0.8)-57.23%,rgba(253,67,56,0.8)105.13%)]" href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener noreferrer">
                         <img src="<?= get_template_directory_uri() ?>/assets/imgs/arrow-with-white-bg.png" alt="" class="w-[52px] h-[52px] md:w-[56px] md:h-[56px]">
                         <span class="font-poppins font-medium uppercase text-white text-[clamp(16px,4vw,18px)] leading-[clamp(18px,4.5vw,20px)]">View Lookbook</span>
                       </a>
