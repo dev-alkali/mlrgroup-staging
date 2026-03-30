@@ -34,11 +34,11 @@ $lists = get_sub_field('lists');
 			<div class="w-full wrapper lg:mb-[70px] mb:mb-[40px] mb-[20px] overflow-visible">
 				<?php if($title_row_1 || $title_row_2): ?>
 				<h2 class="xl:text-[68px] md:text-[52px] text-[36px] leading-[40px] md:leading-[62px] xl:leading-[76px] tracking-[-2%] text-[#262626] font-heading lg:mb-[20px] relative md:w-[calc(100%-40px)] ml-auto w-[calc(100%-16px)] heading-our-values">
-					<div class="bg-repeat absolute top-[0px] left-[10%] right-[calc(100%+100px)] arrow-img-position w-full h-[100%]" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/our-value-arrow.svg');"></div>
+					<!-- <div class="bg-repeat absolute top-[0px] left-[10%] right-[calc(100%+100px)] arrow-img-position w-full h-[100%]" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/our-value-arrow.svg');"></div> -->
 					<?php if($title_row_1): ?>
 						<span class="relative w-full block flex gap-[10px] title-our-values-1">
 							<span class="font-bold bg-white pr-[5px] "><?= wp_kses_post($title_row_1) ?></span>
-							<div class="bg-repeat arrow-img-position w-full h-[100%] flex-1" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/our-value-arrow.svg');"></div>
+							<div class="bg-repeat arrow-img-position w-full flex-1" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/our-value-arrow.svg');"></div>
 						</span>
 					<?php endif; ?>
 					<?php if($title_row_2): ?>
