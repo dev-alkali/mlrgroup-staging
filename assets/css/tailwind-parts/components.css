@@ -1215,9 +1215,9 @@ button.swiper-button-disabled {
 }
 
 @media (max-width: 767px){
-  .title-our-values-1 span{max-width: 483px;}
+  .title-our-values-1 span{max-width: 199px;}
   .cta.black-cta .cta-wrapper{padding-bottom: 60px;}
-  .arrow-img-position {background-size: 453px;}
+  .arrow-img-position {background-size: 490px;}
 }
 
 @media(max-width: 600px){
