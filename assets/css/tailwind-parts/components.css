@@ -1204,7 +1204,8 @@ button.swiper-button-disabled {
 .services .services-grid-3 .service-card:nth-child(3){
   @apply [@media(min-width:768px)_and_(max-width:1279px)]:aspect-[676/420];
 }
-
+.services .services-grid-3 .service-card,
+.services .services-grid-4 .service-card,
 .services .services-grid-6 .service-card {
   @apply max-[767px]:aspect-[358/300];
 }
