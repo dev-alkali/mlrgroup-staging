@@ -6,7 +6,7 @@ get_header();
 ?>
 
 <main class="overflow-hidden">
-  <section class="px-4 md:px-10 pt-[140px] md:pt-[180px] pb-[40px] lg:pb-[60px]">
+  <section class="px-4 md:px-10 pt-[40px] md:pt-[80px] xl:pt-[120px] pb-[60px] lg:pb-[60px]">
     <div class="wrapper">
       <?php while (have_posts()) : the_post(); ?>
         <p class="font-body font-normal text-[18px] leading-[28px] tracking-[0] text-[#525252] mb-[10px]">
@@ -25,12 +25,11 @@ get_header();
           </div>
         <?php endif; ?>
 
-        <article id="post-<?php the_ID(); ?>" <?php post_class('mt-[28px]'); ?>>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('md:pt-[120px] pt-[60px] xl:px-[120px] md:px-[60px] md:pb-[60px]'); ?> >
           <div class="">
-            <h2 class="font-poppins font-bold text-[clamp(28px,4vw,40px)] leading-[clamp(36px,4.5vw,48px)] tracking-[-0.02em] text-[#262626]">Summary:</h2>       
+            <h2 class="font-heading font-bold text-[clamp(28px,4vw,40px)] leading-[clamp(36px,4.5vw,48px)] tracking-[-2%] text-[#262626]">Summary:</h2>       
           </div>
           <div class="blog-content">
-
             <?php the_content(); ?>
           </div>
 
