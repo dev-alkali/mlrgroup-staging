@@ -1197,7 +1197,7 @@ button.swiper-button-disabled {
 .services .services-grid-5 .service-card:nth-child(5){
   @apply min-[768px]:aspect-[676/420]
 }
-.services .service-grid-2 .service-card{
+.services .services-grid-2 .service-card{
   @apply min-[768px]:aspect-[676/420]
 }
 
