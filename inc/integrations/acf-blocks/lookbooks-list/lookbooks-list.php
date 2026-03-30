@@ -59,7 +59,7 @@ if (!empty($block['className'])) {
 
                 <!-- Session (select) -->
                 <?php if ( $session ) : ?>
-                  <span class="lookbook-session"><?php echo esc_html( $session ); ?></span>
+                  <span class="lookbook-session"><?php echo esc_html( $session ); ?> <?php echo esc_html( $year ); ?></span>
                 <?php endif; ?>
 
                 <!-- Link (URL) -->
