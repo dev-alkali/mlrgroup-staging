@@ -177,7 +177,8 @@ jQuery(document).ready(function ($) {
 
     // close others (optional - remove if not needed)
     $li.siblings().find(".child-list:visible").slideUp(300);
-    $li.siblings().find("[data-toggle]").removeClass("rotate-180");
+    // Keep arrow rotation consistent with the collapsed state
+    $li.siblings().find("[data-toggle]").addClass("rotate-180");
 
     // toggle current
     $childList.stop(true, true).slideToggle(300);
