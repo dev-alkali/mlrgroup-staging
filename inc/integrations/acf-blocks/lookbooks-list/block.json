@@ -1,0 +1,14 @@
+{
+    "name": "acf/lookbooks-list",
+    "title": "Lookbooks List",
+    "description": "Lookbooks List Section",
+    "style": ["file:./lookbooks-list.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["lookbooks-list", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "lookbooks-list.php"
+    },
+    "script": "lookbooks-listJS"
+}
