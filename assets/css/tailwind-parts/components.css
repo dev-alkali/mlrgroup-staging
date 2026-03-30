@@ -1202,7 +1202,7 @@ button.swiper-button-disabled {
 }
 
 .menu-open .header__logo-image .mobile-menu-logo{display: block;}
-.menu-open .header__logo-image .site-header__logo-image svg{display: none;}
+.menu-open .header__logo-image .site-header__logo-image{display: none;}
 
 @media(max-width: 1399px){
   .card-text br {display: none;}
