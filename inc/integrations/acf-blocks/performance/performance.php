@@ -16,7 +16,7 @@ if (!empty($block['className'])) {
 ?>
 <?php if (have_rows('performance')) :  while (have_rows('performance')) : the_row(); ?>
 
-        <section id="<?php echo esc_attr($id); ?>" class="performance <?php echo esc_attr($className); ?> flex flex-col w-full items-center gap-[60px] pt-10 pb-[120px] md:pb-[180px] px-4 md:px-10 bg-black overflow-hidden">
+        <section id="<?php echo esc_attr($id); ?>" class="performance <?php echo esc_attr($className); ?> flex flex-col w-full items-center gap-[60px] pt-10 md:pb-[120px] pb-[100px] md:pb-[180px] px-4 md:px-10 bg-black overflow-hidden">
 
             <div class="flex flex-col items-center gap-5 w-full max-w-[1920px] mb-[-76px] md:mb-[-180px]">
 
@@ -47,19 +47,18 @@ if (!empty($block['className'])) {
                     </div>
                 </div>
 
-                <div class="arrows-row flex max-w-[1360px] w-full items-center justify-center xl:gap-[30px] gap-3 overflow-hidden max-[1200px]:[&>img:nth-child(1)]:hidden max-[1024px]:[&>img:nth-child(2)]:hidden max-[768px]:[&>img:nth-child(3)]:hidden max-[640px]:[&>img:nth-child(4)]:hidden">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(42px,7vw,120px)] h-[clamp(42px,7vw,117px)]" alt="">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(42px,7vw,120px)] h-[clamp(42px,7vw,117px)]" alt="">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(42px,7vw,120px)] h-[clamp(42px,7vw,117px)]" alt="">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(42px,7vw,120px)] h-[clamp(42px,7vw,117px)]" alt="">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(42px,7vw,120px)] h-[clamp(42px,7vw,117px)]" alt="">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(42px,7vw,120px)] h-[clamp(42px,7vw,117px)]" alt="">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(42px,7vw,120px)] h-[clamp(42px,7vw,117px)]" alt="">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(42px,7vw,120px)] h-[clamp(42px,7vw,117px)]" alt="">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(42px,7vw,120px)] h-[clamp(42px,7vw,117px)]" alt="">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(42px,7vw,120px)] h-[clamp(42px,7vw,117px)]" alt="">
-                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red-icon.svg" class="arrow1 w-[clamp(42px,7vw,120px)] h-[clamp(42px,7vw,117px)]" alt="">
-
+                <div class="arrows-row flex max-w-[100%] w-full items-center justify-center min-[1500px]:gap-[4%] xl:gap-[30px] gap-3 overflow-hidden max-[1200px]:[&>img:nth-child(1)]:hidden max-[1024px]:[&>img:nth-child(2)]:hidden max-[768px]:[&>img:nth-child(3)]:hidden max-[640px]:[&>img:nth-child(4)]:hidden max-[640px]:[&>img:nth-child(5)]:hidden">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
                 </div>
             </div>
         </section>
