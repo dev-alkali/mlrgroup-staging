@@ -29,7 +29,7 @@ if (!empty($block['className'])) {
 
 
                     <p
-                        class=" font-body  text-neutral-600 text-xl tracking-[0] leading-7">
+                        class=" font-body  text-neutral-600 text-[clamp(18px,2vw,20px)] leading-[clamp(26px,2.6vw,28px)] tracking-[0] leading-7">
                         <?= wp_kses_post(get_sub_field('paragraph')) ?>
                     </p>
 
