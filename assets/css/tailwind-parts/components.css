@@ -1269,6 +1269,7 @@ button.swiper-button-disabled {
   .title-our-values-1 span{max-width: 199px;}
   .cta.black-cta .cta-wrapper{padding-bottom: 60px;}
   .arrow-img-position {background-size: 490px;}
+  .blog-content .two-column-wrapper .two-column-image figure img{object-fit: cover;max-height: 400px;}
 }
 
 @media(max-width: 600px){
