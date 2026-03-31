@@ -77,7 +77,7 @@ if ($background_color == 'black') {
 
 <?php if (have_rows('partnership_list')) : ?>
   
-  <div class="partnership-list flex flex-wrap min-[1199px]:flex-nowrap justify-center gap-6">
+  <div class="partnership-list flex flex-wrap min-[1199px]:flex-nowrap justify-start gap-6">
     
     <?php 
     $i = 1;
