@@ -65,6 +65,8 @@ a.footer-text:hover{color:#ffffff;}
 .service-card .gradient-box:hover .arrow{transform: rotate(45deg);}
 
 
+
+
 /* Blog Single */
 
 /* Global font family */
@@ -127,4 +129,8 @@ a.footer-text:hover{color:#ffffff;}
   font-size: 18px;
   line-height: 26px;
   color: #262626;
+}
+
+@media (max-width: 767px) {
+  .two-col .font-light br{display: none;}
 }
