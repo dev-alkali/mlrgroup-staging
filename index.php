@@ -29,25 +29,22 @@ $initial_posts_query = new WP_Query(
                     >
                         <a href="<?php the_permalink(); ?>" class="block relative blog-card">
                             <?php if (has_post_thumbnail()) : ?>
-                                <div class="aspect-[1/1]">
+                                <div class="aspect-[1/1] relative  blog-card-img">
                                     <?php the_post_thumbnail('full', ['class' => 'w-full h-full object-cover']); ?>
                                 </div>
-                            <?php endif; ?>
-                        </a>
-
+                            <?php endif; ?>                        
                         <div class="">
                             <p class="font-body font-normal text-[18px] leading-[28px] tracking-[0] text-[#525252] mt-[16px] mb-[6px]"><?php echo esc_html(get_the_date()); ?></p>
-                            <h2 class="font-[Poppins] font-bold text-[20px] leading-[28px] tracking-[-0.02em] text-[#262626]">
-                                <a href="<?php the_permalink(); ?>" class="hover:opacity-80 transition-opacity"><?php the_title(); ?></a>
-                            </h2>
+                            <h2 class="font-[Poppins] font-bold text-[20px] leading-[28px] tracking-[-0.02em] text-[#262626]"><?php the_title(); ?></h2>
 
-                            <div class="mt-[16px] view-more-btn">
-                              <a class="inline-flex  gap-2 relative " href="<?php the_permalink(); ?>" target="_self">
+                            <div class="mt-[16px] view-more-btn-p">
+                              <div class="inline-flex  gap-2 relative">
                                   <span class="font-semibold text-accent text-[16px] leading-[24px] uppercase relative w-fit font-heading tracking-[0]"><?php esc_html_e('READ MORE', 'mrl-site'); ?></span>
                                   <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg">
-                              </a>
+                              </div>
                           </div>
                         </div>
+                        </a>
                     </article>
                     <?php
                 endwhile;
@@ -130,23 +127,22 @@ $initial_posts_query = new WP_Query(
                             article.innerHTML = `
                                 <a href="${post.link}" class="block relative blog-card">
                                     ${featuredImageUrl ? `
-                                        <div class="aspect-[1/1]">
+                                        <div class="aspect-[1/1] relative  blog-card-img">
                                             <img class="w-full h-full object-cover" src="${featuredImageUrl}" alt="${post.title.rendered}" loading="lazy">
                                         </div>
                                     ` : ''}
-                                </a>
+                                
                                 <div class="">
                                     <p class="font-body font-normal text-[18px] leading-[28px] tracking-[0] text-[#525252] mt-[16px] mb-[6px]">${formattedDate}</p>
-                                    <h2 class="font-[Poppins] font-bold text-[20px] leading-[28px] tracking-[-0.02em] text-[#262626]">
-                                        <a href="${post.link}" class="hover:opacity-80 transition-opacity">${post.title.rendered}</a>
-                                    </h2>
-                                    <div class="mt-[16px] view-more-btn">
-                                        <a class="inline-flex gap-2 relative" href="${post.link}" target="_self">
+                                    <h2 class="font-[Poppins] font-bold text-[20px] leading-[28px] tracking-[-0.02em] text-[#262626]">${post.title.rendered}</h2>
+                                    <div class="mt-[16px] view-more-btn-p">
+                                        <div class="inline-flex gap-2 relative">
                                             <span class="font-semibold text-accent text-[16px] leading-[24px] uppercase relative w-fit font-heading tracking-[0]"><?php echo esc_js(__('READ MORE', 'mrl-site')); ?></span>
                                             <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg" alt="">
-                                        </a>
+                                        </div>
                                     </div>
                                 </div>
+                                </a>
                             `;
 
                             blogGrid.appendChild(article);
