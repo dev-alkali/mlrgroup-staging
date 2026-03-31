@@ -1239,6 +1239,10 @@ button.swiper-button-disabled {
 .blog-content .description-content ul li {padding: 0px;list-style: disc !important;list-style-type: disc !important;display: revert;}
 .blog-content .description-content ul {list-style: disc !important;padding-left: 0px;margin-left: 30px;list-style-type: disc !important;}
 
+.blog-content .wp-block-columns{
+  @apply min-[1280px]:gap-[100px];
+}
+
 @media(min-width: 768px){
   .blog-content .two-column-wrapper .two-column-content > div {padding: 0px;}
   .blog-content .two-column-wrapper .two-column-content {flex: 1;}
