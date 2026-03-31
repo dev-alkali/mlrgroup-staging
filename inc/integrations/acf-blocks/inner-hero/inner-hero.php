@@ -76,7 +76,7 @@ if (have_rows('inner_hero')) :  while (have_rows('inner_hero')) : the_row();
           </h2>
           <?php endif; ?>
           <?php if($description): ?>
-            <p class="w-full text-[clamp(18px,3vw,20px)] leading-[28px] text-gray-50 font-body anim" data-delay="1.2" data-anim="up" data-start="top 100%"><?= wp_kses_post($description) ?></p>
+            <p class="w-full text-[clamp(18px,3vw,20px)] leading-[28px] text-gray-50 font-body mt-[20px] anim" data-delay="1.2" data-anim="up" data-start="top 100%"><?= wp_kses_post($description) ?></p>
           <?php endif; ?>
 
           <?php 
