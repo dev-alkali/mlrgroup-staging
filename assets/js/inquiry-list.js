@@ -286,7 +286,7 @@
       return;
     }
 
-    showToast("Item added to your inquiry list!", "success");
+    //showToast("Item added to your inquiry list!", "success");
 
     updateCounterUI(list.length);
     refreshButtonStates(list);
@@ -310,7 +310,7 @@
         return;
       }
 
-      showToast("Item removed from your inquiry list.", "info");
+      //showToast("Item removed from your inquiry list.", "info");
 
       updateCounterUI(list.length);
       refreshButtonStates(list);
