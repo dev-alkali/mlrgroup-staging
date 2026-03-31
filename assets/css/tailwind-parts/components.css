@@ -1252,8 +1252,3 @@ button.swiper-button-disabled {
 @media(max-width: 600px){
   .newsletter-gf--text br{display: none;}
 }
-
-@media (max-width: 480px){
-  p br,
-  h2 br {display: none;}
-}
