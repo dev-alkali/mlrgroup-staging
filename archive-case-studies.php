@@ -231,23 +231,22 @@ if (!$case_studies_query->have_posts() && have_posts()) {
                 article.innerHTML = `
                   <a href="${post.link}" class="block relative blog-card">
                     ${featuredImageUrl ? `
-                      <div class="aspect-[1/1]">
+                      <div class="aspect-[1/1] relative blog-card-img">
                         <img class="w-full h-full object-cover" src="${featuredImageUrl}" alt="${title}" loading="lazy">
                       </div>
                     ` : ''}
-                  </a>
-                  <div>
-                    <h2 class="font-[Poppins] font-bold text-[24px] leading-[32px] tracking-[-0.02em] text-[#262626] mt-[18px]">
-                      <a href="${post.link}" class="hover:opacity-80 transition-opacity">${title}</a>
-                    </h2>
-                    ${termsMarkup ? `<div class="mt-[10px] flex flex-wrap gap-[8px]">${termsMarkup}</div>` : ''}
-                    <div class="mt-[16px] view-more-btn">
-                      <a class="inline-flex gap-2 relative" href="${post.link}" target="_self">
-                        <span class="font-semibold text-accent text-[16px] leading-[24px] uppercase relative w-fit font-heading tracking-[0]">${viewCaseStudyText}</span>
-                        <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg" alt="">
-                      </a>
+                  
+                    <div>
+                      <h2 class="font-[Poppins] font-bold text-[24px] leading-[32px] tracking-[-0.02em] text-[#262626] mt-[18px]">${title}</h2>
+                      ${termsMarkup ? `<div class="mt-[10px] flex flex-wrap gap-[8px]">${termsMarkup}</div>` : ''}
+                      <div class="mt-[16px] view-more-btn-p">
+                        <div class="inline-flex gap-2 relative">
+                          <span class="font-semibold text-accent text-[16px] leading-[24px] uppercase relative w-fit font-heading tracking-[0]">${viewCaseStudyText}</span>
+                          <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg" alt="">
+                        </a>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 `;
 
                 grid.appendChild(article);
