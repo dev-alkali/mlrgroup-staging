@@ -2190,9 +2190,8 @@ $map_code = get_sub_field('map_code');
   .wmap-marker:hover .wmap-tooltip {opacity: 1;transform: translateX(-50%) translateY(0);transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;}
   .wmap-tip-country {display: block;font-size: 14px;font-weight: 600;margin-bottom: 3px;}
   .wmap-tip-city {display: block;font-size: 12px;color: #525252;}
-  .wmap-red   { color: #FD4338; }
-  .wmap-blue  { color: #4A78FF; }
-  .wmap-green { color: #22C55E; }
+  .wmap-red  { color: #FD4338; }
+  .wmap-blue { color: #4A78FF; }
   .wmap-marker:hover{z-index: 21;transition: z-index 0s 0s;}
   .wmap-marker.active .wmap-pin {transform: translateX(-50%) translateY(50%) scale(1);transition: transform 0.3s ease 0s;}
   .wmap-marker.active .wmap-tooltip {opacity: 1;transform: translateX(-50%) translateY(0);transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;}
@@ -2208,7 +2207,7 @@ $map_code = get_sub_field('map_code');
 (function () {
 
   var MARKERS = [
-    /* ── GREEN DOTS ── */
+    /* ── BLUE DOTS ── */
     {
       label : 'China',
       city  : 'Jiangsu',
@@ -2219,139 +2218,131 @@ $map_code = get_sub_field('map_code');
     },
     {
       label : 'United States',
-      city  : 'Fort Lauderdale',
-      left  : '48.68%', /* cx=700.99 / 1440 */
-      top   : '31.31%', /* cy=258.62 / 826  */
-      color : '#4A78FF',
-      cls   : 'wmap-blue'
-    },
-    {
-      label : 'United States',
-      city  : 'Nashville',
-      left  : '46.74%', /* cx=673.06 / 1440 */
-      top   : '27.00%', /* cy=223.02 / 826  */
+      city  : 'New York',
+      left  : '85.24%', /* cx=1227.4 / 1440 */
+      top   : '25.01%', /* cy=206.557 / 826  */
       color : '#4A78FF',
       cls   : 'wmap-blue'
     },
 
     /* ── RED DOTS ── */
     {
-      label : 'United States',
-      city  : 'Atlanta',
-      left  : '47.57%', /* cx=685.01 / 1440 */
-      top   : '28.09%', /* cy=232.02 / 826  */
-      color : '#FD4338',
-      cls   : 'wmap-red'
-    },
-    {
-      label : 'United States',
-      city  : 'Charleston',
-      left  : '48.68%', /* cx=701.00 / 1440 */
-      top   : '28.46%', /* cy=235.08 / 826  */
-      color : '#FD4338',
-      cls   : 'wmap-red'
-    },
-    {
-      label : 'United States',
-      city  : 'Charlotte',
-      left  : '48.40%', /* cx=697.00 / 1440 */
-      top   : '27.43%', /* cy=226.57 / 826  */
-      color : '#FD4338',
-      cls   : 'wmap-red'
-    },
-    {
-      label : 'United States',
-      city  : 'Chicago',
-      left  : '46.81%', /* cx=674.06 / 1440 */
-      top   : '24.58%', /* cy=203.03 / 826  */
-      color : '#FD4338',
-      cls   : 'wmap-red'
-    },
-    {
-      label : 'United States',
-      city  : 'Columbus',
-      left  : '47.92%', /* cx=690.05 / 1440 */
-      top   : '25.42%', /* cy=210.00 / 826  */
-      color : '#FD4338',
-      cls   : 'wmap-red'
-    },
-    {
-      label : 'United States',
-      city  : 'Dallas',
-      left  : '44.57%', /* cx=641.81 / 1440 */
-      top   : '28.46%', /* cy=235.08 / 826  */
-      color : '#FD4338',
-      cls   : 'wmap-red'
-    },
-    {
-      label : 'United States',
-      city  : 'Denver',
-      left  : '42.57%', /* cx=613.01 / 1440 */
-      top   : '25.48%', /* cy=210.49 / 826  */
-      color : '#FD4338',
-      cls   : 'wmap-red'
-    },
-    {
-      label : 'United States',
-      city  : 'Las Vegas',
-      left  : '40.21%', /* cx=579.02 / 1440 */
-      top   : '27.00%', /* cy=223.02 / 826  */
-      color : '#FD4338',
-      cls   : 'wmap-red'
-    },
-    {
       label : 'United Kingdom',
       city  : 'London',
-      left  : '84.03%', /* cx=1210.03 / 1440 */
-      top   : '20.34%', /* cy=168.01 / 826  */
+      left  : '45.11%', /* cx=649.543 / 1440 */
+      top   : '31.68%', /* cy=261.638 / 826  */
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
-      label : 'United States',
-      city  : 'Los Angeles',
-      left  : '39.37%', /* cx=566.93 / 1440 */
-      top   : '27.96%', /* cy=231.01 / 826  */
+      label : 'France',
+      city  : 'Paris',
+      left  : '46.06%', /* cx=663.3 / 1440 */
+      top   : '36.68%', /* cy=302.951 / 826  */
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
-      label : 'United States',
-      city  : 'Miami',
-      left  : '48.61%', /* cx=699.98 / 1440 */
-      top   : '31.55%', /* cy=260.60 / 826  */
+      label : 'Netherlands',
+      city  : 'Amsterdam',
+      left  : '47.02%', /* cx=677.058 / 1440 */
+      top   : '33.34%', /* cy=275.408 / 826  */
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
-      label : 'United States',
-      city  : 'Nashville',
-      left  : '47.09%', /* cx=678.06 / 1440 */
-      top   : '27.00%', /* cy=223.02 / 826  */
+      label : 'Spain',
+      city  : 'Madrid',
+      left  : '47.97%', /* cx=690.816 / 1440 */
+      top   : '36.68%', /* cy=302.951 / 826  */
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
-      label : 'United States',
-      city  : 'New York',
-      left  : '50.00%', /* cx=720.00 / 1440 */
-      top   : '25.06%', /* cy=207.00 / 826  */
+      label : 'Germany',
+      city  : 'Frankfurt',
+      left  : '49.88%', /* cx=718.332 / 1440 */
+      top   : '31.68%', /* cy=261.638 / 826  */
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
-      label : 'United States',
-      city  : 'San Francisco',
-      left  : '38.40%', /* cx=552.96 / 1440 */
-      top   : '26.27%', /* cy=217.00 / 826  */
+      label : 'Italy',
+      city  : 'Milan',
+      left  : '52.75%', /* cx=759.605 / 1440 */
+      top   : '36.68%', /* cy=302.951 / 826  */
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
-      label : 'United States',
-      city  : 'Scottsdale',
-      left  : '40.90%', /* cx=589.00 / 1440 */
-      top   : '28.18%', /* cy=232.79 / 826  */
+      label : 'Greece',
+      city  : 'Athens',
+      left  : '55.62%', /* cx=800.886 / 1440 */
+      top   : '35.01%', /* cy=289.181 / 826  */
+      color : '#FD4338',
+      cls   : 'wmap-red'
+    },
+    {
+      label : 'Sweden',
+      city  : 'Stockholm',
+      left  : '56.57%', /* cx=814.644 / 1440 */
+      top   : '28.34%', /* cy=234.098 / 826  */
+      color : '#FD4338',
+      cls   : 'wmap-red'
+    },
+    {
+      label : 'Turkey',
+      city  : 'Istanbul',
+      left  : '57.53%', /* cx=828.402 / 1440 */
+      top   : '36.68%', /* cy=302.951 / 826  */
+      color : '#FD4338',
+      cls   : 'wmap-red'
+    },
+    {
+      label : 'Russia',
+      city  : 'Moscow',
+      left  : '58.48%', /* cx=842.16 / 1440 */
+      top   : '28.34%', /* cy=234.098 / 826  */
+      color : '#FD4338',
+      cls   : 'wmap-red'
+    },
+    {
+      label : 'Ukraine',
+      city  : 'Kyiv',
+      left  : '58.48%', /* cx=842.16 / 1440 */
+      top   : '35.01%', /* cy=289.181 / 826  */
+      color : '#FD4338',
+      cls   : 'wmap-red'
+    },
+    {
+      label : 'Saudi Arabia',
+      city  : 'Riyadh',
+      left  : '58.48%', /* cx=842.16 / 1440 */
+      top   : '43.35%', /* cy=358.032 / 826  */
+      color : '#FD4338',
+      cls   : 'wmap-red'
+    },
+    {
+      label : 'UAE',
+      city  : 'Dubai',
+      left  : '59.44%', /* cx=855.918 / 1440 */
+      top   : '46.68%', /* cy=385.572 / 826  */
+      color : '#FD4338',
+      cls   : 'wmap-red'
+    },
+    {
+      label : 'Turkey',
+      city  : 'Ankara',
+      left  : '60.39%', /* cx=869.675 / 1440 */
+      top   : '36.68%', /* cy=302.951 / 826  */
+      color : '#FD4338',
+      cls   : 'wmap-red'
+    },
+    {
+      label : 'Kazakhstan',
+      city  : 'Almaty',
+      left  : '62.30%', /* cx=897.191 / 1440 */
+      top   : '30.01%', /* cy=247.868 / 826  */
       color : '#FD4338',
       cls   : 'wmap-red'
     },

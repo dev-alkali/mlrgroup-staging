@@ -46,11 +46,11 @@
                   <div class="relative group flex items-center justify-center">
                      <img class="w-[20px] cursor-pointer inquiry-tooltip-icon" src="<?= get_template_directory_uri() ?>/assets/imgs/icon.svg" alt="i">
 
-                     <div class="absolute bottom-[calc(100%+12px)] right-[-50px] w-[330px] p-5 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.15)] rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                     <div class="absolute bottom-[calc(100%+12px)] right-[-40px] md:right-[-120px] w-[220px] md:w-[330px] p-5 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.15)] rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
 
                         <div class="inquiry-content-tooltip font-[Poppins] font-normal text-[14px] leading-[16px] text-[#525252]"></div>
 
-                        <div class="absolute top-full right-[14px] -mt-[1px] w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[10px] border-t-white drop-shadow-md"></div>
+                        <div class="absolute top-full right-[30px] md:right-[130px] -mt-[1px] w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[10px] border-t-white drop-shadow-md"></div>
                      </div>
                   </div>
                </div>
