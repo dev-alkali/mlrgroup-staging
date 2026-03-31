@@ -31,7 +31,7 @@ $lists = get_sub_field('lists');
       <div class="gap-[30px] md:gap-[0px] w-full wrapper flex flex-col">
 
 	  <?php if($title_row_1 || $title_row_2 ): ?>
-			<div class="w-full wrapper lg:mb-[70px] sm:mb-[40px] mb-[20px] overflow-visible">
+			<div class="w-full wrapper lg:mb-[70px] sm:mb-[50px] mb-[20px] overflow-visible">
 				<?php if($title_row_1 || $title_row_2): ?>
 				<h2 class="xl:text-[68px] md:text-[52px] text-[36px] leading-[40px] md:leading-[62px] xl:leading-[76px] tracking-[-2%] text-[#262626] font-heading lg:mb-[20px] relative md:w-[calc(100%-40px)] ml-auto w-[calc(100%-16px)] heading-our-values">
 					<!-- <div class="bg-repeat absolute top-[0px] left-[10%] right-[calc(100%+100px)] arrow-img-position w-full h-[100%]" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/our-value-arrow.svg');"></div> -->
