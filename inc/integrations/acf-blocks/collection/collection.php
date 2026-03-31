@@ -141,7 +141,7 @@ if (!empty($block['className'])) {
                     <div class="text-center flex items-center justify-center gap-2 mt-[40px] w-full">
                         <a class="relative w-fit uppercase font-heading font-semibold text-accent text-center tracking-[0] leading-[24px] min-[600px]:leading-[18px] whitespace-nowrap view-more-btn flex items-center justify-center gap-2" href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>">
                             <?php echo esc_html( $btn_title ); ?>
-                            <img class="relative md:w-4 md:h-4 w-[11px] h-[11px] arrow" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" alt="Arrow">
+                            <img class="relative w-4 h-4  arrow" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" alt="Arrow">
                         </a>
                     </div>
                 <?php endif; ?>
