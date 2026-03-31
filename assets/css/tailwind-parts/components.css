@@ -1238,6 +1238,13 @@ button.swiper-button-disabled {
 .blog-content .description-content ul li {padding: 0px;list-style: disc !important;list-style-type: disc !important;display: revert;}
 .blog-content .description-content ul {list-style: disc !important;padding-left: 0px;margin-left: 30px;list-style-type: disc !important;}
 
+.blog-content .two-column-wrapper .two-column-content > div {padding: 0px;}
+.blog-content .two-column-wrapper .two-column-content {flex: 1;}
+.blog-content .two-column-wrapper .two-column-image {flex: 1;}
+.blog-content .md\:flex-row-reverse.two-column-wrapper .two-column-content > div {padding-right: 40px !important;}
+.blog-content .two-column-wrapper:not(.md\:flex-row-reverse) .two-column-content > div {padding-left: 40px !important;}
+.blog-content .two-column-wrapper {align-items: unset;}
+.blog-content .two-column-wrapper .two-column-image figure{height: 100%;min-height: 560px;}
 
 
 @media(max-width: 1399px){
