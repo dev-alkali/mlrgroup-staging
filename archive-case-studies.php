@@ -116,7 +116,7 @@ if (!$case_studies_query->have_posts() && have_posts()) {
                   <?php if (!empty($terms) && !is_wp_error($terms)) : ?>
                     <div class="mt-[10px] flex flex-wrap gap-[8px]">
                       <?php foreach ($terms as $term) : ?>
-                        <span class="inline-flex items-center rounded-full border border-[#525252] px-[17px] py-[5px] md:text-[16px] text-[14px] md:leading-[20px] leading-[18px] text-[#525252] shadow-[0px_1px_2px_0px_#0A0D120D]">
+                        <span class="inline-flex items-center rounded-full border border-[#525252] px-[17px] pt-[6px] pb-[4px] text-[14px] leading-[20px] text-[#525252] shadow-[0px_1px_2px_0px_#0A0D120D]">
                           <?php echo esc_html($term->name); ?>
                         </span>
                       <?php endforeach; ?>
