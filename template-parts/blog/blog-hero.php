@@ -15,16 +15,16 @@ if (have_rows('hero_blog', 'option')) : while (have_rows('hero_blog', 'option'))
           <?php if ($title_row_1 || $title_row_2): ?>
           <h2 class="text-[clamp(44px,6vw,70px)] leading-[clamp(56px,7vw,88px)] tracking-[-0.02em] text-white font-heading anim" data-delay="0.1" data-anim="up">
             <?php if ($title_row_1): ?>
-              <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
+              <span class="font-bold"><?php echo $title_row_1; ?></span>
             <?php endif; ?>
             <?php if ($title_row_2): ?>
-              <span class="font-light"><?= wp_kses_post($title_row_2) ?></span>
+              <span class="font-light"><?php echo $title_row_2; ?></span>
             <?php endif; ?>
           </h2>
           <?php endif; ?>
 
           <?php if ($description): ?>
-            <p class="w-full text-[clamp(18px,3vw,20px)] leading-[28px] text-gray-50 font-body anim max-w-[640px]" data-delay="1.2" data-anim="up" data-start="top 100%"><?= wp_kses_post($description) ?></p>
+            <p class="w-full text-[clamp(18px,3vw,20px)] leading-[28px] text-gray-50 font-body anim max-w-[640px]" data-delay="1.2" data-anim="up" data-start="top 100%"><?php echo $description; ?></p>
           <?php endif; ?>
 
           <?php
