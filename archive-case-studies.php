@@ -100,37 +100,33 @@ if (!$case_studies_query->have_posts() && have_posts()) {
             <article id="post-<?php the_ID(); ?>" <?php post_class('overflow-hidden view-more-item'); ?>>
               <a href="<?php the_permalink(); ?>" class="block relative blog-card">
                 <?php if (has_post_thumbnail()) : ?>
-                  <div class="aspect-[1/1]">
+                  <div class="aspect-[1/1] relative blog-card-img">
                     <?php the_post_thumbnail('full', ['class' => 'w-full h-full object-cover']); ?>
                   </div>
-                <?php endif; ?>
-              </a>
-
-              <div>
-                <h2 class="font-[Poppins] font-bold text-[24px] leading-[32px] tracking-[-0.02em] text-[#262626] mt-[18px]">
-                  <a href="<?php the_permalink(); ?>" class="hover:opacity-80 transition-opacity"><?php the_title(); ?></a>
-                </h2>
-
-                <?php if ($filter_taxonomy !== '') : ?>
-                  <?php $terms = get_the_terms(get_the_ID(), $filter_taxonomy); ?>
-                  <?php if (!empty($terms) && !is_wp_error($terms)) : ?>
-                    <div class="mt-[10px] flex flex-wrap gap-[8px]">
-                      <?php foreach ($terms as $term) : ?>
-                        <span class="inline-flex items-center rounded-full border border-[#525252] px-[17px] pt-[6px] pb-[4px] text-[14px] leading-[20px] text-[#525252] shadow-[0px_1px_2px_0px_#0A0D120D]">
-                          <?php echo esc_html($term->name); ?>
-                        </span>
-                      <?php endforeach; ?>
-                    </div>
+                <?php endif; ?>              
+                <div>
+                  <h2 class="font-[Poppins] font-bold text-[24px] leading-[32px] tracking-[-0.02em] text-[#262626] mt-[18px]"><?php the_title(); ?></h2>
+                  <?php if ($filter_taxonomy !== '') : ?>
+                    <?php $terms = get_the_terms(get_the_ID(), $filter_taxonomy); ?>
+                    <?php if (!empty($terms) && !is_wp_error($terms)) : ?>
+                      <div class="mt-[10px] flex flex-wrap gap-[8px]">
+                        <?php foreach ($terms as $term) : ?>
+                          <span class="inline-flex items-center rounded-full border border-[#525252] px-[17px] pt-[6px] pb-[4px] text-[14px] leading-[20px] text-[#525252] shadow-[0px_1px_2px_0px_#0A0D120D]">
+                            <?php echo esc_html($term->name); ?>
+                          </span>
+                        <?php endforeach; ?>
+                      </div>
+                    <?php endif; ?>
                   <?php endif; ?>
-                <?php endif; ?>
 
-                <div class="mt-[16px] view-more-btn">
-                  <a class="inline-flex gap-2 relative" href="<?php the_permalink(); ?>" target="_self">
-                    <span class="font-semibold text-accent text-[16px] leading-[24px] uppercase relative w-fit font-heading tracking-[0]"><?php esc_html_e('VIEW CASE STUDY', 'mrl-site'); ?></span>
-                    <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg" alt="">
-                  </a>
-                </div>
+                  <div class="mt-[16px] view-more-btn-p">
+                    <div class="inline-flex gap-2 relative">
+                      <span class="font-semibold text-accent text-[16px] leading-[24px] uppercase relative w-fit font-heading tracking-[0]"><?php esc_html_e('VIEW CASE STUDY', 'mrl-site'); ?></span>
+                      <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg" alt="">
+                    </div>
+                  </div>
               </div>
+              </a>
             </article>
           <?php endwhile; ?>
         </div>
