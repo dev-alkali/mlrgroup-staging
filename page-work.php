@@ -35,7 +35,7 @@
       <p class="text-[#525252] font-[Poppins] font-medium text-[16px] leading-[24px] md:text-[16px] md:leading-[24px]">Get inspired: Browse our portfolio, filter by category, add elements you like to your Inquiry List.</p>
      </div>
      <div class="flex items-center justify-end max-[768px]:ml-auto md:w-full">
-        <button type="button" id="view-inquery-list" class="btn-primary relative inline-flex items-center gap-2 cursor-pointer" aria-label="View inquiry list, 3 items">
+        <button type="button" id="view-inquery-list" class="btn-primary relative inline-flex items-center gap-2 cursor-pointer pt-[9.5px] px-[20px] pb-[6.5px] md:pt-[16px] md:px-[25px] md:pb-[15px]" aria-label="View inquiry list, 3 items">
           <div class="inline-flex items-center gap-2 justify-center">
               <div class="relative w-[17px] h-4 mt-[-2px]">
                   <img src="<?= esc_url(get_template_directory_uri() . '/assets/imgs/Arrow-white-large.svg'); ?>" alt="arrow">
@@ -44,8 +44,8 @@
                   VIEW INQUIRY LIST
               </span>
           </div>
-          <span aria-label="3 items in list" class="inline-flex items-center justify-center w-[26px] h-[26px] absolute -top-1 -right-1 bg-black rounded-full">
-              <span class="inquiry-list-quantity font-heading font-normal text-white text-[16px] text-center leading-none mb-[-1px]" aria-hidden="true">
+          <span aria-label="3 items in list" class="inline-flex items-center justify-center w-[26px] h-[26px] absolute -top-2 -right-2 md:-top-1 md:-right-1 bg-black rounded-full">
+              <span class="inquiry-list-quantity font-heading font-normal text-white text-[14px] md:text-[16px] text-center leading-none mb-[-1px]" aria-hidden="true">
                   0
               </span>
           </span>
