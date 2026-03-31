@@ -38,7 +38,7 @@ if (!empty($block['className'])) {
                 endif; ?>
 
                 <?php if (have_rows('main_content')) :  while (have_rows('main_content')) : the_row(); ?>
-                    <div class="flex-col items-start md:gap-6 lg:gap-10 w-full flex-[0_0_auto] flex relative">
+                    <div class="flex-col items-start max-[768px]:gap-6 max-[1024px]:gap-10 w-full flex-[0_0_auto] flex relative">
                     <?php if (have_rows('collection_rows')) :  while (have_rows('collection_rows')) : the_row(); ?>
                         <?php
                         // $row_height = "";
@@ -52,13 +52,13 @@ if (!empty($block['className'])) {
                         $row_height = "";
                         if (wp_kses_post(get_sub_field('row_height')) == 'normal') {
                             // 1440 (largura total) / 409 (altura desejada)
-                            $row_height = ' min-[1441px]:aspect-[1440/409] max-[1441px]:h-[409px] lg:h-auto ';
+                            $row_height = ' min-[1441px]:aspect-[1440/409] max-[1441px]:h-[409px] max-[1024px]:h-auto ';
                         } elseif (wp_kses_post(get_sub_field('row_height')) == 'big') {
                             // 1440 (largura total) / 434 (altura desejada)
-                            $row_height = ' min-[1441px]:aspect-[1440/434] max-[1441px]:h-[434.56px] lg:h-auto ';
+                            $row_height = ' min-[1441px]:aspect-[1440/434] max-[1441px]:h-[434.56px] max-[1024px]:h-auto ';
                         }
                         ?>
-                        <div class="flex flex-col min-lg:flex-row md:gap-6 lg:gap-10 items-start relative <?= $row_height ?> w-full collection-parent">
+                        <div class="flex flex-col min-[1024px]:flex-row max-[768px]:gap-6 max-[1024px]:gap-10 items-start relative <?= $row_height ?> w-full collection-parent">
                             <?php if (have_rows('items')) :  while (have_rows('items')) : the_row(); ?>
 
                                 <?php
@@ -83,7 +83,7 @@ if (!empty($block['className'])) {
                                 }
 
                                 ?>
-                                <div class="<?= $text_color ?> collection-item h-[380px] min-[600px]:h-[420px] lg:w-full min-lg:h-full  min-lg:flex-1 min-lg:grow <?= $bg_image == "" ? $bg_color : "" ?>" <?= $bg_image !== "" ? 'style="
+                                <div class="<?= $text_color ?> collection-item h-[380px] min-[600px]:h-[420px] max-[1024px]:w-full min-[1024px]:h-full  min-[1024px]:flex-1 min-[1024px]:grow <?= $bg_image == "" ? $bg_color : "" ?>" <?= $bg_image !== "" ? 'style="
                                         background-image: url(' . $bg_image . ');
                                         background-position: 50% 50%;
                                         background-size: cover;
@@ -110,7 +110,7 @@ if (!empty($block['className'])) {
                                         class="relative w-fit  uppercase font-heading font-semibold text-base text-center tracking-[0] leading-6 min-[600px]:leading-[18px] whitespace-nowrap">
                                         <?= wp_kses_post(get_sub_field('link_label')) ?>
                                     </span>
-                                    <img class="relative w-4 h-4 md:mt-[3px] arrow" src="<?= $arrow_color ?>" alt="arrow" />
+                                    <img class="relative w-4 h-4 max-[768px]:mt-[3px] arrow" src="<?= $arrow_color ?>" alt="arrow" />
 
                                     </p>
                                 </a>
@@ -141,7 +141,7 @@ if (!empty($block['className'])) {
                     <div class="text-center flex items-center justify-center gap-2 mt-[40px] w-full">
                         <a class="relative w-fit uppercase font-heading font-semibold text-accent text-center tracking-[0] leading-[24px] min-[600px]:leading-[18px] whitespace-nowrap view-more-btn flex items-center justify-center gap-2" href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>">
                             <?php echo esc_html( $btn_title ); ?>
-                            <img class="relative w-4 h-4 relative top-[1px] arrow" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" alt="Arrow">
+                            <img class="relative md:w-4 md:h-4 w-[11px] h-[11px] arrow" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" alt="Arrow">
                         </a>
                     </div>
                 <?php endif; ?>
