@@ -4,9 +4,9 @@
   <div class="w-full h-5 bg-accent"></div>
 
   <div class="flex flex-col bg-black w-full">
-    <div class="flex flex-col items-center gap-[39px] md:gap-28 px-4 md:px-10 py-16 md:py-20 w-full">
+    <div class="flex flex-col items-center gap-[16] md:gap-28 px-4 md:px-10 pt-15 pb-[39px] md:py-20 w-full">
       <div class="flex flex-col max-w-[1920px] items-start gap-16 w-full">
-        <div class="flex flex-col min-[1199px]:flex-row w-full lg:justify-between items-start gap-10 min-[1280px]:gap-28">
+        <div class="flex flex-col min-[1199px]:flex-row w-full lg:justify-between items-start gap-15 min-[1280px]:gap-28">
           <!-- Brand -->
           <div class="flex flex-col max-w-[305px] w-full items-start gap-5">
             <a class="relative max-w-[274px] overflow-hidden flex" href="<?= home_url(); ?>">
@@ -22,7 +22,7 @@
           </div>
 
           <!-- Footer Columns -->
-          <div class="flex flex-col md:flex-row items-start gap-8 md:gap-3 min-[1280px]:gap-8 w-full max-w-[958px] flex-1">
+          <div class="flex flex-col md:flex-row items-start gap-[13px] md:gap-3 min-[1280px]:gap-8 w-full max-w-[958px] flex-1">
             <?php
             function render_footer_menu($location)
             {
