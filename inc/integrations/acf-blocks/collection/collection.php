@@ -38,7 +38,7 @@ if (!empty($block['className'])) {
                 endif; ?>
 
                 <?php if (have_rows('main_content')) :  while (have_rows('main_content')) : the_row(); ?>
-                    <div class="flex-col items-start max-[600px]:gap-6 max-[1024px]:gap-10 w-full flex-[0_0_auto] flex relative">
+                    <div class="flex-col items-start md:gap-6 max-[1024px]:gap-10 w-full flex-[0_0_auto] flex relative">
                     <?php if (have_rows('collection_rows')) :  while (have_rows('collection_rows')) : the_row(); ?>
                         <?php
                         // $row_height = "";
@@ -58,7 +58,7 @@ if (!empty($block['className'])) {
                             $row_height = ' min-[1441px]:aspect-[1440/434] max-[1441px]:h-[434.56px] max-[1024px]:h-auto ';
                         }
                         ?>
-                        <div class="flex flex-col min-[1024px]:flex-row max-[600px]:gap-6 max-[1024px]:gap-10 items-start relative <?= $row_height ?> w-full collection-parent">
+                        <div class="flex flex-col min-[1024px]:flex-row md:gap-6 max-[1024px]:gap-10 items-start relative <?= $row_height ?> w-full collection-parent">
                             <?php if (have_rows('items')) :  while (have_rows('items')) : the_row(); ?>
 
                                 <?php
@@ -110,7 +110,7 @@ if (!empty($block['className'])) {
                                         class="relative w-fit  uppercase font-heading font-semibold text-base text-center tracking-[0] leading-6 min-[600px]:leading-[18px] whitespace-nowrap">
                                         <?= wp_kses_post(get_sub_field('link_label')) ?>
                                     </span>
-                                    <img class="relative w-4 h-4 max-[600px]:mt-[3px] arrow" src="<?= $arrow_color ?>" alt="arrow" />
+                                    <img class="relative w-4 h-4 md:mt-[3px] arrow" src="<?= $arrow_color ?>" alt="arrow" />
 
                                     </p>
                                 </a>
