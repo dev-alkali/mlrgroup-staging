@@ -1230,8 +1230,9 @@ button.swiper-button-disabled {
 .blog-content .quote-content *:not(br){
   @apply text-[clamp(24px,5vw,36px)] leading-[clamp(36px,5.1vw,52px)] tracking-[-2%] font-heading;
 }
-.blog-content .content-sec .wrapper li:not(:last-child) {margin-bottom: 12px;}
+.blog-content .content-sec .wrapper li:not(:last-child) {margin-bottom: 9px;}
 .blog-content figure{margin: 0px !important;}
+.blog-content .content-sec .wrapper :not(:last-child) {margin-bottom: 25px;}
 
 .blog-content .two-col {padding: 0px;}
 .blog-content .description-content ul li:before {background: unset;padding: 0px;display: none;}
