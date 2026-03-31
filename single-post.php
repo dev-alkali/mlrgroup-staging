@@ -14,10 +14,6 @@ get_header();
 					<?php if (get_field('reading_time' , get_the_ID())) : ?>
 						<p class="font-body font-normal text-[18px] md:text-[20px] md:leading-[28px] leading-[26px] tracking-[0] text-[#525252] post-reading-time relative pl-[16px] ml-[16px] before:content-[''] before:absolute before:top-1/2 before:left-0 before:block before:w-px before:h-[60%] before:bg-[#CCCCCC] before:-translate-y-1/2"><?php echo get_field('reading_time' , get_the_ID()); ?></p>
 					<?php endif; ?>
-
-					<div class="rt_reading_time"><?php echo do_shortcode('[rt_reading_time]');?></div>
-                    <div class="rt_reading_time"><?php echo do_shortcode('[rt_reading_time label="Reading Time:" postfix="minutes" postfix_singular="minute"]');?></div>
-
 				</div>
 			
 
