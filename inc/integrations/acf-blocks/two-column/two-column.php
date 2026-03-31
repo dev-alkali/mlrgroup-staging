@@ -72,15 +72,15 @@ if ( $section_color == 'black' ){
             <?php if($title_row_1 || $title_row_2): ?>
             <h2 class="text-[clamp(32px,6vw,68px)] leading-[clamp(40px,7vw,76px)] tracking-[-4%] <?php echo $text_262626_class; ?> font-heading mb-[20px]">
               <?php if($title_row_1): ?>
-                  <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
+                  <span class="font-bold"><?php echo $title_row_1; ?></span>
               <?php endif; ?>
               <?php if($title_row_2): ?>
-                  <span class="font-light <?php echo $text_737373_class; ?>"><?= wp_kses_post($title_row_2) ?></span>
+                  <span class="font-light <?php echo $text_737373_class; ?>"><?php echo $title_row_2; ?></span>
               <?php endif; ?>
             </h2>
             <?php endif; ?>
             <?php if($description): ?>
-              <div class="w-full text-[clamp(16px,3vw,18px)] leading-[28px] <?php echo $text_525252_class; ?> font-body flex flex-col gap-[30px] description-content "><?= wp_kses_post($description) ?></div>
+              <div class="w-full text-[clamp(16px,3vw,18px)] leading-[28px] <?php echo $text_525252_class; ?> font-body flex flex-col gap-[30px] description-content "><?php echo $description; ?></div>
             <?php endif; ?>
 
             <?php 
