@@ -12,10 +12,10 @@
           
           <h2 class="text-[clamp(44px,6vw,70px)] leading-[clamp(56px,7vw,88px)] tracking-[-0.02em] text-white font-heading anim" data-delay="0.1" data-anim="up">            
             <?php if(get_sub_field('title_row_1')): ?>
-                <span class="font-bold"><?= wp_kses_post(get_sub_field('title_row_1')) ?></span>
+                <span class="font-bold"><?php echo get_sub_field('title_row_1'); ?></span>
             <?php endif; ?>
             <?php if(get_sub_field('title_row_2')): ?>
-                <span class="font-light"><?= wp_kses_post(get_sub_field('title_row_2')) ?> </span>
+                <span class="font-light"><?php echo get_sub_field('title_row_2'); ?> </span>
             <?php endif; ?>
           </h2>
           
