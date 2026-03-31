@@ -53,7 +53,7 @@ $term_id = isset($current_term->term_id) ? absint($current_term->term_id) : 0;
             ?>
                     <article class="gallery-card group">
                         <div class="card-image-wrap relative overflow-hidden aspect-[333.33/360] w-full" style="background-image: url('<?= esc_url($image_url); ?>'); background-position: 50% 50%; background-size: cover; background-repeat: no-repeat;">
-                            <div class="added-badge hidden absolute top-3 right-3 z-20 bg-[#fd4338] text-white text-xs font-semibold px-3 py-1.5 rounded-full items-center gap-1 pointer-events-none" item-id="<?= esc_attr($post_id); ?>">
+                            <div class="added-badge hidden absolute top-3 right-3 z-20 bg-[#fd4338] text-white text-xs font-semibold pt-[7px] pl-[16px] pb-[5px] pr-[16px] gap-[8px] rounded-full items-center pointer-events-none" item-id="<?= esc_attr($post_id); ?>">
                                 <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 ADDED
                             </div>
