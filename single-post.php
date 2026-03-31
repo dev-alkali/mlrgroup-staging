@@ -32,9 +32,9 @@ get_header();
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/single-blog-arrow-1.svg" alt="Blog Author" class="w-full">
 				</div>
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class('md:pt-[120px] pt-[60px] xl:px-[120px] md:px-[60px] md:pb-[60px]'); ?> >
+				<article id="post-<?php the_ID(); ?>" <?php post_class('pt-[60px] xl:px-[120px] md:px-[60px] md:pb-[60px]'); ?> >
 				<div class="">
-					<h2 class="font-heading font-bold text-[clamp(28px,4vw,40px)] leading-[clamp(36px,4.5vw,48px)] tracking-[-2%] text-[#262626]">Summary:</h2>       
+					<h2 class="font-heading font-bold text-[clamp(28px,4vw,40px)] leading-[clamp(36px,4.5vw,48px)] tracking-[-2%] text-[#262626] mb-[20px]">Summary:</h2>       
 				</div>
 				<div class="blog-content">
 					<?php the_content(); ?>
