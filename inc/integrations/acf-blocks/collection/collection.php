@@ -58,7 +58,7 @@ if (!empty($block['className'])) {
                             $row_height = ' min-[1441px]:aspect-[1440/434] max-[1441px]:h-[434.56px] max-[1024px]:h-auto ';
                         }
                         ?>
-                        <div class="flex flex-col min-[1024px]:flex-row max-[768px]:gap-6 max-[1024px]:gap-10 items-start relative <?= $row_height ?> w-full collection-parent">
+                        <div class="flex flex-col min-[1024px]:flex-row max-[1024px]:gap-[16px] items-start relative <?= $row_height ?> w-full collection-parent">
                             <?php if (have_rows('items')) :  while (have_rows('items')) : the_row(); ?>
 
                                 <?php
