@@ -70,7 +70,7 @@ if ( $section_color == 'black' ){
         <div class="w-full md:w-1/2 lg:w-[53%] two-column-content">
           <div class="lg:px-[60px] <?php echo $layout === 'Right Image' ? 'pl-[0px] md:pr-[30px]' : 'pr-[0px] md:pl-[30px]'; ?>">
             <?php if($title_row_1 || $title_row_2): ?>
-            <h2 class="text-[clamp(32px,6vw,68px)] leading-[clamp(40px,7vw,76px)] tracking-[-4%] <?php echo $text_262626_class; ?> font-heading mb-[20px]">
+            <h2 class="text-[clamp(32px,5vw,68px)] leading-[clamp(40px,6vw,76px)] tracking-[-4%] <?php echo $text_262626_class; ?> font-heading mb-[20px]">
               <?php if($title_row_1): ?>
                   <span class="font-bold"><?php echo $title_row_1; ?></span>
               <?php endif; ?>
