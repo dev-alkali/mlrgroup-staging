@@ -16,7 +16,7 @@ if (!empty($block['className'])) {
 ?>
 <?php if (have_rows('performance')) :  while (have_rows('performance')) : the_row(); ?>
 
-        <section id="<?php echo esc_attr($id); ?>" class="performance <?php echo esc_attr($className); ?> flex flex-col w-full items-center gap-[60px] pt-10 pb-[120px] md:pb-[180px] px-4 md:px-10 bg-black overflow-hidden">
+        <section id="<?php echo esc_attr($id); ?>" class="performance <?php echo esc_attr($className); ?> flex flex-col w-full items-center gap-[60px] pt-10 md:pb-[120px] pb-[100px] md:pb-[180px] px-4 md:px-10 bg-black overflow-hidden">
 
             <div class="flex flex-col items-center gap-5 w-full max-w-[1920px] mb-[-76px] md:mb-[-180px]">
 
