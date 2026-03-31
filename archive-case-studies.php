@@ -107,9 +107,7 @@ if (!$case_studies_query->have_posts() && have_posts()) {
               </a>
 
               <div>
-                <h2 class="font-[Poppins] font-bold text-[24px] leading-[32px] tracking-[-0.02em] text-[#262626] mt-[18px]">
-                  <a href="<?php the_permalink(); ?>" class="hover:opacity-80 transition-opacity"><?php the_title(); ?></a>
-                </h2>
+                <h2 class="font-[Poppins] font-bold text-[24px] leading-[32px] tracking-[-0.02em] text-[#262626] mt-[18px]"><?php the_title(); ?></h2>
 
                 <?php if ($filter_taxonomy !== '') : ?>
                   <?php $terms = get_the_terms(get_the_ID(), $filter_taxonomy); ?>
@@ -125,10 +123,10 @@ if (!$case_studies_query->have_posts() && have_posts()) {
                 <?php endif; ?>
 
                 <div class="mt-[16px] view-more-btn">
-                  <a class="inline-flex gap-2 relative" href="<?php the_permalink(); ?>" target="_self">
+                  <div class="inline-flex gap-2 relative">
                     <span class="font-semibold text-accent text-[16px] leading-[24px] uppercase relative w-fit font-heading tracking-[0]"><?php esc_html_e('VIEW CASE STUDY', 'mrl-site'); ?></span>
                     <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg" alt="">
-                  </a>
+                  </div>
                 </div>
               </div>
             </article>
