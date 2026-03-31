@@ -4,7 +4,7 @@
   <div class="w-full h-5 bg-accent"></div>
 
   <div class="flex flex-col bg-black w-full">
-    <div class="flex flex-col items-center gap-16 md:gap-28 px-4 md:px-10 py-16 md:py-20 w-full">
+    <div class="flex flex-col items-center gap-[39px] md:gap-28 px-4 md:px-10 py-16 md:py-20 w-full">
       <div class="flex flex-col max-w-[1920px] items-start gap-16 w-full">
         <div class="flex flex-col min-[1199px]:flex-row w-full lg:justify-between items-start gap-10 min-[1280px]:gap-28">
           <!-- Brand -->
