@@ -29,7 +29,7 @@ get_header();
 				<?php endif; ?>
 
 				<div class="flex">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/single-blog-arrow.png" alt="Blog Author" class="w-full">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/single-blog-arrow.svg" alt="Blog Author" class="w-full">
 				</div>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class('md:pt-[120px] pt-[60px] xl:px-[120px] md:px-[60px] md:pb-[60px]'); ?> >
