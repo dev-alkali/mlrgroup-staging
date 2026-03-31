@@ -1,0 +1,44 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1357 125" width="1357" height="125">
+	<style>
+		.s0 { opacity: .3;fill: none;stroke: #000000;stroke-miterlimit:10;stroke-width: 2 } 
+		.s1 { fill: none;stroke: #fd4338;stroke-miterlimit:10;stroke-width: 2 } 
+	</style>
+	<g style="opacity: .3">
+		<path class="s0" d="m1.12 19.33h89.13v89.55"/>
+		<path class="s0" d="m89.67 19.91l-87.97 88.38"/>
+	</g>
+	<g style="opacity: .3">
+		<path class="s0" d="m141.26 19.33h89.83v89.55"/>
+		<path class="s0" d="m230.51 19.91l-88.67 88.38"/>
+	</g>
+	<g style="opacity: .3">
+		<path class="s0" d="m282.26 19.33h89.83v89.55"/>
+		<path class="s0" d="m371.51 19.91l-88.67 88.38"/>
+	</g>
+	<g style="opacity: .3">
+		<path class="s0" d="m423.26 19.33h89.83v89.55"/>
+		<path class="s0" d="m512.51 19.91l-88.67 88.38"/>
+	</g>
+	<g style="opacity: .3">
+		<path class="s0" d="m564.26 19.33h89.83v89.55"/>
+		<path class="s0" d="m653.51 19.91l-88.67 88.38"/>
+	</g>
+	<g style="opacity: .3">
+		<path class="s0" d="m705.26 19.33h89.83v89.55"/>
+		<path class="s0" d="m794.51 19.91l-88.67 88.38"/>
+	</g>
+	<g style="opacity: .3">
+		<path class="s0" d="m846.12 19.33h89.13v89.55"/>
+		<path class="s0" d="m934.67 19.91l-87.97 88.38"/>
+	</g>
+	<g style="opacity: .3">
+		<path class="s0" d="m986.12 19.33h89.13v89.55"/>
+		<path class="s0" d="m1074.67 19.91l-87.97 88.38"/>
+	</g>
+	<g style="opacity: .3">
+		<path class="s0" d="m1126.12 19.33h89.13v89.55"/>
+		<path class="s0" d="m1214.67 19.91l-87.97 88.38"/>
+	</g>
+	<path class="s1" d="m1266.26 19.33h89.83v89.55"/>
+	<path class="s1" d="m1355.51 19.91l-88.67 88.38"/>
+</svg>
