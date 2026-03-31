@@ -28,7 +28,7 @@ get_header();
 				</div>
 				<?php endif; ?>
 
-				<div class="flex">
+				<div class="md:flex mt-[20px] hidden">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/single-blog-arrow.svg" alt="Blog Author" class="w-full">
 				</div>
 
