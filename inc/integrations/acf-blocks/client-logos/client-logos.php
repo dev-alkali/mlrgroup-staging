@@ -29,7 +29,7 @@ if (!empty($block['className'])) {
               <div class="mb-[32px] md:mb-[60px]">
               <?php if ($title1 || $title2) : ?>
                 
-                <h2 class="text-[clamp(44px,5vw,68px)] leading-[clamp(56px,6vw,78px)] tracking-[-0.02em] font-heading">
+                <h2 class="text-[clamp(36px,6vw,68px)] leading-[clamp(44px,7vw,76px)] tracking-[-0.02em] font-heading">
                   <span class="font-bold text-neutral-800"><?php echo wp_kses_post($title1); ?></span>
                   <span class="font-light text-neutral-500"><?php echo wp_kses_post($title2); ?></span>
                 </h2>
