@@ -118,7 +118,7 @@ jQuery(function ($) {
       },
       breakpoints: {
         1024: { slidesPerView: 3 },
-        1440: { slidesPerView: 3 },
+        1540: { slidesPerView: 4 },
       },
     });
   }
