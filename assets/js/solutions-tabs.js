@@ -104,7 +104,7 @@ jQuery(function ($) {
     if (!el) return;
 
     swipers[key] = new Swiper(el, {
-      slidesPerView: 3.2,
+      slidesPerView: 3,
       spaceBetween: 20,
       speed: 450,
       watchOverflow: true,
