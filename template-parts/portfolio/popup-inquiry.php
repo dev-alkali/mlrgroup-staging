@@ -48,7 +48,7 @@
 
                      <div class="absolute bottom-[calc(100%+12px)] right-[-10px] w-[300px] p-5 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.15)] rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
 
-                        <div class="inquiry-content-tooltip text-[#555] text-[18px] leading-snug"></div>
+                        <div class="inquiry-content-tooltip font-[Poppins] font-normal text-[14px] leading-[16px] text-[#525252]"></div>
 
                         <div class="absolute top-full right-[14px] -mt-[1px] w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[10px] border-t-white drop-shadow-md"></div>
                      </div>
