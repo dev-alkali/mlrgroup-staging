@@ -119,7 +119,7 @@ if (!$case_studies_query->have_posts() && have_posts()) {
                     <?php endif; ?>
                   <?php endif; ?>
 
-                  <div class="mt-[16px] view-more-btn">
+                  <div class="mt-[16px] view-more-btn-p">
                     <div class="inline-flex gap-2 relative">
                       <span class="font-semibold text-accent text-[16px] leading-[24px] uppercase relative w-fit font-heading tracking-[0]"><?php esc_html_e('VIEW CASE STUDY', 'mrl-site'); ?></span>
                       <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg" alt="">
