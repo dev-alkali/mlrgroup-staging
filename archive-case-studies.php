@@ -224,7 +224,7 @@ if (!$case_studies_query->have_posts() && have_posts()) {
                       })
                     : allTerms;
                   termsMarkup = visibleTerms.map(function (term) {
-                    return `<span class="inline-flex items-center rounded-full border border-[#525252] px-[17px] py-[5px] text-[14px] leading-[20px] text-[#525252] shadow-[0px_1px_2px_0px_#0A0D120D]">${term.name}</span>`;
+                    return `<span class="inline-flex items-center rounded-full border border-[#525252] px-[17px] pt-[6px] pb-[4px] text-[14px] leading-[20px] text-[#525252] shadow-[0px_1px_2px_0px_#0A0D120D]">${term.name}</span>`;
                   }).join('');
                 }
 
@@ -243,7 +243,7 @@ if (!$case_studies_query->have_posts() && have_posts()) {
                         <div class="inline-flex gap-2 relative">
                           <span class="font-semibold text-accent text-[16px] leading-[24px] uppercase relative w-fit font-heading tracking-[0]">${viewCaseStudyText}</span>
                           <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg" alt="">
-                        </a>
+                        </div>
                       </div>
                     </div>
                   </a>
