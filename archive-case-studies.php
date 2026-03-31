@@ -100,7 +100,7 @@ if (!$case_studies_query->have_posts() && have_posts()) {
             <article id="post-<?php the_ID(); ?>" <?php post_class('overflow-hidden view-more-item'); ?>>
               <a href="<?php the_permalink(); ?>" class="block relative blog-card">
                 <?php if (has_post_thumbnail()) : ?>
-                  <div class="aspect-[1/1]">
+                  <div class="aspect-[1/1] relative blog-card-img">
                     <?php the_post_thumbnail('full', ['class' => 'w-full h-full object-cover']); ?>
                   </div>
                 <?php endif; ?>              
