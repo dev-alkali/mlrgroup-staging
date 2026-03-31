@@ -1252,6 +1252,7 @@ button.swiper-button-disabled {
   .blog-content .two-column-wrapper {align-items: unset;}
   .blog-content .two-column-wrapper .two-column-image figure{height: 100%;min-height: 560px;}
   .blog-content .two-column-wrapper .two-column-image figure img{object-fit: cover;}
+  .blog-content .two-column-wrapper .two-column-content{display: flex;align-items: center;}
 }
 
 
