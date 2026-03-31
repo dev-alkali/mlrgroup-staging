@@ -2209,16 +2209,16 @@ $map_code = get_sub_field('map_code');
   var MARKERS = [
     /* ── BLUE DOTS ── */
     {
-      label : 'United States',
-      city  : 'New York',
+      label : 'China',
+      city  : 'Jiangsu',
       left  : '9.76%',  /* cx=140.472 / 1440 */
       top   : '31.68%', /* cy=261.638 / 826  */
       color : '#4A78FF',
       cls   : 'wmap-blue'
     },
     {
-      label : 'China',
-      city  : 'Jiangsu',
+      label : 'United States',
+      city  : 'New York',
       left  : '85.24%', /* cx=1227.4 / 1440 */
       top   : '25.01%', /* cy=206.557 / 826  */
       color : '#4A78FF',
