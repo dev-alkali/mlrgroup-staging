@@ -1271,6 +1271,7 @@ button.swiper-button-disabled {
   .arrow-img-position {background-size: 490px;}
   .blog-content .two-column-wrapper .two-column-image figure img{object-fit: cover;max-height: 400px;}
   section p br{display: none;}
+  .arrow-img-position.arrow-img-position-1line {position: relative;left: -15px;width: calc(100% + 15px);}
 }
 
 @media(max-width: 600px){
