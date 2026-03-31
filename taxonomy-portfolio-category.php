@@ -43,7 +43,7 @@
                   VIEW INQUIRY LIST
               </span>
           </div>
-          <span aria-label="3 items in list" class="inline-flex items-center justify-center w-[26px] h-[26px] absolute -top-1 -right-1 bg-black rounded-full">
+          <span aria-label="3 items in list" class="inline-flex items-center justify-center w-[26px] h-[26px] absolute -top-2 -right-2 md:-top-1 md:-right-1 bg-black rounded-full">
               <span class="inquiry-list-quantity font-heading font-normal text-white text-[14px] md:text-[16px] text-center leading-none mb-[-1px]" aria-hidden="true">
                   0
               </span>
