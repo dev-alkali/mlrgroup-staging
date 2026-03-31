@@ -1210,6 +1210,13 @@ button.swiper-button-disabled {
 .services .services-grid-6 .service-card {
   @apply max-[767px]:aspect-[358/300];
 }
+.services .services-grid-3 .service-card,
+.services .services-grid-2 .service-card,
+.services .services-grid-4 .service-card,
+.services .services-grid-5 .service-card,
+.services .services-grid-6 .service-card{
+  @apply max-[480px]:aspect-[358/380];
+}
 
 .menu-open header .mobile-menu-logo{display: block;}
 .menu-open header .site-header__logo-image{display: none;}
