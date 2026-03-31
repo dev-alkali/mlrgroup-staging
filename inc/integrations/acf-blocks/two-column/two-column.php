@@ -61,13 +61,13 @@ if ( $section_color == 'black' ){
 ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] <?php echo $bg_color_class; ?>">
       <!-- <div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col md:flex-row items-center flex-wrap"> -->
-      <div class="gap-[30px] md:gap-[0px] w-full wrapper flex flex-col <?php echo $mobileFlex . ' ' . $desktopFlex; ?> items-center">
+      <div class="gap-[30px] md:gap-[0px] w-full wrapper flex flex-col <?php echo $mobileFlex . ' ' . $desktopFlex; ?> items-center two-column-wrapper">
 
-        <div class="w-full md:w-1/2 lg:w-[47%]">
+        <div class="w-full md:w-1/2 lg:w-[47%] two-column-image">
           <figure class="!m-0 flex"><?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, ['class' => 'w-full h-auto']); ?></figure>
         </div>
 
-        <div class="w-full md:w-1/2 lg:w-[53%]">
+        <div class="w-full md:w-1/2 lg:w-[53%] two-column-content">
           <div class="lg:px-[60px] <?php echo $layout === 'Right Image' ? 'pl-[0px] md:pr-[30px]' : 'pr-[0px] md:pl-[30px]'; ?>">
             <?php if($title_row_1 || $title_row_2): ?>
             <h2 class="text-[clamp(32px,6vw,68px)] leading-[clamp(40px,7vw,76px)] tracking-[-4%] <?php echo $text_262626_class; ?> font-heading mb-[20px]">
