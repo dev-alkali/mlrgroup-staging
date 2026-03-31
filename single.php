@@ -20,8 +20,7 @@ get_header();
                 <div class="entry-meta">
                     <span class="posted-on"><?php echo get_the_date(); ?></span>
                     <span class="byline"> <?php esc_html_e('by', 'score-site'); ?> <?php the_author(); ?></span>
-                    <div class="rt_reading_time"><?php echo do_shortcode('[rt_reading_time]');?></div>
-                    <div class="rt_reading_time"><?php echo do_shortcode('[rt_reading_time label="Reading Time:" postfix="minutes" postfix_singular="minute"]');?></div>
+                    
                 </div>
             </header>
 
