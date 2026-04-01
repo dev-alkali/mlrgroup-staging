@@ -79,8 +79,8 @@ if (!empty($block['className'])) {
                                                     $card_link       = get_permalink($service_id);
                                                     $card_image      = get_the_post_thumbnail_url($service_id, 'full');
                                                     $card_title      = get_the_title($service_id);
-                                                    $card_paragraph  = get_field('shortcontent', $service_id);
-                                                    $card_link_label = __('Read More', 'mlrgroup');
+                                                    $card_paragraph  = get_field('short_content', $service_id);
+                                                    $card_link_label = __('View more', 'mlrgroup');
                                                     ?>
                                                     <a class="solution-card max-lg:max-w-[400px]" href="<?= esc_url($card_link) ?>">
                                                         <div class="flex flex-col w-full items-start gap-4 relative">
@@ -172,8 +172,8 @@ if (!empty($block['className'])) {
                                                     $card_link       = get_permalink($service_id);
                                                     $card_image      = get_the_post_thumbnail_url($service_id, 'full');
                                                     $card_title      = get_the_title($service_id);
-                                                    $card_paragraph  = get_field('shortcontent', $service_id);
-                                                    $card_link_label = __('Read More', 'mlrgroup');
+                                                    $card_paragraph  = get_field('short_content', $service_id);
+                                                    $card_link_label = __('View more', 'mlrgroup');
                                                     ?>
                                                     <a href="<?= esc_url($card_link) ?>" class="solution-card  max-w-[400px]">
                                                         <div class="flex flex-col w-full items-start gap-4 relative">
