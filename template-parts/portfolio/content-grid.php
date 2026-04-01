@@ -74,7 +74,7 @@ $term_id = isset($current_term->term_id) ? absint($current_term->term_id) : 0;
         </div>
 
         <?php if ($portfolio_query->max_num_pages > 1) : ?>
-            <a href="#" id="load-more-portfolio" data-term="<?= esc_attr($term_id); ?>"
+            <div class="px-[50px] py-[40px] text-center"><a href="#" id="load-more-portfolio" data-term="<?= esc_attr($term_id); ?>"
 
                 data-paged="2"
                 data-max-pages="<?= esc_attr($portfolio_query->max_num_pages); ?>" class="inline-flex items-center gap-2 no-underline hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#fd4338] transition-opacity rounded">
@@ -82,7 +82,7 @@ $term_id = isset($current_term->term_id) ? absint($current_term->term_id) : 0;
                     SEE ALL
                 </span>
                 <img class="w-4 h-4 mt-[-3px]" src="<?= esc_url(get_template_directory_uri() . '/assets/imgs/Arrow-red.svg'); ?>" alt="" />
-            </a>
+            </a></div>
         <?php endif;
         wp_reset_postdata(); ?>
     </div>
