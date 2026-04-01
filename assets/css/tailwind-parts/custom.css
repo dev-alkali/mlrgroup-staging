@@ -30,7 +30,7 @@ a.footer-text:hover{color:#ffffff;}
 
 .case-studies-sec .collection-item .collection-gradient-box:after {background: linear-gradient(318.51deg, rgba(0, 0, 0, 0.9) -57.23%, rgba(253, 67, 56, 0.9) 105.13%);}
 
-.child-list {display: none;}
+.child-list {display: none;margin-bottom: 28px;}
 .child-list.is-open {display: block !important;}
 .sidebar-cat li.has-child {margin: 0 !important;}
 .arrow {display: inline-flex;transition: transform 0.3s ease;}
