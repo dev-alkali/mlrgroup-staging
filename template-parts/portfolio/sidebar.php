@@ -45,7 +45,7 @@ $parent_terms = get_terms(array(
 
             $ul_class = $level === 1
               ? 'space-y-[28px]'
-              : 'child-list space-y-[28px] overflow-hidden transition-all duration-300 pl-6 ' . ($is_open ? 'is-open' : '');
+              : 'child-list space-y-[28px] overflow-hidden transition-all duration-300 pl-0 ' . ($is_open ? 'is-open' : '');
             echo '<ul class="' . esc_attr($ul_class) . '">';
 
             foreach ($terms as $term) {
