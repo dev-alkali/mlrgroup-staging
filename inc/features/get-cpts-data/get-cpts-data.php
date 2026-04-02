@@ -74,7 +74,11 @@ function get_multiple_cpt_items_data(WP_REST_Request $request)
          'id'                 => $id,
          // Decode stored HTML entities (e.g. &#8217;) so the frontend can display real characters.
          'title'              => sanitize_text_field(
-            wp_specialchars_decode(get_the_title($id), ENT_QUOTES)
+            // Decode in multiple passes in case the stored title is double-encoded.
+            wp_specialchars_decode(
+               wp_specialchars_decode(get_the_title($id), ENT_QUOTES),
+               ENT_QUOTES
+            )
          ),
          'featured_image'     => [
             'url' => $safe_url ?: null,

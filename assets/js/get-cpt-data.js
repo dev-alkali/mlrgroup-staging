@@ -1,5 +1,19 @@
 (function ($) {
   "use strict";
+  // Decode HTML entities like &#8217; into real characters (handles double-encoded cases).
+  function decodeHtmlEntities(value, maxPasses = 3) {
+    if (typeof value !== "string") return "";
+    let decoded = value;
+    for (let i = 0; i < maxPasses; i++) {
+      const textarea = document.createElement("textarea");
+      textarea.innerHTML = decoded;
+      const next = textarea.value;
+      if (next === decoded) break;
+      decoded = next;
+    }
+    return decoded;
+  }
+
   $(document).on("click", ".view-inquery", function () {
     const rawId = $(this).attr("item-id");
     const postId = parseInt(rawId, 10);
@@ -25,7 +39,8 @@
       .then((data) => {
         const normalContent = $("#normal-content");
 
-        normalContent.find(".inquiry-title").text(data.title);
+        const decodedTitle = decodeHtmlEntities(data.title);
+        normalContent.find(".inquiry-title").text(decodedTitle);
         let categories = normalContent.find(".inquiry-categories");
         $(categories).empty();
         $.map(data.portfolio_category, function (category, i) {
@@ -69,7 +84,7 @@
         );
         $("#inquiry-normal-form")
           .find('input[name="input_12"]')
-          .val(typeof data.title === "string" ? data.title : "");
+          .val(typeof decodedTitle === "string" ? decodedTitle : "");
 
         $("#inquiry-empty-pop-up").addClass("hidden").removeClass("flex");
         $("#inquiry-pop-up").addClass("hidden").removeClass("flex");
