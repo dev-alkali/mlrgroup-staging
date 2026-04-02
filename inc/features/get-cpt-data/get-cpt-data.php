@@ -49,7 +49,10 @@ function get_cpt_popup_data(WP_REST_Request $request)
 
     return [
         'id'                 => $id,
-        'title'              => sanitize_text_field(get_the_title($id)),
+        // Decode stored HTML entities (e.g. &#8217;) so the frontend can display the real characters.
+        'title'              => sanitize_text_field(
+            wp_specialchars_decode(get_the_title($id), ENT_QUOTES)
+        ),
         'content'            => $safe_tooltip,
         'portfolio_category' => $categories,
         'featured_image'     => [

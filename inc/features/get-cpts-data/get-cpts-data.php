@@ -72,7 +72,10 @@ function get_multiple_cpt_items_data(WP_REST_Request $request)
       // Push formatted data into our results array
       $results[] = [
          'id'                 => $id,
-         'title'              => sanitize_text_field(get_the_title($id)),
+         // Decode stored HTML entities (e.g. &#8217;) so the frontend can display real characters.
+         'title'              => sanitize_text_field(
+            wp_specialchars_decode(get_the_title($id), ENT_QUOTES)
+         ),
          'featured_image'     => [
             'url' => $safe_url ?: null,
             'alt' => $thumbnail_alt,
