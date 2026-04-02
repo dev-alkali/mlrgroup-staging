@@ -350,19 +350,17 @@
   }
 
   function syncListFormPortfolioFeaturedImages() {
-    var images = [];
+    var urls = [];
     $("#inquiry-list-content .inquiry-item-pop-up").each(function () {
       if (!$(this).is(":visible")) return;
       var $img = $(this).find(".inquiry-item-pop-up-img");
       var src = $.trim($img.attr("src") || "");
       if (!src || !isSafeUrl(src)) return;
-      var altRaw = $img.attr("alt");
-      var alt = typeof altRaw === "string" ? altRaw : "";
-      images.push({ url: src, alt: alt });
+      urls.push(src);
     });
     $("#inquiry-list-form")
       .find('input[name="input_13"]')
-      .val(images.length ? JSON.stringify(images) : "");
+      .val(urls.join(" | "));
   }
 
   /* ─────────────────────────────────────────────

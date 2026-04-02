@@ -48,7 +48,7 @@
           $(span).text(category.name);
           $(categories).append(span);
         });
-        let featuredPayload = "";
+        let featuredImageUrl = "";
         if (data.featured_image && data.featured_image.url) {
           let imgUrl;
           try {
@@ -66,7 +66,7 @@
             if (safeAlt) {
               normalContent.find(".inquiry-img").attr("alt", safeAlt);
             }
-            featuredPayload = JSON.stringify({ url: imgUrl, alt: safeAlt });
+            featuredImageUrl = imgUrl;
           }
         }
 
@@ -88,7 +88,7 @@
 
         $("#inquiry-normal-form")
           .find('input[name="input_13"]')
-          .val(featuredPayload);
+          .val(featuredImageUrl);
 
         $("#inquiry-empty-pop-up").addClass("hidden").removeClass("flex");
         $("#inquiry-pop-up").addClass("hidden").removeClass("flex");
