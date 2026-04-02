@@ -42,7 +42,7 @@ if (!empty($block['className'])) {
           <div class="marquee-track relative">
             <div class="marquee-group">
               <?php if (have_rows('images_brands')) : while (have_rows('images_brands')) : the_row(); ?>
-                <img class="h-[131px] w-auto max-w-none block grayscale-1"
+                <img class="h-[131px] w-auto max-w-none block grayscale"
                      src="<?= esc_url(get_sub_field('image')) ?>"
                      alt="Brand logos" />
               <?php endwhile; endif; ?>
@@ -50,7 +50,7 @@ if (!empty($block['className'])) {
 
             <div class="marquee-group" aria-hidden="true">
               <?php if (have_rows('images_brands')) : while (have_rows('images_brands')) : the_row(); ?>
-                <img class="h-[131px]  w-auto max-w-none block grayscale-1"
+                <img class="h-[131px]  w-auto max-w-none block grayscale"
                      src="<?= esc_url(get_sub_field('image')) ?>"
                      alt="Brand logos" />
               <?php endwhile; endif; ?>
