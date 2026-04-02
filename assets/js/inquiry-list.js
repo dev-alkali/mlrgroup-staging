@@ -349,6 +349,22 @@
       .val(titles.join(" | "));
   }
 
+  function syncListFormPortfolioFeaturedImages() {
+    var images = [];
+    $("#inquiry-list-content .inquiry-item-pop-up").each(function () {
+      if (!$(this).is(":visible")) return;
+      var $img = $(this).find(".inquiry-item-pop-up-img");
+      var src = $.trim($img.attr("src") || "");
+      if (!src || !isSafeUrl(src)) return;
+      var altRaw = $img.attr("alt");
+      var alt = typeof altRaw === "string" ? altRaw : "";
+      images.push({ url: src, alt: alt });
+    });
+    $("#inquiry-list-form")
+      .find('input[name="input_13"]')
+      .val(images.length ? JSON.stringify(images) : "");
+  }
+
   /* ─────────────────────────────────────────────
    * FETCH INQUIRY LIST — SHOW POP-UP WITH LIST
    * ───────────────────────────────────────────── */
@@ -377,6 +393,7 @@
           listContent.empty();
           $("#inquiry-list-form .inquiry-field input").val("");
           $("#inquiry-list-form").find('input[name="input_12"]').val("");
+          $("#inquiry-list-form").find('input[name="input_13"]').val("");
 
           $.each(data, function (i, inquiryItem) {
             if (!isValidId(inquiryItem.id)) {
@@ -435,6 +452,7 @@
           $("#inquiry-pop-up").removeClass("hidden").addClass("flex");
           $("#list-content").removeClass("hidden").addClass("flex");
           syncListFormPortfolioTitles();
+          syncListFormPortfolioFeaturedImages();
 			    $("body").addClass("menu-open");
         },
         error: function (xhr, status, error) {
@@ -498,6 +516,7 @@
 
           $(input).val(updatedIds.join(","));
           syncListFormPortfolioTitles();
+          syncListFormPortfolioFeaturedImages();
         }
       }
     });

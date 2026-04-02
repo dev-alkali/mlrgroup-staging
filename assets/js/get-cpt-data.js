@@ -48,6 +48,7 @@
           $(span).text(category.name);
           $(categories).append(span);
         });
+        let featuredPayload = "";
         if (data.featured_image && data.featured_image.url) {
           let imgUrl;
           try {
@@ -59,14 +60,13 @@
 
           if (imgUrl) {
             normalContent.find(".inquiry-img").attr("src", imgUrl);
-          }
-
-          if (data.featured_image.alt) {
-            const safeAlt = String(data.featured_image.alt).replace(
-              /[<>"'&]/g,
-              "",
-            );
-            normalContent.find(".inquiry-img").attr("alt", safeAlt);
+            const safeAlt = data.featured_image.alt
+              ? String(data.featured_image.alt).replace(/[<>"'&]/g, "")
+              : "";
+            if (safeAlt) {
+              normalContent.find(".inquiry-img").attr("alt", safeAlt);
+            }
+            featuredPayload = JSON.stringify({ url: imgUrl, alt: safeAlt });
           }
         }
 
@@ -85,6 +85,10 @@
         $("#inquiry-normal-form")
           .find('input[name="input_12"]')
           .val(typeof decodedTitle === "string" ? decodedTitle : "");
+
+        $("#inquiry-normal-form")
+          .find('input[name="input_13"]')
+          .val(featuredPayload);
 
         $("#inquiry-empty-pop-up").addClass("hidden").removeClass("flex");
         $("#inquiry-pop-up").addClass("hidden").removeClass("flex");
