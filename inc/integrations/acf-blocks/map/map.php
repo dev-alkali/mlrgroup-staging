@@ -36,7 +36,7 @@ $map_code = get_sub_field('map_code');
       <?php //echo $map_code; ?>
 
 <div id="wmap-section">
-  <div id="wmap-inner" class="max-w-[1920px]">
+  <div id="wmap-inner" class="max-w-[1880px]">
 
     
 <svg width="1440" height="826" viewBox="0 0 1440 826" fill="none" xmlns="http://www.w3.org/2000/svg">
