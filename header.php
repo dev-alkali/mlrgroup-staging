@@ -89,7 +89,7 @@ if ( $is_transparent_page ) {
       </div>
 
       <!-- NAV -->
-      <div class="site-header__nav inline-flex items-center gap-5 min-[1350px]:gap-10 flex-[0_0_auto] anim">
+      <div class="site-header__nav inline-flex items-center gap-5 min-[1350px]:gap-10 flex-[0_0_auto]">
 
         <nav>
           <div class="inline-flex items-center gap-6 site-header_nav-list">
@@ -101,8 +101,7 @@ if ( $is_transparent_page ) {
               $has_children = !empty($item->children);
             ?>
 
-              <div class="site-nav__item relative <?php echo $has_children ? 'has-children' : ''; ?> anim"
-                   data-delay="<?php echo $index; $index += 0.2; ?>" data-anim="up">
+              <div class="site-nav__item relative <?php echo $has_children ? 'has-children' : ''; ?>">
 
                 <a class="nav-link inline-flex items-center justify-center gap-2"
                    href="<?php echo esc_url($item->url); ?>"
