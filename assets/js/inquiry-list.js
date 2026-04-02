@@ -12,7 +12,7 @@
   var COOKIE_DAYS = 7;
   var MAX_ITEMS = 50; 
   var MAX_ID_VALUE = 2147483647; 
-  var IS_HTTPS = location.protocol === "https:";
+  var IS_HTTPS = location.protocol === "https:"; 
 
   /* ─────────────────────────────────────────────
    * COOKIE HELPERS
