@@ -621,10 +621,10 @@
     display: none;
   }
   .solutions-tabs .solutions-tab.is-active {
-    border-bottom: 4px solid #fd4338 !important;
+    border-bottom: 4px solid #000000 !important;
   }
   .solutions-tab:hover button {
-    background: #fd4338;
+    background: #000000;
     color: #fff;
   }
 
@@ -638,7 +638,7 @@
       line-height: 16px;
     }
     .solutions-tabs .solutions-tab.is-active {
-      border-bottom: 2px solid #fd4338 !important;
+      border-bottom: 2px solid #000000 !important;
     }
   }
 
