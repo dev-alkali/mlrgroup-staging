@@ -31,7 +31,7 @@
       console.warn("[InquiryList] Cookie payload too large, write aborted.");
       return false;
     }
-
+ 
     var cookieStr =
       name +
       "=" +
