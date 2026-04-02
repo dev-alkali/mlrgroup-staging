@@ -3,6 +3,20 @@
  * Services Block Template.
  */
 
+if (!function_exists('mlr_esc_block_href')) {
+  /**
+   * esc_url() strips bare hash links; allow #section anchors for in-page jumps.
+   */
+  function mlr_esc_block_href($href)
+  {
+    $href = (string) $href;
+    if ($href !== '' && $href[0] === '#') {
+      return esc_attr($href);
+    }
+    return esc_url($href);
+  }
+}
+
 $id = 'services-' . $block['id'];
 if (!empty($block['anchor'])) {
   $id = $block['anchor'];
@@ -136,15 +150,22 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
                     continue;
                   }
 
-                  $card_link = get_permalink($service_id);
+                  $card_href_override = function_exists('get_field') ? get_field('service_card_href', $service_id) : '';
+                  $card_link = (is_string($card_href_override) && $card_href_override !== '')
+                    ? $card_href_override
+                    : get_permalink($service_id);
                   $card_image = get_the_post_thumbnail_url($service_id, 'full');
                   $card_title = get_the_title($service_id);
                   $card_paragraph = get_field('short_content', $service_id);
+                  $solution_tab = function_exists('get_field') ? get_field('solution_tab_key', $service_id) : '';
+                  $solution_tab = (is_string($solution_tab) && $solution_tab !== '')
+                    ? $solution_tab
+                    : wp_strip_all_tags($card_title);
                   ?>
                   <article class="<?= esc_attr($article_class) ?>">
                     <div class="bg-image absolute inset-0 z-0" style=" background-image: url('<?php echo esc_url($card_image); ?>'); background-position: center center; background-size: cover; background-repeat: no-repeat; filter:grayscale(100%);">
                     </div>
-                    <a href="<?= esc_url($card_link) ?>" class="gradient-box flex flex-col flex-1 justify-between px-5 md:px-6 py-7 w-full h-full relative z-1">
+                    <a href="<?= mlr_esc_block_href($card_link) ?>" class="gradient-box flex flex-col flex-1 justify-between px-5 md:px-6 py-7 w-full h-full relative z-1" data-solution="<?= esc_attr($solution_tab) ?>">
                       <figure class="text-right z-10 relative">
                         <img class="arrow w-10" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="" />
                       </figure>
@@ -158,10 +179,18 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
               <?php else : ?>
                 <?php if (have_rows('services')) :  while (have_rows('services')) : the_row(); ?>
                     <?php if (have_rows('service')) :  while (have_rows('service')) : the_row(); ?>
+                        <?php
+                        $manual_href = get_sub_field('link_path');
+                        $manual_title = get_sub_field('title');
+                        $solution_tab_manual = get_sub_field('solution_tab_key');
+                        $solution_tab_manual = (is_string($solution_tab_manual) && $solution_tab_manual !== '')
+                          ? $solution_tab_manual
+                          : wp_strip_all_tags((string) $manual_title);
+                        ?>
                         <article class="<?= esc_attr($article_class) ?>">
                           <div class="bg-image absolute inset-0 z-0" style=" background-image: url('<?php echo esc_url(get_sub_field('image')); ?>'); background-position: center center; background-size: cover; background-repeat: no-repeat; filter:grayscale(100%);">
                           </div>
-                          <a href="<?= esc_url(get_sub_field('link_path')) ?>" class="gradient-box flex flex-col flex-1 justify-between px-5 md:px-6 py-7 w-full h-full relative z-1">
+                          <a href="<?= mlr_esc_block_href($manual_href) ?>" class="gradient-box flex flex-col flex-1 justify-between px-5 md:px-6 py-7 w-full h-full relative z-1" data-solution="<?= esc_attr($solution_tab_manual) ?>">
                             <figure class="text-right z-10 relative">
                               <img class="arrow w-10" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="" />
                             </figure>

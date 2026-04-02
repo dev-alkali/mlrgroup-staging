@@ -165,26 +165,32 @@ jQuery(function ($) {
     activateSolution($(this).data("solution"));
   });
 
-  // Source card anchor click (scroll + activate tab)
-  $(document).on("click", ".source-card .gradient-box", function (e) {
-    const targetPath = $(this).attr("href");
+  // Service cards (homepage): hash href scrolls to solutions section + activates tab
+  $(document).on(
+    "click",
+    ".service-card .gradient-box, .source-card .gradient-box",
+    function (e) {
+      const targetPath = $(this).attr("href");
 
-    if (targetPath && targetPath.startsWith("#")) {
-      e.preventDefault();
+      if (targetPath && targetPath.startsWith("#")) {
+        e.preventDefault();
 
-      const $targetSection = $(targetPath);
-      const solutionKey = $(this).find(".card-title").text().trim();
+        const $targetSection = $(targetPath);
+        const solutionKey =
+          $(this).attr("data-solution") ||
+          $(this).find(".card-title").first().text().trim();
 
-      if ($targetSection.length) {
-        $("html, body").animate(
-          { scrollTop: $targetSection.offset().top - 80 },
-          600
-        );
+        if ($targetSection.length) {
+          $("html, body").animate(
+            { scrollTop: $targetSection.offset().top - 80 },
+            600
+          );
+        }
+
+        if (solutionKey) activateSolution(solutionKey);
       }
-
-      if (solutionKey) activateSolution(solutionKey);
     }
-  });
+  );
 
   // Resize — re-evaluate active slider
   let resizeTimer;

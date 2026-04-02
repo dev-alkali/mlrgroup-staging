@@ -4,7 +4,7 @@
  * Services Solutions Block Template.
  */
 
-$id = 'services-solutions';
+$id = !empty($block['anchor']) ? $block['anchor'] : 'services-solutions';
 
 $className = 'services-solutions';
 if (!empty($block['className'])) {
