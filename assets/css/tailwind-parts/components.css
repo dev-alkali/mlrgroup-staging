@@ -610,7 +610,8 @@
   .solutions-header > h2:only-child, .solutions-header > p:only-child { max-width: 100%; }
 
   .solutions-tab.is-active button {
-    background: #fd4338;
+    /*background: #fd4338;*/
+    background: #000000;
     color: #fff;
   }
   .solutions-tab.is-active button .arrow {
