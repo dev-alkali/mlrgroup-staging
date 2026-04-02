@@ -112,7 +112,7 @@ add_action('init', 'mrlgroup_register_portfolio_cpt');
  * Field IDs (update these to match your form):
  *   Field 11  → Item Codes     (comma-separated)  e.g. 39033,38864,39553
  *   Field 12  → Product Names  (pipe-separated)   e.g. Item A | Item B | Item C
- *   Field XX  → Image URLs     (comma-separated)  e.g. https://.../a.jpg, https://.../b.jpg
+ *   Field 13  → Image URLs     (comma-separated)  e.g. https://.../a.jpg, https://.../b.jpg
  */
 
 add_filter( 'gform_notification', 'gf_build_inquiry_item_table', 10, 3 );
