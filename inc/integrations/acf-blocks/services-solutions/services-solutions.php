@@ -150,10 +150,10 @@ if (!empty($block['className'])) {
                                         </div>
 
                                         <button class="solutions-prev">
-                                            <img class="rotate-180" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-slider.svg" alt="arrow">
+                                            <img class="rotate-180" src="<?= get_template_directory_uri() ?>/assets/imgs/slider-arrow-icon.svg" alt="arrow">
                                         </button>
                                         <button class="solutions-next">
-                                            <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-slider.svg" alt="arrow">
+                                            <img src="<?= get_template_directory_uri() ?>/assets/imgs/slider-arrow-icon.svg" alt="arrow">
                                         </button>
                                         <div class="solutions-dots"></div>
                                     </div>
