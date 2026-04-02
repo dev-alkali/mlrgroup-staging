@@ -41,7 +41,7 @@ a.footer-text:hover{color:#ffffff;}
 .change-btn .bar3 {transform: translate(0, -10px) rotate(45deg);}
 
 .service-card .gradient-box figure,
-.service-card .gradient-box .content {transition: transform 0.5s ease;}
+.service-card .gradient-box .content {transition: transform 0.85s ease;}
 .service-card .gradient-box:before,
 .service-card .gradient-box:after {content: "";pointer-events: none;transition: opacity .45s cubic-bezier(.2, .8, .2, 1);position: absolute;inset: 0;}
 .service-card .gradient-box:before {opacity: 1;background: linear-gradient(.16deg, #000 .14%, #0000 138.15%);}

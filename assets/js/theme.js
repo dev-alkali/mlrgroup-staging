@@ -1,7 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const gradientTransformTransition = 'transform 0.85s ease';
+
   document.querySelectorAll('.gradient-box').forEach(card => {
     const figure  = card.querySelector('figure');
     const content = card.querySelector('.content');
+    if (!figure || !content) return;
+
+    figure.style.transition  = gradientTransformTransition;
+    content.style.transition = gradientTransformTransition;
 
     card.addEventListener('mouseenter', () => {
       const cardH    = card.offsetHeight;
