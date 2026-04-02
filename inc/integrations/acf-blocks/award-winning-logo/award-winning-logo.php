@@ -10,7 +10,7 @@ if (!empty($block['anchor'])) {
   $id = $block['anchor'];
 }
 
-
+ 
 $className = 'award-winning-logo';
 if (!empty($block['className'])) {
   $className .= ' ' . $block['className'];
