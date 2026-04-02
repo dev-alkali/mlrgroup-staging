@@ -130,7 +130,7 @@ if ( $is_transparent_page ) {
                       $child_url_normalized = trailingslashit($child->url);
                       $child_active_class = ($child_url_normalized === $current_url_normalized) ? 'active' : '';
                     ?>
-                      <a class="site-nav__dropdown-link block py-2 min-w-[250px] font-semibold font-heading leading-[22px] <?php echo esc_attr($child_active_class); ?>"
+                      <a class="site-nav__dropdown-link block py-2 min-w-[250px] font-medium font-heading leading-[22px] <?php echo esc_attr($child_active_class); ?>"
                          href="<?php echo esc_url($child->url); ?>">
                         <?php echo esc_html($child->title); ?>
                       </a>
