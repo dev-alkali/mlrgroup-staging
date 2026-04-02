@@ -67,6 +67,9 @@
         $("#inquiry-normal-form .inquiry-field input").val(
           parseInt(data.id, 10),
         );
+        $("#inquiry-normal-form")
+          .find('input[name="input_12"]')
+          .val(typeof data.title === "string" ? data.title : "");
 
         $("#inquiry-empty-pop-up").addClass("hidden").removeClass("flex");
         $("#inquiry-pop-up").addClass("hidden").removeClass("flex");

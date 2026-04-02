@@ -337,6 +337,18 @@
     }
   }
 
+  function syncListFormPortfolioTitles() {
+    var titles = [];
+    $("#inquiry-list-content .inquiry-item-pop-up").each(function () {
+      if (!$(this).is(":visible")) return;
+      var t = $.trim($(this).find(".inquiry-item-pop-up-title").text());
+      if (t) titles.push(t);
+    });
+    $("#inquiry-list-form")
+      .find('input[name="input_12"]')
+      .val(titles.join(" | "));
+  }
+
   /* ─────────────────────────────────────────────
    * FETCH INQUIRY LIST — SHOW POP-UP WITH LIST
    * ───────────────────────────────────────────── */
@@ -364,6 +376,7 @@
 
           listContent.empty();
           $("#inquiry-list-form .inquiry-field input").val("");
+          $("#inquiry-list-form").find('input[name="input_12"]').val("");
 
           $.each(data, function (i, inquiryItem) {
             if (!isValidId(inquiryItem.id)) {
@@ -411,8 +424,9 @@
             let fieldVal = $("#inquiry-list-form .inquiry-field input").val();
             let newVal = fieldVal ? fieldVal + "," + safeId : safeId;
             $("#inquiry-list-form .inquiry-field input").val(newVal);
-			  
           });
+
+          syncListFormPortfolioTitles();
 
           $("#inquiry-empty-pop-up").addClass("hidden").removeClass("flex");
           $("#inquiry-pop-up").addClass("hidden").removeClass("flex");
@@ -484,6 +498,7 @@
           });
 
           $(input).val(updatedIds.join(","));
+          syncListFormPortfolioTitles();
         }
       }
     });
