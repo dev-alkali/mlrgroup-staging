@@ -426,8 +426,6 @@
             $("#inquiry-list-form .inquiry-field input").val(newVal);
           });
 
-          syncListFormPortfolioTitles();
-
           $("#inquiry-empty-pop-up").addClass("hidden").removeClass("flex");
           $("#inquiry-pop-up").addClass("hidden").removeClass("flex");
           $("#normal-content").addClass("hidden").removeClass("flex");
@@ -436,6 +434,7 @@
           $(".pop-up").removeClass("hidden").addClass("flex");
           $("#inquiry-pop-up").removeClass("hidden").addClass("flex");
           $("#list-content").removeClass("hidden").addClass("flex");
+          syncListFormPortfolioTitles();
 			    $("body").addClass("menu-open");
         },
         error: function (xhr, status, error) {
