@@ -145,7 +145,7 @@ if ( $is_transparent_page ) {
         </nav>
 
         <?php if(get_field('lets_talk_link', 'option')): ?>
-        <a class="btn-primary anim" href="<?php echo esc_url(get_field('lets_talk_link', 'option')); ?>"  data-delay="<?php echo $index ? : 3.85; ?>" data-anim="up">LETS TALK</a>
+        <a class="btn-primary " href="<?php echo esc_url(get_field('lets_talk_link', 'option')); ?>">LETS TALK</a>
         <?php endif; ?>
 
       </div>
@@ -222,7 +222,7 @@ if ( $is_transparent_page ) {
     </div>
 
     <!-- HAMBURGER -->
-    <div class="hamb-group anim" data-delay="3" data-anim="up">
+    <div class="hamb-group">
       <img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/Menu.svg" alt="menu">
     </div>
 
