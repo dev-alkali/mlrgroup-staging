@@ -17,7 +17,7 @@
 
    <div id="inquiry-pop-up" class="bg-white max-w-[1200px] w-full hidden flex-col p-[16px] md:p-[40px] text-neutral-800 overflow-auto max-h-[90vh]">
       <section id="normal-content" class="hidden flex-col w-full ">
-         <div class="mb-[20px]">
+         <div class="mb-[40px]">
             <div class="flex justify-between w-full mb-3 border-b border-[#CCCCCC] md:border-0 pb-[20px] md:pb-0">
                <h2 class="inquiry-title text-[28px] leading-[36px] tracking-[-2%] font-heading font-bold hidden md:block"></h2>
                <h2 class="text-[20px] leading-[28px] tracking-[-2%] font-heading font-medium block md:hidden">Quick item view</h2>
