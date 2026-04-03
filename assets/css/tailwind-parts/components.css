@@ -64,6 +64,7 @@
   .site-header.light-skin .nav-link { color: #fff; }  
   .site-header.is-sticky .nav-link { color: #525252; --arrow-color: #525252; }  
   body .site-header .site-header__logo-image .hide-letter{display:none;}
+  body .site-header .site-header__logo-image .dot-pl {transform: translate(-84px);}
   .home .site-header.is-visible .site-header__logo-image .hide-letter {animation: fadeLetters 0.4s ease forwards;}
   .home .site-header.is-visible .site-header__logo-image .letter-p { animation-delay: 1s; }
   .home .site-header.is-visible .site-header__logo-image .letter-u { animation-delay: 1.15s; }
