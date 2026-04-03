@@ -47,7 +47,7 @@ if (!empty($block['className'])) {
                     </div>
                 </div>
 
-                <div class="" style="background-image:url(<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg);background-position: center left;background-size: 40px;background-repeat:repeat-x;">                    
+                <div class="w-full flex justify-end" style="background-image:url(<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg);background-position: center left;background-size: 40px;background-repeat:repeat-x;">                    
                     <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red-icon.svg" class="arrow1 w-[clamp(30px,7vw,50px)] h-[clamp(30px,7vw,50px)]" alt="">
                 </div>
             </div>
