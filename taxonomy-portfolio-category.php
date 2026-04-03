@@ -9,7 +9,7 @@
       <div class="gap-10 w-full wrapper min-h-screen md:min-h-[670px] pt-[80px] md:pt-[118px] pb-[80px] md:pb-[60px] flex items-end !px-0 ">
         <div class="max-w-[800px]">
           
-          <h2 class="text-[clamp(44px,6vw,70px)] leading-[clamp(56px,7vw,88px)] tracking-[-0.02em] text-white font-heading anim" data-delay="0.1" data-anim="up">            
+          <h2 class="text-[clamp(44px,6vw,70px)] leading-[clamp(56px,7vw,88px)] tracking-[-0.02em] text-white font-heading">
             <?php if(get_sub_field('title_row_1')): ?>
                 <span class="font-bold"><?= wp_kses_post(get_sub_field('title_row_1')) ?></span>
             <?php endif; ?>
@@ -19,7 +19,7 @@
           </h2>
           
           <?php if(get_sub_field('paragraph')): ?>
-            <p class="w-full text-[clamp(18px,3vw,20px)] leading-[28px] text-gray-50 font-body anim mt-[12px]" data-delay="1.2" data-anim="up" data-start="top 100%"><?= wp_kses_post(get_sub_field('paragraph')) ?></p>
+            <p class="w-full text-[clamp(18px,3vw,20px)] leading-[28px] text-gray-50 font-body mt-[12px]"><?= wp_kses_post(get_sub_field('paragraph')) ?></p>
           <?php endif; ?>
         </div>
       </div>
