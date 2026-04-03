@@ -33,7 +33,7 @@ if (have_rows('inner_hero')) :  while (have_rows('inner_hero')) : the_row();
       <div class="gap-10 w-full wrapper min-h-screen py-[80px] md:py-[118px] flex items-end">
         <div class="max-w-[800px]">
           <?php if($title_row_1 || $title_row_2): ?>
-          <h2 class="text-[clamp(44px,6vw,70px)] leading-[clamp(56px,7vw,88px)] tracking-[-0.02em] text-white font-heading anim" data-delay="0.1" data-anim="up">            
+          <h2 class="text-[clamp(44px,6vw,70px)] leading-[clamp(56px,7vw,88px)] tracking-[-0.02em] text-white font-heading">
             <?php if($title_row_1): ?>
                 <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
             <?php endif; ?>
@@ -43,7 +43,7 @@ if (have_rows('inner_hero')) :  while (have_rows('inner_hero')) : the_row();
           </h2>
           <?php endif; ?>
           <?php if($description): ?>
-            <p class="w-full text-[clamp(18px,3vw,20px)] leading-[28px] text-gray-50 font-body mt-[20px] anim " data-delay="1.2" data-anim="up" data-start="top 100%"><?= wp_kses_post($description) ?></p>
+            <p class="w-full text-[clamp(18px,3vw,20px)] leading-[28px] text-gray-50 font-body mt-[20px]"><?= wp_kses_post($description) ?></p>
           <?php endif; ?>
 
           <?php 
@@ -53,7 +53,7 @@ if (have_rows('inner_hero')) :  while (have_rows('inner_hero')) : the_row();
                 $link_title = $link['title'];
                 $link_target = $link['target'] ? $link['target'] : '_self';
                 ?>
-                <a class="btn-primary mt-[20px] md:mt-[40px] anim" data-delay="2" data-anim="up" data-start="top 100%" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                <a class="btn-primary mt-[20px] md:mt-[40px]" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
             <?php endif; ?>
         </div>
       </div>
@@ -66,7 +66,7 @@ if (have_rows('inner_hero')) :  while (have_rows('inner_hero')) : the_row();
       <div class="gap-10 w-full wrapper min-h-screen md:min-h-[670px] pt-[80px] md:pt-[118px] pb-[80px] md:pb-[60px] flex items-end !px-0 ">
         <div class="max-w-[800px]">
           <?php if($title_row_1 || $title_row_2): ?>
-          <h2 class="text-[clamp(44px,6vw,70px)] leading-[clamp(56px,7vw,88px)] tracking-[-0.02em] text-white font-heading anim" data-delay="0.1" data-anim="up">            
+          <h2 class="text-[clamp(44px,6vw,70px)] leading-[clamp(56px,7vw,88px)] tracking-[-0.02em] text-white font-heading">
             <?php if($title_row_1): ?>
                 <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
             <?php endif; ?>
@@ -76,7 +76,7 @@ if (have_rows('inner_hero')) :  while (have_rows('inner_hero')) : the_row();
           </h2>
           <?php endif; ?>
           <?php if($description): ?>
-            <p class="w-full text-[clamp(18px,3vw,20px)] leading-[28px] text-gray-50 font-body mt-[20px] anim" data-delay="1.2" data-anim="up" data-start="top 100%"><?= wp_kses_post($description) ?></p>
+            <p class="w-full text-[clamp(18px,3vw,20px)] leading-[28px] text-gray-50 font-body mt-[20px]"><?= wp_kses_post($description) ?></p>
           <?php endif; ?>
 
           <?php 
@@ -86,7 +86,7 @@ if (have_rows('inner_hero')) :  while (have_rows('inner_hero')) : the_row();
                 $link_title = $link['title'];
                 $link_target = $link['target'] ? $link['target'] : '_self';
                 ?>
-                <a class="btn-primary mt-[20px] md:mt-[40px] anim" data-delay="2" data-anim="up" data-start="top 100%" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                <a class="btn-primary mt-[20px] md:mt-[40px]" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
             <?php endif; ?>
         </div>
       </div>
