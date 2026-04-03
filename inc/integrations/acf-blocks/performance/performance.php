@@ -47,25 +47,20 @@ if (!empty($block['className'])) {
                     </div>
                 </div>
 
-                <div class="arrows-row flex max-w-[100%] w-full items-center justify-center min-[1500px]:gap-[4%] xl:gap-[30px] gap-3 overflow-hidden max-[1200px]:[&>img:nth-child(1)]:hidden max-[1024px]:[&>img:nth-child(2)]:hidden max-[768px]:[&>img:nth-child(3)]:hidden max-[640px]:[&>img:nth-child(4)]:hidden max-[640px]:[&>img:nth-child(5)]:hidden" style="background-image: url(/wp-content/themes/Mlrgroup/assets/imgs/Arrow-white-icon.svg);background-position: center left;background-repeat: repeat-x;background-size: 60px;">
-
-                    
-
+                <div class="arrows-row flex max-w-[100%] w-full items-center justify-center min-[1500px]:gap-[4%] xl:gap-[30px] gap-3 overflow-hidden max-[1200px]:[&>img:nth-child(1)]:hidden max-[1024px]:[&>img:nth-child(2)]:hidden max-[768px]:[&>img:nth-child(3)]:hidden max-[640px]:[&>img:nth-child(4)]:hidden max-[640px]:[&>img:nth-child(5)]:hidden">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
+                    <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
                 </div>
             </div>
         </section>
 <?php endwhile;
 endif; ?>
-
-<?php /*
-<!-- <img src="<?= //get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
-                    <img src="<?= //get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
-                    <img src="<?= //get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
-                    <img src="<?= //get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
-                    <img src="<?= //get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
-                    <img src="<?= //get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
-                    <img src="<?= //get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
-                    <img src="<?= //get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
-                    <img src="<?= //get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
-                    <img src="<?= //get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
-                    <img src="<?= //get_template_directory_uri() ?>/assets/imgs/Arrow-red-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt=""> --> */?>
