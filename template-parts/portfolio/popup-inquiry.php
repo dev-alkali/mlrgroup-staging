@@ -1,7 +1,7 @@
 <section class="pop-up hidden justify-center items-center w-full h-screen fixed top-0 bg-[#000000CC] backdrop-blur-[20px] z-100 p-[30px]">
    <div id="inquiry-empty-pop-up" class="bg-white hidden max-w-[600px] flex-col p-[16px] md:p-[40px] overflow-auto max-h-[90vh]">
       <div class="w-full flex justify-end mb-[28px]">
-         <img class="close" src="<?= get_template_directory_uri() ?>/assets/imgs/close-pop-up.svg" alt="exit">
+         <img class="close cursor-pointer filter brightness-0 invert-[15%] hover:filter-none transition duration-300" src="<?= get_template_directory_uri() ?>/assets/imgs/close-pop-up-red.svg" alt="exit">
       </div>
       <div class="flex flex-col items-center gap-5 px-[54px] py-[72px] border border-neutral-300 mb-20">
          <img src="<?= get_template_directory_uri() ?>/assets/imgs/clipboard.svg" alt="clipboard">
@@ -22,7 +22,7 @@
                <h2 class="inquiry-title text-[28px] leading-[36px] tracking-[-2%] font-heading font-bold hidden md:block"></h2>
                <h2 class="text-[20px] leading-[28px] tracking-[-2%] font-heading font-medium block md:hidden">Quick item view</h2>
                
-               <img class="close cursor-pointer" src="<?= get_template_directory_uri() ?>/assets/imgs/close-pop-up.svg" alt="exit">
+               <img class="close cursor-pointer filter brightness-0 invert-[15%] hover:filter-none transition duration-300" src="<?= get_template_directory_uri() ?>/assets/imgs/close-pop-up-red.svg" alt="exit">
             </div>
             <div class="inquiry-categories hidden md:flex">
             </div>
@@ -66,7 +66,7 @@
          <div class="mb-4">
             <div class=" flex justify-between w-full mb-7 border-b border-[#CCCCCC] md:border-0 pb-[20px] md:pb-0">
                <h2 class="font-[Poppins] font-medium md:font-bold text-[#262626] tracking-[-0.02em] text-[clamp(1.25rem,4vw,1.75rem)] leading-[clamp(1.75rem,4vw,2.25rem)]">Your Inquiry List</h2>
-               <img class="close cursor-pointer" src="<?= get_template_directory_uri() ?>/assets/imgs/close-pop-up.svg" alt="exit">
+               <img class="close cursor-pointer filter brightness-0 invert-[15%] hover:filter-none transition duration-300" src="<?= get_template_directory_uri() ?>/assets/imgs/close-pop-up-red.svg" alt="exit">
             </div>
          </div>
          <div class="flex flex-col md:flex-row gap-[40px] md:gap-[60px]">
