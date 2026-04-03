@@ -139,50 +139,67 @@ if (!$case_studies_query->have_posts() && have_posts()) {
       </p>
 
         <?php if ($case_studies_query->max_num_pages > 1) : ?>
-          <div class="mt-[32px] md:mt-[60px] text-center view-more-btn">
-            <button
-              id="view-more-case-studies"
-              type="button"
-              class="inline-flex gap-2 relative cursor-pointer"
-              data-current-page="1"
-              data-total-pages="<?php echo esc_attr($case_studies_query->max_num_pages); ?>"
-            >
-                <span class="font-semibold text-accent text-[16px] leading-[24px] uppercase relative w-fit font-heading tracking-[0]"><?php esc_html_e('VIEW MORE', 'mrl-site'); ?></span>
-                <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg" alt="">
-            </button>
+          <div
+            id="case-studies-infinite-root"
+            class="mt-[32px] md:mt-[60px] text-center view-more-btn"
+            data-current-page="1"
+            data-total-pages="<?php echo esc_attr($case_studies_query->max_num_pages); ?>"
+          >
+            <p id="case-studies-loading-more" class="hidden font-semibold text-accent text-[16px] leading-[24px] uppercase font-heading tracking-[0]" aria-live="polite"><?php esc_html_e('LOADING...', 'mrl-site'); ?></p>
+            <div id="case-studies-infinite-scroll-sentinel" class="h-px w-full pointer-events-none" aria-hidden="true"></div>
           </div>
 
           <script>
             document.addEventListener('DOMContentLoaded', function () {
-              const viewMoreButton = document.getElementById('view-more-case-studies');
+              const infiniteRoot = document.getElementById('case-studies-infinite-root');
+              const loadingEl = document.getElementById('case-studies-loading-more');
+              const sentinel = document.getElementById('case-studies-infinite-scroll-sentinel');
               const grid = document.getElementById('case-studies-grid');
               const filterSelect = document.getElementById('case-studies-filter');
               const emptyState = document.getElementById('case-studies-empty');
-              const loadingText = '<?php echo esc_js(__('LOADING...', 'mrl-site')); ?>';
-              const viewMoreText = '<?php echo esc_js(__('VIEW MORE', 'mrl-site')); ?>';
               const viewCaseStudyText = '<?php echo esc_js(__('VIEW CASE STUDY', 'mrl-site')); ?>';
               const taxonomyRestBase = filterSelect ? filterSelect.getAttribute('data-taxonomy-rest-base') : '';
 
-              if (!grid) {
+              if (!grid || !infiniteRoot || !sentinel || typeof IntersectionObserver === 'undefined') {
                 return;
               }
 
-              let totalPages = viewMoreButton ? parseInt(viewMoreButton.getAttribute('data-total-pages'), 10) : 1;
-              let currentPage = viewMoreButton ? parseInt(viewMoreButton.getAttribute('data-current-page'), 10) : 1;
+              let totalPages = parseInt(infiniteRoot.getAttribute('data-total-pages'), 10);
+              let currentPage = parseInt(infiniteRoot.getAttribute('data-current-page'), 10);
               let isLoading = false;
               let selectedTerm = filterSelect ? parseInt(filterSelect.value, 10) : 0;
+              let scrollObserver = null;
 
-              const updateButtonState = function () {
-                if (!viewMoreButton) {
+              const setLoadingVisible = function (visible) {
+                if (loadingEl) {
+                  loadingEl.classList.toggle('hidden', !visible);
+                }
+              };
+
+              const disconnectInfiniteScroll = function () {
+                if (scrollObserver) {
+                  scrollObserver.disconnect();
+                  scrollObserver = null;
+                }
+              };
+
+              const connectInfiniteScroll = function () {
+                disconnectInfiniteScroll();
+                if (currentPage >= totalPages) {
                   return;
                 }
-                if (currentPage >= totalPages) {
-                  viewMoreButton.style.display = 'none';
-                  viewMoreButton.setAttribute('aria-hidden', 'true');
-                } else {
-                  viewMoreButton.style.display = '';
-                  viewMoreButton.removeAttribute('aria-hidden');
-                }
+                scrollObserver = new IntersectionObserver(
+                  function (entries) {
+                    entries.forEach(function (entry) {
+                      if (!entry.isIntersecting || isLoading || currentPage >= totalPages) {
+                        return;
+                      }
+                      fetchPostsPage(currentPage + 1, true);
+                    });
+                  },
+                  { rootMargin: '240px 0px 0px 0px', threshold: 0 }
+                );
+                scrollObserver.observe(sentinel);
               };
 
               const getFeaturedImageUrl = function (post) {
@@ -258,10 +275,7 @@ if (!$case_studies_query->have_posts() && have_posts()) {
                 }
 
                 isLoading = true;
-                const label = viewMoreButton ? viewMoreButton.querySelector('span') : null;
-                if (label && shouldAppend) {
-                  label.textContent = loadingText;
-                }
+                setLoadingVisible(true);
 
                 const endpoint = new URL(`${window.location.origin}/wp-json/wp/v2/<?php echo esc_js($rest_base); ?>`);
                 endpoint.searchParams.set('per_page', '<?php echo esc_js($posts_per_page); ?>');
@@ -288,10 +302,8 @@ if (!$case_studies_query->have_posts() && have_posts()) {
                   }
                   posts.forEach(createCard);
                   currentPage = page;
-                  if (viewMoreButton) {
-                    viewMoreButton.setAttribute('data-current-page', String(currentPage));
-                    viewMoreButton.setAttribute('data-total-pages', String(totalPages));
-                  }
+                  infiniteRoot.setAttribute('data-current-page', String(currentPage));
+                  infiniteRoot.setAttribute('data-total-pages', String(totalPages));
                   if (emptyState) {
                     if (grid.children.length === 0) {
                       emptyState.classList.remove('hidden');
@@ -299,42 +311,31 @@ if (!$case_studies_query->have_posts() && have_posts()) {
                       emptyState.classList.add('hidden');
                     }
                   }
-                  updateButtonState();
+                  if (currentPage >= totalPages) {
+                    disconnectInfiniteScroll();
+                  } else {
+                    connectInfiniteScroll();
+                  }
                 })
-                .catch(function () {
-                  // Keep button available for retry on transient failures.
-                })
+                .catch(function () {})
                 .finally(function () {
                   isLoading = false;
-                  if (label && shouldAppend) {
-                    label.textContent = viewMoreText;
-                  }
+                  setLoadingVisible(false);
                 });
               };
-
-              if (viewMoreButton) {
-                viewMoreButton.addEventListener('click', function () {
-                  if (isLoading || currentPage >= totalPages) {
-                    return;
-                  }
-                  fetchPostsPage(currentPage + 1, true);
-                });
-              }
 
               if (filterSelect) {
                 filterSelect.addEventListener('change', function () {
                   selectedTerm = parseInt(filterSelect.value, 10) || 0;
                   currentPage = 0;
                   totalPages = 1;
+                  isLoading = false;
+                  disconnectInfiniteScroll();
                   fetchPostsPage(1, false);
                 });
               }
 
-              if (viewMoreButton && !viewMoreButton.getAttribute('data-total-pages')) {
-                updateButtonState();
-              }
-
-              updateButtonState();
+              connectInfiniteScroll();
             });
           </script>
         <?php endif; ?>

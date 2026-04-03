@@ -52,43 +52,62 @@ $initial_posts_query = new WP_Query(
             </div>
 
             <?php if ($initial_posts_query->max_num_pages > 1) : ?>
-                <div class="mt-[32px] md:mt-[60px] text-center view-more-btn">
-                  <button
-                    id="view-more-posts"
-                    type="button"
-                    class="inline-flex gap-2 relative cursor-pointer"
+                <div
+                    id="blog-infinite-root"
+                    class="mt-[32px] md:mt-[60px] text-center view-more-btn"
                     data-current-page="1"
                     data-total-pages="<?php echo esc_attr($initial_posts_query->max_num_pages); ?>"
-                    data-posts-per-page="<?php echo esc_attr($posts_per_page); ?>"
-                  >
-                      <span class="font-semibold text-accent text-[16px] leading-[24px] uppercase relative w-fit font-heading tracking-[0]"><?php esc_html_e('VIEW MORE', 'mrl-site'); ?></span>
-                      <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg">
-                  </button>
+                >
+                    <p id="blog-loading-more" class="hidden font-semibold text-accent text-[16px] leading-[24px] uppercase font-heading tracking-[0]" aria-live="polite"><?php esc_html_e('LOADING...', 'mrl-site'); ?></p>
+                    <div id="blog-infinite-scroll-sentinel" class="h-px w-full pointer-events-none" aria-hidden="true"></div>
                 </div>
 
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
-                        const viewMoreButton = document.getElementById('view-more-posts');
+                        const root = document.getElementById('blog-infinite-root');
                         const blogGrid = document.getElementById('blog-grid');
-                        const loadingText = '<?php echo esc_js(__('LOADING...', 'mrl-site')); ?>';
-                        const viewMoreText = '<?php echo esc_js(__('VIEW MORE', 'mrl-site')); ?>';
+                        const loadingEl = document.getElementById('blog-loading-more');
+                        const sentinel = document.getElementById('blog-infinite-scroll-sentinel');
 
-                        if (!viewMoreButton || !blogGrid) {
+                        if (!root || !blogGrid || !sentinel || typeof IntersectionObserver === 'undefined') {
                             return;
                         }
 
-                        const totalPages = parseInt(viewMoreButton.getAttribute('data-total-pages'), 10);
-                        let currentPage = parseInt(viewMoreButton.getAttribute('data-current-page'), 10);
+                        let totalPages = parseInt(root.getAttribute('data-total-pages'), 10);
+                        let currentPage = parseInt(root.getAttribute('data-current-page'), 10);
                         let isLoading = false;
+                        let scrollObserver = null;
 
-                        const updateButtonState = function () {
-                            if (currentPage >= totalPages) {
-                                viewMoreButton.style.display = 'none';
-                                viewMoreButton.setAttribute('aria-hidden', 'true');
-                            } else {
-                                viewMoreButton.style.display = '';
-                                viewMoreButton.removeAttribute('aria-hidden');
+                        const setLoadingVisible = function (visible) {
+                            if (loadingEl) {
+                                loadingEl.classList.toggle('hidden', !visible);
                             }
+                        };
+
+                        const disconnectInfiniteScroll = function () {
+                            if (scrollObserver) {
+                                scrollObserver.disconnect();
+                                scrollObserver = null;
+                            }
+                        };
+
+                        const connectInfiniteScroll = function () {
+                            disconnectInfiniteScroll();
+                            if (currentPage >= totalPages) {
+                                return;
+                            }
+                            scrollObserver = new IntersectionObserver(
+                                function (entries) {
+                                    entries.forEach(function (entry) {
+                                        if (!entry.isIntersecting || isLoading || currentPage >= totalPages) {
+                                            return;
+                                        }
+                                        loadNextPage();
+                                    });
+                                },
+                                { rootMargin: '240px 0px 0px 0px', threshold: 0 }
+                            );
+                            scrollObserver.observe(sentinel);
                         };
 
                         const getFeaturedImageUrl = function (post) {
@@ -148,16 +167,13 @@ $initial_posts_query = new WP_Query(
                             blogGrid.appendChild(article);
                         };
 
-                        viewMoreButton.addEventListener('click', function () {
+                        const loadNextPage = function () {
                             if (isLoading || currentPage >= totalPages) {
                                 return;
                             }
 
                             isLoading = true;
-                            const label = viewMoreButton.querySelector('span');
-                            if (label) {
-                                label.textContent = loadingText;
-                            }
+                            setLoadingVisible(true);
 
                             const nextPage = currentPage + 1;
                             const endpoint = `${window.location.origin}/wp-json/wp/v2/posts?per_page=<?php echo esc_js($posts_per_page); ?>&page=${nextPage}&_embed`;
@@ -165,30 +181,30 @@ $initial_posts_query = new WP_Query(
                             fetch(endpoint, {
                                 headers: { 'X-WP-Nonce': '<?php echo esc_js(wp_create_nonce('wp_rest')); ?>' }
                             })
-                            .then(function (response) {
-                                if (!response.ok) {
-                                    throw new Error('Failed to fetch posts');
-                                }
-                                return response.json();
-                            })
-                            .then(function (posts) {
-                                posts.forEach(createPostCard);
-                                currentPage = nextPage;
-                                viewMoreButton.setAttribute('data-current-page', String(currentPage));
-                                updateButtonState();
-                            })
-                            .catch(function () {
-                                // Keep button available for retry on transient failures.
-                            })
-                            .finally(function () {
-                                isLoading = false;
-                                if (label) {
-                                    label.textContent = viewMoreText;
-                                }
-                            });
-                        });
+                                .then(function (response) {
+                                    if (!response.ok) {
+                                        throw new Error('Failed to fetch posts');
+                                    }
+                                    return response.json();
+                                })
+                                .then(function (posts) {
+                                    posts.forEach(createPostCard);
+                                    currentPage = nextPage;
+                                    root.setAttribute('data-current-page', String(currentPage));
+                                    if (currentPage >= totalPages) {
+                                        disconnectInfiniteScroll();
+                                    } else {
+                                        connectInfiniteScroll();
+                                    }
+                                })
+                                .catch(function () {})
+                                .finally(function () {
+                                    isLoading = false;
+                                    setLoadingVisible(false);
+                                });
+                        };
 
-                        updateButtonState();
+                        connectInfiniteScroll();
                     });
                 </script>
             <?php endif; ?>
