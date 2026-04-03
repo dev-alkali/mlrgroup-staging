@@ -20,7 +20,7 @@ if (!empty($block['className'])) {
 
             <div class="flex flex-col items-center gap-5 w-full max-w-[1920px] mb-[-76px] md:mb-[-180px]">
 
-                <div class="flex max-w-[1920px] w-full flex-col xl:flex-row xl:items-center justify-between gap-8 sm:gap-[50px] lg:gap-[100px]">
+                <div class="flex max-w-[1920px] w-full flex-col xl:flex-row xl:items-center justify-between gap-8 sm:gap-[40px] lg:gap-[50px]">
                     <!-- Title -->
                     <div class="flex items-center gap-2 xl:max-w-[322px]">
                         <h2 class="font-bold font-[poppins] text-white tracking-[-0.02em] text-[clamp(36px,3.5vw,48px)] leading-[clamp(44px,4vw,56px)]">
