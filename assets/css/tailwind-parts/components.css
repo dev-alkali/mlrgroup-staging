@@ -63,23 +63,14 @@
   .site-header.light-skin { --logo-color: #fff; --arrow-color: #fff; }
   .site-header.light-skin .nav-link { color: #fff; }  
   .site-header.is-sticky .nav-link { color: #525252; --arrow-color: #525252; }  
+  body .site-header .site-header__logo-image .hide-letter{display:none;}
+  .home .site-header.is-visible .site-header__logo-image .hide-letter {animation: fadeLetters 0.4s ease forwards;}
+  .home .site-header.is-visible .site-header__logo-image .letter-p { animation-delay: 1s; }
+  .home .site-header.is-visible .site-header__logo-image .letter-u { animation-delay: 1.15s; }
+  .home .site-header.is-visible .site-header__logo-image .letter-o { animation-delay: 1.3s; }
+  .home .site-header.is-visible .site-header__logo-image .letter-r { animation-delay: 1.45s; }
+  .home .site-header.is-visible .site-header__logo-image .letter-g { animation-delay: 2s; }
 
-  /*.site-header.is-visible .site-header__logo-image .hide-letter { animation: fadeLetters 3s ease; opacity: 0; transition-delay: 3s; }
-  .site-header.is-visible .site-header__logo-image .dot-pl { transform: translateX(-84px); transition-delay: 4.1s; transition: 4.1s ease; }
-  .site-header.is-visible .site-header__logo-image .letter-g { animation-delay: 4s; }
-  .site-header.is-visible .site-header__logo-image .letter-r { animation-delay: 3.45s; }
-  .site-header.is-visible .site-header__logo-image .letter-o { animation-delay: 3.3s; }
-  .site-header.is-visible .site-header__logo-image .letter-u { animation-delay: 3.1s; }*/
-
-/* Step 1: Letters hide smoothly */
-.home .site-header.is-visible .site-header__logo-image .hide-letter {animation: fadeLetters 0.4s ease forwards;}
-
-/* Step 2: Stagger (one by one AFTER 3s hold) */
-.home .site-header.is-visible .site-header__logo-image .letter-p { animation-delay: 1s; }
-.home .site-header.is-visible .site-header__logo-image .letter-u { animation-delay: 1.15s; }
-.home .site-header.is-visible .site-header__logo-image .letter-o { animation-delay: 1.3s; }
-.home .site-header.is-visible .site-header__logo-image .letter-r { animation-delay: 1.45s; }
-.home .site-header.is-visible .site-header__logo-image .letter-g { animation-delay: 2s; }
 
 
 /* Step 3: Dot moves AFTER letters finish */
@@ -1159,9 +1150,7 @@ button.swiper-button-disabled {
 .cta.black-cta .cta-wrapper p{max-width: 100%;}
 .cta.black-cta .cta-wrapper .cta-content{justify-content: center;align-items: center;gap: 40px;}
 
-.view-more-btn:hover .arrow {
-  transform: rotate(45deg);
-}
+.view-more-btn:hover .arrow {transform: rotate(45deg);}
 
 .content-sec h1,
 .content-sec h2,
