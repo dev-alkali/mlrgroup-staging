@@ -68,4 +68,4 @@ endif; ?>
                     <img src="<?= //get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
                     <img src="<?= //get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
                     <img src="<?= //get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt="">
-                    <img src="<?= //get_template_directory_uri() ?>/assets/imgs/Arrow-red-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt=""> --> /*?>
+                    <img src="<?= //get_template_directory_uri() ?>/assets/imgs/Arrow-red-icon.svg" class="arrow1 w-[clamp(48px,7vw,120px)] h-[clamp(48px,7vw,117px)]" alt=""> --> */?>
