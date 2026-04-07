@@ -40,10 +40,15 @@ if (!empty($block['className'])) {
                             background-position: 50% 50%;
                             background-size: cover;
                             background-repeat: no-repeat;">
+                            
                         <div class="gradient-box flex flex-col items-start justify-end gap-2 px-3 sm:px-6 py-4 sm:py-7 h-full">
-                            <div clas="cs-card__logo">
-                                <?php echo get_sub_field('logo_image'); ?>
-                            </div>
+                            
+                            <?php if(get_sub_field('logo_image')): ?>
+                                <div clas="cs-card__logo">
+                                    <img src="<?php echo get_sub_field('logo_image'); ?>" alt="">
+                                </div>
+                            <?php endif; ?>
+
                             <div class="cs-card__content flex items-center justify-end gap-1 sm:gap-2 w-full">
                                 <div class="flex-1 text-white uppercase font-heading font-semibold text-[clamp(12px,1.4vw,18px)] leading-[clamp(18px,2vw,28px)] whitespace-nowrap">                                    
                                     <?= wp_kses_post(get_sub_field('title')) ?>
@@ -51,6 +56,7 @@ if (!empty($block['className'])) {
                                 <img class="arrow relative w-[11px] sm:w-[20px] xl:w-[24px] h-[10px] sm:h-5 xl:h-6 mt-[-2px]" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="Arrow">
                             </div>
                         </div>
+                        
                     </a>
                 <?php endwhile; endif; ?>
             <?php endwhile; endif; ?>
