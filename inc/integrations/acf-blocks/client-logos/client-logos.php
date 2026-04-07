@@ -137,13 +137,19 @@ if (!empty($block['className'])) {
 <?php if ($show_filter) : ?>
 <script>
 (function () {
-    var blockId    = <?php echo json_encode($id); ?>;
-    var filterId   = <?php echo json_encode($filter_id); ?>;
-    var sentinelId = <?php echo json_encode($btn_id); ?>;
+    // ── IDs passed from PHP via esc_js() — safe for all character sets ──
+    var blockId    = "<?php echo esc_js($id); ?>";
+    var filterId   = "<?php echo esc_js($filter_id); ?>";
+    var sentinelId = "<?php echo esc_js($btn_id); ?>";
     var showLM     = <?php echo $show_load_more ? 'true' : 'false'; ?>;
 
+    console.log('[ClientLogos] Init — blockId:', blockId, '| showLoadMore:', showLM);
+
     var section = document.getElementById(blockId);
-    if (!section) return;
+    if (!section) {
+        console.warn('[ClientLogos] Section element not found for id:', blockId);
+        return;
+    }
 
     var select        = document.getElementById(filterId);
     var sentinel      = showLM ? document.getElementById(sentinelId) : null;
@@ -152,7 +158,9 @@ if (!empty($block['className'])) {
     var loaded        = perPage;
     var currentFilter = 'all';
     var observer      = null;
-    var loading       = false; // lock prevents chain-reaction firing
+    var loading       = false;
+
+    console.log('[ClientLogos] Total cards:', cards.length, '| perPage:', perPage, '| sentinel found:', !!sentinel);
 
     // Initial hide of cards beyond the first batch
     if (sentinel) {
@@ -161,51 +169,66 @@ if (!empty($block['className'])) {
                 card.style.display = 'none';
             }
         });
+        console.log('[ClientLogos] Initial render: showing first', loaded, 'of', cards.length, 'cards');
     }
 
     function attachObserver() {
         if (observer) { observer.disconnect(); observer = null; }
-        if (!sentinel || loaded >= cards.length || currentFilter !== 'all') return;
+        if (!sentinel || loaded >= cards.length || currentFilter !== 'all') {
+            console.log('[ClientLogos] attachObserver skipped — all loaded or filter active');
+            return;
+        }
 
-        sentinel.style.height = '1px';
+        sentinel.style.height  = '1px';
         sentinel.style.display = '';
+
+        console.log('[ClientLogos] Observer attached — watching sentinel, loaded so far:', loaded, '/', cards.length);
 
         observer = new IntersectionObserver(function (entries) {
             if (!entries[0].isIntersecting || loading) return;
+
+            console.log('[ClientLogos] Sentinel intersected — loading next batch');
             observer.disconnect();
             observer = null;
-            loading = true;
-            loaded += perPage;
+            loading  = true;
+            loaded  += perPage;
+
             applyVisibility();
-            // Wait for browser to reflow (new cards push sentinel below viewport)
-            // before re-attaching observer
+
+            // Allow browser to reflow newly visible cards (pushes sentinel below viewport)
+            // before re-arming the observer
             setTimeout(function () {
                 loading = false;
+                console.log('[ClientLogos] Reflow done — re-attaching observer. Loaded:', loaded, '/', cards.length);
                 attachObserver();
             }, 200);
+
         }, { rootMargin: '0px 0px 150px 0px' });
 
         observer.observe(sentinel);
     }
 
     function applyVisibility() {
+        var shown = 0;
         cards.forEach(function (card) {
             var idx         = parseInt(card.getAttribute('data-index'), 10);
             var industry    = card.getAttribute('data-industry') || '';
             var matchFilter = currentFilter === 'all' || industry === currentFilter;
 
             if (currentFilter !== 'all') {
-                // Filter active: show ALL matching, ignore pagination
                 card.style.display = matchFilter ? '' : 'none';
+                if (matchFilter) shown++;
             } else {
-                // No filter: respect the loaded cursor
                 card.style.display = (idx < loaded) ? '' : 'none';
+                if (idx < loaded) shown++;
             }
         });
 
-        // Hide sentinel once all cards are shown
+        console.log('[ClientLogos] applyVisibility — filter:', currentFilter, '| visible cards:', shown);
+
         if (sentinel && (loaded >= cards.length || currentFilter !== 'all')) {
             sentinel.style.display = 'none';
+            console.log('[ClientLogos] Sentinel hidden —', loaded >= cards.length ? 'all cards loaded' : 'filter is active');
         }
     }
 
@@ -216,23 +239,24 @@ if (!empty($block['className'])) {
     if (select) {
         select.addEventListener('change', function () {
             currentFilter = this.value;
+            console.log('[ClientLogos] Filter changed to:', currentFilter);
 
-            // Always kill any running observer when filter changes
             if (observer) { observer.disconnect(); observer = null; }
 
             if (currentFilter !== 'all') {
-                // Show all matching, pause infinite scroll
                 cards.forEach(function (card) {
                     var industry = card.getAttribute('data-industry') || '';
                     card.style.display = (industry === currentFilter) ? '' : 'none';
                 });
                 if (sentinel) sentinel.style.display = 'none';
             } else {
-                // Back to "All Industries" — restore pagination then re-attach observer
+                // Back to "All Industries" — restore pagination then re-arm observer
                 applyVisibility();
                 setTimeout(attachObserver, 50);
             }
         });
+    } else if (document.getElementById(filterId) === null) {
+        console.warn('[ClientLogos] Filter select not found for id:', filterId);
     }
 })();
 </script>
