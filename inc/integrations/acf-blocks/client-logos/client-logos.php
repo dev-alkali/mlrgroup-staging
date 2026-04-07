@@ -134,133 +134,147 @@ if (!empty($block['className'])) {
           </div>
         <?php endif; ?>
 
-<?php if ($show_filter) : ?>
-<script>
-(function () {
-    // ── IDs passed from PHP via esc_js() — safe for all character sets ──
-    var blockId    = "<?php echo esc_js($id); ?>";
-    var filterId   = "<?php echo esc_js($filter_id); ?>";
-    var sentinelId = "<?php echo esc_js($btn_id); ?>";
-    var showLM     = <?php echo $show_load_more ? 'true' : 'false'; ?>;
+<?php
+if ($show_filter) :
+    // Capture values into local variables for the closure.
+    // Scripts are deferred to wp_footer so they bypass WordPress content
+    // filters (wptexturize etc.) that would corrupt && into &#038;&#038;
+    $cl_block_id    = $id;
+    $cl_filter_id   = $filter_id;
+    $cl_sentinel_id = $btn_id;
+    $cl_show_lm     = $show_load_more;
 
-    console.log('[ClientLogos] Init — blockId:', blockId, '| showLoadMore:', showLM);
+    add_action('wp_footer', function() use ($cl_block_id, $cl_filter_id, $cl_sentinel_id, $cl_show_lm) {
+        ?>
+        <script>
+        (function () {
+            var blockId    = "<?php echo esc_js($cl_block_id); ?>";
+            var filterId   = "<?php echo esc_js($cl_filter_id); ?>";
+            var sentinelId = "<?php echo esc_js($cl_sentinel_id); ?>";
+            var showLM     = <?php echo $cl_show_lm ? 'true' : 'false'; ?>;
 
-    var section = document.getElementById(blockId);
-    if (!section) {
-        console.warn('[ClientLogos] Section element not found for id:', blockId);
-        return;
-    }
+            console.log('[ClientLogos] Init — blockId:', blockId, '| showLoadMore:', showLM);
 
-    var select        = document.getElementById(filterId);
-    var sentinel      = showLM ? document.getElementById(sentinelId) : null;
-    var cards         = section.querySelectorAll('.logo-card');
-    var perPage       = sentinel ? parseInt(sentinel.getAttribute('data-per-page'), 10) : cards.length;
-    var loaded        = perPage;
-    var currentFilter = 'all';
-    var observer      = null;
-    var loading       = false;
-
-    console.log('[ClientLogos] Total cards:', cards.length, '| perPage:', perPage, '| sentinel found:', !!sentinel);
-
-    // Initial hide of cards beyond the first batch
-    if (sentinel) {
-        cards.forEach(function (card) {
-            if (parseInt(card.getAttribute('data-index'), 10) >= loaded) {
-                card.style.display = 'none';
+            var section = document.getElementById(blockId);
+            if (!section) {
+                console.warn('[ClientLogos] Section element not found for id:', blockId);
+                return;
             }
-        });
-        console.log('[ClientLogos] Initial render: showing first', loaded, 'of', cards.length, 'cards');
-    }
 
-    function attachObserver() {
-        if (observer) { observer.disconnect(); observer = null; }
-        if (!sentinel || loaded >= cards.length || currentFilter !== 'all') {
-            console.log('[ClientLogos] attachObserver skipped — all loaded or filter active');
-            return;
-        }
+            var select        = document.getElementById(filterId);
+            var sentinel      = showLM ? document.getElementById(sentinelId) : null;
+            var cards         = section.querySelectorAll('.logo-card');
+            var perPage       = sentinel ? parseInt(sentinel.getAttribute('data-per-page'), 10) : cards.length;
+            var loaded        = perPage;
+            var currentFilter = 'all';
+            var observer      = null;
+            var loading       = false;
 
-        sentinel.style.height  = '1px';
-        sentinel.style.display = '';
+            console.log('[ClientLogos] Total cards:', cards.length, '| perPage:', perPage, '| sentinel found:', !!sentinel);
 
-        console.log('[ClientLogos] Observer attached — watching sentinel, loaded so far:', loaded, '/', cards.length);
-
-        observer = new IntersectionObserver(function (entries) {
-            if (!entries[0].isIntersecting || loading) return;
-
-            console.log('[ClientLogos] Sentinel intersected — loading next batch');
-            observer.disconnect();
-            observer = null;
-            loading  = true;
-            loaded  += perPage;
-
-            applyVisibility();
-
-            // Allow browser to reflow newly visible cards (pushes sentinel below viewport)
-            // before re-arming the observer
-            setTimeout(function () {
-                loading = false;
-                console.log('[ClientLogos] Reflow done — re-attaching observer. Loaded:', loaded, '/', cards.length);
-                attachObserver();
-            }, 200);
-
-        }, { rootMargin: '0px 0px 150px 0px' });
-
-        observer.observe(sentinel);
-    }
-
-    function applyVisibility() {
-        var shown = 0;
-        cards.forEach(function (card) {
-            var idx         = parseInt(card.getAttribute('data-index'), 10);
-            var industry    = card.getAttribute('data-industry') || '';
-            var matchFilter = currentFilter === 'all' || industry === currentFilter;
-
-            if (currentFilter !== 'all') {
-                card.style.display = matchFilter ? '' : 'none';
-                if (matchFilter) shown++;
-            } else {
-                card.style.display = (idx < loaded) ? '' : 'none';
-                if (idx < loaded) shown++;
-            }
-        });
-
-        console.log('[ClientLogos] applyVisibility — filter:', currentFilter, '| visible cards:', shown);
-
-        if (sentinel && (loaded >= cards.length || currentFilter !== 'all')) {
-            sentinel.style.display = 'none';
-            console.log('[ClientLogos] Sentinel hidden —', loaded >= cards.length ? 'all cards loaded' : 'filter is active');
-        }
-    }
-
-    // Boot on page load
-    attachObserver();
-
-    // Filter change
-    if (select) {
-        select.addEventListener('change', function () {
-            currentFilter = this.value;
-            console.log('[ClientLogos] Filter changed to:', currentFilter);
-
-            if (observer) { observer.disconnect(); observer = null; }
-
-            if (currentFilter !== 'all') {
+            // Initial hide of cards beyond the first batch
+            if (sentinel) {
                 cards.forEach(function (card) {
-                    var industry = card.getAttribute('data-industry') || '';
-                    card.style.display = (industry === currentFilter) ? '' : 'none';
+                    if (parseInt(card.getAttribute('data-index'), 10) >= loaded) {
+                        card.style.display = 'none';
+                    }
                 });
-                if (sentinel) sentinel.style.display = 'none';
-            } else {
-                // Back to "All Industries" — restore pagination then re-arm observer
-                applyVisibility();
-                setTimeout(attachObserver, 50);
+                console.log('[ClientLogos] Initial render: showing first', loaded, 'of', cards.length, 'cards');
             }
-        });
-    } else if (document.getElementById(filterId) === null) {
-        console.warn('[ClientLogos] Filter select not found for id:', filterId);
-    }
-})();
-</script>
-<?php endif; ?>
+
+            function attachObserver() {
+                if (observer) { observer.disconnect(); observer = null; }
+                if (!sentinel || loaded >= cards.length || currentFilter !== 'all') {
+                    console.log('[ClientLogos] attachObserver skipped — all loaded or filter active');
+                    return;
+                }
+
+                sentinel.style.height  = '1px';
+                sentinel.style.display = '';
+
+                console.log('[ClientLogos] Observer attached — watching sentinel, loaded so far:', loaded, '/', cards.length);
+
+                observer = new IntersectionObserver(function (entries) {
+                    if (!entries[0].isIntersecting || loading) return;
+
+                    console.log('[ClientLogos] Sentinel intersected — loading next batch');
+                    observer.disconnect();
+                    observer = null;
+                    loading  = true;
+                    loaded  += perPage;
+
+                    applyVisibility();
+
+                    // Allow browser to reflow newly visible cards before re-arming observer
+                    setTimeout(function () {
+                        loading = false;
+                        console.log('[ClientLogos] Reflow done — re-attaching observer. Loaded:', loaded, '/', cards.length);
+                        attachObserver();
+                    }, 200);
+
+                }, { rootMargin: '0px 0px 150px 0px' });
+
+                observer.observe(sentinel);
+            }
+
+            function applyVisibility() {
+                var shown = 0;
+                cards.forEach(function (card) {
+                    var idx         = parseInt(card.getAttribute('data-index'), 10);
+                    var industry    = card.getAttribute('data-industry') || '';
+                    var matchFilter = currentFilter === 'all' || industry === currentFilter;
+
+                    if (currentFilter !== 'all') {
+                        card.style.display = matchFilter ? '' : 'none';
+                        if (matchFilter) shown++;
+                    } else {
+                        card.style.display = (idx < loaded) ? '' : 'none';
+                        if (idx < loaded) shown++;
+                    }
+                });
+
+                console.log('[ClientLogos] applyVisibility — filter:', currentFilter, '| visible cards:', shown);
+
+                var allLoaded    = loaded >= cards.length;
+                var filterActive = currentFilter !== 'all';
+                if (sentinel && (allLoaded || filterActive)) {
+                    sentinel.style.display = 'none';
+                    console.log('[ClientLogos] Sentinel hidden —', allLoaded ? 'all cards loaded' : 'filter is active');
+                }
+            }
+
+            // Boot on page load
+            attachObserver();
+
+            // Filter change
+            if (select) {
+                select.addEventListener('change', function () {
+                    currentFilter = this.value;
+                    console.log('[ClientLogos] Filter changed to:', currentFilter);
+
+                    if (observer) { observer.disconnect(); observer = null; }
+
+                    if (currentFilter !== 'all') {
+                        cards.forEach(function (card) {
+                            var industry = card.getAttribute('data-industry') || '';
+                            card.style.display = (industry === currentFilter) ? '' : 'none';
+                        });
+                        if (sentinel) sentinel.style.display = 'none';
+                    } else {
+                        // Back to "All Industries" — restore pagination then re-arm observer
+                        applyVisibility();
+                        setTimeout(attachObserver, 50);
+                    }
+                });
+            } else {
+                console.warn('[ClientLogos] Filter select not found for id:', filterId);
+            }
+        })();
+        </script>
+        <?php
+    }, 20);
+endif;
+?>
 
       </div>
     </section>
