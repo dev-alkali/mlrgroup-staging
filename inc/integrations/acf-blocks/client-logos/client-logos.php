@@ -108,17 +108,13 @@ if (!empty($block['className'])) {
         </div>
 
         <?php if ($show_load_more) : ?>
-          <div class="logo-load-more-wrap text-center mt-[32px] md:mt-[40px]">
-            <button
-              id="<?php echo esc_attr($btn_id); ?>"
-              type="button"
-              data-per-page="<?php echo esc_attr($per_page); ?>"
-              data-loaded="<?php echo esc_attr($per_page); ?>"
-              data-total="<?php echo esc_attr($total_logos); ?>"
-              class="inline-flex gap-2 relative cursor-pointer">
-              <span class="font-semibold text-accent text-lg leading-7 uppercase relative w-fit font-heading tracking-[0]">Load More</span>
-              <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="https://wordpress-755960-6249701.cloudwaysapps.com/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg" alt="">
-            </button>
+          <div
+            id="<?php echo esc_attr($btn_id); ?>"
+            class="logo-sentinel mt-[32px]"
+            data-per-page="<?php echo esc_attr($per_page); ?>"
+            data-loaded="<?php echo esc_attr($per_page); ?>"
+            data-total="<?php echo esc_attr($total_logos); ?>"
+            aria-hidden="true">
           </div>
         <?php endif; ?>
 
@@ -140,28 +136,37 @@ if (!empty($block['className'])) {
 <?php if ($show_filter) : ?>
 <script>
 (function () {
-    var blockId   = <?php echo json_encode($id); ?>;
-    var filterId  = <?php echo json_encode($filter_id); ?>;
-    var btnId     = <?php echo json_encode($btn_id); ?>;
-    var showLM    = <?php echo $show_load_more ? 'true' : 'false'; ?>;
+    var blockId  = <?php echo json_encode($id); ?>;
+    var filterId = <?php echo json_encode($filter_id); ?>;
+    var sentinelId = <?php echo json_encode($btn_id); ?>;
+    var showLM   = <?php echo $show_load_more ? 'true' : 'false'; ?>;
 
-    var section   = document.getElementById(blockId);
+    var section  = document.getElementById(blockId);
     if (!section) return;
 
-    var select      = document.getElementById(filterId);
-    var loadMoreBtn = showLM ? document.getElementById(btnId) : null;
-    var cards       = section.querySelectorAll('.logo-card');
-    var perPage     = loadMoreBtn ? parseInt(loadMoreBtn.getAttribute('data-per-page'), 10) : cards.length;
-    var loaded      = perPage;
+    var select        = document.getElementById(filterId);
+    var sentinel      = showLM ? document.getElementById(sentinelId) : null;
+    var cards         = section.querySelectorAll('.logo-card');
+    var perPage       = sentinel ? parseInt(sentinel.getAttribute('data-per-page'), 10) : cards.length;
+    var loaded        = perPage;
     var currentFilter = 'all';
+    var observer      = null;
 
     // Hide cards beyond the first page on initial load
-    if (loadMoreBtn) {
+    if (sentinel) {
         cards.forEach(function (card) {
             if (parseInt(card.getAttribute('data-index'), 10) >= loaded) {
                 card.style.display = 'none';
             }
         });
+    }
+
+    function revealNext() {
+        loaded += perPage;
+        if (sentinel) {
+            sentinel.setAttribute('data-loaded', loaded);
+        }
+        applyVisibility();
     }
 
     function applyVisibility() {
@@ -179,29 +184,65 @@ if (!empty($block['className'])) {
             }
         });
 
-        if (loadMoreBtn) {
-            var wrap = loadMoreBtn.parentElement;
-            if (currentFilter !== 'all') {
-                // Hide Load More while a filter is active
-                wrap.style.display = 'none';
+        if (sentinel) {
+            var allLoaded = loaded >= cards.length;
+            if (currentFilter !== 'all' || allLoaded) {
+                // Disconnect observer when filter is active or everything is shown
+                sentinel.style.display = 'none';
+                if (observer) {
+                    observer.disconnect();
+                    observer = null;
+                }
             } else {
-                wrap.style.display = (loaded < cards.length) ? '' : 'none';
+                // Re-observe sentinel so next scroll triggers the next batch
+                sentinel.style.display = '';
+                if (observer) {
+                    observer.disconnect();
+                }
+                observer = new IntersectionObserver(function (entries) {
+                    if (entries[0].isIntersecting) {
+                        observer.disconnect();
+                        observer = null;
+                        revealNext();
+                    }
+                }, { rootMargin: '0px 0px 200px 0px' });
+                observer.observe(sentinel);
             }
         }
     }
 
+    // Boot the observer for the initial view
+    if (sentinel && loaded < cards.length) {
+        observer = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting) {
+                observer.disconnect();
+                observer = null;
+                revealNext();
+            }
+        }, { rootMargin: '0px 0px 200px 0px' });
+        observer.observe(sentinel);
+    }
+
+    // Filter change handler
     if (select) {
         select.addEventListener('change', function () {
             currentFilter = this.value;
-            applyVisibility();
-        });
-    }
 
-    if (loadMoreBtn) {
-        loadMoreBtn.addEventListener('click', function () {
-            loaded += perPage;
-            loadMoreBtn.setAttribute('data-loaded', loaded);
-            applyVisibility();
+            if (currentFilter !== 'all') {
+                // Show all matching, disconnect infinite scroll
+                if (observer) {
+                    observer.disconnect();
+                    observer = null;
+                }
+                cards.forEach(function (card) {
+                    var industry = card.getAttribute('data-industry') || '';
+                    card.style.display = (industry === currentFilter) ? '' : 'none';
+                });
+                if (sentinel) sentinel.style.display = 'none';
+            } else {
+                // Back to "All" — re-apply pagination and re-boot observer
+                applyVisibility();
+            }
         });
     }
 })();
