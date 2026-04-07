@@ -187,16 +187,60 @@ if ($show_filter) :
 
             function revealNext() {
                 if (loading) return;
-                console.log('[ClientLogos] revealNext triggered — loading:', loading, '| loaded:', loaded, '/', cards.length);
-                loading  = true;
-                loaded  += perPage;
+                loading = true;
+
+                var prevLoaded = loaded;
+                loaded += perPage;
+                console.log('[ClientLogos] revealNext — revealing cards', prevLoaded, 'to', loaded - 1);
+
+                // Collect newly visible cards and make them display:block
+                // before handing to GSAP so layout is already calculated
+                var newCards = [];
+                cards.forEach(function (card) {
+                    var idx = parseInt(card.getAttribute('data-index'), 10);
+                    if (idx >= prevLoaded && idx < loaded) {
+                        card.style.display = '';
+                        newCards.push(card);
+                    }
+                });
+
+                // Update sentinel / button visibility
                 applyVisibility();
-                // Let browser reflow new cards before re-arming observer
-                setTimeout(function () {
-                    loading = false;
-                    console.log('[ClientLogos] Reflow done — re-attaching observer. Loaded:', loaded, '/', cards.length);
-                    attachObserver();
-                }, 200);
+
+                if (typeof gsap !== 'undefined' && newCards.length) {
+                    gsap.fromTo(
+                        newCards,
+                        { opacity: 0, y: 40 },
+                        {
+                            opacity:  1,
+                            y:        0,
+                            duration: 0.6,
+                            ease:     'power2.out',
+                            stagger:  0.06,
+                            clearProps: 'all',
+                            onComplete: function () {
+                                loading = false;
+                                console.log('[ClientLogos] Animation done. Re-arming observer. Loaded:', loaded, '/', cards.length);
+                                attachObserver();
+                            }
+                        }
+                    );
+                } else {
+                    // CSS fallback when GSAP is unavailable
+                    newCards.forEach(function (card, i) {
+                        card.style.opacity   = '0';
+                        card.style.transform = 'translateY(40px)';
+                        card.style.transition = 'opacity 0.5s ease ' + (i * 0.06) + 's, transform 0.5s ease ' + (i * 0.06) + 's';
+                        requestAnimationFrame(function () {
+                            card.style.opacity   = '1';
+                            card.style.transform = 'translateY(0)';
+                        });
+                    });
+                    setTimeout(function () {
+                        loading = false;
+                        attachObserver();
+                    }, 600 + newCards.length * 60);
+                }
             }
 
             function attachObserver() {
