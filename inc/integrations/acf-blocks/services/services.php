@@ -55,7 +55,7 @@ $select_3_column_grid = get_sub_field('select_3_column_grid');
 $select_3_column_grid = get_sub_field('select_3_column_grid');
 
 $wrapper_class = $select_3_column_grid
-    ? "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-4 md:gap-2 w-full [&>article]:xl:col-span-2 [&:has(>article:nth-child(2):last-child)>article]:xl:col-span-3 [&:has(>article:nth-child(5):last-child)>article:nth-child(n+4)]:xl:col-span-3 [&>article:last-child:nth-child(odd)]:md:col-span-2"
+    ? "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-4 md:gap-2 w-full [&>article]:xl:col-span-2 [&:has(>article:nth-child(2):last-child)>article]:xl:col-span-3 [&:has(>article:nth-child(5):last-child)>article:nth-child(n+4)]:xl:col-span-3 [&>article:last-child:nth-child(odd)]:md:col-span-2 [&:has(>article:only-child)>article]:xl:col-span-3 [&:has(>article:only-child)>article]:md:col-span-1"
     : "grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] min-[767px]:grid-cols-2 min-[1280px]:grid-cols-4 gap-4 md:gap-2 w-full";
 
 $article_class = $select_3_column_grid
