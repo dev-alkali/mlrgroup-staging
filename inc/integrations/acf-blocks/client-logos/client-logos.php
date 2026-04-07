@@ -111,6 +111,7 @@ if (!empty($block['className'])) {
           <div
             id="<?php echo esc_attr($btn_id); ?>"
             class="logo-sentinel mt-[32px]"
+            style="height:1px;width:100%;"
             data-per-page="<?php echo esc_attr($per_page); ?>"
             data-loaded="<?php echo esc_attr($per_page); ?>"
             data-total="<?php echo esc_attr($total_logos); ?>"
@@ -136,12 +137,12 @@ if (!empty($block['className'])) {
 <?php if ($show_filter) : ?>
 <script>
 (function () {
-    var blockId  = <?php echo json_encode($id); ?>;
-    var filterId = <?php echo json_encode($filter_id); ?>;
+    var blockId    = <?php echo json_encode($id); ?>;
+    var filterId   = <?php echo json_encode($filter_id); ?>;
     var sentinelId = <?php echo json_encode($btn_id); ?>;
-    var showLM   = <?php echo $show_load_more ? 'true' : 'false'; ?>;
+    var showLM     = <?php echo $show_load_more ? 'true' : 'false'; ?>;
 
-    var section  = document.getElementById(blockId);
+    var section = document.getElementById(blockId);
     if (!section) return;
 
     var select        = document.getElementById(filterId);
@@ -151,8 +152,9 @@ if (!empty($block['className'])) {
     var loaded        = perPage;
     var currentFilter = 'all';
     var observer      = null;
+    var loading       = false; // lock prevents chain-reaction firing
 
-    // Hide cards beyond the first page on initial load
+    // Initial hide of cards beyond the first batch
     if (sentinel) {
         cards.forEach(function (card) {
             if (parseInt(card.getAttribute('data-index'), 10) >= loaded) {
@@ -161,12 +163,29 @@ if (!empty($block['className'])) {
         });
     }
 
-    function revealNext() {
-        loaded += perPage;
-        if (sentinel) {
-            sentinel.setAttribute('data-loaded', loaded);
-        }
-        applyVisibility();
+    function attachObserver() {
+        if (observer) { observer.disconnect(); observer = null; }
+        if (!sentinel || loaded >= cards.length || currentFilter !== 'all') return;
+
+        sentinel.style.height = '1px';
+        sentinel.style.display = '';
+
+        observer = new IntersectionObserver(function (entries) {
+            if (!entries[0].isIntersecting || loading) return;
+            observer.disconnect();
+            observer = null;
+            loading = true;
+            loaded += perPage;
+            applyVisibility();
+            // Wait for browser to reflow (new cards push sentinel below viewport)
+            // before re-attaching observer
+            setTimeout(function () {
+                loading = false;
+                attachObserver();
+            }, 200);
+        }, { rootMargin: '0px 0px 150px 0px' });
+
+        observer.observe(sentinel);
     }
 
     function applyVisibility() {
@@ -176,7 +195,7 @@ if (!empty($block['className'])) {
             var matchFilter = currentFilter === 'all' || industry === currentFilter;
 
             if (currentFilter !== 'all') {
-                // Filter active: show ALL matching logos, ignore pagination
+                // Filter active: show ALL matching, ignore pagination
                 card.style.display = matchFilter ? '' : 'none';
             } else {
                 // No filter: respect the loaded cursor
@@ -184,64 +203,34 @@ if (!empty($block['className'])) {
             }
         });
 
-        if (sentinel) {
-            var allLoaded = loaded >= cards.length;
-            if (currentFilter !== 'all' || allLoaded) {
-                // Disconnect observer when filter is active or everything is shown
-                sentinel.style.display = 'none';
-                if (observer) {
-                    observer.disconnect();
-                    observer = null;
-                }
-            } else {
-                // Re-observe sentinel so next scroll triggers the next batch
-                sentinel.style.display = '';
-                if (observer) {
-                    observer.disconnect();
-                }
-                observer = new IntersectionObserver(function (entries) {
-                    if (entries[0].isIntersecting) {
-                        observer.disconnect();
-                        observer = null;
-                        revealNext();
-                    }
-                }, { rootMargin: '0px 0px 200px 0px' });
-                observer.observe(sentinel);
-            }
+        // Hide sentinel once all cards are shown
+        if (sentinel && (loaded >= cards.length || currentFilter !== 'all')) {
+            sentinel.style.display = 'none';
         }
     }
 
-    // Boot the observer for the initial view
-    if (sentinel && loaded < cards.length) {
-        observer = new IntersectionObserver(function (entries) {
-            if (entries[0].isIntersecting) {
-                observer.disconnect();
-                observer = null;
-                revealNext();
-            }
-        }, { rootMargin: '0px 0px 200px 0px' });
-        observer.observe(sentinel);
-    }
+    // Boot on page load
+    attachObserver();
 
-    // Filter change handler
+    // Filter change
     if (select) {
         select.addEventListener('change', function () {
             currentFilter = this.value;
 
+            // Always kill any running observer when filter changes
+            if (observer) { observer.disconnect(); observer = null; }
+
             if (currentFilter !== 'all') {
-                // Show all matching, disconnect infinite scroll
-                if (observer) {
-                    observer.disconnect();
-                    observer = null;
-                }
+                // Show all matching, pause infinite scroll
                 cards.forEach(function (card) {
                     var industry = card.getAttribute('data-industry') || '';
                     card.style.display = (industry === currentFilter) ? '' : 'none';
                 });
                 if (sentinel) sentinel.style.display = 'none';
             } else {
-                // Back to "All" — re-apply pagination and re-boot observer
+                // Back to "All Industries" — restore pagination then re-attach observer
                 applyVisibility();
+                setTimeout(attachObserver, 50);
             }
         });
     }
