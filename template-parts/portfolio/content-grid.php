@@ -49,7 +49,7 @@ $term_id = isset($current_term->term_id) ? absint($current_term->term_id) : 0;
             if ($portfolio_query->have_posts()) :
                 while ($portfolio_query->have_posts()) : $portfolio_query->the_post();
                     $post_id = get_the_ID();
-                    $image_url = has_post_thumbnail() ? get_the_post_thumbnail_url($post_id, 'full') : '';
+                    $image_url = has_post_thumbnail() ? get_the_post_thumbnail_url($post_id, 'full') : '/wp-content/themes/Mlrgroup/assets/imgs/altr-img.jpg';
             ?>
                     <article class="gallery-card group">
                         <div class="card-image-wrap relative overflow-hidden aspect-[333.33/360] w-full" style="background-image: url('<?= esc_url($image_url); ?>'); background-position: 50% 50%; background-size: cover; background-repeat: no-repeat;">

@@ -28,11 +28,13 @@ $initial_posts_query = new WP_Query(
                         <?php post_class('overflow-hidden view-more-item '); ?>
                     >
                         <a href="<?php the_permalink(); ?>" class="block relative blog-card">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <div class="aspect-[1/1] relative  blog-card-img">
+                            <div class="aspect-[1/1] relative  blog-card-img">
+                                <?php if (has_post_thumbnail()) : ?>
                                     <?php the_post_thumbnail('full', ['class' => 'w-full h-full object-cover']); ?>
-                                </div>
-                            <?php endif; ?>                        
+                                <?php else : ?>
+                                    <img class="w-full h-full object-cover" src="/wp-content/themes/Mlrgroup/assets/imgs/altr-img.jpg" alt="">
+                                <?php endif; ?>
+                            </div>                        
                         <div class="">
                             <p class="font-body font-normal text-[18px] leading-[28px] tracking-[0] text-[#525252] mt-[16px] mb-[6px]"><?php echo esc_html(get_the_date()); ?></p>
                             <h2 class="font-[Poppins] font-bold text-[20px] leading-[28px] tracking-[-0.02em] text-[#262626]"><?php the_title(); ?></h2>
@@ -145,11 +147,9 @@ $initial_posts_query = new WP_Query(
 
                             article.innerHTML = `
                                 <a href="${post.link}" class="block relative blog-card">
-                                    ${featuredImageUrl ? `
-                                        <div class="aspect-[1/1] relative  blog-card-img">
-                                            <img class="w-full h-full object-cover" src="${featuredImageUrl}" alt="${post.title.rendered}" loading="lazy">
-                                        </div>
-                                    ` : ''}
+                                    <div class="aspect-[1/1] relative  blog-card-img">
+                                        <img class="w-full h-full object-cover" src="${featuredImageUrl || '/wp-content/themes/Mlrgroup/assets/imgs/altr-img.jpg'}" alt="${post.title.rendered}" loading="lazy">
+                                    </div>
                                 
                                 <div class="">
                                     <p class="font-body font-normal text-[18px] leading-[28px] tracking-[0] text-[#525252] mt-[16px] mb-[6px]">${formattedDate}</p>

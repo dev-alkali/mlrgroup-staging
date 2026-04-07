@@ -37,13 +37,15 @@ get_header();
           </div>
         <?php endif; ?>
 
-        <?php if (has_post_thumbnail()) : ?>
-          <div class="mt-[20px] overflow-hidden">
-            <div class="aspect-[17/10] bg-[#F5F5F5]">
+        <div class="mt-[20px] overflow-hidden">
+          <div class="aspect-[17/10] bg-[#F5F5F5]">
+            <?php if (has_post_thumbnail()) : ?>
               <?php the_post_thumbnail('full', ['class' => 'w-full h-full object-cover']); ?>
-            </div>
+            <?php else : ?>
+              <img class="w-full h-full object-cover" src="/wp-content/themes/Mlrgroup/assets/imgs/altr-img.jpg" alt="">
+            <?php endif; ?>
           </div>
-        <?php endif; ?>
+        </div>
 
         <article class="md:pt-[120px] pt-[60px] xl:px-[120px] lg:px-[60px] md:px-[30px] md:pb-[60px]">
           <div class="blog-content">  

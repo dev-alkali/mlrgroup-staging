@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   ScrollTrigger.create({
     trigger: sectionTrigger,
-    start: "top 85%",
+    start: "top 60%",
     once: true,
     onEnter: () => tl.play(),
   });
