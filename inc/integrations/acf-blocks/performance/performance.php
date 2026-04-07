@@ -29,7 +29,7 @@ if (!empty($block['className'])) {
                     </div>    
 
                     <!-- Info Items -->
-                    <div class="w-full xl:max-w-[calc(100%-340px)] flex-1 grid grid-cols-2 gap-6 md:flex md:flex-wrap md:justify-evenly lg:justify-around md:gap-2 lg:gap-4 xl:flex-wrap lg:pl-80px">
+                    <div class="w-full xl:max-w-[calc(100%-340px)] flex-1 grid grid-cols-2 gap-6 md:flex md:flex-wrap md:justify-evenly lg:justify-around md:gap-2 lg:gap-4 xl:flex-wrap lg:pl-[80px]">
                         <?php if (have_rows('infos')) : while (have_rows('infos')) : the_row(); ?>
                             <div class="performance-item flex flex-col items-start md:items-center gap-1 md:gap-3 w-full md:max-w-[163px]">
                                 <div class="relative flex items-center md:justify-center font-bold font-[poppins] text-white tracking-[-0.02em] text-[clamp(40px,4vw,60px)] leading-[clamp(48px,4.5vw,60px)]">
