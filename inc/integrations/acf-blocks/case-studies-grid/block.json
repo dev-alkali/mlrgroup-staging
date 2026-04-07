@@ -1,0 +1,14 @@
+{
+    "name": "acf/case-studies-grid",
+    "title": "Case Studies Grid",
+    "description": "Case Studies Grid Section",
+    "style": ["file:./case-studies-grid.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["case studies", "grid", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "case-studies-grid.php"
+    },
+    "script": "case-studies-gridJS"
+}
