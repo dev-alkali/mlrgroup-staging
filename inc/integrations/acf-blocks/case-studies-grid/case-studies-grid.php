@@ -15,10 +15,11 @@ if (!empty($block['className'])) {
 }
 ?>
 <?php if (have_rows('case_studies_grid')) :  while (have_rows('case_studies_grid')) : the_row(); ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex justify-center pt-20 md:pt-30 px-6 md:px-6 bg-black">    
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>  py-20 md:py-30 px-6 md:px-10 bg-black">    
          
+    <div class="flex flex-col gap-5 xl:gap-10 xl:gap-15"> 
         <!-- Heading -->
-        <div class="w-full flex flex-col items-start justify-center gap-5 px-4 sm:px-10">            
+        <div class="w-full">            
             <h2 class="flex flex-col max-w-[660px] font-heading text-white tracking-[-0.02em] text-[clamp(36px,5vw,68px)] leading-[clamp(44px,6vw,78px)]">
                 <span class="font-bold">
                     <?= wp_kses_post(get_sub_field('title_row_1')) ?>
@@ -72,7 +73,7 @@ if (!empty($block['className'])) {
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#FD4338" xmlns="http://www.w3.org/2000/svg">
             <path d="M2.26562 2.47656H13.407V13.9386" stroke-miterlimit="10"/><path d="M13.3351 2.54688L2.33789 13.8605" stroke-miterlimit="10"/> </svg></a>
         <?php endif; ?>
-
+    </div>
      
 </section>
 
