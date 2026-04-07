@@ -175,7 +175,121 @@ if ($show_filter) :
 
             console.log('[ClientLogos] Total cards:', cards.length, '| perPage:', perPage, '| sentinel found:', !!sentinel);
 
-            // Initial hide of cards beyond the first batch
+            // Returns only the cards that match the active filter
+            function getMatchingCards() {
+                return Array.from(cards).filter(function (card) {
+                    if (currentFilter === 'all') return true;
+                    return (card.getAttribute('data-industry') || '') === currentFilter;
+                });
+            }
+
+            // Animate an array of cards in with GSAP (or CSS fallback),
+            // then call onDone when complete
+            function animateIn(newCards, onDone) {
+                if (!newCards.length) { onDone(); return; }
+
+                if (typeof gsap !== 'undefined') {
+                    gsap.fromTo(
+                        newCards,
+                        { opacity: 0, y: 40 },
+                        {
+                            opacity:    1,
+                            y:          0,
+                            duration:   0.6,
+                            ease:       'power2.out',
+                            stagger:    0.06,
+                            clearProps: 'all',
+                            onComplete: onDone
+                        }
+                    );
+                } else {
+                    newCards.forEach(function (card, i) {
+                        card.style.opacity    = '0';
+                        card.style.transform  = 'translateY(40px)';
+                        card.style.transition = 'opacity 0.5s ease ' + (i * 0.06) + 's, transform 0.5s ease ' + (i * 0.06) + 's';
+                        requestAnimationFrame(function () {
+                            card.style.opacity   = '1';
+                            card.style.transform = 'translateY(0)';
+                        });
+                    });
+                    setTimeout(onDone, 600 + newCards.length * 60);
+                }
+            }
+
+            // Show/hide cards based on current filter + loaded cursor,
+            // and update the Load More button visibility
+            function applyVisibility() {
+                var matching = getMatchingCards();
+
+                cards.forEach(function (card) {
+                    var industry     = card.getAttribute('data-industry') || '';
+                    var matchesFilter = currentFilter === 'all' || industry === currentFilter;
+
+                    if (!matchesFilter) {
+                        card.style.display = 'none';
+                        return;
+                    }
+
+                    var pos = matching.indexOf(card);
+                    card.style.display = (pos < loaded) ? '' : 'none';
+                });
+
+                if (sentinel) {
+                    var allDone = loaded >= matching.length;
+                    sentinel.parentElement.style.display = allDone ? 'none' : '';
+                    console.log('[ClientLogos] applyVisibility — filter:', currentFilter,
+                        '| showing:', Math.min(loaded, matching.length), '/', matching.length,
+                        '| button:', allDone ? 'hidden' : 'visible');
+                }
+            }
+
+            // Reveal the next batch of matching cards with animation
+            function revealNext() {
+                if (loading) return;
+                loading = true;
+
+                var matching   = getMatchingCards();
+                var prevLoaded = loaded;
+                loaded         = Math.min(loaded + perPage, matching.length);
+
+                console.log('[ClientLogos] revealNext — showing items', prevLoaded, 'to', loaded - 1, 'of', matching.length);
+
+                var newCards = matching.slice(prevLoaded, loaded);
+                newCards.forEach(function (card) { card.style.display = ''; });
+
+                applyVisibility();
+
+                animateIn(newCards, function () {
+                    loading = false;
+                    console.log('[ClientLogos] Animation done. Loaded:', loaded, '/', matching.length);
+                    attachObserver();
+                });
+            }
+
+            // Arm the IntersectionObserver on the Load More button
+            function attachObserver() {
+                if (observer) { observer.disconnect(); observer = null; }
+
+                var matching = getMatchingCards();
+                if (!sentinel || loaded >= matching.length) {
+                    console.log('[ClientLogos] attachObserver skipped — all matching cards shown');
+                    return;
+                }
+
+                console.log('[ClientLogos] Observer armed — loaded:', loaded, '/', matching.length);
+
+                observer = new IntersectionObserver(function (entries) {
+                    if (!entries[0].isIntersecting || loading) return;
+                    console.log('[ClientLogos] Button scrolled into view — auto-triggering');
+                    observer.disconnect();
+                    observer = null;
+                    revealNext();
+                }, { rootMargin: '0px 0px 100px 0px' });
+
+                observer.observe(sentinel);
+            }
+
+            // ── Initial render ────────────────────────────────────────────────
             if (sentinel) {
                 cards.forEach(function (card) {
                     if (parseInt(card.getAttribute('data-index'), 10) >= loaded) {
@@ -185,121 +299,10 @@ if ($show_filter) :
                 console.log('[ClientLogos] Initial render: showing first', loaded, 'of', cards.length, 'cards');
             }
 
-            function revealNext() {
-                if (loading) return;
-                loading = true;
-
-                var prevLoaded = loaded;
-                loaded += perPage;
-                console.log('[ClientLogos] revealNext — revealing cards', prevLoaded, 'to', loaded - 1);
-
-                // Collect newly visible cards and make them display:block
-                // before handing to GSAP so layout is already calculated
-                var newCards = [];
-                cards.forEach(function (card) {
-                    var idx = parseInt(card.getAttribute('data-index'), 10);
-                    if (idx >= prevLoaded && idx < loaded) {
-                        card.style.display = '';
-                        newCards.push(card);
-                    }
-                });
-
-                // Update sentinel / button visibility
-                applyVisibility();
-
-                if (typeof gsap !== 'undefined' && newCards.length) {
-                    gsap.fromTo(
-                        newCards,
-                        { opacity: 0, y: 40 },
-                        {
-                            opacity:  1,
-                            y:        0,
-                            duration: 0.6,
-                            ease:     'power2.out',
-                            stagger:  0.06,
-                            clearProps: 'all',
-                            onComplete: function () {
-                                loading = false;
-                                console.log('[ClientLogos] Animation done. Re-arming observer. Loaded:', loaded, '/', cards.length);
-                                attachObserver();
-                            }
-                        }
-                    );
-                } else {
-                    // CSS fallback when GSAP is unavailable
-                    newCards.forEach(function (card, i) {
-                        card.style.opacity   = '0';
-                        card.style.transform = 'translateY(40px)';
-                        card.style.transition = 'opacity 0.5s ease ' + (i * 0.06) + 's, transform 0.5s ease ' + (i * 0.06) + 's';
-                        requestAnimationFrame(function () {
-                            card.style.opacity   = '1';
-                            card.style.transform = 'translateY(0)';
-                        });
-                    });
-                    setTimeout(function () {
-                        loading = false;
-                        attachObserver();
-                    }, 600 + newCards.length * 60);
-                }
-            }
-
-            function attachObserver() {
-                if (observer) { observer.disconnect(); observer = null; }
-                if (!sentinel || loaded >= cards.length || currentFilter !== 'all') {
-                    console.log('[ClientLogos] attachObserver skipped — all loaded or filter active');
-                    return;
-                }
-
-                sentinel.style.display = '';
-
-                console.log('[ClientLogos] Observer attached — watching sentinel, loaded so far:', loaded, '/', cards.length);
-
-                observer = new IntersectionObserver(function (entries) {
-                    if (!entries[0].isIntersecting || loading) return;
-                    console.log('[ClientLogos] Sentinel scrolled into view — auto-triggering next batch');
-                    observer.disconnect();
-                    observer = null;
-                    revealNext();
-                }, { rootMargin: '0px 0px 100px 0px' });
-
-                observer.observe(sentinel);
-            }
-
-            function applyVisibility() {
-                var shown = 0;
-                cards.forEach(function (card) {
-                    var idx         = parseInt(card.getAttribute('data-index'), 10);
-                    var industry    = card.getAttribute('data-industry') || '';
-                    var matchFilter = currentFilter === 'all' || industry === currentFilter;
-
-                    if (currentFilter !== 'all') {
-                        card.style.display = matchFilter ? '' : 'none';
-                        if (matchFilter) shown++;
-                    } else {
-                        card.style.display = (idx < loaded) ? '' : 'none';
-                        if (idx < loaded) shown++;
-                    }
-                });
-
-                console.log('[ClientLogos] applyVisibility — filter:', currentFilter, '| visible cards:', shown);
-
-                var allLoaded    = loaded >= cards.length;
-                var filterActive = currentFilter !== 'all';
-                if (sentinel) {
-                    var wrap = sentinel.parentElement;
-                    if (allLoaded || filterActive) {
-                        wrap.style.display = 'none';
-                        console.log('[ClientLogos] Load More button hidden —', allLoaded ? 'all cards loaded' : 'filter is active');
-                    } else {
-                        wrap.style.display = '';
-                    }
-                }
-            }
-
             // Boot observer on page load
             attachObserver();
 
-            // Manual click fallback — also works as auto-trigger when scrolled into view
+            // Manual click on the Load More button
             if (sentinel) {
                 sentinel.addEventListener('click', function () {
                     console.log('[ClientLogos] Load More clicked manually');
@@ -308,25 +311,27 @@ if ($show_filter) :
                 });
             }
 
-            // Filter change
+            // ── Filter change ─────────────────────────────────────────────────
             if (select) {
                 select.addEventListener('change', function () {
                     currentFilter = this.value;
-                    console.log('[ClientLogos] Filter changed to:', currentFilter);
+                    loaded        = perPage; // reset to page 1 for new filter
+                    console.log('[ClientLogos] Filter changed to:', currentFilter, '— resetting to page 1');
 
                     if (observer) { observer.disconnect(); observer = null; }
 
-                    if (currentFilter !== 'all') {
-                        cards.forEach(function (card) {
-                            var industry = card.getAttribute('data-industry') || '';
-                            card.style.display = (industry === currentFilter) ? '' : 'none';
-                        });
-                        if (sentinel) sentinel.parentElement.style.display = 'none';
-                    } else {
-                        // Back to "All Industries" — restore pagination then re-arm observer
-                        applyVisibility();
+                    // Hide all cards, then reveal the first batch with animation
+                    cards.forEach(function (card) { card.style.display = 'none'; });
+
+                    var matching   = getMatchingCards();
+                    var firstBatch = matching.slice(0, loaded);
+                    firstBatch.forEach(function (card) { card.style.display = ''; });
+
+                    applyVisibility();
+
+                    animateIn(firstBatch, function () {
                         setTimeout(attachObserver, 50);
-                    }
+                    });
                 });
             } else {
                 console.warn('[ClientLogos] Filter select not found for id:', filterId);
