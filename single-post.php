@@ -22,13 +22,15 @@ get_header();
 				<?php the_title(); ?>
 				</h1>
 
+			<div class="mt-[28px] overflow-hidden">
+				<div class="aspect-[16/9] bg-[#F5F5F5]">
 				<?php if (has_post_thumbnail()) : ?>
-				<div class="mt-[28px] overflow-hidden">
-					<div class="aspect-[16/9] bg-[#F5F5F5]">
 					<?php the_post_thumbnail('full', ['class' => 'w-full h-full object-cover']); ?>
-					</div>
-				</div>
+				<?php else : ?>
+					<img class="w-full h-full object-cover" src="/wp-content/themes/Mlrgroup/assets/imgs/altr-img.jpg" alt="">
 				<?php endif; ?>
+				</div>
+			</div>
 
 				<div class="md:flex mt-[20px] hidden">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/single-blog-arrow-1.svg" alt="Blog Author" class="w-full">
