@@ -17,7 +17,7 @@ if (!empty($block['className'])) {
 <?php if (have_rows('case_studies_grid')) :  while (have_rows('case_studies_grid')) : the_row(); ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>  py-20 md:py-30 px-6 md:px-10 bg-black">    
          
-    <div class="flex flex-col gap-5 xl:gap-10 xl:gap-15">
+    <div class="flex flex-col gap-5 xl:gap-10 xl:gap-15"> 
         <!-- Heading -->
         <div class="w-full">            
             <h2 class="flex flex-col max-w-[660px] font-heading text-white tracking-[-0.02em] text-[clamp(36px,5vw,68px)] leading-[clamp(44px,6vw,78px)]">
