@@ -1,15 +1,13 @@
 <?php
-$taxonomy = 'portfolio-category';
-$current_term = get_queried_object();
+$taxonomy       = 'portfolio-category';
+$current_term   = get_queried_object();
 $active_term_id = (isset($current_term->term_id) && $current_term->term_id) ? absint($current_term->term_id) : 0;
+$active_ancestor_ids = $active_term_id > 0
+    ? array_map('absint', get_ancestors($active_term_id, $taxonomy, 'taxonomy'))
+    : array();
 
-$parent_terms = get_terms(array(
-   'taxonomy'   => $taxonomy,
-   'parent'     => 0,
-   'hide_empty' => false,
-   'orderby'    => 'term_id',
-   'order'      => 'DESC',
-));
+// Read curated filter groups from ACF Options
+$filter_groups = get_field('portfolio_filter_groups', 'option');
 ?>
 
 <aside id="sidebar-filter" class="flex flex-col w-full md:w-[220px] lg:w-[280px] xl:w-[360px] flex-shrink-0 gap-4 mt-[25px]" aria-label="Filter categories">
@@ -33,89 +31,88 @@ $parent_terms = get_terms(array(
                </svg> All Industries </a>
       </div>
 
-       <?php if (!empty($parent_terms) && !is_wp_error($parent_terms)) :
-          $active_ancestor_ids = $active_term_id > 0
-            ? array_map('absint', get_ancestors($active_term_id, $taxonomy, 'taxonomy'))
-            : array();
+       <?php if (!empty($filter_groups)) : ?>
+          <ul class="space-y-[28px]">
+            <?php foreach ($filter_groups as $group) :
+              $parent   = $group['parent_category'];
+              $children = !empty($group['child_categories']) ? $group['child_categories'] : array();
 
-          $render_term_tree = function ($terms, $level = 1, $is_open = true) use (&$render_term_tree, $taxonomy, $active_term_id, $active_ancestor_ids) {
-            if (empty($terms) || is_wp_error($terms)) {
-              return;
-            }
+              if (empty($parent) || is_wp_error($parent)) continue;
 
-            $ul_class = $level === 1
-              ? 'space-y-[28px]'
-              : 'child-list space-y-[28px] overflow-hidden transition-all duration-300 pl-0 ' . ($is_open ? 'is-open' : '');
-            echo '<ul class="' . esc_attr($ul_class) . '">';
+              $parent_id          = absint($parent->term_id);
+              $parent_link        = get_term_link($parent);
+              if (is_wp_error($parent_link)) continue;
 
-            foreach ($terms as $term) {
-              $term_id   = absint($term->term_id);
-              $term_link = get_term_link($term);
-              if (is_wp_error($term_link)) {
-                continue;
-              }
+              $parent_active      = ($active_term_id === $parent_id);
+              $parent_is_ancestor = in_array($parent_id, $active_ancestor_ids, true);
+              $is_open            = $parent_active || $parent_is_ancestor;
+              $has_children       = !empty($children);
 
-              $child_terms = get_terms(array(
-                'taxonomy'   => $taxonomy,
-                'parent'     => $term_id,
-                'hide_empty' => false,
-              ));
-              $has_child = !empty($child_terms) && !is_wp_error($child_terms);
-
-              $term_active = ($active_term_id > 0 && $term_id === $active_term_id);
-              $term_is_open_active = $term_active || in_array($term_id, $active_ancestor_ids, true);
-
-              echo '<li class="' . ($has_child ? 'has-child' : '') . '">';
-              echo '<div class="flex items-start justify-between space-y-[28px]">';
-
-              if ($has_child && $level === 1) {
-                $term_class = 'font-[Poppins] font-bold text-[18px] leading-[28px] text-[#262626] hover:text-[#FD4338] no-underline transition-colors';
-                if ($term_is_open_active) {
-                  $term_class .= ' text-[#FD4338]';
-                }
+              if ($has_children) {
+                $parent_class = 'font-[Poppins] font-bold text-[18px] leading-[28px] text-[#262626] hover:text-[#FD4338] no-underline transition-colors';
+                if ($is_open) $parent_class .= ' text-[#FD4338]';
               } else {
-                $term_class = 'group relative inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline hover:underline transition-all duration-300 pl-0 hover:pl-6';
-                if ($term_active) {
-                  $term_class .= ' text-[#FD4338] pl-6 underline';
-                }
+                $parent_class = 'group relative inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline hover:underline transition-all duration-300 pl-0 hover:pl-6';
+                if ($parent_active) $parent_class .= ' text-[#FD4338] pl-6 underline';
               }
+            ?>
+              <li class="<?php echo $has_children ? 'has-child' : ''; ?>">
+                <div class="flex items-start justify-between space-y-[28px]">
+                  <a href="<?php echo esc_url($parent_link); ?>" class="<?php echo esc_attr($parent_class); ?>">
+                    <?php if (!$has_children) :
+                      $p_svg_class = 'absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200';
+                      if ($parent_active) $p_svg_class .= ' opacity-100';
+                    ?>
+                      <svg class="<?php echo esc_attr($p_svg_class); ?>" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M2.26562 2.47461H13.407V13.9366" stroke="#FD4338"/>
+                        <path d="M13.3351 2.54785L2.33789 13.8615" stroke="#FD4338"/>
+                      </svg>
+                    <?php endif; ?>
+                    <?php echo esc_html($parent->name); ?>
+                  </a>
 
-              echo '<a href="' . esc_url($term_link) . '" class="' . esc_attr($term_class) . '">';
+                  <?php if ($has_children) :
+                    $arrow_class = 'arrow cursor-pointer ml-2 transition-transform duration-300 mt-[9px]' . ($is_open ? '' : ' rotate-180');
+                  ?>
+                    <span class="<?php echo esc_attr($arrow_class); ?>" data-toggle>
+                      <svg width="14" height="9" viewBox="0 0 14 9" fill="none">
+                        <path d="M6.75 0.00019455L13.5 6.7502L11.925 8.3252L6.75 3.15019L1.575 8.3252L0 6.7502L6.75 0.00019455Z" fill="#525252"/>
+                      </svg>
+                    </span>
+                  <?php endif; ?>
+                </div>
 
-              if (!$has_child || $level > 1) {
-                $term_svg_class = 'absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200';
-                if ($term_active) {
-                  $term_svg_class .= ' opacity-100';
-                }
-                echo '<svg class="' . esc_attr($term_svg_class) . '" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.26562 2.47461H13.407V13.9366" stroke="#FD4338"/><path d="M13.3351 2.54785L2.33789 13.8615" stroke="#FD4338"/></svg>';
-              }
-
-              echo esc_html($term->name);
-              echo '</a>';
-
-              if ($has_child) {
-                $arrow_rotate_class = $term_is_open_active ? '' : ' rotate-180';
-                echo '<span class="arrow cursor-pointer ml-2 transition-transform duration-300 mt-[9px]' . esc_attr($arrow_rotate_class) . '" data-toggle>
-                        <svg width="14" height="9" viewBox="0 0 14 9" fill="none">
-                          <path d="M6.75 0.00019455L13.5 6.7502L11.925 8.3252L6.75 3.15019L1.575 8.3252L0 6.7502L6.75 0.00019455Z" fill="#525252"/>
-                        </svg>
-                      </span>';
-              }
-
-              echo '</div>';
-
-              if ($has_child) {
-                $render_term_tree($child_terms, $level + 1, $term_is_open_active);
-              }
-
-              echo '</li>';
-            }
-
-            echo '</ul>';
-          };
-
-          $render_term_tree($parent_terms, 1, true);
-        endif; ?>
+                <?php if ($has_children) : ?>
+                  <ul class="child-list space-y-[28px] overflow-hidden transition-all duration-300 pl-0 <?php echo $is_open ? 'is-open' : ''; ?>">
+                    <?php foreach ($children as $child) :
+                      if (empty($child) || is_wp_error($child)) continue;
+                      $child_id   = absint($child->term_id);
+                      $child_link = get_term_link($child);
+                      if (is_wp_error($child_link)) continue;
+                      $child_active = ($active_term_id === $child_id);
+                      $c_class = 'group relative inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline hover:underline transition-all duration-300 pl-0 hover:pl-6';
+                      if ($child_active) $c_class .= ' text-[#FD4338] pl-6 underline';
+                      $c_svg_class = 'absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200';
+                      if ($child_active) $c_svg_class .= ' opacity-100';
+                    ?>
+                      <li>
+                        <div class="flex items-start justify-between space-y-[28px]">
+                          <a href="<?php echo esc_url($child_link); ?>" class="<?php echo esc_attr($c_class); ?>">
+                            <svg class="<?php echo esc_attr($c_svg_class); ?>" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M2.26562 2.47461H13.407V13.9366" stroke="#FD4338"/>
+                              <path d="M13.3351 2.54785L2.33789 13.8615" stroke="#FD4338"/>
+                            </svg>
+                            <?php echo esc_html($child->name); ?>
+                          </a>
+                        </div>
+                      </li>
+                    <?php endforeach; ?>
+                  </ul>
+                <?php endif; ?>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+        <?php endif; ?>
 
    </div>
 </aside>
