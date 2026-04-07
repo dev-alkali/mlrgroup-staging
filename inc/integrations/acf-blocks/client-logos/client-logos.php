@@ -108,14 +108,17 @@ if (!empty($block['className'])) {
         </div>
 
         <?php if ($show_load_more) : ?>
-          <div
-            id="<?php echo esc_attr($btn_id); ?>"
-            class="logo-sentinel mt-[32px]"
-            style="height:1px;width:100%;"
-            data-per-page="<?php echo esc_attr($per_page); ?>"
-            data-loaded="<?php echo esc_attr($per_page); ?>"
-            data-total="<?php echo esc_attr($total_logos); ?>"
-            aria-hidden="true">
+          <div class="logo-load-more-wrap text-center mt-[32px] md:mt-[40px]">
+            <button
+              id="<?php echo esc_attr($btn_id); ?>"
+              type="button"
+              class="logo-sentinel inline-flex gap-2 items-center cursor-pointer bg-transparent border-0 p-0"
+              data-per-page="<?php echo esc_attr($per_page); ?>"
+              data-loaded="<?php echo esc_attr($per_page); ?>"
+              data-total="<?php echo esc_attr($total_logos); ?>">
+              <span class="font-semibold text-accent text-lg leading-7 uppercase relative w-fit font-heading tracking-[0]">Load More</span>
+              <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="<?php echo esc_url(get_template_directory_uri() . '/assets/imgs/Arrow-red.svg'); ?>" alt="">
+            </button>
           </div>
         <?php endif; ?>
 
@@ -182,6 +185,20 @@ if ($show_filter) :
                 console.log('[ClientLogos] Initial render: showing first', loaded, 'of', cards.length, 'cards');
             }
 
+            function revealNext() {
+                if (loading) return;
+                console.log('[ClientLogos] revealNext triggered — loading:', loading, '| loaded:', loaded, '/', cards.length);
+                loading  = true;
+                loaded  += perPage;
+                applyVisibility();
+                // Let browser reflow new cards before re-arming observer
+                setTimeout(function () {
+                    loading = false;
+                    console.log('[ClientLogos] Reflow done — re-attaching observer. Loaded:', loaded, '/', cards.length);
+                    attachObserver();
+                }, 200);
+            }
+
             function attachObserver() {
                 if (observer) { observer.disconnect(); observer = null; }
                 if (!sentinel || loaded >= cards.length || currentFilter !== 'all') {
@@ -189,30 +206,17 @@ if ($show_filter) :
                     return;
                 }
 
-                sentinel.style.height  = '1px';
                 sentinel.style.display = '';
 
                 console.log('[ClientLogos] Observer attached — watching sentinel, loaded so far:', loaded, '/', cards.length);
 
                 observer = new IntersectionObserver(function (entries) {
                     if (!entries[0].isIntersecting || loading) return;
-
-                    console.log('[ClientLogos] Sentinel intersected — loading next batch');
+                    console.log('[ClientLogos] Sentinel scrolled into view — auto-triggering next batch');
                     observer.disconnect();
                     observer = null;
-                    loading  = true;
-                    loaded  += perPage;
-
-                    applyVisibility();
-
-                    // Allow browser to reflow newly visible cards before re-arming observer
-                    setTimeout(function () {
-                        loading = false;
-                        console.log('[ClientLogos] Reflow done — re-attaching observer. Loaded:', loaded, '/', cards.length);
-                        attachObserver();
-                    }, 200);
-
-                }, { rootMargin: '0px 0px 150px 0px' });
+                    revealNext();
+                }, { rootMargin: '0px 0px 100px 0px' });
 
                 observer.observe(sentinel);
             }
@@ -237,14 +241,28 @@ if ($show_filter) :
 
                 var allLoaded    = loaded >= cards.length;
                 var filterActive = currentFilter !== 'all';
-                if (sentinel && (allLoaded || filterActive)) {
-                    sentinel.style.display = 'none';
-                    console.log('[ClientLogos] Sentinel hidden —', allLoaded ? 'all cards loaded' : 'filter is active');
+                if (sentinel) {
+                    var wrap = sentinel.parentElement;
+                    if (allLoaded || filterActive) {
+                        wrap.style.display = 'none';
+                        console.log('[ClientLogos] Load More button hidden —', allLoaded ? 'all cards loaded' : 'filter is active');
+                    } else {
+                        wrap.style.display = '';
+                    }
                 }
             }
 
-            // Boot on page load
+            // Boot observer on page load
             attachObserver();
+
+            // Manual click fallback — also works as auto-trigger when scrolled into view
+            if (sentinel) {
+                sentinel.addEventListener('click', function () {
+                    console.log('[ClientLogos] Load More clicked manually');
+                    if (observer) { observer.disconnect(); observer = null; }
+                    revealNext();
+                });
+            }
 
             // Filter change
             if (select) {
@@ -259,7 +277,7 @@ if ($show_filter) :
                             var industry = card.getAttribute('data-industry') || '';
                             card.style.display = (industry === currentFilter) ? '' : 'none';
                         });
-                        if (sentinel) sentinel.style.display = 'none';
+                        if (sentinel) sentinel.parentElement.style.display = 'none';
                     } else {
                         // Back to "All Industries" — restore pagination then re-arm observer
                         applyVisibility();
