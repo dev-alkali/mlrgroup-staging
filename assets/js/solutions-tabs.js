@@ -23,9 +23,9 @@ jQuery(function ($) {
     $track.children()
       .not(".solutions-prev, .solutions-next, .solutions-dots")
       .css({
-        flex: "1 1 0%",
+        flex: count === 1 ? "0 0 calc(50% - 10px)" : "1 1 0%",
         minWidth: "0",
-        maxWidth: count === 1 ? "100%" : "",
+        maxWidth: count === 1 ? "calc(50% - 10px)" : "",
       });
   }
 
