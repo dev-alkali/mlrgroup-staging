@@ -69,22 +69,23 @@
   body.home .site-header .site-header__logo-image .hide-letter{display:inline;}
   body.home .site-header .site-header__logo-image .dot-pl {transform: translate(0px);}
 
+  /* Letters start AFTER hero content animation finishes (~2.7s: btn delay 2s + duration 0.7s) */
   .home .site-header.is-visible .site-header__logo-image .hide-letter {animation: fadeLetters 0.4s ease forwards;}
-  .home .site-header.is-visible .site-header__logo-image .letter-p { animation-delay: 1s; }
-  .home .site-header.is-visible .site-header__logo-image .letter-u { animation-delay: 1.15s; }
-  .home .site-header.is-visible .site-header__logo-image .letter-o { animation-delay: 1.3s; }
-  .home .site-header.is-visible .site-header__logo-image .letter-r { animation-delay: 1.45s; }
-  .home .site-header.is-visible .site-header__logo-image .letter-g { animation-delay: 2s; }
+  .home .site-header.is-visible .site-header__logo-image .letter-p { animation-delay: 3s; }
+  .home .site-header.is-visible .site-header__logo-image .letter-u { animation-delay: 3.15s; }
+  .home .site-header.is-visible .site-header__logo-image .letter-o { animation-delay: 3.3s; }
+  .home .site-header.is-visible .site-header__logo-image .letter-r { animation-delay: 3.45s; }
+  .home .site-header.is-visible .site-header__logo-image .letter-g { animation-delay: 4s; }
 
 
 
-/* Step 3: Dot moves AFTER letters finish - animation required since is-visible is already set on page load */
+  /* Step 3: Dot moves AFTER all letters finish (letter-g ends at 4s + 0.4s = 4.4s) */
   @keyframes moveDotLeft {
     from { transform: translateX(0px); }
     to   { transform: translateX(-84px); }
   }
   .home .site-header.is-visible .site-header__logo-image .dot-pl {
-    animation: moveDotLeft 0.6s ease 2.2s both;
+    animation: moveDotLeft 0.6s ease 4.5s both;
   }
 
   .site-header.is-sticky { position: fixed !important; top: 0; box-shadow: 0px 10px 15px -3px #0000001A; box-shadow: 0px 4px 6px -4px #0000001A; background: #fff;left: 0; max-width: 100%; width: 100%;  --logo-color: #11171E; animation: stickyHeaderAnim 1s ease;}
