@@ -2181,7 +2181,7 @@ $map_code = get_sub_field('map_code');
   /*max-width: 1360px;*/
   #wmap-inner svg,#wmap-inner img {display: block;width: 100%;height: auto;}  
   .wmap-marker {position: absolute;transform: translate(-50%, -50%);cursor: pointer;z-index: 20;transition: z-index 0s 3s;}
-  .wmap-dot {width: 7px;height: 7px;border-radius: 50%;transition: opacity 0.2s;}
+  .wmap-dot {width: 5px;height: 5px;border-radius: 50%;transition: opacity 0.2s;}
   .wmap-pin {position: absolute;top: -40px;left: 50%;transform: translateX(-50%) translateY(50%) scale(0);transform-origin: bottom center;transition: transform 0.3s ease;pointer-events: none;    width: 20px;height: 20px;transition: transform 0.3s ease 0s;}
   /*.wmap-marker:hover .wmap-dot {opacity: 0;}*/
   .wmap-marker:hover .wmap-pin {transform: translateX(-50%) translateY(50%) scale(1);transition: transform 0.3s ease 0s;}
