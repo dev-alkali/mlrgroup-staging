@@ -36,7 +36,7 @@ if ( $is_transparent_page ) {
 ?>
 <?php //$header_schema = get_field('header_schema') == 'light-skin' ? 'absolute min-[1024px]:pt-[52px]' : 'relative dark-skin min-[1024px]:py-4';?>
 
-<header class=" <?php echo $header_schema.' '.get_field('header_schema'); ?> z-[99] w-full site-header anim px-4 min-[600px]:px-10 min-[767px]:px-20 lg:px-[100px]" data-delay="" data-anim="up" data-start="top 100%">
+<header class=" <?php echo $header_schema.' '.get_field('header_schema'); ?> z-[99] w-full site-header ani is-visible px-4 min-[600px]:px-10 min-[767px]:px-20 lg:px-[100px]" data-delay="" data-anim="" data-start="">
   
   <?php
   $locations = get_nav_menu_locations();
@@ -130,7 +130,7 @@ if ( $is_transparent_page ) {
                       $child_url_normalized = trailingslashit($child->url);
                       $child_active_class = ($child_url_normalized === $current_url_normalized) ? 'active' : '';
                     ?>
-                      <a class="site-nav__dropdown-link block py-2 min-w-[250px] font-medium font-heading leading-[22px] <?php echo esc_attr($child_active_class); ?>"
+                      <a class="site-nav__dropdown-link block py-2 font-medium font-heading leading-[22px] <?php echo esc_attr($child_active_class); ?>"
                          href="<?php echo esc_url($child->url); ?>">
                         <?php echo esc_html($child->title); ?>
                       </a>
