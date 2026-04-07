@@ -30,7 +30,7 @@ if (!empty($block['className'])) {
         </div>
 
         <!-- Case Studies Grid -->
-        <div class="w-full flex">
+        <div class="w-full flex cs-cards <?php echo count(get_sub_field('works_rows')) ?>">
             <?php if (have_rows('works_rows')) : while (have_rows('works_rows')) : the_row(); ?>
                 <?php if (have_rows('works')) : while (have_rows('works')) : the_row(); ?>
                     <a href="<?php echo esc_url(get_sub_field('item_path')); ?>"
