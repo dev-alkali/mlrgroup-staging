@@ -16,7 +16,7 @@ if (!empty($block['className'])) {
 ?>
 <?php if (have_rows('case_studies_grid')) :  while (have_rows('case_studies_grid')) : the_row(); ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex justify-center pt-20 md:pt-30 px-6 md:px-6 bg-black">    
-        <div class="max-w-[1920px]">
+         
         <!-- Heading -->
         <div class="w-full flex flex-col items-start justify-center gap-5 px-4 sm:px-10">            
             <h2 class="flex flex-col max-w-[660px] font-heading text-white tracking-[-0.02em] text-[clamp(36px,5vw,68px)] leading-[clamp(44px,6vw,78px)]">
@@ -33,10 +33,10 @@ if (!empty($block['className'])) {
         <div class="w-full flex cs-cards py-[clamp(24px, 4vw, 60px)] <?php echo count(get_sub_field('works_rows')) ?>">
             <?php if (have_rows('works_rows')) : while (have_rows('works_rows')) : the_row(); ?>
                 <?php if (have_rows('works')) : while (have_rows('works')) : the_row(); ?>
-                   
+                
                     <a href="<?php echo esc_url(get_sub_field('item_path')); ?>"
-                       class="cs-card w-full"
-                       style="
+                    class="cs-card w-full"
+                    style="
                             background-image: url('<?php echo esc_url(get_sub_field('bg_image')); ?>');
                             background-position: 50% 50%;
                             background-size: cover;
@@ -52,7 +52,7 @@ if (!empty($block['className'])) {
                                         <img src="<?php echo get_sub_field('logo_image'); ?>" alt="">
                                     </div>
                                 <?php endif; ?>
-                                <div class="flex-1 text-white uppercase font-heading font-semibold text-[clamp(16px,1.64vw,24px)] leading-[clamp(22px,2.25vw,32px)] whitespace-nowrap">                                    
+                                <div class="cs-card__text text-white uppercase font-heading font-semibold text-[clamp(16px,1.64vw,24px)] leading-[clamp(22px,2.25vw,32px)] ">                                    
                                     <?= wp_kses_post(get_sub_field('title')) ?>
                                 </div>
                             </div>
@@ -67,13 +67,13 @@ if (!empty($block['className'])) {
             $view_more = get_sub_field('view_more');
             if($view_more):
         ?>
-           <a class="flex case-studies-grid-link items-center text-[16px] leading-[24px] font-heading font-semibold " href="<?php echo $view_more['url']; ?>" target="<?php echo $view_more['target']; ?>">
+        <a class="flex case-studies-grid-link items-center text-[16px] leading-[24px] font-heading font-semibold " href="<?php echo $view_more['url']; ?>" target="<?php echo $view_more['target']; ?>">
             <span><?php echo $view_more['title']; ?></span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#FD4338" xmlns="http://www.w3.org/2000/svg">
             <path d="M2.26562 2.47656H13.407V13.9386" stroke-miterlimit="10"/><path d="M13.3351 2.54688L2.33789 13.8605" stroke-miterlimit="10"/> </svg></a>
         <?php endif; ?>
 
-    </div>
+     
 </section>
 
 
