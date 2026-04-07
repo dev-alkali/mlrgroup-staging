@@ -94,7 +94,7 @@ $filter_groups = get_field('portfolio_filter_groups', 'option');
                 </div>
 
                 <?php if ($has_children) : ?>
-                  <ul class="child-list space-y-[28px] overflow-hidden transition-all duration-300 pl-0 <?php echo $is_open ? 'is-open' : ''; ?>">
+                  <ul class="child-list space-y-[28px] overflow-hidden transition-all duration-300 pl-0 pr-[20px] <?php echo $is_open ? 'is-open' : ''; ?>">
                     <?php foreach ($children as $child) :
                       if (empty($child) || is_wp_error($child)) continue;
                       $child_id   = absint($child->term_id);
