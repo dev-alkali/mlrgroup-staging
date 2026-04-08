@@ -70,6 +70,8 @@
           }
         }
 
+        console.log("[Tooltip Debug] Full API response:", data);
+        console.log("[Tooltip Debug] Post ID fetched:", postId);
         console.log("[Tooltip Debug] data.content:", data.content);
         if (data.content) {
           normalContent.find(".inquiry-content-tooltip").text(data.content);
