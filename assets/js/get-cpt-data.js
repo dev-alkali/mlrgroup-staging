@@ -70,6 +70,7 @@
           }
         }
 
+        console.log("[Tooltip Debug] data.content:", data.content);
         if (data.content) {
           normalContent.find(".inquiry-content-tooltip").text(data.content);
         } else {
