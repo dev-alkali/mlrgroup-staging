@@ -84,6 +84,8 @@ a.footer-text:hover{color:#ffffff;}
 .see-all-btn a img{transition:all 0.3s ease;}
 .see-all-btn a:hover img{transform: rotate(45deg);}
 
+.taxonomy-description p,.taxonomy-description h2,.taxonomy-description h3{margin-bottom:15px;}
+
 @media (max-width: 1024px) {
     .collection-parent:first-child .collection-item:first-child{order:0;}
     .collection-parent:first-child .collection-item:nth-child(2){order:2;}
@@ -93,3 +95,5 @@ a.footer-text:hover{color:#ffffff;}
 @media (max-width: 767px) {
   .two-col .font-light br{display: none;}
 }
+
+

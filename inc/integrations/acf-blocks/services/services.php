@@ -123,21 +123,27 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
           ? (is_array($selected_services) ? count($selected_services) : 0)
           : (is_array($manual_services) ? count($manual_services) : 0);
 
-				$extra_class = '';
-				if ($total_cards === 5) {
-					$extra_class = ' services-grid-5';
-				} elseif ($total_cards === 3) {
-					$extra_class = ' services-grid-3';
-				} elseif ($total_cards === 4) {
-					$extra_class = ' services-grid-4';
-				} elseif ($total_cards === 2) {
-					$extra_class = ' services-grid-2';
+			$extra_class = '';
+			if ($total_cards === 5) {
+				$extra_class = ' services-grid-5';
+			} elseif ($total_cards === 3) {
+				$extra_class = ' services-grid-3';
+			} elseif ($total_cards === 4) {
+				$extra_class = ' services-grid-4';
+			} elseif ($total_cards === 2) {
+				$extra_class = ' services-grid-2';
         } elseif ($total_cards === 1) {
-					$extra_class = ' services-grid-1';
+				$extra_class = ' services-grid-1';
         } elseif ($total_cards === 6) {
-					$extra_class = ' services-grid-6';
+				$extra_class = ' services-grid-6';
         }
-				$grid_class = $wrapper_class . $extra_class;
+
+		if ($select_3_column_grid && $total_cards === 1) {
+			$grid_class = "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4 md:gap-2 w-full services-grid-1";
+			$article_class = "source-card1 relative overflow-hidden w-full aspect-[16/9] service-card";
+		} else {
+			$grid_class = $wrapper_class . $extra_class;
+		}
 			?>
 
 

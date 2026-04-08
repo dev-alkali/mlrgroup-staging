@@ -1106,7 +1106,7 @@
 .faq-lists .question::before{
     content: '';
     position: absolute;
-    top: 0;
+    top: 40px;
     right: 0;
     width: 15px;
     height: 15px;
@@ -1115,8 +1115,12 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    z-index: 1;
+    z-index: 1; 
     transition: all 0.3s ease;
+}
+
+@media only screen and (max-width: 1024px){
+  .faq-lists .question:before {content: "";top: 24px;}
 }
 
 .faq-lists .question.active::before{
