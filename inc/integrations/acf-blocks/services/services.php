@@ -140,7 +140,7 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
 
 		if ($select_3_column_grid && $total_cards === 1) {
 			$grid_class = "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4 md:gap-2 w-full services-grid-1";
-			$article_class = "source-card1 relative overflow-hidden w-full aspect-[16/9] service-card";
+			$article_class = "source-card1 relative overflow-hidden w-full aspect-[4/3] lg:aspect-[16/9] service-card";
 		} else {
 			$grid_class = $wrapper_class . $extra_class;
 		}
