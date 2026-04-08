@@ -1119,6 +1119,10 @@
     transition: all 0.3s ease;
 }
 
+@media only screen and (max-width: 1024px){
+  .faq-lists .question:before {content: "";top: 24px;}
+}
+
 .faq-lists .question.active::before{
   @apply rotate-180;
 }
