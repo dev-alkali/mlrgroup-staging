@@ -32,36 +32,46 @@ if (!empty($block['className'])) {
 
         <!-- Case Studies Grid -->
         <div class="w-full flex cs-cards flex-col py-24px md:py-38px xl:py-60px)] <?php echo count(get_sub_field('works_rows')) ?>">
-             
-                <?php if (have_rows('works_rows')) : while (have_rows('works_rows')) : the_row(); ?>
-                
-                    <a href="<?php echo esc_url(get_sub_field('item_path')); ?>"
-                    class="cs-card w-full"
+
+             <?php 
+                $posts = get_field('case_studies');
+
+                if ($posts) :
+                    foreach ($posts as $post) :
+                        setup_postdata($post); 
+                        $image_url = get_the_post_thumbnail_url($post->ID, 'full');
+                        $cs_logo = get_field('cs_logo');
+                        $custom_card_title = get_field('custom_card_title');
+                    ?>
+            ?>
+              <a href="<?php echo get_permalink(); ?>"
+              class="cs-card w-full"
                     style="
-                            background-image: url('<?php echo esc_url(get_sub_field('bg_image')); ?>');
+                            background-image: url('<?php echo $image_url; ?>');
                             background-position: 50% 50%;
                             background-size: cover;
                             background-repeat: no-repeat;">
-                            
-                        <div class="gradient-box h-full w-full">
-                            
-                            <img class="arrow relative w-24px md:w-32px xl:w-40px h-24px md:h-32px xl:h-40px" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="Arrow">
+              >
+                <div class="gradient-box h-full w-full">
+                    <img class="arrow relative w-24px md:w-32px xl:w-40px h-24px md:h-32px xl:h-40px" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="Arrow">
 
-                            <div class="cs-card__content w-full">
-                                <?php if(get_sub_field('logo_image')): ?>
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>            
+                         <div class="cs-card__content w-full">
+                                <?php if($cs_logo): ?>
                                     <div class="cs-card__logo">
-                                        <img src="<?php echo get_sub_field('logo_image'); ?>" alt="">
+                                        <img src="<?php echo $cs_logo['url']; ?>" alt="<?php echo $cs_logo['alt']; ?>">
                                     </div>
                                 <?php endif; ?>
                                 <div class="cs-card__text text-white uppercase font-heading font-semibold text-[clamp(16px,1.64vw,24px)] leading-[clamp(22px,2.25vw,32px)] ">                                    
-                                    <?= wp_kses_post(get_sub_field('title')) ?>
+                                    <?php echo $custom_card_title ? : get_the_title(); ?>
                                 </div>
                             </div>
-                        </div>
-                        
-                    </a>
-                <?php endwhile; endif; ?>
-             
+                </div>
+            
+            <?php endforeach;
+                wp_reset_postdata();
+                endif;
+            ?>
         </div>
 
         <?php
