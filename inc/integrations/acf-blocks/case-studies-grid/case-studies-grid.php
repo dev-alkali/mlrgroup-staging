@@ -82,7 +82,7 @@ if (!empty($block['className'])) {
 endif; ?>
 
 
-<?php 
+<script>
 
     jQuery(function($){
 
@@ -102,4 +102,4 @@ endif; ?>
 
     });
 
-?>
+</script>
