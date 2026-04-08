@@ -22,7 +22,7 @@ if (!empty($block['className'])) {
     <div class="flex flex-col gap-8 xl:gap-12"> 
 
         <!-- Heading -->
-        <div class="w-full">            
+        <div class="w-full mb-8 md:mb-12 lg:mb-15">            
             <h2 class="flex flex-col max-w-[660px] font-heading text-white tracking-tight text-[clamp(36px,5vw,68px)] leading-[clamp(44px,6vw,78px)]">
                 <span class="font-bold">
                     <?= wp_kses_post(get_sub_field('title_row_1')) ?>
@@ -34,7 +34,7 @@ if (!empty($block['className'])) {
         </div>
 
         <!-- Grid -->
-        <div class="flex flex-col gap-10 md:gap-8 cs-cards">
+        <div class="flex flex-col gap-10 md:gap-8 cs-cards mb-8 md:mb-12 lg:mb-15">
 
             <?php 
             $posts = get_sub_field('case_studies'); 
@@ -60,9 +60,7 @@ if (!empty($block['className'])) {
                 
                 <?php if ($cs_logo): ?>
                     <div class="cs-card__logo absolute default-logo z-9">
-                        <img src="<?php echo esc_url($cs_logo['url']); ?>" 
-                                alt="<?php echo esc_attr($cs_logo['alt']); ?>" 
-                                class="max-h-10">
+                        <img src="<?php echo esc_url($cs_logo['url']); ?>" alt="<?php echo esc_attr($cs_logo['alt']); ?>"
                     </div>
                 <?php endif; ?>
 
@@ -71,9 +69,7 @@ if (!empty($block['className'])) {
                    
                     <?php if ($cs_logo): ?>
                         <div class="cs-card__logo mb-4 md:mb-5 hover-logo">
-                            <img src="<?php echo esc_url($cs_logo['url']); ?>" 
-                                 alt="<?php echo esc_attr($cs_logo['alt']); ?>" 
-                                 class="max-h-10">
+                            <img src="<?php echo esc_url($cs_logo['url']); ?>" alt="<?php echo esc_attr($cs_logo['alt']); ?>" >
                         </div>
                     <?php endif; ?>
                     <h3 class="cs-card__text text-white uppercase font-heading font-semibold text-[clamp(16px,1.64vw,24px)] leading-[clamp(22px,2.25vw,32px)] text-white uppercase font-heading font-semibold text-lg md:text-xl">
@@ -90,7 +86,7 @@ if (!empty($block['className'])) {
         <?php 
         $view_more_link = get_sub_field('view_more_link');
         if ($view_more_link): ?>
-            <a class="inline-flex items-center gap-2 text-white font-semibold"
+            <a class="case-studies-grid__link inline-flex items-center gap-2 text-white font-semibold"
                href="<?php echo esc_url($view_more_link['url']); ?>"
                target="<?php echo esc_attr($view_more_link['target']); ?>">
                 <span><?php echo esc_html($view_more_link['title']); ?></span>
