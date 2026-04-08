@@ -60,8 +60,8 @@ $faq_lists = get_sub_field('faq_lists');
 									<h3 class="font-heading question font-medium text-white text-[clamp(16px,2.2vw,20px)] relative leading-[clamp(24px,2.6vw,28px)] xl:py-[32px] lg:py-[24px] py-[20px] pr-[50px] flex gap-[12px] items-start cursor-pointer ">
 										<img src="<?= get_template_directory_uri() ?>/assets/imgs/faq-title-arrow.svg" alt="" class="faq-title-arrow w-[21px] h-[21px]"><?php echo $question; ?>
 									</h3>
-									<div class="answer md:pr-[50px] pr-[30px] pl-[34px] xl:pb-[32px] lg:pb-[24px] pb-[20px]" role="region">
-										<div class="font-body font-normal text-white text-[clamp(14px,1.7vw,16px)] leading-[clamp(22px,2.8vw,24px)] mt-[10px]">
+									<div class="answer md:pr-[50px] pr-[30px] pl-[34px]" role="region">
+										<div class="font-body font-normal text-white text-[clamp(14px,1.7vw,16px)] leading-[clamp(22px,2.8vw,24px)] mt-[10px] xl:pb-[32px] lg:pb-[24px] pb-[20px]">
 											<?php echo wp_kses_post( $answer ); ?>
 										</div>
 									</div>
