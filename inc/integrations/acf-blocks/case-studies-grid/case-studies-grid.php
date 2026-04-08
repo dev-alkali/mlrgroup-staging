@@ -60,7 +60,7 @@ if (!empty($block['className'])) {
                 
                 <?php if ($cs_logo): ?>
                     <div class="cs-card__logo absolute default-logo z-9">
-                        <img src="<?php echo esc_url($cs_logo['url']); ?>" alt="<?php echo esc_attr($cs_logo['alt']); ?>"
+                        <img src="<?php echo esc_url($cs_logo['url']); ?>" alt="<?php echo esc_attr($cs_logo['alt']); ?>">
                     </div>
                 <?php endif; ?>
 
