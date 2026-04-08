@@ -19,7 +19,7 @@ if (!empty($block['className'])) {
 
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> py-20 md:py-30 px-6 md:px-10 bg-black">    
 
-    <div class="flex flex-col gap-8 xl:gap-12"> 
+    <div class="flex wrapper w-full flex-col gap-8 xl:gap-12"> 
 
         <!-- Heading -->
         <div class="w-full mb-8 md:mb-12 lg:mb-15">            
@@ -34,7 +34,7 @@ if (!empty($block['className'])) {
         </div>
 
         <!-- Grid -->
-        <div class="flex flex-col gap-10 md:gap-8 cs-cards mb-8 md:mb-12 lg:mb-15">
+        <div class="flex w-full flex-col gap-10 md:gap-8 cs-cards mb-8 md:mb-12 lg:mb-15">
 
             <?php 
             $posts = get_sub_field('case_studies'); 
