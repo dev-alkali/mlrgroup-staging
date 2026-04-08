@@ -22,14 +22,14 @@ $filter_groups = get_field('portfolio_filter_groups', 'option');
    </div>
 
    <div class="sidebar-cat w-full hidden md:block">
-      <div class="pb-[18px]">
+      <?php /* <div class="pb-[18px]">
             <?php $is_all_active = $active_term_id === 0; ?>
             <a href="<?php echo esc_url(home_url('/work')); ?>" class="group relative inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline hover:underline transition-all duration-300 pl-0 hover:pl-6 <?php echo $is_all_active ? 'text-[#FD4338] pl-6 underline' : ''; ?>">
                <svg class="absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200 <?php echo $is_all_active ? 'opacity-100' : ''; ?>" width="16" height="16" viewBox="0 0 16 16" fill="none">
                  <path d="M2.26562 2.47461H13.407V13.9366" stroke="#FD4338"/>
                  <path d="M13.3351 2.54785L2.33789 13.8615" stroke="#FD4338"/>
                </svg> All Industries </a>
-      </div>
+      </div> */?>
 
        <?php if (!empty($filter_groups)) : ?>
           <ul class="space-y-[28px]">
@@ -46,7 +46,15 @@ $filter_groups = get_field('portfolio_filter_groups', 'option');
               $parent_link        = ($parent_id > 0) ? get_term_link($parent) : '';
               $parent_active      = ($parent_id > 0 && $active_term_id === $parent_id);
               $parent_is_ancestor = ($parent_id > 0 && in_array($parent_id, $active_ancestor_ids, true));
-              $is_open            = $parent_active || $parent_is_ancestor;
+
+              // Also check if the active term is listed as an ACF-defined child in this group
+              // (handles cases where the ACF grouping doesn't match WP taxonomy hierarchy)
+              $acf_child_ids = array_filter(array_map(function($c) {
+                return (!empty($c) && !is_wp_error($c)) ? absint($c->term_id) : 0;
+              }, $children));
+              $active_is_acf_child = $active_term_id > 0 && in_array($active_term_id, $acf_child_ids, true);
+
+              $is_open            = $parent_active || $parent_is_ancestor || $active_is_acf_child;
 
               $label_class = 'font-[Poppins] font-bold text-[18px] leading-[28px] text-[#262626] no-underline transition-colors';
               if (!$parent_text) {
