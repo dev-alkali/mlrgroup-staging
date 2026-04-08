@@ -57,7 +57,7 @@ $lists = get_sub_field('lists');
 
 		<?php if($lists): ?>
 			<?php $list_count = count($lists); ?>
-			<div class="flex flex-wrap xl:gap-x-[60px] md:gap-y-[90px] lg:gap-x-[30px] gap-x-[20px] sm:gap-y-[40px] gap-y-[40px] px-4 md:px-10">
+			<div class="flex flex-wrap xl:gap-x-[60px] md:gap-y-[90px] lg:gap-x-[30px] gap-x-[20px] sm:gap-y-[40px] gap-y-[40px] px-4 md:px-10 justify-center">
 				<?php foreach($lists as $list): 
 					$heading = $list['heading'];
 					$content = $list['content'];
