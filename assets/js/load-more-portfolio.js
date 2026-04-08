@@ -1,56 +1,107 @@
 (function ($) {
-   'use strict';
+    'use strict';
 
-   if (typeof PortfolioConfig === 'undefined') {
-       console.error('PortfolioConfig is not defined. Check wp_localize_script.');
-       return;
-   }
+    if (typeof PortfolioConfig === 'undefined') {
+        console.error('PortfolioConfig is not defined. Check wp_localize_script.');
+        return;
+    }
 
-   $(document).on('click', '#load-more-portfolio', function (e) {
-     
-      
-       e.preventDefault();
+    var root     = document.getElementById('portfolio-infinite-root');
+    var grid     = document.getElementById('portfolio-grid');
+    var sentinel = document.getElementById('portfolio-infinite-sentinel');
+    var loadingEl = document.getElementById('portfolio-loading-more');
 
-       var button  = $(this);
-       var termId  = parseInt(button.attr('data-term'), 10) || 0;
-       var paged   = parseInt(button.data('paged'), 10) || PortfolioConfig.init_page;
+    if (!root || !grid || !sentinel || typeof IntersectionObserver === 'undefined') {
+        return;
+    }
 
-       button.css({ opacity: '0.5', pointerEvents: 'none' });
+    var totalPages  = parseInt(root.getAttribute('data-max-pages'), 10);
+    var currentPage = parseInt(root.getAttribute('data-current-page'), 10) || 1;
+    var termId      = parseInt(root.getAttribute('data-term'), 10) || 0;
+    var isLoading   = false;
+    var observer    = null;
 
-       $.ajax({
-           url:      PortfolioConfig.ajax_url,
-           type:     'POST',
-           dataType: 'json',        
-           data: {
-               action:   'load_more_portfolio',
-               term_id:  termId,
-               paged:    paged,     
-               security: PortfolioConfig.nonce
-           },
-           success: function (response) {
-            console.log(response);
-               if (response.success && response.data.html) {
-                   $('#portfolio-grid').append(response.data.html);
+    function setLoading(visible) {
+        if (loadingEl) {
+            loadingEl.classList.toggle('hidden', !visible);
+        }
+    }
 
-                   if (response.data.has_more) {
+    function disconnectObserver() {
+        if (observer) {
+            observer.disconnect();
+            observer = null;
+        }
+    }
 
-                       button.data('paged', paged + 1);
-                       button.css({ opacity: '1', pointerEvents: 'auto' });
-                   } else {
+    function connectObserver() {
+        disconnectObserver();
+        if (currentPage >= totalPages) {
+            return;
+        }
+        observer = new IntersectionObserver(
+            function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting && !isLoading && currentPage < totalPages) {
+                        loadNextPage();
+                    }
+                });
+            },
+            { rootMargin: '300px 0px 0px 0px', threshold: 0 }
+        );
+        observer.observe(sentinel);
+    }
 
-                       button.remove();
-                   }
-               } else {
+    function loadNextPage() {
+        if (isLoading || currentPage >= totalPages) {
+            return;
+        }
 
-                   button.remove();
-               }
-           },
-           error: function (xhr, status, error) {
-               console.error('AJAX Error:', status, error);
-               button.css({ opacity: '1', pointerEvents: 'auto' });
-               alert('An error occurred while loading more items. Please try again.');
-           }
-       });
-   });
+        isLoading = true;
+        setLoading(true);
+
+        $.ajax({
+            url:      PortfolioConfig.ajax_url,
+            type:     'POST',
+            dataType: 'json',
+            data: {
+                action:   'load_more_portfolio',
+                term_id:  termId,
+                paged:    currentPage + 1,
+                security: PortfolioConfig.nonce
+            },
+            success: function (response) {
+                if (response.success && response.data.html) {
+                    $('#portfolio-grid').append(response.data.html);
+                    currentPage++;
+                    root.setAttribute('data-current-page', currentPage);
+
+                    // Refresh inquiry badge/button states for newly loaded cards
+                    if (window.InquiryList && typeof window.InquiryList.refresh === 'function') {
+                        window.InquiryList.refresh();
+                    }
+
+                    if (!response.data.has_more || currentPage >= totalPages) {
+                        disconnectObserver();
+                    } else {
+                        connectObserver();
+                    }
+                } else {
+                    disconnectObserver();
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('Portfolio AJAX Error:', status, error);
+            },
+            complete: function () {
+                isLoading = false;
+                setLoading(false);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        connectObserver();
+    });
 
 })(jQuery);

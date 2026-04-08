@@ -522,6 +522,14 @@
     $(document).on("click", "#view-inquery-list", function () {
       fetchInquiryListItems();
     });
+
+    // Public API — called after infinite-scroll appends new portfolio cards
+    window.InquiryList = {
+      refresh: function () {
+        refreshButtonStates(getList());
+      }
+    };
+
     $(document).on("click", ".view-inquery", function (e) {
       e.preventDefault();
       e.stopPropagation();

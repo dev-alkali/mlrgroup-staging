@@ -24,7 +24,7 @@ $term_id = isset($current_term->term_id) ? absint($current_term->term_id) : 0;
     </div>
 
     <div class="w-full">
-        <div id="portfolio-grid" class="grid grid-cols-2 lg:grid-cols-3 w-full">
+        <div id="portfolio-grid" class="grid grid-cols-2 lg:grid-cols-3 w-full gap-[10px] md:gap-0">
             <?php
             $query_args = array(
                 'post_type'      => 'portfolio',
@@ -74,9 +74,16 @@ $term_id = isset($current_term->term_id) ? absint($current_term->term_id) : 0;
         </div>
 
         <?php if ($portfolio_query->max_num_pages > 1) : ?>
-            <div class="px-[50px] py-[40px] text-center see-all-btn"><a href="#" id="load-more-portfolio" data-term="<?= esc_attr($term_id); ?>" data-paged="2" data-max-pages="<?= esc_attr($portfolio_query->max_num_pages); ?>" class="inline-flex items-center gap-2 no-underline hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#fd4338] transition-opacity rounded">
-                <span class="font-heading font-semibold text-[#fd4338] text-base tracking-[0] leading-6 whitespace-nowrap">SEE ALL</span>
-                <img class="w-4 h-4 mt-[-3px]" src="<?= esc_url(get_template_directory_uri() . '/assets/imgs/Arrow-red.svg'); ?>" alt="" /></a></div>
+            <div
+                id="portfolio-infinite-root"
+                data-term="<?= esc_attr($term_id); ?>"
+                data-current-page="1"
+                data-max-pages="<?= esc_attr($portfolio_query->max_num_pages); ?>"
+                class="py-[20px]"
+            >
+                <p id="portfolio-loading-more" class="hidden text-center font-heading font-semibold text-[#fd4338] text-base tracking-[0] leading-6" aria-live="polite">LOADING...</p>
+                <div id="portfolio-infinite-sentinel" class="h-px w-full pointer-events-none" aria-hidden="true"></div>
+            </div>
         <?php endif;
         wp_reset_postdata(); ?>
     </div>
