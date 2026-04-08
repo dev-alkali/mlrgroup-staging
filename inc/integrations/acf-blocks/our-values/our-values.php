@@ -38,7 +38,7 @@ $lists = get_sub_field('lists');
 					<?php if($title_row_1): ?>
 						<span class="relative w-full block flex gap-[10px] title-our-values-1">
 							<span class="font-bold bg-white pr-[5px] "><?= wp_kses_post($title_row_1) ?></span>
-							<div class="flex-1 flex flex-col">
+							<div class="flex-1 flex flex-col arrow-parent">
 								<div class="arrow-img-position w-full flex-1 bg-repeat-x arrow-img-position-1line" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/our-value-arrow.svg');"></div>
 								<div class="arrow-img-position w-full flex-1 bg-repeat-x arrow-img-position-2line  md:hidden" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/our-value-arrow.svg');"></div>
 							</div>
