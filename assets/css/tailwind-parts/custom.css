@@ -94,6 +94,8 @@ a.footer-text:hover{color:#ffffff;}
 .taxonomy-description a{color:var(--color-accent);}
 
 .taxonomy-description ul{list-style: disc;padding-left: 10px;margin: 10px 10px 10px 20px;}
+.taxonomy-description ol{list-style: decimal;padding-left: 10px;margin: 10px 10px 10px 20px;}
+.taxonomy-description ol li,
 .taxonomy-description ul li{margin:0px 0px 5px;}
 
 @media (max-width: 1024px) {
