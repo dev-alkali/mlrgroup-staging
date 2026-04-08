@@ -31,7 +31,7 @@ if (!empty($block['className'])) {
         </div>
 
         <!-- Case Studies Grid -->
-        <div class="w-full flex cs-cards py-[clamp(24px, 4vw, 60px)] <?php echo count(get_sub_field('works_rows')) ?>">
+        <div class="w-full flex cs-cards flex-col py-24px md:py-38px xl:py-60px)] <?php echo count(get_sub_field('works_rows')) ?>">
             <?php if (have_rows('works_rows')) : while (have_rows('works_rows')) : the_row(); ?>
                 <?php if (have_rows('works')) : while (have_rows('works')) : the_row(); ?>
                 
@@ -45,7 +45,7 @@ if (!empty($block['className'])) {
                             
                         <div class="gradient-box h-full w-full">
                             
-                            <img class="arrow relative w-[clamp(24px, 4vw, 40px)] h-[clamp(24px, 4vw, 40px)]" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="Arrow">
+                            <img class="arrow relative w-24px md:w-32px xl:w-40px h-24px md:h-32px xl:h-40px" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="Arrow">
 
                             <div class="cs-card__content w-full">
                                 <?php if(get_sub_field('logo_image')): ?>
@@ -65,11 +65,11 @@ if (!empty($block['className'])) {
         </div>
 
         <?php
-            $view_more = get_sub_field('view_more');
-            if($view_more):
+            $view_more_link = get_sub_field('view_more_link');
+            if($view_more_link):
         ?>
-        <a class="flex case-studies-grid-link items-center text-[16px] leading-[24px] font-heading font-semibold " href="<?php echo $view_more['url']; ?>" target="<?php echo $view_more['target']; ?>">
-            <span><?php echo $view_more['title']; ?></span>
+        <a class="flex case-studies-grid-link items-center text-[16px] leading-[24px] font-heading font-semibold " href="<?php echo $view_more_link['url']; ?>" target="<?php echo $view_more_link['target']; ?>">
+            <span><?php echo $view_more_link['title']; ?></span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#FD4338" xmlns="http://www.w3.org/2000/svg">
             <path d="M2.26562 2.47656H13.407V13.9386" stroke-miterlimit="10"/><path d="M13.3351 2.54688L2.33789 13.8605" stroke-miterlimit="10"/> </svg></a>
         <?php endif; ?>
@@ -80,3 +80,26 @@ if (!empty($block['className'])) {
 
 <?php endwhile;
 endif; ?>
+
+
+<?php 
+
+    jQuery(function($){
+
+        $('body').on('click', '.cs-card', function(){
+            $(this).addClass('is-open').siblings().removeClass('is-open');
+        });
+
+        function cscardsMgt() {
+            if( $(window).width() < 1199 ) {
+         
+            }
+        }
+        
+        $(window).on('resize', function(){
+            cscardsMgt();
+        });
+
+    });
+
+?>
