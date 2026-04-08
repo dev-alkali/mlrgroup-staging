@@ -34,7 +34,7 @@ if (!empty($block['className'])) {
         </div>
 
         <!-- Grid -->
-        <div class="flex w-full flex-col gap-10 md:gap-8 cs-cards mb-8 md:mb-12 lg:mb-15">
+        <div class="flex w-full flex-col gap-10 md:gap-8 cs-cards justify-center mb-8 md:mb-12 lg:mb-15">
 
             <?php 
             $posts = get_sub_field('case_studies'); 
