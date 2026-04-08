@@ -131,7 +131,7 @@ a.footer-text:hover{color:#ffffff;}
 @media (min-width: 1280px) {
 	
 	.cs-cards { gap: 0; flex-wrap: nowrap; }
-	.cs-card { flex: 1; transition: flex 0.4s ease; }
+	.cs-card { flex: 1; transition: flex 0.4s ease; max-width: inherit;}
 	.cs-card .relative { opacity: 0.5; transform: translatey(100%); transition: .5s ease; }
 	.cs-card .arrow { top: 40px; right: 24px; }
 	.cs-card .default-logo { visibility: visible; }
