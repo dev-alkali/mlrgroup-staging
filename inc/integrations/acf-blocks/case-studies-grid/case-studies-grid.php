@@ -49,25 +49,26 @@ if (!empty($block['className'])) {
             ?>
 
             <a href="<?php the_permalink($post->ID); ?>"
-               class="relative flex items-end px-6 py-8 bg-cover bg-center cs-card"
+               class="relative flex items-end px-6 bg-cover bg-center cs-card"
                style="background-image:url('<?php echo esc_url($image_url); ?>')">
+
 
                 <!-- Overlay -->
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    
+                  <img class="arrow absolute z-9 w-24px md:w-32px xl:w-40px h-24px md:h-32px xl:h-40px" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="Arrow">
+                
+                <?php if ($cs_logo): ?>
+                    <div class="cs-card__logo absolute default-logo z-9">
+                        <img src="<?php echo esc_url($cs_logo['url']); ?>" 
+                                alt="<?php echo esc_attr($cs_logo['alt']); ?>" 
+                                class="max-h-10">
+                    </div>
+                <?php endif; ?>
 
                 <!-- Content -->
-                <div class="relative z-10 w-full">
-                     <img class="arrow relative w-24px md:w-32px xl:w-40px h-24px md:h-32px xl:h-40px" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="Arrow">
-
-                    <?php if ($cs_logo): ?>
-                        <div class="cs-card__logo default-logo">
-                            <img src="<?php echo esc_url($cs_logo['url']); ?>" 
-                                 alt="<?php echo esc_attr($cs_logo['alt']); ?>" 
-                                 class="max-h-10">
-                        </div>
-                    <?php endif; ?>
-
-
+                <div class="relative z-10 w-full py-8">
+                   
                     <?php if ($cs_logo): ?>
                         <div class="cs-card__logo mb-4 md:mb-5 hover-logo">
                             <img src="<?php echo esc_url($cs_logo['url']); ?>" 
