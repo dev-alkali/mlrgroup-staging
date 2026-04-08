@@ -70,13 +70,12 @@
           }
         }
 
-        console.log("[Tooltip Debug] Full API response:", data);
-        console.log("[Tooltip Debug] Post ID fetched:", postId);
-        console.log("[Tooltip Debug] data.content:", data.content);
         if (data.content) {
-          normalContent.find(".inquiry-content-tooltip").text(data.content);
+          normalContent.find(".inquiry-content-tooltip").html(data.content);
+          normalContent.find(".inquiry-tooltip-icon").parent().removeClass("hidden");
         } else {
           normalContent.find(".inquiry-content-tooltip").empty();
+          normalContent.find(".inquiry-tooltip-icon").parent().addClass("hidden");
         }
 
         normalContent
