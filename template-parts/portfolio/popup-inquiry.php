@@ -74,7 +74,7 @@
                <div id="inquiry-list-content" class="w-full flex flex-col gap-6 pb-6">
                </div>
                <div class="flex gap-2">
-                  <button id="add-more-to-list" class="btn-primary w-full mb-[2px]"><img class="w-[13px]" src="<?= get_template_directory_uri() ?>/assets/imgs/plus.svg" alt="plus">Add More to Your Inquiry List</button>
+                  <button id="add-more-to-list" class="btn-primary w-full mb-[2px] cursor-pointer"><img class="w-[13px]" src="<?= get_template_directory_uri() ?>/assets/imgs/plus.svg" alt="plus">Add More to Your Inquiry List</button>
                </div>
             </section>
             <section id="inquiry-list-form" class="w-full">
