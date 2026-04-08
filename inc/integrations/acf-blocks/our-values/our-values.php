@@ -22,9 +22,6 @@ $title_row_1 = get_sub_field('title_row_1');
 $title_row_2 = get_sub_field('title_row_2');
 $lists = get_sub_field('lists');
 
-
-
-
 ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> our-values-sec py-[60px] lg:py-[80px] xl:py-[120px] overflow-hidden <?php echo $bg_color_class; ?>">
       
