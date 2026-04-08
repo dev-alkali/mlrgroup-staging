@@ -49,7 +49,7 @@ if (!empty($block['className'])) {
             ?>
 
             <a href="<?php the_permalink($post->ID); ?>"
-               class="relative flex items-end px-6 py-8 bg-cover bg-center"
+               class="relative flex items-end px-6 py-8 bg-cover bg-center cs-card"
                style="background-image:url('<?php echo esc_url($image_url); ?>')">
 
                 <!-- Overlay -->
@@ -93,12 +93,10 @@ if (!empty($block['className'])) {
                href="<?php echo esc_url($view_more_link['url']); ?>"
                target="<?php echo esc_attr($view_more_link['target']); ?>">
                 <span><?php echo esc_html($view_more_link['title']); ?></span>
-                <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.26562 2.47656H13.407V13.9386" stroke="#FD4338" stroke-miterlimit="10"/>
-                    <path d="M13.3351 2.54688L2.33789 13.8605" stroke="#FD4338" stroke-miterlimit="10"/>
+                <path d="M2.26562 2.47656H13.407V13.9386" stroke="#FD4338" stroke-miterlimit="10"/>
+                <path d="M13.3351 2.54688L2.33789 13.8605" stroke="#FD4338" stroke-miterlimit="10"/>
                 </svg>
-
             </a>
         <?php endif; ?>
 
