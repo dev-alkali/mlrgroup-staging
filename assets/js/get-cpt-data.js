@@ -70,13 +70,8 @@
           }
         }
 
-        if (data.content) {
-          normalContent.find(".inquiry-content-tooltip").html(data.content);
-          normalContent.find(".inquiry-tooltip-icon").parent().removeClass("hidden");
-        } else {
-          normalContent.find(".inquiry-content-tooltip").empty();
-          normalContent.find(".inquiry-tooltip-icon").parent().addClass("hidden");
-        }
+        const fallbackTooltip = "Adding an item to your inquiry list allows you to submit multiple items together instead of one at a time.";
+        normalContent.find(".inquiry-content-tooltip").html(data.content || fallbackTooltip);
 
         normalContent
           .find(".add-inquiry")
