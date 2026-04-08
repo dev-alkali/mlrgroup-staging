@@ -56,7 +56,7 @@ if (!empty($block['className'])) {
                 <!-- Overlay -->
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                     
-                  <img class="arrow absolute z-9 w-24px md:w-32px xl:w-40px h-24px md:h-32px xl:h-40px" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="Arrow">
+                  <img class="arrow absolute z-9 w-[24px] md:w-[32px] xl:w-[40px] h-[24px] md:h-[32px] xl:h-[40px]" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="Arrow">
                 
                 <?php if ($cs_logo): ?>
                     <div class="cs-card__logo absolute default-logo z-9">
