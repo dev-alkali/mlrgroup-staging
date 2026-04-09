@@ -20,9 +20,9 @@ $title_row_2 = get_field('title_row_2');
 
 ?>
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex c-cta w-full bg-black pt-12 md:pt-17 xl:pt-25">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex c-cta w-full bg-black pt-12 md:pt-17 xl:pt-25 px-6 ">
   
-  <div class="flex flex-col items-center w-full space-between gap-[40px] c-cta__wrap max-w-[1170px]">
+  <div class="c-cta__wrap flex flex-col align-center w-full space-between gap-[40px] max-w-[1170px]">
     <h2 class="c-cta__title font-heading text-white text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em]">
       <?php if($title_row_1): ?>
         <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
@@ -32,7 +32,7 @@ $title_row_2 = get_field('title_row_2');
       <?php endif; ?>
     </h2>
     <?php if( have_rows('cta_items') ): ?>
-      <div class="flex flex-col gap-[22px] c-cta__buttons-wrap">
+      <div class="c-cta__buttons-wrap flex flex-col gap-[22px] ">
         <?php while( have_rows('cta_items') ): the_row(); ?>
           <?php $cta_item = get_sub_field('cta_item'); ?>
             <?php if( $cta_item ): 
