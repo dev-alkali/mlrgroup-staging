@@ -22,7 +22,7 @@ $title_row_2 = get_field('title_row_2');
 
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex c-cta w-full bg-black py-12 md:py-17 xl:py-25 px-6 md:px-12">
   
-  <div class="c-cta__wrap flex flex-col align-center w-full space-between gap-[40px] max-w-[1220px]">
+  <div class="c-cta__wrap flex flex-col align-center w-full space-between gap-[40px] max-w-[1220px] justify-content">
     
     <div class="c-cta__content max-w-[850px]">
       <h2 class="flex flex-col align-start c-cta__title font-heading text-white text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em]">
