@@ -126,6 +126,7 @@ a.footer-text:hover{color:#ffffff;}
 .case-studies-grid__link:hover { color: #fff; }
 .case-studies-grid__link:hover svg path { stroke: #fff; }
 .case-studies-grid__link { text-transform: uppercase; }
+.cs-card__link { display: inline-flex; column-gap: 8px; }
 
 
 @media (min-width: 48rem) {
