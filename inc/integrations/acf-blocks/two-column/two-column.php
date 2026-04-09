@@ -73,7 +73,7 @@ if ( $section_color == 'black' ){
 
 ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] <?php echo $bg_color_class; ?><?php echo $pt_class; ?><?php echo $pb_class; ?>">
-      <!-- <div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col md:flex-row items-center flex-wrap"> -->
+      
       <div class="gap-[30px] md:gap-[0px] w-full wrapper flex flex-col <?php echo $mobileFlex . ' ' . $desktopFlex; ?> items-center two-column-wrapper">
 
         <div class="w-full md:w-1/2 lg:w-[47%] two-column-image">
@@ -93,7 +93,7 @@ if ( $section_color == 'black' ){
             </h2>
             <?php endif; ?>
             <?php if($description): ?>
-              <div class="w-full text-[clamp(16px,3vw,18px)] leading-[28px] <?php echo $text_525252_class; ?> font-body flex flex-col gap-[30px] description-content "><?php echo $description; ?></div>
+              <div class="w-full text-[clamp(16px,3vw,18px)] leading-[28px] <?php echo $text_525252_class; ?> font-body flex flex-col gap-[15px] description-content "><?php echo $description; ?></div>
             <?php endif; ?>
 
             <?php 
