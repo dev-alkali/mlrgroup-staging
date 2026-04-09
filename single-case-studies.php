@@ -19,7 +19,7 @@ get_header();
         <?php endif; ?>
 
         <h1 class="font-heading max-w-[1054px] w-full font-bold text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em] text-[#262626] mb-[17px]">
-          <?php the_title(); ?>
+          <?php echo get_field('custom_single_page_title') ? : get_the_title(); ?>
         </h1>
 
         <?php
@@ -38,13 +38,7 @@ get_header();
         <?php endif; ?>
 
         <div class="mt-[20px] overflow-hidden">
-          <div class="aspect-[17/10] bg-[#F5F5F5]">
-            <?php if (has_post_thumbnail()) : ?>
-              <?php the_post_thumbnail('full', ['class' => 'w-full h-full object-cover']); ?>
-            <?php else : ?>
-              <img class="w-full h-full object-cover" src="/wp-content/themes/Mlrgroup/assets/imgs/altr-img.jpg" alt="">
-            <?php endif; ?>
-          </div>
+          <img src="https://wordpress-755960-6249701.cloudwaysapps.com/wp-content/themes/Mlrgroup/assets/imgs/single-blog-arrow-1.svg" alt="Blog Author" class="w-full">
         </div>
 
         <article class="md:pt-[120px] pt-[60px] xl:px-[120px] lg:px-[60px] md:px-[30px] md:pb-[60px]">
