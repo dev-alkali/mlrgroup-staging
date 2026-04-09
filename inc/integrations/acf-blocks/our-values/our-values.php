@@ -56,7 +56,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 					<?php endif; ?>
 					<?php if($title_row_2): ?>
 						<span class="relative w-full block flex gap-[10px] title-our-values-2">
-							<span class="font-light text-[#737373] pr-[5px] bg-white"><?= wp_kses_post($title_row_2) ?></span>
+							<span class="font-bold pr-[5px] bg-white"><?= wp_kses_post($title_row_2) ?></span>
 							<div class="arrow-img-position w-full flex-1 bg-repeat-x" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/our-value-arrow.svg');"></div>
 						</span>
 					<?php endif; ?>

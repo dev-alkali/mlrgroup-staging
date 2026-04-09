@@ -88,7 +88,7 @@ if ( $section_color == 'black' ){
                   <span class="font-bold"><?php echo $title_row_1; ?></span>
               <?php endif; ?>
               <?php if($title_row_2): ?>
-                  <span class="font-light <?php echo $text_737373_class; ?>"><?php echo $title_row_2; ?></span>
+                  <span class="font-bold"><?php echo $title_row_2; ?></span>
               <?php endif; ?>
             </h2>
             <?php endif; ?>
