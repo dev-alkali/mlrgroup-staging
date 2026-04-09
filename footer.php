@@ -9,8 +9,8 @@
         <div class="flex flex-col min-[1199px]:flex-row w-full lg:justify-between items-start gap-15 min-[1280px]:gap-28">
           <!-- Brand -->
           <div class="flex flex-col max-w-[305px] w-full items-start gap-5">
-            <a class="relative max-w-[274px] overflow-hidden flex" href="<?= home_url(); ?>">
-              <img class="w-full max-w-[266px] md:max-w-[274px] h-[61.8px]" src="<?= esc_url(get_field('footer_logo', 'option')); ?>" alt="logo">
+            <a class="relative max-w-[250px] overflow-hidden flex" href="<?= home_url(); ?>">
+              <img class="w-full max-w-[250px] h-[61.8px]" src="<?= esc_url(get_field('footer_logo', 'option')); ?>" alt="logo">
             </a>
             <div class="flex gap-4 items-center">
               <?php if (have_rows('social_links', 'option')): while (have_rows('social_links', 'option')): the_row(); ?>
