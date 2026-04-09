@@ -41,7 +41,7 @@ get_header();
           <img src="https://wordpress-755960-6249701.cloudwaysapps.com/wp-content/themes/Mlrgroup/assets/imgs/single-blog-arrow-1.svg" alt="Blog Author" class="w-full">
         </div>
 
-        <article class="max-w-[1360px] pt-[60px] xl:px-[120px] lg:px-[60px] md:px-[30px] md:pb-[60px]">
+        <article class="max-w-[1360px] mx-auto pt-[60px] xl:px-[120px] lg:px-[60px] md:px-[30px] md:pb-[60px]">
           <div class="blog-content">  
             <?php the_content(); ?>
           </div>
