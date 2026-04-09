@@ -125,6 +125,7 @@ a.footer-text:hover{color:#ffffff;}
 .case-studies-grid__link { color: #FD4338; }
 .case-studies-grid__link:hover { color: #fff; }
 .case-studies-grid__link:hover svg path { stroke: #fff; }
+.case-studies-grid__link { text-transform: uppercase; }
 
 
 @media (min-width: 48rem) {
@@ -133,13 +134,13 @@ a.footer-text:hover{color:#ffffff;}
 }
 
 @media (min-width: 1280px) {
-	
+
+	.cs-card__link { display: none; }
 	.cs-cards { gap: 0; flex-wrap: nowrap; }
 	.cs-card { flex: 1; transition: flex 0.4s ease; max-width: inherit;}
 	.cs-card .relative { opacity: 0.5; transform: translatey(100%); transition: .5s ease; }
 	.cs-card .arrow { top: 40px; right: 24px; }
 	.cs-card .default-logo { visibility: visible; }
-	.case-studies-grid__link { margin: 0 auto; }
 	.cs-card:hover {  flex: 1.5; }
 	.cs-card:hover .default-logo ,
 	.cs-card:hover .arrow { opacity: 0; transform: inherit; }

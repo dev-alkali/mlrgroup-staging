@@ -34,7 +34,7 @@ if (!empty($block['className'])) {
         </div>
 
         <!-- Grid -->
-        <div class="flex w-full flex-col gap-10 md:gap-8 cs-cards justify-center mb-8 md:mb-12 lg:mb-15">
+        <div class="flex w-full flex-col gap-10 md:gap-4 cs-cards justify-center mb-8 md:mb-12 lg:mb-15">
 
             <?php 
             $posts = get_sub_field('case_studies'); 
@@ -75,6 +75,12 @@ if (!empty($block['className'])) {
                     <h3 class="cs-card__text text-white uppercase font-heading font-semibold text-[clamp(16px,1.64vw,24px)] leading-[clamp(22px,2.25vw,32px)] text-white uppercase font-heading font-semibold text-lg md:text-xl">
                         <?php echo $custom_card_title ?: get_the_title($post->ID); ?>
                     </h3>
+                    
+                    <span class="cs-card__link text-white font-semibold mt-8 text-[16px] leading-[24px]">LEARN MORE <svg width="11" height="11" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.26562 2.47656H13.407V13.9386" stroke="#fff" stroke-miterlimit="10"/>
+                        <path d="M13.3351 2.54688L2.33789 13.8605" stroke="#fff" stroke-miterlimit="10"/>
+                        </svg>
+                    </span>
                 </div>
             </a>
 
@@ -86,7 +92,7 @@ if (!empty($block['className'])) {
         <?php 
         $view_more_link = get_sub_field('view_more_link');
         if ($view_more_link): ?>
-            <a class="case-studies-grid__link inline-flex items-center gap-2 text-white font-semibold"
+            <a class="case-studies-grid__link inline-flex items-center gap-2 text-white font-semibold mx-auto"
                href="<?php echo esc_url($view_more_link['url']); ?>"
                target="<?php echo esc_attr($view_more_link['target']); ?>">
                 <span><?php echo esc_html($view_more_link['title']); ?></span>
