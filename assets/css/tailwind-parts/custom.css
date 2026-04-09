@@ -121,19 +121,6 @@ body .service-card .gradient-box:hover:after {opacity: 0;}
 article.service-card .bg-image{transition:all 0.3s ease;}
 article.service-card:hover .bg-image{filter: none !important;}
 
-@media (max-width: 1024px) {
-    .collection-parent:first-child .collection-item:first-child{order:0;}
-    .collection-parent:first-child .collection-item:nth-child(2){order:2;}
-    .collection-parent:first-child .collection-item:nth-child(3){order:1;}
-}   
-
-@media (max-width: 767px) {
-  .two-col .font-light br{display: none;}
-  .home .services-solutions .solutions-tabs .solutions-tab:nth-child(2){max-width:130px;}
-}
-
-
-
 .cs-card { height: clamp(300px, 33vw, 500px); transition: 0.25s ease width; overflow: hidden; min-width: inherit; }
 .cs-card__logo { max-width: clamp(120px, 30vw, 150px); max-height: clamp(30px, 10vw, 91px); filter: brightness(0) invert(1); }
 .cs-card__logo { max-height: 100%; }
@@ -150,14 +137,11 @@ article.service-card:hover .bg-image{filter: none !important;}
 .cs-card .to-transparent { background: #00000080; }
 .cs-card:hover .to-transparent { background: linear-gradient(318.51deg, rgba(0, 0, 0, 0.9) -57.23%, rgba(253, 67, 56, 0.9) 105.13%); }
 
-
 @media (min-width: 48rem) {
 	.cs-cards { flex-direction: row; flex-wrap: wrap; }
 	.cs-card { max-width: calc( (100% - calc(var(--spacing) * 8) ) / 2 ); width: 100%; }
 }
-
 @media (min-width: 1280px) {
-
 	.cs-card:hover .to-transparent { background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), linear-gradient(224.29deg, rgba(0, 0, 0, 0.2) -41.89%, rgba(253, 67, 56, 0.5) 100%); }
 	.cs-card__link { display: none; }
 	.cs-cards { gap: 0; flex-wrap: nowrap; }
@@ -169,10 +153,26 @@ article.service-card:hover .bg-image{filter: none !important;}
 	.cs-card:hover .default-logo ,
 	.cs-card:hover .arrow { opacity: 0; transform: inherit; }
 	.cs-card:hover .relative { transform: inherit; opacity: 1; }	
-	
 }
 
 @media (min-width: 1440px) {
 	.cs-card:hover {  flex: 1.25; }
 }
+
+@media (max-width: 1024px) {
+    .collection-parent:first-child .collection-item:first-child{order:0;}
+    .collection-parent:first-child .collection-item:nth-child(2){order:2;}
+    .collection-parent:first-child .collection-item:nth-child(3){order:1;}
+}   
+
+@media (max-width: 767px) {
+  .two-col .font-light br{display: none;}
+  .home .services-solutions .solutions-tabs .solutions-tab:nth-child(2){max-width:130px;}
+}
+
+@media (max-width: 600px) {
+	.footer-item-content{padding-bottom:15px}
+}
+
+
 
