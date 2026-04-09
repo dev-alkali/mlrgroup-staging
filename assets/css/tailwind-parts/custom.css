@@ -130,7 +130,6 @@ article.service-card:hover .bg-image{filter: none !important;}
 @media (max-width: 767px) {
   .two-col .font-light br{display: none;}
   .home .services-solutions .solutions-tabs .solutions-tab:nth-child(2){max-width:130px;}
-  }
 }
 
 
