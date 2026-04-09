@@ -113,6 +113,7 @@ a.footer-text:hover{color:#ffffff;}
 
 .home .home-services .serve-content .btn-primary{background:#ffffff;border: 1px solid var(--color-neutral-800);color:var(--color-neutral-800);position:relative;}
 .home .home-services .serve-content .btn-primary:before{content:'';display:block;width:30px;height:30px;background:#4a78ff;border-radius:100%;position:absolute;left:0px;top:1px;z-index:0;transition: all 0.3s ease;}
+.home .home-services .serve-content .btn-primary span{z-index:1;position:relative;}
 .home .home-services .serve-content .btn-primary:hover:before{content:'';width:100%;}
 .home .home-services .serve-content .btn-primary:hover{color: #ffffff;}
 
@@ -125,7 +126,6 @@ a.footer-text:hover{color:#ffffff;}
 @media (max-width: 767px) {
   .two-col .font-light br{display: none;}
 }
-
 
 
 
