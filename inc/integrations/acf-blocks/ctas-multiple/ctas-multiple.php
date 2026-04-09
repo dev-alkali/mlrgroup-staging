@@ -13,7 +13,7 @@ $className = 'c-cta';
 if (!empty($block['className'])) {
   $className .= ' ' . $block['className'];
 }
-?>
+ 
 
 $title_row_1 = get_field('title_row_1');
 $title_row_2 = get_field('title_row_2');
