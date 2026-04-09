@@ -10,10 +10,10 @@
           <!-- Brand -->
           <div class="max-w-[460px] w-full items-start">
             <div class="flex flex-row items-center mb-[20px]">
-              <a class="relative max-w-[180px] md:max-w-[200px] lg:max-w-[220px] overflow-hidden " href="<?= home_url(); ?>" >
+              <a class="relative max-w-[130px] md:max-w-[200px] lg:max-w-[220px] overflow-hidden " href="<?= home_url(); ?>" >
                 <img class="w-full" src="<?= esc_url(get_field('footer_logo', 'option')); ?>" alt="logo">
               </a>
-              <div class="flex gap-4 items-center lg:border-l lg:border-white pl-[20px] ml-[20px]">
+              <div class="flex gap-4 items-center lg:border-l lg:border-white pl-[10px] ml-[10px] md:pl-[20px] md:ml-[20px]">
                 <?php if (have_rows('social_links', 'option')): while (have_rows('social_links', 'option')): the_row(); ?>
                   <a href="<?= esc_url(get_sub_field('link')) ?>">
                     <img src="<?= esc_url(get_sub_field('icon')) ?>" alt="" />
