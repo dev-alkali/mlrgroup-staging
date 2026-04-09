@@ -4,7 +4,7 @@
   <div class="w-full h-[10px] bg-accent"></div>
 
   <div class="flex flex-col bg-black w-full">
-    <div class="flex flex-col items-center gap-[16] md:gap-28 px-4 md:px-[40px pt-[40px] pb-[39px] md:py-20 w-full">
+    <div class="flex flex-col items-center gap-[16] md:gap-28 px-4 md:px-10 pt-[40px] pb-[39px] md:py-[60px] w-full">
       <div class="flex flex-col max-w-[1920px] items-start gap-16 w-full">
         <div class="flex flex-col min-[1199px]:flex-row w-full lg:justify-between items-start gap-15 min-[1280px]:gap-28">
           <!-- Brand -->
@@ -22,7 +22,7 @@
           </div>
 
           <!-- Footer Columns -->
-          <div class="flex flex-col md:flex-row items-start gap-[13px] md:gap-3 min-[1280px]:gap-8 w-full max-w-[958px] flex-1">
+          <div class="flex flex-col md:flex-row items-start gap-[13px] md:gap-3 min-[1280px]:gap-8 w-full max-w-[870px] flex-1">
             <?php
             function render_footer_menu($location)
             {
@@ -74,7 +74,7 @@
                   </div>
 
                   <?php if (!empty($item->children)): ?>
-                    <div class="footer-item-content flex flex-col items-start gap-4 pl-2">
+                    <div class="footer-item-content flex flex-col items-start gap-3 pl-2">
                       <?php foreach ($item->children as $child): ?>
                         <a class="footer-text" href="<?= esc_url($child->url) ?>"><?= esc_html($child->title) ?></a>
                       <?php endforeach; ?>
@@ -102,7 +102,7 @@
                 </span>
               </div>
               <?php if( have_rows('contact_info','option') ): ?>
-              <div class="footer-item-content flex flex-col items-start gap-4 pl-2">
+              <div class="footer-item-content flex flex-col items-start gap-3 pl-2">
                 <?php while( have_rows('contact_info','option') ) : the_row(); 
                   $label = get_sub_field('contact_info_label','option');
                   $link = get_sub_field('contact_info_link','option');
