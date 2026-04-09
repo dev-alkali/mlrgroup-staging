@@ -14,9 +14,23 @@ if (!empty($block['className'])) {
   $className .= ' ' . $block['className'];
 }
 ?>
-<?php if (have_rows('case_studies')) :  while (have_rows('case_studies')) : the_row(); ?>
+<?php if (have_rows('case_studies')) :  while (have_rows('case_studies')) : the_row();
 
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> case-studies-sec flex justify-center px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] bg-white">
+    $section_remove_top_padding    = get_sub_field('section_remove_top_padding');
+    $section_remove_bottom_padding = get_sub_field('section_remove_bottom_padding');
+
+    $pt_class = '';
+    if ( ! empty( $section_remove_top_padding ) ) {
+        $pt_class = ' ' . 'pt0';
+    }
+
+    $pb_class = '';
+    if ( ! empty( $section_remove_bottom_padding ) ) {
+        $pb_class = ' ' . 'pb0';
+    }
+?>
+
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> case-studies-sec flex justify-center px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] bg-white<?php echo $pt_class; ?><?php echo $pb_class; ?>">
       <div class="flex flex-col w-full items-start gap-8 md:gap-[60px] max-w-[1920px]">
         <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
 

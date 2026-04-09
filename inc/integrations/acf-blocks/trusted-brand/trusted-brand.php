@@ -18,8 +18,22 @@ if (!empty($block['className'])) {
 ?>
 
 
-<?php if (have_rows('trusted_brand')) :  while (have_rows('trusted_brand')) : the_row(); ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> py-4 md:py-10">
+<?php if (have_rows('trusted_brand')) :  while (have_rows('trusted_brand')) : the_row();
+
+    $section_remove_top_padding    = get_sub_field('section_remove_top_padding');
+    $section_remove_bottom_padding = get_sub_field('section_remove_bottom_padding');
+
+    $pt_class = '';
+    if ( ! empty( $section_remove_top_padding ) ) {
+        $pt_class = ' ' . 'pt0';
+    }
+
+    $pb_class = '';
+    if ( ! empty( $section_remove_bottom_padding ) ) {
+        $pb_class = ' ' . 'pb0';
+    }
+?>
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> py-4 md:py-10<?php echo $pt_class; ?><?php echo $pb_class; ?>">
       <div class="w-full wrapper relative">
         <?php if (have_rows('brands')) :  while (have_rows('brands')) : the_row(); ?>          
             <div class="flex justify-start gap-2 md:gap-3 shrink-0 md:mb-[50px] mb-[20px] items-center px-4 md:px-10">

@@ -29,7 +29,20 @@ if (!empty($block['className'])) {
 ?>
 
 <?php if (have_rows('services')) :  while (have_rows('services')) : the_row(); ?>
-<?php 
+<?php
+$section_remove_top_padding    = get_sub_field('section_remove_top_padding');
+$section_remove_bottom_padding = get_sub_field('section_remove_bottom_padding');
+
+$pt_class = '';
+if ( ! empty( $section_remove_top_padding ) ) {
+    $pt_class = ' ' . 'pt0';
+}
+
+$pb_class = '';
+if ( ! empty( $section_remove_bottom_padding ) ) {
+    $pb_class = ' ' . 'pb0';
+}
+
 $section_background = get_sub_field('section_background');
 
 $bg_class = '';
@@ -67,7 +80,7 @@ $width = get_sub_field('select_short_content_width');
 $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
 ?>
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> <?php echo esc_attr($overlay_class); ?> px-4 md:px-[40px] py-[60px] lg:py-[80px] xl:py-[120px]">      
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className . ' ' . $bg_class); ?> <?php echo esc_attr($overlay_class); ?> px-4 md:px-[40px] py-[60px] lg:py-[80px] xl:py-[120px]<?php echo $pt_class; ?><?php echo $pb_class; ?>">      
       <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); 
       $heading_and_content = get_sub_field('heading_and_content');
       ?>

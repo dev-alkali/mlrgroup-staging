@@ -22,8 +22,21 @@ $title_row_1 = get_sub_field('title_row_1');
 $title_row_2 = get_sub_field('title_row_2');
 $lists = get_sub_field('lists');
 
+$section_remove_top_padding    = get_sub_field('section_remove_top_padding');
+$section_remove_bottom_padding = get_sub_field('section_remove_bottom_padding');
+
+$pt_class = '';
+if ( ! empty( $section_remove_top_padding ) ) {
+    $pt_class = ' ' . 'pt0';
+}
+
+$pb_class = '';
+if ( ! empty( $section_remove_bottom_padding ) ) {
+    $pb_class = ' ' . 'pb0';
+}
+
 ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> our-values-sec py-[60px] lg:py-[80px] xl:py-[120px] overflow-hidden <?php echo $bg_color_class; ?>">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> our-values-sec py-[60px] lg:py-[80px] xl:py-[120px] overflow-hidden <?php echo $bg_color_class; ?><?php echo $pt_class; ?><?php echo $pb_class; ?>">
       
       <div class="gap-[30px] md:gap-[0px] w-full wrapper flex flex-col">
 

@@ -16,8 +16,22 @@ if (!empty($block['className'])) {
 
 
 ?>
-<?php if (have_rows('lookbooks-list')) :  while (have_rows('lookbooks-list')) : the_row(); ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> look-sec px-4 md:px-10 pt-[40px] md:pt-[65px]">
+<?php if (have_rows('lookbooks-list')) :  while (have_rows('lookbooks-list')) : the_row();
+
+    $section_remove_top_padding    = get_sub_field('section_remove_top_padding');
+    $section_remove_bottom_padding = get_sub_field('section_remove_bottom_padding');
+
+    $pt_class = '';
+    if ( ! empty( $section_remove_top_padding ) ) {
+        $pt_class = ' ' . 'pt0';
+    }
+
+    $pb_class = '';
+    if ( ! empty( $section_remove_bottom_padding ) ) {
+        $pb_class = ' ' . 'pb0';
+    }
+?>
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> look-sec px-4 md:px-10 pt-[40px] md:pt-[65px]<?php echo $pt_class; ?><?php echo $pb_class; ?>">
       <div class="gap-[30px] md:gap-[0px] w-full wrapper">     
 
         <?php if ( have_rows( 'lookbooks' ) ) : ?>

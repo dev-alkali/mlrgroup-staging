@@ -21,6 +21,19 @@ $title_row_1 = get_sub_field('title_row_1');
 $title_row_2 = get_sub_field('title_row_2');
 $review_sliders = get_sub_field('review_sliders');
 
+$section_remove_top_padding    = get_sub_field('section_remove_top_padding');
+$section_remove_bottom_padding = get_sub_field('section_remove_bottom_padding');
+
+$pt_class = '';
+if ( ! empty( $section_remove_top_padding ) ) {
+    $pt_class = ' ' . 'pt0';
+}
+
+$pb_class = '';
+if ( ! empty( $section_remove_bottom_padding ) ) {
+    $pb_class = ' ' . 'pb0';
+}
+
 //$left_image_or_right_image = get_sub_field('left_image_or_right_image');
 
 // Desktop layout
@@ -30,7 +43,7 @@ $review_sliders = get_sub_field('review_sliders');
 $mobileFlex = 'flex-col-reverse';
 
 ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] overflow-hidden">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] overflow-hidden<?php echo $pt_class; ?><?php echo $pb_class; ?>">
 		<div class="gap-[30px] md:gap-[60px] w-full wrapper ">
 
 			<div class="w-full ">

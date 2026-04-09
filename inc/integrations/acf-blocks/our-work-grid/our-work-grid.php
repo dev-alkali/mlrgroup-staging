@@ -14,8 +14,22 @@ if (!empty($block['className'])) {
     $className .= ' ' . $block['className'];
 }
 ?>
-<?php if (have_rows('our_work_grid')) :  while (have_rows('our_work_grid')) : the_row(); ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex justify-center pt-20 px-0 bg-white">    
+<?php if (have_rows('our_work_grid')) :  while (have_rows('our_work_grid')) : the_row();
+
+    $section_remove_top_padding    = get_sub_field('section_remove_top_padding');
+    $section_remove_bottom_padding = get_sub_field('section_remove_bottom_padding');
+
+    $pt_class = '';
+    if ( ! empty( $section_remove_top_padding ) ) {
+        $pt_class = ' ' . 'pt0';
+    }
+
+    $pb_class = '';
+    if ( ! empty( $section_remove_bottom_padding ) ) {
+        $pb_class = ' ' . 'pb0';
+    }
+?>
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex justify-center pt-20 px-0 bg-white<?php echo $pt_class; ?><?php echo $pb_class; ?>">    
         <div class="flex flex-col w-full items-center gap-10">
         <!-- Heading -->
         <div class="max-w-[1920px] w-full flex flex-col items-start justify-center gap-5 px-4 sm:px-10">            

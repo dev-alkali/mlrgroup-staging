@@ -15,9 +15,23 @@ if (!empty($block['className'])) {
 }
 ?>
  
- <?php if (have_rows('case_studies_grid')) : while (have_rows('case_studies_grid')) : the_row(); ?>
+ <?php if (have_rows('case_studies_grid')) : while (have_rows('case_studies_grid')) : the_row();
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> py-20 md:py-30 px-6 md:px-10 bg-black">    
+    $section_remove_top_padding    = get_sub_field('section_remove_top_padding');
+    $section_remove_bottom_padding = get_sub_field('section_remove_bottom_padding');
+
+    $pt_class = '';
+    if ( ! empty( $section_remove_top_padding ) ) {
+        $pt_class = ' ' . 'pt0';
+    }
+
+    $pb_class = '';
+    if ( ! empty( $section_remove_bottom_padding ) ) {
+        $pb_class = ' ' . 'pb0';
+    }
+?>
+
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> py-20 md:py-30 px-6 md:px-10 bg-black<?php echo $pt_class; ?><?php echo $pb_class; ?>">    
 
     <div class="flex wrapper w-full flex-col gap-8 xl:gap-12"> 
 

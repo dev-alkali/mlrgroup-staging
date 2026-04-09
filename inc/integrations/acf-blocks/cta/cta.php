@@ -18,11 +18,24 @@ if (!empty($block['className'])) {
 
 $title_row_1 = get_sub_field('title_row_1');
 $title_row_2 = get_sub_field('title_row_2');
-$description = get_sub_field('description'); 
+$description = get_sub_field('description');
+
+$section_remove_top_padding    = get_sub_field('section_remove_top_padding');
+$section_remove_bottom_padding = get_sub_field('section_remove_bottom_padding');
+
+$pt_class = '';
+if ( ! empty( $section_remove_top_padding ) ) {
+    $pt_class = ' ' . 'pt0';
+}
+
+$pb_class = '';
+if ( ! empty( $section_remove_bottom_padding ) ) {
+    $pb_class = ' ' . 'pb0';
+}
 ?>
 
     <section id="<?php echo esc_attr($id); ?>"
-      class="<?php echo esc_attr($className); ?> flex w-full h-[700px] min-[600px]:h-[855px] "
+      class="<?php echo esc_attr($className); ?> flex w-full h-[700px] min-[600px]:h-[855px]<?php echo $pt_class; ?><?php echo $pb_class; ?> "
       style="
     background-image: url('<?php echo esc_url(get_sub_field('bg_image')); ?>');
     background-position: 50% 38%;

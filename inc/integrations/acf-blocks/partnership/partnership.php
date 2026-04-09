@@ -23,6 +23,19 @@ $title_row_2 = get_sub_field('title_row_2');
 $description = get_sub_field('description');
 $background_color = get_sub_field('background_color');
 
+$section_remove_top_padding    = get_sub_field('section_remove_top_padding');
+$section_remove_bottom_padding = get_sub_field('section_remove_bottom_padding');
+
+$pt_class = '';
+if ( ! empty( $section_remove_top_padding ) ) {
+    $pt_class = ' ' . 'pt0';
+}
+
+$pb_class = '';
+if ( ! empty( $section_remove_bottom_padding ) ) {
+    $pb_class = ' ' . 'pb0';
+}
+
 //$left_image_or_right_image = get_sub_field('left_image_or_right_image');
 //$layout = get_sub_field('left_image_or_right_image'); // left / right
 // Desktop layout
@@ -52,7 +65,7 @@ if ($background_color == 'black') {
 }
 
 ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec <?php echo $bgclassName; ?> px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px]">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec <?php echo $bgclassName; ?> px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px]<?php echo $pt_class; ?><?php echo $pb_class; ?>">
       <div class="wrapper flex flex-col gap-[60px]">
         <div class="top-title-sec flex flex-wrap">
           <div class="top_title md:max-w-[750px] max-md:w-full md:pr-[20px]">

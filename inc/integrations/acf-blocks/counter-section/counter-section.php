@@ -17,9 +17,23 @@ if (!empty($block['className'])) {
 ?>
 
 <?php if (have_rows('counter-section')) : ?>
-  <?php while (have_rows('counter-section')) : the_row(); ?>
+  <?php while (have_rows('counter-section')) : the_row();
 
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> performance flex justify-center  px-4 md:px-10 pb-[60px] md:pb-[120px]">
+    $section_remove_top_padding    = get_sub_field('section_remove_top_padding');
+    $section_remove_bottom_padding = get_sub_field('section_remove_bottom_padding');
+
+    $pt_class = '';
+    if ( ! empty( $section_remove_top_padding ) ) {
+        $pt_class = ' ' . 'pt0';
+    }
+
+    $pb_class = '';
+    if ( ! empty( $section_remove_bottom_padding ) ) {
+        $pb_class = ' ' . 'pb0';
+    }
+  ?>
+
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> performance flex justify-center  px-4 md:px-10 pb-[60px] md:pb-[120px]<?php echo $pt_class; ?><?php echo $pb_class; ?>">
       <div class="w-full wrapper grid grid-cols-2 lg:grid-cols-4 gap-[30px]">
             <?php if (have_rows('counter_list')) :  while (have_rows('counter_list')) : the_row(); ?>
               <div class="performance-item flex flex-col items-start md:items-center w-full md:gap-[30px]">
