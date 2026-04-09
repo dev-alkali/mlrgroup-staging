@@ -36,7 +36,7 @@ $title_row_2 = get_field('title_row_2');
     </div>
 
     <?php if( have_rows('cta_items') ): ?>
-      <div class="c-cta__buttons-wrap flex flex-col gap-[22px] ">
+      <div class="c-cta__buttons-wrap flex flex-col gap-[22px] max-w-[277px]">
         <?php while( have_rows('cta_items') ): the_row(); ?>
           <?php $cta_item = get_sub_field('cta_item'); ?>
             <?php if( $cta_item ): 
