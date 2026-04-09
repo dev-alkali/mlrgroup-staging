@@ -9,7 +9,7 @@
         <div class="flex flex-col min-[1199px]:flex-row w-full lg:justify-between items-start gap-15 min-[1280px]:gap-28">
           <!-- Brand -->
           <div class="max-w-[460px] w-full items-start">
-            <div class="flex flex-row items-start lg:items-center mb-[20px]">
+            <div class="flex flex-row items-center mb-[20px]">
               <a class="relative max-w-[180px] md:max-w-[200px] lg:max-w-[220px] overflow-hidden " href="<?= home_url(); ?>" >
                 <img class="w-full" src="<?= esc_url(get_field('footer_logo', 'option')); ?>" alt="logo">
               </a>
