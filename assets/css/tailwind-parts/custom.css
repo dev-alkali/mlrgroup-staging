@@ -105,6 +105,8 @@ a.footer-text:hover{color:#ffffff;}
 
 .page-id-881 .two-column-content br{display:none;}
 
+.contact-footer a.footer-text:first-child{margin-bottom:-10px;}
+
 @media (max-width: 1024px) {
     .collection-parent:first-child .collection-item:first-child{order:0;}
     .collection-parent:first-child .collection-item:nth-child(2){order:2;}
