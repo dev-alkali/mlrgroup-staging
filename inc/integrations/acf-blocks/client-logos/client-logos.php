@@ -44,7 +44,7 @@ if (!empty($block['className'])) {
             <?php if ($title1 || $title2) : ?>
               <h2 class="text-[clamp(36px,6vw,68px)] leading-[clamp(44px,7vw,76px)] tracking-[-0.02em] font-heading">
                 <span class="font-bold text-neutral-800"><?php echo wp_kses_post($title1); ?></span>
-                <span class="font-light text-neutral-500"><?php echo wp_kses_post($title2); ?></span>
+                <span class="font-bold text-neutral-800"><?php echo wp_kses_post($title2); ?></span>
               </h2>
             <?php endif; ?>
             <?php if ($subtitle) : ?>
