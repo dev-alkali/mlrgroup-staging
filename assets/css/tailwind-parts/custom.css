@@ -111,6 +111,11 @@ a.footer-text:hover{color:#ffffff;}
 
 .contact-footer a.footer-text:first-child{margin-bottom:-10px;}
 
+.home .home-services .serve-content .btn-primary{background:#ffffff;border: 1px solid var(--color-neutral-800);color:var(--color-neutral-800);position:relative;}
+.home .home-services .serve-content .btn-primary:before{content:'';display:block;width:30px;height:30px;background:##4a78ff;border-radius:100%;position:absolute;left:0px;top:1px;z-index:0}
+.home .home-services .serve-content .btn-primary:hover:before{content:'';width:100%;}
+
+
 @media (max-width: 1024px) {
     .collection-parent:first-child .collection-item:first-child{order:0;}
     .collection-parent:first-child .collection-item:nth-child(2){order:2;}
