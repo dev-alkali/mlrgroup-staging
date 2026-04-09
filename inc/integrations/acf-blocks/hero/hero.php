@@ -15,10 +15,7 @@ if (!empty($block['className'])) {
 ?>
 
 <?php if (have_rows('hero')) : while (have_rows('hero')) : the_row(); ?>
-
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> c-hero flex flex-col w-full items-center p-0 lg:pt-5 lg:pb-0 lg:px-5 bg-white h-[calc(100vh-165px)]">
-
-  <?php if (have_rows('main')) : while (have_rows('main')) : the_row();
+<?php if (have_rows('main')) : while (have_rows('main')) : the_row();
 
     $bg_image = get_sub_field('bg_image');
     $subtitle = get_sub_field('subtitle');
@@ -26,12 +23,12 @@ if (!empty($block['className'])) {
     $btn_label = get_sub_field('btn_label');
 
   ?>
-
-    <div class="max-w-[1920px] flex-1 w-full"
-      <?php if (!empty($bg_image)) : ?>
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> c-hero flex flex-col w-full items-center p-0 lg:pt-5 lg:pb-0 lg:px-5 bg-white h-[calc(100vh-165px)]"
+  <?php if (!empty($bg_image)) : ?>
         style="background-image:url('<?php echo esc_url($bg_image); ?>'); background-position:50% 20%; background-size:cover; background-repeat:no-repeat;"
-      <?php endif; ?>
-    >
+      <?php endif; ?>>
+
+    <div class="max-w-[1920px] flex-1 w-full" >
       <div class="w-full h-full flex flex-col items-start gap-[162px] px-4 min-[600px]:px-10 min-[767px]:px-20 relative [background:linear-gradient(0deg,rgba(0,0,0,0.35)_0%,rgba(0,0,0,0.35)_100%)]">
         <div class="flex flex-col items-start justify-end pt-8 pb-20 md:pb-16 flex-1 w-full">
           <div class="flex flex-col items-start justify-center gap-10 w-full">
@@ -87,9 +84,9 @@ if (!empty($block['className'])) {
         </div>
       </div>
     </div>
-  <?php endwhile; endif; ?>
+  
 </section>
-
+<?php endwhile; endif; ?>
 
 <?php if (have_rows('brands')) : while (have_rows('brands')) : the_row(); ?>
 
