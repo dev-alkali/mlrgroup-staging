@@ -82,9 +82,9 @@
             ?>
                 <div class="footer-item flex flex-col items-start gap-5 w-full flex-1">
                   <div class="footer-title flex justify-between w-full items-center uppercase">
-                    <div class="flex gap-1 items-center">
-                      <img class="w-4 h-4" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-blue.svg" alt="">
+                    <div class="flex gap-1 items-center">                      
                       <a href="<?= esc_url($item->url) ?>"><?= esc_html($item->title) ?></a>
+                      <img class="w-4 h-4" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-blue.svg" alt="">
                     </div>
                     <span class="dropdown-item-footer min-[600px]:hidden">
                       <img src="<?= get_template_directory_uri() ?>/assets/imgs/Caret-down.svg" alt="">
@@ -112,8 +112,8 @@
             <div class="footer-item flex flex-col items-start gap-5 w-full flex-1">
               <div class="footer-title flex justify-between w-full items-center uppercase">
                 <div class="flex gap-1 items-center">
-                  <img class="w-4 h-4" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-blue.svg" alt="">
                   <a href="<?= home_url(); ?>/contact-us/">Contact</a>
+                  <img class="w-4 h-4" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-blue.svg" alt="">
                 </div>
                 <span class="dropdown-item-footer min-[600px]:hidden">
                   <img src="/wp-content/themes/Mlrgroup/assets/imgs/Caret-down.svg" alt="">
