@@ -20,7 +20,7 @@ $title_row_2 = get_field('title_row_2');
 
 ?>
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex c-cta w-full bg-black">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex c-cta w-full bg-black pt-12 md:pt-17 xl:pt-25">
   
   <div class="flex flex-col items-center w-full space-between gap-[40px] c-cta__wrap max-w-[1170px]">
     <h2 class="c-cta__title font-heading text-white text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em]">
