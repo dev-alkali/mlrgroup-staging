@@ -85,7 +85,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 						</div>
 						<div class="flex flex-col flex-1">
 							<?php if($heading): ?>
-								<h3 class="text-[clamp(20px,2.6vw,28px)] leading-[clamp(28px,3.2vw,36px)] tracking-[-2%] text-[#262626] font-heading font-bold md:mb-[18px] mb-[28px]"><?php echo $heading; ?></h3>
+								<h3 class="text-[clamp(20px,2.6vw,28px)] leading-[clamp(28px,3.2vw,36px)] tracking-[-2%] text-[#262626] font-heading font-bold md:mb-[18px] mb-[20px]"><?php echo $heading; ?></h3>
 							<?php endif; ?>
 							<?php if($content): ?>
 								<div class="text-[18px] leading-[26px] text-[#525252] font-body tracking-[0px]"><?php echo $content; ?></div>
