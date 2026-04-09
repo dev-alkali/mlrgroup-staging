@@ -5,7 +5,7 @@
 
   <div class="flex flex-col bg-black w-full">
     <div class="flex flex-col items-center gap-[16] md:gap-28 px-4 md:px-10 pt-[40px] pb-[39px] md:py-[60px] w-full">
-      <div class="flex flex-col max-w-[1920px] items-start gap-16 w-full">
+      <div class="flex flex-col max-w-[1920px] items-start gap-10 w-full">
         <div class="flex flex-col min-[1199px]:flex-row w-full lg:justify-between items-start gap-15 min-[1280px]:gap-28">
           <!-- Brand -->
           <div class="flex flex-col max-w-[305px] w-full items-start gap-5">
