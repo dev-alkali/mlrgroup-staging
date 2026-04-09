@@ -38,7 +38,7 @@ if (!empty($block['className'])) {
                     <?= wp_kses_post(get_sub_field('title_row_1')) ?>
                 </span>
                 <span class="font-bold">
-                    <?= wp_kses_post(get_sub_field('title_row_2')) ?>
+                    <?= wp_kses_post(get_sub_field('title_row_2')) ?> 
                 </span>
             </h2>
         </div>
