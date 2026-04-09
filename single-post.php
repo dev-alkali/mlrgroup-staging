@@ -25,9 +25,9 @@ get_header();
 			<div class="mt-[28px] overflow-hidden">
 				<div class="aspect-[16/9] bg-[#F5F5F5]">
 				<?php if (has_post_thumbnail()) : ?>
-					<?php the_post_thumbnail('full', ['class' => 'w-full h-full object-cover']); ?>
+					<?php the_post_thumbnail('full', ['class' => 'w-full h-full object-contain']); ?>
 				<?php else : ?>
-					<img class="w-full h-full object-cover" src="/wp-content/themes/Mlrgroup/assets/imgs/altr-img.jpg" alt="">
+					<img class="w-full h-full object-contain" src="/wp-content/themes/Mlrgroup/assets/imgs/altr-img.jpg" alt="">
 				<?php endif; ?>
 				</div>
 			</div>
