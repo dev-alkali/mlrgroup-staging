@@ -109,7 +109,7 @@
             <?php render_footer_menu('work-menu'); ?>
 
             <!-- Contact Info -->
-            <div class="footer-item flex flex-col items-start gap-5 w-full flex-1">
+            <div class="footer-item flex flex-col items-start gap-5 w-full flex-1 contact-footer">
               <div class="footer-title flex justify-between w-full items-center uppercase">
                 <div class="flex gap-1 items-center">
                   <a href="<?= home_url(); ?>/contact-us/">Contact</a>
