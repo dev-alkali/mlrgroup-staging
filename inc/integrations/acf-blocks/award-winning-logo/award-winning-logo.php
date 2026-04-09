@@ -17,9 +17,24 @@ if (!empty($block['className'])) {
 }
 ?>
 
-<?php if (have_rows('award_winning_logo')) : while (have_rows('award_winning_logo')) : the_row(); ?>
+<?php if (have_rows('award_winning_logo')) : while (have_rows('award_winning_logo')) : the_row(); 
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> p-0 py-[40px] px-[0px] md:px-[20px] md:py-[60px]">
+  $section_remove_top_padding   = get_sub_field('section_remove_top_padding');
+  $section_remove_bottom_padding  = $get_sub_field('section_remove_bottom_padding');
+
+  $pt_class = '';
+  if ( ! empty( $section_remove_top_padding ) ) {
+      $pt_class = ' ' . 'pt0' . '';
+  }
+
+  $pb_class = '';
+  if ( ! empty( $section_remove_bottom_padding ) ) {
+      $pb_class = ' ' . 'pb0' . '';
+  }
+
+?>
+
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> p-0 py-[40px] px-[0px] md:px-[20px] md:py-[60px] <?php echo $pt_class; ?><?php echo $pb_class; ?>">
   <div class="flex items-center gap-2 wrapper">
     <div class="flex flex-col min-[890px]:flex-row gap-4 min-[600px]:gap-[40px] min-[890px]:gap-[105px] relative w-full">
       <div class="flex items-center justify-start gap-2 min-[600px]:gap-3 shrink-0 px-[20px] md:px-[0px]">
