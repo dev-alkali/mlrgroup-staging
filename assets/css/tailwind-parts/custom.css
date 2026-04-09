@@ -1,3 +1,6 @@
+.pt0{padding-top:0px !important;}
+.pb0{padding-bottom:0px !important;}
+
 .c-hero { min-height:600px;}
 a.blog-card .blog-card-img:after{content: '';background: linear-gradient(359.41deg, rgba(94, 11, 6, 0.8) 0.51%, rgba(0, 0, 0, 0) 119.58%);position: absolute;left: 0;top: 0;z-index: 1;width: 100%;height: 100%;transition:all 0.3s ease;opacity: 0;}
 a.blog-card:hover .blog-card-img:after{content: '';opacity: 1;}

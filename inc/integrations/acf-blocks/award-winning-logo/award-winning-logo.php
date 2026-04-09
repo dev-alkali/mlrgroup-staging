@@ -20,7 +20,7 @@ if (!empty($block['className'])) {
 <?php if (have_rows('award_winning_logo')) : while (have_rows('award_winning_logo')) : the_row(); 
 
   $section_remove_top_padding   = get_sub_field('section_remove_top_padding');
-  $section_remove_bottom_padding  = $get_sub_field('section_remove_bottom_padding');
+  $section_remove_bottom_padding  = get_sub_field('section_remove_bottom_padding');
 
   $pt_class = '';
   if ( ! empty( $section_remove_top_padding ) ) {
