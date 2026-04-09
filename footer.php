@@ -8,7 +8,7 @@
       <div class="flex flex-col max-w-[1920px] items-start gap-10 w-full">
         <div class="flex flex-col min-[1199px]:flex-row w-full lg:justify-between items-start gap-15 min-[1280px]:gap-28">
           <!-- Brand -->
-          <div class="flex flex-col lg:flex-row max-w-[305px] lg:border-r lg:border-white w-full items-start gap-5">
+          <div class="flex flex-col lg:flex-row max-w-[305px] lg:border-r lg:border-white w-full items-start gap-5 lg:align-center">
             <a class="relative max-w-[250px] overflow-hidden flex" href="<?= home_url(); ?>">
               <img class="w-full max-w-[250px] h-[61.8px]" src="<?= esc_url(get_field('footer_logo', 'option')); ?>" alt="logo">
             </a>
