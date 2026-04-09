@@ -119,7 +119,7 @@ a.footer-text:hover{color:#ffffff;}
 
 body .service-card .gradient-box:hover:after {opacity: 0;}
 article.service-card .bg-image{transition:all 0.3s ease;}
-article.service-card:hover .bg-image{filter: none;}
+article.service-card:hover .bg-image{filter: none !important;}
 
 @media (max-width: 1024px) {
     .collection-parent:first-child .collection-item:first-child{order:0;}
