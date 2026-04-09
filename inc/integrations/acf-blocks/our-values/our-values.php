@@ -80,7 +80,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 					}
 					?>
 					<div class="flex flex-row md:gap-[20px] gap-[16px] <?php echo $width_class; ?>">
-						<div class="flex md:w-[50px] md:h-[50px] w-[48px] h-[48px] relative md:top-[-10px] top-[-8px]">
+						<div class="flex md:w-[45px] md:h-[45px] w-[40px] h-[40px] relative md:top-[-10px] top-[-8px]">
 							<img src="<?php echo get_template_directory_uri() ?>/assets/imgs/list-icon.svg" alt="" class="w-full">
 						</div>
 						<div class="flex flex-col flex-1">
