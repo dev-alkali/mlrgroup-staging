@@ -1118,7 +1118,7 @@
 .faq-lists .question::before{
     content: '';
     position: absolute;
-    top: 40px;
+    top: 30px;
     right: 0;
     width: 15px;
     height: 15px;
