@@ -120,13 +120,16 @@ a.footer-text:hover{color:#ffffff;}
 .cs-card__logo { max-height: 100%; }
 .cs-card .default-logo { top: 50%; left: 50%; transform: translate(-50%, -50%); visibility: hidden; }
 .cs-card .relative { width: 100%; }
-.cs-card .arrow { top: 24px; right: 24px; }
+.cs-card .arrow { top: 24px; right: 24px; display: none; }
 .cs-card:hover .arrow { transform: rotate(45deg); }
 .case-studies-grid__link { color: #FD4338; }
 .case-studies-grid__link:hover { color: #fff; }
 .case-studies-grid__link:hover svg path { stroke: #fff; }
 .case-studies-grid__link { text-transform: uppercase; }
 .cs-card__link { display: inline-flex; column-gap: 8px; }
+
+.cs-card .to-transparent { background: #00000080; }
+.cs-card:hover .to-transparent { background: linear-gradient(318.51deg, rgba(0, 0, 0, 0.9) -57.23%, rgba(253, 67, 56, 0.9) 105.13%); }
 
 
 @media (min-width: 48rem) {
@@ -136,11 +139,12 @@ a.footer-text:hover{color:#ffffff;}
 
 @media (min-width: 1280px) {
 
+	.cs-card:hover .to-transparent { background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), linear-gradient(224.29deg, rgba(0, 0, 0, 0.2) -41.89%, rgba(253, 67, 56, 0.5) 100%); }
 	.cs-card__link { display: none; }
 	.cs-cards { gap: 0; flex-wrap: nowrap; }
 	.cs-card { flex: 1; transition: flex 0.4s ease; max-width: inherit;}
 	.cs-card .relative { opacity: 0.5; transform: translatey(100%); transition: .5s ease; }
-	.cs-card .arrow { top: 40px; right: 24px; }
+	.cs-card .arrow { top: 40px; right: 24px; display: block; }
 	.cs-card .default-logo { visibility: visible; }
 	.cs-card:hover {  flex: 1.5; }
 	.cs-card:hover .default-logo ,
