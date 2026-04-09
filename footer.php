@@ -92,7 +92,7 @@
                   </div>
 
                   <?php if (!empty($item->children)): ?>
-                    <div class="footer-item-content flex flex-col items-start gap-3 pl-2">
+                    <div class="footer-item-content flex flex-col items-start gap-4 pl-2">
                       <?php foreach ($item->children as $child): ?>
                         <a class="footer-text" href="<?= esc_url($child->url) ?>"><?= esc_html($child->title) ?></a>
                       <?php endforeach; ?>
@@ -120,7 +120,7 @@
                 </span>
               </div>
               <?php if( have_rows('contact_info','option') ): ?>
-              <div class="footer-item-content flex flex-col items-start gap-3 pl-2">
+              <div class="footer-item-content flex flex-col items-start gap-4 pl-2">
                 <?php while( have_rows('contact_info','option') ) : the_row(); 
                   $label = get_sub_field('contact_info_label','option');
                   $link = get_sub_field('contact_info_link','option');
@@ -152,7 +152,7 @@
       </div>
 
       <!-- Results Images (mobile only) -->
-      <div class="flex hidden w-full items-center gap-3">
+      <div class="flex hidden w-full items-center gap-4">
         <?php if (have_rows('results_images', 'option')): while (have_rows('results_images', 'option')): the_row(); ?>
           <img class="w-[49px] h-[50px]" src="<?= esc_url(get_sub_field('image')) ?>" alt="">
         <?php endwhile; endif; ?>
