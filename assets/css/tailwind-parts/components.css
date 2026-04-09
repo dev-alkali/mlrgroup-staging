@@ -1161,7 +1161,7 @@ button.swiper-button-disabled {
 .site-nav__dropdown  a.site-nav__dropdown-link.active {color: var(--color-accent);}
 
 .description-content ul{
-  @apply flex flex-col gap-3;
+  @apply flex flex-col gap-[6px];
 }
 .description-content ul li{
   @apply flex items-center pl-[35px] relative;
