@@ -35,7 +35,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 }
 
 ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> faq-columns-sec bg-black px-4 md:px-10 pt-[60px] lg:pt-[80px] xl:pt-[120px] lg:pb-[100px] pb-[60px]<?php echo $pt_class; ?><?php echo $pb_class; ?>">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> faq-columns-sec bg-black px-4 md:px-10 pt-[60px] lg:pt-[80px] lg:pb-[80px] pb-[60px]<?php echo $pt_class; ?><?php echo $pb_class; ?>">
 		<!-- <div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col md:flex-row items-center flex-wrap"> -->
 		<?php if($title_row_1 || $title_row_2 || $description): ?>
 		<div class="flex flex-col lg:flex-row gap-[20px] lg:gap-[50px] self-stretch w-full wrapper mb-[40px]">
