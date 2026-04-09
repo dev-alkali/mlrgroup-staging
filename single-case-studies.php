@@ -52,7 +52,7 @@ get_header();
 
   <?php // get_template_part('template-parts/cta/cta'); ?>
 
-  <?php get_template_part('template-parts/ctas-mulitple'); ?>
+  <?php get_template_part('template-parts/ctas-mulitple/ctas-mulitple'); ?>
 
 </main>
 
