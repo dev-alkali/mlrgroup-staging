@@ -38,7 +38,7 @@ if (!empty($block['className'])) {
                     <h2
                         class=" flex flex-col font-heading text-[clamp(36px,5vw,68px)] leading-[clamp(44px,6vw,78px)] tracking-[-2%] max-w-[700px]">
                         <span class="font-bold text-neutral-800 "><?= wp_kses_post(get_sub_field('title_row_1')) ?> </span>
-                        <span class="font-light text-neutral-500 "><?= wp_kses_post(get_sub_field('title_row_2')) ?></span>
+                        <span class="font-bold text-neutral-800 "><?= wp_kses_post(get_sub_field('title_row_2')) ?></span>
                     </h2>
 
 
