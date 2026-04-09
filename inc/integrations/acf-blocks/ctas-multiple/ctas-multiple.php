@@ -24,7 +24,7 @@ $title_row_2 = get_field('title_row_2');
   
   <div class="c-cta__wrap flex flex-col align-center w-full space-between gap-[40px] max-w-[1220px]">
     
-    <div class="c-cta__content">
+    <div class="c-cta__content max-w-[850px]">
       <h2 class="flex flex-col align-start c-cta__title font-heading text-white text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em]">
         <?php if($title_row_1): ?>
           <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
