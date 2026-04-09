@@ -1238,6 +1238,9 @@ button.swiper-button-disabled {
 .blog-content .content-sec ul {
   @apply ml-[30px];
 }
+.blog-content .content-sec ul ul{
+  @apply mt-[9px];
+}
 
 .blog-content .quote-content *:not(br){
   @apply text-[clamp(24px,3.5vw,36px)] leading-[clamp(36px,5vw,52px)] tracking-[-2%] font-heading;
