@@ -91,6 +91,9 @@ a.footer-text:hover{color:#ffffff;}
 /* Paragraph */
 .blog-content p,
 .blog-content li {font-weight: 400;font-size: 18px;line-height: 26px;color: #262626;}
+.single-case-studies .blog-content .content-sec p,
+.single-case-studies .two-col .description-content p,
+.single-case-studies .blog-content .content-sec li {color: #525252;}
 
 .see-all-btn a img{transition:all 0.3s ease;}
 .see-all-btn a:hover img{transform: rotate(45deg);}
