@@ -41,7 +41,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
         <?php if($arrow_display): ?>
           <div class="arrow-display md:mb-[28px] mb-[18px]">
             <?php if($multiple_arrows): ?>
-              <img src="<?= get_template_directory_uri() ?>/assets/imgs/seven-arrows-img.svg" alt="" class="max-w-[421px] w-full">
+              <img src="<?= get_template_directory_uri() ?>/assets/imgs/seven-arrows-img.svg" alt="" class="md:max-w-[421px] max-w-[300px] w-full">
             <?php else: ?>
               <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" alt="" class="w-[35px] h-[35px] md:w-[42px] md:h-[42px]">
             <?php endif; ?>
