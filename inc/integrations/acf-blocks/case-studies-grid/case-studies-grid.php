@@ -76,7 +76,7 @@ if (!empty($block['className'])) {
                         <?php echo $custom_card_title ?: get_the_title($post->ID); ?>
                     </h3>
                     
-                    <span class="cs-card__link text-white font-semibold mt-8 text-[16px] leading-[24px]">LEARN MORE <svg width="11" height="11" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <span class="cs-card__link text-white font-semibold mt-8 text-[16px] leading-[24px]">LEARN MORE <svg class="mt-[2%]" width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.26562 2.47656H13.407V13.9386" stroke="#fff" stroke-miterlimit="10"/>
                         <path d="M13.3351 2.54688L2.33789 13.8605" stroke="#fff" stroke-miterlimit="10"/>
                         </svg>
