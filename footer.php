@@ -8,17 +8,35 @@
       <div class="flex flex-col max-w-[1920px] items-start gap-10 w-full">
         <div class="flex flex-col min-[1199px]:flex-row w-full lg:justify-between items-start gap-15 min-[1280px]:gap-28">
           <!-- Brand -->
-          <div class="flex flex-col lg:flex-row max-w-[305px] w-full items-start gap-5 lg:items-center">
-            <a class="relative max-w-[250px] overflow-hidden flex " href="<?= home_url(); ?>" >
-              <img class="w-full max-w-[250px] h-[61.8px]" src="<?= esc_url(get_field('footer_logo', 'option')); ?>" alt="logo">
-            </a>
-            <div class="flex gap-4 items-center lg:border-l lg:border-white pl-2 ml-2">
-              <?php if (have_rows('social_links', 'option')): while (have_rows('social_links', 'option')): the_row(); ?>
-                <a href="<?= esc_url(get_sub_field('link')) ?>">
-                  <img src="<?= esc_url(get_sub_field('icon')) ?>" alt="" />
-                </a>
-              <?php endwhile; endif; ?>
+          <div class="max-w-[305px] w-full items-start">
+            <div class="flex flex-col lg:flex-row items-start lg:items-center">
+              <a class="relative max-w-[250px] overflow-hidden flex " href="<?= home_url(); ?>" >
+                <img class="w-full max-w-[250px] h-[61.8px]" src="<?= esc_url(get_field('footer_logo', 'option')); ?>" alt="logo">
+              </a>
+              <div class="flex gap-4 items-center lg:border-l lg:border-white pl-2 ml-2">
+                <?php if (have_rows('social_links', 'option')): while (have_rows('social_links', 'option')): the_row(); ?>
+                  <a href="<?= esc_url(get_sub_field('link')) ?>">
+                    <img src="<?= esc_url(get_sub_field('icon')) ?>" alt="" />
+                  </a>
+                <?php endwhile; endif; ?>
+              </div>
             </div>
+
+
+            <!-- Newsletter -->
+          <div class="flex flex-col gap-1 w-full newsletter-gf-container">
+            <div class="font-heading font-light text-base leading-6 text-[#F9FAFB] newsletter-gf--text">
+              <?= get_field('newsletter_title', 'option'); ?>
+            </div>
+            <?php
+            $form_id = sanitize_text_field(get_field('newsletter_form_id', 'option'));
+            if ($form_id) {
+              echo do_shortcode('[gravityform id="' . esc_attr($form_id) . '" title="false" description="false" ajax="true"]');
+            }
+            ?>
+          </div>
+
+
           </div>
 
           <!-- Footer Columns -->
@@ -119,7 +137,7 @@
           </div>
         </div>
 
-        <!-- Newsletter -->
+        <?php /*<!-- Newsletter -->
         <div class="flex flex-col gap-1 w-full newsletter-gf-container">
           <div class="font-heading font-light text-base leading-6 text-[#F9FAFB] newsletter-gf--text">
             <?= get_field('newsletter_title', 'option'); ?>
@@ -130,7 +148,7 @@
             echo do_shortcode('[gravityform id="' . esc_attr($form_id) . '" title="false" description="false" ajax="true"]');
           }
           ?>
-        </div>
+        </div> */ ?>
       </div>
 
       <!-- Results Images (mobile only) -->
