@@ -10,8 +10,8 @@
           <!-- Brand -->
           <div class="max-w-[460px] w-full items-start">
             <div class="flex flex-col lg:flex-row items-start lg:items-center mb-[20px]">
-              <a class="relative max-w-[220px] overflow-hidden flex " href="<?= home_url(); ?>" >
-                <img class="w-full max-w-[250px] h-[61.8px]" src="<?= esc_url(get_field('footer_logo', 'option')); ?>" alt="logo">
+              <a class="relative max-w-[220px] overflow-hidden " href="<?= home_url(); ?>" >
+                <img class="w-full" src="<?= esc_url(get_field('footer_logo', 'option')); ?>" alt="logo">
               </a>
               <div class="flex gap-4 items-center lg:border-l lg:border-white pl-2 ml-2">
                 <?php if (have_rows('social_links', 'option')): while (have_rows('social_links', 'option')): the_row(); ?>
