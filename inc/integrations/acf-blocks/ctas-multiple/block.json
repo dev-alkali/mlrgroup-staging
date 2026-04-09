@@ -1,0 +1,14 @@
+{
+    "name": "acf/ctas-multiple",
+    "title": "Multiple CTA",
+    "description": "Multiple CTAs Section",
+    "style": [""],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["cta, multiple cta", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "ctas-multiple.php"
+    },
+    "script": ""
+}

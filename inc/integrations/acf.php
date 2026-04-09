@@ -32,6 +32,6 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/acf-blocks/multiple-images');  
   register_block_type(__DIR__ . '/acf-blocks/quote-block');  
   register_block_type(__DIR__ . '/acf-blocks/case-studies-grid');  
-  
+  register_block_type(__DIR__ . '/acf-blocks/ctas-multiple);  
 
 }
