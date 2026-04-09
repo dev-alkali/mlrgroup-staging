@@ -22,7 +22,7 @@
           </div>
 
           <!-- Footer Columns -->
-          <div class="flex flex-col md:flex-row items-start gap-[13px] md:gap-3 min-[1280px]:gap-8 w-full max-w-[958px] flex-1">
+          <div class="flex flex-col md:flex-row items-start gap-[13px] md:gap-3 min-[1280px]:gap-8 w-full max-w-[870px] flex-1">
             <?php
             function render_footer_menu($location)
             {
