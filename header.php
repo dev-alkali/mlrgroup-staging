@@ -145,7 +145,7 @@ if ( $is_transparent_page ) {
         </nav>
 
         <?php if(get_field('lets_talk_link', 'option')): ?>
-        <a class="btn-primary " href="<?php echo esc_url(get_field('lets_talk_link', 'option')); ?>">LETS TALK</a>
+        <a class="btn-primary " href="<?php echo esc_url(get_field('lets_talk_link', 'option')); ?>">Let’s TALK</a>
         <?php endif; ?>
 
       </div>
@@ -213,7 +213,7 @@ if ( $is_transparent_page ) {
 
         <div class="mobile-menu-footer">
           <?php if(get_field('lets_talk_link', 'option')): ?>
-            <a class="btn-primary" href="<?php echo esc_url(get_field('lets_talk_link', 'option')); ?>">LETS TALK</a>
+            <a class="btn-primary" href="<?php echo esc_url(get_field('lets_talk_link', 'option')); ?>">Let’s TALK</a>
           <?php endif; ?>
 
         </div>
