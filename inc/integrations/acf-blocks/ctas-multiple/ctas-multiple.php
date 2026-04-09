@@ -23,14 +23,18 @@ $title_row_2 = get_field('title_row_2');
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex c-cta w-full bg-black py-12 md:py-17 xl:py-25 px-6 md:px-12">
   
   <div class="c-cta__wrap flex flex-col align-center w-full space-between gap-[40px] max-w-[1220px]">
-    <h2 class="c-cta__title font-heading text-white text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em]">
-      <?php if($title_row_1): ?>
-        <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
-      <?php endif; ?>
-      <?php if($title_row_2): ?>
-        <span class="font-light"><?= wp_kses_post($title_row_2) ?></span>
-      <?php endif; ?>
-    </h2>
+    
+    <div class="c-cta__content">
+      <h2 class="flex flex-col align-start c-cta__title font-heading text-white text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em]">
+        <?php if($title_row_1): ?>
+          <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
+        <?php endif; ?>
+        <?php if($title_row_2): ?>
+          <span class="font-light"><?= wp_kses_post($title_row_2) ?></span>
+        <?php endif; ?>
+      </h2>
+    </div>
+
     <?php if( have_rows('cta_items') ): ?>
       <div class="c-cta__buttons-wrap flex flex-col gap-[22px] ">
         <?php while( have_rows('cta_items') ): the_row(); ?>
