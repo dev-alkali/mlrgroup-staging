@@ -32,7 +32,7 @@ if (have_rows('inner_hero')) :  while (have_rows('inner_hero')) : the_row();
 
 <?php if(get_sub_field('select_banner_height') == 'Full'): ?>
 
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> w-full px-4 min-[600px]:px-10 min-[767px]:px-20 lg:px-[100px] bg-center bg-cover bg-no-repeat bg-[rgba(0,0,0,0.5)] bg-blend-overlay" style="--bg-desktop: url('<?php echo $bg_desktop_img; ?>');<?php if($bg_mobile_image): ?>--bg-mobile: url('<?php echo $bg_mobile_image; ?>');<?php endif; ?>">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> w-full px-4 md:px-10 bg-center bg-cover bg-no-repeat bg-[rgba(0,0,0,0.5)] bg-blend-overlay" style="--bg-desktop: url('<?php echo $bg_desktop_img; ?>');<?php if($bg_mobile_image): ?>--bg-mobile: url('<?php echo $bg_mobile_image; ?>');<?php endif; ?>">
       <div class="gap-10 w-full wrapper min-h-screen py-[80px] md:py-[118px] flex items-end">
         <div <?php echo $max_width_attr; ?>>
           <?php if($title_row_1 || $title_row_2): ?>
