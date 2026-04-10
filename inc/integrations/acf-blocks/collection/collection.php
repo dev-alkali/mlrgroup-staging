@@ -30,7 +30,7 @@ if (!empty($block['className'])) {
     }
 ?>
 
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> px-4 min-[600px]:px-10 py-[60px] min-[600px]:py-[120px] bg-white <?php echo $pt_class; ?><?php echo $pb_class; ?>">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> px-4 md:px-10 py-[60px] min-[600px]:py-[120px] bg-white <?php echo $pt_class; ?><?php echo $pb_class; ?>">
         <div class="flex flex-col w-full items-start gap-8 min-[600px]:gap-[60px] wrapper">
                 <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
 

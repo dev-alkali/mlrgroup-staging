@@ -23,12 +23,10 @@ if (!empty($block['className'])) {
     $btn_label = get_sub_field('btn_label');
 
   ?>
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> c-hero flex flex-col w-full items-center p-0 lg:pt-5 lg:pb-0 lg:px-5 bg-white h-[calc(100vh-165px)] bg-cover bg-no-repeat bg-[position:50%_20%]"
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> c-hero w-full p-0 lg:pt-5 lg:pb-0 px-4 md:px-10 bg-white h-[calc(100vh-165px)] bg-cover bg-no-repeat bg-[position:50%_20%]"
   <?php if (!empty($bg_image)) : ?>
         style="background-image: linear-gradient(0deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('<?php echo esc_url($bg_image); ?>'); background-position:50% 20%; background-size:cover; background-repeat:no-repeat;"
       <?php endif; ?>>
-
-
     <div class="wrapper flex-1 w-full" >
       <div class="w-full h-full flex flex-col items-start gap-[162px] relative">
         <div class="flex flex-col items-start justify-end pt-8 pb-20 md:pb-16 flex-1 w-full">
@@ -96,7 +94,7 @@ if (!empty($block['className'])) {
     $images = get_sub_field('images_brands');
   ?>
 
-  <section class="c-brands py-[40px]">
+  <section class="c-brands py-[40px] px-4 md:px-10">
     <div class="wrapper flex flex-col lg:flex-row items-center gap-[20px] md:gap-[50px] min-[1280px]:gap-[105px] w-full ">
 
       <?php if (!empty($brand_title)) : ?>
