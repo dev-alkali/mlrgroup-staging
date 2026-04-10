@@ -1173,7 +1173,7 @@ button.swiper-button-disabled {
 }
 
 .cta.black-cta {height: auto;min-height: auto;}
-.cta.black-cta .cta-wrapper {padding: 0px 20px 140px;text-align: center;background: #000;}
+.cta.black-cta .cta-wrapper {text-align: center;background: #000;}
 .cta.black-cta .cta-wrapper h2 {max-width: 100%;font-size: clamp(32px,6vw,68px);display: flex;flex-direction: column;}
 .cta.black-cta .cta-wrapper p{max-width: 100%;}
 .cta.black-cta .cta-wrapper .cta-content{justify-content: center;align-items: center;gap: 40px;}
