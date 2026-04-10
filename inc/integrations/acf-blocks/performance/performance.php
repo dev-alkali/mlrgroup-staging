@@ -30,13 +30,11 @@ if (!empty($block['className'])) {
     }
 ?>
 
-        <section id="<?php echo esc_attr($id); ?>" class="performance <?php echo esc_attr($className); ?> flex flex-col w-full items-center gap-[60px] pt-10 md:pb-[120px] pb-[100px] md:pb-[180px] px-4 md:px-10 bg-black overflow-hidden<?php echo $pt_class; ?><?php echo $pb_class; ?>">
-
-            <div class="flex flex-col items-center gap-5 w-full max-w-[1920px] mb-[-76px] md:mb-[-180px]">
-
-                <div class="flex max-w-[1920px] w-full flex-col xl:flex-row xl:items-center justify-between gap-8 sm:gap-[40px] lg:gap-[50px]">
+        <section id="<?php echo esc_attr($id); ?>" class="performance <?php echo esc_attr($className); ?> w-full pt-10 md:pb-[120px] pb-[100px] md:pb-[180px] px-4 md:px-10 bg-black overflow-hidden<?php echo $pt_class; ?><?php echo $pb_class; ?>">
+            <div class="flex flex-col items-center gap-5 w-full wrapper mb-[-76px] md:mb-[-180px]">
+                <div class="flex w-full flex-col xl:flex-row xl:items-center justify-between gap-8 sm:gap-[40px] lg:gap-[50px]">
                     <!-- Title -->
-                    <div class="flex items-center gap-2 xl:max-w-[322px]">
+                    <div class="xl:max-w-[322px]">
                         <h2 class="font-bold font-[poppins] text-white tracking-[-0.02em] text-[clamp(36px,3.5vw,48px)] leading-[clamp(44px,4vw,56px)]">
                             <?= wp_kses_post(get_sub_field('title')) ?><span class="text-[#4a78ff]">.</span>
                         </h2>
