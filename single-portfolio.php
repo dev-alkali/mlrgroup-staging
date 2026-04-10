@@ -55,14 +55,15 @@ get_header();
                       var imgUrl    = <?php echo wp_json_encode( get_the_post_thumbnail_url( null, 'full' ) ?: '' ); ?>;
 
                       function fillSinglePortfolioFields() {
-                         var $form = $('#inquiry-normal-form');
-                         $form.find('input[name="input_11"]').val(postId);
-                         $form.find('input[name="input_12"]').val(postTitle);
-                         $form.find('input[name="input_13"]').val(imgUrl);
+                         $('#input_2_11').val(postId);
+                         $('#input_2_12').val(postTitle);
+                         $('#input_2_13').val(imgUrl);
                       }
 
                       $(document).ready(fillSinglePortfolioFields);
-                      $(document).on('gform_post_render', fillSinglePortfolioFields);
+                      $(document).on('gform_post_render', function() {
+                         setTimeout(fillSinglePortfolioFields, 50);
+                      });
                    })(jQuery);
                    </script>
                 </section>
