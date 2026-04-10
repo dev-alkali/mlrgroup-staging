@@ -32,7 +32,7 @@ if (!empty($block['className'])) {
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex justify-center pt-20 px-0 bg-white<?php echo $pt_class; ?><?php echo $pb_class; ?>">    
         <div class="flex flex-col w-full items-center gap-10">
         <!-- Heading -->
-        <div class="px-4 sm:px-10">
+        <div class="px-4 sm:px-10 w-full">
             <div class="wrapper w-full flex flex-col items-start justify-center gap-5 ">            
                 <h2 class="flex flex-col max-w-[560px] font-heading text-black tracking-[-0.02em] text-[clamp(36px,5vw,68px)] leading-[clamp(44px,6vw,80px)]">
                     <span class="font-bold">
