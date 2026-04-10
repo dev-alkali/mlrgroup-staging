@@ -19,7 +19,7 @@ get_header();
 				<h1 class="font-heading font-bold max-w-[1125px] text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em] text-[#262626]"><?php the_title(); ?></h1>
 
 				<div class="mt-[28px] overflow-hidden">
-					<div class="max-h-[700px]">
+					<div class="aspect-[16/9]">
 					<?php if (has_post_thumbnail()) : ?>
 						<?php the_post_thumbnail('full', ['class' => 'w-full h-full object-contain']); ?>
 					<?php else : ?>
