@@ -120,8 +120,6 @@ body .service-card .gradient-box:hover:after {opacity: 0;}
 article.service-card .bg-image{transition:all 0.3s ease;}
 article.service-card:hover .bg-image{filter: none !important;}
 
-.flex-col-reverse.two-column-wrapper .two-column-content{padding-left:0px;}
-
 .cs-card { height: clamp(300px, 33vw, 500px); transition: 0.25s ease width; overflow: hidden; min-width: inherit; }
 .cs-card__logo { max-width: clamp(120px, 30vw, 150px); max-height: clamp(30px, 10vw, 91px); filter: brightness(0) invert(1); }
 .cs-card__logo { max-height: 100%; }
