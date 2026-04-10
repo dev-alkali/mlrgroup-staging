@@ -28,7 +28,7 @@ get_header();
              <div class="flex flex-col md:flex-row gap-[40px] md:gap-[60px]">
                 <section class="w-full flex flex-col gap-[20px] md:gap-10">
                    <?php if (has_post_thumbnail()) : ?>
-                          <?php the_post_thumbnail('full', ['class' => 'inquiry-img w-full max-h-[546px] h-full object-cover object-center']); ?>
+                          <?php the_post_thumbnail('full', ['class' => 'inquiry-img w-full max-h-[546px] h-full object-contain object-center']); ?>
                     <?php endif; ?>
                    
                    <div class="mt-4 mb-4 block md:hidden">
