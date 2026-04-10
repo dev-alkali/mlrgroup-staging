@@ -27,7 +27,7 @@ if (!empty($block['className'])) {
     }
 ?>
         <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> solutions-tabs-slider px-4  md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] flex justify-center<?php echo $pt_class; ?><?php echo $pb_class; ?>">
-            <div class="w-full flex items-center flex-col max-w-[1920px]">
+            <div class="w-full flex items-center flex-col wrapper">
 
                 <?php if (have_rows('header_content')) :  while (have_rows('header_content')) : the_row(); ?>
                         <!-- TITLE -->
@@ -58,7 +58,7 @@ if (!empty($block['className'])) {
 
                 <!-- TABS -->
                 <?php if (have_rows('main_content')) :  while (have_rows('main_content')) : the_row(); ?>
-                        <div class="solutions-tabs mb-[40px] w-full max-w-[1920px] flex flex-nowrap overflow-x-auto min-[1141px]:overflow-x-visible">
+                        <div class="solutions-tabs mb-[40px] w-full wrapper flex flex-nowrap overflow-x-auto min-[1141px]:overflow-x-visible">
                             <?php if (have_rows('service_group')) : while (have_rows('service_group')) : the_row(); ?>
                                     <div class="solutions-tab <?= get_row_index() === 1 ? 'is-active' : '' ?> max-[767px]:max-w-[184px] w-full md:min-w-[280px] lg:min-w-auto flex-none md:flex-1"
                                         data-solution="<?= wp_kses_post(get_sub_field('service_name')) ?>">
