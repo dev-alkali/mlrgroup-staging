@@ -43,7 +43,6 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     background-repeat: no-repeat;
   ">
       <div class="flex flex-col items-center w-full h-full justify-end gap-[40px] min-[600px]:gap-[100px] min-[767px]:gap-[162px] pt-10 pb-[60px] min-[600px]:pb-[100px] px-4 md:px-10 [background:linear-gradient(222deg,rgba(0,0,0,0)_4.72%,rgba(0,0,0,1)_79.68%)] cta-wrapper">
-
         <div class="flex flex-col items-start gap-10 min-[600px]:gap-[50px] w-full wrapper cta-content">
           <div class="flex flex-col items-start gap-5 w-full">
             <?php if($title_row_1 || $title_row_2): ?>
@@ -67,7 +66,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
           <?php endif; ?>
         </div>
       </div>
-
     </section>
+
 <?php endwhile;
 endif; ?>
