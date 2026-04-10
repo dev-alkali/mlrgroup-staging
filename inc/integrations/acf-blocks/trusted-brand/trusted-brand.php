@@ -33,15 +33,15 @@ if (!empty($block['className'])) {
         $pb_class = ' ' . 'pb0';
     }
 ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> py-4 md:py-10<?php echo $pt_class; ?><?php echo $pb_class; ?>">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> py-4 md:py-10 px-4 md:px-10 <?php echo $pt_class; ?><?php echo $pb_class; ?>">
       <div class="w-full wrapper relative">
         <?php if (have_rows('brands')) :  while (have_rows('brands')) : the_row(); ?>          
-            <div class="flex justify-start gap-2 md:gap-3 shrink-0 md:mb-[50px] mb-[20px] items-center px-4 md:px-10">
+            <div class="flex justify-start gap-2 md:gap-3 shrink-0 md:mb-[50px] mb-[20px] items-center">
               <div class="relative "><img class="w-4 md:w-[27px] md:h-[27px]" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-blue-brands.svg" alt="arrow"></div>
               <p class="text-[16px] font-medium md:text-[32px] md:tracking-[-2%] leading-6 md:leading-[40px] text-black font-heading"><?= wp_kses_post(get_sub_field('title')) ?></p>
             </div>
         <!-- MARQUEE -->
-            <div class="flex-1 overflow-hidden relative h-[91.15px] md:h-auto md:px-10">
+            <div class="flex-1 overflow-hidden relative h-[91.15px] md:h-auto">
               <div class="absolute -top-4 left-[-3%] w-[133px] h-[139px] bg-white blur-[16px] z-20 max-lg:hidden"></div>
               <div class="absolute -top-4 right-[-3%] w-[133px] h-[139px] bg-white blur-[16px] z-20 max-lg:hidden"></div>
               
