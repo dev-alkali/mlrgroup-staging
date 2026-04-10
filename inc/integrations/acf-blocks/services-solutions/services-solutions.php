@@ -60,7 +60,7 @@ if (!empty($block['className'])) {
                 <?php if (have_rows('main_content')) :  while (have_rows('main_content')) : the_row(); ?>
                         <div class="solutions-tabs mb-[40px] w-full wrapper flex flex-nowrap overflow-x-auto min-[1141px]:overflow-x-visible">
                             <?php if (have_rows('service_group')) : while (have_rows('service_group')) : the_row(); ?>
-                                    <div class="solutions-tab <?= get_row_index() === 1 ? 'is-active' : '' ?> max-[767px]:max-w-[184px] w-full md:min-w-[280px] lg:min-w-auto flex-none md:flex-1"
+                                    <div class="solutions-tab <?= get_row_index() === 1 ? 'is-active' : '' ?> max-[767px]:max-w-[max-content] w-full md:min-w-[280px] lg:min-w-auto flex-none md:flex-1"
                                         data-solution="<?= wp_kses_post(get_sub_field('service_name')) ?>">
                                         <button class="px-[10.5px] md:px-2 min-[1206px]:px-6 w-full pt-[21px] md:pt-[27px] pb-[19px] md:pb-[25px] gap-2 capitalize md:uppercase font-medium">
                                             <img class="w-3 md:mt-[3px] md:w-[19px] h-3 md:h-[18px] arrow " src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-tabs.svg" alt="">
