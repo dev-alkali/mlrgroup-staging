@@ -56,7 +56,7 @@ get_header();
 
                       function fillSinglePortfolioFields() {
                          var $form = $('#inquiry-normal-form');
-                         $form.find('.inquiry-field input').val(postId);
+                         $form.find('input[name="input_11"]').val(postId);
                          $form.find('input[name="input_12"]').val(postTitle);
                          $form.find('input[name="input_13"]').val(imgUrl);
                       }
