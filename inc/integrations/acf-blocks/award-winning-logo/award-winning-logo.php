@@ -34,7 +34,7 @@ if (!empty($block['className'])) {
 
 ?>
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> p-0 py-[40px] px-[0px] md:px-[20px] md:py-[60px] <?php echo $pt_class; ?><?php echo $pb_class; ?>">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>py-[40px] md:py-[60px] px-4 md:px-10 <?php echo $pt_class; ?><?php echo $pb_class; ?>">
   <div class="flex items-center gap-2 wrapper">
     <div class="flex flex-col min-[890px]:flex-row gap-4 min-[600px]:gap-[40px] min-[890px]:gap-[105px] relative w-full">
       <div class="flex items-center justify-start gap-2 min-[600px]:gap-3 shrink-0 px-[20px] md:px-[0px]">
@@ -51,7 +51,6 @@ if (!empty($block['className'])) {
 
         <div class="absolute top-[-30px] left-[-7%] w-[189px] max-[890px]:hidden h-[200px] bg-white z-20 blur-[16px]"></div>
         <div class="absolute top-[-30px] right-[-140px] w-[189px] h-[200px] max-[890px]:hidden bg-white z-20  blur-[16px]"></div>
-
 
         <div class="marquee-wrapper overflow-hidden w-full">
           <div class="marquee-track relative">
@@ -72,16 +71,7 @@ if (!empty($block['className'])) {
             </div>
           </div>
         </div>
-
-        <svg style="width:0; height:0; position:absolute;" aria-hidden="true" focusable="false">
-          <filter id="gray-color">
-            <feColorMatrix type="matrix"
-              values="0 0 0 0 0.5
-                      0 0 0 0 0.5
-                      0 0 0 0 0.5
-                      0 0 0 1 0" />
-          </filter>
-        </svg>
+        <svg style="width:0; height:0; position:absolute;" aria-hidden="true" focusable="false"><filter id="gray-color"><feColorMatrix type="matrix" values="0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 1 0" /></filter></svg>
       </div>
     </div>
   </div>
