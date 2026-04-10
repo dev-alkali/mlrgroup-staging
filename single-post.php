@@ -16,21 +16,17 @@ get_header();
 					<?php endif; ?>
 				</div>
 			
+				<h1 class="font-heading font-bold max-w-[1125px] text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em] text-[#262626]"><?php the_title(); ?></h1>
 
-
-				<h1 class="font-heading font-bold max-w-[1125px] text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em] text-[#262626]">
-				<?php the_title(); ?>
-				</h1>
-
-			<div class="mt-[28px] overflow-hidden">
-				<div class="aspect-[16/9]">
-				<?php if (has_post_thumbnail()) : ?>
-					<?php the_post_thumbnail('full', ['class' => 'w-full h-full object-contain']); ?>
-				<?php else : ?>
-					<img class="w-full h-full object-contain" src="/wp-content/themes/Mlrgroup/assets/imgs/altr-img.jpg" alt="">
-				<?php endif; ?>
+				<div class="mt-[28px] overflow-hidden">
+					<div class="aspect-[16/9]">
+					<?php if (has_post_thumbnail()) : ?>
+						<?php the_post_thumbnail('full', ['class' => 'w-full h-full object-contain']); ?>
+					<?php else : ?>
+						<img class="w-full h-full object-contain" src="/wp-content/themes/Mlrgroup/assets/imgs/altr-img.jpg" alt="">
+					<?php endif; ?>
+					</div>
 				</div>
-			</div>
 
 				<div class="md:flex mt-[20px] hidden">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/single-blog-arrow-1.svg" alt="Blog Author" class="w-full">
@@ -41,43 +37,6 @@ get_header();
 				<div class="blog-content">
 					<?php the_content(); ?>
 				</div>
-
-				<?php /*
-					$categories = get_the_category();
-					$tags       = get_the_tags();
-				?>
-
-				<?php if (!empty($categories)) : ?>
-					<div class="mt-[28px]">
-						<p class="font-heading font-semibold text-[#262626] mb-[10px]"><?php esc_html_e('Categories', 'mrl-site'); ?></p>
-						<div class="flex flex-wrap gap-[8px]">
-							<?php foreach ($categories as $cat) : ?>
-							<a
-								href="<?php echo esc_url(get_category_link($cat->term_id)); ?>"
-								class="inline-flex items-center rounded-full border border-[#525252] px-[17px] py-[5px] text-[14px] leading-[20px] text-[#525252] hover:opacity-80 transition-opacity"
-							>
-								<?php echo esc_html($cat->name); ?>
-							</a>
-							<?php endforeach; ?>
-						</div>
-					</div>
-				<?php endif; ?>
-
-				<?php if (!empty($tags) && !is_wp_error($tags)) : ?>
-					<div class="mt-[20px]">
-						<p class="font-heading font-semibold text-[#262626] mb-[10px]"><?php esc_html_e('Tags', 'mrl-site'); ?></p>
-						<div class="flex flex-wrap gap-[8px]">
-							<?php foreach ($tags as $tag) : ?>
-							<a
-								href="<?php echo esc_url(get_tag_link($tag->term_id)); ?>"
-								class="inline-flex items-center rounded-full border border-[#CFCFCF] px-[17px] py-[5px] text-[14px] leading-[20px] text-[#525252] hover:opacity-80 transition-opacity"
-							>
-								<?php echo esc_html($tag->name); ?>
-							</a>
-							<?php endforeach; ?>
-						</div>
-					</div>
-				<?php endif; */ ?>
 				</article>
 			<?php endwhile; ?>
 		</div>
