@@ -54,31 +54,15 @@ get_header();
                       var postTitle = <?php echo wp_json_encode( html_entity_decode( get_the_title(), ENT_QUOTES, 'UTF-8' ) ); ?>;
                       var imgUrl    = <?php echo wp_json_encode( get_the_post_thumbnail_url( null, 'full' ) ?: '' ); ?>;
 
-                      console.log('[SinglePortfolio] PHP values —', { postId: postId, postTitle: postTitle, imgUrl: imgUrl });
-
-                      function fillSinglePortfolioFields(trigger) {
-                         var $f11 = $('#input_2_11');
-                         var $f12 = $('#input_2_12');
-                         var $f13 = $('#input_2_13');
-
-                         console.log('[SinglePortfolio] fillSinglePortfolioFields triggered by:', trigger);
-                         console.log('[SinglePortfolio] #input_2_11 found:', $f11.length, '| current value:', $f11.val());
-                         console.log('[SinglePortfolio] #input_2_12 found:', $f12.length, '| current value:', $f12.val());
-                         console.log('[SinglePortfolio] #input_2_13 found:', $f13.length, '| current value:', $f13.val());
-
-                         $f11.val(postId);
-                         $f12.val(postTitle);
-                         $f13.val(imgUrl);
-
-                         console.log('[SinglePortfolio] After set — #input_2_11:', $f11.val(), '| #input_2_12:', $f12.val(), '| #input_2_13:', $f13.val());
+                      function fillSinglePortfolioFields() {
+                         $('#input_2_11').val(postId);
+                         $('#input_2_12').val(postTitle);
+                         $('#input_2_13').val(imgUrl);
                       }
 
-                      $(document).ready(function() {
-                         fillSinglePortfolioFields('document.ready');
-                      });
-                      $(document).on('gform_post_render', function(e, formId) {
-                         console.log('[SinglePortfolio] gform_post_render fired for form ID:', formId);
-                         setTimeout(function() { fillSinglePortfolioFields('gform_post_render (after 50ms)'); }, 50);
+                      $(document).ready(fillSinglePortfolioFields);
+                      $(document).on('gform_post_render', function() {
+                         setTimeout(fillSinglePortfolioFields, 50);
                       });
                    })(jQuery);
                    </script>
