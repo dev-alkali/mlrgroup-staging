@@ -3,9 +3,9 @@
   <!-- Top Accent Bar -->
   <div class="w-full h-[10px] bg-accent"></div>
 
-  <div class="flex flex-col bg-black w-full">
-    <div class="flex flex-col items-center gap-[16] md:gap-28 px-4 md:px-10 pt-[40px] pb-[39px] md:py-[60px] w-full">
-      <div class="flex flex-col max-w-[1920px] items-start gap-10 w-full">
+  <div class="bg-black w-full">
+    <div class="px-4 md:px-10 pt-[40px] pb-[39px] md:py-[60px] w-full">
+      <div class="flex flex-col wrapper items-start gap-10 w-full">
         <div class="flex flex-col min-[1199px]:flex-row w-full lg:justify-between items-start gap-15 min-[1280px]:gap-28">
           <!-- Brand -->
           <div class="max-w-[460px] w-full items-start">
@@ -136,19 +136,6 @@
             </div>
           </div>
         </div>
-
-        <?php /*<!-- Newsletter -->
-        <div class="flex flex-col gap-1 w-full newsletter-gf-container">
-          <div class="font-heading font-light text-base leading-6 text-[#F9FAFB] newsletter-gf--text">
-            <?= get_field('newsletter_title', 'option'); ?>
-          </div>
-          <?php
-          $form_id = sanitize_text_field(get_field('newsletter_form_id', 'option'));
-          if ($form_id) {
-            echo do_shortcode('[gravityform id="' . esc_attr($form_id) . '" title="false" description="false" ajax="true"]');
-          }
-          ?>
-        </div> */ ?>
       </div>
 
       <!-- Results Images (mobile only) -->
@@ -160,8 +147,8 @@
     </div>
 
     <!-- Bottom bar -->
-    <div class="flex flex-col items-center gap-16 px-4 md:px-10 py-5 w-full border-t border-[#6e454766]">
-      <div class="flex flex-col md:flex-row max-w-[1920px] w-full gap-5 md:gap-5 items-start md:items-center justify-between">
+    <div class="px-4 md:px-10 py-5 w-full border-t border-[#6e454766]">
+      <div class="flex flex-col md:flex-row wrapper w-full gap-5 md:gap-5 items-start md:items-center justify-between">
         <p class="footer-text">© 2026 THE MRL GROUP</p>
         <div class="inline-flex gap-5 md:gap-16 footer-privacy-menu max-[768px]:flex-col">
           <?php render_footer_menu('privacy-menu'); ?>
