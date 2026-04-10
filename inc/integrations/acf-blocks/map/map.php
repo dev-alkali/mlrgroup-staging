@@ -34,8 +34,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 }
 
 ?>
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> map-sec py-[60px] lg:py-[80px] xl:py-[120px] overflow-hidden<?php echo $pt_class; ?><?php echo $pb_class; ?>">
-  <div class="wrapper px-4 md:px-10">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> map-sec py-[60px] lg:py-[80px] xl:py-[120px] px-4 md:px-10 overflow-hidden<?php echo $pt_class; ?><?php echo $pb_class; ?>">
+  <div class="wrapper">
       <?php if ($title1 || $title2) : ?>
         <div class="serve-heading xl:mb-[80px] lg:mb-[50px] mb-[32px]">
           <h2 class=" font-heading font-bold text-[clamp(36px,4.5vw,68px)] leading-[clamp(44px,5.2vw,78px)] tracking-[-0.02em]">
