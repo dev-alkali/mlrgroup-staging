@@ -12,8 +12,8 @@ get_header();
     <section class="px-4 md:px-10 pt-[40px] md:pt-[80px] xl:pt-[120px] pb-[60px] lg:pb-[60px]">
         <div class="wrapper">
              <div class="mb-[40px]">
-                <div class="flex justify-between w-full mb-3 border-b border-[#CCCCCC] md:border-0 pb-[20px] md:pb-0">
-                   <h2 class="inquiry-title text-[clamp(36px,5vw,48px)] leading-[clamp(44px,5.1vw,60px)] tracking-[-2%] font-heading text-neutral-800 hidden md:block"><?php the_title(); ?></h2>               
+                <div class=" justify-between w-full mb-[20px] border-b border-[#CCCCCC] md:border-0 pb-[20px] md:pb-0 hidden md:flex">
+                   <h2 class="inquiry-title text-[clamp(36px,5vw,48px)] leading-[clamp(44px,5.1vw,60px)] tracking-[-2%] font-heading text-neutral-800 font-bold"><?php the_title(); ?></h2>               
                 </div>
                 <?php
                 $portfolio_terms = get_the_terms(get_the_ID(), 'portfolio-category');
@@ -33,7 +33,7 @@ get_header();
                    
                    <div class="mt-4 mb-4 block md:hidden">
                       <div class=" flex justify-between w-full mb-3">
-                         <h2 class="inquiry-title text-[clamp(36px,5vw,48px)] leading-[clamp(44px,5.1vw,60px)] tracking-[-2%] font-heading text-neutral-800 "><?php the_title(); ?></h2>
+                         <h2 class="inquiry-title text-[clamp(36px,5vw,48px)] leading-[clamp(44px,5.1vw,60px)] tracking-[-2%] font-heading font-bold text-neutral-800 "><?php the_title(); ?></h2>
                          
                       </div>
                       <?php if (!empty($portfolio_terms) && !is_wp_error($portfolio_terms)) : ?>
