@@ -1196,8 +1196,12 @@ button.swiper-button-disabled {
 .content-sec ol{list-style: numeric;margin-left: 20px;}
 .content-sec .wrapper li:not(:last-child){margin-bottom: 5px;}
 .content-sec .wrapper *:not(:last-child) {margin-bottom: 15px;}
+
+.two-column-content a,
 .content-sec .wrapper a{color: #FD4338;}
+.two-column-content a:hover,
 .content-sec .wrapper a:hover{color: #525252;}
+
 .content-sec .wrapper table{border-collapse: collapse;margin-bottom: 15px;}
 .content-sec .wrapper table td,
 .content-sec .wrapper table th{border: 1px solid #949494;padding: 10px;}
