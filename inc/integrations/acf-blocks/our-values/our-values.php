@@ -36,14 +36,12 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 }
 
 ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> our-values-sec py-[60px] lg:py-[80px] xl:py-[120px] overflow-hidden <?php echo $bg_color_class; ?><?php echo $pt_class; ?><?php echo $pb_class; ?>">
-      
+  <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> our-values-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] overflow-hidden <?php echo $bg_color_class; ?><?php echo $pt_class; ?><?php echo $pb_class; ?>">
       <div class="gap-[30px] md:gap-[0px] w-full wrapper flex flex-col">
-
 	  <?php if($title_row_1 || $title_row_2 ): ?>
 			<div class="w-full wrapper lg:mb-[70px] sm:mb-[50px] mb-[20px] overflow-visible">
 				<?php if($title_row_1 || $title_row_2): ?>
-				<h2 class="xl:text-[68px] md:text-[52px] text-[36px] leading-[40px] md:leading-[62px] xl:leading-[76px] tracking-[-2%] text-[#262626] font-heading lg:mb-[20px] relative md:w-[calc(100%-40px)] ml-auto w-[calc(100%-16px)] heading-our-values">
+				<h2 class="xl:text-[68px] md:text-[52px] text-[36px] leading-[40px] md:leading-[62px] xl:leading-[76px] tracking-[-2%] text-[#262626] font-heading lg:mb-[20px] relative heading-our-values">
 					<!-- <div class="bg-repeat absolute top-[0px] left-[10%] right-[calc(100%+100px)] arrow-img-position w-full h-[100%]" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/our-value-arrow.svg');"></div> -->
 					<?php if($title_row_1): ?>
 						<span class="relative w-full block flex gap-[10px] title-our-values-1">
@@ -67,7 +65,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 
 		<?php if($lists): ?>
 			<?php $list_count = count($lists); ?>
-			<div class="flex flex-wrap xl:gap-x-[60px] md:gap-y-[90px] lg:gap-x-[30px] gap-x-[20px] sm:gap-y-[40px] gap-y-[40px] px-4 md:px-10 justify-center">
+			<div class="flex flex-wrap xl:gap-x-[60px] md:gap-y-[90px] lg:gap-x-[30px] gap-x-[20px] sm:gap-y-[40px] gap-y-[40px] justify-center">
 				<?php foreach($lists as $list): 
 					$heading = $list['heading'];
 					$content = $list['content'];
