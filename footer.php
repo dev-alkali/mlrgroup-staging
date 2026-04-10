@@ -92,7 +92,7 @@
                   </div>
 
                   <?php if (!empty($item->children)): ?>
-                    <div class="footer-item-content flex flex-col items-start gap-4 pl-2">
+                    <div class="footer-item-content flex flex-col items-start gap-4">
                       <?php foreach ($item->children as $child): ?>
                         <a class="footer-text" href="<?= esc_url($child->url) ?>"><?= esc_html($child->title) ?></a>
                       <?php endforeach; ?>
@@ -120,7 +120,7 @@
                 </span>
               </div>
               <?php if( have_rows('contact_info','option') ): ?>
-              <div class="footer-item-content flex flex-col items-start gap-4 pl-2">
+              <div class="footer-item-content flex flex-col items-start gap-4">
                 <?php while( have_rows('contact_info','option') ) : the_row(); 
                   $label = get_sub_field('contact_info_label','option');
                   $link = get_sub_field('contact_info_link','option');
