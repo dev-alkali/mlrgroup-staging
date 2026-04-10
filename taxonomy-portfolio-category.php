@@ -77,9 +77,8 @@
     background-size: cover;
     background-repeat: no-repeat;
   ">
-        <div class="flex flex-col items-center w-full h-full justify-end gap-[40px] min-[600px]:gap-[100px] min-[767px]:gap-[162px] pl-4 min-[600px]:pl-10 min-[767px]:pl-[140px] pr-4 min-[600px]:pr-10 min-[767px]:pr-20 pt-10 pb-[60px] min-[600px]:pb-[100px] [background:linear-gradient(222deg,rgba(0,0,0,0)_4.72%,rgba(0,0,0,1)_79.68%)]">
-
-          <div class="flex flex-col items-start gap-10 min-[600px]:gap-[60px] w-full max-w-[1920px]">
+        <div class="flex flex-col items-center w-full h-full justify-end gap-[40px] min-[600px]:gap-[100px] min-[767px]:gap-[162px] pt-10 pb-[60px] min-[600px]:pb-[100px] px-4 md:px-10 [background:linear-gradient(222deg,rgba(0,0,0,0)_4.72%,rgba(0,0,0,1)_79.68%)] cta-wrapper">
+          <div class="flex flex-col items-start gap-10 min-[600px]:gap-[50px] w-full wrapper cta-content">
             <div class="flex flex-col items-start gap-5 w-full">
               <h2 class="max-w-[622px] w-full text-[44px] tracking-[-2%] min-[767px]:text-[65px] min-[1024px]:text-[80px] leading-[50px] min-[767px]:leading-[65px] min-[1024px]:leading-[92px] text-white font-heading">
                 <span class="font-bold"> <?= wp_kses_post(get_sub_field('title_row_1')) ?> </span>
