@@ -96,7 +96,7 @@ if (!empty($block['className'])) {
     $images = get_sub_field('images_brands');
   ?>
 
-  <section class="c-brands py-[40px] px-4 md:px-10">
+  <section class="c-brands pt-[40px] px-4 md:px-10 pb-0">
     <div class="wrapper flex flex-col lg:flex-row items-center gap-[20px] md:gap-[50px] min-[1280px]:gap-[105px] w-full ">
 
       <?php if (!empty($brand_title)) : ?>
