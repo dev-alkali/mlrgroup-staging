@@ -41,7 +41,7 @@ if (have_rows('inner_hero')) :  while (have_rows('inner_hero')) : the_row();
                 <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
             <?php endif; ?>
             <?php if($title_row_2): ?>
-                <span class="font-light"><?= wp_kses_post($title_row_2) ?></span>
+                <span class="font-bold"><?= wp_kses_post($title_row_2) ?></span>
             <?php endif; ?>
           </h2>
           <?php endif; ?>

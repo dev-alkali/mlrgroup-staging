@@ -53,7 +53,7 @@ $mobileFlex = 'flex-col-reverse';
 							<span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
 						<?php endif; ?>
 						<?php if($title_row_2): ?>
-							<span class="font-light text-[#737373]"><?= wp_kses_post($title_row_2) ?></span>
+							<span class="font-bold"><?= wp_kses_post($title_row_2) ?></span>
 						<?php endif; ?>
 					</h2>
 				<?php endif; ?>
