@@ -1197,9 +1197,9 @@ button.swiper-button-disabled {
 .content-sec .wrapper li:not(:last-child){margin-bottom: 5px;}
 .content-sec .wrapper *:not(:last-child) {margin-bottom: 15px;}
 
-.two-column-content a,
+.single-post .two-column-content a,
 .content-sec .wrapper a{color: #FD4338;}
-.two-column-content a:hover,
+.single-post .two-column-content a:hover,
 .content-sec .wrapper a:hover{color: #525252;}
 
 .content-sec .wrapper table{border-collapse: collapse;margin-bottom: 15px;}
