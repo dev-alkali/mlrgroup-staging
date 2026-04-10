@@ -29,7 +29,7 @@ if (!empty($block['className'])) {
       <?php endif; ?>>
 
 
-    <div class="max-w-[1920px] flex-1 w-full" >
+    <div class="wrapper flex-1 w-full" >
       <div class="w-full h-full flex flex-col items-start gap-[162px] px-4 min-[600px]:px-10 min-[767px]:px-20 relative [background:]">
         <div class="flex flex-col items-start justify-end pt-8 pb-20 md:pb-16 flex-1 w-full">
           <div class="flex flex-col items-start justify-center gap-10 w-full">
