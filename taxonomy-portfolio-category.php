@@ -14,7 +14,7 @@
                 <span class="font-bold"><?= wp_kses_post(get_sub_field('title_row_1')) ?></span>
             <?php endif; ?>
             <?php if(get_sub_field('title_row_2')): ?>
-                <span class="font-light"><?= wp_kses_post(get_sub_field('title_row_2')) ?> </span>
+                <span class="font-bold"><?= wp_kses_post(get_sub_field('title_row_2')) ?> </span>
             <?php endif; ?>
           </h2>
           
