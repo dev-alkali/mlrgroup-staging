@@ -48,6 +48,23 @@ get_header();
                 </section>
                 <section id="inquiry-normal-form" class="w-full">
                    <?= do_shortcode('[gravityform id="2" title="false" description="false" ajax="true"]'); ?>
+                   <script>
+                   (function($){
+                      var postId    = <?php echo (int) get_the_ID(); ?>;
+                      var postTitle = <?php echo wp_json_encode( html_entity_decode( get_the_title(), ENT_QUOTES, 'UTF-8' ) ); ?>;
+                      var imgUrl    = <?php echo wp_json_encode( get_the_post_thumbnail_url( null, 'full' ) ?: '' ); ?>;
+
+                      function fillSinglePortfolioFields() {
+                         var $form = $('#inquiry-normal-form');
+                         $form.find('.inquiry-field input').val(postId);
+                         $form.find('input[name="input_12"]').val(postTitle);
+                         $form.find('input[name="input_13"]').val(imgUrl);
+                      }
+
+                      $(document).ready(fillSinglePortfolioFields);
+                      $(document).on('gform_post_render', fillSinglePortfolioFields);
+                   })(jQuery);
+                   </script>
                 </section>
              </div>
         </div>
