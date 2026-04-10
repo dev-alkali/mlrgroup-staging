@@ -15,8 +15,15 @@ get_header();
                 <div class="flex justify-between w-full mb-3 border-b border-[#CCCCCC] md:border-0 pb-[20px] md:pb-0">
                    <h2 class="inquiry-title text-[28px] leading-[36px] tracking-[-2%] font-heading font-bold hidden md:block"><?php the_title(); ?></h2>               
                 </div>
+                <?php
+                $portfolio_terms = get_the_terms(get_the_ID(), 'portfolio-category');
+                if (!empty($portfolio_terms) && !is_wp_error($portfolio_terms)) : ?>
                 <div class="inquiry-categories hidden md:flex">
+                  <?php foreach ($portfolio_terms as $term) : ?>
+                    <span class="inquiry-category"><?php echo esc_html($term->name); ?></span>
+                  <?php endforeach; ?>
                 </div>
+                <?php endif; ?>
              </div>
              <div class="flex flex-col md:flex-row gap-[40px] md:gap-[60px]">
                 <section class="w-full flex flex-col gap-[20px] md:gap-10">
@@ -29,8 +36,13 @@ get_header();
                          <h2 class="inquiry-title text-[28px] leading-[36px] tracking-[-2%] font-heading font-bold "><?php the_title(); ?></h2>
                          
                       </div>
+                      <?php if (!empty($portfolio_terms) && !is_wp_error($portfolio_terms)) : ?>
                       <div class="inquiry-categories">
+                        <?php foreach ($portfolio_terms as $term) : ?>
+                          <span class="inquiry-category"><?php echo esc_html($term->name); ?></span>
+                        <?php endforeach; ?>
                       </div>
+                      <?php endif; ?>
                    </div>
 
                 </section>
