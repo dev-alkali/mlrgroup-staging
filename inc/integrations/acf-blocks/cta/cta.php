@@ -47,7 +47,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
         <div class="flex flex-col items-start gap-10 min-[600px]:gap-[50px] w-full wrapper cta-content">
           <div class="flex flex-col items-start gap-5 w-full">
             <?php if($title_row_1 || $title_row_2): ?>
-            <h2 class="max-w-[622px] w-full xl:text-[80px] xl:leading-[92px] md:text-[68px] md:leading-[78px] sm:text-[45px] sm:leading-[56px] text-[36px] leading-[44px] tracking-[-0.02em] text-white font-heading">
+            <h2 class="max-w-[685px] w-full xl:text-[80px] xl:leading-[92px] md:text-[68px] md:leading-[78px] sm:text-[45px] sm:leading-[56px] text-[36px] leading-[44px] tracking-[-0.02em] text-white font-heading">
               <?php if($title_row_1): ?>
                   <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
               <?php endif; ?>
@@ -58,7 +58,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
             </h2>
             <?php endif; ?>
             <?php if($description): ?>
-              <p class="max-w-[622px] w-full text-[18px]  min-[600px]:text-xl leading-[26px] min-[600px]:leading-7 text-gray-50 font-body"><?= wp_kses_post($description) ?></p>
+              <p class="max-w-[685px] w-full text-[18px]  min-[600px]:text-xl leading-[26px] min-[600px]:leading-7 text-gray-50 font-body"><?= wp_kses_post($description) ?></p>
             <?php endif; ?>
           </div>
           
