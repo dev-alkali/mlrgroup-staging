@@ -101,7 +101,7 @@ if ( $section_color == 'black' ){
 
               <?php if($lists): ?>
               <?php $list_count = count($lists); ?>
-              <div class="flex flex-col gap-[15px]">
+              <div class="flex flex-col gap-[20px]">
                 <?php foreach($lists as $list): 
                   $heading = $list['i_title'];
                   $content = $list['i_content'];
