@@ -3789,8 +3789,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'China',
       city  : 'Jiangsu',
-      left  : '9.76%',  /* cx=140.472 / 1440 */
-      top   : '31.68%', /* cy=261.638 / 826  */
+      left  : '32.76%',  /* cx=140.472 / 1440 */
+      top   : '32.7%', /* cy=261.638 / 826  */
       color : '#4A78FF',
       cls   : 'wmap-blue'
     },
