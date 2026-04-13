@@ -115,7 +115,7 @@ a.footer-text:hover{color:#ffffff;}
 .home .home-services .serve-content .btn-primary:before{content:'';display:block;width:52px;height:52px;background:#4a78ff;border-radius:100%;position:absolute;top: 0px;left: 0px;z-index:0;transition: all 0.3s ease;}
 .home .home-services .serve-content .btn-primary span{z-index:1;position:relative;}
 .home .home-services .serve-content .btn-primary:hover:before{content:'';width:100%;border-radius:30px;}
-.home .home-services .serve-content .btn-primary:hover{color: #ffffff;padding:17px 32px 15px 32px;}
+.home .home-services .serve-content .btn-primary:hover{color: #ffffff;padding:17px 32px 15px 32px;border:1px solid #4a78ff;}
 
 body .service-card .gradient-box:hover:after {opacity: 0;}
 article.service-card .bg-image{transition:all 0.3s ease;}
