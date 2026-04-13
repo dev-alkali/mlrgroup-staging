@@ -96,6 +96,8 @@ a.footer-text:hover{color:#ffffff;}
 .single-case-studies .two-col .description-content p,
 .single-case-studies .blog-content .content-sec li {color: #525252;}
 
+.summary-text p{font-size:22px;}
+
 .see-all-btn a img{transition:all 0.3s ease;}
 .see-all-btn a:hover img{transform: rotate(45deg);}
 
@@ -170,6 +172,8 @@ article.service-card:hover .bg-image{filter: none !important;}
 
   .blog-content p,
 	.blog-content li {font-size: 16px;line-height: 24px;}
+
+	.summary-text p{font-size:20px}
 }
 
 @media (max-width: 600px) {
