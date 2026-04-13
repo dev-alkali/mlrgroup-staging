@@ -945,7 +945,8 @@
   .inquiry-item-pop-up-line {
     @apply h-px bg-neutral-300 w-full;
   }
-}
+
+.inquiry-item-pop-up-remove:hover{color:var(--color-accent);}
 
 .reviews-dots {
   @apply flex justify-center mt-[30px] md:mt-[50px];
