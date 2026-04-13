@@ -45,24 +45,9 @@ get_header();
                       <?php endif; ?>
                    </div>
 
-                   <div class="flex justify-end gap-2">
-                      <button type="button" item-id="<?php echo esc_attr(get_the_ID()); ?>" class="add-inquiry btn-primary w-full mb-[2px] cursor-pointer">
-                         <img class="w-[13px]" src="<?= esc_url(get_template_directory_uri() . '/assets/imgs/plus.svg'); ?>" alt="">
-                         Add to Your Inquiry List
-                      </button>
-                      <div class="relative group flex items-center justify-center">
-                         <img class="w-[20px] cursor-pointer inquiry-tooltip-icon" src="<?= esc_url(get_template_directory_uri() . '/assets/imgs/icon.svg'); ?>" alt="i">
-                         <div class="absolute bottom-[calc(100%+12px)] right-[-5px] md:right-[-120px] w-[250px] md:w-[330px] p-5 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.15)] rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                            <div class="inquiry-content-tooltip font-[Poppins] font-normal text-[14px] leading-[16px] text-[#525252]">
-                               <?php
-                               $tooltip_text = get_field('tooltip_description');
-                               echo $tooltip_text ? wp_kses($tooltip_text, ['br' => []]) : esc_html('Adding an item to your inquiry list allows you to submit multiple items together instead of one at a time.');
-                               ?>
-                            </div>
-                            <div class="absolute top-full right-[8px] md:right-[130px] -mt-[1px] w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[10px] border-t-white drop-shadow-md"></div>
-                         </div>
-                      </div>
-                   </div>
+                   <button type="button" item-id="<?php echo esc_attr(get_the_ID()); ?>" class="inquiry-toggle-btn btn-primary w-full cursor-pointer">
+                      Add This Item to Your Inquiry List
+                   </button>
 
                 </section>
                 <section id="inquiry-normal-form" class="w-full">

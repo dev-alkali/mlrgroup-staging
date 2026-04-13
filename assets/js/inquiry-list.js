@@ -249,6 +249,21 @@
         $badge.removeClass("flex").addClass("hidden");
       }
     });
+
+    $(".inquiry-toggle-btn").each(function () {
+      var $btn = $(this);
+      var rawId = $btn.attr("item-id");
+      if (!isValidId(rawId)) return;
+
+      var id = parseInt(rawId, 10);
+      var inList = list.indexOf(id) !== -1;
+
+      if (inList) {
+        $btn.text("This item is in Your Inquiry List").addClass("in-list");
+      } else {
+        $btn.text("Add This Item to Your Inquiry List").removeClass("in-list");
+      }
+    });
   }
 
   /* ─────────────────────────────────────────────
@@ -521,6 +536,24 @@
 
     $(document).on("click", "#view-inquery-list", function () {
       fetchInquiryListItems();
+    });
+
+    $(document).on("click", ".inquiry-toggle-btn", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      var $btn = $(this);
+      if ($btn.data("processing")) return;
+      $btn.data("processing", true);
+      setTimeout(function () {
+        $btn.data("processing", false);
+      }, 400);
+
+      if ($btn.hasClass("in-list")) {
+        removeInquiryItem($btn.attr("item-id"));
+      } else {
+        addInquiryItem($btn.attr("item-id"));
+      }
     });
 
     // Public API — called after infinite-scroll appends new portfolio cards
