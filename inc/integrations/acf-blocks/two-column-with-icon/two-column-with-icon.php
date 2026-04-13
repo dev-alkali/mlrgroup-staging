@@ -16,7 +16,7 @@ if (!empty($block['className'])) {
 
 
 ?>
-<?php if (have_rows('two_column')) :  while (have_rows('two_column')) : the_row();
+<?php if (have_rows('two_column_with_icon')) :  while (have_rows('two_column_with_icon')) : the_row();
 
 $section_remove_top_padding    = get_sub_field('section_remove_top_padding');
 $section_remove_bottom_padding = get_sub_field('section_remove_bottom_padding');
@@ -44,6 +44,8 @@ $mobileFlex = 'flex-col-reverse';
 
 $content_width = get_sub_field('content_width');
 $section_color = get_sub_field('section_color');
+
+$lists = get_sub_field('icon_list');
 
 if ( $content_width ){
   echo '<style>
@@ -105,6 +107,41 @@ if ( $section_color == 'black' ){
                   ?>
                   <a class="btn-primary mt-[40px]" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
               <?php endif; ?>
+
+
+              <?php if($lists): ?>
+              <?php $list_count = count($lists); ?>
+              <div class="flex flex-wrap xl:gap-x-[60px] md:gap-y-[90px] lg:gap-x-[30px] gap-x-[20px] sm:gap-y-[40px] gap-y-[40px] justify-center">
+                <?php foreach($lists as $list): 
+                  $heading = $list['heading'];
+                  $content = $list['content'];
+                  if ($list_count === 1) {
+                    $width_class = 'w-full';
+                  } elseif ($list_count === 2) {
+                    $width_class = 'xl:w-[calc(50%-30px)] md:w-[calc(50%-15px)] w-full';
+                  } else {
+                    $width_class = 'xl:w-[calc(33.33%-40px)] md:w-[calc(50%-15px)] w-full';
+                  }
+                  ?>
+                  <div class="flex flex-row md:gap-[20px] gap-[16px] <?php echo $width_class; ?>">
+                    <div class="flex md:w-[45px] md:h-[45px] w-[40px] h-[40px] relative">
+                      <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/list-icon.svg" alt="" class="w-full">
+                    </div>
+                    <div class="flex flex-col flex-1">
+                      <?php if($heading): ?>
+                        <h3 class="text-[clamp(20px,2.6vw,28px)] leading-[clamp(28px,3.2vw,36px)] tracking-[-2%] text-[#262626] font-heading font-bold mb-[12px] md:pt-[10px] pt-[8px]"><?php echo $heading; ?></h3>
+                      <?php endif; ?>
+                      <?php if($content): ?>
+                        <div class="text-[18px] leading-[26px] text-[#525252] font-body tracking-[0px]"><?php echo $content; ?></div>
+                      <?php endif; ?>
+                    </div>
+                  </div>
+                <?php endforeach; ?>
+              </div>
+            <?php endif; ?>
+
+
+
           </div>
         </div>
       </div>
