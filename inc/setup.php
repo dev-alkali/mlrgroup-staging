@@ -51,7 +51,7 @@ function mrlgroup_register_portfolio_cpt()
     ),
     'public'        => true,
     'has_archive'   => true,
-    'rewrite'       => array('slug' => 'portfolio'),
+    'rewrite'       => array('slug' => 'portfolio-item'),
     'menu_position' => 5,
     'show_ui'       => true,
     'show_in_rest'  => true,
