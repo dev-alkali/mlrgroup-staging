@@ -41,7 +41,7 @@
                </div>
 
                <div class="flex justify-end gap-2">
-                  <button item-id="" class="add-inquiry btn-primary w-full mb-[2px]"><img class="w-[13px]" src="<?= get_template_directory_uri() ?>/assets/imgs/plus.svg" alt="i">Add to Your Inquiry List</button>
+                  <button item-id="" class="add-inquiry btn-primary w-full mb-[2px] cursor-pointer"><img class="w-[13px]" src="<?= get_template_directory_uri() ?>/assets/imgs/plus.svg" alt="i">Add to Your Inquiry List</button>
 
                   <div class="relative group flex items-center justify-center">
                      <img class="w-[20px] cursor-pointer inquiry-tooltip-icon" src="<?= get_template_directory_uri() ?>/assets/imgs/icon.svg" alt="i">
