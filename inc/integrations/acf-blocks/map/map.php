@@ -49,8 +49,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       <?php //echo $map_code; ?>
 
 <div id="wmap-section">
-<div id="wmap-inner" class="max-w-[1440px]">
-
+<div id="wmap-inner" class="max-w-[1650px]">
 
 
 <svg width="1440" height="513" viewBox="0 0 1440 513" fill="none" xmlns="http://www.w3.org/2000/svg">
