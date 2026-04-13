@@ -49,7 +49,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       <?php //echo $map_code; ?>
 
 <div id="wmap-section">
-<div id="wmap-inner" class="max-w-[1200px]">
+<div id="wmap-inner" class="max-w-[1440px]">
 
 
 
