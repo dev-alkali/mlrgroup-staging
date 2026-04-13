@@ -167,6 +167,9 @@ article.service-card:hover .bg-image{filter: none !important;}
 
 @media (max-width: 767px) {
   .two-col .font-light br{display: none;}
+
+  .blog-content p,
+	.blog-content li {font-size: 16px;line-height: 24px;}
 }
 
 @media (max-width: 600px) {
