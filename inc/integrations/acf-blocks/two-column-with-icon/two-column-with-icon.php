@@ -112,7 +112,7 @@ if ( $section_color == 'black' ){
                     </div>
                     <div class="flex flex-col flex-1">
                       <?php if($heading): ?>
-                        <h3 class="text-[clamp(18px,2.6vw,20px)] leading-[clamp(22px,3.2vw,24px)] tracking-[-2%] text-[#262626] font-heading font-bold mb-[12px] md:pt-[10px] pt-[8px]"><?php echo $heading; ?></h3>
+                        <h3 class="text-[clamp(18px,2.6vw,20px)] leading-[clamp(22px,3.2vw,24px)] tracking-[-2%] text-[#262626] font-heading font-bold mb-[10px]"><?php echo $heading; ?></h3>
                       <?php endif; ?>
                       <?php if($content): ?>
                         <div class="text-[18px] leading-[26px] text-[#525252] font-body tracking-[0px]"><?php echo $content; ?></div>
