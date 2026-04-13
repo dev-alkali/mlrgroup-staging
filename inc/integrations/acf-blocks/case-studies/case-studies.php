@@ -107,7 +107,7 @@ if (!empty($block['className'])) {
 
                 <div class="mb-[32px] md:mb-[40px] flex flex-col relative z-20 items-start <?= $item['icon'] !== '' ? '' : 'pt-[88px]' ?> gap-5 self-stretch w-full flex-[0_0_auto]">
                     <?php if ($item['icon'] !== '') : ?>
-                        <img class="relative w-[70px] h-[70px] object-contain" src="<?= $item['icon'] ?>" alt="icon" />
+                        <img class="relative w-[70px] h-[70px] object-cover" src="<?= $item['icon'] ?>" alt="icon" />
                     <?php endif; ?>
                     <p class="relative font-heading text-[20px] md:text-[24px] max-w-[406px] tracking-[-2%] leading-7 md:leading-8">
                         <?= $item['title'] ?>
@@ -240,7 +240,7 @@ if (!empty($block['className'])) {
 
                         <div class="mb-[32px] md:mb-[40px] flex flex-col relative z-20 items-start <?= esc_url(get_sub_field('icon')) !== '' ? '' : 'pt-[88px]' ?> gap-5 self-stretch w-full flex-[0_0_auto]">
                             <?php if (esc_url(get_sub_field('icon')) !== '') : ?>
-                                <img class="relative w-[70px] h-[70px] object-contain" src="<?= esc_url(get_sub_field('icon')) ?>" alt="icon" />
+                                <img class="relative w-[70px] h-[70px] object-cover" src="<?= esc_url(get_sub_field('icon')) ?>" alt="icon" />
                             <?php endif; ?>
                             <p class="relative font-heading text-[20px] md:text-[24px] max-w-[406px] tracking-[-2%] leading-7 md:leading-8">
                                 <?= wp_kses_post(get_sub_field('title')) ?>
