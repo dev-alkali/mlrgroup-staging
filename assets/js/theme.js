@@ -175,8 +175,8 @@ jQuery(document).ready(function ($) {
     e.preventDefault();
     e.stopPropagation();
 
-    const $arrow = $(this);
-    const $li = $arrow.closest("li");
+    const $li = $(this).closest("li");
+    const $arrow = $li.find(".arrow").first();
     const $childList = $li.find(".child-list").first();
 
     if (!$childList.length) return;
@@ -184,7 +184,7 @@ jQuery(document).ready(function ($) {
     // close others (optional - remove if not needed)
     $li.siblings().find(".child-list:visible").slideUp(300);
     // Keep arrow rotation consistent with the collapsed state
-    $li.siblings().find("[data-toggle]").addClass("rotate-180");
+    $li.siblings().find(".arrow").addClass("rotate-180");
 
     // toggle current
     $childList.stop(true, true).slideToggle(300);
