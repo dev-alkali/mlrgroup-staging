@@ -108,7 +108,7 @@ if (!empty($block['className'])) {
                                     <?php if (esc_url(get_sub_field('icon')) !== ""): ?>
                                         <img
                                         Crop
-                                        class="relative w-[70px] h-[70px] object-contain"
+                                        class="relative w-[70px] h-[70px] object-contain object-bottom"
                                         src=" <?= esc_url(get_sub_field('icon')) ?>"
                                         alt="icon" />
                                     <?php endif; ?>
