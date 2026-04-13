@@ -60,8 +60,8 @@ $overlay_class = '';
 
 if ($card_overlay === 'Grayscale') {
     $overlay_class = 'overlay-grayscale';
-} elseif ($card_overlay === 'Pink Gradient') {
-    $overlay_class = 'overlay-pink-gradient';
+} elseif ($card_overlay === 'Red Gradient') {
+    $overlay_class = 'overlay-red-gradient';
 }
 
 $select_3_column_grid = get_sub_field('select_3_column_grid');
