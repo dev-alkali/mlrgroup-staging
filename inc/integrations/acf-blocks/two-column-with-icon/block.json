@@ -1,0 +1,14 @@
+{
+    "name": "acf/two-column-with-icon",
+    "title": "Two Column with Icon",
+    "description": "Two Column with Icon Section",
+    "style": ["file:./two-column-with-icon.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["two-column-with-icon", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "two-column-with-icon.php"
+    },
+    "script": "two-column-with-iconJS"
+}
