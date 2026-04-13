@@ -98,32 +98,15 @@ if ( $section_color == 'black' ){
               <div class="w-full text-[clamp(16px,3vw,18px)] leading-[28px] <?php echo $text_525252_class; ?> font-body flex flex-col gap-[15px] description-content "><?php echo $description; ?></div>
             <?php endif; ?>
 
-            <?php 
-              $link = get_sub_field('button');
-              if( $link ): 
-                  $link_url = $link['url'];
-                  $link_title = $link['title'];
-                  $link_target = $link['target'] ? $link['target'] : '_self';
-                  ?>
-                  <a class="btn-primary mt-[40px]" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-              <?php endif; ?>
-
 
               <?php if($lists): ?>
               <?php $list_count = count($lists); ?>
-              <div class="flex flex-wrap xl:gap-x-[60px] md:gap-y-[90px] lg:gap-x-[30px] gap-x-[20px] sm:gap-y-[40px] gap-y-[40px] justify-center">
+              <div class="">
                 <?php foreach($lists as $list): 
                   $heading = $list['i_title'];
                   $content = $list['i_content'];
-                  if ($list_count === 1) {
-                    $width_class = 'w-full';
-                  } elseif ($list_count === 2) {
-                    $width_class = 'xl:w-[calc(50%-30px)] md:w-[calc(50%-15px)] w-full';
-                  } else {
-                    $width_class = 'xl:w-[calc(33.33%-40px)] md:w-[calc(50%-15px)] w-full';
-                  }
                   ?>
-                  <div class="flex flex-row md:gap-[20px] gap-[16px] <?php echo $width_class; ?>">
+                  <div class="flex flex-row md:gap-[20px] gap-[16px] w-full">
                     <div class="flex md:w-[45px] md:h-[45px] w-[40px] h-[40px] relative">
                       <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/list-icon.svg" alt="" class="w-full">
                     </div>
@@ -141,6 +124,15 @@ if ( $section_color == 'black' ){
             <?php endif; ?>
 
 
+               <?php 
+              $link = get_sub_field('button');
+              if( $link ): 
+                  $link_url = $link['url'];
+                  $link_title = $link['title'];
+                  $link_target = $link['target'] ? $link['target'] : '_self';
+                  ?>
+                  <a class="btn-primary mt-[40px]" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+              <?php endif; ?>
 
           </div>
         </div>
