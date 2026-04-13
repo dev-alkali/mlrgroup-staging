@@ -66,7 +66,7 @@ $filter_groups = get_field('portfolio_filter_groups', 'option');
                 <div class="flex items-start justify-between space-y-[28px]">
 
                   <?php if ($parent_text) : ?>
-                    <span class="<?php echo esc_attr($label_class); ?>">
+                    <span class="<?php echo esc_attr($label_class); ?> <?php echo $has_children ? 'cursor-pointer' : ''; ?>" <?php echo $has_children ? 'data-toggle' : ''; ?>>
                       <?php echo esc_html($parent_text); ?>
                     </span>
                   <?php else :
@@ -76,7 +76,7 @@ $filter_groups = get_field('portfolio_filter_groups', 'option');
                       if ($parent_active) $label_class .= ' text-[#FD4338] pl-6 underline';
                     }
                   ?>
-                    <a href="<?php echo esc_url($parent_link); ?>" class="<?php echo esc_attr($label_class); ?>">
+                    <a href="<?php echo esc_url($parent_link); ?>" class="<?php echo esc_attr($label_class); ?>" <?php echo $has_children ? 'data-toggle' : ''; ?>>
                       <?php if (!$has_children) :
                         $p_svg_class = 'absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200';
                         if ($parent_active) $p_svg_class .= ' opacity-100';
