@@ -39,7 +39,7 @@ function get_cpt_popup_data(WP_REST_Request $request)
     $thumbnail_id  = get_post_thumbnail_id($id);
     $thumbnail_alt = $thumbnail_id ? get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true) : '';
 
-    $tooltip_text = get_field('tooltip_description', $id);
+    $tooltip_text = get_field('tooltip_description', 'option');
 
     if (!$tooltip_text) {
         $tooltip_text = '';
