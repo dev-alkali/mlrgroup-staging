@@ -3797,18 +3797,18 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'United States',
       city  : 'New York',
-      left  : '85.24%', /* cx=1227.4 / 1440 */
-      top   : '25.01%', /* cy=206.557 / 826  */
+      left  : '69.1%', /* cx=1227.4 / 1440 */
+      top   : '20.7%', /* cy=206.557 / 826  */
       color : '#4A78FF',
-      cls   : 'wmap-blue'
+      cls   : 'wmap-red'
     },
 
     /* ── RED DOTS ── */
     {
       label : 'United Kingdom',
       city  : 'London',
-      left  : '45.11%', /* cx=649.543 / 1440 */
-      top   : '31.68%', /* cy=261.638 / 826  */
+      left  : '86.11%%', /* cx=649.543 / 1440 Done */
+      top   : '17%', /* cy=261.638 / 826  */
       color : '#FD4338',
       cls   : 'wmap-red'
     },
