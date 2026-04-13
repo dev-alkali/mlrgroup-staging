@@ -113,8 +113,8 @@ if ( $section_color == 'black' ){
               <?php $list_count = count($lists); ?>
               <div class="flex flex-wrap xl:gap-x-[60px] md:gap-y-[90px] lg:gap-x-[30px] gap-x-[20px] sm:gap-y-[40px] gap-y-[40px] justify-center">
                 <?php foreach($lists as $list): 
-                  $heading = $list['heading'];
-                  $content = $list['content'];
+                  $heading = $list['i_title'];
+                  $content = $list['i_content'];
                   if ($list_count === 1) {
                     $width_class = 'w-full';
                   } elseif ($list_count === 2) {
