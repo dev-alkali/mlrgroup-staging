@@ -187,7 +187,7 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
                     : wp_strip_all_tags($card_title);
                   ?>
                   <article class="<?= esc_attr($article_class) ?>">
-                    <div class="bg-image absolute inset-0 z-0" style=" background-image: url('<?php echo esc_url($card_image); ?>'); background-position: center center; background-size: cover; background-repeat: no-repeat; filter:grayscale(100%);">
+                    <div class="bg-image absolute inset-0 z-0" style=" background-image: url('<?php echo esc_url($card_image); ?>'); background-position: center center; background-size: cover; background-repeat: no-repeat;">
                     </div>
                     <a href="<?= mlr_esc_block_href($card_link) ?>" class="gradient-box flex flex-col flex-1 justify-between px-5 md:px-6 py-7 w-full h-full relative z-1" data-solution="<?= esc_attr($solution_tab) ?>">
                       <figure class="text-right z-10 relative">
@@ -212,7 +212,7 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
                           : wp_strip_all_tags((string) $manual_title);
                         ?>
                         <article class="<?= esc_attr($article_class) ?>">
-                          <div class="bg-image absolute inset-0 z-0" style=" background-image: url('<?php echo esc_url(get_sub_field('image')); ?>'); background-position: center center; background-size: cover; background-repeat: no-repeat; filter:grayscale(100%);">
+                          <div class="bg-image absolute inset-0 z-0" style=" background-image: url('<?php echo esc_url(get_sub_field('image')); ?>'); background-position: center center; background-size: cover; background-repeat: no-repeat; ">
                           </div>
                           <a href="<?= mlr_esc_block_href($manual_href) ?>" class="gradient-box flex flex-col flex-1 justify-between px-5 md:px-6 py-7 w-full h-full relative z-1" data-solution="<?= esc_attr($solution_tab_manual) ?>">
                             <figure class="text-right z-10 relative">
