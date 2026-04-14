@@ -3967,8 +3967,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Buenos Aires',
       city  : 'Argentina',
-      left  : '62%',
-      top   : '88%',
+      left  : '72.2%',
+      top   : '74%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
