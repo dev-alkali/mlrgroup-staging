@@ -46,6 +46,8 @@ $content_width = get_sub_field('content_width');
 $section_color = get_sub_field('section_color');
 
 $lists = get_sub_field('icon_list');
+$image  = get_sub_field('image');
+$has_image = !empty($image);
 
 if ( $content_width ){
   echo '<style>
@@ -76,14 +78,16 @@ if ( $section_color == 'black' ){
 ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] <?php echo $bg_color_class; ?><?php echo $pt_class; ?><?php echo $pb_class; ?>">
       
-      <div class="gap-[30px] md:gap-[0px] w-full wrapper flex flex-col <?php echo $mobileFlex . ' ' . $desktopFlex; ?> items-center two-column-wrapper">
+      <div class="gap-[30px] md:gap-[0px] w-full wrapper flex flex-col <?php echo $has_image ? $mobileFlex . ' ' . $desktopFlex : ''; ?> items-center two-column-wrapper">
 
+        <?php if ($has_image): ?>
         <div class="w-full md:w-1/2 lg:w-[47%] two-column-image">
-          <figure class="!m-0 flex"><?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, ['class' => 'w-full h-auto']); ?></figure>
+          <figure class="!m-0 flex"><?php echo wp_get_attachment_image($image, 'full', false, ['class' => 'w-full h-auto']); ?></figure>
         </div>
+        <?php endif; ?>
 
-        <div class="w-full md:w-1/2 lg:w-[53%] two-column-content">
-          <div class="<?php echo $layout === 'Right Image' ? 'pl-[0px] md:pr-[30px] lg:pr-[60px]' : 'pr-[0px] md:pl-[30px] lg:pl-[60px]'; ?>">
+        <div class="w-full <?php echo $has_image ? 'md:w-1/2 lg:w-[53%]' : ''; ?> two-column-content">
+          <div class="<?php echo $has_image ? ($layout === 'Right Image' ? 'pl-[0px] md:pr-[30px] lg:pr-[60px]' : 'pr-[0px] md:pl-[30px] lg:pl-[60px]') : ''; ?>">
             <?php if($title_row_1 || $title_row_2): ?>
             <h2 class="text-[clamp(32px,5vw,68px)] leading-[clamp(40px,6vw,76px)] tracking-[-4%] <?php echo $text_262626_class; ?> font-heading mb-[20px] md:mb-[30px]">
               <?php if($title_row_1): ?>
@@ -101,7 +105,7 @@ if ( $section_color == 'black' ){
 
               <?php if($lists): ?>
               <?php $list_count = count($lists); ?>
-              <div class="flex flex-col gap-[20px]">
+              <div class="<?php echo $has_image ? 'flex flex-col gap-[20px]' : 'grid grid-cols-1 md:grid-cols-2 gap-[20px]'; ?>">
                 <?php foreach($lists as $list): 
                   $heading = $list['i_title'];
                   $content = $list['i_content'];
