@@ -3927,8 +3927,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'San Francisco',
       city  : 'USA',
-      left  : '44%',
-      top   : '32%',
+      left  : '56.2%',
+      top   : '36.1%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
