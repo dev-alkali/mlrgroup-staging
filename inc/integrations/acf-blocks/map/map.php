@@ -3919,8 +3919,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Los Angeles',
       city  : 'USA',
-      left  : '46%',
-      top   : '34%',
+      left  : '56.2%',
+      top   : '30.9%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
