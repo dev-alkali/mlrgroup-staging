@@ -3911,8 +3911,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Dallas',
       city  : 'USA',
-      left  : '55%',
-      top   : '38%',
+      left  : '56.85%',
+      top   : '25.7%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
