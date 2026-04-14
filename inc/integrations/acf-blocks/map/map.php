@@ -3935,8 +3935,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Scottsdale',
       city  : 'USA',
-      left  : '49%',
-      top   : '39%',
+      left  : '58%',
+      top   : '38%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
