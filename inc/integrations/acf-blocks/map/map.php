@@ -3759,7 +3759,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   /*max-width: 1360px;*/
   #wmap-inner svg,#wmap-inner img {display: block;width: 100%;height: auto;}  
   .wmap-marker {position: absolute;transform: translate(-50%, -50%);cursor: pointer;z-index: 20;transition: z-index 0s 3s;}
-  .wmap-dot {width: 5px;height: 5px;border-radius: 50%;transition: opacity 0.2s;}
+  .wmap-dot {width: 4px;height: 4px;border-radius: 50%;transition: opacity 0.2s;}
   .wmap-pin {position: absolute;top: -40px;left: 50%;transform: translateX(-50%) translateY(50%) scale(0);transform-origin: bottom center;transition: transform 0.3s ease;pointer-events: none;width: 20px;height: 20px;transition: transform 0.3s ease 0s;}
   /*.wmap-marker:hover .wmap-dot {opacity: 0;}*/
   .wmap-marker:hover .wmap-pin {transform: translateX(-50%) translateY(50%) scale(1);transition: transform 0.3s ease 0s;}
@@ -3815,24 +3815,24 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Mumbai',
       city  : 'India',
-      left  : '8%',
-      top   : '68%',
+      left  : '6.39%',
+      top   : '58.6%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
       label : 'Delhi',
       city  : 'India',
-      left  : '8%',
-      top   : '53%',
+      left  : '10.1%',
+      top   : '48.1%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
       label : 'Bangalore',
       city  : 'India',
-      left  : '8%',
-      top   : '75%',
+      left  : '10.1%',
+      top   : '72.3%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
