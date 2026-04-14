@@ -1,4 +1,5 @@
 {
+    "apiVersion": 3,
     "name": "acf/trusted-brand",
     "title": "Trusted Brand",
     "description": "Trusted Brand Section",
