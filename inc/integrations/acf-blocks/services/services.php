@@ -120,7 +120,7 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
                     $link_title = $link['title'];
                     $link_target = $link['target'] ? $link['target'] : '_self';
                     ?>
-                    <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"  class="btn-primary max-lg:hidden"><?php echo esc_html( $link_title ); ?></a>
+                    <a href="<?php echo $link_url; ?>" target="<?php echo $link_target; ?>"  class="btn-primary max-lg:hidden"><?php echo $link_title; ?></a>
                 <?php endif; ?>
                 
                 <?php 

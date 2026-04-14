@@ -81,7 +81,7 @@ if (!empty($block['className'])) {
                   $link_title = $link['title'];
                   $link_target = $link['target'] ? $link['target'] : '_self';
                   ?>
-                  <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"  class="c-hero__button btn-primary anim" data-delay="2" data-anim="up" data-start="top 100%"><?php echo esc_html( $link_title ); ?></a>
+                  <a href="<?php echo $link_url; ?>" target="<?php echo $link_target; ?>"  class="c-hero__button btn-primary anim" data-delay="2" data-anim="up" data-start="top 100%"><?php echo $link_title; ?></a>
               <?php endif; ?>
 
           </div>
