@@ -3871,8 +3871,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Chicago',
       city  : 'USA',
-      left  : '59%',
-      top   : '24%',
+      left  : '59.3%',
+      top   : '22.4%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
