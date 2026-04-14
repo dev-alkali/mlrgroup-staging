@@ -21,6 +21,7 @@ if (!empty($block['className'])) {
     $subtitle = get_sub_field('subtitle');
     $btn_path  = get_sub_field('btn_path');
     $btn_label = get_sub_field('btn_label');
+    $link = get_sub_field('button');
 
   ?>
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> c-hero flex flex-col w-full items-center p-0 lg:pt-5 lg:pb-0 px-4 md:px-10 bg-white h-[calc(100vh-165px)] bg-cover bg-no-repeat bg-[position:50%_20%]"
@@ -81,6 +82,19 @@ if (!empty($block['className'])) {
                 <?php echo esc_html($btn_label); ?>
               </a>
             <?php endif; ?>
+
+              
+              <?php 
+                
+                if( $link ): 
+                    $link_url = $link['url'];
+                    $link_title = $link['title'];
+                    $link_target = $link['target'] ? $link['target'] : '_self';
+                    ?>
+                    <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"  class="c-hero__button btn-primary anim" data-delay="2" data-anim="up" data-start="top 100%"><?php echo esc_html( $link_title ); ?></a>
+                <?php endif; ?>
+
+
           </div>
         </div>
       </div>
