@@ -3787,140 +3787,196 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   var MARKERS = [
     /* ── BLUE DOTS ── */
     {
-      label : 'China',
-      city  : 'Jiangsu',
-      left  : '32.76%',  /* cx=140.472 / 1440 */
-      top   : '32.7%', /* cy=261.638 / 826  */
+      label : 'Jiangsu',
+      city  : 'China',
+      left  : '27%',
+      top   : '36%',
       color : '#4A78FF',
       cls   : 'wmap-blue'
     },
     {
-      label : 'United States',
-      city  : 'New York',
-      left  : '69.1%', /* cx=1227.4 / 1440 */
-      top   : '20.7%', /* cy=206.557 / 826  */
+      label : 'Nashville',
+      city  : 'USA',
+      left  : '59%',
+      top   : '31%',
       color : '#4A78FF',
-      cls   : 'wmap-red'
+      cls   : 'wmap-blue'
+    },
+    {
+      label : 'Fort Lauderdale',
+      city  : 'USA',
+      left  : '63%',
+      top   : '50%',
+      color : '#4A78FF',
+      cls   : 'wmap-blue'
     },
 
     /* ── RED DOTS ── */
     {
-      label : 'United Kingdom',
-      city  : 'London',
-      left  : '86.11%%', /* cx=649.543 / 1440 Done */
-      top   : '17%', /* cy=261.638 / 826  */
+      label : 'Mumbai',
+      city  : 'India',
+      left  : '8%',
+      top   : '68%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
-      label : 'France',
-      city  : 'Paris',
-      left  : '46.06%', /* cx=663.3 / 1440 */
-      top   : '36.68%', /* cy=302.951 / 826  */
+      label : 'Delhi',
+      city  : 'India',
+      left  : '8%',
+      top   : '53%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
-      label : 'Netherlands',
-      city  : 'Amsterdam',
-      left  : '47.02%', /* cx=677.058 / 1440 */
-      top   : '33.34%', /* cy=275.408 / 826  */
+      label : 'Bangalore',
+      city  : 'India',
+      left  : '8%',
+      top   : '75%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
-      label : 'Spain',
-      city  : 'Madrid',
-      left  : '47.97%', /* cx=690.816 / 1440 */
-      top   : '36.68%', /* cy=302.951 / 826  */
+      label : 'China',
+      city  : 'China',
+      left  : '23%',
+      top   : '33%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
-      label : 'Germany',
-      city  : 'Frankfurt',
-      left  : '49.88%', /* cx=718.332 / 1440 */
-      top   : '31.68%', /* cy=261.638 / 826  */
+      label : 'Las Vegas',
+      city  : 'USA',
+      left  : '49%',
+      top   : '31%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
-      label : 'Italy',
-      city  : 'Milan',
-      left  : '52.75%', /* cx=759.605 / 1440 */
-      top   : '36.68%', /* cy=302.951 / 826  */
+      label : 'Denver',
+      city  : 'USA',
+      left  : '50%',
+      top   : '22%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
-      label : 'Greece',
-      city  : 'Athens',
-      left  : '55.62%', /* cx=800.886 / 1440 */
-      top   : '35.01%', /* cy=289.181 / 826  */
+      label : 'Columbus',
+      city  : 'USA',
+      left  : '62%',
+      top   : '31%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
-      label : 'Sweden',
-      city  : 'Stockholm',
-      left  : '56.57%', /* cx=814.644 / 1440 */
-      top   : '28.34%', /* cy=234.098 / 826  */
+      label : 'Chicago',
+      city  : 'USA',
+      left  : '59%',
+      top   : '24%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
-      label : 'Turkey',
-      city  : 'Istanbul',
-      left  : '57.53%', /* cx=828.402 / 1440 */
-      top   : '36.68%', /* cy=302.951 / 826  */
+      label : 'Charlotte',
+      city  : 'USA',
+      left  : '63%',
+      top   : '38%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
-      label : 'Russia',
-      city  : 'Moscow',
-      left  : '58.48%', /* cx=842.16 / 1440 */
-      top   : '28.34%', /* cy=234.098 / 826  */
+      label : 'New York',
+      city  : 'USA',
+      left  : '66%',
+      top   : '21%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
-      label : 'Ukraine',
-      city  : 'Kyiv',
-      left  : '58.48%', /* cx=842.16 / 1440 */
-      top   : '35.01%', /* cy=289.181 / 826  */
+      label : 'Charleston',
+      city  : 'USA',
+      left  : '66%',
+      top   : '43%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
-      label : 'Saudi Arabia',
-      city  : 'Riyadh',
-      left  : '58.48%', /* cx=842.16 / 1440 */
-      top   : '43.35%', /* cy=358.032 / 826  */
+      label : 'Atlanta',
+      city  : 'USA',
+      left  : '59%',
+      top   : '40%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
-      label : 'UAE',
-      city  : 'Dubai',
-      left  : '59.44%', /* cx=855.918 / 1440 */
-      top   : '46.68%', /* cy=385.572 / 826  */
+      label : 'Dallas',
+      city  : 'USA',
+      left  : '55%',
+      top   : '38%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
-      label : 'Turkey',
-      city  : 'Ankara',
-      left  : '60.39%', /* cx=869.675 / 1440 */
-      top   : '36.68%', /* cy=302.951 / 826  */
+      label : 'Los Angeles',
+      city  : 'USA',
+      left  : '46%',
+      top   : '34%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
-      label : 'Kazakhstan',
-      city  : 'Almaty',
-      left  : '62.30%', /* cx=897.191 / 1440 */
-      top   : '30.01%', /* cy=247.868 / 826  */
+      label : 'San Francisco',
+      city  : 'USA',
+      left  : '44%',
+      top   : '32%',
+      color : '#FD4338',
+      cls   : 'wmap-red'
+    },
+    {
+      label : 'Scottsdale',
+      city  : 'USA',
+      left  : '49%',
+      top   : '39%',
+      color : '#FD4338',
+      cls   : 'wmap-red'
+    },
+    {
+      label : 'Panama City',
+      city  : 'Panama',
+      left  : '57%',
+      top   : '63%',
+      color : '#FD4338',
+      cls   : 'wmap-red'
+    },
+    {
+      label : 'Miami',
+      city  : 'USA',
+      left  : '62%',
+      top   : '48%',
+      color : '#FD4338',
+      cls   : 'wmap-red'
+    },
+    {
+      label : 'Bogota',
+      city  : 'Colombia',
+      left  : '57%',
+      top   : '77%',
+      color : '#FD4338',
+      cls   : 'wmap-red'
+    },
+    {
+      label : 'Buenos Aires',
+      city  : 'Argentina',
+      left  : '62%',
+      top   : '88%',
+      color : '#FD4338',
+      cls   : 'wmap-red'
+    },
+    {
+      label : 'London',
+      city  : 'UK',
+      left  : '87%',
+      top   : '17%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
