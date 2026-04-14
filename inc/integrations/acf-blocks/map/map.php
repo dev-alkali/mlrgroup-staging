@@ -3903,8 +3903,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Atlanta',
       city  : 'USA',
-      left  : '59%',
-      top   : '40%',
+      left  : '62%',
+      top   : '31%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
