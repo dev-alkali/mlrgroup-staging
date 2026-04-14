@@ -55,7 +55,7 @@
               if ($location === 'privacy-menu') {
                 foreach ($menu_items as $item) {
                   ?>
-                  <a class="footer-link" href="<?= esc_url($item->url) ?>"><?= esc_html($item->title) ?></a>
+                  <a class="footer-link" href="<?= esc_url($item->url) ?>"<?= $item->target ? ' target="' . esc_attr($item->target) . '" rel="noopener noreferrer"' : '' ?>><?= esc_html($item->title) ?></a>
                   <?php
                 }
                 return;
