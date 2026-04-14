@@ -3805,8 +3805,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Fort Lauderdale',
       city  : 'USA',
-      left  : '63%',
-      top   : '50%',
+      left  : '66%',
+      top   : '39.5%',
       color : '#4A78FF',
       cls   : 'wmap-blue'
     },
