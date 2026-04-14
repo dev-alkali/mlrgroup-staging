@@ -35,7 +35,21 @@ document.addEventListener('DOMContentLoaded', () => {
   if (history.scrollRestoration) {
     history.scrollRestoration = 'manual';
   }
-  window.scrollTo(0, 0);
+
+  const urlHash = window.location.hash;
+  if (urlHash) {
+    // Scroll to the anchor section if a hash is present in the URL
+    const hashTarget = document.querySelector(urlHash);
+    if (hashTarget) {
+      setTimeout(() => {
+        const headerOffset = document.querySelector('.site-header')?.offsetHeight || 0;
+        const targetTop = hashTarget.getBoundingClientRect().top + window.scrollY - headerOffset;
+        window.scrollTo({ top: targetTop, behavior: 'smooth' });
+      }, 100);
+    }
+  } else {
+    window.scrollTo(0, 0);
+  }
 
   /**------------------------ Animation GSAP -------------------------**/
   const elements = document.querySelectorAll('.anim');
