@@ -19,8 +19,6 @@ if (!empty($block['className'])) {
 
     $bg_image = get_sub_field('bg_image');
     $subtitle = get_sub_field('subtitle');
-    $btn_path  = get_sub_field('btn_path');
-    $btn_label = get_sub_field('btn_label');
     $link = get_sub_field('button');
 
   ?>
@@ -74,26 +72,17 @@ if (!empty($block['className'])) {
                   <?php echo wp_kses_post($subtitle); ?>
                 </p>
               <?php endif; ?>
-
             </div>
 
-            <?php if (!empty($btn_path) && !empty($btn_label)) : ?>
-              <a href="<?php echo esc_url($btn_path); ?>" class="c-hero__button btn-primary anim" data-delay="2" data-anim="up" data-start="top 100%">
-                <?php echo esc_html($btn_label); ?>
-              </a>
-            <?php endif; ?>
-
               
-              <?php 
-                
-                if( $link ): 
-                    $link_url = $link['url'];
-                    $link_title = $link['title'];
-                    $link_target = $link['target'] ? $link['target'] : '_self';
-                    ?>
-                    <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"  class="c-hero__button btn-primary anim" data-delay="2" data-anim="up" data-start="top 100%"><?php echo esc_html( $link_title ); ?></a>
-                <?php endif; ?>
-
+              <?php                 
+              if( $link ): 
+                  $link_url = $link['url'];
+                  $link_title = $link['title'];
+                  $link_target = $link['target'] ? $link['target'] : '_self';
+                  ?>
+                  <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"  class="c-hero__button btn-primary anim" data-delay="2" data-anim="up" data-start="top 100%"><?php echo esc_html( $link_title ); ?></a>
+              <?php endif; ?>
 
           </div>
         </div>
