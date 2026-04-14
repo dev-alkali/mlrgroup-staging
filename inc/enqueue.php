@@ -104,13 +104,3 @@ function register_script()
 ) );
 }
 add_action('wp_enqueue_scripts', 'register_script');
-
-add_action('enqueue_block_editor_assets', function () {
-  wp_enqueue_script(
-    'acf-force-edit-mode',
-    get_template_directory_uri() . '/assets/js/acf-force-edit-mode.js',
-    ['wp-dom-ready', 'wp-data', 'wp-block-editor'],
-    '1.0.0',
-    true
-  );
-});
