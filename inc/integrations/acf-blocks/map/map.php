@@ -3766,8 +3766,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   .wmap-tooltip {position: absolute;bottom: calc(100% + 44px);left: 50%;transform: translateX(-50%) translateY(6px);background: #fff;border-radius: 10px;padding: 8px 18px 10px;white-space: nowrap;text-align: center;box-shadow: 0px 8px 10px -6px #0000001A;border: 1px solid rgba(0,0,0,0.07);font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;opacity: 1;pointer-events: none;min-width: 135px; transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;}
   .wmap-tooltip::after {content: '';position: absolute;top: 100%; left: 50%;transform: translateX(-50%);border: 7px solid transparent;border-top-color: #fff;}
   .wmap-marker:hover .wmap-tooltip {opacity: 1;transform: translateX(-50%) translateY(0);transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;}
-  .wmap-tip-country {display: block;font-size: 12px;font-weight: 400;}
-  .wmap-tip-city {display: block;font-size: 11px;color: #525252;margin-bottom: 3px;font-weight: 600;}
+  .wmap-tip-country {display: block;font-size: 10px;color: #525252;font-weight: 400;}
+  .wmap-tip-city {display: block;margin-bottom: 3px;font-weight: 600;font-size: 12px;}
   .wmap-red  { color: #FD4338; }
   .wmap-blue { color: #4A78FF; }
   .wmap-marker:hover{z-index: 21;transition: z-index 0s 0s;}
@@ -3999,7 +3999,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       el.style.top  = m.top;
       el.innerHTML  =
         '<div class="wmap-tooltip">'
-          + '<span class="wmap-tip-city' + m.cls + '">' + m.label + '</span>'
+          + '<span class="wmap-tip-city ' + m.cls + '">' + m.label + '</span>'
           + '<span class="wmap-tip-country ">' + m.city + '</span>'
         + '</div>'
         + '<div class="wmap-pin">' + makePinSVG(m.color) + '</div>'
