@@ -105,7 +105,7 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
               <?php endwhile;
               endif; ?>
 
-              <?php if (get_sub_field('subtitle') || get_sub_field('button') || get_sub_field('btn_path')) : ?>
+              <?php if (get_sub_field('subtitle') || get_sub_field('button')) : ?>
               <div class="flex flex-col items-start gap-4 flex-1 serve-content">
                 <?php if (get_sub_field('subtitle')) : ?>
                 <p class="<?= $max_width_class; ?> font-body font-normal text-[#525252] text-[clamp(18px,2vw,20px)] leading-[clamp(26px,2.6vw,28px)]">
@@ -123,13 +123,6 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
                     <a href="<?php echo $link_url; ?>" target="<?php echo $link_target; ?>"  class="btn-primary max-lg:hidden"><span><?php echo $link_title; ?></span></a>
                 <?php endif; ?>
                 
-                <?php 
-                  $btn_path = get_sub_field('btn_path');
-                  $btn_label = get_sub_field('btn_label');
-                ?>
-                <?php if ($btn_label) : ?>
-                  <a href="<?= esc_url($btn_path) ?>" class="btn-primary max-lg:hidden"><?= wp_kses_post($btn_label) ?></a>
-                <?php endif; ?>
 
               </div>
               <?php endif; ?>
