@@ -54,12 +54,12 @@ get_header();
                    <?= do_shortcode('[gravityform id="2" title="false" description="false" ajax="true"]'); ?>
                    <script>
                    (function($){
-                      var postId    = <?php echo (int) get_the_ID(); ?>;
-                      var postTitle = <?php echo wp_json_encode( html_entity_decode( get_the_title(), ENT_QUOTES, 'UTF-8' ) ); ?>;
-                      var imgUrl    = <?php echo wp_json_encode( get_the_post_thumbnail_url( null, 'full' ) ?: '' ); ?>;
+                  var itemCode  = <?php echo wp_json_encode( get_field('item_code') ?: '' ); ?>;
+                     var postTitle = <?php echo wp_json_encode( html_entity_decode( get_the_title(), ENT_QUOTES, 'UTF-8' ) ); ?>;
+                     var imgUrl    = <?php echo wp_json_encode( get_the_post_thumbnail_url( null, 'full' ) ?: '' ); ?>;
 
-                      function fillSinglePortfolioFields() {
-                         $('#input_2_11').val(postId);
+                     function fillSinglePortfolioFields() {
+                        $('#input_2_11').val(itemCode);
                          $('#input_2_12').val(postTitle);
                          $('#input_2_13').val(imgUrl);
                       }

@@ -77,7 +77,7 @@
           .find(".add-inquiry")
           .attr("item-id", parseInt(data.id, 10));
         $("#inquiry-normal-form .inquiry-field input").val(
-          parseInt(data.id, 10),
+          data.item_code || '',
         );
         $("#inquiry-normal-form")
           .find('input[name="input_12"]')

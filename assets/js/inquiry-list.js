@@ -451,8 +451,9 @@
             let line = $("<div></div>").addClass("inquiry-item-pop-up-line");
             $(listContent).append(line);
 
+            let itemCode = inquiryItem.item_code || '';
             let fieldVal = $("#inquiry-list-form .inquiry-field input").val();
-            let newVal = fieldVal ? fieldVal + "," + safeId : safeId;
+            let newVal = fieldVal ? fieldVal + "," + itemCode : itemCode;
             $("#inquiry-list-form .inquiry-field input").val(newVal);
           });
 

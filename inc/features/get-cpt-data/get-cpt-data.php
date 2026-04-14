@@ -49,6 +49,7 @@ function get_cpt_popup_data(WP_REST_Request $request)
 
     return [
         'id'                 => $id,
+        'item_code'          => (string) ( get_field('item_code', $id) ?: '' ),
         // Decode stored HTML entities (e.g. &#8217;) so the frontend can display the real characters.
         'title'              => sanitize_text_field(
             // Decode in multiple passes in case the stored title is double-encoded.

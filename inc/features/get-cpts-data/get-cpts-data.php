@@ -72,6 +72,7 @@ function get_multiple_cpt_items_data(WP_REST_Request $request)
       // Push formatted data into our results array
       $results[] = [
          'id'                 => $id,
+         'item_code'          => (string) ( get_field('item_code', $id) ?: '' ),
          // Decode stored HTML entities (e.g. &#8217;) so the frontend can display real characters.
          'title'              => sanitize_text_field(
             // Decode in multiple passes in case the stored title is double-encoded.
