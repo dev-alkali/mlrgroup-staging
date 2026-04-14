@@ -3767,7 +3767,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   .wmap-tooltip::after {content: '';position: absolute;top: 100%; left: 50%;transform: translateX(-50%);border: 7px solid transparent;border-top-color: #fff;}
   .wmap-marker:hover .wmap-tooltip {opacity: 1;transform: translateX(-50%) translateY(0);transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;}
   .wmap-tip-country {display: block;font-size: 10px;color: #525252;font-weight: 400;}
-  .wmap-tip-city {display: block;margin-bottom: 3px;font-weight: 600;font-size: 12px;}
+  .wmap-tip-city {display: block;margin-bottom: 2px;font-weight: 600;font-size: 11px;}
   .wmap-red  { color: #FD4338; }
   .wmap-blue { color: #4A78FF; }
   .wmap-marker:hover{z-index: 21;transition: z-index 0s 0s;}
