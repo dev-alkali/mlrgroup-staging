@@ -3797,8 +3797,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Nashville',
       city  : 'USA',
-      left  : '59%',
-      top   : '31%',
+      left  : '64.2%',
+      top   : '36.2%',
       color : '#4A78FF',
       cls   : 'wmap-blue'
     },
