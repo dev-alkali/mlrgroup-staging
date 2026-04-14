@@ -3847,16 +3847,16 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Las Vegas',
       city  : 'USA',
-      left  : '49%',
-      top   : '31%',
+      left  : '53.1%',
+      top   : '15.5%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
       label : 'Denver',
       city  : 'USA',
-      left  : '50%',
-      top   : '22%',
+      left  : '54.36%',
+      top   : '12%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
