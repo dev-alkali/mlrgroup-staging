@@ -3999,8 +3999,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       el.style.top  = m.top;
       el.innerHTML  =
         '<div class="wmap-tooltip">'
-          + '<span class="wmap-tip-city">' + m.label + '</span>'
-          + '<span class="wmap-tip-country ' + m.cls + '">' + m.city + '</span>'
+          + '<span class="wmap-tip-city' + m.cls + '">' + m.label + '</span>'
+          + '<span class="wmap-tip-country ">' + m.city + '</span>'
         + '</div>'
         + '<div class="wmap-pin">' + makePinSVG(m.color) + '</div>'
         + '<div class="wmap-dot" style="background:' + m.color + ';"></div>';
