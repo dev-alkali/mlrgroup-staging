@@ -3951,16 +3951,16 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Miami',
       city  : 'USA',
-      left  : '62%',
-      top   : '48%',
+      left  : '64.8%',
+      top   : '43%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
       label : 'Bogota',
       city  : 'Colombia',
-      left  : '66.1%',
-      top   : '65.5%',
+      left  : '61.8%',
+      top   : '53.4%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
