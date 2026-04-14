@@ -109,7 +109,7 @@ add_action('enqueue_block_editor_assets', function () {
   wp_enqueue_script(
     'acf-force-edit-mode',
     get_template_directory_uri() . '/assets/js/acf-force-edit-mode.js',
-    ['acf-blocks'],
+    ['wp-dom-ready', 'wp-data', 'wp-block-editor'],
     '1.0.0',
     true
   );

@@ -1,9 +1,7 @@
 <?php
 
 add_filter('acf/pre_save_block', function ($attributes) {
-  if (isset($attributes['data']['_acf_edit_mode'])) {
-    $attributes['data']['_acf_edit_mode'] = 'edit';
-  }
+  $attributes['mode'] = 'edit';
   return $attributes;
 });
 
