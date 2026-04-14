@@ -1,8 +1,37 @@
 <?php
 
-add_filter('acf/pre_save_block', function ($attributes) {
-  $attributes['mode'] = 'edit';
-  return $attributes;
+/**
+ * Recursively walk parsed blocks and force mode='edit' on all ACF blocks.
+ */
+function mlrgroup_force_acf_edit_mode_recursive(&$blocks) {
+  foreach ($blocks as &$block) {
+    if (!empty($block['blockName']) && strpos($block['blockName'], 'acf/') === 0) {
+      $block['attrs']['mode'] = 'edit';
+    }
+    if (!empty($block['innerBlocks'])) {
+      mlrgroup_force_acf_edit_mode_recursive($block['innerBlocks']);
+    }
+  }
+}
+
+/**
+ * Before any post/pattern is saved, parse its block content and rewrite
+ * every ACF block's mode attribute to 'edit' so it always opens in edit mode.
+ */
+add_filter('wp_insert_post_data', function ($data) {
+  if (empty($data['post_content'])) {
+    return $data;
+  }
+
+  $blocks = parse_blocks($data['post_content']);
+  if (empty($blocks)) {
+    return $data;
+  }
+
+  mlrgroup_force_acf_edit_mode_recursive($blocks);
+  $data['post_content'] = serialize_blocks($blocks);
+
+  return $data;
 });
 
 add_action('init', 'register_acf_blocks');
