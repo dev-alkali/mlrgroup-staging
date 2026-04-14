@@ -3887,8 +3887,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'New York',
       city  : 'USA',
-      left  : '66%',
-      top   : '21%',
+      left  : '69.1%',
+      top   : '20.6%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
