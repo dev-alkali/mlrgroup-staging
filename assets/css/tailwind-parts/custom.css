@@ -48,8 +48,8 @@ a.footer-text:hover{color:#ffffff;}
 .service-card .gradient-box:before,
 .service-card .gradient-box:after {content: "";pointer-events: none;transition: opacity .45s cubic-bezier(.2, .8, .2, 1);position: absolute;inset: 0;}
 .service-card .gradient-box:before {opacity: 1;background: linear-gradient(.16deg, #000 .14%, #0000 138.15%);}
-.service-card .gradient-box:after {opacity: 0;background: linear-gradient(312deg, #000c -57.23%, #fd4338cc 105.13%);}
-.service-card .gradient-box:hover:before {opacity: 0;}
+.service-card .gradient-box:after {opacity: 0;background: linear-gradient(312deg, #000c -57.23%, #fd4338cc 60%);}
+.service-card .gradient-box:hover:before {background: linear-gradient(.16deg, #000 .14%, #0000 138.15%);}
 .service-card .gradient-box:hover:after {opacity: 1;}
 .service-card .gradient-box:hover .arrow{transform: rotate(45deg);}
 
