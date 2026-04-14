@@ -181,9 +181,9 @@ article.service-card:hover .bg-image{filter: none !important;}
 }
 
 
-
-.page-id-725 .two-col .items-center{align-items: unset !important;}
-.page-id-725 .two-col .two-column-image{position:relative;overflow:hidden;}
-.page-id-725 .two-col .two-column-image img{position:absolute;left:0px;top:0px;object-fit:cover;object-position:center;}
-.page-id-725 .two-col .two-column-content{padding-top:50px;padding-bottom:50px;}
-
+@media (min-width: 769px) {
+	.page-id-725 .two-col .items-center{align-items: unset !important;}
+	.page-id-725 .two-col .two-column-image{position:relative;overflow:hidden;}
+	.page-id-725 .two-col .two-column-image img{position:absolute;left:0px;top:0px;object-fit:cover;object-position:center;height:100%;}
+	.page-id-725 .two-col .two-column-content{padding-top:50px;padding-bottom:50px;}
+}
