@@ -123,7 +123,7 @@ function gf_build_inquiry_item_table( $notification, $form, $entry ) {
     $form_id      = 2;    // Your form ID
     $codes_id     = '11'; // Hidden field: item codes (comma-separated)
     $names_id     = '12'; // Hidden field: product names (pipe-separated)
-    $images_id    = '13'; // Hidden field: image URLs (comma-separated) ← update this
+    $images_id    = '13'; // Hidden field: image URLs (pipe-separated)
     // ──────────────────────────────────────────────────────────
 
     // Only run for this specific form
@@ -134,7 +134,7 @@ function gf_build_inquiry_item_table( $notification, $form, $entry ) {
     // Get raw field values
     $codes  = array_map( 'trim', explode( ',', rgar( $entry, $codes_id ) ) );
     $names  = array_map( 'trim', explode( '|', rgar( $entry, $names_id ) ) );
-    $images = array_map( 'trim', explode( ',', rgar( $entry, $images_id ) ) );
+    $images = array_map( 'trim', explode( '|', rgar( $entry, $images_id ) ) );
 
     // Build table rows
     $rows = '';
