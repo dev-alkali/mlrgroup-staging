@@ -3759,7 +3759,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   /*max-width: 1360px;*/
   #wmap-inner svg,#wmap-inner img {display: block;width: 100%;height: auto;}  
   .wmap-marker {position: absolute;transform: translate(-50%, -50%);cursor: pointer;z-index: 20;transition: z-index 0s 3s;}
-  .wmap-dot {width: 4px;height: 4px;border-radius: 50%;transition: opacity 0.2s;}
+  .wmap-dot {width: 6px;height: 6px;border-radius: 50%;transition: opacity 0.2s;}
+  .wmap-dot-large {width: 10px;height: 10px;border-radius: 50%;transition: opacity 0.2s;}
   .wmap-pin {position: absolute;top: -40px;left: 50%;transform: translateX(-50%) translateY(50%) scale(0);transform-origin: bottom center;transition: transform 0.3s ease;pointer-events: none;width: 20px;height: 20px;transition: transform 0.3s ease 0s;}
   /*.wmap-marker:hover .wmap-dot {opacity: 0;}*/
   .wmap-marker:hover .wmap-pin {transform: translateX(-50%) translateY(50%) scale(1);transition: transform 0.3s ease 0s;}
@@ -3791,24 +3792,27 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       city  : 'China',
       left  : '32.8%',
       top   : '32.6%',
-      color : '#4A78FF',
-      cls   : 'wmap-blue'
+      color : '#FD4338',
+      cls   : 'wmap-red',
+      large : true
     },
     {
       label : 'Nashville',
       city  : 'USA',
       left  : '64.2%',
       top   : '36.2%',
-      color : '#4A78FF',
-      cls   : 'wmap-blue'
+      color : '#FD4338',
+      cls   : 'wmap-red',
+      large : true
     },
     {
       label : 'Fort Lauderdale',
       city  : 'USA',
       left  : '66%',
       top   : '39.5%',
-      color : '#4A78FF',
-      cls   : 'wmap-blue'
+      color : '#FD4338',
+      cls   : 'wmap-red',
+      large : true
     },
 
     /* ── RED DOTS ── */
@@ -3817,32 +3821,36 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       city  : 'India',
       left  : '6.39%',
       top   : '58.6%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#4A78FF',
+      cls   : 'wmap-blue',
+      large : true
     },
     {
       label : 'Delhi',
       city  : 'India',
       left  : '10.1%',
       top   : '48.1%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#4A78FF',
+      cls   : 'wmap-blue',
+      large : true
     },
     {
       label : 'Bangalore',
       city  : 'India',
       left  : '10.1%',
       top   : '72.3%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#4A78FF',
+      cls   : 'wmap-blue',
+      large : true
     },
     {
       label : 'China',
       city  : 'China',
       left  : '24.2%',
       top   : '32.5%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#4A78FF',
+      cls   : 'wmap-blue',
+      large : true
     },
     {
       label : 'Las Vegas',
@@ -3945,8 +3953,9 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       city  : 'Panama',
       left  : '61.8%',
       top   : '53.5%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#4A78FF',
+      cls   : 'wmap-blue',
+      large : true
     },
     {
       label : 'Miami',
@@ -3961,16 +3970,27 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       city  : 'Colombia',
       left  : '66%',
       top   : '65.6%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#4A78FF',
+      cls   : 'wmap-blue',
+      large : true
     },
     {
       label : 'Buenos Aires',
       city  : 'Argentina',
       left  : '72.2%',
       top   : '74%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#4A78FF',
+      cls   : 'wmap-blue',
+      large : true
+    },
+    {
+      label : 'Mexico City',
+      city  : 'Mexico',
+      left  : '57%',
+      top   : '46%',
+      color : '#4A78FF',
+      cls   : 'wmap-blue',
+      large : true
     },
     {
       label : 'London',
@@ -4003,7 +4023,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
           + '<span class="wmap-tip-country ">' + m.city + '</span>'
         + '</div>'
         + '<div class="wmap-pin">' + makePinSVG(m.color) + '</div>'
-        + '<div class="wmap-dot" style="background:' + m.color + ';"></div>';
+        + '<div class="' + (m.large ? 'wmap-dot-large' : 'wmap-dot') + '" style="background:' + m.color + ';"></div>';
 
       inner.appendChild(el);
     });
