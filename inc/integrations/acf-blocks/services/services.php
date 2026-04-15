@@ -85,15 +85,15 @@ $max_width_class = ($width === 'Full') ? '' : 'max-w-[526px]';
       $heading_and_content = get_sub_field('heading_and_content');
       ?>
 
-          <div class="flex flex-col items-center gap-8 md:gap-[60px] wrapper mb-8 md:mb-12 lg:mb-15">
-            <div class="flex flex-col gap-[20px] self-stretch w-full <?php echo $heading_and_content == 'singe_row' ? 'lg:flex-row lg:items-center lg:gap-[50px]' : 'no-single-row'; ?>">
+          <div class="flex flex-col items-center gap-8 md:gap-[60px] wrapper">
+            <div class=" mb-8 md:mb-12 lg:mb-15 flex flex-col gap-[20px] self-stretch w-full <?php echo $heading_and_content == 'singe_row' ? 'lg:flex-row lg:items-center lg:gap-[50px]' : 'no-single-row'; ?>">
               <?php if (have_rows('title_group')) :  while (have_rows('title_group')) : the_row(); 
                     $title1 = get_sub_field('title_row_1');
                     $title2 = get_sub_field('title_row_2');
                     ;
               ?>
                  <?php if ($title1 || $title2) : ?>
-                  <div class="serve-heading">
+                  <div class="serve-heading ">
                     <h2 class="w-full font-heading font-bold text-[clamp(36px,5vw,68px)] leading-[clamp(44px,6vw,78px)] tracking-[-0.02em]">
                       <span class="font-bold text-neutral-800"><?= wp_kses_post($title1) ?></span>
                       <span class="font-bold text-neutral-800"><?= wp_kses_post($title2) ?></span>
