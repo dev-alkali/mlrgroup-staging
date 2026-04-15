@@ -29,7 +29,7 @@ get_header();
 				</div>
 
 				<div class="md:flex mt-[20px] hidden">
-					<div class="w-full flex justify-end bg-[length:30px] md:bg-[length:50px] bg-repeat-x bg-[position:right_30px_center] md:bg-[position:right_50px_center]" style="background-image:url(<?= get_template_directory_uri() ?>/assets/imgs/cs_gray-arrow.svg);"><img src="<?= get_template_directory_uri() ?>/assets/imgs/cs_red_arrow.svg" class="arrow1 w-[clamp(30px,7vw,50px)] h-[clamp(30px,7vw,50px)] bg-white" alt=""></div>
+					<div class="w-full flex justify-end bg-[length:30px] md:bg-[length:50px] bg-repeat-x bg-[position:right_30px_center] md:bg-[position:right_49px_center]" style="background-image:url(<?= get_template_directory_uri() ?>/assets/imgs/cs_gray-arrow.svg);"><img src="<?= get_template_directory_uri() ?>/assets/imgs/cs_red_arrow.svg" class="arrow1 w-[clamp(30px,7vw,50px)] h-[clamp(30px,7vw,50px)] bg-white" alt=""></div>
 				</div>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class('pt-[60px] xl:px-[120px] lg:px-[60px] md:px-[30px] md:pb-[60px]'); ?> >
