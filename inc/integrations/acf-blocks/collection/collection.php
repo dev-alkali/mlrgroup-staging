@@ -157,6 +157,8 @@ if (!empty($block['className'])) {
                             <?php echo esc_html( $btn_title ); ?>
                             <img class="relative md:w-4 md:h-4 w-[11px] h-[11px] arrow" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" alt="Arrow">
                         </a>
+
+                        <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>"  class="btn-primary blue-btn"><span><?php echo esc_html( $btn_title ); ?></span></a>
                     </div>
                 <?php endif; ?>
     </section>

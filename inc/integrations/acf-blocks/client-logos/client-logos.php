@@ -68,22 +68,25 @@ if (!empty($block['className'])) {
               endwhile;
           }
 
-          $show_filter  = get_sub_field('filter_display');
-          $industries   = $show_filter
-              ? array_unique(array_filter(array_column($logos, 'industry')))
-              : [];
+          // ── Filter functionality disabled — re-enable when needed ────────────
+          // $show_filter  = get_sub_field('filter_display');
+          // $industries   = $show_filter
+          //     ? array_unique(array_filter(array_column($logos, 'industry')))
+          //     : [];
 
-          // Load More config — only active when filter is enabled and logos exceed threshold
-          $per_page      = 8;
-          $total_logos   = count($logos);
-          $show_load_more = $show_filter && $total_logos > $per_page;
+          // // Load More config — only active when filter is enabled and logos exceed threshold
+          // $per_page      = 8;
+          // $total_logos   = count($logos);
+          // $show_load_more = $show_filter && $total_logos > $per_page;
 
-          // Unique IDs scoped to this block instance to avoid conflicts when block is used multiple times
-          $filter_id = 'industry-filter-' . $block['id'];
-          $btn_id    = 'load-more-logos-'  . $block['id'];
+          // // Unique IDs scoped to this block instance to avoid conflicts when block is used multiple times
+          // $filter_id = 'industry-filter-' . $block['id'];
+          // $btn_id    = 'load-more-logos-'  . $block['id'];
+          // ─────────────────────────────────────────────────────────────────────
         ?>
 
-        <?php if ($show_filter && ! empty($industries)) : ?>
+        <?php // Filter disabled — re-enable when needed: if ($show_filter && ! empty($industries)) ?>
+        <?php if (false) : ?>
           <div class="logo-filter mb-[20px] w-full text-right">
             <span class="mr-[12px] text-[#525252] text-[16px] font-medium">Filter by</span>
             <select id="<?php echo esc_attr($filter_id); ?>" class="">
@@ -121,7 +124,8 @@ if (!empty($block['className'])) {
           <?php endforeach; ?>
         </div>
 
-        <?php if ($show_load_more) : ?>
+        <?php // Filter disabled — re-enable when needed: if ($show_load_more) ?>
+        <?php if (false) : ?>
           <div class="logo-load-more-wrap text-center mt-[32px] md:mt-[40px]">
             <button
               id="<?php echo esc_attr($btn_id); ?>"
@@ -148,11 +152,14 @@ if (!empty($block['className'])) {
               <span class="font-semibold text-accent text-[16px] md:text-lg leading-7 uppercase relative w-fit font-heading tracking-[0]"><?php echo esc_html($link_title); ?></span>
               <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="https://wordpress-755960-6249701.cloudwaysapps.com/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg" alt="">
             </a>
+
+            <a href=""<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"  class="btn-primary blue-btn"><span><?php echo esc_html($link_title); ?></span></a>
           </div>
         <?php endif; ?>
 
 <?php
-if ($show_filter) :
+// Filter JS disabled — re-enable when needed: if ($show_filter)
+if (false) :
     // Capture values into local variables for the closure.
     // Scripts are deferred to wp_footer so they bypass WordPress content
     // filters (wptexturize etc.) that would corrupt && into &#038;&#038;
