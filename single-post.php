@@ -31,6 +31,9 @@ get_header();
 				<div class="md:flex mt-[20px] hidden">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/single-blog-arrow-1.svg" alt="Blog Author" class="w-full">
 				</div>
+				<div class="md:flex mt-[20px] hidden">
+					<div class="w-full flex justify-end bg-[length:30px] md:bg-[length:50px] bg-repeat-x bg-[position:right_30px_center] md:bg-[position:right_50px_center]" style="background-image:url(<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg);"><img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red-icon.svg" class="arrow1 w-[clamp(30px,7vw,50px)] h-[clamp(30px,7vw,50px)] bg-black" alt=""></div>
+				</div>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class('pt-[60px] xl:px-[120px] lg:px-[60px] md:px-[30px] md:pb-[60px]'); ?> >
 				
