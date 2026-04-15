@@ -1,5 +1,5 @@
 <?php get_header() ?>
-<main id="content" class="bg-white w-full  relative overflow-hidden">
+<main id="content" class="bg-white w-full  relative overflow-x-hidden">
 
   <?php if (have_rows('hero_portfolio', 'option')) :  while (have_rows('hero_portfolio', 'option')) : the_row(); ?>
       <section id="" class="w-full px-4 min-[600px]:px-10 min-[767px]:px-20 lg:px-[100px] bg-center bg-cover bg-no-repeat bg-[rgba(0,0,0,0.5)] bg-blend-overlay" style="  background-image: url('<?php echo esc_url(get_sub_field('bg_image')); ?>');
