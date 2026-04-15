@@ -36,7 +36,7 @@ if (!empty($block['className'])) {
     <div class="flex wrapper w-full flex-col gap-8 xl:gap-12"> 
 
         <!-- Heading -->
-        <div class="w-full mb-8 md:mb-12 lg:mb-15">            
+        <div class="w-full mb-4">            
             <h2 class="flex flex-col max-w-[660px] font-heading text-white tracking-tight text-[clamp(36px,5vw,68px)] leading-[clamp(44px,6vw,78px)]">
                 <span class="font-bold">
                     <?= wp_kses_post(get_sub_field('title_row_1')) ?>
