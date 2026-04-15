@@ -39,6 +39,10 @@ a.footer-text:hover{color:#ffffff;}
 .arrow {display: inline-flex;transition: transform 0.3s ease;}
 .filter-toggle-btn{cursor: pointer;}
 
+/* overflow: clip cuts horizontal bleed without creating a scroll container (unlike hidden/auto) so position: sticky still works */
+.page-template-default #content,
+.tax-portfolio-category #content { overflow: clip; }
+
 @media (min-width: 768px) {
   #sidebar-filter { position: sticky; top: 100px; align-self: flex-start; }
 }

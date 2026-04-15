@@ -1,5 +1,5 @@
 <?php get_header() ?>
-<main id="content" class="bg-white w-full  relative overflow-x-hidden is-work-page">
+<main id="content" class="bg-white w-full  relative is-work-page">
 
   <?php if (have_rows('hero_portfolio', 'option')) :  while (have_rows('hero_portfolio', 'option')) : the_row(); ?>
 
