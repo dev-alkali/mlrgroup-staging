@@ -54,6 +54,7 @@
 </section>
 
   <section
+    id="work-list"
     class="w-full flex flex-col items-center gap-10 md:gap-[60px] pb-16 md:pb-[60px] bg-white px-4 md:px-10"
     aria-label="Portfolio gallery">
     <div class="flex flex-col md:flex-row items-start gap-6 md:gap-10 w-full max-w-[1920px] mx-auto">
