@@ -107,7 +107,10 @@ if (!empty($block['className'])) {
         $view_more_link = get_sub_field('view_more_link');
         if ($view_more_link): ?>
             <div class="text-center">
-                <a class="relative w-fit uppercase font-heading font-semibold text-accent text-center tracking-[0] leading-[24px] min-[600px]:leading-[18px] whitespace-nowrap view-more-btn inline-flex items-center justify-center gap-2" href="<?php echo esc_url($view_more_link['url']); ?>" target="<?php echo esc_attr($view_more_link['target']); ?>"><?php echo esc_html($view_more_link['title']); ?> <img decoding="async" class="relative md:w-4 md:h-4 w-[11px] h-[11px] arrow" src="https://wordpress-755960-6249701.cloudwaysapps.com/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg" alt="Arrow"></a>
+                <a href="<?php echo esc_url($view_more_link['url']); ?>" target="<?php echo esc_attr($view_more_link['target']); ?>"  class="btn-primary blue-btn"><span><?php echo esc_html($view_more_link['title']); ?></span></a>
+
+                <?php /*<a class="relative w-fit uppercase font-heading font-semibold text-accent text-center tracking-[0] leading-[24px] min-[600px]:leading-[18px] whitespace-nowrap view-more-btn inline-flex items-center justify-center gap-2" href="<?php echo esc_url($view_more_link['url']); ?>" target="<?php echo esc_attr($view_more_link['target']); ?>"><?php echo esc_html($view_more_link['title']); ?> <img decoding="async" class="relative md:w-4 md:h-4 w-[11px] h-[11px] arrow" src="https://wordpress-755960-6249701.cloudwaysapps.com/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg" alt="Arrow"></a> */ ?>
+                
             </div>
 
         <?php endif; ?>
