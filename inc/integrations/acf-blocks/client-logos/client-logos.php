@@ -148,12 +148,12 @@ if (!empty($block['className'])) {
             $link_target = $link['target'] ? $link['target'] : '_self';
         ?>
           <div class="text-center mt-[32px] md:mt-[40px] view-more-btn">
-            <a class="inline-flex gap-2 relative" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
+            <?php /* <a class="inline-flex gap-2 relative" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
               <span class="font-semibold text-accent text-[16px] md:text-lg leading-7 uppercase relative w-fit font-heading tracking-[0]"><?php echo esc_html($link_title); ?></span>
               <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="https://wordpress-755960-6249701.cloudwaysapps.com/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg" alt="">
-            </a>
+            </a> */?>
 
-            <a href=""<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"  class="btn-primary blue-btn"><span><?php echo esc_html($link_title); ?></span></a>
+            <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"  class="btn-primary blue-btn"><span><?php echo esc_html($link_title); ?></span></a>
           </div>
         <?php endif; ?>
 
