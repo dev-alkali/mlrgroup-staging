@@ -109,8 +109,8 @@ a.footer-text:hover{color:#ffffff;}
 .see-all-btn a img{transition:all 0.3s ease;}
 .see-all-btn a:hover img{transform: rotate(45deg);}
 
-.taxonomy-description p{margin-bottom:15px;}
-.taxonomy-description h2,.taxonomy-description h3{margin-bottom:10px;color:#262626;margin-top:15px;}
+.taxonomy-description p{margin-bottom:15px;font-size:16px;}
+.taxonomy-description h2,.taxonomy-description h3{margin-bottom:10px;color:#262626;margin-top:15px;font-size:20px;}
 .taxonomy-description a{color:var(--color-accent);}
 
 .taxonomy-description ul{list-style: disc;padding-left: 10px;margin: 10px 10px 10px 20px;}
