@@ -139,6 +139,8 @@ article.service-card:hover .bg-image{filter: none !important;}
 .cs-card .to-transparent { background: #00000080; }
 .cs-card:hover .to-transparent { background: linear-gradient(318.51deg, rgba(0, 0, 0, 0.9) -57.23%, rgba(74, 120, 255, 0.8) 105.13%); }
 
+.services .service-card .card-text{min-height:57px;}
+
 @media (min-width: 48rem) {
 	.cs-cards { flex-direction: row; flex-wrap: wrap; }
 	.cs-card { max-width: calc( (100% - calc(var(--spacing) * 8) ) / 2 ); width: 100%; }
