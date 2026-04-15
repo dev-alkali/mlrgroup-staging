@@ -105,7 +105,7 @@ if (!$case_studies_query->have_posts() && have_posts()) {
                   </div>
                 <?php endif; ?>              
                 <div>
-                  <h2 class="font-[Poppins] font-bold text-[24px] leading-[32px] tracking-[-0.02em] text-[#262626] mt-[18px]"><?php the_title(); ?></h2>
+                  <h2 class="font-[Poppins] font-bold text-[24px] leading-[32px] tracking-[-0.02em] text-[#262626] mt-[18px]"><?php echo get_field('custom_single_page_title'); ?></h2>
                   <?php if ($filter_taxonomy !== '') : ?>
                     <?php $terms = get_the_terms(get_the_ID(), $filter_taxonomy); ?>
                     <?php if (!empty($terms) && !is_wp_error($terms)) : ?>
