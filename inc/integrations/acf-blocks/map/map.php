@@ -3959,8 +3959,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Bogota',
       city  : 'Colombia',
-      left  : '61.8%',
-      top   : '53.4%',
+      left  : '66%',
+      top   : '65.6%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
