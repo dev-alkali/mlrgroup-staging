@@ -99,7 +99,7 @@ if ( $section_color == 'black' ){
             </h2>
             <?php endif; ?>
             <?php if($description): ?>
-              <div class="w-full text-[clamp(16px,3vw,18px)] leading-[28px] <?php echo $text_525252_class; ?> font-body flex flex-col gap-[15px] description-content "><?php echo $description; ?></div>
+              <div class="w-full text-[clamp(16px,3vw,18px)] leading-[28px] <?php echo $text_525252_class; ?> font-body flex flex-col gap-[15px] description-content mb-[20px]"><?php echo $description; ?></div>
             <?php endif; ?>
 
 
