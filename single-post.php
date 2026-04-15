@@ -16,7 +16,7 @@ get_header();
 					<?php endif; ?>
 				</div>
 			
-				<h1 class="font-heading font-bold max-w-[1125px] text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em] text-[#262626]"><?php the_title(); ?></h1>
+				<h1 class="font-heading font-bold w-full text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em] text-[#262626]"><?php the_title(); ?></h1>
 
 				<div class="mt-[28px] overflow-hidden">
 					<div class="aspect-[16/9]">
