@@ -106,20 +106,9 @@ if (!empty($block['className'])) {
         <?php 
         $view_more_link = get_sub_field('view_more_link');
         if ($view_more_link): ?>
-            <a class="case-studies-grid__link inline-flex items-center gap-2 text-white font-semibold mx-auto"
-               href="<?php echo esc_url($view_more_link['url']); ?>"
-               target="<?php echo esc_attr($view_more_link['target']); ?>">
-                <span><?php echo esc_html($view_more_link['title']); ?></span>
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2.26562 2.47656H13.407V13.9386" stroke="#FD4338" stroke-miterlimit="10"/>
-                <path d="M13.3351 2.54688L2.33789 13.8605" stroke="#FD4338" stroke-miterlimit="10"/>
-                </svg>
-            </a>
-
-            <a class="relative w-fit uppercase font-heading font-semibold text-accent text-center tracking-[0] leading-[24px] min-[600px]:leading-[18px] whitespace-nowrap view-more-btn flex items-center justify-center gap-2" href="<?php echo esc_url($view_more_link['url']); ?>" target="<?php echo esc_attr($view_more_link['target']); ?>"><?php echo esc_html($view_more_link['title']); ?> <img decoding="async" class="relative md:w-4 md:h-4 w-[11px] h-[11px] arrow" src="https://wordpress-755960-6249701.cloudwaysapps.com/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg" alt="Arrow"></a>
-
-
-
+            <div class="text-center">
+                <a class="relative w-fit uppercase font-heading font-semibold text-accent text-center tracking-[0] leading-[24px] min-[600px]:leading-[18px] whitespace-nowrap view-more-btn flex items-center justify-center gap-2" href="<?php echo esc_url($view_more_link['url']); ?>" target="<?php echo esc_attr($view_more_link['target']); ?>"><?php echo esc_html($view_more_link['title']); ?> <img decoding="async" class="relative md:w-4 md:h-4 w-[11px] h-[11px] arrow" src="https://wordpress-755960-6249701.cloudwaysapps.com/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg" alt="Arrow"></a>
+            </div>
 
         <?php endif; ?>
 
