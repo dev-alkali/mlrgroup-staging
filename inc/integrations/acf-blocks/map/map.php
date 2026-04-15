@@ -3986,8 +3986,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Mexico City',
       city  : 'Mexico',
-      left  : '57%',
-      top   : '46%',
+      left  : '60%',
+      top   : '42%',
       color : '#4A78FF',
       cls   : 'wmap-blue',
       large : true
