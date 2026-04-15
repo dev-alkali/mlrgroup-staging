@@ -8,7 +8,7 @@ get_header();
 ?>
 
 <main class="overflow-hidden">
-  <section class="px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px]">
+  <section class="px-4 md:px-10 py-[60px] md:py-[120px] bg-white ">
     <div class="wrapper">
       <?php while (have_posts()) : the_post(); ?>
 
