@@ -237,7 +237,7 @@ if (!$case_studies_query->have_posts() && have_posts()) {
                 article.id = 'post-' + post.id;
                 article.className = 'post type-' + '<?php echo esc_js($post_type); ?>' + ' status-publish overflow-hidden view-more-item';
 
-                const title = post.title && post.title.rendered ? post.title.rendered : '';
+                const title = post.acf_display_title || (post.title && post.title.rendered ? post.title.rendered : '');
                 const featuredImageUrl = getFeaturedImageUrl(post);
                 let termsMarkup = '';
 
