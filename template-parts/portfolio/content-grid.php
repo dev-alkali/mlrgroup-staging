@@ -97,7 +97,7 @@ $term_id = isset($current_term->term_id) ? absint($current_term->term_id) : 0;
             <h1 class="font-[Poppins] font-bold text-[#262626] tracking-[-0.02em] text-[clamp(1.125rem,2vw,1.75rem)] leading-[clamp(1.75rem,2.5vw,2.25rem)] mb-[20px] flex gap-[12px]"><svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.67188 4.94922H27.651V27.8733" stroke="#4A78FF" stroke-miterlimit="10"/><path d="M27.502 5.0957L4.82031 27.723" stroke="#4A78FF" stroke-miterlimit="10"/></svg> <span><?php echo esc_html($term->name); ?></span></h1>
                     <div class="taxonomy-description mt-4 font-[Poppins] font-normal text-[#525252] 
           text-[clamp(1rem,2vw,1.25rem)] leading-[clamp(1.5rem,2.5vw,1.75rem)]">
-                    <?php echo wp_kses_post($term->description); ?>
+                    <?php echo wp_kses_post(wpautop($term->description)); ?>
                 </div>
         </section>
         <?php endif; ?>
