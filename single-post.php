@@ -28,9 +28,35 @@ get_header();
 					</div>
 				</div>
 
-				<div class="md:flex mt-[20px] hidden">
-					<div class="w-full flex justify-end bg-[length:30px] md:bg-[length:50px] bg-repeat-x bg-[position:right_30px_center] md:bg-[position:right_49px_center]" style="background-image:url(<?= get_template_directory_uri() ?>/assets/imgs/cs_gray-arrow.svg);"><img src="<?= get_template_directory_uri() ?>/assets/imgs/cs_red_arrow.svg" class="arrow1 w-[clamp(30px,7vw,50px)] h-[clamp(30px,7vw,50px)] bg-white" alt=""></div>
+				<div class="cs-arrow-row-post md:flex mt-[20px] hidden relative overflow-hidden items-center h-[50px]">
+					<div class="absolute inset-0 flex flex-row-reverse items-center pr-[50px]">
+						<?php for ($i = 0; $i < 40; $i++) : ?>
+							<img src="<?= get_template_directory_uri() ?>/assets/imgs/cs_gray-arrow.svg" class="cs-gray-arrow-post w-[50px] h-[50px] shrink-0" alt="">
+						<?php endfor; ?>
+					</div>
+					<div class="absolute right-0 z-10 bg-white">
+						<img src="<?= get_template_directory_uri() ?>/assets/imgs/cs_red_arrow.svg" class="arrow1 w-[50px] h-[50px]" alt="">
+					</div>
 				</div>
+				<script>
+					(function () {
+						function hideOverflowingArrowsPost() {
+							var container = document.querySelector('.cs-arrow-row-post');
+							if (!container) return;
+							var containerLeft = container.getBoundingClientRect().left;
+							var arrows = container.querySelectorAll('.cs-gray-arrow-post');
+							arrows.forEach(function (arrow) {
+								arrow.style.visibility = '';
+								var arrowLeft = arrow.getBoundingClientRect().left;
+								if (arrowLeft < containerLeft + 1) {
+									arrow.style.visibility = 'hidden';
+								}
+							});
+						}
+						document.addEventListener('DOMContentLoaded', hideOverflowingArrowsPost);
+						window.addEventListener('resize', hideOverflowingArrowsPost);
+					})();
+				</script>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class('pt-[60px] xl:px-[120px] lg:px-[60px] md:px-[30px] md:pb-[60px]'); ?> >
 				
