@@ -38,12 +38,12 @@ get_header();
         <?php endif; ?>
 
         <div class="md:flex mt-[20px] hidden relative overflow-hidden items-center h-[50px]">
-          <div class="absolute inset-0 flex flex-row-reverse items-center pr-[50px]">
+          <div class="flex items-center">
             <?php for ($i = 0; $i < 40; $i++) : ?>
               <img src="<?= get_template_directory_uri() ?>/assets/imgs/cs_gray-arrow.svg" class="w-[50px] h-[50px] shrink-0" alt="">
             <?php endfor; ?>
           </div>
-          <div class="ml-auto relative z-10 bg-white">
+          <div class="absolute right-0 z-10 bg-white">
             <img src="<?= get_template_directory_uri() ?>/assets/imgs/cs_red_arrow.svg" class="arrow1 w-[50px] h-[50px]" alt="">
           </div>
         </div>
