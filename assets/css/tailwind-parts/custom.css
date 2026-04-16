@@ -122,11 +122,11 @@ a.footer-text:hover{color:#ffffff;}
 .page-id-881 .two-column-content br{display:none;}
 .contact-footer a.footer-text:first-child{margin-bottom:-10px;}
 
-body .btn-primary.blue-btn{background:#ffffff;border: 1px solid var(--color-neutral-800);color:var(--color-neutral-800);position:relative;padding:17px 30px 15px 62px;overflow:hidden;}
+body .btn-primary.blue-btn{background:#ffffff;border: 1px solid var(--color-neutral-800);color:var(--color-neutral-800);position:relative;padding:17px 30px 15px 62px;overflow:hidden;    transition: all 0.3s ease;}
 body .btn-primary.blue-btn:before{content:'';display:block;width:52px;height:52px;background:#4a78ff;border-radius:0 100% 100% 0;position:absolute;top: -1px;left: 0px;z-index:0;transition: all 0.3s ease;}
 body .btn-primary.blue-btn span{z-index:1;position:relative;}
-body .btn-primary.blue-btn:hover:before{content:'';width:100%;border-radius:30px;padding:17px 30px 15px 30px;}
-body .btn-primary.blue-btn:hover{color: #ffffff;border:1px solid #4a78ff;}
+body .btn-primary.blue-btn:hover:before{content:'';width:100%;border-radius:30px;}
+body .btn-primary.blue-btn:hover{color: #ffffff;border:1px solid #4a78ff;padding:17px 46px 15px 46px;}
 
 body .service-card .gradient-box:hover:after {opacity: 0;}
 article.service-card .bg-image{transition:all 0.3s ease;}
