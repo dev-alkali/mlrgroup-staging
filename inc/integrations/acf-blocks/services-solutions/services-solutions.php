@@ -102,7 +102,7 @@ if (!empty($block['className'])) {
                                                                 <img class="self-stretch w-full h-[330px] object-cover" src="<?= esc_url($card_image) ?>" alt="<?= esc_attr($card_title) ?>">
                                                             <?php endif; ?>
                                                             <div class="flex flex-col w-[371px] items-start gap-4 relative flex-[0_0_auto] max-w-[100%]">
-                                                                <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+                                                                <div class="flex flex-col items-start gap-[8px] relative self-stretch w-full flex-[0_0_auto]">
                                                                     <div class="relative self-stretch font-heading font-bold text-[#262626] text-[24px] leading-[32px] tracking-[-0.02em]">
                                                                         <?= esc_html($card_title) ?>
                                                                     </div>
@@ -138,7 +138,7 @@ if (!empty($block['className'])) {
                                                                     <img class="self-stretch w-full h-[330px] object-cover" src="<?= esc_url($card_image) ?>" alt="<?= esc_attr(wp_strip_all_tags($card_title)) ?>">
                                                                 <?php endif; ?>
                                                                 <div class="flex flex-col w-[371px] items-start gap-4 relative flex-[0_0_auto] max-w-[100%]">
-                                                                    <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+                                                                    <div class="flex flex-col items-start gap-[8px] relative self-stretch w-full flex-[0_0_auto]">
                                                                         <div class="relative self-stretch font-heading font-bold text-[#262626] text-[24px] leading-[32px] tracking-[-0.02em]">
                                                                             <?= wp_kses_post($card_title) ?>
                                                                         </div>
@@ -195,7 +195,7 @@ if (!empty($block['className'])) {
                                                                 <img class="self-stretch w-full h-[330px] object-cover" src="<?= esc_url($card_image) ?>" alt="<?= esc_attr($card_title) ?>">
                                                             <?php endif; ?>
                                                             <div class="flex flex-col w-full max-w-[358px] md:max-w-[371px] items-start gap-4 relative flex-[0_0_auto]">
-                                                                <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+                                                                <div class="flex flex-col items-start gap-[8px] relative self-stretch w-full flex-[0_0_auto]">
                                                                     <div class="relative self-stretch font-heading font-bold text-[#262626] text-[24px] leading-[32px] tracking-[-0.02em]">
                                                                         <?= esc_html($card_title) ?>
                                                                     </div>
@@ -231,7 +231,7 @@ if (!empty($block['className'])) {
                                                                     <img class="self-stretch w-full h-[330px] object-cover" src="<?= esc_url($card_image) ?>" alt="<?= esc_attr(wp_strip_all_tags($card_title)) ?>">
                                                                 <?php endif; ?>
                                                                 <div class="flex flex-col w-full max-w-[358px] md:max-w-[371px] items-start gap-4 relative flex-[0_0_auto]">
-                                                                    <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+                                                                    <div class="flex flex-col items-start gap-[8px] relative self-stretch w-full flex-[0_0_auto]">
                                                                         <div class="relative self-stretch font-heading font-bold text-[#262626] text-[24px] leading-[32px] tracking-[-0.02em]">
                                                                             <?= wp_kses_post($card_title) ?>
                                                                         </div>
