@@ -58,7 +58,7 @@ if (!empty($block['className'])) {
 
                 <!-- TABS -->
                 <?php if (have_rows('main_content')) :  while (have_rows('main_content')) : the_row(); ?>
-                        <div class="solutions-tabs mb-[40px] w-full wrapper flex flex-nowrap overflow-x-auto min-[1141px]:overflow-x-visible">
+                        <div class="solutions-tabs mb-[20px] w-full wrapper flex flex-nowrap overflow-x-auto min-[1141px]:overflow-x-visible">
                             <?php if (have_rows('service_group')) : while (have_rows('service_group')) : the_row(); ?>
                                     <div class="solutions-tab <?= get_row_index() === 1 ? 'is-active' : '' ?> max-[767px]:max-w-[max-content] w-full md:min-w-[280px] lg:min-w-auto flex-none md:flex-1"
                                         data-solution="<?= wp_kses_post(get_sub_field('service_name')) ?>">
@@ -97,9 +97,9 @@ if (!empty($block['className'])) {
                                                     $card_link_label = __('View more', 'mlrgroup');
                                                     ?>
                                                     <a class="solution-card max-lg:max-w-[400px]" href="<?= esc_url($card_link) ?>">
-                                                        <div class="flex flex-col w-full items-start gap-4 relative">
+                                                        <div class="flex flex-col w-full items-start gap-[10px] relative">
                                                             <?php if (!empty($card_image)) : ?>
-                                                                <img class="self-stretch w-full h-[409px] object-cover" src="<?= esc_url($card_image) ?>" alt="<?= esc_attr($card_title) ?>">
+                                                                <img class="self-stretch w-full h-[330px] object-cover" src="<?= esc_url($card_image) ?>" alt="<?= esc_attr($card_title) ?>">
                                                             <?php endif; ?>
                                                             <div class="flex flex-col w-[371px] items-start gap-4 relative flex-[0_0_auto] max-w-[100%]">
                                                                 <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
@@ -133,9 +133,9 @@ if (!empty($block['className'])) {
                                                         $card_link_label = get_sub_field('link_label');
                                                         ?>
                                                         <a class="solution-card max-lg:max-w-[400px]" href="<?= esc_url($card_link) ?>">
-                                                            <div class="flex flex-col w-full items-start gap-4 relative">
+                                                            <div class="flex flex-col w-full items-start gap-[10px] relative">
                                                                 <?php if (!empty($card_image)) : ?>
-                                                                    <img class="self-stretch w-full h-[409px] object-cover" src="<?= esc_url($card_image) ?>" alt="<?= esc_attr(wp_strip_all_tags($card_title)) ?>">
+                                                                    <img class="self-stretch w-full h-[330px] object-cover" src="<?= esc_url($card_image) ?>" alt="<?= esc_attr(wp_strip_all_tags($card_title)) ?>">
                                                                 <?php endif; ?>
                                                                 <div class="flex flex-col w-[371px] items-start gap-4 relative flex-[0_0_auto] max-w-[100%]">
                                                                     <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
@@ -190,9 +190,9 @@ if (!empty($block['className'])) {
                                                     $card_link_label = __('View more', 'mlrgroup');
                                                     ?>
                                                     <a href="<?= esc_url($card_link) ?>" class="solution-card  max-w-[400px]">
-                                                        <div class="flex flex-col w-full items-start gap-4 relative">
+                                                        <div class="flex flex-col w-full items-start gap-[10px] relative">
                                                             <?php if (!empty($card_image)) : ?>
-                                                                <img class="self-stretch w-full h-[409px] object-cover" src="<?= esc_url($card_image) ?>" alt="<?= esc_attr($card_title) ?>">
+                                                                <img class="self-stretch w-full h-[330px] object-cover" src="<?= esc_url($card_image) ?>" alt="<?= esc_attr($card_title) ?>">
                                                             <?php endif; ?>
                                                             <div class="flex flex-col w-full max-w-[358px] md:max-w-[371px] items-start gap-4 relative flex-[0_0_auto]">
                                                                 <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
@@ -226,9 +226,9 @@ if (!empty($block['className'])) {
                                                         $card_link_label = get_sub_field('link_label');
                                                         ?>
                                                         <a href="<?= esc_url($card_link) ?>" class="solution-card  max-w-[400px]">
-                                                            <div class="flex flex-col w-full items-start gap-4 relative">
+                                                            <div class="flex flex-col w-full items-start gap-[10px] relative">
                                                                 <?php if (!empty($card_image)) : ?>
-                                                                    <img class="self-stretch w-full h-[409px] object-cover" src="<?= esc_url($card_image) ?>" alt="<?= esc_attr(wp_strip_all_tags($card_title)) ?>">
+                                                                    <img class="self-stretch w-full h-[330px] object-cover" src="<?= esc_url($card_image) ?>" alt="<?= esc_attr(wp_strip_all_tags($card_title)) ?>">
                                                                 <?php endif; ?>
                                                                 <div class="flex flex-col w-full max-w-[358px] md:max-w-[371px] items-start gap-4 relative flex-[0_0_auto]">
                                                                     <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
