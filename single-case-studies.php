@@ -37,16 +37,35 @@ get_header();
           </div>
         <?php endif; ?>
 
-        <div class="md:flex mt-[20px] hidden relative overflow-hidden items-center h-[50px]">
-          <div class="flex items-center">
+        <div class="cs-arrow-row md:flex mt-[20px] hidden relative overflow-hidden items-center h-[50px]">
+          <div class="absolute inset-0 flex flex-row-reverse items-center pr-[50px]">
             <?php for ($i = 0; $i < 40; $i++) : ?>
-              <img src="<?= get_template_directory_uri() ?>/assets/imgs/cs_gray-arrow.svg" class="w-[50px] h-[50px] shrink-0" alt="">
+              <img src="<?= get_template_directory_uri() ?>/assets/imgs/cs_gray-arrow.svg" class="cs-gray-arrow w-[50px] h-[50px] shrink-0" alt="">
             <?php endfor; ?>
           </div>
           <div class="absolute right-0 z-10 bg-white">
             <img src="<?= get_template_directory_uri() ?>/assets/imgs/cs_red_arrow.svg" class="arrow1 w-[50px] h-[50px]" alt="">
           </div>
         </div>
+        <script>
+          (function () {
+            function hideOverflowingArrows() {
+              var container = document.querySelector('.cs-arrow-row');
+              if (!container) return;
+              var containerLeft = container.getBoundingClientRect().left;
+              var arrows = container.querySelectorAll('.cs-gray-arrow');
+              arrows.forEach(function (arrow) {
+                arrow.style.visibility = '';
+                var arrowLeft = arrow.getBoundingClientRect().left;
+                if (arrowLeft < containerLeft + 1) {
+                  arrow.style.visibility = 'hidden';
+                }
+              });
+            }
+            document.addEventListener('DOMContentLoaded', hideOverflowingArrows);
+            window.addEventListener('resize', hideOverflowingArrows);
+          })();
+        </script>
 
         <article class="max-w-[1360px] mx-auto pt-[60px] xl:px-[120px] lg:px-[60px] md:px-[30px] md:pb-[60px]">
           <div class="blog-content">  
