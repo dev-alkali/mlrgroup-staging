@@ -37,8 +37,15 @@ get_header();
           </div>
         <?php endif; ?>
 
-        <div class="md:flex mt-[20px] hidden">
-          <div class="w-full flex justify-end bg-[length:30px] md:bg-[length:50px] bg-repeat-x bg-[position:right_30px_center] md:bg-[position:right_49px_center]" style="background-image:url(<?= get_template_directory_uri() ?>/assets/imgs/cs_gray-arrow.svg); -webkit-mask-image: linear-gradient(to right, transparent, black 55px); mask-image: linear-gradient(to right, transparent, black 55px);"><img src="<?= get_template_directory_uri() ?>/assets/imgs/cs_red_arrow.svg" class="arrow1 w-[clamp(30px,7vw,50px)] h-[clamp(30px,7vw,50px)] bg-white" alt=""></div>
+        <div class="md:flex mt-[20px] hidden relative overflow-hidden items-center h-[50px]">
+          <div class="absolute inset-0 flex flex-row-reverse items-center pr-[50px]">
+            <?php for ($i = 0; $i < 40; $i++) : ?>
+              <img src="<?= get_template_directory_uri() ?>/assets/imgs/cs_gray-arrow.svg" class="w-[50px] h-[50px] shrink-0" alt="">
+            <?php endfor; ?>
+          </div>
+          <div class="ml-auto relative z-10 bg-white">
+            <img src="<?= get_template_directory_uri() ?>/assets/imgs/cs_red_arrow.svg" class="arrow1 w-[50px] h-[50px]" alt="">
+          </div>
         </div>
 
         <article class="max-w-[1360px] mx-auto pt-[60px] xl:px-[120px] lg:px-[60px] md:px-[30px] md:pb-[60px]">
