@@ -199,7 +199,7 @@ article.service-card:hover .bg-image{filter: none !important;}
 
 	.summary-text p{font-size:20px;line-height:26px;}
 
-	.c-cta span.block{display:inline-block;}
+	.c-cta span.block{display:inline;}
 	.c-cta h2{display: block;}
 }
 
