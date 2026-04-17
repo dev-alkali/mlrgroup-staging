@@ -150,6 +150,16 @@ article.service-card:hover .bg-image{filter: none !important;}
 
 .services .service-card .card-text{min-height:57px;}
 
+
+
+.c-cta .c-cta__title { color: #fff; margin: 0; }
+.c-cta__wrap { align-items: center; }
+.c-cta__button:nth-child(2n) { background: #323232; }
+.c-cta__button:hover, .c-cta__button:nth-child(2n):hover { background: #fff; color: #323232; }
+.mobile-nav-arrow { transform: rotate(45deg)translateY(4px); }
+
+
+
 @media (min-width: 48rem) {
 	.cs-cards { flex-direction: row; flex-wrap: wrap; }
 	.cs-card { max-width: calc( (100% - calc(var(--spacing) * 8) ) / 2 ); width: 100%; }
@@ -166,6 +176,8 @@ article.service-card:hover .bg-image{filter: none !important;}
 	.cs-card:hover .default-logo ,
 	.cs-card:hover .arrow { opacity: 0; transform: inherit; }
 	.cs-card:hover .relative { transform: inherit; opacity: 1; }	
+
+	.c-cta__wrap { flex-direction: row; justify-content: space-between; }
 }
 
 @media (min-width: 1440px) {
@@ -176,6 +188,7 @@ article.service-card:hover .bg-image{filter: none !important;}
     .collection-parent:first-child .collection-item:first-child{order:0;}
     .collection-parent:first-child .collection-item:nth-child(2){order:2;}
     .collection-parent:first-child .collection-item:nth-child(3){order:1;}
+    .c-cta__wrap { align-items: flex-start; }
 }   
 
 @media (max-width: 767px) {
