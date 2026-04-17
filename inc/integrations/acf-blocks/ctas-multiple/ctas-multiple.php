@@ -26,7 +26,7 @@ $description = get_field('ct_content');
   
   <div class="c-cta__wrap flex flex-col align-center w-full gap-[40px] max-w-[1220px] mx-auto">
     
-    <div class="c-cta__content max-w-[850px]">
+    <div class="c-cta__content max-w-[850px] gap-5 flex flex-col">
       <h2 class="flex flex-col align-start c-cta__title font-heading text-white text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em]">
         <?php if($title_row_1): ?>
           <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
