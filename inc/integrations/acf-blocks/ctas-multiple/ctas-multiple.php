@@ -17,6 +17,8 @@ if (!empty($block['className'])) {
 
 $title_row_1 = get_field('title_row_1');
 $title_row_2 = get_field('title_row_2');
+$description = get_field('ct_content');
+
 
 ?>
 
@@ -33,6 +35,10 @@ $title_row_2 = get_field('title_row_2');
           <span class="font-bold"><?= wp_kses_post($title_row_2) ?></span>
         <?php endif; ?>
       </h2>
+      
+      <?php if($description): ?>
+              <p class="max-w-[685px] w-full text-[18px]  min-[600px]:text-xl leading-[26px] min-[600px]:leading-7 text-gray-50 font-body"><?= wp_kses_post($description) ?></p>
+            <?php endif; ?>
     </div>
 
     <?php if( have_rows('cta_items') ): ?>
