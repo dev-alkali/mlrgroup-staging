@@ -96,6 +96,9 @@ if (!empty($block['className'])) {
                                 $arrow_color = get_template_directory_uri() . "/assets/imgs/Arrow-black.svg";
                                 }
 
+                                $link_path   = get_sub_field('link_path');
+                                $link_url    = !empty($link_path['url'])    ? $link_path['url']    : '#';
+                                $link_target = !empty($link_path['target']) ? $link_path['target'] : '_self';
                                 ?>
                                 <div class="<?= $text_color ?> collection-item h-[380px] min-[600px]:h-[420px] max-[1024px]:w-full min-[1024px]:h-full  min-[1024px]:flex-1 min-[1024px]:grow <?= $bg_image == "" ? $bg_color : "" ?>" <?= $bg_image !== "" ? 'style="
                                         background-image: url(' . $bg_image . ');
@@ -103,7 +106,7 @@ if (!empty($block['className'])) {
                                         background-size: cover;
                                         background-repeat: no-repeat;
                                     "' : ""; ?>>
-                                <a href="<?= wp_kses_post(get_sub_field('link_path')) ?>" class=" <?= $bg_image == "" ? "color-bg-hover" : "collection-gradient-box" ?> flex flex-col  items-end justify-between w-full h-full px-6 py-10 relative">
+                                <a href="<?= esc_url($link_url) ?>" target="<?= esc_attr($link_target) ?>" class=" <?= $bg_image == "" ? "color-bg-hover" : "collection-gradient-box" ?> flex flex-col  items-end justify-between w-full h-full px-6 py-10 relative">
                                     <div class="flex flex-col relative z-20 items-start <?= esc_url(get_sub_field('icon')) !== "" ? "" : "pt-[88px]"; ?> gap-5 relative self-stretch w-full flex-[0_0_auto]">
                                     <?php if (esc_url(get_sub_field('icon')) !== ""): ?>
                                         <img
