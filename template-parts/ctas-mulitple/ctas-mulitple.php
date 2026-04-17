@@ -17,7 +17,7 @@ $title_row_2 = get_field('title_row_2', 'options');
         <?php endif; ?>
 
         <?php if ($title_row_2): ?>
-          <span class="font-light"><?php echo wp_kses_post($title_row_2); ?></span>
+          <span class="font-bold"><?php echo wp_kses_post($title_row_2); ?></span>
         <?php endif; ?>
 
       </h2>
