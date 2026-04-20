@@ -1475,6 +1475,11 @@ article.service-card:hover .bg-image{filter: none !important;}
   .collection-parent:first-child .collection-item:nth-child(3){order:1;}  
 }   
 
+@media (max-width: 1024px) and (min-width: 768px){
+  .blog-content figure.alignright img{width:100% !important;max-width:400px;}
+
+}
+
 @media (max-width: 768px){
   .title-our-values-1 span{max-width: 188px;}
   .cta.black-cta .cta-wrapper{padding-bottom: 60px;}
