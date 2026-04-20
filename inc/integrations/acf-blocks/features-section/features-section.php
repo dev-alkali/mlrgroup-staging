@@ -43,12 +43,12 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 				<?php if($title_row_1 || $title_row_2): ?>
 				<h2 class="xl:text-[68px] md:text-[52px] text-[36px] leading-[40px] md:leading-[62px] xl:leading-[76px] tracking-[-2%] text-[#262626] font-heading lg:mb-[20px] relative heading-our-values">
 					<?php if($title_row_1): ?>
-						<span class="relative w-full block flex gap-[10px] title-our-values-1">
+						<span class="relative w-full block md:flex gap-[10px] title-our-values-1">
 							<span class="font-bold bg-white pr-[5px] "><?= wp_kses_post($title_row_1) ?></span>
 						</span>
 					<?php endif; ?>
 					<?php if($title_row_2): ?>
-						<span class="relative w-full block flex gap-[10px] title-our-values-2">
+						<span class="relative w-full block md:flex gap-[10px] title-our-values-2">
 							<span class="font-bold pr-[5px] bg-white"><?= wp_kses_post($title_row_2) ?></span>
 						</span>
 					<?php endif; ?>
