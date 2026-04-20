@@ -68,7 +68,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 					} elseif ($list_count === 2) {
 						$width_class = 'xl:w-[calc(50%-30px)] md:w-[calc(50%-15px)] w-full';
 					} else {
-						$width_class = 'xl:w-[calc(33.33%-40px)] md:w-[calc(50%-15px)] w-full';
+						$width_class = 'xl:w-[calc(33.33%-47px)] md:w-[calc(50%-15px)] w-full';
 					}
 					?>
 					<div class="flex flex-row md:gap-[20px] gap-[16px] <?php echo $width_class; ?>">
