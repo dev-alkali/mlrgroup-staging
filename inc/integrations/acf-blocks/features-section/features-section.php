@@ -4,12 +4,12 @@
  * Features Section Block Template.
  */
 
-$id = 'our-values' . $block['id'];
+$id = 'features-section' . $block['id'];
 if (!empty($block['anchor'])) {
   $id = $block['anchor'];
 }
 
-$className = 'our-values';
+$className = 'features-section';
 if (!empty($block['className'])) {
   $className .= ' ' . $block['className'];
 }
