@@ -23,9 +23,7 @@ $description = get_field('ct_content');
 ?>
 
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex c-cta w-full bg-black py-12 md:py-17 xl:py-25 px-4 md:px-10">
-  
   <div class="c-cta__wrap flex flex-col align-center w-full gap-[40px] wrapper mx-auto">
-    
     <div class="c-cta__content max-w-[850px] gap-5 flex flex-col">
       <h2 class="flex flex-col align-start c-cta__title font-heading text-white text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em]">
         <?php if($title_row_1): ?>
@@ -37,11 +35,10 @@ $description = get_field('ct_content');
       </h2>
       
       <?php if($description): ?>
-              <p class="max-w-[685px] w-full text-[18px]  min-[600px]:text-xl leading-[26px] min-[600px]:leading-7 text-gray-50 font-body"><?= wp_kses_post($description) ?></p>
-            <?php endif; ?>
-    </div>
+        <p class="max-w-[685px] w-full text-[18px]  min-[600px]:text-xl leading-[26px] min-[600px]:leading-7 text-gray-50 font-body"><?= wp_kses_post($description) ?></p>
+      <?php endif; ?>
 
-    <?php if( have_rows('cta_items') ): ?>
+      <?php if( have_rows('cta_items') ): ?>
       <div class="c-cta__buttons-wrap flex flex-col gap-[22px] max-w-[277px]">
         <?php while( have_rows('cta_items') ): the_row(); ?>
           <?php $cta_item = get_sub_field('cta_item'); ?>
@@ -55,5 +52,8 @@ $description = get_field('ct_content');
         <?php endwhile; ?>
       </div>
     <?php endif; ?>
+    </div>
+
+    
   </div>
 </section>
