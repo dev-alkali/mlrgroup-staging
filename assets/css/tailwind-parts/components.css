@@ -1254,11 +1254,18 @@ button.swiper-button-disabled {
 }
 .blog-content .content-sec .wrapper li:not(:last-child) {margin-bottom: 0px;}
 .blog-content figure{margin: 0px !important;}
+
 .blog-content .content-sec .wrapper :not(:last-child) {margin-bottom: 25px;}
 
 .blog-content .two-col {padding: 0px;}
+
+.blog-content ul li:before,
 .blog-content .description-content ul li:before {background: unset;padding: 0px;display: none;}
+
+.blog-content ul li,
 .blog-content .description-content ul li {padding: 0px;list-style: disc !important;list-style-type: disc !important;display: revert;}
+
+.blog-content ul,
 .blog-content .description-content ul {list-style: disc !important;padding-left: 0px;margin-left: 30px;list-style-type: disc !important;}
 
 .blog-content .wp-block-columns{
