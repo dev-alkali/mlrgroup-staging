@@ -1253,6 +1253,7 @@ button.swiper-button-disabled {
   @apply text-[clamp(24px,3.5vw,36px)] leading-[clamp(36px,5vw,52px)] tracking-[-2%] font-heading;
 }
 
+.blog-content .two-col:not(:last-child),
 .blog-content .two-col p:not(:last-child),
 .blog-content .content-sec .wrapper li:not(:last-child) {margin-bottom: 0px;}
 .blog-content figure{margin: 0px !important;}
@@ -1260,7 +1261,7 @@ button.swiper-button-disabled {
 
 .blog-content p:not(:last-child),
 .blog-content .content-sec .wrapper :not(:last-child) {margin-bottom: 25px;}
-.blog-content li{margin-bottom: 25px;}
+.blog-content li:last-child{margin-bottom: 25px;}
 
 .blog-content .two-col {padding: 0px;}
 
