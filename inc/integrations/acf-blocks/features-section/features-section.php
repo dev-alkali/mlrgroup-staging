@@ -59,7 +59,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 
 		<?php if($lists): ?>
 			<?php $list_count = count($lists); ?>
-			<div class="flex flex-wrap xl:gap-x-[60px] md:gap-y-[90px] lg:gap-x-[30px] gap-x-[20px] sm:gap-y-[40px] gap-y-[40px] justify-center">
+			<div class="flex flex-wrap xl:gap-x-[70px] md:gap-y-[90px] lg:gap-x-[30px] gap-x-[20px] sm:gap-y-[40px] gap-y-[40px] justify-center">
 				<?php foreach($lists as $list): 
 					$heading = $list['heading'];
 					$content = $list['content'];
