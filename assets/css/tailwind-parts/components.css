@@ -1264,6 +1264,7 @@ button.swiper-button-disabled {
 .blog-content .content-sec .wrapper li:not(:last-child) {margin-bottom: 0px;}
 
 .blog-content figure{margin: 0px !important;}
+.blog-content figure.alignright{margin-bottom:10px !important;margin-left:10px !important;}
 
 .blog-content .two-col {padding: 0px;}
 
