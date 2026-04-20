@@ -35,7 +35,7 @@ $description = get_field('ct_content');
       </h2>
       
       <?php if($description): ?>
-        <p class="max-w-[685px] w-full text-[18px]  min-[600px]:text-xl leading-[26px] min-[600px]:leading-7 text-gray-50 font-body"><?= wp_kses_post($description) ?></p>
+        <p class="max-w-[685px] w-full text-[18px]  min-[600px]:text-xl leading-[26px] min-[600px]:leading-7 text-gray-50 font-body pb-[10px]"><?= wp_kses_post($description) ?></p>
       <?php endif; ?>
 
       <?php if( have_rows('cta_items') ): ?>
