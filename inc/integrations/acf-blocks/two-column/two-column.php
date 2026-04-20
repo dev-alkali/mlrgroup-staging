@@ -45,6 +45,14 @@ $mobileFlex = 'flex-col-reverse';
 $content_width = get_sub_field('content_width');
 $section_color = get_sub_field('section_color');
 
+$select_image_size = get_sub_field('select_image_size');
+$img_size_class = '';
+if ( $select_image_size === 'Cover' ) {
+    $img_size_class = ' img-over';
+} elseif ( $select_image_size === 'Full' ) {
+    $img_size_class = ' img-full';
+}
+
 if ( $content_width ){
   echo '<style>
   @media (min-width: 1025px) {
@@ -72,7 +80,7 @@ if ( $section_color == 'black' ){
 }
 
 ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] <?php echo $bg_color_class; ?><?php echo $pt_class; ?><?php echo $pb_class; ?>">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] <?php echo $bg_color_class; ?><?php echo $pt_class; ?><?php echo $pb_class; ?><?php echo $img_size_class; ?>">
       
       <div class="gap-[30px] md:gap-[0px] w-full wrapper flex flex-col <?php echo $mobileFlex . ' ' . $desktopFlex; ?> items-center two-column-wrapper">
 
