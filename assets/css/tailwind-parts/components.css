@@ -1257,8 +1257,6 @@ button.swiper-button-disabled {
 .blog-content p:not(:last-child),
 .blog-content .content-sec .wrapper :not(:last-child) {margin-bottom: 25px;}
 
-
-
 .blog-content .two-col li:not(:last-child),
 .blog-content .two-col p:not(:last-child),
 .blog-content .content-sec .wrapper li:not(:last-child) {margin-bottom: 0px;}
