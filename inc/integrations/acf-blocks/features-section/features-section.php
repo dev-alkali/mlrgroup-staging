@@ -80,7 +80,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 								<div class="text-[18px] leading-[26px] text-[#525252] font-body tracking-[0px]"><?php echo $content; ?></div>
 							<?php endif; ?>
 							
-							<img class="w-4 md:w-[23px] md:h-[23px] absolute r-0 b-0" src="<?= get_template_directory_uri() ?>/assets/imgs/red-arrow-feature-sec.svg" alt="arrow">
+							<img class="w-4 md:w-[23px] md:h-[23px] absolute right-0 bottom-0" src="<?= get_template_directory_uri() ?>/assets/imgs/red-arrow-feature-sec.svg" alt="arrow">
 						</div>
 					</div>
 				<?php endforeach; ?>
