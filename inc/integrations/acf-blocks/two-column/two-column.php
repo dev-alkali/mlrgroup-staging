@@ -48,7 +48,7 @@ $section_color = get_sub_field('section_color');
 $select_image_size = get_sub_field('select_image_size');
 $img_size_class = '';
 if ( $select_image_size === 'Cover' ) {
-    $img_size_class = ' img-over';
+    $img_size_class = ' img-cover';
 } elseif ( $select_image_size === 'Full' ) {
     $img_size_class = ' img-full';
 }
