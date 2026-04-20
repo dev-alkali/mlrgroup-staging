@@ -72,9 +72,6 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 					}
 					?>
 					<div class="flex flex-row md:gap-[20px] gap-[16px] <?php echo $width_class; ?>">
-						<div class="flex md:w-[45px] md:h-[45px] w-[40px] h-[40px] relative">
-							<img src="<?php echo get_template_directory_uri() ?>/assets/imgs/list-icon.svg" alt="" class="w-full">
-						</div>
 						<div class="flex flex-col flex-1">
 							<?php if($heading): ?>
 								<h3 class="text-[clamp(20px,2.6vw,28px)] leading-[clamp(28px,3.2vw,36px)] tracking-[-2%] text-[#262626] font-heading font-bold mb-[12px] md:pt-[10px] pt-[8px]"><?php echo $heading; ?></h3>
