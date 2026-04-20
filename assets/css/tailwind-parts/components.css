@@ -1492,7 +1492,7 @@ article.service-card:hover .bg-image{filter: none !important;}
   .c-cta h2{display: block;}
 
   .blog-content figure.alignright{margin-left:0px !important;}
-  .blog-content figure.alignright img{width:100%;}
+  .blog-content figure.alignright img{width:100% !important;}
 }
 
 @media(max-width: 600px){
