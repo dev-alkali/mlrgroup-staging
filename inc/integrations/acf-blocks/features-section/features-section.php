@@ -42,20 +42,14 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 			<div class="w-full wrapper lg:mb-[70px] sm:mb-[50px] mb-[20px] overflow-visible">
 				<?php if($title_row_1 || $title_row_2): ?>
 				<h2 class="xl:text-[68px] md:text-[52px] text-[36px] leading-[40px] md:leading-[62px] xl:leading-[76px] tracking-[-2%] text-[#262626] font-heading lg:mb-[20px] relative heading-our-values">
-					<!-- <div class="bg-repeat absolute top-[0px] left-[10%] right-[calc(100%+100px)] arrow-img-position w-full h-[100%]" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/our-value-arrow.svg');"></div> -->
 					<?php if($title_row_1): ?>
 						<span class="relative w-full block flex gap-[10px] title-our-values-1">
 							<span class="font-bold bg-white pr-[5px] "><?= wp_kses_post($title_row_1) ?></span>
-							<div class="flex-1 flex flex-col arrow-parent">
-								<div class="arrow-img-position w-full flex-1 bg-repeat-x arrow-img-position-1line" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/our-value-arrow.svg');"></div>
-								<div class="arrow-img-position w-full flex-1 bg-repeat-x arrow-img-position-2line  md:hidden" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/our-value-arrow.svg');"></div>
-							</div>
 						</span>
 					<?php endif; ?>
 					<?php if($title_row_2): ?>
 						<span class="relative w-full block flex gap-[10px] title-our-values-2">
 							<span class="font-bold pr-[5px] bg-white"><?= wp_kses_post($title_row_2) ?></span>
-							<div class="arrow-img-position w-full flex-1 bg-repeat-x" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/our-value-arrow.svg');"></div>
 						</span>
 					<?php endif; ?>
 				</h2>
