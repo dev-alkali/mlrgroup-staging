@@ -72,13 +72,15 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 					}
 					?>
 					<div class="flex flex-row md:gap-[20px] gap-[16px] <?php echo $width_class; ?>">
-						<div class="flex flex-col flex-1 border-b border-[#FC4438] pb-[25px]">
+						<div class="flex flex-col flex-1 border-b border-[#FC4438] pb-[25px] relative">
 							<?php if($heading): ?>
 								<h3 class="text-[clamp(20px,2.6vw,28px)] leading-[clamp(28px,3.2vw,36px)] tracking-[-2%] text-[#262626] font-heading font-bold mb-[12px] md:pt-[10px] pt-[8px]"><?php echo $heading; ?></h3>
 							<?php endif; ?>
 							<?php if($content): ?>
 								<div class="text-[18px] leading-[26px] text-[#525252] font-body tracking-[0px]"><?php echo $content; ?></div>
 							<?php endif; ?>
+							
+							<img class="w-4 md:w-[23px] md:h-[23px] absolute r-0 b-0" src="<?= get_template_directory_uri() ?>/assets/imgs/red-arrow-feature-sec.svg" alt="arrow">
 						</div>
 					</div>
 				<?php endforeach; ?>
