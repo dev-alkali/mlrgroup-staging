@@ -1,0 +1,15 @@
+{
+    "apiVersion": 3,
+    "name": "acf/features-section",
+    "title": "Features Section",
+    "description": "Features Section",
+    "style": ["file:./features-section.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["features-section", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "features-section.php"
+    },
+    "script": "features-sectionJS"
+}

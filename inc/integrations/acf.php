@@ -34,5 +34,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/acf-blocks/case-studies-grid');  
   register_block_type(__DIR__ . '/acf-blocks/ctas-multiple');  
   register_block_type(__DIR__ . '/acf-blocks/two-column-with-icon');  
+  register_block_type(__DIR__ . '/acf-blocks/features-section');  
+  
 
 } 
