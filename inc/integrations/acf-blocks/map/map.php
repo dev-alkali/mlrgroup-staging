@@ -3842,30 +3842,30 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       cls   : 'wmap-blue',
       large : true
     },
-    {
-      label : 'Mumbai',
-      city  : 'India',
-      left  : '6.39%',
-      top   : '58.6%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
-    },
-    {
-      label : 'Delhi',
-      city  : 'India',
-      left  : '10.1%',
-      top   : '48.1%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
-    },
-    {
-      label : 'Bangalore',
-      city  : 'India',
-      left  : '10.1%',
-      top   : '72.3%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
-    },
+    // {
+    //   label : 'Mumbai',
+    //   city  : 'India',
+    //   left  : '6.39%',
+    //   top   : '58.6%',
+    //   color : '#FD4338',
+    //   cls   : 'wmap-red'
+    // },
+    // {
+    //   label : 'Delhi',
+    //   city  : 'India',
+    //   left  : '10.1%',
+    //   top   : '48.1%',
+    //   color : '#FD4338',
+    //   cls   : 'wmap-red'
+    // },
+    // {
+    //   label : 'Bangalore',
+    //   city  : 'India',
+    //   left  : '10.1%',
+    //   top   : '72.3%',
+    //   color : '#FD4338',
+    //   cls   : 'wmap-red'
+    // },
     {
       label : 'China',
       city  : '',
