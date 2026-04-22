@@ -3742,9 +3742,9 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 </div>
   <div class="max-w-[1440px] mr-auto ml-auto">
     <ul class="list-none border border-[#F5F5F5] max-w-[250px] p-5 rounded-[15px]">
-      <li class="flex gap-[15px] items-center mb-[10px] font-[#525252]"><span style="width: 6px;height: 6px;border-radius: 50%;background:#FD4338;"></span>Remote Workforce</li>
-      <li class="flex gap-[15px] items-center mb-[10px] font-[#525252]"><span style="width: 10px;height: 10px;border-radius: 50%;background:#FD4338;"></span>MRL Offices</li>
-      <li class="flex gap-[15px] items-center mb-[0px] font-[#525252]"><span style="width: 10px;height: 10px;border-radius: 50%;background:#4772F2;"></span>Supplier Network</li>
+      <li class="flex gap-[15px] items-center mb-[10px] text-[#525252]"><span style="width: 6px;height: 6px;border-radius: 50%;background:#FD4338;"></span>Remote Workforce</li>
+      <li class="flex gap-[15px] items-center mb-[10px] text-[#525252]"><span style="width: 10px;height: 10px;border-radius: 50%;background:#FD4338;"></span>MRL Offices</li>
+      <li class="flex gap-[15px] items-center mb-[0px] text-[#525252]"><span style="width: 10px;height: 10px;border-radius: 50%;background:#4772F2;"></span>Supplier Network</li>
     </ul>
   </div>
 </div>
