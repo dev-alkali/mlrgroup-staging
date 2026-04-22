@@ -3799,8 +3799,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Jiangsu',
       city  : 'China',
-      left  : '32.8%',
-      top   : '32.6%',
+      left  : '34.5%',
+      top   : '28%',
       color : '#FD4338',
       cls   : 'wmap-red',
       large : true
@@ -3902,8 +3902,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Chicago',
       city  : 'USA',
-      left  : '59.3%',
-      top   : '22.4%',
+      left  : '62%',
+      top   : '25.4%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
@@ -3926,16 +3926,16 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Charleston',
       city  : 'USA',
-      left  : '68.5%',
-      top   : '34.3%',
+      left  : '66.7%',
+      top   : '29.5%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
       label : 'Atlanta',
       city  : 'USA',
-      left  : '62%',
-      top   : '31%',
+      left  : '66.5%',
+      top   : '33.5%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
