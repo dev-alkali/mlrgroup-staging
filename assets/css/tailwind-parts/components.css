@@ -1504,6 +1504,8 @@ article.service-card:hover .bg-image{filter: none !important;}
   .blog-content figure.alignright img{width:100% !important;}
 
   .red-line:after {content: '';width: calc(100% - 18px);}
+
+  .map br{display:none;}
 }
 
 @media(max-width: 600px){
