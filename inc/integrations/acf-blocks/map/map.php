@@ -3878,8 +3878,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Las Vegas',
       city  : 'USA',
-      left  : '53.1%',
-      top   : '15.5%',
+      left  : '57.5%',
+      top   : '32.5%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
