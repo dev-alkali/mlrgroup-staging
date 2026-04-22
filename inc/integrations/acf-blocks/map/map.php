@@ -3864,8 +3864,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       left  : '10.1%',
       top   : '72.3%',
       color : '#FD4338',
-      cls   : 'wmap-red',
-      large : true
+      cls   : 'wmap-red'
     },
     {
       label : 'China',
