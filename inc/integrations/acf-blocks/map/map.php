@@ -3886,16 +3886,16 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Denver',
       city  : 'USA',
-      left  : '54.36%',
-      top   : '12%',
+      left  : '61%',
+      top   : '42%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
     {
       label : 'Columbus',
       city  : 'USA',
-      left  : '59.9%',
-      top   : '10.1%',
+      left  : '58%',
+      top   : '19%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
