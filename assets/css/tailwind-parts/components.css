@@ -1502,6 +1502,8 @@ article.service-card:hover .bg-image{filter: none !important;}
 
   .blog-content figure.alignright{margin-left:0px !important;}
   .blog-content figure.alignright img{width:100% !important;}
+
+  .red-line:after {content: '';width: calc(100% - 18px);}
 }
 
 @media(max-width: 600px){
