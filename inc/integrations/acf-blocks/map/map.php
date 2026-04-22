@@ -3835,9 +3835,9 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 
     {
       label : 'India',
-      city  : 'India',
-      left  : '16.39%',
-      top   : '58.6%',
+      city  : '',
+      left  : '22.1%',
+      top   : '47.6%',
       color : '#4A78FF',
       cls   : 'wmap-blue',
       large : true
