@@ -3919,7 +3919,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       label : 'New York',
       city  : 'USA',
       left  : '69.1%',
-      top   : '20.6%',
+      top   : '29.6%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
@@ -3950,8 +3950,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Los Angeles',
       city  : 'USA',
-      left  : '56.2%',
-      top   : '30.9%',
+      left  : '57.5%',
+      top   : '42.9%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
