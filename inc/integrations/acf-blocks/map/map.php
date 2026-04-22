@@ -3789,7 +3789,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 <!-- Argentina -->
 <!-- Colombia -->
 <!-- Panama -->
-United States
+<!-- United States -->
 
 <script>
 (function () {
