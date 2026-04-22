@@ -83,7 +83,7 @@ if ( $section_color == 'black' ){
         <div class="w-full md:w-1/2 two-column-content">
           <div class="">
             <?php if($left_title_row_1 || $left_title_row_2): ?>
-            <h2 class="text-[clamp(32px,5vw,68px)] leading-[clamp(40px,6vw,76px)] tracking-[-4%] <?php echo $text_262626_class; ?> font-heading mb-[20px] md:mb-[30px]">
+            <h2 class="text-[clamp(26px,5vw,50px)] leading-[clamp(34px,6vw,60px)] tracking-[-4%] <?php echo $text_262626_class; ?> font-heading mb-[20px] md:mb-[30px]">
               <?php if($left_title_row_1): ?>
                   <span class="font-bold"><?php echo $left_title_row_1; ?></span>
               <?php endif; ?>
