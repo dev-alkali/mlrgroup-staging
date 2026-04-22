@@ -130,8 +130,8 @@ if ( $section_color == 'black' ){
         <?php if( have_rows('right_column') ): ?>
         <?php while( have_rows('right_column') ): the_row(); 
 
-          $right_title_row_1 = get_sub_field('title_row_1');
-          $right_title_row_2 = get_sub_field('title_row_2');
+          $right_title_row_1 = get_sub_field('right_title_row_1');
+          $right_title_row_2 = get_sub_field('right_title_row_2');
           $right_lists = get_sub_field('right_icon_list');
           $right_content = get_sub_field('right_content');
 
@@ -154,7 +154,7 @@ if ( $section_color == 'black' ){
             <?php endif; ?>
 
               <?php if($right_lists): ?>
-              <?php $list_count = count($right_lists); ?>
+              <?php $right_lists = count($right_lists); ?>
               <div class="flex flex-col gap-[20px]">
                 <?php foreach($right_lists as $right_list): 
                   $heading2 = $right_list['i_title'];
