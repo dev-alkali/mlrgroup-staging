@@ -3762,7 +3762,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   #wmap-inner svg,#wmap-inner img {display: block;width: 100%;height: auto;}  
   .wmap-marker {position: absolute;transform: translate(-50%, -50%);cursor: pointer;z-index: 20;transition: z-index 0s 3s;}
   .wmap-dot {width: 6px;height: 6px;border-radius: 50%;transition: opacity 0.2s;}
-  .wmap-dot-large {width: 10px;height: 10px;border-radius: 50%;transition: opacity 0.2s;}
+  .wmap-dot-large {width: 14px;height: 14px;border-radius: 50%;transition: opacity 0.2s;}
   .wmap-pin {position: absolute;top: -40px;left: 50%;transform: translateX(-50%) translateY(50%) scale(0);transform-origin: bottom center;transition: transform 0.3s ease;pointer-events: none;width: 20px;height: 20px;transition: transform 0.3s ease 0s;}
   /*.wmap-marker:hover .wmap-dot {opacity: 0;}*/
   .wmap-marker:hover .wmap-pin {transform: translateX(-50%) translateY(50%) scale(1);transition: transform 0.3s ease 0s;}
@@ -3777,6 +3777,9 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   .wmap-marker.active .wmap-pin {transform: translateX(-50%) translateY(50%) scale(1);transition: transform 0.3s ease 0s;}
   .wmap-marker.active .wmap-tooltip {opacity: 1;transform: translateX(-50%) translateY(0);transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;}
   .wmap-marker.active {z-index: 22;transition: z-index 0s 0s;}
+  .wmap-marker.country-marker {z-index: 22;}
+  .wmap-marker.country-marker .wmap-pin {transform: translateX(-50%) translateY(50%) scale(1);}
+  .wmap-marker.country-marker .wmap-tooltip {opacity: 1;transform: translateX(-50%) translateY(0);}
   /* @media (max-width: 767px){
     #wmap-inner{max-width: 80%;}
   } */
@@ -3824,23 +3827,25 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       large : true
     },
     {
-      label : 'United States',
-      city  : '',
-      left  : '63.3%',
-      top   : '30.2%',
-      color : '#4A78FF',
-      cls   : 'wmap-blue',
-      large : true
+      label   : 'United States',
+      city    : '',
+      left    : '63.3%',
+      top     : '30.2%',
+      color   : '#4A78FF',
+      cls     : 'wmap-blue',
+      large   : true,
+      country : true
     },
 
     {
-      label : 'India',
-      city  : '',
-      left  : '22.1%',
-      top   : '47.6%',
-      color : '#4A78FF',
-      cls   : 'wmap-blue',
-      large : true
+      label   : 'India',
+      city    : '',
+      left    : '22.1%',
+      top     : '47.6%',
+      color   : '#4A78FF',
+      cls     : 'wmap-blue',
+      large   : true,
+      country : true
     },
     // {
     //   label : 'Mumbai',
@@ -3867,13 +3872,14 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     //   cls   : 'wmap-red'
     // },
     {
-      label : 'China',
-      city  : '',
-      left  : '25%',
-      top   : '40%',
-      color : '#4A78FF',
-      cls   : 'wmap-blue',
-      large : true
+      label   : 'China',
+      city    : '',
+      left    : '25%',
+      top     : '40%',
+      color   : '#4A78FF',
+      cls     : 'wmap-blue',
+      large   : true,
+      country : true
     },
     {
       label : 'Las Vegas',
@@ -3972,13 +3978,14 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       cls   : 'wmap-red'
     },
     {
-      label : 'Panama',
-      city  : '',
-      left  : '63.5%',
-      top   : '55%',
-      color : '#4A78FF',
-      cls   : 'wmap-blue',
-      large : true
+      label   : 'Panama',
+      city    : '',
+      left    : '63.5%',
+      top     : '55%',
+      color   : '#4A78FF',
+      cls     : 'wmap-blue',
+      large   : true,
+      country : true
     },
     {
       label : 'Miami',
@@ -3989,31 +3996,34 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       cls   : 'wmap-red'
     },
     {
-      label : 'Colombia',
-      city  : '',
-      left  : '67.5%',
-      top   : '61.6%',
-      color : '#4A78FF',
-      cls   : 'wmap-blue',
-      large : true
+      label   : 'Colombia',
+      city    : '',
+      left    : '67.5%',
+      top     : '61.6%',
+      color   : '#4A78FF',
+      cls     : 'wmap-blue',
+      large   : true,
+      country : true
     },
     {
-      label : 'Argentina',
-      city  : '',
-      left  : '68.5%',
-      top   : '86%',
-      color : '#4A78FF',
-      cls   : 'wmap-blue',
-      large : true
+      label   : 'Argentina',
+      city    : '',
+      left    : '68.5%',
+      top     : '86%',
+      color   : '#4A78FF',
+      cls     : 'wmap-blue',
+      large   : true,
+      country : true
     },
     {
-      label : 'Mexico',
-      city  : '',
-      left  : '60.3%',
-      top   : '46.5%',
-      color : '#4A78FF',
-      cls   : 'wmap-blue',
-      large : true
+      label   : 'Mexico',
+      city    : '',
+      left    : '60.3%',
+      top     : '46.5%',
+      color   : '#4A78FF',
+      cls     : 'wmap-blue',
+      large   : true,
+      country : true
     },
     {
       label : 'London',
@@ -4037,7 +4047,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 
     MARKERS.forEach(function(m) {
       var el = document.createElement('div');
-      el.className  = 'wmap-marker';
+      el.className  = 'wmap-marker' + (m.country ? ' country-marker' : '');
       el.style.left = m.left;
       el.style.top  = m.top;
       el.innerHTML  =
@@ -4056,14 +4066,15 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   window.addEventListener('resize', placeMarkers);
 
   function autoCycle() {
-    var markers = document.querySelectorAll('.wmap-marker');
     var current = 0;
     function hideCurrentThenShow() {
-      markers = document.querySelectorAll('.wmap-marker');
+      var markers = Array.from(document.querySelectorAll('.wmap-marker')).filter(function(m) {
+        return !m.classList.contains('country-marker');
+      });
       markers.forEach(function(m) { m.classList.remove('active'); });
       setTimeout(function() {
         if (markers.length > 0) {
-          markers[current].classList.add('active');
+          markers[current % markers.length].classList.add('active');
           current = (current + 1) % markers.length;
         }
       }, 400);
