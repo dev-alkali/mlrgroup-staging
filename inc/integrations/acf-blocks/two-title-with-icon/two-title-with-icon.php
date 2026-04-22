@@ -45,6 +45,9 @@ $section_color = get_sub_field('section_color');
 $left_lists = get_sub_field('left_icon_list');
 $right_lists = get_sub_field('right_icon_list');
 
+$left_content = get_sub_field('left_content');
+$right_content = get_sub_field('right_content');
+
 
 if ( $content_width ){
   echo '<style>
@@ -91,6 +94,10 @@ if ( $section_color == 'black' ){
             </h2>
             <?php endif; ?>
 
+            <?php if($left_content): ?>
+              <div class="w-full text-[clamp(16px,3vw,18px)] leading-[28px] <?php echo $text_525252_class; ?> font-body flex flex-col gap-[15px] description-content mb-[20px]"><p><?php echo $left_content; ?></p></div>
+            <?php endif; ?>
+
               <?php if($left_lists): ?>
               <?php $left_lists = count($left_lists); ?>
               <div class="flex flex-col gap-[20px]'">
@@ -131,6 +138,10 @@ if ( $section_color == 'black' ){
                   <span class="font-bold"><?php echo $right_title_row_2; ?></span>
               <?php endif; ?>
             </h2>
+            <?php endif; ?>
+
+            <?php if($right_content): ?>
+              <div class="w-full text-[clamp(16px,3vw,18px)] leading-[28px] <?php echo $text_525252_class; ?> font-body flex flex-col gap-[15px] description-content mb-[20px]"><?php echo $right_content; ?></div>
             <?php endif; ?>
 
               <?php if($right_lists): ?>
