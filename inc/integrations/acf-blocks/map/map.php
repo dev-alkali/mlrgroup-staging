@@ -3826,8 +3826,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'United States',
       //city  : 'United States',
-      left  : '66.39%',
-      top   : '30.6%',
+      left  : '63.3%',
+      top   : '30.2%',
       color : '#4A78FF',
       cls   : 'wmap-blue',
       large : true
