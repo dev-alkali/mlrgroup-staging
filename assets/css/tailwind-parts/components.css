@@ -1414,6 +1414,8 @@ article.service-card:hover .bg-image{filter: none !important;}
 .c-cta__button:hover, .c-cta__button:nth-child(2n):hover { background: #fff; color: #323232; }
 .mobile-nav-arrow { transform: rotate(45deg)translateY(4px); }
 
+.logo-cards .logo-card:nth-child(n+26) {display: none;}
+
 /* Responsive */
 @media (min-width: 48rem) {
   .cs-cards { flex-direction: row; flex-wrap: wrap; }
