@@ -31,22 +31,12 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     $pb_class = ' ' . 'pb0';
 }
 
-$left_title_row_1 = get_sub_field('left_title_row_1');
-$left_title_row_2 = get_sub_field('left_title_row_2');
-
-$right_title_row_1 = get_sub_field('title_row_1');
-$right_title_row_2 = get_sub_field('title_row_2');
 
 
 // Mobile: always content first, image bottom
 $content_width = get_sub_field('content_width');
 $section_color = get_sub_field('section_color');
 
-$left_lists = get_sub_field('left_icon_list');
-$right_lists = get_sub_field('right_icon_list');
-
-$left_content = get_sub_field('left_content');
-$right_content = get_sub_field('right_content');
 
 
 if ( $content_width ){
@@ -82,7 +72,14 @@ if ( $section_color == 'black' ){
 
         <!-- Left -->
         <?php if( have_rows('left_column') ): ?>
-        <?php while( have_rows('left_column') ): the_row(); ?>
+        <?php while( have_rows('left_column') ): the_row(); 
+
+          $left_title_row_1 = get_sub_field('left_title_row_1');
+          $left_title_row_2 = get_sub_field('left_title_row_2');
+          $left_content = get_sub_field('left_content');
+          $left_lists = get_sub_field('left_icon_list');
+
+        ?>
         <div class="w-full md:w-1/2 two-column-content">
           <div class="">
             <?php if($left_title_row_1 || $left_title_row_2): ?>
@@ -131,7 +128,14 @@ if ( $section_color == 'black' ){
 
         <!-- Right -->
         <?php if( have_rows('right_column') ): ?>
-        <?php while( have_rows('right_column') ): the_row(); ?>
+        <?php while( have_rows('right_column') ): the_row(); 
+
+          $right_title_row_1 = get_sub_field('title_row_1');
+          $right_title_row_2 = get_sub_field('title_row_2');
+          $right_lists = get_sub_field('right_icon_list');
+          $right_content = get_sub_field('right_content');
+
+        ?>
          <div class="w-full md:w-1/2 two-column-content">
           <div class="">
             <?php if($right_title_row_1 || $right_title_row_2): ?>
