@@ -1416,6 +1416,8 @@ article.service-card:hover .bg-image{filter: none !important;}
 
 .logo-cards .logo-card:nth-child(n+26) {display: none;}
 
+.red-line:after {content: '';display: block;position: absolute;left: 0;bottom: 0;background: #FC4438;width: calc(100% - 23px);height: 1px;}
+
 /* Responsive */
 @media (min-width: 48rem) {
   .cs-cards { flex-direction: row; flex-wrap: wrap; }
