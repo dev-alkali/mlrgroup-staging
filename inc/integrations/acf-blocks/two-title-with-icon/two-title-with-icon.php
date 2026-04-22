@@ -33,9 +33,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 
 $title_row_1 = get_sub_field('title_row_1');
 $title_row_2 = get_sub_field('title_row_2');
-$description = get_sub_field('description');
-//$left_image_or_right_image = get_sub_field('left_image_or_right_image');
-$layout = get_sub_field('left_image_or_right_image'); // left / right
+$layout = get_sub_field('left_image_or_right_image'); 
 // Desktop layout
 $desktopFlex = ($layout === 'Right Image') ? 'md:flex-row-reverse img-right' : 'md:flex-row img-left';
 
@@ -45,9 +43,9 @@ $mobileFlex = 'flex-col-reverse';
 $content_width = get_sub_field('content_width');
 $section_color = get_sub_field('section_color');
 
-$lists = get_sub_field('icon_list');
-$image  = get_sub_field('image');
-$has_image = !empty($image);
+$left_lists = get_sub_field('left_icon_list');
+$right_lists = get_sub_field('right_icon_list');
+
 
 if ( $content_width ){
   echo '<style>
@@ -80,12 +78,6 @@ if ( $section_color == 'black' ){
       
       <div class="gap-[30px] md:gap-[0px] w-full wrapper flex flex-col <?php echo $has_image ? $mobileFlex . ' ' . $desktopFlex : ''; ?> items-center two-column-wrapper">
 
-        <?php if ($has_image): ?>
-        <div class="w-full md:w-1/2 lg:w-[47%] two-column-image">
-          <figure class="!m-0 flex"><?php echo wp_get_attachment_image($image, 'full', false, ['class' => 'w-full h-auto']); ?></figure>
-        </div>
-        <?php endif; ?>
-
         <div class="w-full <?php echo $has_image ? 'md:w-1/2 lg:w-[53%]' : ''; ?> two-column-content">
           <div class="<?php echo $has_image ? ($layout === 'Right Image' ? 'pl-[0px] md:pr-[30px] lg:pr-[60px]' : 'pr-[0px] md:pl-[30px] lg:pl-[60px]') : ''; ?>">
             <?php if($title_row_1 || $title_row_2): ?>
@@ -97,9 +89,6 @@ if ( $section_color == 'black' ){
                   <span class="font-bold"><?php echo $title_row_2; ?></span>
               <?php endif; ?>
             </h2>
-            <?php endif; ?>
-            <?php if($description): ?>
-              <div class="w-full text-[clamp(16px,3vw,18px)] leading-[28px] <?php echo $text_525252_class; ?> font-body flex flex-col gap-[15px] description-content mb-[20px]"><?php echo $description; ?></div>
             <?php endif; ?>
 
 
@@ -126,17 +115,6 @@ if ( $section_color == 'black' ){
                 <?php endforeach; ?>
               </div>
             <?php endif; ?>
-
-
-               <?php 
-              $link = get_sub_field('button');
-              if( $link ): 
-                  $link_url = $link['url'];
-                  $link_title = $link['title'];
-                  $link_target = $link['target'] ? $link['target'] : '_self';
-                  ?>
-                  <a class="btn-primary mt-[40px]" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-              <?php endif; ?>
 
           </div>
         </div>
