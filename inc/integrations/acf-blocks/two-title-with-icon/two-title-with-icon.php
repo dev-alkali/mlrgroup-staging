@@ -31,15 +31,14 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     $pb_class = ' ' . 'pb0';
 }
 
-$title_row_1 = get_sub_field('title_row_1');
-$title_row_2 = get_sub_field('title_row_2');
-$layout = get_sub_field('left_image_or_right_image'); 
-// Desktop layout
-$desktopFlex = ($layout === 'Right Image') ? 'md:flex-row-reverse img-right' : 'md:flex-row img-left';
+$left_title_row_1 = get_sub_field('left_title_row_1');
+$left_title_row_2 = get_sub_field('left_title_row_2');
+
+$right_title_row_1 = get_sub_field('title_row_1');
+$right_title_row_2 = get_sub_field('title_row_2');
+
 
 // Mobile: always content first, image bottom
-$mobileFlex = 'flex-col-reverse';
-
 $content_width = get_sub_field('content_width');
 $section_color = get_sub_field('section_color');
 
@@ -76,28 +75,28 @@ if ( $section_color == 'black' ){
 ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] <?php echo $bg_color_class; ?><?php echo $pt_class; ?><?php echo $pb_class; ?>">
       
-      <div class="gap-[30px] md:gap-[0px] w-full wrapper flex flex-col <?php echo $has_image ? $mobileFlex . ' ' . $desktopFlex : ''; ?> items-center two-column-wrapper">
+      <div class="gap-[30px] md:gap-[0px] w-full wrapper flex flex-col items-center two-column-wrapper">
 
-        <div class="w-full <?php echo $has_image ? 'md:w-1/2 lg:w-[53%]' : ''; ?> two-column-content">
-          <div class="<?php echo $has_image ? ($layout === 'Right Image' ? 'pl-[0px] md:pr-[30px] lg:pr-[60px]' : 'pr-[0px] md:pl-[30px] lg:pl-[60px]') : ''; ?>">
-            <?php if($title_row_1 || $title_row_2): ?>
+        <!-- Left -->
+        <div class="w-full md:w-1/2 two-column-content">
+          <div class="">
+            <?php if($left_title_row_1 || $left_title_row_2): ?>
             <h2 class="text-[clamp(32px,5vw,68px)] leading-[clamp(40px,6vw,76px)] tracking-[-4%] <?php echo $text_262626_class; ?> font-heading mb-[20px] md:mb-[30px]">
-              <?php if($title_row_1): ?>
-                  <span class="font-bold"><?php echo $title_row_1; ?></span>
+              <?php if($left_title_row_1): ?>
+                  <span class="font-bold"><?php echo $left_title_row_1; ?></span>
               <?php endif; ?>
-              <?php if($title_row_2): ?>
-                  <span class="font-bold"><?php echo $title_row_2; ?></span>
+              <?php if($left_title_row_2): ?>
+                  <span class="font-bold"><?php echo $left_title_row_2; ?></span>
               <?php endif; ?>
             </h2>
             <?php endif; ?>
 
-
-              <?php if($lists): ?>
-              <?php $list_count = count($lists); ?>
-              <div class="<?php echo $has_image ? 'flex flex-col gap-[20px]' : 'grid grid-cols-1 md:grid-cols-2 gap-[20px]'; ?>">
-                <?php foreach($lists as $list): 
-                  $heading = $list['i_title'];
-                  $content = $list['i_content'];
+              <?php if($left_lists): ?>
+              <?php $left_lists = count($left_lists); ?>
+              <div class="flex flex-col gap-[20px]'">
+                <?php foreach($left_lists as $left_list): 
+                  $heading = $left_list['i_title'];
+                  $content = $left_list['i_content'];
                   ?>
                   <div class="flex flex-row gap-[15px] w-full">
                     <div class="flex w-[24px] h-[24px] relative">
@@ -115,7 +114,48 @@ if ( $section_color == 'black' ){
                 <?php endforeach; ?>
               </div>
             <?php endif; ?>
+          </div>
+        </div>
 
+
+
+        <!-- Right -->
+         <div class="w-full md:w-1/2 two-column-content">
+          <div class="">
+            <?php if($right_title_row_1 || $right_title_row_2): ?>
+            <h2 class="text-[clamp(26px,5vw,50px)] leading-[clamp(34px,6vw,60px)] tracking-[-4%] <?php echo $text_262626_class; ?> font-heading mb-[20px] md:mb-[30px]">
+              <?php if($right_title_row_1): ?>
+                  <span class="font-bold"><?php echo $right_title_row_1; ?></span>
+              <?php endif; ?>
+              <?php if($right_title_row_2): ?>
+                  <span class="font-bold"><?php echo $right_title_row_2; ?></span>
+              <?php endif; ?>
+            </h2>
+            <?php endif; ?>
+
+              <?php if($right_lists): ?>
+              <?php $list_count = count($right_lists); ?>
+              <div class="flex flex-col gap-[20px]">
+                <?php foreach($right_lists as $right_list): 
+                  $heading2 = $right_list['i_title'];
+                  $content2 = $right_list['i_content'];
+                  ?>
+                  <div class="flex flex-row gap-[15px] w-full">
+                    <div class="flex w-[24px] h-[24px] relative">
+                      <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/list-icon.svg" alt="" class="w-full">
+                    </div>
+                    <div class="flex flex-col flex-1">
+                      <?php if($heading2): ?>
+                        <h3 class="text-[clamp(18px,2.6vw,20px)] leading-[clamp(22px,3.2vw,24px)] tracking-[-2%] text-[#262626] font-heading font-bold mb-[10px]"><?php echo $heading2; ?></h3>
+                      <?php endif; ?>
+                      <?php if($content2): ?>
+                        <div class="text-[18px] leading-[26px] text-[#525252] font-body tracking-[0px]"><?php echo $content2; ?></div>
+                      <?php endif; ?>
+                    </div>
+                  </div>
+                <?php endforeach; ?>
+              </div>
+            <?php endif; ?>
           </div>
         </div>
       </div>
