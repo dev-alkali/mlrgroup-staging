@@ -18,6 +18,7 @@ get_header();
 			
 				<h1 class="font-heading font-bold w-full text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em] text-[#262626]"><?php the_title(); ?></h1>
 
+				<?php /*
 				<div class="mt-[28px] overflow-hidden">
 					<div class="aspect-[16/9]">
 					<?php if (has_post_thumbnail()) : ?>
@@ -26,7 +27,7 @@ get_header();
 						<img class="w-full h-full object-contain" src="/wp-content/themes/Mlrgroup/assets/imgs/altr-img.jpg" alt="">
 					<?php endif; ?>
 					</div>
-				</div>
+				</div> */ ?>
 
 				<div class="cs-arrow-row-post md:flex mt-[20px] hidden relative overflow-hidden items-center h-[50px]">
 					<div class="absolute inset-0 flex flex-row-reverse items-center pr-[50px]">
