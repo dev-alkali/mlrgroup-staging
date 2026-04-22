@@ -3783,12 +3783,19 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 </style>
 
 
+<!-- China -->
+<!-- India -->
+<!-- Mexico -->
+<!-- Argentina -->
+<!-- Colombia -->
+<!-- Panama -->
+United States
 
 <script>
 (function () {
 
   var MARKERS = [
-    /* ── BLUE DOTS ── */
+    
     {
       label : 'Jiangsu',
       city  : 'China',
@@ -3816,16 +3823,32 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       cls   : 'wmap-red',
       large : true
     },
+    {
+      label : 'United States',
+      city  : 'United States',
+      left  : '66.39%',
+      top   : '30.6%',
+      color : '#4A78FF',
+      cls   : 'wmap-blue',
+      large : true
+    },
 
-    /* ── RED DOTS ── */
+    {
+      label : 'India',
+      city  : 'India',
+      left  : '16.39%',
+      top   : '58.6%',
+      color : '#4A78FF',
+      cls   : 'wmap-blue',
+      large : true
+    },
     {
       label : 'Mumbai',
       city  : 'India',
       left  : '6.39%',
       top   : '58.6%',
       color : '#4A78FF',
-      cls   : 'wmap-blue',
-      large : true
+      cls   : 'wmap-red'
     },
     {
       label : 'Delhi',
@@ -3833,8 +3856,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       left  : '10.1%',
       top   : '48.1%',
       color : '#4A78FF',
-      cls   : 'wmap-blue',
-      large : true
+      cls   : 'wmap-red'
     },
     {
       label : 'Bangalore',
@@ -3842,7 +3864,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       left  : '10.1%',
       top   : '72.3%',
       color : '#4A78FF',
-      cls   : 'wmap-blue',
+      cls   : 'wmap-red',
       large : true
     },
     {
