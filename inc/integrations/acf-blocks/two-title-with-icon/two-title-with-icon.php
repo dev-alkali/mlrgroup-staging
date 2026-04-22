@@ -81,6 +81,8 @@ if ( $section_color == 'black' ){
       <div class="gap-[30px] md:gap-[0px] w-full wrapper flex flex-col items-center two-column-wrapper">
 
         <!-- Left -->
+        <?php if( have_rows('left_column') ): ?>
+        <?php while( have_rows('left_column') ): the_row(); ?>
         <div class="w-full md:w-1/2 two-column-content">
           <div class="">
             <?php if($left_title_row_1 || $left_title_row_2): ?>
@@ -123,10 +125,13 @@ if ( $section_color == 'black' ){
             <?php endif; ?>
           </div>
         </div>
-
+        <?php endwhile; ?>
+        <?php endif; ?>
 
 
         <!-- Right -->
+        <?php if( have_rows('right_column') ): ?>
+        <?php while( have_rows('right_column') ): the_row(); ?>
          <div class="w-full md:w-1/2 two-column-content">
           <div class="">
             <?php if($right_title_row_1 || $right_title_row_2): ?>
@@ -169,6 +174,10 @@ if ( $section_color == 'black' ){
             <?php endif; ?>
           </div>
         </div>
+        <?php endwhile; ?>
+<?php endif; ?>
+
+
       </div>
     </section>
 <?php endwhile;
