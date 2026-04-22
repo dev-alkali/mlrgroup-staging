@@ -16,7 +16,7 @@ if (!empty($block['className'])) {
 
 
 ?>
-<?php if (have_rows('two_column_with_icon')) :  while (have_rows('two_column_with_icon')) : the_row();
+<?php if (have_rows('two_title_with_icon')) :  while (have_rows('two_title_with_icon')) : the_row();
 
 $section_remove_top_padding    = get_sub_field('section_remove_top_padding');
 $section_remove_bottom_padding = get_sub_field('section_remove_bottom_padding');
