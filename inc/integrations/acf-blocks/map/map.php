@@ -3739,12 +3739,10 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 </clipPath>
 </defs>
 </svg>
-
-
-  
-
-
 </div>
+  <div class="max-w-[1440px]">
+    Testing
+  </div>
 </div>
 </div>
 </section>
