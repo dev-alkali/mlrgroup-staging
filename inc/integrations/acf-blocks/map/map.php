@@ -3776,7 +3776,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   .wmap-marker:hover{z-index: 21;transition: z-index 0s 0s;}
   .wmap-marker.active .wmap-pin {transform: translateX(-50%) translateY(50%) scale(1);transition: transform 0.3s ease 0s;}
   .wmap-marker.active .wmap-tooltip {opacity: 1;transform: translateX(-50%) translateY(0);transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;}
-  .wmap-marker.active {z-index: 22;transition: z-index 0s 0s;}
+  .wmap-marker.active {z-index: 30;transition: z-index 0s 0s;}
   .wmap-marker.country-marker {z-index: 22;}
   .wmap-marker.country-marker .wmap-pin {transform: translateX(-50%) translateY(50%) scale(1);}
   .wmap-marker.country-marker .wmap-tooltip {opacity: 1;transform: translateX(-50%) translateY(0);}

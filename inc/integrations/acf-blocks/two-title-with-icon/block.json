@@ -1,0 +1,15 @@
+{
+    "apiVersion": 3,
+    "name": "acf/two-title-with-icon",
+    "title": "Two Title with Icon",
+    "description": "two-title-with-icon Section",
+    "style": ["file:./two-title-with-icon.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["two-title-with-icon", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "two-title-with-icon.php"
+    },
+    "script": "two-title-with-iconJS"
+}
