@@ -3868,9 +3868,9 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     },
     {
       label : 'China',
-      city  : 'China',
-      left  : '24.2%',
-      top   : '32.5%',
+      city  : '',
+      left  : '25%',
+      top   : '40%',
       color : '#4A78FF',
       cls   : 'wmap-blue',
       large : true
@@ -3972,10 +3972,10 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       cls   : 'wmap-red'
     },
     {
-      label : 'Panama City',
-      city  : 'Panama',
-      left  : '61.8%',
-      top   : '53%',
+      label : 'Panama',
+      city  : '',
+      left  : '63.5%',
+      top   : '55%',
       color : '#4A78FF',
       cls   : 'wmap-blue',
       large : true
@@ -3989,28 +3989,28 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       cls   : 'wmap-red'
     },
     {
-      label : 'Bogota',
-      city  : 'Colombia',
-      left  : '66%',
-      top   : '65.6%',
+      label : 'Colombia',
+      city  : '',
+      left  : '67.5%',
+      top   : '61.6%',
       color : '#4A78FF',
       cls   : 'wmap-blue',
       large : true
     },
     {
-      label : 'Buenos Aires',
-      city  : 'Argentina',
-      left  : '72.2%',
-      top   : '74%',
+      label : 'Argentina',
+      city  : '',
+      left  : '68.5%',
+      top   : '86%',
       color : '#4A78FF',
       cls   : 'wmap-blue',
       large : true
     },
     {
-      label : 'Mexico City',
-      city  : 'Mexico',
-      left  : '60%',
-      top   : '42%',
+      label : 'Mexico',
+      city  : '',
+      left  : '60.3%',
+      top   : '46.5%',
       color : '#4A78FF',
       cls   : 'wmap-blue',
       large : true
