@@ -3932,8 +3932,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Charleston',
       city  : 'USA',
-      left  : '66.7%',
-      top   : '29.5%',
+      left  : '67.7%',
+      top   : '31.5%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
