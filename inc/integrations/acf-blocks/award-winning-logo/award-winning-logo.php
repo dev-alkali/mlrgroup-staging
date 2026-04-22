@@ -34,7 +34,7 @@ if (!empty($block['className'])) {
 
 ?>
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>py-[40px] md:py-[60px] px-4 md:px-10 <?php echo $pt_class; ?><?php echo $pb_class; ?>">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> py-[40px] md:py-[60px] px-4 md:px-10 <?php echo $pt_class; ?><?php echo $pb_class; ?>">
   <div class="flex items-center gap-2 wrapper">
     <div class="flex flex-col min-[890px]:flex-row gap-4 min-[600px]:gap-[40px] min-[890px]:gap-[105px] relative w-full">
       <div class="flex items-center justify-start gap-2 min-[600px]:gap-3 shrink-0 px-[20px] md:px-[0px]">
