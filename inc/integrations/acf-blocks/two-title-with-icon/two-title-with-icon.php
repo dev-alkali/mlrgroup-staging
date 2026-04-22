@@ -98,8 +98,7 @@ if ( $section_color == 'black' ){
             <?php endif; ?>
 
               <?php if($left_lists): ?>
-              <?php $left_lists = count($left_lists); ?>
-              <div class="flex flex-col gap-[20px]'">
+              <div class="flex flex-col gap-[20px]">
                 <?php foreach($left_lists as $left_list): 
                   $heading = $left_list['i_title'];
                   $content = $left_list['i_content'];
@@ -154,7 +153,6 @@ if ( $section_color == 'black' ){
             <?php endif; ?>
 
               <?php if($right_lists): ?>
-              <?php $right_lists = count($right_lists); ?>
               <div class="flex flex-col gap-[20px]">
                 <?php foreach($right_lists as $right_list): 
                   $heading2 = $right_list['i_title'];
