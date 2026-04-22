@@ -3780,9 +3780,10 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   .wmap-marker.country-marker {z-index: 22;}
   .wmap-marker.country-marker .wmap-pin {transform: translateX(-50%) translateY(50%) scale(1);}
   .wmap-marker.country-marker .wmap-tooltip {opacity: 1;transform: translateX(-50%) translateY(0);}
-  /* @media (max-width: 767px){
-    #wmap-inner{max-width: 80%;}
-  } */
+  @media (max-width: 767px){
+    .wmap-dot {width: 4px;height: 4px;border-radius: 50%;transition: opacity 0.2s;}
+    .wmap-dot-large {width: 10px;height: 10px;border-radius: 50%;transition: opacity 0.2s;} 
+  }
 </style>
 
 
