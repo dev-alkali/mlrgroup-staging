@@ -3825,7 +3825,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     },
     {
       label : 'United States',
-      //city  : 'United States',
+      city  : '',
       left  : '63.3%',
       top   : '30.2%',
       color : '#4A78FF',
