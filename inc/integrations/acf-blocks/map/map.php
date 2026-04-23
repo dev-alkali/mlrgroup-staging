@@ -3915,8 +3915,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Charlotte',
       city  : 'USA',
-      left  : '66.7%',
-      top   : '20.5%',
+      left  : '67%',
+      top   : '26%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
