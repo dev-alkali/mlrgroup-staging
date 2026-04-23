@@ -4073,6 +4073,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 
   var blueIdx = 0, largeRedIdx = 0, smallRedIdx = 0;
   var cycleTimer = null;
+  var tickTimer  = null;
 
   function queryOrdered(order) {
     var all = Array.from(document.querySelectorAll('.wmap-marker'));
@@ -4088,7 +4089,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     document.querySelectorAll('.wmap-marker.active').forEach(function(m) {
       m.classList.remove('active');
     });
-    setTimeout(function() {
+    if (tickTimer) clearTimeout(tickTimer);
+    tickTimer = setTimeout(function() {
       var blue     = queryOrdered(BLUE_ORDER);
       var largeRed = queryOrdered(LRED_ORDER);
       var smallRed = queryOrdered(SRED_ORDER);
@@ -4105,13 +4107,18 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 
   function startCycle() {
     if (cycleTimer) clearInterval(cycleTimer);
+    if (tickTimer)  clearTimeout(tickTimer);
     tick();
     cycleTimer = setInterval(tick, 3000);
   }
 
+  var resizeTimer = null;
   window.addEventListener('resize', function() {
-    placeMarkers();
-    startCycle();
+    if (resizeTimer) clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      placeMarkers();
+      startCycle();
+    }, 300);
   });
 
   startCycle();
