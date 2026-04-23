@@ -3778,8 +3778,6 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   .wmap-marker.active .wmap-tooltip {opacity: 1;transform: translateX(-50%) translateY(0);transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;}
   .wmap-marker.active {z-index: 30;transition: z-index 0s 0s;}
   .wmap-marker.country-marker {z-index: 22;}
-  .wmap-marker.country-marker .wmap-pin {transform: translateX(-50%) translateY(50%) scale(1);}
-  .wmap-marker.country-marker .wmap-tooltip {opacity: 1;transform: translateX(-50%) translateY(0);}
   @media (max-width: 767px){
     .wmap-dot {width: 4px;height: 4px;}
     .wmap-dot-large {width: 10px;height: 10px;} 
@@ -4064,27 +4062,59 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   }
 
   placeMarkers();
-  window.addEventListener('resize', placeMarkers);
 
-  function autoCycle() {
-    var current = 0;
-    function hideCurrentThenShow() {
-      var markers = Array.from(document.querySelectorAll('.wmap-marker')).filter(function(m) {
-        return !m.classList.contains('country-marker');
+  // Cycle order for each pool — sequenced to avoid geographic overlaps
+  // Large Blue (7): United States first so it pairs with Jiangsu (far away) and London
+  var BLUE_ORDER  = ['United States','India','China','Panama','Colombia','Argentina','Mexico'];
+  // Large Red (3): Jiangsu first (pairs with United States), then southern US cities
+  var LRED_ORDER  = ['Jiangsu','Fort Lauderdale','Nashville'];
+  // Small Red (14): London first (pairs with United States), then work around the map
+  var SRED_ORDER  = ['London','San Francisco','Los Angeles','Denver','Dallas','Las Vegas','Scottsdale','Miami','Columbus','Charlotte','New York','Chicago','Atlanta','Charleston'];
+
+  var blueIdx = 0, largeRedIdx = 0, smallRedIdx = 0;
+  var cycleTimer = null;
+
+  function queryOrdered(order) {
+    var all = Array.from(document.querySelectorAll('.wmap-marker'));
+    return order.map(function(lbl) {
+      return all.find(function(el) {
+        var c = el.querySelector('.wmap-tip-city');
+        return c && c.textContent.trim() === lbl;
       });
-      markers.forEach(function(m) { m.classList.remove('active'); });
-      setTimeout(function() {
-        if (markers.length > 0) {
-          markers[current % markers.length].classList.add('active');
-          current = (current + 1) % markers.length;
-        }
-      }, 400);
-    }
-    hideCurrentThenShow();
-    setInterval(hideCurrentThenShow, 3000);
+    }).filter(Boolean);
   }
 
-  autoCycle();
+  function tick() {
+    document.querySelectorAll('.wmap-marker.active').forEach(function(m) {
+      m.classList.remove('active');
+    });
+    setTimeout(function() {
+      var blue     = queryOrdered(BLUE_ORDER);
+      var largeRed = queryOrdered(LRED_ORDER);
+      var smallRed = queryOrdered(SRED_ORDER);
+
+      if (blue.length)     blue[blueIdx % blue.length].classList.add('active');
+      if (largeRed.length) largeRed[largeRedIdx % largeRed.length].classList.add('active');
+      if (smallRed.length) smallRed[smallRedIdx % smallRed.length].classList.add('active');
+
+      blueIdx     = (blueIdx + 1) % BLUE_ORDER.length;
+      largeRedIdx = (largeRedIdx + 1) % LRED_ORDER.length;
+      smallRedIdx = (smallRedIdx + 1) % SRED_ORDER.length;
+    }, 400);
+  }
+
+  function startCycle() {
+    if (cycleTimer) clearInterval(cycleTimer);
+    tick();
+    cycleTimer = setInterval(tick, 3000);
+  }
+
+  window.addEventListener('resize', function() {
+    placeMarkers();
+    startCycle();
+  });
+
+  startCycle();
 
 })();
 </script>
