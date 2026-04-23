@@ -61,7 +61,7 @@ get_header();
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class('pt-[60px] xl:px-[120px] lg:px-[60px] md:px-[30px] md:pb-[60px]'); ?> >
 				
-				<div class="blog-content max-w-[1360px] ml-auto mr-auto">
+				<div class="blog-content max-w-[900px] ml-auto mr-auto">
 					<?php the_content(); ?>
 				</div>
 				</article>
