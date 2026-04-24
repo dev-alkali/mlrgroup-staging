@@ -3873,8 +3873,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label   : 'China',
       city    : '',
-      left    : '25%',
-      top     : '40%',
+      left    : '27%',
+      top     : '38%',
       color   : '#4A78FF',
       cls     : 'wmap-blue',
       large   : true,
@@ -3953,7 +3953,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       cls   : 'wmap-red'
     },
     {
-      label : 'Los Angeles',
+      label : 'San Francisco',
       city  : 'USA',
       left  : '57.5%',
       top   : '42.9%',
@@ -3961,7 +3961,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       cls   : 'wmap-red'
     },
     {
-      label : 'San Francisco',
+      label : 'Los Angeles',
       city  : 'USA',
       left  : '58%',
       top   : '46.1%',
