@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo(0, 0);
   }
 
-  // Auto-scroll past the hero to the work list on portfolio taxonomy pages and the main work page
+  /* Auto-scroll past the hero to the work list on portfolio taxonomy pages and the main work page
   if (document.body.classList.contains('tax-portfolio-category') || document.querySelector('main.is-work-page')) {
     const workList = document.querySelector('#work-list');
     if (workList) {
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: targetTop, behavior: 'smooth' });
       }, 150);
     }
-  }
+  } */
 
   /**------------------------ Animation GSAP -------------------------**/
   const elements = document.querySelectorAll('.anim');

@@ -26,7 +26,9 @@
 $is_transparent_page = is_archive() || is_tax() || is_category() || is_tag() || is_home();
 $acf_schema          = get_field('header_schema');
 
-if ( $is_transparent_page ) {
+if ( is_tax('portfolio-category') ) {
+    $header_schema = 'relative dark-skin min-[1024px]:py-4';
+} elseif ( $is_transparent_page ) {
     $header_schema = 'absolute min-[1024px]:pt-[52px] light-skin';
 } elseif ( $acf_schema === 'light-skin' ) {
     $header_schema = 'absolute min-[1024px]:pt-[52px]';
