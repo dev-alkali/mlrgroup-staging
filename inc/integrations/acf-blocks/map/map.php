@@ -3891,8 +3891,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Denver',
       city  : 'USA',
-      left  : '59%',
-      top   : '28%',
+      left  : '60%',
+      top   : '40%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
