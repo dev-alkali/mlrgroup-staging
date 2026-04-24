@@ -3979,8 +3979,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label   : 'Panama',
       city    : '',
-      left    : '63.5%',
-      top     : '55%',
+      left    : '64%',
+      top     : '58%',
       color   : '#4A78FF',
       cls     : 'wmap-blue',
       large   : true,
