@@ -1,7 +1,7 @@
 <?php get_header() ?>
 <main id="content" class="bg-white w-full  relative is-work-page">
 
-  <?php if (have_rows('hero_portfolio', 'option')) :  while (have_rows('hero_portfolio', 'option')) : the_row(); ?>
+  <?php /* if (have_rows('hero_portfolio', 'option')) :  while (have_rows('hero_portfolio', 'option')) : the_row(); ?>
 
       <section id="" class="w-full px-4 md:px-10 bg-center bg-cover bg-no-repeat bg-[rgba(0,0,0,0.5)] bg-blend-overlay" style="  background-image: url('<?php echo esc_url(get_sub_field('bg_image')); ?>');
     background-position: 50% 38%;
@@ -26,7 +26,7 @@
     </section>
 
 <?php endwhile;
-  endif; ?>
+  endif; */ ?>
 
   <section class="w-full pt-10 md:pt-[60px] px-4 md:px-10">
   <div class="flex flex-col md:flex-row items-start gap-[20px] md:gap-10 w-full wrapper mx-auto max-[768px]:border-b border-[#CCCCCC] max-[768]:pb-[28px]">
