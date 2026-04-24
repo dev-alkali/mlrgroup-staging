@@ -3899,8 +3899,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Columbus',
       city  : 'USA',
-      left  : '58%',
-      top   : '19%',
+      left  : '65.5%',
+      top   : '30.7%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
