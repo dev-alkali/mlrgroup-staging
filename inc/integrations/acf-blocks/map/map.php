@@ -4027,8 +4027,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'London',
       city  : 'UK',
-      left  : '83.3%',
-      top   : '29.4%',
+      left  : '82.5%',
+      top   : '26%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
