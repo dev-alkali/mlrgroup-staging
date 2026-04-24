@@ -3883,8 +3883,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Las Vegas',
       city  : 'USA',
-      left  : '57.5%',
-      top   : '32.5%',
+      left  : '59%',
+      top   : '40%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
@@ -3971,8 +3971,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Scottsdale',
       city  : 'USA',
-      left  : '59%',
-      top   : '38%',
+      left  : '61%',
+      top   : '40%',
       color : '#FD4338',
       cls   : 'wmap-red'
     },
