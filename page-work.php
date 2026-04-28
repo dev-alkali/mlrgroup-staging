@@ -88,11 +88,28 @@
               </p>
             </div>
 
-            <a href=" <?= wp_kses_post(get_sub_field('btn_path')) ?>" class="btn-primary"> <?= wp_kses_post(get_sub_field('btn_label')) ?></a>
+            <a href=" " class="btn-primary"> </a>
           </div>
         </div>
       </section>
-    
+
+
+      <section id="cta-block_ea44063c95ea7a4325cd10b208f2f7541" class="c-cta flex c-cta w-full bg-black py-12 md:py-17 xl:py-25 px-4 sm:px-10">
+        <div class="c-cta__wrap flex flex-col align-center w-full gap-[40px] wrapper mx-auto">
+          <div class="c-cta__content max-w-[850px] gap-5 flex flex-col">
+            <h2 class="flex flex-col align-start c-cta__title font-heading text-white text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em]">
+              <span class="font-bold"><?= wp_kses_post(get_sub_field('title_row_1')) ?></span>
+              <span class="font-bold"><?= wp_kses_post(get_sub_field('title_row_2')) ?></span>
+            </h2>
+            <p class="max-w-[685px] w-full text-[18px]  min-[600px]:text-xl leading-[26px] min-[600px]:leading-7 text-gray-50 font-body pb-[10px]"><?= wp_kses_post(get_sub_field('description')) ?></p>
+            <div class="c-cta__buttons-wrap flex flex-col gap-[22px] max-w-[277px]"><a class="c-cta__button btn-primary" href="<?= wp_kses_post(get_sub_field('btn_path')) ?>" target="_self"><?= wp_kses_post(get_sub_field('btn_label')) ?></a></div>
+          </div>         
+        </div>
+      </section>
+
+
+   
+
 
   <?php endwhile;
   endif; ?>
