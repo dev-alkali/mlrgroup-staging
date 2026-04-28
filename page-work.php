@@ -67,6 +67,7 @@
 
   <?php if (have_rows('cta_portfolio', 'option')) :  while (have_rows('cta_portfolio', 'option')) : the_row(); ?>
 
+    <?php /*
       <section
         class=" flex w-full h-[700px] min-[600px]:h-[855px]"
         style="
@@ -88,10 +89,10 @@
               </p>
             </div>
 
-            <a href=" " class="btn-primary"> </a>
+            <a href="<?= wp_kses_post(get_sub_field('btn_path')) ?>" class="btn-primary"><?= wp_kses_post(get_sub_field('btn_label')) ?> </a>
           </div>
         </div>
-      </section>
+      </section> */ ?>
 
 
       <section id="cta-block_ea44063c95ea7a4325cd10b208f2f7541" class="c-cta flex c-cta w-full bg-black py-12 md:py-17 xl:py-25 px-4 sm:px-10">
