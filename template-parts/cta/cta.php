@@ -77,7 +77,7 @@ $link = get_sub_field('cta_button');
                 $link_title = $link['title'];
                 $link_target = $link['target'] ? $link['target'] : '_self';
                 ?>
-            <div class="c-cta__buttons-wrap flex flex-col gap-[22px] max-w-[277px]"><a class="c-cta__button btn-primary" href="<?php echo esc_attr( $link_target ); ?>" target="_self"><?php echo esc_html( $link_title ); ?></a></div>
+            <div class="c-cta__buttons-wrap flex flex-col gap-[22px] max-w-[277px]"><a class="c-cta__button btn-primary" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a></div>
             <?php endif; ?>
           </div>         
         </div>
