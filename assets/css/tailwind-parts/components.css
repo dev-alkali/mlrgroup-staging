@@ -1423,6 +1423,11 @@ article.service-card:hover .bg-image{filter: none !important;}
 
 .page-id-228 .inner-hero{background-position:center top 21%;}
 
+.spin-words-wrapper {
+    height: 37.5px;
+    overflow: hidden;
+}
+
 .spin-words span {
     display: flex;
     align-items: center;
