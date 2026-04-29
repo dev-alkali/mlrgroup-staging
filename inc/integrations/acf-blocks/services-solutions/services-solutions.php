@@ -97,7 +97,7 @@ if (!empty($block['className'])) {
                                                     $card_link_label = __('View more', 'mlrgroup');
                                                     ?>
                                                     <a class="solution-card max-lg:max-w-[400px]" href="<?= esc_url($card_link) ?>">
-                                                        <div class="flex flex-col w-full items-start gap-[15px] relative">
+                                                        <div class="flex flex-col w-full items-start gap-[15px] relative height-set">
                                                             <?php if (!empty($card_image)) : ?>
                                                                 <img class="self-stretch w-full h-[330px] object-cover" src="<?= esc_url($card_image) ?>" alt="<?= esc_attr($card_title) ?>">
                                                             <?php endif; ?>
@@ -132,7 +132,7 @@ if (!empty($block['className'])) {
                                                         $card_link_label = get_sub_field('link_label');
                                                         ?>
                                                         <a class="solution-card max-lg:max-w-[400px]" href="<?= esc_url($card_link) ?>">
-                                                            <div class="flex flex-col w-full items-start gap-[15px] relative">
+                                                            <div class="flex flex-col w-full items-start gap-[15px] relative height-set">
                                                                 <?php if (!empty($card_image)) : ?>
                                                                     <img class="self-stretch w-full h-[330px] object-cover" src="<?= esc_url($card_image) ?>" alt="<?= esc_attr(wp_strip_all_tags($card_title)) ?>">
                                                                 <?php endif; ?>
@@ -188,7 +188,7 @@ if (!empty($block['className'])) {
                                                     $card_link_label = __('View more', 'mlrgroup');
                                                     ?>
                                                     <a href="<?= esc_url($card_link) ?>" class="solution-card  max-w-[400px]">
-                                                        <div class="flex flex-col w-full items-start gap-[15px] relative">
+                                                        <div class="flex flex-col w-full items-start gap-[15px] relative height-set">
                                                             <?php if (!empty($card_image)) : ?>
                                                                 <img class="self-stretch w-full h-[330px] object-cover" src="<?= esc_url($card_image) ?>" alt="<?= esc_attr($card_title) ?>">
                                                             <?php endif; ?>
@@ -223,7 +223,7 @@ if (!empty($block['className'])) {
                                                         $card_link_label = get_sub_field('link_label');
                                                         ?>
                                                         <a href="<?= esc_url($card_link) ?>" class="solution-card  max-w-[400px]">
-                                                            <div class="flex flex-col w-full items-start gap-[15px] relative">
+                                                            <div class="flex flex-col w-full items-start gap-[15px] relative height-set">
                                                                 <?php if (!empty($card_image)) : ?>
                                                                     <img class="self-stretch w-full h-[330px] object-cover" src="<?= esc_url($card_image) ?>" alt="<?= esc_attr(wp_strip_all_tags($card_title)) ?>">
                                                                 <?php endif; ?>
