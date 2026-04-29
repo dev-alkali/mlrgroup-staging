@@ -31,7 +31,7 @@ if (!empty($block['className'])) {
 ?>
 
         <section id="<?php echo esc_attr($id); ?>" class="performance <?php echo esc_attr($className); ?> w-full pt-[60px] md:pt-[100px] pb-[60px] md:pb-[100px] px-4 md:px-10 bg-black overflow-hidden<?php echo $pt_class; ?><?php echo $pb_class; ?>">
-            <div class="flex flex-col items-center gap-5 w-full wrapper mb-[-76px] md:mb-[-180px]">
+            <div class="flex flex-col items-center gap-5 w-full wrapper">
                 <div class="flex w-full flex-col xl:flex-row xl:items-center justify-between gap-8 sm:gap-[40px] lg:gap-[50px]">
                     <!-- Title -->
                     <div class="xl:max-w-[322px]">
