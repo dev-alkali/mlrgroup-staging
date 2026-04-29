@@ -112,7 +112,7 @@
             <div class="footer-item flex flex-col items-start gap-5 w-full flex-1 contact-footer">
               <div class="footer-title flex justify-between w-full items-center uppercase">
                 <div class="flex gap-1 items-center">
-                  <a href="<?= home_url(); ?>/contact-us/">Contact</a>
+                  <a href="<?= home_url(); ?>/contact/">Contact</a>
                   <img class="w-4 h-4 -mt-[3px]" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow-blue.svg" alt="">
                 </div>
                 <span class="dropdown-item-footer min-[600px]:hidden">
