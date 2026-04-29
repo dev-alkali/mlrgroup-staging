@@ -569,6 +569,10 @@
     position: relative;
   }
 
+  .solutions-slider .swiper-wrapper{height:auto;}
+  .solutions-slider .solution-card{height:auto;}
+  
+
   .solutions-slider.is-active {
     display: block;
   }
