@@ -494,6 +494,8 @@
     padding-right: 117px;
   }
 
+  .marquee-group img:nth-child(4){filter: grayscale(0.5);}
+
   /* Work Card Hover Effects */
   .work-card:hover .gradient-box {
     background: linear-gradient(
