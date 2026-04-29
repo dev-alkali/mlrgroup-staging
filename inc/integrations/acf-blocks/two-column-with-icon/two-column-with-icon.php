@@ -111,8 +111,8 @@ if ( $section_color == 'black' ){
                   $content = $list['i_content'];
                   ?>
                   <div class="flex flex-row gap-[15px] w-full">
-                    <div class="flex w-[24px] h-[24px] relative">
-                      <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/list-icon.svg" alt="" class="w-full">
+                    <div class="flex w-[24px] h-[24px] relative arrow-line">
+                      <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/red-arrow-feature-sec.svg" alt="" class="w-full">
                     </div>
                     <div class="flex flex-col flex-1">
                       <?php if($heading): ?>
