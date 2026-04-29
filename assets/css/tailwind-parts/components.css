@@ -570,9 +570,9 @@
   }
 
   /*.solutions-slider .swiper-wrapper{height:auto;}*/
-  .solutions-slider .solution-card{height:unset;}
-  
-  .solutions-slider .flex.flex-col.w-full.items-start.gap-\[15px\].relative {height: 100%;}
+  .solutions-slider .height-set{
+    height: 100%;
+  }
 
   .solutions-slider .swiper-wrapper {
       display: flex;
