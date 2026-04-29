@@ -3742,7 +3742,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 </div>
   <div class="max-w-[1440px] mr-auto ml-auto">
     <ul class="list-none border border-[#F5F5F5] max-w-[200px] p-5 rounded-[15px]">
-      <li class="flex gap-[15px] items-center mb-[5px] text-[#525252] text-[14px]"><div class="w-[10px] text-right"><span style="width: 10px;height: 10px;border-radius: 50%;background:#FD4338;display: inline-block;"></span></div> Remote Workforce</li>
+      <li class="flex gap-[15px] items-center mb-[5px] text-[#525252] text-[14px]"><div class="w-[10px] text-right"><span style="width: 10px;height: 10px;border-radius: 50%;background:#000000;display: inline-block;"></span></div> Remote Workforce</li>
       <li class="flex gap-[15px] items-center mb-[5px] text-[#525252] text-[14px]"><div class="w-[10px]"><span style="width: 10px;height: 10px;border-radius: 50%;background:#FD4338;display: inline-block;"></span></div> MRL Offices</li>
       <li class="flex gap-[15px] items-center mb-[0px] text-[#525252] text-[14px]"><div class="w-[10px]"><span style="width: 10px;height: 10px;border-radius: 50%;background:#4772F2;display: inline-block;"></span></div> Supplier Network</li>
     </ul>
@@ -3772,6 +3772,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   .wmap-tip-country {display: block;font-size: 10px;color: #525252;font-weight: 400;}
   .wmap-tip-city {display: block;margin-bottom: 2px;font-weight: 600;font-size: 11px;}
   .wmap-red  { color: #FD4338; }
+  .wmap-black { color: #000000; }
   .wmap-blue { color: #4A78FF; }
   .wmap-marker:hover{z-index: 21;transition: z-index 0s 0s;}
   .wmap-marker.active .wmap-pin {transform: translateX(-50%) translateY(50%) scale(1);transition: transform 0.3s ease 0s;}
@@ -3885,96 +3886,96 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       city  : 'USA',
       left  : '59%',
       top   : '40%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#000000',
+      cls   : 'wmap-black'
     },
     {
       label : 'Denver',
       city  : 'USA',
       left  : '60%',
       top   : '40%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#000000',
+      cls   : 'wmap-black'
     },
     {
       label : 'Columbus',
       city  : 'USA',
       left  : '65.5%',
       top   : '30.7%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#000000',
+      cls   : 'wmap-black'
     },
     {
       label : 'Chicago',
       city  : 'USA',
       left  : '62%',
       top   : '25.4%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#000000',
+      cls   : 'wmap-black'
     },
     {
       label : 'Charlotte',
       city  : 'USA',
       left  : '67%',
       top   : '26%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#000000',
+      cls   : 'wmap-black'
     },
     {
       label : 'New York',
       city  : 'USA',
       left  : '69.1%',
       top   : '29.6%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#000000',
+      cls   : 'wmap-black'
     },
     {
       label : 'Charleston',
       city  : 'USA',
       left  : '67.7%',
       top   : '31.5%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#000000',
+      cls   : 'wmap-black'
     },
     {
       label : 'Atlanta',
       city  : 'USA',
       left  : '66.5%',
       top   : '33.5%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#000000',
+      cls   : 'wmap-black'
     },
     {
       label : 'Dallas',
       city  : 'USA',
       left  : '62.5%',
       top   : '41%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#000000',
+      cls   : 'wmap-black'
     },
     {
       label : 'San Francisco',
       city  : 'USA',
       left  : '57.5%',
       top   : '42.9%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#000000',
+      cls   : 'wmap-black'
     },
     {
       label : 'Los Angeles',
       city  : 'USA',
       left  : '58%',
       top   : '46.1%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#000000',
+      cls   : 'wmap-black'
     },
     {
       label : 'Scottsdale',
       city  : 'USA',
       left  : '61%',
       top   : '40%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#000000',
+      cls   : 'wmap-black'
     },
     {
       label   : 'Panama',
@@ -3991,8 +3992,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       city  : 'USA',
       left  : '64.8%',
       top   : '43%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#000000',
+      cls   : 'wmap-black'
     },
     {
       label   : 'Colombia',
@@ -4029,8 +4030,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       city  : 'UK',
       left  : '82.5%',
       top   : '26%',
-      color : '#FD4338',
-      cls   : 'wmap-red'
+      color : '#000000',
+      cls   : 'wmap-black'
     },
   ];
 
