@@ -1485,6 +1485,9 @@ article.service-card:hover .bg-image{filter: none !important;}
 }
 
 
+.arrow-line:before {content:'';position: absolute;left: 0;height: 1px;width: 10px;background: #fd4438;bottom: 0;left: -10px;}
+
+
 /* Responsive */
 @media (min-width: 48rem) {
   .cs-cards { flex-direction: row; flex-wrap: wrap; }
