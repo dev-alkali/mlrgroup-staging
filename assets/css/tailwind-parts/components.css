@@ -732,7 +732,7 @@
     opacity: 1;
     background: linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.9) 0.42%,
+      rgba(0, 0, 0, 0.66) 0.42%,
       rgba(0, 0, 0, 0) 179.14%
     );
   }
@@ -741,7 +741,7 @@
     opacity: 0;
     background: linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.9) 0.42%,
+      rgba(0, 0, 0, 0.66) 0.42%,
       rgba(0, 0, 0, 0.4) 179.14%
     );
   }
