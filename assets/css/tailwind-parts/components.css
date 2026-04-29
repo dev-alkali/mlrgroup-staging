@@ -580,7 +580,7 @@
   }
 
   .solutions-slider .solution-card {
-    height: unset;
+    height: unset !important;
   }
   .solutions-slider  p.service-card-link {
     margin-top: auto;
