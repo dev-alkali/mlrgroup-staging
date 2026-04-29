@@ -1514,12 +1514,14 @@ article.service-card:hover .bg-image{filter: none !important;}
     align-self: flex-start;
     max-height: calc(100vh - 120px); /* top offset + breathing room */
     overflow: hidden;
+    padding-bottom:20px;
   }
 
   #sidebar-filter .sidebar-cat {
     overflow-y: auto;
     max-height: calc(100dvh - 180px); /* account for Filters heading row */
     padding-right: 8px; /* prevent text under scrollbar */
+
   }
 }
 
