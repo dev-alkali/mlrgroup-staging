@@ -42,7 +42,7 @@ if (!empty($block['className'])) {
         <h2 class="font-[poppins] font-bold text-[#262626] leading-[clamp(44px,4vw,60px)] text-[clamp(36px,5vw,60px)] tracking-[-0.02em] mb-[17px] md:mb-[21px] flex ga-[12px] md:gap-[16px]"><img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" alt="" class="w-[35px] h-[35px] md:w-[62px] md:h-[62px]"> <?php echo esc_html( $year ); ?></h2>
 
         <?php if ( have_rows( 'l_lists' ) ) : ?>
-          <div class="lookbook-list columns-1 md:columns-2 md:gap-x-[40px]">
+          <div class="lookbook-list columns-1 md:columns-2 lg:columns-3 md:gap-x-[40px]">
 
             <?php while ( have_rows( 'l_lists' ) ) : the_row(); ?>
 
