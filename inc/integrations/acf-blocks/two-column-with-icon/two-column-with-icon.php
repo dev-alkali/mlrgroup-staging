@@ -114,6 +114,10 @@ if ( $section_color == 'black' ){
                     <div class="flex w-[15px] h-[15px] relative arrow-line mt-[4px] ml-[10px]">
                       <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/red-arrow-feature-sec.svg" alt="" class="w-full">
                     </div>
+
+                    <?php /* <div class="flex w-[24px] h-[24px] relative">
+                      <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/list-icon.svg" alt="" class="w-full">
+                    </div> */?>
                     <div class="flex flex-col flex-1">
                       <?php if($heading): ?>
                         <h3 class="text-[clamp(18px,2.6vw,20px)] leading-[clamp(22px,3.2vw,24px)] tracking-[-2%] text-[#262626] font-heading font-bold mb-[10px]"><?php echo $heading; ?></h3>
