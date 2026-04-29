@@ -3761,8 +3761,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   /*max-width: 1360px;*/
   #wmap-inner svg,#wmap-inner img {display: block;width: 100%;height: auto;}  
   .wmap-marker {position: absolute;transform: translate(-50%, -50%);cursor: pointer;z-index: 20;transition: z-index 0s 3s;}
-  .wmap-dot {width: 6px;height: 6px;border-radius: 50%;transition: opacity 0.2s;}
-  .wmap-dot-large {width: 14px;height: 14px;border-radius: 50%;transition: opacity 0.2s;}
+  .wmap-dot {width: 12px;height: 12px;border-radius: 50%;transition: opacity 0.2s;}
+  .wmap-dot-large {width: 12px;height: 12px;border-radius: 50%;transition: opacity 0.2s;}
   .wmap-pin {position: absolute;top: -40px;left: 50%;transform: translateX(-50%) translateY(50%) scale(0);transform-origin: bottom center;transition: transform 0.3s ease;pointer-events: none;width: 20px;height: 20px;transition: transform 0.3s ease 0s;}
   /*.wmap-marker:hover .wmap-dot {opacity: 0;}*/
   .wmap-marker:hover .wmap-pin {transform: translateX(-50%) translateY(50%) scale(1);transition: transform 0.3s ease 0s;}
@@ -3779,7 +3779,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   .wmap-marker.active {z-index: 30;transition: z-index 0s 0s;}
   .wmap-marker.country-marker {z-index: 22;}
   @media (max-width: 767px){
-    .wmap-dot {width: 4px;height: 4px;}
+    .wmap-dot {width: 10px;height: 10px;}
     .wmap-dot-large {width: 10px;height: 10px;} 
   }
 </style>
