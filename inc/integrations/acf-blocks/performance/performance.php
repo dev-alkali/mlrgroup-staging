@@ -30,7 +30,7 @@ if (!empty($block['className'])) {
     }
 ?>
 
-        <section id="<?php echo esc_attr($id); ?>" class="performance <?php echo esc_attr($className); ?> w-full pt-10 md:pb-[120px] pb-[100px] md:pb-[180px] px-4 md:px-10 bg-black overflow-hidden<?php echo $pt_class; ?><?php echo $pb_class; ?>">
+        <section id="<?php echo esc_attr($id); ?>" class="performance <?php echo esc_attr($className); ?> w-full pt-[60px] md:pt-[100px] pb-[60px] md:pb-[100px] px-4 md:px-10 bg-black overflow-hidden<?php echo $pt_class; ?><?php echo $pb_class; ?>">
             <div class="flex flex-col items-center gap-5 w-full wrapper mb-[-76px] md:mb-[-180px]">
                 <div class="flex w-full flex-col xl:flex-row xl:items-center justify-between gap-8 sm:gap-[40px] lg:gap-[50px]">
                     <!-- Title -->
@@ -59,10 +59,10 @@ if (!empty($block['className'])) {
                     </div>
                 </div>
 
+                <?php /*
                 <div class="w-full flex justify-end bg-[length:30px] md:bg-[length:50px] bg-repeat-x bg-[position:right_30px_center] md:bg-[position:right_50px_center]" style="background-image:url(<?= get_template_directory_uri() ?>/assets/imgs/Arrow-white-icon.svg);">
-                
                     <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red-icon.svg" class="arrow1 w-[clamp(30px,7vw,50px)] h-[clamp(30px,7vw,50px)] bg-black" alt="">
-                </div>
+                </div> */ ?>
             </div>
         </section>
 <?php endwhile;
