@@ -36,19 +36,39 @@ document.addEventListener('DOMContentLoaded', () => {
     history.scrollRestoration = 'manual';
   }
 
-  const urlHash = window.location.hash;
-  if (urlHash) {
-    // Scroll to the anchor section if a hash is present in the URL
+  function scrollToHashTarget(behavior = 'auto') {
+    const urlHash = window.location.hash;
+    if (!urlHash) return false;
+
     const hashTarget = document.querySelector(urlHash);
-    if (hashTarget) {
-      setTimeout(() => {
-        const headerOffset = document.querySelector('.site-header')?.offsetHeight || 0;
-        const targetTop = hashTarget.getBoundingClientRect().top + window.scrollY - headerOffset;
-        window.scrollTo({ top: targetTop, behavior: 'smooth' });
-      }, 100);
-    }
-  } else {
+    if (!hashTarget) return false;
+
+    const headerOffset = document.querySelector('.site-header')?.offsetHeight || 0;
+    const targetTop = hashTarget.getBoundingClientRect().top + window.scrollY - headerOffset;
+    window.scrollTo({ top: targetTop, behavior });
+    return true;
+  }
+
+  if (!window.location.hash) {
     window.scrollTo(0, 0);
+  } else {
+    // First pass: get close quickly during DOM ready.
+    setTimeout(() => {
+      scrollToHashTarget('auto');
+    }, 120);
+
+    // Mobile pages can shift after images/fonts and sticky header state changes.
+    // Re-apply position after full load to land on the exact section.
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const didScroll = scrollToHashTarget('smooth');
+        if (didScroll) {
+          setTimeout(() => {
+            scrollToHashTarget('auto');
+          }, 220);
+        }
+      }, 180);
+    }, { once: true });
   }
 
   /* Auto-scroll past the hero to the work list on portfolio taxonomy pages and the main work page
