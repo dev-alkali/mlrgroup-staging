@@ -1,7 +1,7 @@
 <!-- FOOTER -->
 <footer class="flex flex-col w-full">
   <!-- Top Accent Bar -->
-  <div class="w-full h-[10px] bg-accent"></div>
+  <div class="w-full h-[5px] bg-accent"></div>
 
   <div class="bg-black w-full">
     <div class="px-4 md:px-10 pt-[40px] pb-[39px] md:py-[60px] w-full">
