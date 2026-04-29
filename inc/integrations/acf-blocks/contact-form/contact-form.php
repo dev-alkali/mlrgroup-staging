@@ -86,7 +86,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 				<?php if ($form_shortcode): ?>
 					<div class="w-full md:w-1/2 c-contact__right anim" data-anim="up" data-delay=".5" >
 						<?php if (have_rows('language_loop')): ?>
-						<div class="spin-content spin-words-wrapper">
+						<div class="spin-content spin-words-wrapper mb-[20px] md:mb-[30px]">
 							<h5 class="spin-words light">
 								<?php while (have_rows('language_loop')): the_row(); 
 								$rotate_text = get_sub_field('rotate_text');
