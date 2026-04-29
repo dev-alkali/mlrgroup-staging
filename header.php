@@ -80,7 +80,7 @@ if ( is_tax('portfolio-category') ) {
     <div class="dark-reset-x  min-[1180px]:flex justify-between w-full items-center mx-auto min-[767px]:px-20">
 
     <!-- LOGO -->
-      <div class="relative w-[140px] h-8">
+      <div class="relative w-[160px] h-8">
         <a class="site-header__logo-image" href="<?php echo esc_url(home_url('/')); ?>">
           <?php if ($logo_svg): ?>
             <?php echo $logo_svg; ?>
