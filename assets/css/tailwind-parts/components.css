@@ -1423,6 +1423,63 @@ article.service-card:hover .bg-image{filter: none !important;}
 
 .page-id-228 .inner-hero{background-position:center top 21%;}
 
+.spin-words span {
+    display: flex;
+    align-items: center;
+    height: 37.5px;
+    animation: spin_words 6s infinite;
+}
+
+@keyframes spin_words {
+    10% {
+        transform: translateY(-112%)
+    }
+
+    25% {
+        transform: translateY(-100%)
+    }
+
+    35% {
+        transform: translateY(-212%)
+    }
+
+    50% {
+        transform: translateY(-200%)
+    }
+
+    60% {
+        transform: translateY(-312%)
+    }
+
+    75% {
+        transform: translateY(-300%)
+    }
+
+    60% {
+        transform: translateY(-312%)
+    }
+
+    75% {
+        transform: translateY(-300%)
+    }
+
+    85% {
+        transform: translateY(-412%)
+    }
+
+    100% {
+        transform: translateY(-400%)
+    }
+}
+
+@media screen and (min-width: 1451px) {
+    .spin-words-wrapper, .spin-words span {
+        height: 56px;
+        font-size: 23px;
+    }
+}
+
+
 /* Responsive */
 @media (min-width: 48rem) {
   .cs-cards { flex-direction: row; flex-wrap: wrap; }
