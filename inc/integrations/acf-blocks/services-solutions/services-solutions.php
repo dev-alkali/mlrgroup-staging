@@ -112,14 +112,13 @@ if (!empty($block['className'])) {
                                                                         </p>
                                                                     <?php endif; ?>
                                                                 </div>
-                                                                <p class="service-card-link inline-flex  gap-2 relative flex-[0_0_auto]">
+                                                            </div>
+                                                            <p class="service-card-link inline-flex  gap-2 relative flex-[0_0_auto]">
                                                                     <span class="font-semibold text-accent uppercase relative w-fit whitespace-nowrap font-heading tracking-[0] text-[clamp(16px,1.5vw,18px)] leading-[clamp(24px,2vw,28px)]">
                                                                         <?= esc_html($card_link_label) ?>
                                                                     </span>
-
                                                                     <img class="arrow relative w-4 h-4 mt-1" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" />
                                                                 </p>
-                                                            </div>
                                                         </div>
                                                     </a>
                                                 <?php endforeach; ?>
@@ -148,14 +147,13 @@ if (!empty($block['className'])) {
                                                                             </p>
                                                                         <?php endif; ?>
                                                                     </div>
-                                                                    <p class="service-card-link inline-flex  gap-2 relative flex-[0_0_auto]">
-                                                                        <span class="font-semibold text-accent uppercase relative w-fit whitespace-nowrap font-heading tracking-[0] text-[clamp(16px,1.5vw,18px)] leading-[clamp(24px,2vw,28px)]">
-                                                                            <?= wp_kses_post($card_link_label) ?>
-                                                                        </span>
-
-                                                                        <img class="arrow relative w-4 h-4 mt-1" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" />
-                                                                    </p>
                                                                 </div>
+                                                                <p class="service-card-link inline-flex  gap-2 relative flex-[0_0_auto]">
+                                                                    <span class="font-semibold text-accent uppercase relative w-fit whitespace-nowrap font-heading tracking-[0] text-[clamp(16px,1.5vw,18px)] leading-[clamp(24px,2vw,28px)]">
+                                                                        <?= wp_kses_post($card_link_label) ?>
+                                                                    </span>
+                                                                    <img class="arrow relative w-4 h-4 mt-1" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" />
+                                                                </p>
                                                             </div>
                                                         </a>
                                                 <?php endwhile;
@@ -205,14 +203,13 @@ if (!empty($block['className'])) {
                                                                         </p>
                                                                     <?php endif; ?>
                                                                 </div>
-                                                                <p class="service-card-link inline-flex  gap-2 relative flex-[0_0_auto]">
+                                                            </div>
+                                                            <p class="service-card-link inline-flex  gap-2 relative flex-[0_0_auto]">
                                                                     <span class="font-semibold text-accent uppercase relative w-fit whitespace-nowrap font-heading tracking-[0] text-[clamp(16px,1.5vw,18px)] leading-[clamp(24px,2vw,28px)]">
                                                                         <?= esc_html($card_link_label) ?>
                                                                     </span>
-
                                                                     <img class="arrow relative w-4 h-4 mt-[3px] md:mt-1" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" />
                                                                 </p>
-                                                            </div>
                                                         </div>
                                                     </a>
                                                 <?php endforeach; ?>
@@ -241,14 +238,14 @@ if (!empty($block['className'])) {
                                                                             </p>
                                                                         <?php endif; ?>
                                                                     </div>
-                                                                    <p class="service-card-link inline-flex  gap-2 relative flex-[0_0_auto]">
+                                                                </div>
+                                                                <p class="service-card-link inline-flex  gap-2 relative flex-[0_0_auto]">
                                                                         <span class="font-semibold text-accent uppercase relative w-fit whitespace-nowrap font-heading tracking-[0] text-[clamp(16px,1.5vw,18px)] leading-[clamp(24px,2vw,28px)]">
                                                                             <?= wp_kses_post($card_link_label) ?>
                                                                         </span>
 
                                                                         <img class="arrow relative w-4 h-4 mt-[3px] md:mt-1" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" />
                                                                     </p>
-                                                                </div>
                                                             </div>
                                                         </a>
                                                 <?php endwhile;
