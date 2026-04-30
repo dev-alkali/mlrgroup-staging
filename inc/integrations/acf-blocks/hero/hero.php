@@ -120,14 +120,14 @@ if (!empty($block['className'])) {
             <div class="marquee-track relative">
               <div class="marquee-group">
                 <?php if (have_rows('images_brands')) : while (have_rows('images_brands')) : the_row(); ?>
-                    <img class="h-[61.15px] gray-icon w-auto max-w-none block max-w-[100px] object-contain" src="<?= esc_url(get_sub_field('image')) ?>" alt="Brand logos" />
+                    <img class="h-[61.15px] gray-icon w-auto block max-w-[100px] object-contain" src="<?= esc_url(get_sub_field('image')) ?>" alt="Brand logos" />
                 <?php endwhile;
                 endif; ?>
               </div>
 
               <div class="marquee-group" aria-hidden="true">
                 <?php if (have_rows('images_brands')) : while (have_rows('images_brands')) : the_row(); ?>
-                    <img class="h-[61.15px] gray-icon w-auto max-w-none block max-w-[100px] object-contain" src="<?= esc_url(get_sub_field('image')) ?>" alt="Brand logos" />
+                    <img class="h-[61.15px] gray-icon w-auto block max-w-[100px] object-contain" src="<?= esc_url(get_sub_field('image')) ?>" alt="Brand logos" />
                 <?php endwhile;
                 endif; ?>
               </div>
