@@ -3741,10 +3741,9 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 </svg>
 </div>
   <div class="max-w-[1440px] mr-auto ml-auto">
-    <ul class="list-none border border-[#F5F5F5] max-w-[200px] p-5 rounded-[15px]">
-      <li class="flex gap-[15px] items-center mb-[5px] text-[#525252] text-[14px]"><div class="w-[10px] text-right"><span style="width: 10px;height: 10px;border-radius: 50%;background:#000000;display: inline-block;"></span></div> Remote Workforce</li>
-      <li class="flex gap-[15px] items-center mb-[5px] text-[#525252] text-[14px]"><div class="w-[10px]"><span style="width: 10px;height: 10px;border-radius: 50%;background:#FD4338;display: inline-block;"></span></div> MRL Offices</li>
-      <li class="flex gap-[15px] items-center mb-[0px] text-[#525252] text-[14px]"><div class="w-[10px]"><span style="width: 10px;height: 10px;border-radius: 50%;background:#4772F2;display: inline-block;"></span></div> Supplier Network</li>
+    <ul class="list-none border border-[#F5F5F5] max-w-[260px] p-5 rounded-[15px]">
+      <li class="flex gap-[15px] items-center mb-[5px] text-[#525252] text-[14px] leading-snug"><div class="flex shrink-0 gap-1 pt-0.5" aria-hidden="true"><span style="width: 8px;height: 8px;border-radius: 50%;background:#000000;display: inline-block;"></span><span style="width: 8px;height: 8px;border-radius: 50%;background:#FD4338;display: inline-block;"></span></div> MRL Offices &amp; remote workforce</li>
+      <li class="flex gap-[15px] items-center mb-[0px] text-[#525252] text-[14px]"><div class="w-[18px] flex justify-center shrink-0"><span style="width: 10px;height: 10px;border-radius: 50%;background:#4772F2;display: inline-block;"></span></div> Supplier Network</li>
     </ul>
   </div>
 </div>
@@ -4064,15 +4063,17 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 
   placeMarkers();
 
-  // Cycle order for each pool — sequenced to avoid geographic overlaps
-  // Large Blue (7): United States first so it pairs with Jiangsu (far away) and London
+  // Cycle order — sequenced to avoid geographic overlaps
+  // Supplier Network (large blue)
   var BLUE_ORDER  = ['United States','India','China','Panama','Colombia','Argentina','Mexico'];
-  // Large Red (3): Jiangsu first (pairs with United States), then southern US cities
+  // MRL Offices (large red) — alternates in the same slot as Remote Workforce
   var LRED_ORDER  = ['Jiangsu','Fort Lauderdale','Nashville'];
-  // Small Red (14): London first (pairs with United States), then work around the map
+  // Remote Workforce (small black)
   var SRED_ORDER  = ['London','San Francisco','Los Angeles','Denver','Dallas','Las Vegas','Scottsdale','Miami','Columbus','Charlotte','New York','Chicago','Atlanta','Charleston'];
 
-  var blueIdx = 0, largeRedIdx = 0, smallRedIdx = 0;
+  var blueIdx = 0, rwIdx = 0, offIdx = 0;
+  /** 0 = next combined slot is Remote Workforce, 1 = MRL Offices */
+  var combinedPhase = 0;
   var cycleTimer = null;
   var tickTimer  = null;
 
@@ -4086,23 +4087,57 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     }).filter(Boolean);
   }
 
+  function markerPool(el) {
+    var c = el.querySelector('.wmap-tip-city');
+    var lbl = c && c.textContent.trim();
+    if (!lbl) return null;
+    if (BLUE_ORDER.indexOf(lbl) !== -1) return 'supplier';
+    if (LRED_ORDER.indexOf(lbl) !== -1) return 'office';
+    if (SRED_ORDER.indexOf(lbl) !== -1) return 'remote';
+    return null;
+  }
+
   function tick() {
     document.querySelectorAll('.wmap-marker.active').forEach(function(m) {
-      m.classList.remove('active');
+      if (!m.matches(':hover')) m.classList.remove('active');
     });
     if (tickTimer) clearTimeout(tickTimer);
     tickTimer = setTimeout(function() {
+      var inner = document.getElementById('wmap-inner');
       var blue     = queryOrdered(BLUE_ORDER);
       var largeRed = queryOrdered(LRED_ORDER);
       var smallRed = queryOrdered(SRED_ORDER);
+      var hovered  = inner ? inner.querySelector('.wmap-marker:hover') : null;
+      var hoverPool = hovered ? markerPool(hovered) : null;
 
-      if (blue.length)     blue[blueIdx % blue.length].classList.add('active');
-      if (largeRed.length) largeRed[largeRedIdx % largeRed.length].classList.add('active');
-      if (smallRed.length) smallRed[smallRedIdx % smallRed.length].classList.add('active');
+      // Supplier Network slot (one dot)
+      if (hoverPool === 'supplier' && hovered) {
+        hovered.classList.add('active');
+      } else if (blue.length) {
+        blue[blueIdx % blue.length].classList.add('active');
+        blueIdx = (blueIdx + 1) % BLUE_ORDER.length;
+      }
 
-      blueIdx     = (blueIdx + 1) % BLUE_ORDER.length;
-      largeRedIdx = (largeRedIdx + 1) % LRED_ORDER.length;
-      smallRedIdx = (smallRedIdx + 1) % SRED_ORDER.length;
+      // Remote + MRL Offices share one slot (one dot — alternate each tick)
+      if ((hoverPool === 'remote' || hoverPool === 'office') && hovered) {
+        hovered.classList.add('active');
+      } else if (combinedPhase === 0 && smallRed.length) {
+        smallRed[rwIdx % smallRed.length].classList.add('active');
+        rwIdx = (rwIdx + 1) % SRED_ORDER.length;
+        combinedPhase = 1;
+      } else if (combinedPhase === 1 && largeRed.length) {
+        largeRed[offIdx % largeRed.length].classList.add('active');
+        offIdx = (offIdx + 1) % LRED_ORDER.length;
+        combinedPhase = 0;
+      } else if (smallRed.length) {
+        smallRed[rwIdx % smallRed.length].classList.add('active');
+        rwIdx = (rwIdx + 1) % SRED_ORDER.length;
+        combinedPhase = largeRed.length ? 1 : 0;
+      } else if (largeRed.length) {
+        largeRed[offIdx % largeRed.length].classList.add('active');
+        offIdx = (offIdx + 1) % LRED_ORDER.length;
+        combinedPhase = 0;
+      }
     }, 400);
   }
 
