@@ -3742,8 +3742,15 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 </div>
   <div class="max-w-[1440px] mr-auto ml-auto">
     <ul class="list-none border border-[#F5F5F5] max-w-[260px] p-5 rounded-[15px]">
-      <li class="flex gap-[15px] items-center mb-[5px] text-[#525252] text-[14px] leading-snug"><div class="flex shrink-0 gap-1 pt-0.5" aria-hidden="true"><span style="width: 8px;height: 8px;border-radius: 50%;background:#000000;display: inline-block;"></span><span style="width: 8px;height: 8px;border-radius: 50%;background:#FD4338;display: inline-block;"></span></div> MRL Offices &amp; remote workforce</li>
-      <li class="flex gap-[15px] items-center mb-[0px] text-[#525252] text-[14px]"><div class="w-[18px] flex justify-center shrink-0"><span style="width: 10px;height: 10px;border-radius: 50%;background:#4772F2;display: inline-block;"></span></div> Supplier Network</li>
+      <li class="flex gap-[15px] items-center mb-[5px] text-[#525252] text-[14px] leading-snug">
+        <span style="width: 8px;height: 8px;border-radius: 50%;background:#000000;display: inline-block;"></span> MRL Offices
+      </li>
+      <li class="flex gap-[15px] items-center mb-[5px] text-[#525252] text-[14px] leading-snug">
+        <span style="width: 8px;height: 8px;border-radius: 50%;background:#FD4338;display: inline-block;"></span> Remote workforce
+      </li>
+      <li class="flex gap-[15px] items-center mb-[0px] text-[#525252] text-[14px]">
+        <span style="width: 10px;height: 10px;border-radius: 50%;background:#4772F2;display: inline-block;"></span> Supplier Network
+      </li>
     </ul>
   </div>
 </div>
