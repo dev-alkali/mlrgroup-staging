@@ -1511,7 +1511,7 @@ article.service-card:hover .bg-image{filter: none !important;}
     position: sticky;
     top: 100px;
     align-self: flex-start;
-    max-height: calc(100vh - 300px); /* top offset + breathing room */
+    max-height: calc(100vh - 170px); /* top offset + breathing room */
     overflow: hidden;
     padding-bottom:20px;
   }
