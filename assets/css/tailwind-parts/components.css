@@ -493,7 +493,7 @@
     padding-right: 90px; 
   }
 
-  .marquee-group img:nth-child(4){filter: grayscale(0.5);}
+  .marquee-group img:nth-child(4){filter: grayscale(1);}
 
   /* Work Card Hover Effects */
   .work-card:hover .gradient-box {
