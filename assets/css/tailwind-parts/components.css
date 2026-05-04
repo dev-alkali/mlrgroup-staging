@@ -489,8 +489,8 @@
 
   .marquee-group {
     display: flex;
-    gap: 105px;
-    padding-right: 105px;
+    gap: 95px;
+    padding-right: 95px;
   }
 
   .marquee-group img:nth-child(4){filter: grayscale(0.5);}
