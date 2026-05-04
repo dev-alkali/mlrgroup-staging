@@ -127,7 +127,7 @@ if (!empty($block['className'])) {
 
               <div class="marquee-group" aria-hidden="true">
                 <?php if (have_rows('images_brands')) : while (have_rows('images_brands')) : the_row(); ?>
-                    <img class="h-[92px] gray-icon w-[110px] block w-[120px] object-contain" src="<?= esc_url(get_sub_field('image')) ?>" alt="Brand logos" />
+                    <img class="h-[92px] gray-icon w-[110px] block max-w-[120px] object-contain" src="<?= esc_url(get_sub_field('image')) ?>" alt="Brand logos" />
                 <?php endwhile;
                 endif; ?>
               </div>
