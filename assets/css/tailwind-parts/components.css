@@ -490,7 +490,7 @@
   .marquee-group {
     display: flex;
     gap: 95px;
-    padding-right: 95px;
+    padding-right: 95px; 
   }
 
   .marquee-group img:nth-child(4){filter: grayscale(0.5);}
