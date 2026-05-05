@@ -3780,10 +3780,11 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   .wmap-red  { color: #FD4338; }
   .wmap-black { color: #000000; }
   .wmap-blue { color: #4A78FF; }
-  .wmap-marker:hover{z-index: 21;transition: z-index 0s 0s;}
+  .wmap-marker:hover{z-index: 40;transition: z-index 0s 0s;}
   .wmap-marker.active .wmap-pin {transform: translateX(-50%) translateY(50%) scale(1);transition: transform 0.3s ease 0s;}
   .wmap-marker.active .wmap-tooltip {opacity: 1;transform: translateX(-50%) translateY(0);transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;}
   .wmap-marker.active {z-index: 30;transition: z-index 0s 0s;}
+  .wmap-marker.active:hover {z-index: 40;transition: z-index 0s 0s;}
   .wmap-marker.country-marker {z-index: 22;}
   @media (max-width: 767px){
     .wmap-dot {width: 10px;height: 10px;}
@@ -4209,20 +4210,29 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
         offIdx = (offIdx + 1) % LRED_ORDER.length;
         combinedPhase = 0;
       }
-    }, 400);
+    }, 200);
   }
 
   function startCycle() {
     if (cycleTimer) clearInterval(cycleTimer);
     if (tickTimer)  clearTimeout(tickTimer);
     tick();
-    cycleTimer = setInterval(tick, 3000);
+    cycleTimer = setInterval(tick, 2200);
+  }
+
+  function setExclusiveActive(marker) {
+    document.querySelectorAll('.wmap-marker.active').forEach(function(m) {
+      if (m !== marker) m.classList.remove('active');
+    });
+    if (marker) marker.classList.add('active');
   }
 
   function pauseCycle() {
     isUserInteracting = true;
     if (cycleTimer) clearInterval(cycleTimer);
     if (tickTimer) clearTimeout(tickTimer);
+    var hovered = document.querySelector('#wmap-inner .wmap-marker:hover');
+    setExclusiveActive(hovered);
   }
 
   function resumeCycle() {
@@ -4235,6 +4245,12 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     var inner = document.getElementById('wmap-inner');
     if (!inner) return;
     inner.addEventListener('mouseenter', pauseCycle);
+    inner.addEventListener('mouseover', function(e) {
+      var marker = e.target && e.target.closest ? e.target.closest('.wmap-marker') : null;
+      if (!marker || !inner.contains(marker)) return;
+      pauseCycle();
+      setExclusiveActive(marker);
+    });
     inner.addEventListener('mouseleave', resumeCycle);
   }
 
