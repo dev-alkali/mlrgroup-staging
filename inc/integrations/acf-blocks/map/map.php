@@ -4147,6 +4147,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   var cycleTimer = null;
   var tickTimer  = null;
   var isUserInteracting = false;
+  var resumeTimer = null;
 
   function queryOrdered(order) {
     var all = Array.from(document.querySelectorAll('.wmap-marker'));
@@ -4213,10 +4214,11 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     }, 200);
   }
 
-  function startCycle() {
+  function startCycle(runImmediately) {
+    if (typeof runImmediately === 'undefined') runImmediately = true;
     if (cycleTimer) clearInterval(cycleTimer);
     if (tickTimer)  clearTimeout(tickTimer);
-    tick();
+    if (runImmediately) tick();
     cycleTimer = setInterval(tick, 2200);
   }
 
@@ -4229,16 +4231,21 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 
   function pauseCycle() {
     isUserInteracting = true;
+    if (resumeTimer) clearTimeout(resumeTimer);
     if (cycleTimer) clearInterval(cycleTimer);
     if (tickTimer) clearTimeout(tickTimer);
     var hovered = document.querySelector('#wmap-inner .wmap-marker:hover');
     setExclusiveActive(hovered);
   }
 
-  function resumeCycle() {
+  function resumeCycleDelayed() {
     if (!isUserInteracting) return;
-    isUserInteracting = false;
-    startCycle();
+    if (resumeTimer) clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(function() {
+      isUserInteracting = false;
+      // Resume at normal cadence to avoid an abrupt fast jump.
+      startCycle(false);
+    }, 350);
   }
 
   function bindInteractionHandlers() {
@@ -4251,7 +4258,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       pauseCycle();
       setExclusiveActive(marker);
     });
-    inner.addEventListener('mouseleave', resumeCycle);
+    inner.addEventListener('mouseleave', resumeCycleDelayed);
   }
 
   var resizeTimer = null;
