@@ -4251,14 +4251,19 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   function bindInteractionHandlers() {
     var inner = document.getElementById('wmap-inner');
     if (!inner) return;
-    inner.addEventListener('mouseenter', pauseCycle);
     inner.addEventListener('mouseover', function(e) {
       var marker = e.target && e.target.closest ? e.target.closest('.wmap-marker') : null;
       if (!marker || !inner.contains(marker)) return;
       pauseCycle();
       setExclusiveActive(marker);
     });
-    inner.addEventListener('mouseleave', resumeCycleDelayed);
+    inner.addEventListener('mouseout', function(e) {
+      var fromMarker = e.target && e.target.closest ? e.target.closest('.wmap-marker') : null;
+      if (!fromMarker || !inner.contains(fromMarker)) return;
+      var toMarker = e.relatedTarget && e.relatedTarget.closest ? e.relatedTarget.closest('.wmap-marker') : null;
+      if (toMarker && inner.contains(toMarker)) return;
+      resumeCycleDelayed();
+    });
   }
 
   var resizeTimer = null;
