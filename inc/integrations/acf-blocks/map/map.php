@@ -4132,10 +4132,10 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 
   placeMarkers();
 
-  // Cycle order — sequenced to avoid geographic overlaps
+  // Cycle order ? sequenced to avoid geographic overlaps
   // Supplier Network (large blue)
   var BLUE_ORDER  = ['United States','India','China','Panama','Colombia','Argentina','Mexico'];
-  // MRL Offices (large red) — alternates in the same slot as Remote Workforce
+  // MRL Offices (large red) ? alternates in the same slot as Remote Workforce
   var LRED_ORDER  = ['Jiangsu','Fort Lauderdale','Nashville'];
   // Remote Workforce (small black)
   var SRED_ORDER  = ['London','San Francisco','Los Angeles','Denver','Dallas','Las Vegas','Scottsdale','Miami','Columbus','Charlotte','New York','Chicago','Atlanta','Charleston'];
@@ -4145,6 +4145,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   var combinedPhase = 0;
   var cycleTimer = null;
   var tickTimer  = null;
+  var isUserInteracting = false;
 
   function queryOrdered(order) {
     var all = Array.from(document.querySelectorAll('.wmap-marker'));
@@ -4167,6 +4168,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   }
 
   function tick() {
+    if (isUserInteracting) return;
     document.querySelectorAll('.wmap-marker.active').forEach(function(m) {
       if (!m.matches(':hover')) m.classList.remove('active');
     });
@@ -4187,7 +4189,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
         blueIdx = (blueIdx + 1) % BLUE_ORDER.length;
       }
 
-      // Remote + MRL Offices share one slot (one dot — alternate each tick)
+      // Remote + MRL Offices share one slot (one dot ? alternate each tick)
       if ((hoverPool === 'remote' || hoverPool === 'office') && hovered) {
         hovered.classList.add('active');
       } else if (combinedPhase === 0 && smallRed.length) {
@@ -4217,6 +4219,25 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     cycleTimer = setInterval(tick, 3000);
   }
 
+  function pauseCycle() {
+    isUserInteracting = true;
+    if (cycleTimer) clearInterval(cycleTimer);
+    if (tickTimer) clearTimeout(tickTimer);
+  }
+
+  function resumeCycle() {
+    if (!isUserInteracting) return;
+    isUserInteracting = false;
+    startCycle();
+  }
+
+  function bindInteractionHandlers() {
+    var inner = document.getElementById('wmap-inner');
+    if (!inner) return;
+    inner.addEventListener('mouseenter', pauseCycle);
+    inner.addEventListener('mouseleave', resumeCycle);
+  }
+
   var resizeTimer = null;
   window.addEventListener('resize', function() {
     if (resizeTimer) clearTimeout(resizeTimer);
@@ -4226,6 +4247,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     }, 300);
   });
 
+  bindInteractionHandlers();
   startCycle();
 
 })();
