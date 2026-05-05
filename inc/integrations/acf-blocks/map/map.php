@@ -3809,7 +3809,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       label : 'Jiangsu',
       city  : 'China',
       left  : '34.5%',
-      top   : '28%',
+      top   : '31%',
       color : '#FD4338',
       cls   : 'wmap-red',
       large : true
@@ -3817,7 +3817,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Nashville',
       city  : 'USA',
-      left  : '64.2%',
+      left  : '63.2%',
       top   : '36.2%',
       color : '#FD4338',
       cls   : 'wmap-red',
@@ -3827,7 +3827,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       label : 'Fort Lauderdale',
       city  : 'USA',
       left  : '66%',
-      top   : '39.5%',
+      top   : '40%',
       color : '#FD4338',
       cls   : 'wmap-red',
       large : true
@@ -3835,8 +3835,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label   : 'United States',
       city    : '',
-      left    : '63.3%',
-      top     : '30.2%',
+      left    : '62.1%',
+      top     : '32%',
       color   : '#4A78FF',
       cls     : 'wmap-blue',
       large   : true,
@@ -3880,13 +3880,34 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label   : 'China',
       city    : '',
-      left    : '27%',
-      top     : '38%',
+      left    : '28%',
+      top     : '41%',
       color   : '#4A78FF',
       cls     : 'wmap-blue',
       large   : true,
       country : true
     },
+    {
+      label   : 'Vietnam',
+      city    : '',
+      left    : '32%',
+      top     : '46%',
+      color   : '#4A78FF',
+      cls     : 'wmap-blue',
+      large   : true,
+      country : true
+    },
+    {
+      label   : 'Bangladesh',
+      city    : '',
+      left    : '26%',
+      top     : '49%',
+      color   : '#4A78FF',
+      cls     : 'wmap-blue',
+      large   : true,
+      country : true
+    },
+    
     {
       label : 'Las Vegas',
       city  : 'USA',
@@ -3898,8 +3919,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Denver',
       city  : 'USA',
-      left  : '60%',
-      top   : '40%',
+      left  : '59.6%',
+      top   : '37%',
       color : '#000000',
       cls   : 'wmap-black'
     },
@@ -3907,7 +3928,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       label : 'Columbus',
       city  : 'USA',
       left  : '65.5%',
-      top   : '30.7%',
+      top   : '34.7%',
       color : '#000000',
       cls   : 'wmap-black'
     },
@@ -3915,112 +3936,112 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       label : 'Chicago',
       city  : 'USA',
       left  : '62%',
-      top   : '25.4%',
+      top   : '25.8%',
       color : '#000000',
       cls   : 'wmap-black'
     },
     {
       label : 'Charlotte',
       city  : 'USA',
-      left  : '67%',
-      top   : '26%',
+      left  : '65.5%',
+      top   : '37.7%',
       color : '#000000',
       cls   : 'wmap-black'
     },
     {
       label : 'New York',
       city  : 'USA',
-      left  : '69.1%',
-      top   : '29.6%',
+      left  : '66.7%',
+      top   : '36.6%',
       color : '#000000',
       cls   : 'wmap-black'
     },
     {
       label : 'Charleston',
       city  : 'USA',
-      left  : '67.7%',
-      top   : '31.5%',
+      left  : '64.9%',
+      top   : '41%',
       color : '#000000',
       cls   : 'wmap-black'
     },
     {
       label : 'Atlanta',
       city  : 'USA',
-      left  : '66.5%',
-      top   : '33.5%',
+      left  : '63.8%',
+      top   : '41%',
       color : '#000000',
       cls   : 'wmap-black'
     },
     {
       label : 'Dallas',
       city  : 'USA',
-      left  : '62.5%',
-      top   : '41%',
+      left  : '62.3%',
+      top   : '39%',
       color : '#000000',
       cls   : 'wmap-black'
     },
     {
       label : 'San Francisco',
       city  : 'USA',
-      left  : '57.5%',
-      top   : '42.9%',
+      left  : '56.2%',
+      top   : '39.9%',
       color : '#000000',
       cls   : 'wmap-black'
     },
     {
       label : 'Los Angeles',
       city  : 'USA',
-      left  : '58%',
-      top   : '46.1%',
+      left  : '57.4%',
+      top   : '43.1%',
       color : '#000000',
       cls   : 'wmap-black'
     },
     {
       label : 'Scottsdale',
       city  : 'USA',
-      left  : '61%',
-      top   : '40%',
+      left  : '60.5%',
+      top   : '41%',
       color : '#000000',
       cls   : 'wmap-black'
     },
-    {
-      label   : 'Panama',
-      city    : '',
-      left    : '64%',
-      top     : '58%',
-      color   : '#4A78FF',
-      cls     : 'wmap-blue',
-      large   : true,
-      country : true
-    },
+    // {
+    //   label   : 'Panama',
+    //   city    : '',
+    //   left    : '64%',
+    //   top     : '58%',
+    //   color   : '#4A78FF',
+    //   cls     : 'wmap-blue',
+    //   large   : true,
+    //   country : true
+    // },
     {
       label : 'Miami',
       city  : 'USA',
       left  : '64.8%',
-      top   : '43%',
+      top   : '46%',
       color : '#000000',
       cls   : 'wmap-black'
     },
     {
       label   : 'Colombia',
       city    : '',
-      left    : '67.5%',
-      top     : '61.6%',
+      left    : '66.5%',
+      top     : '63.6%',
       color   : '#4A78FF',
       cls     : 'wmap-blue',
       large   : true,
       country : true
     },
-    {
-      label   : 'Argentina',
-      city    : '',
-      left    : '68.5%',
-      top     : '86%',
-      color   : '#4A78FF',
-      cls     : 'wmap-blue',
-      large   : true,
-      country : true
-    },
+    // {
+    //   label   : 'Argentina',
+    //   city    : '',
+    //   left    : '68.5%',
+    //   top     : '86%',
+    //   color   : '#4A78FF',
+    //   cls     : 'wmap-blue',
+    //   large   : true,
+    //   country : true
+    // },
     {
       label   : 'Mexico',
       city    : '',
@@ -4039,6 +4060,47 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       color : '#000000',
       cls   : 'wmap-black'
     },
+    {
+      label : 'UK',
+      city  : '',
+      left  : '85%',
+      top   : '28%',
+      color   : '#4A78FF',
+      cls     : 'wmap-blue',
+      large   : true,
+      country : true
+    },
+    {
+      label : 'Germany',
+      city  : '',
+      left  : '88%',
+      top   : '30%',
+      color   : '#4A78FF',
+      cls     : 'wmap-blue',
+      large   : true,
+      country : true
+    },
+    {
+      label : 'Turkey',
+      city  : '',
+      left  : '90%',
+      top   : '34%',
+      color   : '#4A78FF',
+      cls     : 'wmap-blue',
+      large   : true,
+      country : true
+    },
+    {
+      label : 'Canada',
+      city  : '',
+      left  : '58%',
+      top   : '23%',
+      color   : '#4A78FF',
+      cls     : 'wmap-blue',
+      large   : true,
+      country : true
+    },
+    
   ];
 
   function makePinSVG(color) {
