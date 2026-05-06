@@ -72,7 +72,7 @@ $filter_groups = get_field('portfolio_filter_groups', 'option');
                   <?php else :
                     if (is_wp_error($parent_link)) continue;
                     if (!$has_children) {
-                      $label_class = 'group relative inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline hover:underline transition-all duration-300 pl-0 hover:pl-6';
+                      $label_class = 'group relative inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline hover:underline transition-all duration-300 pl-3 hover:pl-6';
                       if ($parent_active) $label_class .= ' text-[#FD4338] pl-6 underline';
                     }
                   ?>
@@ -109,7 +109,7 @@ $filter_groups = get_field('portfolio_filter_groups', 'option');
                       $child_link = get_term_link($child);
                       if (is_wp_error($child_link)) continue;
                       $child_active = ($active_term_id === $child_id);
-                      $c_class = 'group relative inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline hover:underline transition-all duration-300 pl-0 hover:pl-6';
+                      $c_class = 'group relative inline-block font-body font-normal text-[18px] leading-[20px] text-[#525252] hover:text-[#FD4338] no-underline hover:underline transition-all duration-300 pl-3 hover:pl-6';
                       if ($child_active) $c_class .= ' text-[#FD4338] pl-6 underline';
                       $c_svg_class = 'absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200';
                       if ($child_active) $c_svg_class .= ' opacity-100';
