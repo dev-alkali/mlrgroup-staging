@@ -759,12 +759,13 @@
 
   .collection-item .collection-gradient-box::after {
     opacity: 0;
-    background: linear-gradient(
+    /*background: linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.8) 0.42%,
       rgba(0, 0, 0, 0.4) 179.14%
-    );
+    );*/
 
+    background: linear-gradient(.16deg,#000 .14%,#0000 138.15%);
 
   }
 
