@@ -749,11 +749,12 @@
 
   .collection-item .collection-gradient-box::before {
     opacity: 1;
-    background: linear-gradient(
+    /*background: linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.8) 0.42%,
       rgba(0, 0, 0, 0) 179.14%
-    );
+    );*/
+    background: linear-gradient(.16deg,#000 .14%,#0000 60%);
   }
 
   .collection-item .collection-gradient-box::after {
@@ -763,6 +764,8 @@
       rgba(0, 0, 0, 0.8) 0.42%,
       rgba(0, 0, 0, 0.4) 179.14%
     );
+
+
   }
 
   /* .collection-item:hover .collection-gradient-box::after {
