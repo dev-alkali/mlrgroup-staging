@@ -3743,10 +3743,10 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   <div class="max-w-[1440px] mr-auto ml-auto">
     <ul class="list-none border border-[#F5F5F5] max-w-[260px] p-5 rounded-[15px]">
       <li class="flex gap-[15px] items-center mb-[5px] text-[#525252] text-[14px] leading-snug">
-        <span style="width: 8px;height: 8px;border-radius: 50%;background:#000000;display: inline-block;"></span> MRL Offices
+        <span style="width: 6px;height: 6px;border-radius: 50%;background:#000000;display: inline-block;"></span> MRL Offices
       </li>
       <li class="flex gap-[15px] items-center mb-[5px] text-[#525252] text-[14px] leading-snug">
-        <span style="width: 8px;height: 8px;border-radius: 50%;background:#FD4338;display: inline-block;"></span> Remote workforce
+        <span style="width: 8px;height: 8px;border-radius: 50%;background:#FD4338;display: inline-block;"></span> Remote Workforce
       </li>
       <li class="flex gap-[15px] items-center mb-[0px] text-[#525252] text-[14px]">
         <span style="width: 10px;height: 10px;border-radius: 50%;background:#4772F2;display: inline-block;"></span> Supplier Network
@@ -3767,7 +3767,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
   /*max-width: 1360px;*/
   #wmap-inner svg,#wmap-inner img {display: block;width: 100%;height: auto;}  
   .wmap-marker {position: absolute;transform: translate(-50%, -50%);cursor: pointer;z-index: 20;transition: z-index 0s 3s;}
-  .wmap-dot {width: 12px;height: 12px;border-radius: 50%;transition: opacity 0.2s;}
+  .wmap-dot {width: 10px;height: 10px;border-radius: 50%;transition: opacity 0.2s;}
   .wmap-dot-large {width: 12px;height: 12px;border-radius: 50%;transition: opacity 0.2s;}
   .wmap-pin {position: absolute;top: -40px;left: 50%;transform: translateX(-50%) translateY(50%) scale(0);transform-origin: bottom center;transition: transform 0.3s ease;pointer-events: none;width: 20px;height: 20px;transition: transform 0.3s ease 0s;}
   /*.wmap-marker:hover .wmap-dot {opacity: 0;}*/
