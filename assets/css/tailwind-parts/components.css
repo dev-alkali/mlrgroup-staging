@@ -1623,6 +1623,7 @@ article.service-card:hover .bg-image{filter: none !important;}
 @media(max-width: 600px){
   .newsletter-gf--text br{display: none;}
   .footer-item-content{padding-bottom:15px}
+  .cta.black-cta .cta-wrapper h2{display:block;}
 }
 
 
