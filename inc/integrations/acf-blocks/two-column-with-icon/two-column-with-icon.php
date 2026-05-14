@@ -48,7 +48,7 @@ $section_color = get_sub_field('section_color');
 $lists = get_sub_field('icon_list');
 $image  = get_sub_field('image');
 
-$heading_full_width  = get_sub_field('heading_full_widths');
+$heading_full_width  = get_sub_field('heading_full_width');
 $has_image = !empty($image);
 
 if ( $content_width ){
