@@ -51,6 +51,15 @@ $image  = get_sub_field('image');
 $heading_full_width  = get_sub_field('heading_full_width');
 $has_image = !empty($image);
 
+
+$select_image_size = get_sub_field('select_image_size');
+$img_size_class = '';
+if ( $select_image_size === 'Cover' ) {
+    $img_size_class = ' img-cover';
+} elseif ( $select_image_size === 'Full' ) {
+    $img_size_class = ' img-full';
+}
+
 if ( $content_width ){
   echo '<style>
   @media (min-width: 1025px) {
@@ -78,7 +87,7 @@ if ( $section_color == 'black' ){
 }
 
 ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec test-col px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] <?php echo $bg_color_class; ?><?php echo $pt_class; ?><?php echo $pb_class; ?>">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec test-col px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] <?php echo $bg_color_class; ?><?php echo $pt_class; ?><?php echo $pb_class; ?> <?php echo $img_size_class; ?>">
 
       <?php if ($heading_full_width): ?>
         <div class="w-full wrapper mb-[30px]">
