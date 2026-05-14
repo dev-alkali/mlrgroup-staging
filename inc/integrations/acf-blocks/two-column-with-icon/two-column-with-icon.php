@@ -47,6 +47,8 @@ $section_color = get_sub_field('section_color');
 
 $lists = get_sub_field('icon_list');
 $image  = get_sub_field('image');
+
+$heading_full_width  = get_sub_field('heading_full_widths');
 $has_image = !empty($image);
 
 if ( $content_width ){
@@ -77,6 +79,22 @@ if ( $section_color == 'black' ){
 
 ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec test-col px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] <?php echo $bg_color_class; ?><?php echo $pt_class; ?><?php echo $pb_class; ?>">
+
+      <?php if ($heading_full_width): ?>
+        <div class="w-full">
+          <?php if($title_row_1 || $title_row_2): ?>
+            <h2 class="text-[clamp(32px,5vw,68px)] leading-[clamp(40px,6vw,76px)] tracking-[-4%] <?php echo $text_262626_class; ?> font-heading mb-[20px] md:mb-[30px]">
+              <?php if($title_row_1): ?>
+                  <span class="font-bold"><?php echo $title_row_1; ?></span>
+              <?php endif; ?>
+              <?php if($title_row_2): ?>
+                  <span class="font-bold"><?php echo $title_row_2; ?></span>
+              <?php endif; ?>
+            </h2>
+            <?php endif; ?>
+          
+        </div>
+        <?php endif; ?>
       
       <div class="gap-[30px] md:gap-[0px] w-full wrapper flex flex-col <?php echo $has_image ? $mobileFlex . ' ' . $desktopFlex : ''; ?> items-center two-column-wrapper">
 
