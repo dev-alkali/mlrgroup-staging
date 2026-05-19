@@ -1592,24 +1592,22 @@ article.service-card:hover .bg-image{filter: none !important;}
   .title-our-values-1 span{max-width: 188px;}
   .cta.black-cta .cta-wrapper{padding-bottom: 60px;}
   .arrow-img-position {background-size: 490px;}
-  .blog-content .two-column-wrapper .two-column-image figure img{object-fit: cover;max-height: 400px;}
-  section p br{display: none;}
+  .blog-content .two-column-wrapper .two-column-image figure img{object-fit: cover;max-height: 400px;}  
   .arrow-img-position.arrow-img-position-1line {position: relative;left: -15px;width: calc(100% + 15px);}
-  .br-none br{display: none;}
-
+  .map br,
+  section p br,
+  .br-none br,
   .two-col .font-light br{display: none;}
   .blog-content p,
   .blog-content li {font-size: 16px;line-height: 24px;}
   .summary-text p{font-size:20px;line-height:26px;}
   .c-cta span.block{display:inline;}
   .c-cta h2{display: block;}
-
   .blog-content figure.alignright{margin-left:0px !important;}
   .blog-content figure.alignright img{width:100% !important;}
-
   .red-line:after {content: '';width: calc(100% - 18px);}
-
-  .map br{display:none;}
+  
+  .single-case-studies .c-cta .c-cta__wrap{padding:25px;}
 }
 
 @media(max-width: 600px){
