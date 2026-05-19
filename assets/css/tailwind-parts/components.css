@@ -1440,25 +1440,15 @@ article.service-card:hover .bg-image{filter: none !important;}
 .c-cta__button:nth-child(2n) { background: #323232; }
 .c-cta__button:hover, .c-cta__button:nth-child(2n):hover { background: #fff; color: #323232; }
 .mobile-nav-arrow { transform: rotate(45deg)translateY(4px); }
-
 .logo-cards .logo-card:nth-child(n+25) {display: none;}
-
 .red-line:after {content: '';display: block;position: absolute;left: 0;bottom: 0;background: #FC4438;width: calc(100% - 23px);height: 1px;}
 
+.single-case-studies .c-cta{background:transparent;}
+.single-case-studies .c-cta .c-cta__wrap{background:#000000;}
+
 .page-id-228 .inner-hero{background-position:center top 21%;}
-
-.spin-words-wrapper {
-    height: 37.5px;
-    overflow: hidden;
-}
-
-.spin-words span {
-    display: flex;
-    align-items: center;
-    height: 37.5px;
-    animation: spin_words 6s infinite;
-}
-
+.spin-words-wrapper {height: 37.5px;overflow: hidden;}
+.spin-words span {display: flex;align-items: center;height: 37.5px;animation: spin_words 6s infinite;}
 @keyframes spin_words {
     10% {
         transform: translateY(-112%)
