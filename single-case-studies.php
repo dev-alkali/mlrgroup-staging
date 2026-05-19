@@ -68,7 +68,7 @@ get_header();
           })();
         </script> */ ?>
 
-        <article class="max-w-[1360px] mx-auto pt-[60px] xl:px-[120px] lg:px-[60px] md:px-[30px] md:pb-[60px]">
+        <article class="max-w-[1360px] mx-auto pt-[60px] xl:px-[120px] lg:px-[60px] md:px-[30px] md:pb-[60px] flex flex-wrap">
           <div class="blog-content">  
             <?php the_content(); ?>
           </div>
