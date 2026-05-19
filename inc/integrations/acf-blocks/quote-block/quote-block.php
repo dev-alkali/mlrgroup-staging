@@ -38,7 +38,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>-sec<?php echo $pt_class; ?><?php echo $pb_class; ?>">
 		<!-- <div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col md:flex-row items-center flex-wrap"> -->
 		<div class="wrapper ">
-        <?php if($arrow_display): ?>
+        <?php /* if($arrow_display): ?>
           <div class="arrow-display md:mb-[28px] mb-[18px]">
             <?php if($multiple_arrows): ?>
               <img src="<?= get_template_directory_uri() ?>/assets/imgs/seven-arrows-img.svg" alt="" class="md:max-w-[421px] max-w-[300px] w-full">
@@ -46,7 +46,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
               <img src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" alt="" class="w-[35px] h-[35px] md:w-[42px] md:h-[42px]">
             <?php endif; ?>
           </div>
-        <?php endif; ?>
+        <?php endif; */ ?>
 		<div class="quote-content md:pb-[28px] pb-[20px] border-b border-b-[6px] border-[#FD4338] tracking-[-2%] font-heading">
         <?php echo $quote; ?>
         </div>
