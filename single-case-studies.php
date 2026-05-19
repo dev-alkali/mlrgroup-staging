@@ -37,6 +37,7 @@ get_header();
           </div>
         <?php endif; ?>
 
+        <?php /*
         <div class="cs-arrow-row md:flex mt-[20px] hidden relative overflow-hidden items-center h-[50px]">
           <div class="absolute inset-0 flex flex-row-reverse items-center pr-[50px]">
             <?php for ($i = 0; $i < 40; $i++) : ?>
@@ -65,7 +66,7 @@ get_header();
             document.addEventListener('DOMContentLoaded', hideOverflowingArrows);
             window.addEventListener('resize', hideOverflowingArrows);
           })();
-        </script>
+        </script> */ ?>
 
         <article class="max-w-[1360px] mx-auto pt-[60px] xl:px-[120px] lg:px-[60px] md:px-[30px] md:pb-[60px]">
           <div class="blog-content">  
