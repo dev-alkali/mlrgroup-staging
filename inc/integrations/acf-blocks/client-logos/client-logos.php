@@ -117,7 +117,7 @@ if (!empty($block['className'])) {
                 <img
                   src="<?php echo esc_url($logo['url']); ?>"
                   alt="<?php echo esc_attr($logo['alt']); ?>"
-                  class="w-[100%] max-w-[120px] md:w-[140px] lg:w-[130px] xl:w-[108px] 2xl:w-[135px] xl:max-h-[100%] object-contain h-auto"
+                  class="w-[100%] w-[120px] md:w-[140px] lg:w-[130px] xl:w-[108px] 2xl:w-[135px] xl:max-h-[100%] object-contain h-auto"
                 />
               <?php endif; ?>
             </div>
