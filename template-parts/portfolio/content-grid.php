@@ -110,14 +110,31 @@ $term_id = isset($current_term->term_id) ? absint($current_term->term_id) : 0;
                 'order'          => 'DESC'
             );
 
+            $grid_tax_query = array();
+
             if ($term_id > 0) {
-                $query_args['tax_query'] = array(
-                    array(
-                        'taxonomy' => $taxonomy,
-                        'field'    => 'term_id',
-                        'terms'    => $term_id,
-                    ),
+                $grid_tax_query[] = array(
+                    'taxonomy' => $taxonomy,
+                    'field'    => 'term_id',
+                    'terms'    => $term_id,
                 );
+            }
+
+            // Exclude items already shown in the Featured Items section above so they don't repeat.
+            if ($featured_term && ! is_wp_error($featured_term) && $term_id !== (int) $featured_term->term_id) {
+                $grid_tax_query[] = array(
+                    'taxonomy' => $taxonomy,
+                    'field'    => 'term_id',
+                    'terms'    => (int) $featured_term->term_id,
+                    'operator' => 'NOT IN',
+                );
+            }
+
+            if (! empty($grid_tax_query)) {
+                if (count($grid_tax_query) > 1) {
+                    $grid_tax_query['relation'] = 'AND';
+                }
+                $query_args['tax_query'] = $grid_tax_query;
             }
 
             $portfolio_query = new WP_Query($query_args);

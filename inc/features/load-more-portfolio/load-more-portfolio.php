@@ -20,14 +20,32 @@ function load_more_portfolio_ajax() {
         'paged'          => $paged,
     );
 
+    $tax_query = array();
+
     if ( $term_id > 0 ) {
-        $args['tax_query'] = array(
-            array(
-                'taxonomy' => 'portfolio-category',
-                'field'    => 'term_id',
-                'terms'    => $term_id,
-            ),
+        $tax_query[] = array(
+            'taxonomy' => 'portfolio-category',
+            'field'    => 'term_id',
+            'terms'    => $term_id,
         );
+    }
+
+    // Keep featured items out of the load-more grid so they don't repeat the Featured Items section.
+    $featured_term = get_term_by( 'slug', 'featured-items', 'portfolio-category' );
+    if ( $featured_term && ! is_wp_error( $featured_term ) && $term_id !== (int) $featured_term->term_id ) {
+        $tax_query[] = array(
+            'taxonomy' => 'portfolio-category',
+            'field'    => 'term_id',
+            'terms'    => (int) $featured_term->term_id,
+            'operator' => 'NOT IN',
+        );
+    }
+
+    if ( ! empty( $tax_query ) ) {
+        if ( count( $tax_query ) > 1 ) {
+            $tax_query['relation'] = 'AND';
+        }
+        $args['tax_query'] = $tax_query;
     }
 
     $query = new WP_Query( $args );
