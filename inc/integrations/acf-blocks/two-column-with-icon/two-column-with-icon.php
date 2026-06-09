@@ -141,11 +141,11 @@ if ( $section_color == 'black' ){
                   $content = $list['i_content'];
                   ?>
                   <div class="flex flex-row gap-[15px] w-full">
-                    <div class="flex w-[15px] h-[15px] relative arrow-line mt-[4px] ml-[10px]">
+                    <div class="flex w-[15px] h-[15px] relative mt-[4px] ml-[10px]">
                       <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/red-arrow-feature-sec.svg" alt="" class="w-full">
                     </div>
 
-                    <?php /* <div class="flex w-[24px] h-[24px] relative">
+                    <?php /* <div class="flex w-[24px] h-[24px] arrow-line relative">
                       <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/list-icon.svg" alt="" class="w-full">
                     </div> */?>
                     <div class="flex flex-col flex-1">
