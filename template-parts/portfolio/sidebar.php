@@ -57,10 +57,8 @@ $filter_groups = get_field('portfolio_filter_groups', 'option');
               $is_open            = $parent_active || $parent_is_ancestor || $active_is_acf_child;
 
               $label_class = 'font-[Poppins] font-bold text-[18px] leading-[28px] text-[#262626] no-underline transition-colors';
-              if (!$parent_text) {
-                $label_class .= ' hover:text-[#FD4338]';
-                if ($is_open) $label_class .= ' text-[#FD4338]';
-              }
+              $label_class .= ' hover:text-[#FD4338]';
+              if ($is_open) $label_class .= ' text-[#FD4338]';
             ?>
               <li class="<?php echo $has_children ? 'has-child' : ''; ?>">
                 <div class="flex items-start justify-between space-y-[28px]">
