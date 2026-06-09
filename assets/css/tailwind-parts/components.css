@@ -1194,7 +1194,7 @@ button.swiper-button-disabled {
   @apply flex items-center pl-[35px] relative;
 }
 .description-content ul li::before{
-  @apply block w-[24px] h-[24px] bg-cover bg-center content-[''] absolute left-0 top-[3px];
+  @apply block w-[24px] h-[24px] bg-cover bg-center content-[''] absolute left-0 top-[2px];
   background-image: url('../../imgs/list-icon.svg');
   
 }
