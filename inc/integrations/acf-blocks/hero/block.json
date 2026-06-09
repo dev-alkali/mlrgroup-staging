@@ -7,9 +7,12 @@
     "category": "formatting",
     "icon": "admin-comments",
     "keywords": ["hero", "section"],
+    "supports": {
+        "mode": true
+    },
     "acf": {
-      "mode": "preview",
-      "renderTemplate": "hero.php"
+        "mode": "preview",
+        "renderTemplate": "hero.php"
     },
     "script": "heroJS"
 }
