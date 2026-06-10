@@ -64,7 +64,7 @@ $filter_groups = get_field('portfolio_filter_groups', 'option');
                 <div class="flex items-start justify-between space-y-[28px]">
 
                   <?php if ($parent_text) : ?>
-                    <a href="<?php echo esc_url($parent_link); ?>" class="<?php echo esc_attr($label_class); ?> <?php echo $has_children ? 'cursor-pointer' : ''; ?>" <?php echo $has_children ? 'data-toggle' : ''; ?>>
+                    <a href="<?php echo esc_url($parent_link); ?>" class="<?php echo esc_attr($label_class); ?> <?php echo $has_children ? 'cursor-pointer' : ''; ?>" <?php echo $has_children ? '' : ''; ?>>
                       <?php echo esc_html($parent_text); ?>
                     </a>
                   <?php else :
