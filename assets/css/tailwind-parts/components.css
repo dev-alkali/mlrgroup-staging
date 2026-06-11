@@ -1333,6 +1333,7 @@ a.footer-text:hover{color:#ffffff;}
 
 .child-list {display: none;margin-bottom: 28px;}
 .child-list.is-open {display: block !important;}
+.arrow.arrow-open {rotate: unset !important;}
 .sidebar-cat li.has-child {margin: 0 !important;}
 .arrow {display: inline-flex;transition: transform 0.3s ease;}
 .filter-toggle-btn{cursor: pointer;}
