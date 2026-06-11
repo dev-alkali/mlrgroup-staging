@@ -1441,7 +1441,7 @@ article.service-card:hover .bg-image{filter: none !important;}
 .c-cta__button:hover, .c-cta__button:nth-child(2n):hover { background: #fff; color: #323232; }
 .mobile-nav-arrow { transform: rotate(45deg)translateY(4px); }
 .logo-cards .logo-card:nth-child(n+25) {display: none;}
-.red-line:after {content: '';display: block;position: absolute;left: 0;bottom: 0;background: #FC4438;width: calc(100% - 23px);height: 1px;}
+.red-line:after {content: '';display: block;position: absolute;left: 0;bottom: 0;background: #FC4438;width: calc(100% - 23px);height: 1px;opacity: 0;}
 
 .single-case-studies .c-cta{background:transparent;padding-top:0px;}
 .single-case-studies .c-cta .c-cta__wrap{background:#000000;padding:50px;}
