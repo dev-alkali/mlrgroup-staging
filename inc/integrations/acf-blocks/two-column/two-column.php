@@ -89,10 +89,10 @@ if ( $block_class ){
   $className .= ' ' . $block_class;
 }
 
-echo '<pre>';
+
 print_r($block_id);
 print_r($block_class);
-echo '</pre>';
+
 
 
 ?>
