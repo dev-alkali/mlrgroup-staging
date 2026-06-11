@@ -31,8 +31,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     $pb_class = ' ' . 'pb0';
 }
 
-$block_id = get_field('block_id');
-$block_class = get_field('block_class');
+$block_id = get_sub_field('block_id');
+$block_class = get_sub_field('block_class');
 
 $title_row_1 = get_sub_field('title_row_1');
 $title_row_2 = get_sub_field('title_row_2');
@@ -88,12 +88,6 @@ if ( $block_id ){
 if ( $block_class ){
   $className .= ' ' . $block_class;
 }
-
-
-print_r($block_id);
-print_r($block_class);
-
-
 
 ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] <?php echo $bg_color_class; ?><?php echo $pt_class; ?><?php echo $pb_class; ?><?php echo $img_size_class; ?>">
