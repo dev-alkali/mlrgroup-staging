@@ -93,7 +93,7 @@ echo '<pre>';
 print_r($block_id);
 print_r($block_class);
 echo '</pre>';
-exit;
+
 
 ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] <?php echo $bg_color_class; ?><?php echo $pt_class; ?><?php echo $pb_class; ?><?php echo $img_size_class; ?>">
