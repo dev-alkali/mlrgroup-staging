@@ -31,8 +31,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     $pb_class = ' ' . 'pb0';
 }
 
-$section_id = get_field('id');
-$section_class = get_field('class');
+$section_id = get_field('block_id');
+$section_class = get_field('block_class');
 
 $title_row_1 = get_sub_field('title_row_1');
 $title_row_2 = get_sub_field('title_row_2');
