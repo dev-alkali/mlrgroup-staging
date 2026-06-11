@@ -88,7 +88,7 @@ $filter_groups = get_field('portfolio_filter_groups', 'option');
                   <?php endif; ?>
 
                   <?php if ($has_children) :
-                    $arrow_class = 'arrow cursor-pointer ml-2 transition-transform duration-300 mt-[9px]' . ($is_open ? ' rotate-180' : '');
+                    $arrow_class = 'arrow cursor-pointer ml-2 transition-transform duration-300 mt-[9px]' . ($is_open ? 'arrow-open' : ' rotate-180');
                   ?>
                     <span class="<?php echo esc_attr($arrow_class); ?>" data-toggle>
                       <svg width="14" height="9" viewBox="0 0 14 9" fill="none">
