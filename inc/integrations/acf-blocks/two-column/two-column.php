@@ -31,6 +31,9 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     $pb_class = ' ' . 'pb0';
 }
 
+$section_id = get_field('id');
+$section_class = get_field('class');
+
 $title_row_1 = get_sub_field('title_row_1');
 $title_row_2 = get_sub_field('title_row_2');
 $description = get_sub_field('description');
@@ -77,6 +80,13 @@ if ( $section_color == 'black' ){
   $text_525252_class = 'text-[#525252]';
   $text_e5e5e5_class = 'text-[#E5E5E5]';
   $text_white_class = 'text-white';
+}
+
+if ( $section_id ){
+  $id = $section_id;
+}
+if ( $section_class ){
+  $className .= ' ' . $section_class;
 }
 
 ?>

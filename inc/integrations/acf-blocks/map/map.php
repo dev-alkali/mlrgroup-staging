@@ -3819,7 +3819,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       label : 'Nashville',
       city  : 'USA',
       left  : '63.2%',
-      top   : '37.7%',
+      top   : '39%',
       color : '#FD4338',
       cls   : 'wmap-red',
       large : true
@@ -3977,7 +3977,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
       label : 'Dallas',
       city  : 'USA',
       left  : '62%',
-      top   : '40%',
+      top   : '42%',
       color : '#000000',
       cls   : 'wmap-black'
     },
@@ -4094,8 +4094,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     {
       label : 'Canada',
       city  : '',
-      left  : '58%',
-      top   : '23%',
+      left  : '61%',
+      top   : '25%',
       color   : '#4A78FF',
       cls     : 'wmap-blue',
       large   : true,
