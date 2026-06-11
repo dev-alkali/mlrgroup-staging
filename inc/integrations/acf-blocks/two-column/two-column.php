@@ -31,8 +31,8 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     $pb_class = ' ' . 'pb0';
 }
 
-$section_id = get_field('block_id');
-$section_class = get_field('block_class');
+$block_id = get_field('block_id');
+$block_class = get_field('block_class');
 
 $title_row_1 = get_sub_field('title_row_1');
 $title_row_2 = get_sub_field('title_row_2');
@@ -82,14 +82,18 @@ if ( $section_color == 'black' ){
   $text_white_class = 'text-white';
 }
 
-if ( $section_id ){
-  $id = $section_id;
+if ( $block_id ){
+  $id = $block_id;
 }
-if ( $section_class ){
-  $className .= ' ' . $section_class;
+if ( $block_class ){
+  $className .= ' ' . $block_class;
 }
 
-print_r($section_id);
+echo '<pre>';
+print_r($block_id);
+print_r($block_class);
+echo '</pre>';
+exit;
 
 ?>
     <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> two-col-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px] <?php echo $bg_color_class; ?><?php echo $pt_class; ?><?php echo $pb_class; ?><?php echo $img_size_class; ?>">
