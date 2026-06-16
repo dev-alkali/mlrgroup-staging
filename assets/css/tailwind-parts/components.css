@@ -1532,6 +1532,8 @@ article.service-card:hover .bg-image{filter: none !important;}
 }
 @media (min-width: 768px) {
   #sidebar-filter { position: sticky; top: 100px; align-self: flex-start; }
+
+  .features-section.two-col-freight .two-list-fred{flex-wrap:nowrap;}
 }
 @media (min-width: 1280px) {
   .cs-card:hover .to-transparent { background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), linear-gradient(224.29deg, rgba(0, 0, 0, 0.2) -41.89%, rgba(74, 120, 255, 0.8) 100%); }
