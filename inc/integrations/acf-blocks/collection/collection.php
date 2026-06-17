@@ -106,7 +106,7 @@ if (!empty($block['className'])) {
                                         background-size: cover;
                                         background-repeat: no-repeat;
                                     "' : ""; ?>>
-                                <a href="<?= esc_url($link_url) ?>" target="<?= esc_attr($link_target) ?>" class=" <?= $bg_image == "" ? "color-bg-hover" : "collection-gradient-box" ?> flex flex-col  items-end justify-between w-full h-full px-6 py-10 relative">
+                                <a href="<?= esc_url($link_url) ?>" target="<?= esc_attr($link_target) ?>" class=" <?= $bg_image == "" ? "color-bg-hover" : "collection-gradient-box" ?> flex flex-col  items-end justify-end w-full h-full px-6 py-10 relative">
                                     <div class="flex flex-col relative z-20 items-start <?= esc_url(get_sub_field('icon')) !== "" ? "" : "pt-[88px]"; ?> gap-5 relative self-stretch w-full flex-[0_0_auto]">
                                     <?php if (esc_url(get_sub_field('icon')) !== ""): ?>
                                         <img
