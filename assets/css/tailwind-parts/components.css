@@ -776,7 +776,7 @@
   .collection-item:hover .collection-gradient-box::before {
     /* opacity: 0; */
    /*background: linear-gradient(90deg,#000000e6 .42%,#0006 179.14%);*/
-   background: linear-gradient(.16deg,#000 .14%,#0000 138.15%);
+   background: linear-gradient(.16deg,#000 15.14%,#0000 138.15%);
   }
 
   /*******/
