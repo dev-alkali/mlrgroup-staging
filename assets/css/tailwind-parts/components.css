@@ -754,7 +754,7 @@
       rgba(0, 0, 0, 0.8) 0.42%,
       rgba(0, 0, 0, 0) 179.14%
     );*/
-    background: linear-gradient(.16deg,#000 .14%,#0000 90%);
+    background: linear-gradient(.16deg,#000 10.14%,#0000 80%);
   }
 
   .collection-item .collection-gradient-box::after {
