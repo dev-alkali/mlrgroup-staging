@@ -108,7 +108,7 @@ if (!empty($block['className'])) {
             $bg_color = $item['bg_color'];
             $industry = $item['industry'];
           ?>
-            <div class="logo-card p-6 md:p-7 flex items-center text-center justify-center aspect-square relative xl:w-[calc(14.28%-7px)] lg:w-[calc(25%-6px)] sm:w-[calc(33.33%-6px)] w-[calc(50%-6px)]"
+            <div class="logo-card p-6 md:p-7 flex items-center text-center justify-center aspect-square relative xl:w-[calc(16.66%-7px)] lg:w-[calc(25%-6px)] sm:w-[calc(33.33%-6px)] w-[calc(50%-6px)]"
                 style="background-color: <?php //echo esc_attr($bg_color); ?>;"
                 data-industry="<?php echo esc_attr($industry); ?>"
                 data-index="<?php echo esc_attr($i); ?>">
