@@ -81,7 +81,7 @@ if (!empty($block['className'])) {
                   alt="<?php echo esc_attr($logo['alt']); ?>"
                   class="w-[100%] max-h-[100%] object-contain h-auto"/>
                 </figure>
-                <div class="pl-[10px]">
+                <div class="pl-[20px]">
                     <?php if ($in_title) : ?>
                     <h3><b><?php echo $in_title;?></b></h3>
                     <?php endif; ?>
@@ -93,21 +93,6 @@ if (!empty($block['className'])) {
             </div>
           <?php endforeach; ?>
         </div>
-
-
-        <?php
-          $link = get_sub_field('button');
-          if ($link) :
-            $link_url    = $link['url'];
-            $link_title  = $link['title'];
-            $link_target = $link['target'] ? $link['target'] : '_self';
-        ?>
-          <div class="text-center mt-[32px] md:mt-[40px] view-more-btn">
-            <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"  class="btn-primary blue-btn"><span><?php echo esc_html($link_title); ?></span></a>
-          </div>
-        <?php endif; ?>
-
-
       </div>
     </section>
 
