@@ -71,17 +71,21 @@ if (!empty($block['className'])) {
         <div class="logo-cards gap-2 flex justify-center flex-wrap">
           <?php foreach ($logos as $i => $item) :
             $logo     = $item['logo'];
-            $in_title = $item['bg_color'];
-            $in_sub_title = $item['industry'];
+            $in_title = $item['in_title'];
+            $in_sub_title = $item['in_sub_title'];
           ?>
             <div class="logo-card p-6 md:p-7 flex items-center text-center justify-center aspect-square relative xl:w-[calc(16.66%-7px)] lg:w-[calc(25%-6px)] sm:w-[calc(33.33%-6px)] w-[calc(50%-6px)]" style="background-color: <?php //echo esc_attr($bg_color); ?>;">
 
               <?php if ($logo) : ?>
-                <img
+                <figure><img
                   src="<?php echo esc_url($logo['url']); ?>"
                   alt="<?php echo esc_attr($logo['alt']); ?>"
-                  class="w-[100%] w-[120px] md:w-[140px] lg:w-[150px] lg:h-[90px] xl:w-[120px] 2xl:w-[155px] xl:h-[100px] 2xl:h-[120px] xl:max-h-[100%] object-contain h-auto"
-                />
+                  class="w-[100%] w-[120px] md:w-[140px] lg:w-[150px] lg:h-[90px] xl:w-[120px] 2xl:w-[155px] xl:h-[100px] 2xl:h-[120px] xl:max-h-[100%] object-contain h-auto"/>
+                </figure>
+                <div class="">
+                    <h3><?php echo $in_title;?></h3>
+                    <h4><?php echo $in_sub_title;?></h4>
+                </div>
               <?php endif; ?>
             </div>
           <?php endforeach; ?>
