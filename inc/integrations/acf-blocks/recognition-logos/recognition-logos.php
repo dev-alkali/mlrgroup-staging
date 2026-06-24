@@ -86,7 +86,7 @@ if (!empty($block['className'])) {
                     <h3><b><?php echo $in_title;?></b></h3>
                     <?php endif; ?>
                     <?php if ($in_sub_title) : ?>
-                    <h4><?php echo $in_sub_title;?></h4>
+                    <h4 class="mt-[5px]"><?php echo $in_sub_title;?></h4>
                     <?php endif; ?>
                 </div>
               <?php endif; ?>
