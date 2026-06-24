@@ -147,7 +147,7 @@ if ( is_tax('portfolio-category') ) {
         </nav>
 
         <?php if(get_field('lets_talk_link', 'option')): ?>
-        <a class="btn-primary " href="<?php echo esc_url(get_field('lets_talk_link', 'option')); ?>">Let’s TALK</a>
+        <a class="btn-primary " href="<?php echo esc_url(get_field('lets_talk_link', 'option')); ?>"><span>Let’s TALK</span> <img decoding="async" class="relative w-4 h-4 max-[768px]:mt-[3px] arrow" src="/wp-content/themes/Mlrgroup/assets/imgs/Arrow.svg" alt="arrow"></a>
         <?php endif; ?>
 
       </div>
