@@ -141,6 +141,11 @@ $term_id = isset($current_term->term_id) ? absint($current_term->term_id) : 0;
 
             $portfolio_query = new WP_Query($query_args);
 
+            // Thin gray line between Featured Items and the non-curated items.
+            if ($has_featured && $portfolio_query->have_posts()) : ?>
+                <div class="col-span-full border-t border-[#CCCCCC] my-[20px] md:my-[28px]" aria-hidden="true"></div>
+            <?php endif;
+
             if ($portfolio_query->have_posts()) :
                 while ($portfolio_query->have_posts()) : $portfolio_query->the_post();
                     $post_id = get_the_ID();
