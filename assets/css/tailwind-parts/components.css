@@ -1450,6 +1450,9 @@ article.service-card:hover .bg-image{filter: none !important;}
 .ck-col-sec.two-col-sec h3 {line-height: clamp(24px, 2.8vw, 32px);font-size: clamp(16px,2.2vw,24px);}
 
 .awards-gallery .logo-card img {filter: unset;background: transparent;}
+.site-header__nav a.btn-primary img{will-change: transform;transition: transform .45s cubic-bezier(.2, .8, .2, 1);transform: rotate(0);}
+.site-header__nav a.btn-primary:hover img{transform: rotate(45deg);}
+
 
 /* .page-id-228 .inner-hero{background-position:center top 21%;} */
 .spin-words-wrapper {height: 37.5px;overflow: hidden;}
