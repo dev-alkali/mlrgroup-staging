@@ -4,18 +4,18 @@
  * Recognition Logos Block Template.
  */
 
-$id = 'client-logos-' . $block['id'];
+$id = 'recognition-logos-' . $block['id'];
 if (!empty($block['anchor'])) {
   $id = $block['anchor'];
 }
 
-$className = 'client-logos';
+$className = 'recognition-logos';
 if (!empty($block['className'])) {
   $className .= ' ' . $block['className'];
 }
 ?>
-<?php if (have_rows('client-logos')) : ?>
-  <?php while (have_rows('client-logos')) : the_row();
+<?php if (have_rows('recognition-logos')) : ?>
+  <?php while (have_rows('recognition-logos')) : the_row();
 
     $section_remove_top_padding    = get_sub_field('section_remove_top_padding');
     $section_remove_bottom_padding = get_sub_field('section_remove_bottom_padding');
@@ -31,7 +31,7 @@ if (!empty($block['className'])) {
     }
   ?>
 
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> client-logos flex justify-center px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px]<?php echo $pt_class; ?><?php echo $pb_class; ?>">
+    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> recognition-logos flex justify-center px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px]<?php echo $pt_class; ?><?php echo $pb_class; ?>">
       <div class="w-full wrapper">
 
         <?php
