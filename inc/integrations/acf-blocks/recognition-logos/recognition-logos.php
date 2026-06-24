@@ -74,7 +74,7 @@ if (!empty($block['className'])) {
             $in_title = $item['in_title'];
             $in_sub_title = $item['in_sub_title'];
           ?>
-            <div class="rec-card p-6 md:p-7 flex items-center justify-center relative sm:w-[calc(33.33%-6px)] w-[calc(50%-6px)] bg-[#f5f5f5]">
+            <div class="rec-card p-6 md:p-7 flex items-center relative sm:w-[calc(33.33%-6px)] w-[calc(50%-6px)] bg-[#f5f5f5]">
               <?php if ($logo) : ?>
                 <figure><img
                   src="<?php echo esc_url($logo['url']); ?>"
