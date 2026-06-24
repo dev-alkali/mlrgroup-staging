@@ -82,8 +82,12 @@ if (!empty($block['className'])) {
                   class="w-[100%] w-[120px] md:w-[140px] lg:w-[150px] lg:h-[90px] xl:w-[120px] 2xl:w-[155px] xl:h-[100px] 2xl:h-[120px] xl:max-h-[100%] object-contain h-auto"/>
                 </figure>
                 <div class="">
+                    <?php if ($in_title) : ?>
                     <h3><?php echo $in_title;?></h3>
+                    <?php endif; ?>
+                    <?php if ($in_sub_title) : ?>
                     <h4><?php echo $in_sub_title;?></h4>
+                    <?php endif; ?>
                 </div>
               <?php endif; ?>
             </div>
