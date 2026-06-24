@@ -36,6 +36,8 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/acf-blocks/two-column-with-icon');  
   register_block_type(__DIR__ . '/acf-blocks/features-section');  
   register_block_type(__DIR__ . '/acf-blocks/two-title-with-icon');  
+  register_block_type(__DIR__ . '/acf-blocks/recognition-logos');  
+  
   
 
 } 

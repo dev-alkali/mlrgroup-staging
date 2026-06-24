@@ -1,0 +1,14 @@
+{
+    "name": "acf/recognition-logos",
+    "title": "recognition Logos",
+    "description": "recognition Logos Section",
+    "style": ["file:./recognition-logos.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["recognition-logos", "section"],
+    "acf": {
+      "mode": "edit",
+      "renderTemplate": "recognition-logos.php"
+    },
+    "script": "recognition-logosJS"
+}
