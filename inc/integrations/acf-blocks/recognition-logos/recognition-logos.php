@@ -81,7 +81,7 @@ if (!empty($block['className'])) {
                   alt="<?php echo esc_attr($logo['alt']); ?>"
                   class="w-[100%] w-[120px] md:w-[140px] lg:w-[150px] lg:h-[90px] xl:w-[120px] 2xl:w-[155px] xl:h-[100px] 2xl:h-[120px] xl:max-h-[100%] object-contain h-auto"/>
                 </figure>
-                <div class="">
+                <div class="pl-[10px]">
                     <?php if ($in_title) : ?>
                     <h3><b><?php echo $in_title;?></b></h3>
                     <?php endif; ?>
