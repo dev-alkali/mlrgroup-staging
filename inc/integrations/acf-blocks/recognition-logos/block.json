@@ -1,7 +1,7 @@
 {
     "name": "acf/recognition-logos",
-    "title": "recognition Logos",
-    "description": "recognition Logos Section",
+    "title": "Recognition Logos",
+    "description": "Recognition Logos Section",
     "style": ["file:./recognition-logos.css"],
     "category": "formatting",
     "icon": "admin-comments",
