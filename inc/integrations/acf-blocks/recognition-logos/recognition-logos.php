@@ -76,7 +76,7 @@ if (!empty($block['className'])) {
           ?>
             <div class="rec-card p-6 md:p-7 flex items-center relative sm:w-[calc(33.33%-6px)] w-[calc(50%-6px)] bg-[#f5f5f5]">
               <?php if ($logo) : ?>
-                <figure><img
+                <figure class="max-w-[90px] md:max-w-[100px] lg:max-w-[125px]"><img
                   src="<?php echo esc_url($logo['url']); ?>"
                   alt="<?php echo esc_attr($logo['alt']); ?>"
                   class="w-[100%] w-[120px] md:w-[140px] lg:w-[150px] lg:h-[90px] xl:w-[120px] 2xl:w-[155px] xl:h-[100px] 2xl:h-[120px] xl:max-h-[100%] object-contain h-auto"/>
