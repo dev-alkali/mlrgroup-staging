@@ -83,7 +83,7 @@ if (!empty($block['className'])) {
                 </figure>
                 <div class="">
                     <?php if ($in_title) : ?>
-                    <h3><?php echo $in_title;?></h3>
+                    <h3><b><?php echo $in_title;?></b></h3>
                     <?php endif; ?>
                     <?php if ($in_sub_title) : ?>
                     <h4><?php echo $in_sub_title;?></h4>
