@@ -1456,6 +1456,8 @@ article.service-card:hover .bg-image{filter: none !important;}
 /*.recognition-logos .rec-card img{filter: grayscale() brightness(.7);}*/
 
 
+
+
 /* .page-id-228 .inner-hero{background-position:center top 21%;} */
 .spin-words-wrapper {height: 37.5px;overflow: hidden;}
 .spin-words span {display: flex;align-items: center;height: 37.5px;animation: spin_words 6s infinite;}
@@ -1531,6 +1533,13 @@ article.service-card:hover .bg-image{filter: none !important;}
 
 
 /* Responsive */
+
+@media screen and (max-width: 1280px) and (min-width: 768px) {
+  .two-col-version1 .two-column-wrapper{flex-wrap:wrap !important;}
+  .two-col-version1 .two-column-image{width:100% !important;}
+  .two-col-version1 .two-column-content{width:100% !important;}
+}
+
 @media (min-width: 48rem) {
   .cs-cards { flex-direction: row; flex-wrap: wrap; }
   .cs-card { max-width: calc( (100% - calc(var(--spacing) * 8) ) / 2 ); width: 100%; }
