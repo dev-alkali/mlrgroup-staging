@@ -1453,7 +1453,7 @@ article.service-card:hover .bg-image{filter: none !important;}
 .site-header__nav a.btn-primary img{will-change: transform;transition: transform .45s cubic-bezier(.2, .8, .2, 1);transform: rotate(0);}
 .site-header__nav a.btn-primary:hover img{transform: rotate(45deg);}
 
-.recognition-logos .rec-card img{filter: grayscale() brightness(.7);}
+/*.recognition-logos .rec-card img{filter: grayscale() brightness(.7);}*/
 
 
 /* .page-id-228 .inner-hero{background-position:center top 21%;} */
