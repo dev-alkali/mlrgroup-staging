@@ -176,11 +176,12 @@ if (!empty($block['className'])) {
   .collection-main .collection-item {
     width: calc(50% - 8px);
   }
-  /* Last (odd) card spans full width  ->  1+2, 3+4, 5 full */
-  .collection-main .collection-parent:last-child .collection-item:last-child {
+  /* Card 5 stays half (next to card 3), card 4 becomes the full-width card  ->  1+2, 3+5, 4 full */
+  .collection-main .collection-parent:last-child .collection-item:first-child {
     width: 100%;
+    order: 1;
   }
-  /* Cancel the existing 1,3,2 reorder so cards flow 1,2,3,4,5 */
+  /* Cancel the existing 1,3,2 reorder so cards flow 1,2,3,5,4 */
   .collection-main .collection-parent:first-child .collection-item:first-child,
   .collection-main .collection-parent:first-child .collection-item:nth-child(2),
   .collection-main .collection-parent:first-child .collection-item:nth-child(3) {
