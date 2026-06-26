@@ -1635,6 +1635,9 @@ article.service-card:hover .bg-image{filter: none !important;}
   .red-line:after {content: '';width: calc(100% - 18px);}
   
   .single-case-studies .c-cta .c-cta__wrap{padding:25px;}
+
+  
+  .collection .collection-main{max-width: 450px;margin: 0px auto;}
 }
 
 @media(max-width: 600px){
