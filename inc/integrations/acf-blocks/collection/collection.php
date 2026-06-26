@@ -52,7 +52,7 @@ if (!empty($block['className'])) {
                 endif; ?>
 
                 <?php if (have_rows('main_content')) :  while (have_rows('main_content')) : the_row(); ?>
-                    <div class="flex-col items-start max-[768px]:gap-6 max-[1024px]:gap-10 w-full flex-[0_0_auto] flex relative">
+                    <div class="collection-main flex-col items-start max-[768px]:gap-6 max-[1024px]:gap-10 w-full flex-[0_0_auto] flex relative">
                     <?php if (have_rows('collection_rows')) :  while (have_rows('collection_rows')) : the_row(); ?>
                         <?php
                         // $row_height = "";
@@ -156,14 +156,37 @@ if (!empty($block['className'])) {
                     $btn_target = $btn['target'] ? $btn['target'] : '_self';
                     ?>
                     <div class="text-center flex items-center justify-center gap-2 mt-[40px] w-full">
-                        <?php /* <a class="relative w-fit uppercase font-heading font-semibold text-accent text-center tracking-[0] leading-[24px] min-[600px]:leading-[18px] whitespace-nowrap view-more-btn flex items-center justify-center gap-2" href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>">
-                            <?php echo esc_html( $btn_title ); ?>
-                            <img class="relative md:w-4 md:h-4 w-[11px] h-[11px] arrow" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-red.svg" alt="Arrow">
-                        </a> */ ?>
 
                         <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>"  class="btn-primary blue-btn"><span><?php echo esc_html( $btn_title ); ?></span></a>
                     </div>
                 <?php endif; ?>
     </section>
+
+    <style>
+        @media (min-width: 768px) and (max-width: 1023px) {
+  /* Flatten both row containers into one wrapping 2-col grid */
+  .collection-main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .collection-main .collection-parent {
+    display: contents;
+  }
+  .collection-main .collection-item {
+    width: calc(50% - 8px);
+  }
+  /* Last (odd) card spans full width  ->  1+2, 3+4, 5 full */
+  .collection-main .collection-parent:last-child .collection-item:last-child {
+    width: 100%;
+  }
+  /* Cancel the existing 1,3,2 reorder so cards flow 1,2,3,4,5 */
+  .collection-main .collection-parent:first-child .collection-item:first-child,
+  .collection-main .collection-parent:first-child .collection-item:nth-child(2),
+  .collection-main .collection-parent:first-child .collection-item:nth-child(3) {
+    order: 0;
+  }
+}
+    </style>
 <?php endwhile;
 endif; ?>
