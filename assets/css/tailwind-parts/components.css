@@ -1538,6 +1538,7 @@ article.service-card:hover .bg-image{filter: none !important;}
   .two-col-version1 .two-column-wrapper{flex-wrap:wrap !important;}
   .two-col-version1 .two-column-image{width:100% !important;}
   .two-col-version1 .two-column-content{width:100% !important;}
+  .two-col-version1 .two-column-content .md\:pl-\[30px\]{padding-left:0px !important}
 }
 
 @media (min-width: 48rem) {
