@@ -1537,7 +1537,7 @@ article.service-card:hover .bg-image{filter: none !important;}
 @media screen and (max-width: 1280px) and (min-width: 768px) {
   .two-col-version1 .two-column-wrapper{flex-wrap:wrap !important;flex-direction: column-reverse;}
   .two-col-version1 .two-column-image{width:100% !important;}
-  .two-col-version1 .two-column-content{width:100% !important;margin-bottom:30px;}
+  .two-col-version1 .two-column-content{width:100% !important;margin-bottom:40px;}
   .two-col-version1 .two-column-content .md\:pl-\[30px\]{padding-left:0px !important}
 }
 
