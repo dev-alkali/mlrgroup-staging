@@ -79,7 +79,7 @@ if (!empty($block['className'])) {
                 <figure class="max-w-[90px] md:max-w-[100px] lg:max-w-[125px] mb-0"><img
                   src="<?php echo esc_url($logo['url']); ?>"
                   alt="<?php echo esc_attr($logo['alt']); ?>"
-                  class="w-[100%] max-h-[100%] object-contain h-auto"/>
+                  class="w-[100%] max-h-[100%] object-contain h-auto max-w-[90px]"/>
                 </figure>
                 <div class="pl-[20px]">
                     <?php if ($in_title) : ?>
