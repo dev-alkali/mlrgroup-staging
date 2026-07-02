@@ -2,6 +2,12 @@
 $taxonomy = 'portfolio-category';
 $current_term = get_queried_object();
 $term_id = isset($current_term->term_id) ? absint($current_term->term_id) : 0;
+$is_subcategory = (
+    $term_id > 0
+    && isset($current_term->parent)
+    && (int) $current_term->parent > 0
+);
+$show_featured_section = ! $is_subcategory;
 ?>
 
 <div class="flex flex-col items-start flex-1 min-w-0 justify-center w-full md:w-auto">
@@ -26,12 +32,13 @@ $term_id = isset($current_term->term_id) ? absint($current_term->term_id) : 0;
     <div class="w-full">
         <?php
         // Featured Items: items assigned to the "featured-items" category.
-        // On a category/subcategory page we scope to the current term AND featured-items
+        // Shown on /work/ and top-level categories only — not on subcategories.
+        // On a category page we scope to the current term AND featured-items
         // so each category shows only its own featured items (newest first, max 24).
         $featured_term  = get_term_by('slug', 'featured-items', $taxonomy);
         $featured_query = null;
 
-        if ($featured_term && ! is_wp_error($featured_term)) {
+        if ($show_featured_section && $featured_term && ! is_wp_error($featured_term)) {
             $featured_args = array(
                 'post_type'      => 'portfolio',
                 'posts_per_page' => 24,
@@ -67,7 +74,9 @@ $term_id = isset($current_term->term_id) ? absint($current_term->term_id) : 0;
             $featured_query = new WP_Query($featured_args);
         }
 
-        $has_featured = ($featured_query instanceof WP_Query) && $featured_query->have_posts();
+        $has_featured = $show_featured_section
+            && ($featured_query instanceof WP_Query)
+            && $featured_query->have_posts();
         ?>
 
         <?php if ($has_featured) : ?>
@@ -123,7 +132,7 @@ $term_id = isset($current_term->term_id) ? absint($current_term->term_id) : 0;
             }
 
             // Exclude items already shown in the Featured Items section above so they don't repeat.
-            if ($featured_term && ! is_wp_error($featured_term) && $term_id !== (int) $featured_term->term_id) {
+            if ($show_featured_section && $featured_term && ! is_wp_error($featured_term) && $term_id !== (int) $featured_term->term_id) {
                 $grid_tax_query[] = array(
                     'taxonomy' => $taxonomy,
                     'field'    => 'term_id',
