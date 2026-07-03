@@ -1544,7 +1544,7 @@ article.service-card:hover .bg-image{filter: none !important;}
   .two-col-version1 .two-column-content{width:100% !important;margin-bottom:40px;}
   .two-col-version3 .two-column-content .md\:pl-\[30px\],
   .two-col-version1 .two-column-content .md\:pl-\[30px\]{padding-left:0px !important}
-  .two-col-version3 .two-column-image{max-width:750px;        margin-right: auto;}
+  .two-col-version3 .two-column-image{max-width:750px;}
 
 
 }
