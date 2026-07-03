@@ -2,12 +2,7 @@
 $taxonomy = 'portfolio-category';
 $current_term = get_queried_object();
 $term_id = isset($current_term->term_id) ? absint($current_term->term_id) : 0;
-$is_subcategory = (
-    $term_id > 0
-    && isset($current_term->parent)
-    && (int) $current_term->parent > 0
-);
-$show_featured_section = ! $is_subcategory;
+$show_featured_section = mlr_portfolio_show_featured_section($term_id);
 ?>
 
 <div class="flex flex-col items-start flex-1 min-w-0 justify-center w-full md:w-auto">
@@ -32,7 +27,7 @@ $show_featured_section = ! $is_subcategory;
     <div class="w-full">
         <?php
         // Featured Items: items assigned to the "featured-items" category.
-        // Shown on /work/ and top-level categories only — not on subcategories.
+        // Shown on /work/ and ACF parent categories (including when also listed as a child).
         // On a category page we scope to the current term AND featured-items
         // so each category shows only its own featured items (newest first, max 24).
         $featured_term  = get_term_by('slug', 'featured-items', $taxonomy);

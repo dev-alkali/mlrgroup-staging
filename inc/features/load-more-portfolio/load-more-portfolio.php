@@ -31,11 +31,9 @@ function load_more_portfolio_ajax() {
     }
 
     // Keep featured items out of the load-more grid so they don't repeat the Featured Items section.
-    // Subcategories don't show a Featured Items section, so include them in the regular grid.
-    $term = $term_id > 0 ? get_term( $term_id, 'portfolio-category' ) : null;
-    $is_subcategory   = $term && ! is_wp_error( $term ) && (int) $term->parent > 0;
-    $featured_term    = get_term_by( 'slug', 'featured-items', 'portfolio-category' );
-    if ( ! $is_subcategory && $featured_term && ! is_wp_error( $featured_term ) && $term_id !== (int) $featured_term->term_id ) {
+    // Child-only categories don't show a Featured Items section, so include them in the regular grid.
+    $featured_term = get_term_by( 'slug', 'featured-items', 'portfolio-category' );
+    if ( mlr_portfolio_show_featured_section( $term_id ) && $featured_term && ! is_wp_error( $featured_term ) && $term_id !== (int) $featured_term->term_id ) {
         $tax_query[] = array(
             'taxonomy' => 'portfolio-category',
             'field'    => 'term_id',
