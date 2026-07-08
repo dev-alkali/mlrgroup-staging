@@ -1661,7 +1661,7 @@ h2.flex.flex-col.align-start.c-cta__title.font-heading.text-white.text-\[clamp\(
 
 @media(max-width: 767px){
   .case-studies-content .blog-content section {padding-inline: 16px;}
-  .single-case-studies .c-cta.black-cta{padding-block: calc(var(--spacing)*25);}
+  .single-case-studies .c-cta.black-cta{padding-block: calc(var(--spacing)*17);}
 }
 
 @media(max-width: 600px){
