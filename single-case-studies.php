@@ -19,7 +19,7 @@ get_header();
             <figure class="mb-[25px]"><img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="max-w-[150px] max-h-[150px] object-contain" /></figure>
         <?php endif; ?>
 
-        <p class="overview-link">
+        <p class="overview-link font-heading uppercase font-bold flex items-center gap-[6px] text-[20px] lg:mt-[70px] md:mt-[50px] lg:mb-[20px] mb-[15px] tracking-[0.3px]">
           <span>Overview</span>
           <img class="w-4 h-4 -mt-[3px]" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-blue.svg" alt="">
         </p>
