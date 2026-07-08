@@ -1465,6 +1465,11 @@ article.service-card:hover .bg-image{filter: none !important;}
 .single-case-studies .blog-content .description-content ul li::before {content: '' !important;opacity: 1;display: block !important;background-image: url(/wp-content/themes/Mlrgroup/assets/imgs/red-arrow-feature-sec.svg);position: absolute;left: -30px;width: 15px;height: 15px;background-position: center;background-repeat: no-repeat;background-size: contain;top: 4px;}
 .two-col.case-stiudie-two-col .description-content h2 {margin-bottom: 10px;}
 
+.single-case-studies .quote-block-sec {background-color: #f8f6f7;padding: 50px 0px;text-align: center;}
+.single-case-studies .quote-block-sec .quote-content {max-width: 1400px;margin: 0 auto;border: none;padding-bottom: 0px;}
+.single-case-studies .quote-block-sec .quote-content span {font-family: sans-serif;font-size: 100px;position: relative;font-weight: 700;line-height: 0;margin-top: 0px;display: inline-block;margin: 0px 15px;top: 40px;color: var(--color-accent);width: 50px;text-align: center;}
+.single-case-studies .quote-block-sec .quote-content p {font-weight: 700;}
+
 
 /* .page-id-228 .inner-hero{background-position:center top 21%;} */
 .spin-words-wrapper {height: 37.5px;overflow: hidden;}
