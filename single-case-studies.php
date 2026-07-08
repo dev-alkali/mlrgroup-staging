@@ -24,7 +24,7 @@ get_header();
         </h1>
 
         <?php if( !empty( $custom_summary_content ) ): ?>
-          <div class="custom-summary-content">
+          <div class="custom-summary-content mb-[30px] max-w-[1144px]">
             <?php echo $custom_summary_content; ?>
           </div>
         <?php endif; ?>
