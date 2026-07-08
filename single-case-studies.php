@@ -19,6 +19,11 @@ get_header();
             <figure class="mb-[25px]"><img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="max-w-[150px] max-h-[150px] object-contain" /></figure>
         <?php endif; ?>
 
+        <p class="overview-link">
+          <span>Overview</span>
+          <img class="w-4 h-4 -mt-[3px]" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow-blue.svg" alt="">
+        </p>
+
         <h1 class="font-heading w-full font-bold text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em] text-[#262626] mb-[17px]">
           <?php echo get_field('custom_single_page_title') ? : get_the_title(); ?>
         </h1>
