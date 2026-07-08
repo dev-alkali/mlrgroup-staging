@@ -9,7 +9,7 @@ get_header();
 
 <main class="overflow-hidden">
   <section class="pt-[60px] md:pt-[120px] pb-0 bg-white main-div-sec">
-    <div class="wrapper">
+    <div class="wrapper px-4 md:px-10">
       <?php while (have_posts()) : the_post(); ?>
 
         <?php 
