@@ -9,7 +9,10 @@ get_header();
 
 <main class="overflow-hidden">
   <section class="pt-[60px] md:pt-[120px] pb-0 bg-white main-div-sec">
-    <div class="wrapper px-4 md:px-10">
+    <div class="px-4 md:px-10">
+
+    
+    <div class="wrapper">
       <?php while (have_posts()) : the_post(); ?>
 
         <?php 
@@ -86,6 +89,7 @@ get_header();
           </div>
         </article> */ ?>
       <?php endwhile; ?>
+    </div>
     </div>
     <!-- <article class="max-w-[1360px] mx-auto pt-[60px] xl:px-[120px] lg:px-[60px] md:px-[30px] md:pb-[60px] flex flex-wrap"> -->
     <article class="case-studies-content pt-[60px]">
