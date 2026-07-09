@@ -1622,7 +1622,7 @@ h2.flex.flex-col.align-start.c-cta__title.font-heading.text-white.text-\[clamp\(
   .arrow-img-position {background-size: 800px;}
   .c-cta__wrap { align-items: flex-start; }
 
-  body .blog-content section.two-col div.two-column-wrapper .two-column-content > div {padding: 0px !important;}
+  body .blog-content section.two-col div.two-column-wrapper .two-column-content > div {padding: 0px !important;} 
 }
 @media (max-width: 1190px){
   .cta.black-cta .cta-wrapper{padding-bottom: 80px;}
