@@ -94,9 +94,11 @@ if ( $block_class ){
       
       <div class="gap-[30px] md:gap-[0px] w-full wrapper flex flex-col <?php echo $mobileFlex . ' ' . $desktopFlex; ?> items-center two-column-wrapper">
 
+      <?php if(get_sub_field('image')): ?>
         <div class="w-full md:w-1/2 lg:w-[47%] two-column-image">
           <figure class="!m-0 flex"><?php echo wp_get_attachment_image(get_sub_field('image'), 'full', false, ['class' => 'w-full h-auto']); ?></figure>
         </div>
+      <?php endif; ?>
 
         <div class="w-full md:w-1/2 lg:w-[53%] two-column-content">
           <div class="<?php echo $layout === 'Right Image' ? 'pl-[0px] md:pr-[30px] lg:pr-[60px]' : 'pr-[0px] md:pl-[30px] lg:pl-[60px]'; ?>">
