@@ -1660,6 +1660,8 @@ h2.flex.flex-col.align-start.c-cta__title.font-heading.text-white.text-\[clamp\(
   
   .single-case-studies .c-cta .c-cta__wrap{padding:25px;}
 
+  .case-studies-content .quote-block-sec .quote-content span{font-size: 70px;top: 30px;margin: 0 5px;}
+
   
   .collection .collection-main{max-width: 450px;margin: 0px auto;}
 }
