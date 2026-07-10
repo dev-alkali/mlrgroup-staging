@@ -1391,6 +1391,7 @@ a.footer-text:hover{color:#ffffff;}
 
 /* Paragraph */
 .blog-content p,
+.custom-summary-content p,
 .blog-content li {font-weight: 400;font-size: 18px;line-height: 26px;color: #262626;}
 
 /*.single-case-studies .blog-content p,
@@ -1657,6 +1658,7 @@ h2.flex.flex-col.align-start.c-cta__title.font-heading.text-white.text-\[clamp\(
   .br-none br,
   .two-col .font-light br{display: none;}
   .blog-content p,
+  .custom-summary-content p,
   .blog-content li {font-size: 16px;line-height: 24px;}
   .summary-text p{font-size:20px;line-height:26px;}
   .c-cta span.block{display:inline;}
