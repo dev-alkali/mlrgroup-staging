@@ -1483,6 +1483,7 @@ article.service-card:hover .bg-image{filter: none !important;}
 .case-studies-content .blog-content .wrapper {max-width: 1960px;width: 70%;}
 .case-studies-content .quote-block-sec .quote-content span.quote-top {top: 35px;}
 .case-studies-content .quote-block-sec .quote-content span.quote-bottom {top: 55px;margin: 0 10px;}
+.case-studies-content .blog-content .description-content ul li ul {margin-top: 10px;}
 
 /* .page-id-228 .inner-hero{background-position:center top 21%;} */
 .spin-words-wrapper {height: 37.5px;overflow: hidden;}
