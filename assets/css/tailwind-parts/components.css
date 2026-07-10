@@ -1680,7 +1680,7 @@ article.service-card:hover .bg-image{filter: none !important;}
   
   .collection .collection-main{max-width: 450px;margin: 0px auto;}
 
-  .case-studies-content .blog-content .wrapper {width: 100%;}
+  .case-studies-content .blog-content .wrapper {width: 100%;padding: 0px;}
   .case-studies-content .quote-block-sec {padding: 60px 0px;}
 }
 
