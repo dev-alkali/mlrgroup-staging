@@ -19,7 +19,7 @@ get_header();
         $image = get_field('cs_logo');
         $custom_summary_content = get_field('custom_summary_content');
         if( !empty( $image ) ): ?>
-            <figure class="mb-[25px]"><img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="max-w-[150px] max-h-[80px] object-contain" /></figure>
+            <figure class="mb-[25px]"><img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="max-w-[120px] max-h-[80px] object-contain" /></figure>
         <?php endif; ?>
 
         <p class="overview-link font-heading uppercase font-bold flex items-center gap-[6px] text-[20px] lg:mt-[70px] mt-[50px] lg:mb-[20px] mb-[15px] tracking-[0.3px]">
