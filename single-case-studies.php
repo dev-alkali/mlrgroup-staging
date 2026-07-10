@@ -32,7 +32,7 @@ get_header();
         </h1>
 
         <?php if( !empty( $custom_summary_content ) ): ?>
-          <div class="custom-summary-content mb-[30px] max-w-[1144px]">
+          <div class="custom-summary-content mb-[30px] max-w-[1294px]">
             <?php echo $custom_summary_content; ?>
           </div>
         <?php endif; ?>
