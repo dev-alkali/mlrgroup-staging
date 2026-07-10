@@ -8,7 +8,7 @@ get_header();
 ?>
 
 <main class="overflow-hidden">
-  <section class="pt-[60px] md:pt-[120px] pb-0 bg-white main-div-sec">
+  <section class="pt-[50px] pb-0 bg-white main-div-sec border-t border-[#000]">
     <div class="px-4 md:px-10">
 
     
