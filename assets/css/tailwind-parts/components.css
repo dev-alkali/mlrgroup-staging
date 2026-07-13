@@ -1489,9 +1489,13 @@ article.service-card:hover .bg-image{filter: none !important;}
 .spin-words-wrapper {height: 37.5px;overflow: hidden;}
 .spin-words span {display: flex;align-items: center;height: 37.5px;animation: spin_words 6s infinite;}
 
-.c-contact__right .gform_wrapper.gravity-theme .gform_validation_errors, 
-.c-contact__right .gform_wrapper.gravity-theme .gfield_validation_message, 
-.c-contact__right .gform_wrapper.gravity-theme .validation_message {background: transparent !important;}
+.c-contact__right .gform_wrapper.gravity-theme .gform_validation_errors, .c-contact__right .gform_wrapper.gravity-theme .gfield_validation_message, .c-contact__right .gform_wrapper.gravity-theme .validation_message {
+  @apply bg-transparent p-0 border-none m-0; 
+}
+
+.c-contact__right .gform_wrapper.gravity-theme [aria-invalid=true]+label.gfield_consent_label {
+  @apply text-black;
+}
 
 
 @keyframes spin_words {
