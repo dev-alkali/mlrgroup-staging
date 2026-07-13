@@ -1489,6 +1489,10 @@ article.service-card:hover .bg-image{filter: none !important;}
 .spin-words-wrapper {height: 37.5px;overflow: hidden;}
 .spin-words span {display: flex;align-items: center;height: 37.5px;animation: spin_words 6s infinite;}
 
+.c-contact__content .gform_wrapper.gravity-theme .gform_validation_errors, 
+.c-contact__content .gform_wrapper.gravity-theme .gfield_validation_message, 
+.c-contact__content .gform_wrapper.gravity-theme .validation_message {background: transparent !important;}
+
 
 @keyframes spin_words {
     10% {
