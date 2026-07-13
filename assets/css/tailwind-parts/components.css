@@ -1502,7 +1502,7 @@ article.service-card:hover .bg-image{filter: none !important;}
 }
 
 .c-contact__right .gform_wrapper.gravity-theme .gform_validation_errors > h2 .gform-icon {
-  @apply relative inline-block align-middle mr-[10px];
+  @apply relative inline-block align-middle mr-[10px] [inset-inline-start:0px];
 }
 
 @keyframes spin_words {
