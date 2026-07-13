@@ -312,10 +312,10 @@
   /* .gform_wrapper.gravity-theme .gform_validation_errors {
     @apply bg-black!;
   } */
-  .gform_wrapper.gravity-theme .gfield_validation_message,
+  /* .gform_wrapper.gravity-theme .gfield_validation_message,
   .gform_wrapper.gravity-theme .validation_message {
     @apply bg-black!;
-  }
+  } */
   .gform_wrapper.gravity-theme .gfield_error [aria-invalid="true"] {
     @apply border-0!;
   }
