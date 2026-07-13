@@ -75,7 +75,7 @@ $show_featured_section = mlr_portfolio_show_featured_section($term_id);
         ?>
 
         <?php if ($has_featured) : ?>
-            <h2 class="font-[Poppins] font-bold text-[#262626] tracking-[-0.02em] text-[24px] md:text-[32px] leading-[1.2] mb-[20px] md:mb-[28px]">Featured Items</h2>
+            <h1 class="font-[Poppins] font-bold text-[#262626] tracking-[-0.02em] text-[24px] md:text-[32px] leading-[1.2] mb-[20px] md:mb-[28px]">Featured Items</h1>
         <?php endif; ?>
 
         <div id="portfolio-grid" class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full gap-[10px] md:gap-0">
