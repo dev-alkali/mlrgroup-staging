@@ -1497,6 +1497,13 @@ article.service-card:hover .bg-image{filter: none !important;}
   @apply text-black;
 }
 
+.c-contact__right .gform_wrapper.gravity-theme .gform_validation_errors {
+  @apply shadow-none;
+}
+
+.c-contact__right .gform_wrapper.gravity-theme .gform_validation_errors > h2 .gform-icon {
+  @apply relative inline-block align-middle mr-[10px];
+}
 
 @keyframes spin_words {
     10% {
