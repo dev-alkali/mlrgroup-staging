@@ -13,7 +13,7 @@ get_header();
         <div class="wrapper">
              <div class="mb-[60px]">
                 <div class=" justify-between w-full mb-[20px] border-b border-[#CCCCCC] md:border-0 pb-[20px] md:pb-0 hidden md:flex">
-                   <h2 class="inquiry-title text-[clamp(36px,5vw,48px)] leading-[clamp(44px,5.1vw,60px)] tracking-[-2%] font-heading text-neutral-800 font-bold"><?php the_title(); ?></h2>               
+                   <h1 class="inquiry-title text-[clamp(36px,5vw,48px)] leading-[clamp(44px,5.1vw,60px)] tracking-[-2%] font-heading text-neutral-800 font-bold"><?php the_title(); ?></h1>               
                 </div>
                 <?php
                 $portfolio_terms = get_the_terms(get_the_ID(), 'portfolio-category');
