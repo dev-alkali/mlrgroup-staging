@@ -1498,7 +1498,7 @@ article.service-card:hover .bg-image{filter: none !important;}
 }
 
 .c-contact__right .gform_wrapper.gravity-theme .gform_validation_errors {
-  @apply shadow-none;
+  @apply shadow-none border-none outline-none;
 }
 
 .c-contact__right .gform_wrapper.gravity-theme .gform_validation_errors > h2 .gform-icon {
