@@ -43,12 +43,12 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 				<!-- LEFT -->
 				<div class="w-full md:w-1/2 c-contact__content anim" data-anim="up" >
 					<?php if ($title_row_1 || $title_row_2): ?>
-					<h2 class="c-contact__title text-[clamp(36px,5vw,68px)] leading-[clamp(44px,6vw,78px)] tracking-[-2%] font-heading mb-[20px]">
+					<h1 class="c-contact__title text-[clamp(36px,5vw,68px)] leading-[clamp(44px,6vw,78px)] tracking-[-2%] font-heading mb-[20px]">
 						<span class="font-bold"><?php echo $title_row_1; ?></span>
 						<?php if ($title_row_2): ?>
 						<span class="font-bold"><?php echo $title_row_2; ?></span>
 						<?php endif; ?>
-					</h2>
+					</h1>
 					<?php endif; ?>
 
 					<?php if ($description): ?>
