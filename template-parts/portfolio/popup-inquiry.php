@@ -15,7 +15,7 @@
       </button>
    </div>
 
-   <div id="inquiry-pop-up" class="bg-white max-w-[1200px] w-full hidden flex-col p-[16px] md:p-[40px] text-neutral-800 overflow-auto max-h-[90vh]">
+   <?php /*<div id="inquiry-pop-up" class="bg-white max-w-[1200px] w-full hidden flex-col p-[16px] md:p-[40px] text-neutral-800 overflow-auto max-h-[90vh]">
       <section id="normal-content" class="hidden flex-col w-full ">
          <div class="mb-[40px]">
             <div class="flex justify-between w-full mb-3 border-b border-[#CCCCCC] md:border-0 pb-[20px] md:pb-0">
@@ -81,5 +81,5 @@
             </section>
          </div>
       </section>
-   </div>
+   </div>*/ ?>
 </section>
