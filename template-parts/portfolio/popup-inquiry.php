@@ -34,7 +34,6 @@
                <div class="mt-4 mb-4 block md:hidden">
                   <div class=" flex justify-between w-full mb-3">
                      <h2 class="inquiry-title text-[28px] leading-[36px] tracking-[-2%] font-heading font-bold "></h2>
-                     
                   </div>
                   <div class="inquiry-categories">
                   </div>
