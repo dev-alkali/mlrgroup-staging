@@ -196,9 +196,11 @@ $show_featured_section = mlr_portfolio_show_featured_section($term_id);
     <?php
         $term = get_queried_object(); // Current taxonomy term
         ?>
-        <?php if ( !empty($term->description) ) : ?>
+        <?php if ( !empty($term->description) ) :
+            $heading_tag = ! empty($term->parent) ? 'h1' : 'h2';
+        ?>
         <section class="taxonomy-header mt-[28px] md:mt-[48px]">
-            <h2 class="font-[Poppins] font-bold text-[#262626] tracking-[-0.02em] text-[clamp(1.11rem,2vw,1.60rem)] leading-[clamp(1.65rem,2.5vw,2.20rem)] mb-[20px] flex gap-[12px]"> <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.67188 4.94922H27.651V27.8733" stroke="#4A78FF" stroke-miterlimit="10"/><path d="M27.502 5.0957L4.82031 27.723" stroke="#4A78FF" stroke-miterlimit="10"/></svg> <span><?php echo esc_html($term->name); ?></span></h2>
+            <<?php echo tag_escape($heading_tag); ?> class="font-[Poppins] font-bold text-[#262626] tracking-[-0.02em] text-[clamp(1.11rem,2vw,1.60rem)] leading-[clamp(1.65rem,2.5vw,2.20rem)] mb-[20px] flex gap-[12px]"> <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.67188 4.94922H27.651V27.8733" stroke="#4A78FF" stroke-miterlimit="10"/><path d="M27.502 5.0957L4.82031 27.723" stroke="#4A78FF" stroke-miterlimit="10"/></svg> <span><?php echo esc_html($term->name); ?></span></<?php echo tag_escape($heading_tag); ?>>
                     <div class="taxonomy-description mt-4 font-[Poppins] font-normal text-[#525252] 
           text-[16px] leading-[1.75rem]">
                     <?php echo wp_kses_post(wpautop($term->description)); ?>
