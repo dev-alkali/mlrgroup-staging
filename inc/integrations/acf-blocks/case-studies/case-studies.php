@@ -149,18 +149,6 @@ if (!empty($block['className'])) {
     <div class="flex-col items-start w-full flex-[0_0_auto] flex relative">
 
         <?php if ($item_count === 5) : ?>
-        <!-- ── 5-col: custom nested flex ──────────────────────────────────── -->
-        <!--
-             Desktop layout:
-             ┌──────────┬──────────────────┬──────────┐
-             │          │   item2 (wide)   │ item3(nw)│  row 1
-             │  item1   ├──────────┬───────────────────┤
-             │  (tall)  │ item4(nw)│   item5 (wide)   │  row 2
-             └──────────┴──────────┴───────────────────┘
-
-             item2 & item5 → flex-1 (same width ✓)
-             item3 & item4 → w-[30%] (same width ✓)
-        -->
         <div class="flex flex-col lg:flex-row gap-5 w-full">
 
             <!-- Item 1: tall left panel -->
@@ -171,14 +159,10 @@ if (!empty($block['className'])) {
 
             <!-- Right side: two rows -->
             <div class="flex flex-col gap-5 flex-1">
-
-                <!-- Row 1: item2 (wide) + item3 (narrow) -->
                 <div class="flex flex-col md:flex-row gap-5">
                     <?php $render_card($five_items[1], 'md:flex-1 h-[380px] md:h-[390px]'); ?>
                     <?php $render_card($five_items[2], 'w-full md:w-[44%] h-[380px] lg:h-[390px]'); ?>
                 </div>
-
-                <!-- Row 2: item4 (narrow) + item5 (wide) -->
                 <div class="flex flex-col md:flex-row gap-5">
                     <?php $render_card($five_items[3], 'w-full md:w-[44%] h-[380px] lg:h-[390px]'); ?>
                     <?php $render_card($five_items[4], 'md:flex-1 h-[380px] lg:h-[390px]'); ?>
@@ -194,7 +178,7 @@ if (!empty($block['className'])) {
             <?php if (have_rows('items')) : while (have_rows('items')) : the_row();
                 $item_index++;
 
-                // Span / width classes
+                
                 $span_class = '';
                 if ($item_count === 4) {
                     $wide   = 'flex-none w-full md:w-[calc(56%-10px)]';
@@ -205,7 +189,7 @@ if (!empty($block['className'])) {
                     $span_class = 'lg:row-span-2';
                 }
 
-                // Height classes
+                
                 if (in_array($item_count, [1, 2])) {
                     $height_class = 'h-[380px] lg:h-[800px]';
                 } elseif ($item_count === 3) {
@@ -253,20 +237,13 @@ if (!empty($block['className'])) {
                             </span>
                             <img class="relative w-4 h-4 max-md:mt-[3px] arrow" src="<?= $arrow_color ?>" alt="arrow" />
                         </p>
-
                     </a>
                 </div>
-
             <?php endwhile; endif; ?>
-
         </div>
         <?php endif; ?>
-
     </div>
-
 <?php endwhile; endif; ?>
-
-
       </div>
     </section>
 <?php endwhile; endif; ?>

@@ -32,9 +32,7 @@ if (!empty($block['className'])) {
 ?>
 
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> py-20 md:py-30 px-6 md:px-10 bg-black<?php echo $pt_class; ?><?php echo $pb_class; ?>">    
-
     <div class="flex wrapper w-full flex-col gap-8 xl:gap-12"> 
-
         <!-- Heading -->
         <div class="w-full mb-4">            
             <h2 class="flex flex-col max-w-[660px] font-heading text-white tracking-tight text-[clamp(36px,5vw,68px)] leading-[clamp(44px,6vw,78px)] tracking-[-0.02em]">
@@ -49,7 +47,6 @@ if (!empty($block['className'])) {
 
         <!-- Grid -->
         <div class="flex w-full flex-col gap-10 md:gap-4 cs-cards justify-center mb-2">
-
             <?php 
             $posts = get_sub_field('case_studies'); 
 
@@ -66,10 +63,8 @@ if (!empty($block['className'])) {
                class="relative flex items-end px-6 bg-cover bg-center cs-card"
                style="background-image:url('<?php echo esc_url($image_url); ?>')">
 
-
                 <!-- Overlay -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                    
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>                    
                   <img class="arrow absolute z-9 w-[24px] md:w-[32px] xl:w-[40px] h-[24px] md:h-[32px] xl:h-[40px]" src="<?= get_template_directory_uri() ?>/assets/imgs/Arrow.svg" alt="Arrow">
                 
                 <?php if ($cs_logo): ?>
@@ -79,8 +74,7 @@ if (!empty($block['className'])) {
                 <?php endif; ?>
 
                 <!-- Content -->
-                <div class="relative z-10 w-full py-8">
-                   
+                <div class="relative z-10 w-full py-8">                   
                     <?php if ($cs_logo): ?>
                         <div class="cs-card__logo mb-4 md:mb-5 hover-logo">
                             <img src="<?php echo esc_url($cs_logo['url']); ?>" alt="<?php echo esc_attr($cs_logo['alt']); ?>" >
@@ -107,16 +101,10 @@ if (!empty($block['className'])) {
         $view_more_link = get_sub_field('view_more_link');
         if ($view_more_link): ?>
             <div class="text-center">
-                <a href="<?php echo esc_url($view_more_link['url']); ?>" target="<?php echo esc_attr($view_more_link['target']); ?>"  class="btn-primary blue-btn"><span><?php echo esc_html($view_more_link['title']); ?></span></a>
-
-                <?php /*<a class="relative w-fit uppercase font-heading font-semibold text-accent text-center tracking-[0] leading-[24px] min-[600px]:leading-[18px] whitespace-nowrap view-more-btn inline-flex items-center justify-center gap-2" href="<?php echo esc_url($view_more_link['url']); ?>" target="<?php echo esc_attr($view_more_link['target']); ?>"><?php echo esc_html($view_more_link['title']); ?> <img decoding="async" class="relative md:w-4 md:h-4 w-[11px] h-[11px] arrow" src="https://wordpress-755960-6249701.cloudwaysapps.com/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg" alt="Arrow"></a> */ ?>
-                
+                <a href="<?php echo esc_url($view_more_link['url']); ?>" target="<?php echo esc_attr($view_more_link['target']); ?>"  class="btn-primary blue-btn"><span><?php echo esc_html($view_more_link['title']); ?></span></a> 
             </div>
-
         <?php endif; ?>
-
     </div>
-
 </section>
 
 <?php endwhile; endif; ?>

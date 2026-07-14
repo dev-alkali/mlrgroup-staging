@@ -13,13 +13,10 @@ $className = 'c-cta';
 if (!empty($block['className'])) {
   $className .= ' ' . $block['className'];
 }
- 
 
 $title_row_1 = get_field('title_row_1');
 $title_row_2 = get_field('title_row_2');
 $description = get_field('ct_content');
-
-
 ?>
 
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> flex c-cta w-full bg-black py-12 md:py-17 xl:py-25 px-4 sm:px-10">
@@ -53,7 +50,5 @@ $description = get_field('ct_content');
       </div>
     <?php endif; ?>
     </div>
-
-    
   </div>
 </section>

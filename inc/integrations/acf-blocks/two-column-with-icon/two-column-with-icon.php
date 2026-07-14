@@ -34,8 +34,7 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 $title_row_1 = get_sub_field('title_row_1');
 $title_row_2 = get_sub_field('title_row_2');
 $description = get_sub_field('description');
-//$left_image_or_right_image = get_sub_field('left_image_or_right_image');
-$layout = get_sub_field('left_image_or_right_image'); // left / right
+$layout = get_sub_field('left_image_or_right_image'); 
 // Desktop layout
 $desktopFlex = ($layout === 'Right Image') ? 'md:flex-row-reverse img-right' : 'md:flex-row img-left';
 
@@ -145,9 +144,6 @@ if ( $section_color == 'black' ){
                       <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/red-arrow-feature-sec.svg" alt="" class="w-full">
                     </div>
 
-                    <?php /* <div class="flex w-[24px] h-[24px] arrow-line relative">
-                      <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/list-icon.svg" alt="" class="w-full">
-                    </div> */?>
                     <div class="flex flex-col flex-1">
                       <?php if($heading): ?>
                         <h3 class="text-[clamp(18px,2.6vw,20px)] leading-[clamp(22px,3.2vw,24px)] tracking-[-2%] text-[#262626] font-heading font-bold mb-[10px]"><?php echo $heading; ?></h3>

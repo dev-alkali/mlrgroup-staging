@@ -12,80 +12,33 @@ $description = get_sub_field('cta_content');
 $link = get_sub_field('cta_button');
 ?>
   
-  <?php /*
-    <section
-      class="cta flex w-full h-[700px] min-[600px]:h-[855px]"
-      style="
-    background-image: url('<?php echo esc_url(get_sub_field('cta_bg_img')); ?>');
-    background-position: 50% 38%;
-    background-size: cover;
-    background-repeat: no-repeat;
-  ">
-      <div class="flex flex-col items-center w-full h-full justify-end gap-[40px] min-[600px]:gap-[100px] min-[767px]:gap-[162px] pt-10 pb-[60px] min-[600px]:pb-[100px] px-4 md:px-10 [background:linear-gradient(222deg,rgba(0,0,0,0)_4.72%,rgba(0,0,0,1)_79.68%)] cta-wrapper">
-        <div class="flex flex-col items-start gap-10 min-[600px]:gap-[50px] w-full wrapper cta-content">
-          <div class="flex flex-col items-start gap-5 w-full">
-            <?php if($title_row_1 || $title_row_2): ?>
-            <h2 class="max-w-[685px] w-full xl:text-[80px] xl:leading-[92px] md:text-[68px] md:leading-[78px] sm:text-[45px] sm:leading-[56px] text-[36px] leading-[44px] tracking-[-0.02em] text-white font-heading">
-              <?php if($title_row_1): ?>
-                  <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
-              <?php endif; ?>
+<section id="cta-block_ea44063c95ea7a4325cd10b208f2f7541" class="c-cta flex c-cta w-full bg-black py-12 md:py-17 xl:py-25 px-4 sm:px-10">
+  <div class="c-cta__wrap flex flex-col align-center w-full gap-[40px] wrapper mx-auto">
+    <div class="c-cta__content max-w-[850px] gap-5 flex flex-col">
+      <?php if($title_row_1 || $title_row_2): ?>
+      <h2 class="flex flex-col align-start c-cta__title font-heading text-white text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em]">
 
-              <?php if($title_row_2): ?>
-                  <span class="font-bold"><?= wp_kses_post($title_row_2) ?></span>
-              <?php endif; ?>
-            </h2>
-            <?php endif; ?>
-            <?php if($description): ?>
-              <p class="max-w-[685px] w-full text-[18px]  min-[600px]:text-xl leading-[26px] min-[600px]:leading-7 text-gray-50 font-body"><?= wp_kses_post($description) ?></p>
-            <?php endif; ?>
-          </div>
+        <?php if($title_row_1): ?>
+            <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
+        <?php endif; ?>
 
-          <?php 
-            if( $link ): 
-                $link_url = $link['url'];
-                $link_title = $link['title'];
-                $link_target = $link['target'] ? $link['target'] : '_self';
-                ?>
-                <a class="btn-primary" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-            <?php endif; ?>
-        </div>
-      </div>
-    </section> */?>
-
-
-    <section id="cta-block_ea44063c95ea7a4325cd10b208f2f7541" class="c-cta flex c-cta w-full bg-black py-12 md:py-17 xl:py-25 px-4 sm:px-10">
-        <div class="c-cta__wrap flex flex-col align-center w-full gap-[40px] wrapper mx-auto">
-          <div class="c-cta__content max-w-[850px] gap-5 flex flex-col">
-            <?php if($title_row_1 || $title_row_2): ?>
-            <h2 class="flex flex-col align-start c-cta__title font-heading text-white text-[clamp(36px,5vw,68px)] leading-[clamp(44px,5.5vw,78px)] tracking-[-0.02em]">
-
-              <?php if($title_row_1): ?>
-                  <span class="font-bold"><?= wp_kses_post($title_row_1) ?></span>
-              <?php endif; ?>
-
-              <?php if($title_row_2): ?>
-                  <span class="font-bold"><?= wp_kses_post($title_row_2) ?></span>
-              <?php endif; ?>
-            </h2>
-            <?php endif; ?>
-            <?php if($description): ?>
-            <p class="max-w-[685px] w-full text-[18px]  min-[600px]:text-xl leading-[26px] min-[600px]:leading-7 text-gray-50 font-body pb-[10px]"><?= wp_kses_post($description) ?></p>
-            <?php endif; ?>
-            <?php 
-            if( $link ): 
-                $link_url = $link['url'];
-                $link_title = $link['title'];
-                $link_target = $link['target'] ? $link['target'] : '_self';
-                ?>
-            <div class="c-cta__buttons-wrap flex flex-col gap-[22px] max-w-[277px]"><a class="c-cta__button btn-primary" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a></div>
-            <?php endif; ?>
-          </div>         
-        </div>
-      </section>
-
-
-
+        <?php if($title_row_2): ?>
+            <span class="font-bold"><?= wp_kses_post($title_row_2) ?></span>
+        <?php endif; ?>
+      </h2>
+      <?php endif; ?>
+      <?php if($description): ?>
+      <p class="max-w-[685px] w-full text-[18px]  min-[600px]:text-xl leading-[26px] min-[600px]:leading-7 text-gray-50 font-body pb-[10px]"><?= wp_kses_post($description) ?></p>
+      <?php endif; ?>
+      <?php 
+      if( $link ): 
+          $link_url = $link['url'];
+          $link_title = $link['title'];
+          $link_target = $link['target'] ? $link['target'] : '_self';
+          ?>
+      <div class="c-cta__buttons-wrap flex flex-col gap-[22px] max-w-[277px]"><a class="c-cta__button btn-primary" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a></div>
+      <?php endif; ?>
+    </div>         
+  </div>
+</section>
 <?php endwhile; endif; ?>
-
-
-

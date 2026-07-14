@@ -36,14 +36,6 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
     $pb_class = ' ' . 'pb0';
 }
 
-//$left_image_or_right_image = get_sub_field('left_image_or_right_image');
-//$layout = get_sub_field('left_image_or_right_image'); // left / right
-// Desktop layout
-//$desktopFlex = ($layout === 'Right Image') ? 'md:flex-row-reverse' : 'md:flex-row';
-
-// Mobile: always content first, image bottom
-//$mobileFlex = 'flex-col-reverse';
-
 // Background & text color classes based on selected background color
 if ($background_color == 'black') {
   $bgclassName  = 'bg-black';
@@ -83,15 +75,10 @@ if ($background_color == 'black') {
               <div class="max-md:w-full "><p class="font-body font-normal text-[18px] leading-[26px] tracking-[0em] <?php echo $descClass; ?>"><?php echo $description; ?></p></div>
             <?php endif; ?>
           </div>
-          
         </div>
-
-
-
 <?php if (have_rows('partnership_list')) : ?>
   
-  <div class="partnership-list flex flex-wrap min-[1199px]:flex-nowrap justify-start gap-6">
-    
+  <div class="partnership-list flex flex-wrap min-[1199px]:flex-nowrap justify-start gap-6">  
     <?php 
     $i = 1;
     while (have_rows('partnership_list')) : the_row();         
@@ -127,8 +114,6 @@ if ($background_color == 'black') {
       endwhile; ?>
   </div>
 <?php endif; ?>
-
       </div> 
     </section>
-<?php endwhile;
-endif; ?>
+<?php endwhile; endif; ?>

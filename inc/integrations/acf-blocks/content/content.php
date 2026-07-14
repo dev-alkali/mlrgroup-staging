@@ -33,11 +33,9 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 }
 
 ?>
-    <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px]<?php echo $pt_class; ?><?php echo $pb_class; ?>">
-		<!-- <div class="gap-[30px] md:gap-[60px] w-full wrapper flex flex-col md:flex-row items-center flex-wrap"> -->
-		<div class="wrapper">
-		<?php echo $content_block; ?>
-		</div>
-    </section>
-<?php endwhile;
-endif; ?>
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>-sec px-4 md:px-10 py-[60px] lg:py-[80px] xl:py-[120px]<?php echo $pt_class; ?><?php echo $pb_class; ?>">
+	<div class="wrapper">
+	<?php echo $content_block; ?>
+	</div>
+</section>
+<?php endwhile; endif; ?>

@@ -1,33 +1,5 @@
 <?php get_header() ?>
 <main id="content" class="bg-white w-full  relative is-work-page">
-
-  <?php /* if (have_rows('hero_portfolio', 'option')) :  while (have_rows('hero_portfolio', 'option')) : the_row(); ?>
-
-      <section id="" class="w-full px-4 md:px-10 bg-center bg-cover bg-no-repeat bg-[rgba(0,0,0,0.5)] bg-blend-overlay" style="  background-image: url('<?php echo esc_url(get_sub_field('bg_image')); ?>');
-    background-position: 50% 38%;
-    background-size: cover;
-    background-repeat: no-repeat;">
-      <div class="gap-10 w-full wrapper min-h-screen md:min-h-[670px] pt-[80px] md:pt-[118px] pb-[80px] md:pb-[60px] flex items-end !px-0 ">
-        <div class="max-w-[1005px]">          
-          <h2 class="text-[clamp(44px,6vw,70px)] leading-[clamp(56px,7vw,88px)] tracking-[-0.02em] text-white font-heading anim" data-delay="0.1" data-anim="up">            
-            <?php if(get_sub_field('title_row_1')): ?>
-                <span class="font-bold"><?php echo get_sub_field('title_row_1'); ?></span>
-            <?php endif; ?>
-            <?php if(get_sub_field('title_row_2')): ?>
-                <span class="font-bold"><?php echo get_sub_field('title_row_2'); ?> </span>
-            <?php endif; ?>
-          </h2>
-          
-          <?php if(get_sub_field('paragraph')): ?>
-            <p class="w-full text-[clamp(18px,3vw,20px)] leading-[28px] text-gray-50 font-body anim mt-[12px]" data-delay="1.2" data-anim="up" data-start="top 100%"><?= wp_kses_post(get_sub_field('paragraph')) ?></p>
-          <?php endif; ?>
-        </div>
-      </div>
-    </section>
-
-<?php endwhile;
-  endif; */ ?>
-
   <section class="w-full pt-10 md:pt-[60px] px-4 md:px-10">
   <div class="flex flex-col md:flex-row items-start gap-[20px] md:gap-10 w-full wrapper mx-auto max-[768px]:border-b border-[#CCCCCC] max-[768]:pb-[28px]">
      <div class="md:border-b border-[#CCCCCC] md:pb-[20px] md:mb-[10px] w-full md:w-[220px] lg:w-[280px] xl:w-[380px]">
@@ -39,14 +11,10 @@
               <div class="relative w-[17px] h-4 mt-[-2px]">
                   <img src="<?= esc_url(get_template_directory_uri() . '/assets/imgs/Arrow-white-large.svg'); ?>" alt="arrow">
               </div>
-              <span class="font-heading font-semibold text-white text-sm md:text-base tracking-[0] leading-7 whitespace-nowrap">
-                  VIEW INQUIRY LIST
-              </span>
+              <span class="font-heading font-semibold text-white text-sm md:text-base tracking-[0] leading-7 whitespace-nowrap">VIEW INQUIRY LIST</span>
           </div>
           <span aria-label="3 items in list" class="inline-flex items-center justify-center w-[26px] h-[26px] absolute -top-2 -right-2 md:-top-1 md:-right-1 bg-black rounded-full">
-              <span class="inquiry-list-quantity font-heading font-normal text-white text-[14px] md:text-[16px] text-center leading-none mb-[-1px]" aria-hidden="true">
-                  0
-              </span>
+              <span class="inquiry-list-quantity font-heading font-normal text-white text-[14px] md:text-[16px] text-center leading-none mb-[-1px]" aria-hidden="true">0</span>
           </span>
       </button>
     </div>
@@ -66,35 +34,6 @@
   <!-- ===================== CTA SECTION ===================== -->
 
   <?php if (have_rows('cta_portfolio', 'option')) :  while (have_rows('cta_portfolio', 'option')) : the_row(); ?>
-
-    <?php /*
-      <section
-        class=" flex w-full h-[700px] min-[600px]:h-[855px]"
-        style="
-    background-image: url('<?php echo esc_url(get_sub_field('bg_image')); ?>');
-    background-position: 50% 38%;
-    background-size: cover;
-    background-repeat: no-repeat;
-  ">
-        <div class="flex flex-col items-center w-full h-full justify-end gap-[40px] min-[600px]:gap-[100px] min-[767px]:gap-[162px] pt-10 pb-[60px] min-[600px]:pb-[100px] px-4 md:px-10 [background:linear-gradient(222deg,rgba(0,0,0,0)_4.72%,rgba(0,0,0,1)_79.68%)] cta-wrapper">
-
-          <div class="flex flex-col items-start gap-10 min-[600px]:gap-[50px] w-full wrapper cta-content">
-            <div class="flex flex-col items-start gap-5 w-full">
-              <h2 class="max-w-[685px] w-full text-[44px] tracking-[-2%] min-[767px]:text-[65px] min-[1024px]:text-[80px] leading-[50px] min-[767px]:leading-[65px] min-[1024px]:leading-[92px] text-white font-heading">
-                <span class="font-bold"> <?= wp_kses_post(get_sub_field('title_row_1')) ?> </span>
-                <span class="font-bold"> <?= wp_kses_post(get_sub_field('title_row_2')) ?></span>
-              </h2>
-              <p class="max-w-[685px] w-full text-[18px]  min-[767px]:text-xl leading-[26px] min-[767px]:leading-7 text-gray-50 font-body">
-                <?= wp_kses_post(get_sub_field('description')) ?>
-              </p>
-            </div>
-
-            <a href="<?= wp_kses_post(get_sub_field('btn_path')) ?>" class="btn-primary"><?= wp_kses_post(get_sub_field('btn_label')) ?> </a>
-          </div>
-        </div>
-      </section> */ ?>
-
-
       <section id="cta-block_ea44063c95ea7a4325cd10b208f2f7541" class="c-cta flex c-cta w-full bg-black py-12 md:py-17 xl:py-25 px-4 sm:px-10">
         <div class="c-cta__wrap flex flex-col align-center w-full gap-[40px] wrapper mx-auto">
           <div class="c-cta__content max-w-[850px] gap-5 flex flex-col">
@@ -107,15 +46,8 @@
           </div>         
         </div>
       </section>
-
-
-   
-
-
-  <?php endwhile;
-  endif; ?>
+  <?php endwhile; endif; ?>
 </main>
-
 
 <?php get_template_part('template-parts/portfolio/popup-inquiry'); ?>
 <?php get_footer() ?>

@@ -258,9 +258,6 @@ if (!empty($block['className'])) {
                         </div>
                 <?php endwhile;
                 endif; ?>
-
-
-                
             </div>
         </section>
 <?php endwhile;

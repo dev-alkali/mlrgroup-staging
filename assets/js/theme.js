@@ -26,12 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  // Prevent scroll restoration jump
   if (history.scrollRestoration) {
     history.scrollRestoration = 'manual';
   }
@@ -52,13 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!window.location.hash) {
     window.scrollTo(0, 0);
   } else {
-    // First pass: get close quickly during DOM ready.
     setTimeout(() => {
       scrollToHashTarget('auto');
     }, 120);
 
-    // Mobile pages can shift after images/fonts and sticky header state changes.
-    // Re-apply position after full load to land on the exact section.
     window.addEventListener('load', () => {
       setTimeout(() => {
         const didScroll = scrollToHashTarget('smooth');
@@ -70,18 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 180);
     }, { once: true });
   }
-
-  /* Auto-scroll past the hero to the work list on portfolio taxonomy pages and the main work page
-  if (document.body.classList.contains('tax-portfolio-category') || document.querySelector('main.is-work-page')) {
-    const workList = document.querySelector('#work-list');
-    if (workList) {
-      setTimeout(() => {
-        const headerOffset = document.querySelector('.site-header')?.offsetHeight || 0;
-        const targetTop = workList.getBoundingClientRect().top + window.scrollY - headerOffset;
-        window.scrollTo({ top: targetTop, behavior: 'smooth' });
-      }, 150);
-    }
-  } */
 
   /**------------------------ Animation GSAP -------------------------**/
   const elements = document.querySelectorAll('.anim');
@@ -116,51 +98,15 @@ document.addEventListener('DOMContentLoaded', () => {
   /**------------------------ Animation GSAP Ends -------------------------**/
 
   /**------------------------ Sticky Header -------------------------**/
-  // const header = document.querySelector('.site-header');
-  // const hero   = document.querySelector('.c-hero');
-
-  //   if (!header) return;
-
-  //   // If hero exists 
-  //   if (hero) {
-  //     ScrollTrigger.create({
-  //       trigger: hero,
-  //       start: 'bottom top',
-
-  //       onEnter: () => {
-  //         header.classList.add('is-sticky');
-  //       },
-  //       onLeaveBack: () => {
-  //         header.classList.remove('is-sticky');
-  //       }
-  //     });
-
-  //   } else {
-  //     ScrollTrigger.create({
-  //       start: 'top -100vh',
-  //       onEnter: () => {
-  //         header.classList.add('is-sticky');
-  //       },
-  //       onLeaveBack: () => {
-  //         header.classList.remove('is-sticky');
-  //       }
-  //     });
-  //   }
-
   const header = document.querySelector('.site-header');
   if (!header) return;
 
-  // Trigger header after 100vh scroll
   ScrollTrigger.create({
-    start: 'top+=100% top', // 100% of viewport height scrolled
+    start: 'top+=100% top', 
     onEnter: () => header.classList.add('is-sticky'),
     onLeaveBack: () => header.classList.remove('is-sticky')
   });
-    /**------------------------ Sticky Header Ends -------------------------**/
-
 });
-
-
 
 document.querySelectorAll(".reviews-slider-wrapper").forEach((slider) => {
   new Swiper(slider, {

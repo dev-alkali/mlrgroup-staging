@@ -68,24 +68,8 @@ if (!empty($block['className'])) {
               endwhile;
           }
 
-          // ── Filter functionality disabled — re-enable when needed ────────────
-          // $show_filter  = get_sub_field('filter_display');
-          // $industries   = $show_filter
-          //     ? array_unique(array_filter(array_column($logos, 'industry')))
-          //     : [];
-
-          // // Load More config — only active when filter is enabled and logos exceed threshold
-          // $per_page      = 8;
-          // $total_logos   = count($logos);
-          // $show_load_more = $show_filter && $total_logos > $per_page;
-
-          // // Unique IDs scoped to this block instance to avoid conflicts when block is used multiple times
-          // $filter_id = 'industry-filter-' . $block['id'];
-          // $btn_id    = 'load-more-logos-'  . $block['id'];
-          // ─────────────────────────────────────────────────────────────────────
         ?>
 
-        <?php // Filter disabled — re-enable when needed: if ($show_filter && ! empty($industries)) ?>
         <?php if (false) : ?>
           <div class="logo-filter mb-[20px] w-full text-right">
             <span class="mr-[12px] text-[#525252] text-[16px] font-medium">Filter by</span>
@@ -148,11 +132,6 @@ if (!empty($block['className'])) {
             $link_target = $link['target'] ? $link['target'] : '_self';
         ?>
           <div class="text-center mt-[32px] md:mt-[40px] view-more-btn">
-            <?php /* <a class="inline-flex gap-2 relative" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
-              <span class="font-semibold text-accent text-[16px] md:text-lg leading-7 uppercase relative w-fit font-heading tracking-[0]"><?php echo esc_html($link_title); ?></span>
-              <img decoding="async" class="arrow relative w-4 h-4 mt-1" src="https://wordpress-755960-6249701.cloudwaysapps.com/wp-content/themes/Mlrgroup/assets/imgs/Arrow-red.svg" alt="">
-            </a> */?>
-
             <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"  class="btn-primary blue-btn"><span><?php echo esc_html($link_title); ?></span></a>
           </div>
         <?php endif; ?>
@@ -162,7 +141,6 @@ if (!empty($block['className'])) {
 if (false) :
     // Capture values into local variables for the closure.
     // Scripts are deferred to wp_footer so they bypass WordPress content
-    // filters (wptexturize etc.) that would corrupt && into &#038;&#038;
     $cl_block_id    = $id;
     $cl_filter_id   = $filter_id;
     $cl_sentinel_id = $btn_id;
@@ -361,8 +339,7 @@ if (false) :
         </script>
         <?php
     }, 20);
-endif;
-?>
+endif; ?>
 
       </div>
     </section>

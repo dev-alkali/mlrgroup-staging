@@ -55,14 +55,6 @@ if (!empty($block['className'])) {
                     <div class="collection-main flex-col items-start max-[768px]:gap-6 max-[1024px]:gap-10 w-full flex-[0_0_auto] flex relative">
                     <?php if (have_rows('collection_rows')) :  while (have_rows('collection_rows')) : the_row(); ?>
                         <?php
-                        // $row_height = "";
-                        // if (wp_kses_post(get_sub_field('row_height')) == 'normal') {
-                        //   $row_height = ' min-[1024px]:h-[409px] ';
-                        // } elseif (wp_kses_post(get_sub_field('row_height')) == 'big') {
-                        //   $row_height = ' min-[1024px]:h-[434.56px] min-[1440px]:aspect-[334/434]';
-                        // }
-                        ?>
-                        <?php
                         $row_height = "";
                         if (wp_kses_post(get_sub_field('row_height')) == 'normal') {
                             // 1440 (largura total) / 409 (altura desejada)
@@ -116,78 +108,44 @@ if (!empty($block['className'])) {
                                         alt="icon" />
                                     <?php endif; ?>
 
-                                    <p
-                                        class="relative  font-heading text-[20px] min-[600px]:text-[24px] max-w-[406px] tracking-[-2%] leading-7 min-[600px]:leading-8">
-                                        <?= wp_kses_post(get_sub_field('title')) ?>
-                                    </p>
+                                    <p class="relative  font-heading text-[20px] min-[600px]:text-[24px] max-w-[406px] tracking-[-2%] leading-7 min-[600px]:leading-8"><?= wp_kses_post(get_sub_field('title')) ?></p>
                                     </div>
 
-                                    <p class="inline-flex  z-20  gap-2 relative flex-[0_0_auto]">
-                                    <span
-                                        class="relative w-fit  uppercase font-heading font-semibold text-base text-center tracking-[0] leading-6 min-[600px]:leading-[18px] whitespace-nowrap">
-                                        <?= wp_kses_post(get_sub_field('link_label')) ?>
-                                    </span>
-                                    <img class="relative w-4 h-4 max-[768px]:mt-[3px] arrow" src="<?= $arrow_color ?>" alt="arrow" />
-
-                                    </p>
+                                    <p class="inline-flex  z-20  gap-2 relative flex-[0_0_auto]"> <span class="relative w-fit  uppercase font-heading font-semibold text-base text-center tracking-[0] leading-6 min-[600px]:leading-[18px] whitespace-nowrap">
+                                        <?= wp_kses_post(get_sub_field('link_label')) ?></span> <img class="relative w-4 h-4 max-[768px]:mt-[3px] arrow" src="<?= $arrow_color ?>" alt="arrow" /></p>
                                 </a>
-
-                                </div>
-                            <?php endwhile;
-                            endif; ?>
-
-
-
-
+                            </div>
+                            <?php endwhile; endif; ?>
                         </div>
-                    <?php endwhile;
-                    endif; ?>
-
+                    <?php endwhile; endif; ?>
                     </div>
-
-                <?php endwhile;
-                endif; ?>
+                <?php endwhile; endif; ?>
         </div>
         <?php 
-                $btn = get_sub_field('btn');
-                if( $btn ): 
-                    $btn_url = $btn['url'];
-                    $btn_title = $btn['title'];
-                    $btn_target = $btn['target'] ? $btn['target'] : '_self';
-                    ?>
-                    <div class="text-center flex items-center justify-center gap-2 mt-[40px] w-full">
+        $btn = get_sub_field('btn');
+        if( $btn ): 
+            $btn_url = $btn['url'];
+            $btn_title = $btn['title'];
+            $btn_target = $btn['target'] ? $btn['target'] : '_self';
+            ?>
+            <div class="text-center flex items-center justify-center gap-2 mt-[40px] w-full">
 
-                        <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>"  class="btn-primary blue-btn"><span><?php echo esc_html( $btn_title ); ?></span></a>
-                    </div>
-                <?php endif; ?>
+                <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>"  class="btn-primary blue-btn"><span><?php echo esc_html( $btn_title ); ?></span></a>
+            </div>
+        <?php endif; ?>
     </section>
 
     <style>
-        @media (min-width: 768px) and (max-width: 1023px) {
-  /* Flatten both row containers into one wrapping 2-col grid */
-  .collection-main {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  .collection-main .collection-parent {
-    display: contents;
-  }
-  .collection-main .collection-item {
-    width: calc(50% - 8px);
-  }
-  /* Card 5 stays half (next to card 3), card 4 becomes the full-width card  ->  1+2, 3+5, 4 full */
-  .collection-main .collection-parent:last-child .collection-item:first-child {
-    width: 100%;
-    order: 1;
-  }
-  /* Cancel the existing 1,3,2 reorder so cards flow 1,2,3,5,4 */
-  .collection-main .collection-parent:first-child .collection-item:first-child,
-  .collection-main .collection-parent:first-child .collection-item:nth-child(2),
-  .collection-main .collection-parent:first-child .collection-item:nth-child(3) {
-    order: 0;
-  }
-}
+    @media (min-width: 768px) and (max-width: 1023px) {
+      /* Flatten both row containers into one wrapping 2-col grid */
+      .collection-main {flex-direction: row;flex-wrap: wrap;gap: 16px;}
+      .collection-main .collection-parent {display: contents;}
+      .collection-main .collection-item {width: calc(50% - 8px);}
+      .collection-main .collection-parent:last-child .collection-item:first-child { width: 100%;order: 1; }
+      .collection-main .collection-parent:first-child .collection-item:first-child,
+      .collection-main .collection-parent:first-child .collection-item:nth-child(2),
+      .collection-main .collection-parent:first-child .collection-item:nth-child(3) {order: 0;}
+    }
     </style>
 <?php endwhile;
 endif; ?>

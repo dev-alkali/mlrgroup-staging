@@ -51,58 +51,15 @@ get_header();
             <?php endforeach; ?>
           </div>
         <?php endif; ?>
-
-        <?php /*
-        <div class="cs-arrow-row md:flex mt-[20px] hidden relative overflow-hidden items-center h-[50px]">
-          <div class="absolute inset-0 flex flex-row-reverse items-center pr-[50px]">
-            <?php for ($i = 0; $i < 40; $i++) : ?>
-              <img src="<?= get_template_directory_uri() ?>/assets/imgs/cs_gray-arrow.svg" class="cs-gray-arrow w-[50px] h-[50px] shrink-0" alt="">
-            <?php endfor; ?>
-          </div>
-          <div class="absolute right-0 z-10 bg-white">
-            <img src="<?= get_template_directory_uri() ?>/assets/imgs/cs_red_arrow.svg" class="arrow1 w-[50px] h-[50px]" alt="">
-          </div>
-        </div>
-        <script>
-          (function () {
-            function hideOverflowingArrows() {
-              var container = document.querySelector('.cs-arrow-row');
-              if (!container) return;
-              var containerLeft = container.getBoundingClientRect().left;
-              var arrows = container.querySelectorAll('.cs-gray-arrow');
-              arrows.forEach(function (arrow) {
-                arrow.style.visibility = '';
-                var arrowLeft = arrow.getBoundingClientRect().left;
-                if (arrowLeft < containerLeft + 1) {
-                  arrow.style.visibility = 'hidden';
-                }
-              });
-            }
-            document.addEventListener('DOMContentLoaded', hideOverflowingArrows);
-            window.addEventListener('resize', hideOverflowingArrows);
-          })();
-        </script> */ ?>
-
-        <?php /*<article class="max-w-[1360px] mx-auto pt-[60px] xl:px-[120px] lg:px-[60px] md:px-[30px] md:pb-[60px] flex flex-wrap">
-          <div class="blog-content">  
-            <?php the_content(); ?>
-          </div>
-        </article> */ ?>
       <?php endwhile; ?>
     </div>
     </div>
-    <!-- <article class="max-w-[1360px] mx-auto pt-[60px] xl:px-[120px] lg:px-[60px] md:px-[30px] md:pb-[60px] flex flex-wrap"> -->
     <article class="case-studies-content pt-[60px]">
           <div class="blog-content">  
             <?php the_content(); ?>
           </div>
         </article>
   </section>
-
-  <?php // get_template_part('template-parts/cta/cta'); ?>
-
-  <?php // get_template_part('template-parts/ctas-mulitple/ctas-mulitple'); ?>
-
 </main>
 
 <?php get_footer(); ?>

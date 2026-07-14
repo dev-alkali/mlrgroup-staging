@@ -6,30 +6,10 @@ $show_featured_section = mlr_portfolio_show_featured_section($term_id);
 ?>
 
 <div class="flex flex-col items-start flex-1 min-w-0 justify-center w-full md:w-auto">
-    <div class="flex items-center justify-end w-full">
-        <!-- <button type="button" id="view-inquery-list" class="btn-primary relative inline-flex items-center gap-2" aria-label="View inquiry list, 3 items">
-            <div class="inline-flex items-center gap-2 justify-center">
-                <div class="relative w-[17px] h-4 mt-[-2px]">
-                    <img src=" //esc_url(get_template_directory_uri() . '/assets/imgs/Arrow-white-large.svg'); ?>" alt="arrow">
-                </div>
-                <span class="font-heading font-semibold text-white text-sm md:text-base tracking-[0] leading-7 whitespace-nowrap">
-                    VIEW INQUIRY LIST
-                </span>
-            </div>
-            <span aria-label="3 items in list" class="inline-flex items-center justify-center w-[26px] h-[26px] absolute -top-1 -right-1 bg-black rounded-full">
-                <span class="inquiry-list-quantity font-heading font-normal text-white text-[16px] text-center leading-none mb-[-1px]" aria-hidden="true">
-                    0
-                </span>
-            </span>
-        </button> -->
-    </div>
+    <div class="flex items-center justify-end w-full"></div>
 
     <div class="w-full">
         <?php
-        // Featured Items: items assigned to the "featured-items" category.
-        // Shown on /work/ and ACF parent categories (including when also listed as a child).
-        // On a category page we scope to the current term AND featured-items
-        // so each category shows only its own featured items (newest first, max 24).
         $featured_term  = get_term_by('slug', 'featured-items', $taxonomy);
         $featured_query = null;
 
@@ -80,8 +60,6 @@ $show_featured_section = mlr_portfolio_show_featured_section($term_id);
 
         <div id="portfolio-grid" class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full gap-[10px] md:gap-0">
             <?php
-            // Featured items render first; the regular items below flow into the same
-            // grid so there is no blank gap between the featured strip and the rest.
             if ($has_featured) :
                 while ($featured_query->have_posts()) : $featured_query->the_post();
                     $post_id = get_the_ID();
@@ -194,7 +172,7 @@ $show_featured_section = mlr_portfolio_show_featured_section($term_id);
 
 
     <?php
-        $term = get_queried_object(); // Current taxonomy term
+        $term = get_queried_object(); 
         ?>
         <?php if ( !empty($term->description) ) :
             $heading_tag = ! empty($term->parent) ? 'h1' : 'h2';

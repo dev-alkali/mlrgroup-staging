@@ -42,7 +42,6 @@ if ( ! empty( $section_remove_bottom_padding ) ) {
 			<div class="w-full wrapper lg:mb-[70px] sm:mb-[50px] mb-[20px] overflow-visible">
 				<?php if($title_row_1 || $title_row_2): ?>
 				<h2 class="xl:text-[68px] md:text-[52px] text-[36px] leading-[40px] md:leading-[62px] xl:leading-[76px] tracking-[-2%] text-[#262626] font-heading lg:mb-[20px] relative heading-our-values">
-					<!-- <div class="bg-repeat absolute top-[0px] left-[10%] right-[calc(100%+100px)] arrow-img-position w-full h-[100%]" style="background-image: url('<?= get_template_directory_uri() ?>/assets/imgs/our-value-arrow.svg');"></div> -->
 					<?php if($title_row_1): ?>
 						<span class="relative w-full block flex gap-[10px] title-our-values-1">
 							<span class="font-bold bg-white pr-[5px] "><?= wp_kses_post($title_row_1) ?></span>
