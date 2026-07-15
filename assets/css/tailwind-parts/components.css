@@ -1510,8 +1510,8 @@ article.service-card:hover .bg-image{filter: none !important;}
   .blog-content .md\:flex-row-reverse.two-column-wrapper .two-column-content > div {padding-right: 40px !important;}
   .blog-content .two-column-wrapper:not(.md\:flex-row-reverse) .two-column-content > div {padding-left: 40px !important;}
   .blog-content .two-column-wrapper {align-items: unset;}
-  .blog-content .two-column-wrapper .two-column-image figure{height: 100%;min-height: 560px;}
-  .blog-content .two-column-wrapper .two-column-image figure img{object-fit: cover;}
+  /*.blog-content .two-column-wrapper .two-column-image figure{height: 100%;min-height: 560px;}
+  .blog-content .two-column-wrapper .two-column-image figure img{object-fit: cover;}*/
   .blog-content .two-column-wrapper .two-column-content{display: flex;align-items: center;}
 }
 @media(max-width: 1399px){
