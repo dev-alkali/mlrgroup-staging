@@ -1364,7 +1364,7 @@ article.service-card:hover .bg-image{filter: none !important;}
 .case-studies-content .blog-content .description-content ul {list-style-type: none;}
 .case-studies-content .blog-content .description-content ul li {list-style-type: none !important;position: relative;}
 .case-studies-content .blog-content .description-content ul li::before {content: '' !important;opacity: 1;display: block !important;background-image: url(/wp-content/themes/Mlrgroup/assets/imgs/red-arrow-feature-sec.svg);position: absolute;left: -30px;width: 15px;height: 15px;background-position: center;background-repeat: no-repeat;background-size: contain;top: 4px;}
-.case-studies-content .blog-content .description-content ul li li::before{background: #000000;border-radius:100%;}
+.case-studies-content .blog-content .description-content ul li li::before{background: #000000;border-radius:100%;    width: 7px;height: 7px;top: 7px;left: -20px;}
 .two-col.case-stiudie-two-col .description-content h2 {margin-bottom: 10px;}
 .case-studies-content .quote-block-sec {background-color: #f8f6f7;padding: 100px 0px;text-align: center;}
 .case-studies-content .quote-block-sec .quote-content {max-width: 1400px;margin: 0 auto;border: none;padding-bottom: 0px;}
