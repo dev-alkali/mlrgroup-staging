@@ -102,5 +102,11 @@ function register_script()
     'nonce'     => wp_create_nonce( 'portfolio_load_nonce' ),
     'init_page' => 2, // First "load more" request fetches page 2
 ) );
+
+  wp_enqueue_script('portfolio-searchJS', get_template_directory_uri() . '/assets/js/portfolio-search.js', array('jquery-core'), '1.0', true);
+  wp_localize_script( 'portfolio-searchJS', 'PortfolioSearchConfig', array(
+    'ajax_url' => admin_url( 'admin-ajax.php' ),
+    'nonce'    => wp_create_nonce( 'portfolio_search_nonce' ),
+) );
 }
 add_action('wp_enqueue_scripts', 'register_script');

@@ -55,8 +55,10 @@ $show_featured_section = mlr_portfolio_show_featured_section($term_id);
         ?>
 
         <?php if ($has_featured) : ?>
-            <h1 class="font-[Poppins] font-bold text-[#262626] tracking-[-0.02em] text-[24px] md:text-[32px] leading-[1.2] mb-[20px] md:mb-[28px]">Featured Items</h1>
+            <h1 id="portfolio-featured-heading" class="font-[Poppins] font-bold text-[#262626] tracking-[-0.02em] text-[24px] md:text-[32px] leading-[1.2] mb-[20px] md:mb-[28px]">Featured Items</h1>
         <?php endif; ?>
+
+        <p id="portfolio-search-status" class="hidden w-full mb-[20px] md:mb-[28px] font-[Poppins] font-medium text-[16px] leading-[24px] text-[#525252]" aria-live="polite"></p>
 
         <div id="portfolio-grid" class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full gap-[10px] md:gap-0">
             <?php
@@ -64,24 +66,10 @@ $show_featured_section = mlr_portfolio_show_featured_section($term_id);
                 while ($featured_query->have_posts()) : $featured_query->the_post();
                     $post_id = get_the_ID();
                     $image_url = has_post_thumbnail() ? get_the_post_thumbnail_url($post_id, 'full') : '/wp-content/themes/Mlrgroup/assets/imgs/altr-img.jpg';
-            ?>
-                    <article class="gallery-card group">
-                        <div class="card-image-wrap relative overflow-hidden aspect-[333.33/360] w-full" style="background-image: url('<?= esc_url($image_url); ?>'); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;">
-                            <div class="added-badge hidden absolute top-3 right-3 z-20 bg-[#fd4338] text-white text-xs font-semibold pt-[7px] pl-[16px] pb-[5px] pr-[16px] gap-[8px] rounded-full items-center pointer-events-none" item-id="<?= esc_attr($post_id); ?>">
-                                <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                ADDED
-                            </div>
-                            <div class="card-overlay absolute inset-0 [background:linear-gradient(312deg,rgba(0,0,0,0.82)_0%,rgba(74,120,255,0.8)_100%)] opacity-0 group-hover:opacity-100 group-focus:opacity-100 group-active:opacity-100  md:transition-opacity md:duration-300 flex flex-col items-center justify-center gap-2 px-6">
-                                <button type="button" item-id="<?= esc_attr($post_id); ?>" class="view-inquery bg-black flex items-center justify-center gap-2 p-[13px] md:pt-[12px] md:pb-[9px] md:pl-[10px] md:pr-[10px] md:w-full rounded-[30px] cursor-pointer border-0 hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors translate-y-3 card-btn-transition md:max-w-[262px]">
-                                    <span class="font-heading font-medium flex items-center justify-center  text-white text-xs md:text-[10px] tracking-[0] leading-5 whitespace-nowrap"><img class="h-[14px] w-[14px] mt-[-1px] md:mr-[8px]" src="<?= esc_url(get_template_directory_uri() . '/assets/imgs/magnifying.svg'); ?>" alt=""> <span class="hidden md:inline-block">QUICK VIEW</span></span>
-                                </button>
-                                <button type="button" item-id="<?= esc_attr($post_id); ?>" class="add-inquiry bg-white flex items-center justify-center gap-2 p-[13px] md:pt-[12px] md:pb-[9px] md:pl-[10px] md:pr-[10px] md:w-full rounded-[30px] cursor-pointer border-0 hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#262626] transition-colors translate-y-3 card-btn-transition md:max-w-[262px]">
-                                    <span class="font-heading font-semibold flex justify-center items-center text-neutral-800 text-xs md:text-[10px] tracking-[0] leading-5 whitespace-nowrap"><img class="h-[14.3px] w-[14.3px] mt-[-2px] md:mr-[8px]" src="<?= esc_url(get_template_directory_uri() . '/assets/imgs/plus-black.svg'); ?>" alt=""> <span class="hidden md:inline-block">ADD TO INQUIRY LIST</span></span>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-            <?php
+                    get_template_part('template-parts/portfolio/card', null, array(
+                        'post_id'   => $post_id,
+                        'image_url' => $image_url,
+                    ));
                 endwhile;
                 wp_reset_postdata();
             endif;
@@ -132,24 +120,10 @@ $show_featured_section = mlr_portfolio_show_featured_section($term_id);
                 while ($portfolio_query->have_posts()) : $portfolio_query->the_post();
                     $post_id = get_the_ID();
                     $image_url = has_post_thumbnail() ? get_the_post_thumbnail_url($post_id, 'full') : '/wp-content/themes/Mlrgroup/assets/imgs/altr-img.jpg';
-            ?>
-                    <article class="gallery-card group">
-                        <div class="card-image-wrap relative overflow-hidden aspect-[333.33/360] w-full" style="background-image: url('<?= esc_url($image_url); ?>'); background-position: 50% 50%; background-size: contain; background-repeat: no-repeat;">
-                            <div class="added-badge hidden absolute top-3 right-3 z-20 bg-[#fd4338] text-white text-xs font-semibold pt-[7px] pl-[16px] pb-[5px] pr-[16px] gap-[8px] rounded-full items-center pointer-events-none" item-id="<?= esc_attr($post_id); ?>">
-                                <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                ADDED
-                            </div>
-                            <div class="card-overlay absolute inset-0 [background:linear-gradient(312deg,rgba(0,0,0,0.82)_0%,rgba(74,120,255,0.8)_100%)] opacity-0 group-hover:opacity-100 group-focus:opacity-100 group-active:opacity-100  md:transition-opacity md:duration-300 flex flex-col items-center justify-center gap-2 px-6">
-                                <button type="button" item-id="<?= esc_attr($post_id); ?>" class="view-inquery bg-black flex items-center justify-center gap-2 p-[13px] md:pt-[12px] md:pb-[9px] md:pl-[10px] md:pr-[10px] md:w-full rounded-[30px] cursor-pointer border-0 hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-colors translate-y-3 card-btn-transition md:max-w-[262px]">
-                                    <span class="font-heading font-medium flex items-center justify-center  text-white text-xs md:text-[10px] tracking-[0] leading-5 whitespace-nowrap"><img class="h-[14px] w-[14px] mt-[-1px] md:mr-[8px]" src="<?= esc_url(get_template_directory_uri() . '/assets/imgs/magnifying.svg'); ?>" alt=""> <span class="hidden md:inline-block">QUICK VIEW</span></span>
-                                </button>
-                                <button type="button" item-id="<?= esc_attr($post_id); ?>" class="add-inquiry bg-white flex items-center justify-center gap-2 p-[13px] md:pt-[12px] md:pb-[9px] md:pl-[10px] md:pr-[10px] md:w-full rounded-[30px] cursor-pointer border-0 hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#262626] transition-colors translate-y-3 card-btn-transition md:max-w-[262px]">
-                                    <span class="font-heading font-semibold flex justify-center items-center text-neutral-800 text-xs md:text-[10px] tracking-[0] leading-5 whitespace-nowrap"><img class="h-[14.3px] w-[14.3px] mt-[-2px] md:mr-[8px]" src="<?= esc_url(get_template_directory_uri() . '/assets/imgs/plus-black.svg'); ?>" alt=""> <span class="hidden md:inline-block">ADD TO INQUIRY LIST</span></span>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-            <?php
+                    get_template_part('template-parts/portfolio/card', null, array(
+                        'post_id'   => $post_id,
+                        'image_url' => $image_url,
+                    ));
                 endwhile;
             endif;
             ?>

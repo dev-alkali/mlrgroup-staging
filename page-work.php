@@ -3,9 +3,9 @@
   <section class="w-full pt-10 md:pt-[60px] px-4 md:px-10">
   <div class="flex flex-col md:flex-row items-start gap-[20px] md:gap-10 w-full wrapper mx-auto max-[768px]:border-b border-[#CCCCCC] max-[768]:pb-[28px]">
      <div class="md:border-b border-[#CCCCCC] md:pb-[20px] md:mb-[10px] w-full md:w-[220px] lg:w-[280px] xl:w-[380px]">
-      <div class="search-form-parent">
-        <form action="">
-          <input type="text" placeholder="Search">
+      <div class="search-form-parent" data-term="0">
+        <form action="<?php echo esc_url(home_url('/work/')); ?>" method="get" role="search">
+          <input type="text" name="s_portfolio" autocomplete="off" placeholder="Search" value="<?php echo esc_attr(isset($_GET['s_portfolio']) ? sanitize_text_field(wp_unslash($_GET['s_portfolio'])) : ''); ?>">
           <button type="submit">Search</button>
         </form>
       </div>
