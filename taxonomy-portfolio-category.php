@@ -3,6 +3,18 @@
 <section class="w-full flex flex-col items-center gap-10 md:gap-[60px] pt-10 md:pt-[60px] px-4 md:px-10">
   <div class="flex flex-col md:flex-row items-start gap-[20px] md:gap-10 w-full max-w-[1920px] mx-auto max-[768px]:border-b border-[#CCCCCC] max-[768]:pb-[28px]">
      <div class="md:border-b border-[#CCCCCC] md:pb-[20px] md:mb-[10px] w-full md:w-[220px] lg:w-[280px] xl:w-[380px]">
+      <div class="search-form-parent mb-[20px]" data-term="<?php echo esc_attr(absint(get_queried_object_id())); ?>">
+        <form action="<?php echo esc_url(get_term_link(get_queried_object())); ?>" method="get" role="search" class="relative">
+          <input type="text" name="s_portfolio" autocomplete="off" placeholder="Search" value="<?php echo esc_attr(isset($_GET['s_portfolio']) ? sanitize_text_field(wp_unslash($_GET['s_portfolio'])) : ''); ?>" class="border-b border-[#cccc] w-full py-[5px]">
+          <button type="submit" aria-label="Search" class="search-submit absolute right-0 bottom-[10px]">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <circle cx="7.75" cy="7.75" r="6.25" stroke="#FD4338" stroke-width="1.5"/>
+              <path d="M12.5 12.5L16.5 16.5" stroke="#FD4338" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="sr-only">Search</span>
+          </button>
+        </form>
+      </div>
       <p class="text-[#525252] font-[Poppins] font-medium text-[16px] leading-[24px] md:text-[16px] md:leading-[24px]">Get inspired: Browse our portfolio, filter by category, add elements you like to your Inquiry List.</p>
      </div>
      <div class="flex items-center justify-end max-[768px]:ml-auto md:w-full">
