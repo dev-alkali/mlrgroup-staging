@@ -6,7 +6,13 @@
       <div class="search-form-parent" data-term="0">
         <form action="<?php echo esc_url(home_url('/work/')); ?>" method="get" role="search">
           <input type="text" name="s_portfolio" autocomplete="off" placeholder="Search" value="<?php echo esc_attr(isset($_GET['s_portfolio']) ? sanitize_text_field(wp_unslash($_GET['s_portfolio'])) : ''); ?>">
-          <button type="submit">Search</button>
+          <button type="submit" aria-label="Search" class="search-submit">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <circle cx="7.75" cy="7.75" r="6.25" stroke="#FD4338" stroke-width="1.5"/>
+              <path d="M12.5 12.5L16.5 16.5" stroke="#FD4338" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="sr-only">Search</span>
+          </button>
         </form>
       </div>
       <p class="text-[#525252] font-[Poppins] font-medium text-[16px] leading-[24px] md:text-[16px] md:leading-[24px]">Get inspired: Browse our portfolio, filter by category, add elements you like to your Inquiry List.</p>
