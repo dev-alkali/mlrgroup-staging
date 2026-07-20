@@ -205,7 +205,7 @@ if (!$case_studies_query->have_posts() && have_posts()) {
                 
 
                 return fetch(endpoint.toString(), {
-                  headers: { 'X-WP-Nonce': '<?php echo esc_js(wp_create_nonce('wp_rest')); ?>' }
+                  headers: { 'Accept': 'application/json' }
                 })
                 .then(function (response) {
                   if (!response.ok) {
@@ -236,7 +236,11 @@ if (!$case_studies_query->have_posts() && have_posts()) {
                     connectInfiniteScroll();
                   }
                 })
-                .catch(function () {})
+                .catch(function (error) {
+                  if (window.console && console.error) {
+                    console.error('Case studies infinite load failed:', error);
+                  }
+                })
                 .finally(function () {
                   isLoading = false;
                   setLoadingVisible(false);

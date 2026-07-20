@@ -179,7 +179,7 @@ $initial_posts_query = new WP_Query(
                             const endpoint = `${window.location.origin}/wp-json/wp/v2/posts?per_page=<?php echo esc_js($posts_per_page); ?>&page=${nextPage}&_embed`;
 
                             fetch(endpoint, {
-                                headers: { 'X-WP-Nonce': '<?php echo esc_js(wp_create_nonce('wp_rest')); ?>' }
+                                headers: { 'Accept': 'application/json' }
                             })
                                 .then(function (response) {
                                     if (!response.ok) {
@@ -197,7 +197,11 @@ $initial_posts_query = new WP_Query(
                                         connectInfiniteScroll();
                                     }
                                 })
-                                .catch(function () {})
+                                .catch(function (error) {
+                                    if (window.console && console.error) {
+                                        console.error('Blog infinite load failed:', error);
+                                    }
+                                })
                                 .finally(function () {
                                     isLoading = false;
                                     setLoadingVisible(false);
