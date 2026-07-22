@@ -5,7 +5,7 @@
      <div class="md:border-b border-[#CCCCCC] md:pb-[20px] md:mb-[10px] w-full md:w-[220px] lg:w-[280px] xl:w-[380px]">
       <div class="search-form-parent mb-[20px]" data-term="0">
         <form action="<?php echo esc_url(home_url('/work/')); ?>" method="get" role="search" class="relative">
-          <input type="text" name="s_portfolio" autocomplete="off" placeholder="Search" value="<?php echo esc_attr(isset($_GET['s_portfolio']) ? sanitize_text_field(wp_unslash($_GET['s_portfolio'])) : ''); ?>" class="border-b border-[#cccc] w-full py-[5px]">
+          <input type="text" name="s_portfolio" autocomplete="off" placeholder="Search Our Portfolio" value="<?php echo esc_attr(isset($_GET['s_portfolio']) ? sanitize_text_field(wp_unslash($_GET['s_portfolio'])) : ''); ?>" class="border-b border-[#cccc] w-full py-[5px]">
           <button type="submit" aria-label="Search" class="search-submit absolute right-0 bottom-[10px]">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
               <circle cx="7.75" cy="7.75" r="6.25" stroke="#FD4338" stroke-width="1.5"/>
