@@ -15,7 +15,7 @@
           </button>
         </form>
       </div>
-      <p class="text-[#525252] font-[Poppins] font-medium text-[16px] leading-[24px] md:text-[16px] md:leading-[24px]">Get inspired: Browse our portfolio, filter by category, add elements you like to your Inquiry List.</p>
+      <p class="text-[#525252] font-[Poppins] font-medium text-[16px] leading-[24px] md:text-[16px] md:leading-[24px]">Get inspired: Browse or search our portfolio, filter by category, add elements you like to your Inquiry List.</p>
      </div>
      <div class="flex items-center justify-end max-[768px]:ml-auto md:w-full">
         <button type="button" id="view-inquery-list" class="btn-primary relative inline-flex items-center gap-2 cursor-pointer pt-[9.5px] px-[20px] pb-[6.5px] md:pt-[16px] md:px-[25px] md:pb-[15px]" aria-label="View inquiry list, 3 items">
